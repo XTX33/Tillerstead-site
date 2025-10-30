@@ -4,46 +4,47 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio | Tillerstead LLC</title>
-  <meta name="description" content="Selected Tillerstead projects: showers, floors, kitchens, and more.">
+  <meta name="description" content="See real Tillerstead projects—code-compliant showers, backsplashes, floors, and fireplaces—crafted for durability and clean finishes in Atlantic County, NJ.">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="preload" as="image" href="/assets/img/logo.svg">
+  <link rel="canonical" href="https://tillerstead.com/portfolio.html">
   <meta property="og:title" content="Portfolio | Tillerstead LLC">
   <meta property="og:description" content="Selected Tillerstead projects: showers, floors, kitchens, and more.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/assets/img/og-image.png">
-  <meta property="og:url" content="https://tillerstead.com/">
+  <meta property="og:url" content="https://tillerstead.com/portfolio.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script defer src="/assets/js/main.js"></script>
+
+  <!-- Breadcrumbs for SEO -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Tillerstead LLC",
-  "url": "https://tillerstead.com/",
-  "logo": "https://tillerstead.com/assets/img/logo.svg",
-  "image": "https://tillerstead.com/assets/img/og-image.png",
-  "description": "Tile, bath and remodel craftsman serving Atlantic County, NJ.",
-  "areaServed": [
-    "Atlantic County, NJ",
-    "Galloway, NJ",
-    "Atlantic City, NJ"
-  ],
-  "telephone": "+1-609-665-9350",
-  "email": "Tyler@Tillerstead.com",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
-    "addressLocality": "Galloway",
-    "addressRegion": "NJ",
-    "postalCode": "08205",
-    "addressCountry": "US"
-  },
-  "foundingDate": "2020-01-01"
-}
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://tillerstead.com/"},
+      {"@type":"ListItem","position":2,"name":"Portfolio","item":"https://tillerstead.com/portfolio.html"}
+    ]
+  }
+  </script>
+
+  <!-- LocalBusiness (kept concise to avoid duplication across pages) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HomeAndConstructionBusiness",
+    "name":"Tillerstead LLC",
+    "url":"https://tillerstead.com/",
+    "telephone":"+1-609-665-9350",
+    "email":"info@tillerstead.com",
+    "image":"https://tillerstead.com/assets/img/og-image.png",
+    "address":{"@type":"PostalAddress","streetAddress":"325 E. Jimmie Leeds Road, Suite 7-333","addressLocality":"Galloway","addressRegion":"NJ","postalCode":"08205","addressCountry":"US"},
+    "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"],
+    "knowsAbout":["shower waterproofing","tile installation","backsplash","large format tile","grout remediation"]
+  }
   </script>
 </head>
 <body>
@@ -60,40 +61,125 @@
       <nav id="nav" class="site-nav" aria-label="Main">
         <ul>
           <li><a href="/services.html">Services</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/portfolio.html" aria-current="page">Portfolio</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html" class="btn btn-accent">Contact</a></li>
         </ul>
       </nav>
+      <a class="btn btn-accent" href="tel:+16096659350" style="margin-left:.5rem">Call (609) 665-9350</a>
       <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
     </div>
   </header>
 
   <main id="main" class="container pad">
     <h1>Portfolio</h1>
-    <p class="lead">A few representative builds. More on request.</p>
-    <div class="gallery">
-      <figure><img src="https://picsum.photos/seed/tile1/800/600" alt="Custom shower with niche"><figcaption>Custom shower with niche</figcaption></figure>
-      <figure><img src="https://picsum.photos/seed/tile2/800/600" alt="Herringbone backsplash"><figcaption>Herringbone backsplash</figcaption></figure>
-      <figure><img src="https://picsum.photos/seed/tile3/800/600" alt="Large-format floor"><figcaption>Large-format floor</figcaption></figure>
-      <figure><img src="https://picsum.photos/seed/tile4/800/600" alt="Curbless shower"><figcaption>Curbless shower</figcaption></figure>
-      <figure><img src="https://picsum.photos/seed/tile5/800/600" alt="Mosaic feature wall"><figcaption>Mosaic feature wall</figcaption></figure>
-      <figure><img src="https://picsum.photos/seed/tile6/800/600" alt="Fireplace surround"><figcaption>Fireplace surround</figcaption></figure>
+    <p class="lead">Representative builds across showers, backsplashes, floors, and fireplaces. Ask for full project references on request.</p>
+
+    <!-- Filters -->
+    <div class="filters" role="tablist" aria-label="Portfolio filters" style="margin:1rem 0;display:flex;gap:.5rem;flex-wrap:wrap">
+      <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="showers">Showers</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="backsplashes">Backsplashes</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="floors">Floors</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="fireplaces">Fireplaces</button>
     </div>
+
+    <!-- Gallery -->
+    <div class="gallery" id="gallery" aria-live="polite">
+      <!-- Example item -->
+      <figure class="gitem" data-tags="showers">
+        <a href="https://picsum.photos/seed/tile1/1600/1200" class="lightbox" aria-label="Open image: Custom shower with niche">
+          <img
+            src="https://picsum.photos/seed/tile1/800/600"
+            srcset="https://picsum.photos/seed/tile1/480/360 480w, https://picsum.photos/seed/tile1/800/600 800w, https://picsum.photos/seed/tile1/1200/900 1200w"
+            sizes="(max-width: 700px) 100vw, 33vw"
+            width="800" height="600"
+            alt="Custom shower with niche and bonded waterproofing"
+            loading="lazy" decoding="async">
+        </a>
+        <figcaption>Custom shower with niche — flood-tested system.</figcaption>
+      </figure>
+
+      <figure class="gitem" data-tags="backsplashes">
+        <a href="https://picsum.photos/seed/tile2/1600/1200" class="lightbox" aria-label="Open image: Herringbone backsplash">
+          <img src="https://picsum.photos/seed/tile2/800/600"
+               srcset="https://picsum.photos/seed/tile2/480/360 480w, https://picsum.photos/seed/tile2/800/600 800w, https://picsum.photos/seed/tile2/1200/900 1200w"
+               sizes="(max-width: 700px) 100vw, 33vw"
+               width="800" height="600"
+               alt="Kitchen herringbone backsplash with clean outlets"
+               loading="lazy" decoding="async">
+        </a>
+        <figcaption>Herringbone backsplash — crisp layout & clean cuts.</figcaption>
+      </figure>
+
+      <figure class="gitem" data-tags="floors">
+        <a href="https://picsum.photos/seed/tile3/1600/1200" class="lightbox" aria-label="Open image: Large-format floor">
+          <img src="https://picsum.photos/seed/tile3/800/600"
+               srcset="https://picsum.photos/seed/tile3/480/360 480w, https://picsum.photos/seed/tile3/800/600 800w, https://picsum.photos/seed/tile3/1200/900 1200w"
+               sizes="(max-width: 700px) 100vw, 33vw"
+               width="800" height="600"
+               alt="Large-format tile floor with flat substrate"
+               loading="lazy" decoding="async">
+        </a>
+        <figcaption>Large-format floor — substrate prepped flat & true.</figcaption>
+      </figure>
+
+      <figure class="gitem" data-tags="showers">
+        <a href="https://picsum.photos/seed/tile4/1600/1200" class="lightbox" aria-label="Open image: Curbless shower">
+          <img src="https://picsum.photos/seed/tile4/800/600"
+               srcset="https://picsum.photos/seed/tile4/480/360 480w, https://picsum.photos/seed/tile4/800/600 800w, https://picsum.photos/seed/tile4/1200/900 1200w"
+               sizes="(max-width: 700px) 100vw, 33vw"
+               width="800" height="600"
+               alt="Curbless shower with linear drain"
+               loading="lazy" decoding="async">
+        </a>
+        <figcaption>Curbless shower — accessibility with style.</figcaption>
+      </figure>
+
+      <figure class="gitem" data-tags="backsplashes">
+        <a href="https://picsum.photos/seed/tile5/1600/1200" class="lightbox" aria-label="Open image: Mosaic feature wall">
+          <img src="https://picsum.photos/seed/tile5/800/600"
+               srcset="https://picsum.photos/seed/tile5/480/360 480w, https://picsum.photos/seed/tile5/800/600 800w, https://picsum.photos/seed/tile5/1200/900 1200w"
+               sizes="(max-width: 700px) 100vw, 33vw"
+               width="800" height="600"
+               alt="Mosaic feature wall with balanced grout joints"
+               loading="lazy" decoding="async">
+        </a>
+        <figcaption>Mosaic feature wall — balanced joints & sealing.</figcaption>
+      </figure>
+
+      <figure class="gitem" data-tags="fireplaces">
+        <a href="https://picsum.photos/seed/tile6/1600/1200" class="lightbox" aria-label="Open image: Fireplace surround">
+          <img src="https://picsum.photos/seed/tile6/800/600"
+               srcset="https://picsum.photos/seed/tile6/480/360 480w, https://picsum.photos/seed/tile6/800/600 800w, https://picsum.photos/seed/tile6/1200/900 1200w"
+               sizes="(max-width: 700px) 100vw, 33vw"
+               width="800" height="600"
+               alt="Fireplace surround in porcelain"
+               loading="lazy" decoding="async">
+        </a>
+        <figcaption>Fireplace surround — heat-safe clearances observed.</figcaption>
+      </figure>
+    </div>
+
+    <p style="margin-top:1.5rem">
+      Ready to plan yours? <a class="btn btn-accent" href="/contact.html">Request an Estimate</a>
+      or <a class="btn" href="tel:+16096659350">Call (609) 665-9350</a>
+    </p>
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <h4>Tillerstead LLC</h4>
           <p>Tile • Bath • Remodel — Atlantic County, NJ</p>
-          <p><a href="mailto:Tyler@Tillerstead.com">Tyler@Tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
+          <p><a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
         </div>
         <div>
           <h4>Links</h4>
           <ul class="unstyled">
             <li><a href="/services.html">Services</a></li>
-            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li><a href="/portfolio.html" aria-current="page">Portfolio</a></li>
             <li><a href="/about.html">About</a></li>
             <li><a href="/contact.html">Contact</a></li>
           </ul>
@@ -109,5 +195,59 @@
       <p class="copyright">© 2025 Tillerstead LLC. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Minimal page JS for filters & lightbox -->
+  <script>
+  // Filter chips
+  const chips = document.querySelectorAll('.chip');
+  const items = document.querySelectorAll('.gitem');
+  chips.forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      chips.forEach(c=>{c.classList.remove('is-active'); c.setAttribute('aria-selected','false');});
+      chip.classList.add('is-active'); chip.setAttribute('aria-selected','true');
+      const f = chip.dataset.filter;
+      items.forEach(i=>{
+        const show = f==='all' || i.dataset.tags.includes(f);
+        i.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  // Basic accessible lightbox
+  const lbLinks = document.querySelectorAll('a.lightbox');
+  if(lbLinks.length){
+    const overlay = document.createElement('div');
+    overlay.className = 'lb';
+    overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap"></p>';
+    document.body.appendChild(overlay);
+    const lbImg = overlay.querySelector('img');
+    const lbCap = overlay.querySelector('.lb-cap');
+    const close = ()=>{ overlay.classList.remove('open'); document.body.style.overflow=''; };
+    overlay.querySelector('.lb-close').addEventListener('click', close);
+    overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+    lbLinks.forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        lbImg.src = a.getAttribute('href');
+        const cap = a.parentElement.querySelector('figcaption');
+        lbCap.textContent = cap ? cap.textContent : '';
+        overlay.classList.add('open');
+        document.body.style.overflow='hidden';
+      });
+    });
+  }
+  </script>
+  <style>
+    .chip{padding:.5rem .8rem;border:1px solid #2a2a2a;border-radius:999px;background:#111;cursor:pointer}
+    .chip.is-active{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#000;border-color:transparent}
+    .lb{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.2s;padding:1rem}
+    .lb.open{opacity:1;pointer-events:auto}
+    .lb img{max-width:min(95vw,1200px);max-height:80vh;border-radius:.75rem;box-shadow:var(--shadow)}
+    .lb-close{position:absolute;top:1rem;right:1rem;background:#111;border:1px solid #333;border-radius:.5rem;color:#fff;font-size:1.5rem;line-height:1;padding:.3rem .6rem;cursor:pointer}
+    .lb-cap{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);padding:.4rem .7rem;border-radius:.5rem}
+    @media (hover:hover){ .gitem a:hover img{transform:scale(1.01)} }
+    .gitem img{transition:transform .2s ease}
+  </style>
 </body>
 </html>
