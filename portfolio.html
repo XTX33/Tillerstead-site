@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio | Tillerstead LLC</title>
-  <meta name="description" content="See real Tillerstead projects—code-compliant showers, backsplashes, floors, and fireplaces—crafted for durability and clean finishes in Atlantic County, NJ.">
+  <meta name="description" content="See real Tillerstead projects—code‑compliant showers, backsplashes, floors, and fireplaces—crafted for durability and clean finishes across Atlantic County, NJ.">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
   <link rel="manifest" href="/manifest.webmanifest">
@@ -17,6 +17,28 @@
   <meta property="og:url" content="https://tillerstead.com/portfolio.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    /* --- Page-specific styles (kept tiny; rest in /assets/css/style.css) --- */
+    :root{--gap:.9rem}
+    .pad{padding-block:clamp(1rem,2.5vw,2rem)}
+    .lead{max-width:65ch;color:var(--muted-70)}
+    .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-block:1rem}
+    .chip{padding:.5rem .8rem;border:1px solid var(--border-2);border-radius:999px;background:var(--elev-1);cursor:pointer}
+    .chip.is-active{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#000;border-color:transparent}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--gap)}
+    .gitem{background:var(--elev-1);border:1px solid var(--border-2);border-radius:.8rem;overflow:clip}
+    .gitem a{display:block;line-height:0}
+    .gitem img{display:block;width:100%;height:auto;transition:transform .2s ease}
+    @media (hover:hover){.gitem a:hover img{transform:scale(1.01)}}
+    .gitem figcaption{padding:.7rem .8rem;font-size:.95rem;color:var(--muted-80)}
+    /* Lightbox */
+    .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .18s ease;padding:1rem}
+    .lb.open{opacity:1;pointer-events:auto}
+    .lb img{max-width:min(95vw,1200px);max-height:80vh;border-radius:.75rem;box-shadow:var(--shadow)}
+    .lb-close{position:absolute;top:1rem;right:1rem;background:var(--elev-2);border:1px solid var(--border-2);border-radius:.5rem;color:var(--text);font-size:1.4rem;line-height:1;padding:.35rem .6rem;cursor:pointer}
+    .lb-cap{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;padding:.4rem .7rem;border-radius:.5rem;max-width:min(92vw,1000px)}
+    @media (prefers-reduced-motion: reduce){.gitem img{transition:none}}
+  </style>
   <script defer src="/assets/js/main.js"></script>
 
   <!-- Breadcrumbs for SEO -->
@@ -31,7 +53,7 @@
   }
   </script>
 
-  <!-- LocalBusiness (kept concise to avoid duplication across pages) -->
+  <!-- LocalBusiness (compact; primary Organization lives on home page) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -52,7 +74,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/">
-        <img src="/assets/img/logo.svg" alt="Tillerstead logo">
+        <img src="/assets/img/logo.svg" alt="Tillerstead logo" width="32" height="32" loading="eager" decoding="async">
         <span>Tillerstead</span>
       </a>
       <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
@@ -76,7 +98,7 @@
     <p class="lead">Representative builds across showers, backsplashes, floors, and fireplaces. Ask for full project references on request.</p>
 
     <!-- Filters -->
-    <div class="filters" role="tablist" aria-label="Portfolio filters" style="margin:1rem 0;display:flex;gap:.5rem;flex-wrap:wrap">
+    <div class="filters" role="tablist" aria-label="Portfolio filters">
       <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">All</button>
       <button class="chip" role="tab" aria-selected="false" data-filter="showers">Showers</button>
       <button class="chip" role="tab" aria-selected="false" data-filter="backsplashes">Backsplashes</button>
@@ -84,86 +106,54 @@
       <button class="chip" role="tab" aria-selected="false" data-filter="fireplaces">Fireplaces</button>
     </div>
 
-    <!-- Gallery -->
+    <!-- Gallery (replace picsum with your /assets/portfolio/* when ready) -->
     <div class="gallery" id="gallery" aria-live="polite">
-      <!-- Example item -->
       <figure class="gitem" data-tags="showers">
         <a href="https://picsum.photos/seed/tile1/1600/1200" class="lightbox" aria-label="Open image: Custom shower with niche">
-          <img
-            src="https://picsum.photos/seed/tile1/800/600"
-            srcset="https://picsum.photos/seed/tile1/480/360 480w, https://picsum.photos/seed/tile1/800/600 800w, https://picsum.photos/seed/tile1/1200/900 1200w"
-            sizes="(max-width: 700px) 100vw, 33vw"
-            width="800" height="600"
-            alt="Custom shower with niche and bonded waterproofing"
-            loading="lazy" decoding="async">
+          <img src="https://picsum.photos/seed/tile1/800/600" srcset="https://picsum.photos/seed/tile1/480/360 480w, https://picsum.photos/seed/tile1/800/600 800w, https://picsum.photos/seed/tile1/1200/900 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="800" height="600" alt="Custom shower with niche and bonded waterproofing" loading="lazy" decoding="async">
         </a>
-        <figcaption>Custom shower with niche — flood-tested system.</figcaption>
+        <figcaption>Custom shower with niche — flood‑tested system.</figcaption>
       </figure>
 
       <figure class="gitem" data-tags="backsplashes">
         <a href="https://picsum.photos/seed/tile2/1600/1200" class="lightbox" aria-label="Open image: Herringbone backsplash">
-          <img src="https://picsum.photos/seed/tile2/800/600"
-               srcset="https://picsum.photos/seed/tile2/480/360 480w, https://picsum.photos/seed/tile2/800/600 800w, https://picsum.photos/seed/tile2/1200/900 1200w"
-               sizes="(max-width: 700px) 100vw, 33vw"
-               width="800" height="600"
-               alt="Kitchen herringbone backsplash with clean outlets"
-               loading="lazy" decoding="async">
+          <img src="https://picsum.photos/seed/tile2/800/600" srcset="https://picsum.photos/seed/tile2/480/360 480w, https://picsum.photos/seed/tile2/800/600 800w, https://picsum.photos/seed/tile2/1200/900 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="800" height="600" alt="Kitchen herringbone backsplash with clean outlets" loading="lazy" decoding="async">
         </a>
         <figcaption>Herringbone backsplash — crisp layout & clean cuts.</figcaption>
       </figure>
 
       <figure class="gitem" data-tags="floors">
         <a href="https://picsum.photos/seed/tile3/1600/1200" class="lightbox" aria-label="Open image: Large-format floor">
-          <img src="https://picsum.photos/seed/tile3/800/600"
-               srcset="https://picsum.photos/seed/tile3/480/360 480w, https://picsum.photos/seed/tile3/800/600 800w, https://picsum.photos/seed/tile3/1200/900 1200w"
-               sizes="(max-width: 700px) 100vw, 33vw"
-               width="800" height="600"
-               alt="Large-format tile floor with flat substrate"
-               loading="lazy" decoding="async">
+          <img src="https://picsum.photos/seed/tile3/800/600" srcset="https://picsum.photos/seed/tile3/480/360 480w, https://picsum.photos/seed/tile3/800/600 800w, https://picsum.photos/seed/tile3/1200/900 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="800" height="600" alt="Large‑format tile floor with flat substrate" loading="lazy" decoding="async">
         </a>
-        <figcaption>Large-format floor — substrate prepped flat & true.</figcaption>
+        <figcaption>Large‑format floor — substrate prepped flat & true.</figcaption>
       </figure>
 
       <figure class="gitem" data-tags="showers">
         <a href="https://picsum.photos/seed/tile4/1600/1200" class="lightbox" aria-label="Open image: Curbless shower">
-          <img src="https://picsum.photos/seed/tile4/800/600"
-               srcset="https://picsum.photos/seed/tile4/480/360 480w, https://picsum.photos/seed/tile4/800/600 800w, https://picsum.photos/seed/tile4/1200/900 1200w"
-               sizes="(max-width: 700px) 100vw, 33vw"
-               width="800" height="600"
-               alt="Curbless shower with linear drain"
-               loading="lazy" decoding="async">
+          <img src="https://picsum.photos/seed/tile4/800/600" srcset="https://picsum.photos/seed/tile4/480/360 480w, https://picsum.photos/seed/tile4/800/600 800w, https://picsum.photos/seed/tile4/1200/900 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="800" height="600" alt="Curbless shower with linear drain" loading="lazy" decoding="async">
         </a>
         <figcaption>Curbless shower — accessibility with style.</figcaption>
       </figure>
 
       <figure class="gitem" data-tags="backsplashes">
         <a href="https://picsum.photos/seed/tile5/1600/1200" class="lightbox" aria-label="Open image: Mosaic feature wall">
-          <img src="https://picsum.photos/seed/tile5/800/600"
-               srcset="https://picsum.photos/seed/tile5/480/360 480w, https://picsum.photos/seed/tile5/800/600 800w, https://picsum.photos/seed/tile5/1200/900 1200w"
-               sizes="(max-width: 700px) 100vw, 33vw"
-               width="800" height="600"
-               alt="Mosaic feature wall with balanced grout joints"
-               loading="lazy" decoding="async">
+          <img src="https://picsum.photos/seed/tile5/800/600" srcset="https://picsum.photos/seed/tile5/480/360 480w, https://picsum.photos/seed/tile5/800/600 800w, https://picsum.photos/seed/tile5/1200/900 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="800" height="600" alt="Mosaic feature wall with balanced grout joints" loading="lazy" decoding="async">
         </a>
         <figcaption>Mosaic feature wall — balanced joints & sealing.</figcaption>
       </figure>
 
       <figure class="gitem" data-tags="fireplaces">
         <a href="https://picsum.photos/seed/tile6/1600/1200" class="lightbox" aria-label="Open image: Fireplace surround">
-          <img src="https://picsum.photos/seed/tile6/800/600"
-               srcset="https://picsum.photos/seed/tile6/480/360 480w, https://picsum.photos/seed/tile6/800/600 800w, https://picsum.photos/seed/tile6/1200/900 1200w"
-               sizes="(max-width: 700px) 100vw, 33vw"
-               width="800" height="600"
-               alt="Fireplace surround in porcelain"
-               loading="lazy" decoding="async">
+          <img src="https://picsum.photos/seed/tile6/800/600" srcset="https://picsum.photos/seed/tile6/480/360 480w, https://picsum.photos/seed/tile6/800/600 800w, https://picsum.photos/seed/tile6/1200/900 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="800" height="600" alt="Fireplace surround in porcelain" loading="lazy" decoding="async">
         </a>
-        <figcaption>Fireplace surround — heat-safe clearances observed.</figcaption>
+        <figcaption>Fireplace surround — heat‑safe clearances observed.</figcaption>
       </figure>
     </div>
 
     <p style="margin-top:1.5rem">
       Ready to plan yours? <a class="btn btn-accent" href="/contact.html">Request an Estimate</a>
-      or <a class="btn" href="tel:+16096659350">Call (609) 665-9350</a>
+      or <a class="btn" href="tel:+16096659350">Call (609) 665‑9350</a>
     </p>
   </main>
 
@@ -173,7 +163,7 @@
         <div>
           <h4>Tillerstead LLC</h4>
           <p>Tile • Bath • Remodel — Atlantic County, NJ</p>
-          <p><a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
+          <p><a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • <a href="tel:+16096659350">(609) 665‑9350</a></p>
         </div>
         <div>
           <h4>Links</h4>
@@ -196,58 +186,74 @@
     </div>
   </footer>
 
-  <!-- Minimal page JS for filters & lightbox -->
+  <!-- Page JS: filters, deep-linkable tabs, focus-safe lightbox -->
   <script>
-  // Filter chips
-  const chips = document.querySelectorAll('.chip');
-  const items = document.querySelectorAll('.gitem');
-  chips.forEach(chip=>{
-    chip.addEventListener('click',()=>{
-      chips.forEach(c=>{c.classList.remove('is-active'); c.setAttribute('aria-selected','false');});
-      chip.classList.add('is-active'); chip.setAttribute('aria-selected','true');
-      const f = chip.dataset.filter;
-      items.forEach(i=>{
-        const show = f==='all' || i.dataset.tags.includes(f);
-        i.style.display = show ? '' : 'none';
-      });
-    });
-  });
+  (function(){
+    const $ = (sel, ctx=document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
 
-  // Basic accessible lightbox
-  const lbLinks = document.querySelectorAll('a.lightbox');
-  if(lbLinks.length){
-    const overlay = document.createElement('div');
-    overlay.className = 'lb';
-    overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap"></p>';
-    document.body.appendChild(overlay);
-    const lbImg = overlay.querySelector('img');
-    const lbCap = overlay.querySelector('.lb-cap');
-    const close = ()=>{ overlay.classList.remove('open'); document.body.style.overflow=''; };
-    overlay.querySelector('.lb-close').addEventListener('click', close);
-    overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
-    lbLinks.forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        lbImg.src = a.getAttribute('href');
-        const cap = a.parentElement.querySelector('figcaption');
-        lbCap.textContent = cap ? cap.textContent : '';
-        overlay.classList.add('open');
-        document.body.style.overflow='hidden';
+    const chips = $$('.chip');
+    const items = $$('.gitem');
+    const gallery = $('#gallery');
+
+    function applyFilter(key){
+      const f = key || 'all';
+      chips.forEach(c=>{
+        const on = c.dataset.filter === f || (f==='all' && c.dataset.filter==='all');
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-selected', on ? 'true':'false');
       });
-    });
-  }
+      items.forEach(i=>{
+        const show = f==='all' || (i.dataset.tags||'').split(',').includes(f);
+        i.hidden = !show;
+      });
+      const url = new URL(location);
+      if(f==='all'){ url.searchParams.delete('filter'); }
+      else{ url.searchParams.set('filter', f); }
+      history.replaceState(null,'',url);
+    }
+
+    // click handlers
+    chips.forEach(chip=> chip.addEventListener('click',()=> applyFilter(chip.dataset.filter)));
+
+    // on load (support ?filter=floors or #floors)
+    const initKey = new URL(location).searchParams.get('filter') || (location.hash||'').replace('#','');
+    if(initKey) applyFilter(initKey);
+
+    // Lightbox (focus-safe)
+    const links = $$('a.lightbox');
+    if(links.length){
+      const overlay = document.createElement('div');
+      overlay.className = 'lb';
+      overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap" role="note"></p>';
+      document.body.appendChild(overlay);
+      const img = overlay.querySelector('img');
+      const cap = overlay.querySelector('.lb-cap');
+      const btnClose = overlay.querySelector('.lb-close');
+      let lastFocus = null;
+      const close = ()=>{ overlay.classList.remove('open'); document.body.style.overflow=''; (lastFocus||document.body).focus(); };
+      btnClose.addEventListener('click', close);
+      overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+      overlay.addEventListener('keydown', e=>{ if(e.key==='Tab'){ e.preventDefault(); btnClose.focus(); }});
+
+      links.forEach(a=>{
+        a.addEventListener('click', e=>{
+          e.preventDefault();
+          lastFocus = document.activeElement;
+          img.src = a.getAttribute('href');
+          const c = a.parentElement.querySelector('figcaption');
+          cap.textContent = c ? c.textContent : '';
+          overlay.classList.add('open');
+          document.body.style.overflow='hidden';
+          btnClose.focus();
+        });
+      });
+    }
+
+    // No JS fallback: if disabled, figure[hidden] will still render — we hide via [hidden] only in JS above
+    gallery.removeAttribute('aria-busy');
+  })();
   </script>
-  <style>
-    .chip{padding:.5rem .8rem;border:1px solid #2a2a2a;border-radius:999px;background:#111;cursor:pointer}
-    .chip.is-active{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#000;border-color:transparent}
-    .lb{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.2s;padding:1rem}
-    .lb.open{opacity:1;pointer-events:auto}
-    .lb img{max-width:min(95vw,1200px);max-height:80vh;border-radius:.75rem;box-shadow:var(--shadow)}
-    .lb-close{position:absolute;top:1rem;right:1rem;background:#111;border:1px solid #333;border-radius:.5rem;color:#fff;font-size:1.5rem;line-height:1;padding:.3rem .6rem;cursor:pointer}
-    .lb-cap{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);padding:.4rem .7rem;border-radius:.5rem}
-    @media (hover:hover){ .gitem a:hover img{transform:scale(1.01)} }
-    .gitem img{transition:transform .2s ease}
-  </style>
 </body>
 </html>
