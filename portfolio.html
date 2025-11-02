@@ -6,27 +6,31 @@
   <title>Portfolio | Tillerstead LLC</title>
   <meta name="description" content="See real Tillerstead projects—code-compliant showers, backsplashes, floors, and fireplaces—crafted for durability and clean finishes across Atlantic County, NJ.">
   <meta name="theme-color" content="#0b0b0b">
+  <meta name="color-scheme" content="dark light">
   <link rel="canonical" href="https://tillerstead.com/portfolio.html">
 
-  <!-- FIXED: favicons use your working PNG -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
+  <link rel="preload" as="image" href="/assets/img/Logo-light.png">
 
   <!-- Social -->
   <meta property="og:title" content="Portfolio | Tillerstead LLC">
   <meta property="og:description" content="Selected Tillerstead projects: showers, floors, kitchens, and more.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tillerstead.com/portfolio.html">
-  <meta property="og:image" content="https://tillerstead.com/assets/img/Logo-light.png">
+  <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://tillerstead.com/assets/img/og-image.png">
 
-  <!-- CSS/JS (cache-bust once) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=3">
-  <script defer src="/assets/js/main.js?v=3"></script>
+  <!-- CSS/JS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=4">
+  <script defer src="/assets/js/main.js?v=4"></script>
 
   <!-- Small page styles -->
   <style>
+    .container{max-width:64rem;margin:0 auto;padding-inline:24px}
     .lead{max-width:65ch;color:var(--muted)}
     .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
     .chip{padding:.5rem .85rem;border:1px solid var(--line-2);border-radius:999px;background:var(--elev-1);cursor:pointer}
@@ -56,7 +60,7 @@
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- Compact app bar (same across site) -->
+  <!-- App bar -->
   <header class="appbar">
     <a class="brand" href="/" aria-label="Tillerstead Home">
       <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="112" height="28">
@@ -81,7 +85,7 @@
       <button class="chip" role="tab" aria-selected="false" data-filter="repairs">Repairs</button>
     </div>
 
-    <!-- Gallery mounts here -->
+    <!-- Gallery (starts empty, JS will render — NO stock images here) -->
     <div class="gallery" id="gallery" aria-live="polite"></div>
 
     <section class="section">
@@ -122,7 +126,7 @@
     </div>
   </footer>
 
-  <!-- Manifest of YOUR images (spaces are URL-encoded) -->
+  <!-- ==== PROJECTS: update paths if your filenames differ (case-sensitive) ==== -->
   <script>
   const PROJECTS = [
     {
@@ -176,64 +180,83 @@
     const gallery = $('#gallery');
     const chips = $$('.chip');
 
-    function render(list){
-      gallery.innerHTML = "";
-      list.forEach(p=>{
-        const fig = document.createElement('figure');
-        fig.className = "gitem";
-        fig.dataset.tags = p.tags.join(',');
-        if(p.thumb && p.full){
-          fig.innerHTML = `
-            <a href="${p.full}" class="lightbox" aria-label="Open image: ${p.alt}">
-              <img loading="lazy" decoding="async" src="${p.thumb}" width="800" height="600" alt="${p.alt}">
-            </a>
-            <figcaption>${p.caption}</figcaption>
-          `;
-        } else {
+    function figFor(p){
+      const fig = document.createElement('figure');
+      fig.className = "gitem";
+      fig.dataset.tags = (p.tags||[]).join(',');
+      if(p.thumb && p.full){
+        fig.innerHTML = `
+          <a href="${p.full}" class="lightbox" aria-label="Open image: ${p.alt}">
+            <img loading="lazy" decoding="async" src="${p.thumb}" width="800" height="600" alt="${p.alt}">
+          </a>
+          <figcaption>${p.caption||''}</figcaption>
+        `;
+        // Fallback if image 404s
+        const img = fig.querySelector('img');
+        img.addEventListener('error', ()=>{
           fig.innerHTML = `
             <div class="placeholder">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 5h16v14H4z" stroke="currentColor" stroke-opacity=".5"/><path d="M8 13l3 3 4-5 5 6H4l4-4z" fill="currentColor" fill-opacity=".15"/><circle cx="9" cy="9" r="1.5" fill="currentColor" fill-opacity=".3"/>
               </svg>
-              <p>Photo coming soon</p>
+              <p>Photo not found — check filename</p>
             </div>
-            <figcaption>${p.caption}</figcaption>
+            <figcaption>${p.caption||''}</figcaption>
           `;
-        }
-        gallery.appendChild(fig);
-      });
+        }, { once:true });
+      } else {
+        fig.innerHTML = `
+          <div class="placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 5h16v14H4z" stroke="currentColor" stroke-opacity=".5"/><path d="M8 13l3 3 4-5 5 6H4l4-4z" fill="currentColor" fill-opacity=".15"/><circle cx="9" cy="9" r="1.5" fill="currentColor" fill-opacity=".3"/>
+            </svg>
+            <p>Photo coming soon</p>
+          </div>
+          <figcaption>${p.caption||''}</figcaption>
+        `;
+      }
+      return fig;
     }
 
-    function applyFilter(key){
-      const f = key || 'all';
+    function render(list){
+      gallery.innerHTML = "";
+      list.forEach(p=> gallery.appendChild(figFor(p)));
+      initLightbox(); // re-init after render
+    }
+
+    function applyFilter(key='all'){
       chips.forEach(c=>{
-        const on = c.dataset.filter === f || (f==='all' && c.dataset.filter==='all');
+        const on = c.dataset.filter === key || (key==='all' && c.dataset.filter==='all');
         c.classList.toggle('is-active', on);
         c.setAttribute('aria-selected', on ? 'true':'false');
       });
-      $$('.gitem', gallery).forEach(i=>{
-        const show = f==='all' || (i.dataset.tags||'').split(',').includes(f);
+      const items = $$('.gitem', gallery);
+      items.forEach(i=>{
+        const show = key==='all' || (i.dataset.tags||'').split(',').includes(key);
         i.hidden = !show;
       });
       const url = new URL(location);
-      if(f==='all'){ url.searchParams.delete('filter'); } else { url.searchParams.set('filter', f); }
+      if(key==='all'){ url.searchParams.delete('filter'); } else { url.searchParams.set('filter', key); }
       history.replaceState(null,'',url);
     }
 
     function initLightbox(){
       const links = $$('.lightbox', gallery);
       if(!links.length) return;
-      const overlay = document.createElement('div');
-      overlay.className = 'lb';
-      overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap" role="note"></p>';
-      document.body.appendChild(overlay);
+      let overlay = $('.lb');
+      if(!overlay){
+        overlay = document.createElement('div');
+        overlay.className = 'lb';
+        overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap" role="note"></p>';
+        document.body.appendChild(overlay);
+      }
       const img = overlay.querySelector('img');
       const cap = overlay.querySelector('.lb-cap');
       const btnClose = overlay.querySelector('.lb-close');
       let lastFocus = null;
 
       function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; (lastFocus||document.body).focus(); }
-      btnClose.addEventListener('click', close);
+      btnClose.onclick = close;
       overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
       document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
 
@@ -251,13 +274,13 @@
       });
     }
 
-    // mount
+    // Mount
     render(PROJECTS);
-    initLightbox();
 
-    const initKey = new URL(location).searchParams.get('filter') || (location.hash||'').replace('#','');
-    if(initKey){ applyFilter(initKey); }
-
+    // Filters (wire up clicks)
+    const initKey = new URL(location).searchParams.get('filter') || (location.hash||'').slice(1) || 'all';
+    applyFilter(initKey);
+    chips.forEach(chip=> chip.addEventListener('click', ()=> applyFilter(chip.dataset.filter)));
   })();
   </script>
 </body>
