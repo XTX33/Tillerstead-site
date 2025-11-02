@@ -1,30 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <header class="appbar">
-  <a class="brand" href="/" aria-label="Tillerstead Home">
-    <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44" decoding="async" loading="eager">
-    <span class="sr-only">Tillerstead LLC</span>
-  </a>
-
-  <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
-    <span class="hamburger" aria-hidden="true"></span>
-  </button>
-
-  <nav id="nav" class="site-nav" aria-label="Main">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/portfolio.html">Gallery</a></li>
-      <li><a href="/reviews.html">Reviews</a></li>
-      <li><a href="/legacy.html">Legacy</a></li>
-      <li><a class="btn" href="/contact.html">Start Your Project</a></li>
-      <li><a class="btn btn-accent" href="/financing.html">Flexible Financing</a></li>
-    </ul>
-  </nav>
-
-  <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
-  <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
-</header>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,6 +7,7 @@
   <title>Services | Tillerstead LLC</title>
   <meta name="description" content="Code-compliant shower systems, tile floors and walls, waterproofing, and precision repairs in Atlantic County, NJ.">
   <meta name="theme-color" content="#0b0b0b">
+  <meta name="color-scheme" content="dark light">
   <link rel="canonical" href="https://tillerstead.com/services.html">
 
   <!-- Favicons (use working PNG; svg was deleted) -->
@@ -87,31 +63,31 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">
-        <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="112" height="28">
-        <span>Tillerstead</span>
-      </a>
+  <!-- SINGLE HEADER (kept appbar; removed duplicate .site-header) -->
+  <header class="appbar">
+    <a class="brand" href="/" aria-label="Tillerstead Home">
+      <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44" decoding="async" loading="eager">
+      <span class="sr-only">Tillerstead LLC</span>
+    </a>
 
-      <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
 
-      <nav id="nav" class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/services.html" aria-current="page">Services</a></li>
-          <li><a href="/portfolio.html">Gallery</a></li>
-          <li><a href="/reviews.html">Reviews</a></li>
-          <li><a href="/legacy.html">Legacy</a></li>
-          <li><a href="/contact.html" class="btn">Start Your Project</a></li>
-          <li><a href="/financing.html" class="btn btn-accent">Flexible Financing</a></li>
-        </ul>
-      </nav>
+    <nav id="nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html" aria-current="page">Services</a></li>
+        <li><a href="/portfolio.html">Gallery</a></li>
+        <li><a href="/reviews.html">Reviews</a></li>
+        <li><a href="/legacy.html">Legacy</a></li>
+        <li><a class="btn" href="/contact.html">Start Your Project</a></li>
+        <li><a class="btn btn-accent" href="/financing.html">Flexible Financing</a></li>
+      </ul>
+    </nav>
 
-      <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
-    </div>
+    <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
+    <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
   </header>
 
   <main id="main" class="container pad">
@@ -167,7 +143,8 @@
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img loading="lazy" src="assets/img/Bathroom Remodel.webp"
+            <!-- FIX: added leading slash so the path works -->
+            <img loading="lazy" src="/assets/img/Bathroom Remodel.webp"
                  alt="Finished hardwood room with fresh trim and crown">
           </figure>
           <div class="body">
