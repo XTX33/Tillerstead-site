@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>About | Tillerstead LLC</title>
-  <meta name="description" content="Tillerstead is a locally owned tile, bath, and remodel craft firm in Atlantic County, NJ. We build water-tight showers, clean backsplashes, and durable floors with straight talk and respect for your home.">
+  <meta name="description" content="Locally owned tile, bath, and remodel craft firm in Atlantic County, NJ. Water-tight showers, clean backsplashes, durable floors—built with straight talk and respect for your home.">
   <meta name="theme-color" content="#0b0b0b">
   <meta name="color-scheme" content="dark light">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://tillerstead.com/about.html">
+  <link rel="manifest" href="/manifest.webmanifest">
 
-  <!-- Favicons / Logo (PNG — avoid SVG 404s) -->
+  <!-- Favicons / Logo -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
@@ -26,19 +26,30 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://tillerstead.com/assets/img/og-image.png">
 
-  <!-- CSS / JS (cache-bust) -->
+  <!-- CSS / JS -->
   <link rel="stylesheet" href="/assets/css/style.css?v=6">
   <script defer src="/assets/js/main.js?v=6"></script>
 
   <!-- Page-local enhancements -->
   <style>
-    .about-hero{padding-block:clamp(48px,8vw,96px);text-align:center}
+    .about-hero{padding-block:clamp(56px,8vw,96px);text-align:center}
     .about-hero .lead{max-width:65ch;margin:0 auto;color:var(--muted)}
     .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-block:24px}
     .kpi{padding:16px;border:1px solid var(--line-2);border-radius:12px;background:var(--elev-1)}
-    .bio{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-block:24px}
+
+    .bio{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-block:28px}
     @media (max-width: 900px){.bio{grid-template-columns:1fr}}
+    .bio .card{border:1px solid var(--line-2);background:var(--elev-1);border-radius:12px;padding:18px}
     .prose p{color:var(--fg)}
+
+    /* Proof strip */
+    .proof{padding-block:8px}
+    .proof h2{margin-bottom:.6rem}
+    .proofgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+    .proof figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);background:#111}
+    .proof img{display:block;width:100%;height:auto}
+    .proof figcaption{padding:.55rem .7rem;font-size:.95rem;color:#bdbdbd}
+
     .faqs details{background:var(--elev-1);border:1px solid var(--line-2);border-radius:12px;padding:.9rem 1rem}
     .faqs details+details{margin-top:.6rem}
   </style>
@@ -78,36 +89,24 @@
   }
   </script>
 
-  <!-- FAQPage (HIC updated) -->
+  <!-- FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Are you a licensed and insured Home Improvement Contractor in New Jersey?",
-       "acceptedAnswer":{"@type":"Answer","text":"Yes. Tillerstead LLC is a fully licensed and insured New Jersey Home Improvement Contractor (HIC #13VH10808800), providing residential remodeling, tile, and bath services throughout Atlantic County and nearby regions."}},
-      {"@type":"Question","name":"What areas do you serve in South Jersey?",
-       "acceptedAnswer":{"@type":"Answer","text":"We serve homeowners across Atlantic County, Ocean County, Cape May County, and portions of Burlington County — including Galloway, Egg Harbor Township, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, and Ocean City, NJ."}},
-      {"@type":"Question","name":"Do you handle complete bathroom remodels or tile-only projects?",
-       "acceptedAnswer":{"@type":"Answer","text":"Both. We provide complete bathroom remodels, tub-to-shower conversions, and tile-only installations for showers, backsplashes, and floors, all completed to manufacturer and code standards."}},
-      {"@type":"Question","name":"Are your showers waterproofed to manufacturer standards?",
-       "acceptedAnswer":{"@type":"Answer","text":"Yes. We use bonded waterproofing membranes and foam systems from top brands, with flood testing available when specified. All wet areas meet ANSI A118.10 standards for waterproofing."}},
-      {"@type":"Question","name":"Can I supply my own tile or fixtures?",
-       "acceptedAnswer":{"@type":"Answer","text":"Yes. We welcome labor-only projects where clients provide their own tile or fixtures. We can also source premium materials and deliver them directly to your project site."}},
-      {"@type":"Question","name":"Do you assist with permits or inspections for remodels?",
-       "acceptedAnswer":{"@type":"Answer","text":"Yes. For larger remodels, we help coordinate required permits, communicate with local code officials, and ensure all work complies with New Jersey building and plumbing codes."}},
-      {"@type":"Question","name":"Do you offer free estimates or consultations?",
-       "acceptedAnswer":{"@type":"Answer","text":"Yes. We offer free initial consultations and detailed written estimates for all tile, bath, and remodeling projects in the Atlantic County area."}},
-      {"@type":"Question","name":"What warranties or guarantees do you offer?",
-       "acceptedAnswer":{"@type":"Answer","text":"All Tillerstead installations are backed by workmanship warranties and manufacturer product warranties where applicable. We stand behind our work with clear documentation and service follow-up."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Are you a licensed and insured Home Improvement Contractor in New Jersey?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tillerstead LLC is a fully licensed and insured New Jersey Home Improvement Contractor (HIC #13VH10808800), providing residential remodeling, tile, and bath services throughout Atlantic County and nearby regions."}},
+    {"@type":"Question","name":"What areas do you serve in South Jersey?","acceptedAnswer":{"@type":"Answer","text":"Atlantic County, Ocean County, Cape May County, and portions of Burlington County — including Galloway, Egg Harbor Township, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, and Ocean City, NJ."}},
+    {"@type":"Question","name":"Do you handle complete bathroom remodels or tile-only projects?","acceptedAnswer":{"@type":"Answer","text":"Both. Complete bathroom remodels, tub-to-shower conversions, and tile-only installations for showers, backsplashes, and floors—completed to manufacturer and code standards."}},
+    {"@type":"Question","name":"Are your showers waterproofed to manufacturer standards?","acceptedAnswer":{"@type":"Answer","text":"Yes. We use bonded waterproofing membranes and foam systems, with flood testing available when specified. All wet areas meet ANSI A118.10 standards for waterproofing."}},
+    {"@type":"Question","name":"Can I supply my own tile or fixtures?","acceptedAnswer":{"@type":"Answer","text":"Yes. We welcome labor-only projects. We can also source premium materials and deliver them to your project site."}},
+    {"@type":"Question","name":"Do you assist with permits or inspections for remodels?","acceptedAnswer":{"@type":"Answer","text":"Yes. For larger remodels, we coordinate permits, communicate with local officials, and ensure compliance with New Jersey building and plumbing codes."}},
+    {"@type":"Question","name":"Do you offer free estimates or consultations?","acceptedAnswer":{"@type":"Answer","text":"Yes. Free initial consultations and detailed written estimates for tile, bath, and remodeling projects in the Atlantic County area."}},
+    {"@type":"Question","name":"What warranties or guarantees do you offer?","acceptedAnswer":{"@type":"Answer","text":"Installations include workmanship warranties and manufacturer product warranties where applicable—documented and serviced with clear follow-up."}}
+  ]}
   </script>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- Unified app bar (single header on page) -->
+  <!-- Single, shared header -->
   <header class="appbar">
     <a class="brand" href="/" aria-label="Tillerstead Home">
       <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44" decoding="async" loading="eager">
@@ -147,8 +146,9 @@
       </div>
     </section>
 
+    <!-- Approach + Who -->
     <section class="container bio prose">
-      <div>
+      <div class="card">
         <h2>Approach</h2>
         <ul>
           <li>Free estimates, detailed proposals, straight talk</li>
@@ -157,13 +157,47 @@
         </ul>
         <p><a class="btn btn-accent" href="/contact.html">Request an Estimate</a></p>
       </div>
-      <div>
+      <div class="card">
         <h2>Who I Am</h2>
         <p>I’m Devon Tyler, founder and licensed contractor (NJ HIC <b>13VH10808800</b>). I manage every project personally and stand behind the work with clear documentation and service follow-up.</p>
+        <p>My goal is simple: deliver craft you can trust—showers that don’t leak, floors that stay true, and kitchens that feel like home.</p>
       </div>
     </section>
 
-    <section class="container faqs">
+    <!-- Proof in Pictures (uses your uploaded images) -->
+    <section class="container proof" aria-labelledby="proof-title">
+      <h2 id="proof-title">Proof in Pictures</h2>
+      <div class="proofgrid">
+        <figure>
+          <img loading="lazy" decoding="async" src="/assets/img/shower-white.jpg.JPG" alt="Subway-tile shower with bench and niche">
+          <figcaption>Water-tight shower • bench & niche</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="/assets/img/marble-bath.jpg.JPG" alt="Marble-look bathroom, large-format layout">
+          <figcaption>Large-format alignment • marble look</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="/assets/img/kitchen-green.jpg.JPG" alt="Kitchen backsplash with clean outlet cuts">
+          <figcaption>Backsplash • clean outlets & edges</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="/assets/img/kitchen-hex.jpg.JPG" alt="Hex backsplash detail near range hood">
+          <figcaption>Hex feature • crisp terminations</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="/assets/img/shower-blue.jpg.JPG" alt="Patterned shower feature wall">
+          <figcaption>Patterned feature • balanced layout</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="/assets/img/hardwood-room.jpg.JPG" alt="Hardwood room with new trim">
+          <figcaption>Floors & trim • clean transitions</figcaption>
+        </figure>
+      </div>
+      <p style="margin:.85rem 0 0"><a class="btn" href="/portfolio.html">See full gallery</a></p>
+    </section>
+
+    <!-- FAQs -->
+    <section class="container faqs" style="margin-top:20px">
       <h2>Common Questions</h2>
       <details>
         <summary>Are you licensed and insured?</summary>
@@ -171,11 +205,11 @@
       </details>
       <details>
         <summary>Do you work with large-format tile?</summary>
-        <p>Yes. We prep substrates for flatness and use the correct mortars, trowels, and movement joints.</p>
+        <p>Yes. We prep substrates for flatness and use the correct mortars, trowels, and movement joints per manufacturer standards.</p>
       </details>
       <details>
         <summary>Can you provide references or past projects?</summary>
-        <p>Yes. See the <a href="/portfolio.html">Gallery</a> and ask for full references.</p>
+        <p>Yes. Browse the <a href="/portfolio.html">Gallery</a> and ask for full references.</p>
       </details>
     </section>
   </main>
