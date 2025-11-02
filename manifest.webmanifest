@@ -1,15 +1,54 @@
 {
-  "name": "Tillerstead LLC",
+  "name": "Tillerstead LLC — Tile • Bath • Remodel",
   "short_name": "Tillerstead",
-  "start_url": "/",
+  "description": "Licensed New Jersey Home Improvement Contractor providing tile, bath, and remodeling services across Atlantic County and South Jersey. Clean work, code-compliant installs, and lasting craftsmanship.",
+  "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0b0b0b",
-  "theme_color": "#0b0b0b",
+  "theme_color": "#d4af37",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["home-improvement", "construction", "tile", "remodeling"],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Request an Estimate",
+      "short_name": "Estimate",
+      "url": "/contact.html",
+      "icons": [
+        { "src": "/assets/img/icons/estimate-72.png", "sizes": "72x72", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "View Portfolio",
+      "short_name": "Portfolio",
+      "url": "/portfolio.html",
+      "icons": [
+        { "src": "/assets/img/icons/gallery-72.png", "sizes": "72x72", "type": "image/png" }
+      ]
+    }
+  ],
   "icons": [
     {
-      "src": "/assets/img/logo.svg",
-      "sizes": "96x96",
-      "type": "image/svg+xml"
+      "src": "/assets/img/Logo-light.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/Logo-dark.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
