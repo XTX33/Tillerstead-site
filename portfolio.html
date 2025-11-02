@@ -58,23 +58,55 @@
       {"@type":"ListItem","position":2,"name":"Portfolio","item":"https://tillerstead.com/portfolio.html"}
     ]
   }
-  </script>
-
-  <!-- LocalBusiness (compact; primary Organization lives on home page) -->
-  <script type="application/ld+json">
+  <script>
+const PROJECTS = [
+  /* AFTER — main bathroom result */
   {
-    "@context":"https://schema.org",
-    "@type":"HomeAndConstructionBusiness",
-    "name":"Tillerstead LLC",
-    "url":"https://tillerstead.com/",
-    "telephone":"+1-609-665-9350",
-    "email":"info@tillerstead.com",
-    "image":"https://tillerstead.com/assets/img/og-image.png",
-    "address":{"@type":"PostalAddress","streetAddress":"325 E. Jimmie Leeds Road, Suite 7-333","addressLocality":"Galloway","addressRegion":"NJ","postalCode":"08205","addressCountry":"US"},
-    "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"],
-    "knowsAbout":["shower waterproofing","tile installation","backsplash","large format tile","grout remediation"]
+    id: "bathroom-final",
+    tags: ["showers"],
+    thumb: "/assets/img/Bathroom Remodel Final.webp",
+    full:  "/assets/img/Bathroom Remodel Final 2.webp",
+    alt:   "Bathroom remodel — finished shower and walls, clean grout lines",
+    caption: "Bathroom remodel (final) — code-compliant wet area with clean lines. Atlantic County."
+  },
+  /* DETAIL / ALT ANGLE */
+  {
+    id: "bathroom-detail",
+    tags: ["showers"],
+    thumb: "/assets/img/Bathroom Remodel 2.webp",
+    full:  "/assets/img/Bathroom Remodel 2.webp",
+    alt:   "Shower detail — tile layout and niche",
+    caption: "Shower detail — layout around niche, even joints, proper cuts."
+  },
+  /* PROGRESS */
+  {
+    id: "bathroom-progress",
+    tags: ["showers"],
+    thumb: "/assets/img/Bathroom Remodel.webp",
+    full:  "/assets/img/Bathroom Remodel.webp",
+    alt:   "Bathroom remodel in progress",
+    caption: "In-progress — substrate prep and staging prior to grout."
+  },
+  /* CEILING REPAIR (non-tile) */
+  {
+    id: "ceiling-repair",
+    tags: ["repairs"],
+    thumb: "/assets/img/Ceiling-repair.webp",
+    full:  "/assets/img/Ceiling-repair.webp",
+    alt:   "Ceiling repair — patch and finish",
+    caption: "Ceiling repair — patched, skimmed, and finished for paint."
+  },
+  /* UPCOMING WORK — shows “Photo coming soon” card automatically */
+  {
+    id: "backsplash-upcoming",
+    tags: ["backsplashes"],
+    thumb: "",
+    full:  "",
+    alt:   "Subway backsplash planned",
+    caption: "Subway backsplash — crisp outlets, sealed edges. Photo coming soon."
   }
-  </script>
+];
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
