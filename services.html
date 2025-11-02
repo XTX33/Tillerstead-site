@@ -4,105 +4,57 @@
   <!-- Essentials -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Services | Tillerstead LLC</title>
-  <meta name="description" content="Showers that don’t leak, floors that stay true, and backsplashes cut clean. NJ-licensed contractor serving Atlantic County & South Jersey.">
+  <title>About | Tillerstead LLC</title>
+  <meta name="description" content="Locally owned tile, bath, and remodel contractor serving Atlantic County, NJ. Licensed & insured for quality you can trust.">
   <meta name="theme-color" content="#0b0b0b">
   <meta name="color-scheme" content="dark light">
-  <link rel="canonical" href="https://tillerstead.com/services.html">
-  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="robots" content="index,follow">
 
-  <!-- Icons -->
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tillerstead.com/about.html">
+
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
-  <link rel="preload" as="image" href="/assets/img/Logo-light.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 
-  <!-- Site CSS / JS (bump version to bust cache) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=11">
-  <script defer src="/assets/js/main.js?v=11"></script>
-
-  <!-- Social -->
-  <meta property="og:title" content="Services | Tillerstead LLC">
-  <meta property="og:description" content="Code-compliant shower systems, tile floors & walls, waterproofing, and precision repairs—done right.">
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="About | Tillerstead LLC">
+  <meta property="og:description" content="Tillerstead LLC — Trusted tile, bath, and remodel craftsmanship across South Jersey.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tillerstead.com/services.html">
+  <meta property="og:url" content="https://tillerstead.com/about.html">
   <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Page-local styles (menu + footer readability, safe-area for iPhone) -->
-  <style>
-    .container{max-width:64rem;margin:0 auto;padding-inline:24px}
-    .pad{padding-block:32px}
-    .lead{max-width:65ch;color:var(--muted)}
-    .chip{padding:.5rem .85rem;border:1px solid var(--line-2);border-radius:999px;background:var(--elev-1);display:inline-block;white-space:nowrap}
-    .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.25rem 0}
-    .service-card{border:1px solid var(--line-2);background:var(--elev-1);border-radius:12px;overflow:clip}
-    .service-card figure{margin:0}
-    .service-card img{display:block;width:100%;height:auto}
-    .service-card .body{padding:1rem}
-    .service-card h3{margin:0 0 .5rem}
-    .thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.5rem;margin-top:.75rem}
-    .thumbs img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line-1)}
-    .section{padding-block:28px;border-top:1px solid var(--line-1)}
-    h1,h2{scroll-margin-top:84px}
+  <!-- CSS / JS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=9">
+  <script defer src="/assets/js/main.js?v=9"></script>
 
-    /* Unified header: safe-area padding for iPhones, visible call button */
-    .appbar{
-      position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;
-      padding:calc(8px + env(safe-area-inset-top)) 16px 8px;
-      background:rgba(11,11,11,.95);backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .brand img{height:44px;width:auto;display:block}
-    @media (max-width:440px){ .brand img{height:34px} }
-    .call-btn{font-weight:800;padding:10px 14px;border-radius:12px;background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.3)}
-    @media (max-width:420px){ .call-btn{flex:1 1 100%;text-align:center} }
-
-    /* Mobile nav overlay: readable on dark */
-    .site-nav{
-      /* hidden by default on mobile; main.js toggles .open */
-    }
-    @media (max-width:820px){
-      .site-nav{
-        position:fixed; inset:60px 0 auto 0;
-        background:rgba(15,15,15,0.98);
-        backdrop-filter: blur(10px) saturate(140%);
-        transform:translateY(-120%); transition:transform .25s ease;
-        border-bottom:1px solid rgba(255,255,255,.15);
-        padding:1.25rem 1.25rem 2rem; z-index:9999;
-      }
-      .site-nav.open{ transform:translateY(0); }
-      .site-nav ul{display:grid; gap:.6rem}
-      .site-nav a{ color:#f5f5f5 !important; font-weight:700; font-size:1.1rem; text-decoration:none }
-      .site-nav a:hover, .site-nav a:focus{ color:#e8cf7a !important }
-      .site-nav .btn{ background:linear-gradient(#e8cf7a,#b8922f); color:#111 !important; border:none; border-radius:10px; padding:.8rem 1.1rem }
-      .nav-toggle{ z-index:10000; position:relative }
-    }
-
-    /* Footer: big centered logo + light links */
-    .site-footer{padding-block:32px;background:#0f0f0f;border-top:1px solid rgba(255,255,255,.08)}
-    .site-footer a{color:#e8cf7a;text-decoration:none}
-    .site-footer a:hover{text-decoration:underline}
-  </style>
-
-  <!-- Breadcrumbs -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://tillerstead.com/"},
-    {"@type":"ListItem","position":2,"name":"Services","item":"https://tillerstead.com/services.html"}]}
-  </script>
-
-  <!-- LocalBusiness -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness",
-   "name":"Tillerstead LLC","url":"https://tillerstead.com/","telephone":"+1-609-665-9350","email":"info@tillerstead.com",
-   "image":"https://tillerstead.com/assets/img/Logo-light.png","logo":"https://tillerstead.com/assets/img/Logo-light.png",
-   "address":{"@type":"PostalAddress","streetAddress":"325 E. Jimmie Leeds Road, Suite 7-333","addressLocality":"Galloway","addressRegion":"NJ","postalCode":"08205","addressCountry":"US"},
-   "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"]}
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Tillerstead LLC",
+    "url": "https://tillerstead.com/",
+    "logo": "https://tillerstead.com/assets/img/Logo-light.png",
+    "image": "https://tillerstead.com/assets/img/og-image.png",
+    "description": "Tile, bath, and remodel contractor serving Atlantic County, NJ.",
+    "telephone": "+1-609-665-9350",
+    "email": "info@tillerstead.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
+      "addressLocality": "Galloway",
+      "addressRegion": "NJ",
+      "postalCode": "08205",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Atlantic County, NJ", "Galloway, NJ", "Atlantic City, NJ"]
+  }
   </script>
 </head>
-
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
@@ -265,7 +217,6 @@
       or <a class="btn primary" href="tel:+16096659350" aria-label="Call Tillerstead now">Call (609) 665-9350</a>
     </p>
   </main>
-
   <!-- Big-logo Footer -->
   <footer class="site-footer">
     <div class="container" style="text-align:center">
