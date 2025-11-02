@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Essentials -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,10 +12,15 @@
   <link rel="canonical" href="https://tillerstead.com/services.html">
   <link rel="manifest" href="/manifest.webmanifest">
 
-  <!-- Favicons -->
+  <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
+  <link rel="preload" as="image" href="/assets/img/Logo-light.png">
+
+  <!-- Site CSS / JS (bump version to bust cache) -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=11">
+  <script defer src="/assets/js/main.js?v=11"></script>
 
   <!-- Social -->
   <meta property="og:title" content="Services | Tillerstead LLC">
@@ -24,11 +30,7 @@
   <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Site CSS / JS -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=9">
-  <script defer src="/assets/js/main.js?v=9"></script>
-
-  <!-- Page-local styles -->
+  <!-- Page-local styles (menu + footer readability, safe-area for iPhone) -->
   <style>
     .container{max-width:64rem;margin:0 auto;padding-inline:24px}
     .pad{padding-block:32px}
@@ -45,25 +47,43 @@
     .section{padding-block:28px;border-top:1px solid var(--line-1)}
     h1,h2{scroll-margin-top:84px}
 
-    /* --- fixes: header safe-area + stronger CTA --- */
+    /* Unified header: safe-area padding for iPhones, visible call button */
     .appbar{
-      position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;
       padding:calc(8px + env(safe-area-inset-top)) 16px 8px;
-      background:rgba(11,11,11,.9);backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(11,11,11,.95);backdrop-filter:saturate(140%) blur(8px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
     .brand img{height:44px;width:auto;display:block}
-    @media (max-width:440px){ .brand img{height:32px} }
-    .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none}
-    .btn.primary{background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.3)}
-    .btn.ghost{background:#161616;color:#fff;border:1px solid rgba(255,255,255,.12)}
-    .call-btn{font-weight:800;padding:12px 16px;border-radius:12px;background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.3)}
+    @media (max-width:440px){ .brand img{height:34px} }
+    .call-btn{font-weight:800;padding:10px 14px;border-radius:12px;background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.3)}
     @media (max-width:420px){ .call-btn{flex:1 1 100%;text-align:center} }
 
-    /* --- footer: big centered logo --- */
+    /* Mobile nav overlay: readable on dark */
+    .site-nav{
+      /* hidden by default on mobile; main.js toggles .open */
+    }
+    @media (max-width:820px){
+      .site-nav{
+        position:fixed; inset:60px 0 auto 0;
+        background:rgba(15,15,15,0.98);
+        backdrop-filter: blur(10px) saturate(140%);
+        transform:translateY(-120%); transition:transform .25s ease;
+        border-bottom:1px solid rgba(255,255,255,.15);
+        padding:1.25rem 1.25rem 2rem; z-index:9999;
+      }
+      .site-nav.open{ transform:translateY(0); }
+      .site-nav ul{display:grid; gap:.6rem}
+      .site-nav a{ color:#f5f5f5 !important; font-weight:700; font-size:1.1rem; text-decoration:none }
+      .site-nav a:hover, .site-nav a:focus{ color:#e8cf7a !important }
+      .site-nav .btn{ background:linear-gradient(#e8cf7a,#b8922f); color:#111 !important; border:none; border-radius:10px; padding:.8rem 1.1rem }
+      .nav-toggle{ z-index:10000; position:relative }
+    }
+
+    /* Footer: big centered logo + light links */
     .site-footer{padding-block:32px;background:#0f0f0f;border-top:1px solid rgba(255,255,255,.08)}
-    .site-footer a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.25)}
-    .site-footer a:hover{ text-decoration-color:rgba(255,255,255,.6) }
+    .site-footer a{color:#e8cf7a;text-decoration:none}
+    .site-footer a:hover{text-decoration:underline}
   </style>
 
   <!-- Breadcrumbs -->
@@ -82,10 +102,11 @@
    "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"]}
   </script>
 </head>
+
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- SINGLE HEADER -->
+  <!-- Unified Header -->
   <header class="appbar">
     <a class="brand" href="/" aria-label="Tillerstead Home">
       <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44" decoding="async" loading="eager">
@@ -245,7 +266,7 @@
     </p>
   </main>
 
-  <!-- BIG-logo footer -->
+  <!-- Big-logo Footer -->
   <footer class="site-footer">
     <div class="container" style="text-align:center">
       <a href="/" class="footer-logo" aria-label="Tillerstead Home">
@@ -267,7 +288,9 @@
         <a href="/services.html" aria-current="page">Services</a> •
         <a href="/portfolio.html">Gallery</a> •
         <a href="/about.html">About</a> •
-        <a href="/contact.html">Contact</a>
+        <a href="/contact.html">Contact</a> •
+        <a href="/privacy.html">Privacy</a> •
+        <a href="/terms.html">Terms</a>
       </p>
 
       <p class="copyright" style="color:#9a9a9a">© 2025 Tillerstead LLC. All rights reserved.</p>
