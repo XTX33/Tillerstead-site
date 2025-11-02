@@ -6,95 +6,117 @@
   <title>Contact | Tillerstead LLC</title>
   <meta name="description" content="Contact Tillerstead for estimates and scheduling.">
   <meta name="theme-color" content="#0b0b0b">
-  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="preload" as="image" href="/assets/img/logo.svg">
+  <link rel="canonical" href="https://tillerstead.com/contact.html">
+
+  <!-- Favicons (PNG, matches your repo) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
+  <link rel="shortcut icon" href="/assets/img/Logo-light.png">
+
+  <!-- Social -->
   <meta property="og:title" content="Contact | Tillerstead LLC">
   <meta property="og:description" content="Contact Tillerstead for estimates and scheduling.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/img/og-image.png">
-  <meta property="og:url" content="https://tillerstead.com/">
+  <meta property="og:url" content="https://tillerstead.com/contact.html">
+  <meta property="og:image" content="https://tillerstead.com/assets/img/Logo-light.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script defer src="/assets/js/main.js"></script>
+
+  <!-- CSS & JS (cache-bust once if needed) -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=3">
+  <script defer src="/assets/js/main.js?v=3"></script>
+
+  <!-- Schema -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Tillerstead LLC",
-  "url": "https://tillerstead.com/",
-  "logo": "https://tillerstead.com/assets/img/logo.svg",
-  "image": "https://tillerstead.com/assets/img/og-image.png",
-  "description": "Tile, bath and remodel craftsman serving Atlantic County, NJ.",
-  "areaServed": [
-    "Atlantic County, NJ",
-    "Galloway, NJ",
-    "Atlantic City, NJ"
-  ],
-  "telephone": "+1-609-665-9350",
-  "email": "Tyler@Tillerstead.com",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
-    "addressLocality": "Galloway",
-    "addressRegion": "NJ",
-    "postalCode": "08205",
-    "addressCountry": "US"
-  },
-  "foundingDate": "2020-01-01"
-}
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Tillerstead LLC",
+    "url": "https://tillerstead.com/",
+    "logo": "https://tillerstead.com/assets/img/Logo-light.png",
+    "image": "https://tillerstead.com/assets/img/Logo-light.png",
+    "description": "Tile, bath and remodel craftsman serving Atlantic County, NJ.",
+    "areaServed": ["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"],
+    "telephone": "+1-609-665-9350",
+    "email": "Tyler@Tillerstead.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
+      "addressLocality": "Galloway",
+      "addressRegion": "NJ",
+      "postalCode": "08205",
+      "addressCountry": "US"
+    }
+  }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">
-        <img src="/assets/img/logo.svg" alt="Tillerstead logo">
-        <span>Tillerstead</span>
-      </a>
-      <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-      <nav id="nav" class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html" class="btn btn-accent">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
-    </div>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- Compact app bar (same as Home) -->
+  <header class="appbar">
+    <a class="brand" href="/" aria-label="Tillerstead Home">
+      <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="112" height="28">
+      <span class="sr-only">Tillerstead LLC</span>
+    </a>
+    <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
   </header>
 
-  <main id="main" class="container pad">
-    <h1>Contact</h1>
-    <p class="lead">Tell us about your project and desired timeline.</p>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <div class="grid">
-        <label>Full Name
-          <input name="name" required autocomplete="name" placeholder="Your name">
-        </label>
-        <label>Email
-          <input name="email" type="email" required autocomplete="email" placeholder="you@example.com">
-        </label>
-        <label>Phone
-          <input name="phone" type="tel" autocomplete="tel" placeholder="(609) 555-1234">
-        </label>
-        <label>City / Area
-          <input name="city" placeholder="Galloway, Atlantic County">
-        </label>
+  <main id="main" class="container">
+    <section class="hero" style="padding-block:48px">
+      <h1>Contact</h1>
+      <p class="lead">Tell us about your project and desired timeline.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn primary" href="tel:+16096659350">Call Now</a>
+        <a class="btn ghost" href="mailto:Tyler@Tillerstead.com">Email</a>
       </div>
-      <label>Project Details
-        <textarea name="message" rows="6" placeholder="Shower pan + tile walls, timing, budget range..."></textarea>
-      </label>
-      <button class="btn btn-accent" type="submit">Send</button>
-    </form>
-    <p>Prefer email? <a href="mailto:Tyler@Tillerstead.com">Tyler@Tillerstead.com</a></p>
+    </section>
+
+    <section class="section" style="border-top:0;padding-top:0">
+      <!-- Netlify-ready form with honeypot -->
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="sr-only">
+          <label>Don’t fill this out if you're human:
+            <input name="bot-field" autocomplete="off">
+          </label>
+        </p>
+
+        <div class="grid">
+          <label for="name">Full Name
+            <input id="name" name="name" required autocomplete="name" placeholder="Your name">
+          </label>
+          <label for="email">Email
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+          </label>
+          <label for="phone">Phone
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(609) 665-9350">
+          </label>
+          <label for="city">City / Area
+            <input id="city" name="city" placeholder="Galloway, Atlantic County">
+          </label>
+        </div>
+
+        <label for="message">Project Details
+          <textarea id="message" name="message" rows="6" placeholder="Shower pan + tile walls, timing, budget range..."></textarea>
+        </label>
+
+        <div class="btn-row">
+          <button class="btn primary" type="submit">Send</button>
+          <a class="btn ghost" href="mailto:Tyler@Tillerstead.com">Email Instead</a>
+        </div>
+      </form>
+
+      <p class="mt-1">Prefer email? <a href="mailto:Tyler@Tillerstead.com">Tyler@Tillerstead.com</a></p>
+      <p>Or call/text: <a href="tel:+16096659350">(609) 665-9350</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Response Time</h2>
+      <p class="lead">Most inquiries are answered the same day. For urgent issues (leaks, safety), call for the fastest response.</p>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -102,6 +124,7 @@
           <h4>Tillerstead LLC</h4>
           <p>Tile • Bath • Remodel — Atlantic County, NJ</p>
           <p><a href="mailto:Tyler@Tillerstead.com">Tyler@Tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
+          <p><small>NJ HIC: <b>ADD YOUR NUMBER</b></small></p>
         </div>
         <div>
           <h4>Links</h4>
@@ -109,7 +132,7 @@
             <li><a href="/services.html">Services</a></li>
             <li><a href="/portfolio.html">Portfolio</a></li>
             <li><a href="/about.html">About</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/contact.html" aria-current="page">Contact</a></li>
           </ul>
         </div>
         <div>
