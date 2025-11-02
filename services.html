@@ -5,26 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Services | Tillerstead LLC</title>
-  <meta name="description" content="Code-compliant shower systems, tile floors and walls, waterproofing, and precision repairs in Atlantic County, NJ.">
+  <meta name="description" content="Showers that don’t leak, floors that stay true, and backsplashes cut clean. NJ-licensed contractor serving Atlantic County & South Jersey.">
   <meta name="theme-color" content="#0b0b0b">
   <meta name="color-scheme" content="dark light">
   <link rel="canonical" href="https://tillerstead.com/services.html">
+  <link rel="manifest" href="/manifest.webmanifest">
 
-  <!-- Favicons (use working PNG; svg was deleted) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
 
   <!-- Social -->
   <meta property="og:title" content="Services | Tillerstead LLC">
-  <meta property="og:description" content="Code-compliant shower systems, tile, waterproofing, and repairs—done right.">
+  <meta property="og:description" content="Code-compliant shower systems, tile floors & walls, waterproofing, and precision repairs—done right.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tillerstead.com/services.html">
-  <meta property="og:image" content="https://tillerstead.com/assets/img/Logo-light.png">
+  <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="/assets/css/style.css?v=4">
-  <script defer src="/assets/js/main.js?v=4"></script>
+  <!-- CSS / JS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=8">
+  <script defer src="/assets/js/main.js?v=8"></script>
 
   <!-- Breadcrumbs -->
   <script type="application/ld+json">
@@ -46,8 +48,12 @@
    "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"]}
   </script>
 
-  <!-- Tiny page-local styles so the figures look great -->
+  <!-- Page-local styles -->
   <style>
+    .container{max-width:64rem;margin:0 auto;padding-inline:24px}
+    .pad{padding-block:32px}
+    .lead{max-width:65ch;color:var(--muted)}
+    .chip{padding:.5rem .85rem;border:1px solid var(--line-2);border-radius:999px;background:var(--elev-1);display:inline-block;white-space:nowrap}
     .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.25rem 0}
     .service-card{border:1px solid var(--line-2);background:var(--elev-1);border-radius:12px;overflow:clip}
     .service-card figure{margin:0}
@@ -56,14 +62,14 @@
     .service-card h3{margin:0 0 .5rem}
     .thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.5rem;margin-top:.75rem}
     .thumbs img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line-1)}
-    .chip{padding:.5rem .85rem;border:1px solid var(--line-2);border-radius:999px;background:var(--elev-1);display:inline-block}
+    .section{padding-block:28px;border-top:1px solid var(--line-1)}
+    h1,h2{scroll-margin-top:84px}
   </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- SINGLE HEADER (kept appbar; removed duplicate .site-header) -->
+  <!-- SINGLE HEADER -->
   <header class="appbar">
     <a class="brand" href="/" aria-label="Tillerstead Home">
       <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44" decoding="async" loading="eager">
@@ -91,43 +97,50 @@
   </header>
 
   <main id="main" class="container pad">
-    <h1>Services</h1>
-    <p class="lead">Detailed craftsmanship, transparent scope, and materials that last—delivered with clean jobsites and clear communication.</p>
-
-    <nav aria-label="Services sections" class="container" style="margin:.5rem 0 1.25rem 0">
-      <ul class="unstyled" style="display:flex;gap:.6rem;flex-wrap:wrap">
-        <li><a class="chip" href="#showers">Shower Systems</a></li>
-        <li><a class="chip" href="#floors-walls">Floors &amp; Walls</a></li>
-        <li><a class="chip" href="#backsplashes">Backsplashes</a></li>
-        <li><a class="chip" href="#repairs">Repairs</a></li>
-        <li><a class="chip" href="#drywall">Drywall</a></li>
-      </ul>
-    </nav>
+    <header>
+      <h1>Services</h1>
+      <p class="lead">Detailed craftsmanship, transparent scope, and materials that last—delivered with clean jobsites and clear communication.</p>
+      <nav aria-label="Services sections" style="margin:.5rem 0 1.25rem 0">
+        <ul class="unstyled" style="display:flex;gap:.6rem;flex-wrap:wrap">
+          <li><a class="chip" href="#showers">Shower Systems</a></li>
+          <li><a class="chip" href="#floors-walls">Floors &amp; Walls</a></li>
+          <li><a class="chip" href="#backsplashes">Backsplashes</a></li>
+          <li><a class="chip" href="#repairs">Repairs</a></li>
+          <li><a class="chip" href="#drywall">Drywall</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- Shower Systems -->
-    <section id="showers" class="section" style="border-top:1px solid var(--line-1)">
+    <section id="showers" class="section">
       <h2>Shower Systems</h2>
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img loading="lazy" decoding="async"
-                 src="/assets/img/shower-white.jpg.JPG"
-                 alt="White subway-tile shower with bench, niche and hex floor">
+            <img
+              src="/assets/img/shower-white.jpg.JPG"
+              alt="White subway-tile shower with bench, niche and hex floor"
+              loading="lazy" decoding="async" width="1024" height="768"
+              srcset="/assets/img/shower-white.jpg.JPG 1024w"
+              sizes="(max-width: 640px) 100vw, 50vw">
           </figure>
           <div class="body">
             <h3>Bonded Waterproofing &amp; Pans</h3>
             <p>Traditional or foam pans with ANSI A118.10 membranes. Flood testing available, proper pre-slope, curbs and niches.</p>
             <div class="thumbs">
-              <img loading="lazy" src="/assets/img/shower-blue.jpg.JPG" alt="Decorative blue patterned shower wall detail">
+              <img loading="lazy" src="/assets/img/shower-blue.jpg.JPG" alt="Blue patterned shower feature wall" width="640" height="480">
             </div>
           </div>
         </article>
 
         <article class="service-card">
           <figure>
-            <img loading="lazy" decoding="async"
-                 src="/assets/img/bathroom-gray.jpg.JPG"
-                 alt="Modern bathroom with large glass shower, gray vanity and wood-look tile floor">
+            <img
+              src="/assets/img/bathroom-gray.jpg.JPG"
+              alt="Modern bathroom with glass shower, gray vanity and wood-look tile floor"
+              loading="lazy" decoding="async" width="1024" height="768"
+              srcset="/assets/img/bathroom-gray.jpg.JPG 1024w"
+              sizes="(max-width: 640px) 100vw, 50vw">
           </figure>
           <div class="body">
             <h3>Large-Format Layouts</h3>
@@ -138,14 +151,16 @@
     </section>
 
     <!-- Floors & Walls -->
-    <section id="floors-walls" class="section" style="border-top:1px solid var(--line-1)">
+    <section id="floors-walls" class="section">
       <h2>Floors &amp; Walls</h2>
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <!-- FIX: added leading slash so the path works -->
-            <img loading="lazy" src="/assets/img/Bathroom Remodel.webp"
-                 alt="Finished hardwood room with fresh trim and crown">
+            <!-- NOTE: file with space must be encoded to avoid 404 on GitHub Pages -->
+            <img
+              src="/assets/img/Bathroom%20Remodel.webp"
+              alt="Tiled room with clean transitions and fresh trim"
+              loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Substrates &amp; Tile</h3>
@@ -155,8 +170,10 @@
 
         <article class="service-card">
           <figure>
-            <img loading="lazy" src="/assets/img/marble-bath.jpg.JPG"
-                 alt="Polished marble bath with full-height wall tile and vanity top">
+            <img
+              src="/assets/img/marble-bath.jpg.JPG"
+              alt="Polished marble bath with full-height wall tile and vanity top"
+              loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Premium Materials</h3>
@@ -167,20 +184,22 @@
     </section>
 
     <!-- Backsplashes -->
-    <section id="backsplashes" class="section" style="border-top:1px solid var(--line-1)">
+    <section id="backsplashes" class="section">
       <h2>Backsplashes</h2>
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img loading="lazy" src="/assets/img/kitchen-green.jpg.JPG"
-                 alt="Kitchen with green cabinets and white subway backsplash">
+            <img
+              src="/assets/img/kitchen-green.jpg.JPG"
+              alt="Kitchen with green cabinets and clean white subway backsplash"
+              loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Clean Layouts</h3>
             <p>Outlets cut tight, edges sealed, and patterns aligned—stacked, staggered, herringbone or hex.</p>
             <div class="thumbs">
-              <img loading="lazy" src="/assets/img/kitchen-hex.jpg.JPG" alt="Hex tile backsplash detail">
-              <img loading="lazy" src="/assets/img/backsplash-white.jpg.JPG" alt="White subway backsplash close-up">
+              <img loading="lazy" src="/assets/img/kitchen-hex.jpg.JPG" alt="Hex tile backsplash detail" width="480" height="360">
+              <img loading="lazy" src="/assets/img/backsplash-white.jpg.JPG" alt="White subway backsplash close-up" width="480" height="360">
             </div>
           </div>
         </article>
@@ -188,30 +207,34 @@
     </section>
 
     <!-- Repairs -->
-    <section id="repairs" class="section" style="border-top:1px solid var(--line-1)">
+    <section id="repairs" class="section">
       <h2>Repairs</h2>
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img loading="lazy" src="/assets/img/tile-pattern-dark.jpg.JPG"
-                 alt="Dark tile pattern for patch-matching reference">
+            <img
+              src="/assets/img/tile-pattern-dark.jpg.JPG"
+              alt="Dark modular tile pattern used for patch matching"
+              loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Leak &amp; Grout Remediation</h3>
-            <p>Targeted fixes—regrout, recaulk, color seal, and movement joints—to extend service life without a full remodel.</p>
+            <p>Targeted fixes—regrout, recaulk, color-seal, and movement joints—to extend service life without a full remodel.</p>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Drywall -->
-    <section id="drywall" class="section" style="border-top:1px solid var(--line-1)">
+    <section id="drywall" class="section">
       <h2>Drywall</h2>
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img loading="lazy" src="/assets/img/drywall-greenboard.jpg.JPG"
-                 alt="Moisture-resistant greenboard with fastener patching">
+            <img
+              src="/assets/img/drywall-greenboard.jpg.JPG"
+              alt="Moisture-resistant greenboard with fastener patching"
+              loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Prep for a Clean Finish</h3>
