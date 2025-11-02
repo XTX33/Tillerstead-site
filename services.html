@@ -3,30 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services | Tillerstead LLC</title>
-  <meta name="description" content="Shower systems, tile floors & walls, backsplashes, waterproofing, precise repairs, drywall, and carpentry — code-compliant and built to last in Atlantic County, NJ.">
-  <meta name="theme-color" content="#0b0b0b">
-  <meta name="color-scheme" content="dark light">
 
-  <!-- Canonical -->
+  <title>Services | Tillerstead LLC</title>
+  <meta name="description" content="Code-compliant shower systems, tile floors and walls, waterproofing, and precision repairs in Atlantic County, NJ.">
+  <meta name="theme-color" content="#0b0b0b">
   <link rel="canonical" href="https://tillerstead.com/services.html">
 
-  <!-- Favicons / Logo (PNG to avoid SVG 404) -->
+  <!-- Favicons (use working PNG; svg was deleted) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
-  <link rel="preload" as="image" href="/assets/img/Logo-light.png">
 
   <!-- Social -->
   <meta property="og:title" content="Services | Tillerstead LLC">
-  <meta property="og:description" content="Code-compliant shower systems, tile, waterproofing, drywall, carpentry, and repairs—done right.">
+  <meta property="og:description" content="Code-compliant shower systems, tile, waterproofing, and repairs—done right.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tillerstead.com/services.html">
-  <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
+  <meta property="og:image" content="https://tillerstead.com/assets/img/Logo-light.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://tillerstead.com/assets/img/og-image.png">
 
-  <!-- CSS / JS -->
   <link rel="stylesheet" href="/assets/css/style.css?v=4">
   <script defer src="/assets/js/main.js?v=4"></script>
 
@@ -39,168 +34,217 @@
 
   <!-- LocalBusiness (concise) -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"HomeAndConstructionBusiness",
-    "name":"Tillerstead LLC",
-    "url":"https://tillerstead.com/",
-    "telephone":"+1-609-665-9350",
-    "email":"info@tillerstead.com",
-    "image":"https://tillerstead.com/assets/img/og-image.png",
-    "logo":"https://tillerstead.com/assets/img/Logo-light.png",
-    "address":{"@type":"PostalAddress","streetAddress":"325 E. Jimmie Leeds Road, Suite 7-333","addressLocality":"Galloway","addressRegion":"NJ","postalCode":"08205","addressCountry":"US"},
-    "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"],
-    "additionalProperty":[{"@type":"PropertyValue","name":"NJ HIC","value":"13VH10808800"}]
-  }
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness",
+   "name":"Tillerstead LLC",
+   "url":"https://tillerstead.com/",
+   "telephone":"+1-609-665-9350",
+   "email":"info@tillerstead.com",
+   "image":"https://tillerstead.com/assets/img/Logo-light.png",
+   "logo":"https://tillerstead.com/assets/img/Logo-light.png",
+   "address":{"@type":"PostalAddress","streetAddress":"325 E. Jimmie Leeds Road, Suite 7-333","addressLocality":"Galloway","addressRegion":"NJ","postalCode":"08205","addressCountry":"US"},
+   "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"]}
   </script>
 
-  <!-- Page-local styles (light touch; everything else in style.css) -->
+  <!-- Tiny page-local styles so the figures look great -->
   <style>
-    .lead{max-width:65ch;color:var(--muted)}
-    .quick-menu{display:flex;gap:.6rem;flex-wrap:wrap;margin:.75rem 0 1.25rem}
-    .chip{padding:.5rem .85rem;border:1px solid var(--line-2);border-radius:999px;background:var(--elev-1)}
-    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-    .svc{border:1px solid var(--line-2);background:var(--elev-1);border-radius:12px;padding:16px}
-    .svc h2{margin:0 0 .35rem}
-    .svc p{margin:.25rem 0 .5rem}
-    .svc ul{margin:.25rem 0 0 1rem}
-    .svc li{margin:.25rem 0}
-    .note{color:var(--muted);font-size:.95rem}
+    .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.25rem 0}
+    .service-card{border:1px solid var(--line-2);background:var(--elev-1);border-radius:12px;overflow:clip}
+    .service-card figure{margin:0}
+    .service-card img{display:block;width:100%;height:auto}
+    .service-card .body{padding:1rem}
+    .service-card h3{margin:0 0 .5rem}
+    .thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.5rem;margin-top:.75rem}
+    .thumbs img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line-1)}
+    .chip{padding:.5rem .85rem;border:1px solid var(--line-2);border-radius:999px;background:var(--elev-1);display:inline-block}
   </style>
 </head>
-<body>
-  <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- App bar (consistent across site) -->
-  <header class="appbar">
-    <a class="brand" href="/" aria-label="Tillerstead Home">
-      <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="112" height="28">
-      <span class="sr-only">Tillerstead LLC</span>
-    </a>
-    <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="112" height="28">
+        <span>Tillerstead</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html" aria-current="page">Services</a></li>
+          <li><a href="/portfolio.html">Gallery</a></li>
+          <li><a href="/reviews.html">Reviews</a></li>
+          <li><a href="/legacy.html">Legacy</a></li>
+          <li><a href="/contact.html" class="btn">Start Your Project</a></li>
+          <li><a href="/financing.html" class="btn btn-accent">Flexible Financing</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
+    </div>
   </header>
 
   <main id="main" class="container pad">
     <h1>Services</h1>
     <p class="lead">Detailed craftsmanship, transparent scope, and materials that last—delivered with clean jobsites and clear communication.</p>
 
-    <!-- In-page quick menu -->
-    <nav aria-label="Services sections" class="quick-menu">
-      <a class="chip" href="#showers">Shower Systems</a>
-      <a class="chip" href="#floors-walls">Floors &amp; Walls</a>
-      <a class="chip" href="#backsplashes">Backsplashes</a>
-      <a class="chip" href="#repairs">Repairs</a>
-      <a class="chip" href="#drywall">Drywall</a>
-      <a class="chip" href="#carpentry">Carpentry</a>
+    <nav aria-label="Services sections" class="container" style="margin:.5rem 0 1.25rem 0">
+      <ul class="unstyled" style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <li><a class="chip" href="#showers">Shower Systems</a></li>
+        <li><a class="chip" href="#floors-walls">Floors &amp; Walls</a></li>
+        <li><a class="chip" href="#backsplashes">Backsplashes</a></li>
+        <li><a class="chip" href="#repairs">Repairs</a></li>
+        <li><a class="chip" href="#drywall">Drywall</a></li>
+      </ul>
     </nav>
 
-    <div class="svc-grid">
-      <!-- SHOWERS -->
-      <section id="showers" class="svc">
-        <h2>Shower Systems</h2>
-        <p><strong>Built to manufacturer specs and NJ code.</strong> Waterproofed wet areas that stay dry and look clean.</p>
-        <ul>
-          <li>Traditional &amp; foam pans with bonded waterproofing (ANSI A118.10)</li>
-          <li>Flood testing, pre-slope, curb &amp; niche fabrication</li>
-          <li>Linear &amp; point drains • Large-format layouts • Movement joints</li>
-        </ul>
-        <p class="note"><strong>Why it matters:</strong> Proper prep/waterproofing prevents leaks, mold, and callbacks.</p>
-      </section>
+    <!-- Shower Systems -->
+    <section id="showers" class="section" style="border-top:1px solid var(--line-1)">
+      <h2>Shower Systems</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <figure>
+            <img loading="lazy" decoding="async"
+                 src="/assets/img/shower-white.jpg.JPG"
+                 alt="White subway-tile shower with bench, niche and hex floor">
+          </figure>
+          <div class="body">
+            <h3>Bonded Waterproofing &amp; Pans</h3>
+            <p>Traditional or foam pans with ANSI A118.10 membranes. Flood testing available, proper pre-slope, curbs and niches.</p>
+            <div class="thumbs">
+              <img loading="lazy" src="/assets/img/shower-blue.jpg.JPG" alt="Decorative blue patterned shower wall detail">
+            </div>
+          </div>
+        </article>
 
-      <!-- FLOORS & WALLS -->
-      <section id="floors-walls" class="svc">
-        <h2>Floors &amp; Walls</h2>
-        <p><strong>Flat, true, and durable.</strong> Tile assemblies that hold up and look sharp.</p>
-        <ul>
-          <li>Self-leveling, underlayment, crack isolation</li>
-          <li>Porcelain, ceramic, mosaic, natural stone</li>
-          <li>Layouts: stacked, staggered, herringbone, chevron</li>
-        </ul>
-        <p class="note"><strong>Outcome:</strong> Even grout joints, clean transitions, and long service life.</p>
-      </section>
-
-      <!-- BACKSPLASHES -->
-      <section id="backsplashes" class="svc">
-        <h2>Backsplashes</h2>
-        <p><strong>Crisp details where it counts.</strong> Tight outlets, clean cuts, and sealed edges.</p>
-        <ul>
-          <li>Subway, herringbone, mosaic, stone accents</li>
-          <li>Edge profiles or miters, caulked movement joints</li>
-          <li>Sealers and grout systems matched to use</li>
-        </ul>
-      </section>
-
-      <!-- REPAIRS -->
-      <section id="repairs" class="svc">
-        <h2>Repairs</h2>
-        <p><strong>Targeted fixes that extend life.</strong> Honest assessment and clean remediation.</p>
-        <ul>
-          <li>Leak diagnostics &amp; remediation</li>
-          <li>Regrout, recaulk, grout color-seal</li>
-          <li>Reset loose tile • Replace failed substrate areas</li>
-        </ul>
-        <p class="note"><em>Important:</em> We specialize in tile/wet-area issues; plumbing supply/fixture failures are referred to a licensed plumber.</p>
-      </section>
-
-      <!-- DRYWALL -->
-      <section id="drywall" class="svc">
-        <h2>Drywall</h2>
-        <p><strong>Smooth, paint-ready surfaces.</strong> Prep that makes every finish look better.</p>
-        <ul>
-          <li>Drywall repair and installation</li>
-          <li>Seam taping, finishing, texture match</li>
-          <li>Surface prep, priming, paint-ready finish</li>
-        </ul>
-      </section>
-
-      <!-- CARPENTRY -->
-      <section id="carpentry" class="svc">
-        <h2>Carpentry</h2>
-        <p><strong>The details that pull a room together.</strong> Trim and built-ins that feel intentional.</p>
-        <ul>
-          <li>Door, trim, and baseboard installation</li>
-          <li>Light framing &amp; partition walls</li>
-          <li>Built-ins, shelving, and custom carpentry</li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="section">
-      <h2>Working Together</h2>
-      <ul>
-        <li><strong>Labor-only or turn-key:</strong> Use your materials or have us source premium options.</li>
-        <li><strong>Clear scope &amp; pricing:</strong> Written proposals with straightforward allowances.</li>
-        <li><strong>Clean jobsite:</strong> Respect for your home and schedule from start to finish.</li>
-      </ul>
-      <div class="btn-row" style="margin-top:.75rem">
-        <a class="btn primary" href="/contact.html">Start Your Project</a>
-        <a class="btn ghost" href="/portfolio.html">See Recent Work</a>
-        <a class="btn ghost" href="tel:+16096659350">Call (609) 665-9350</a>
+        <article class="service-card">
+          <figure>
+            <img loading="lazy" decoding="async"
+                 src="/assets/img/bathroom-gray.jpg.JPG"
+                 alt="Modern bathroom with large glass shower, gray vanity and wood-look tile floor">
+          </figure>
+          <div class="body">
+            <h3>Large-Format Layouts</h3>
+            <p>Flat substrates, correct trowel techniques, movement joints, and clean transitions for durable, plumb finishes.</p>
+          </div>
+        </article>
       </div>
     </section>
+
+    <!-- Floors & Walls -->
+    <section id="floors-walls" class="section" style="border-top:1px solid var(--line-1)">
+      <h2>Floors &amp; Walls</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <figure>
+            <img loading="lazy" src="/assets/img/hardwood-room.jpg.JPG"
+                 alt="Finished hardwood room with fresh trim and crown">
+          </figure>
+          <div class="body">
+            <h3>Substrates &amp; Tile</h3>
+            <p>Self-leveling, crack isolation, and prep for porcelain, ceramic, mosaic and stone. Clean grout lines that stay true.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <figure>
+            <img loading="lazy" src="/assets/img/marble-bath.jpg.JPG"
+                 alt="Polished marble bath with full-height wall tile and vanity top">
+          </figure>
+          <div class="body">
+            <h3>Premium Materials</h3>
+            <p>Natural stone and large-format porcelain installed to manufacturer specs with matched setting/grout systems.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Backsplashes -->
+    <section id="backsplashes" class="section" style="border-top:1px solid var(--line-1)">
+      <h2>Backsplashes</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <figure>
+            <img loading="lazy" src="/assets/img/kitchen-green.jpg.JPG"
+                 alt="Kitchen with green cabinets and white subway backsplash">
+          </figure>
+          <div class="body">
+            <h3>Clean Layouts</h3>
+            <p>Outlets cut tight, edges sealed, and patterns aligned—stacked, staggered, herringbone or hex.</p>
+            <div class="thumbs">
+              <img loading="lazy" src="/assets/img/kitchen-hex.jpg.JPG" alt="Hex tile backsplash detail">
+              <img loading="lazy" src="/assets/img/backsplash-white.jpg.JPG" alt="White subway backsplash close-up">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Repairs -->
+    <section id="repairs" class="section" style="border-top:1px solid var(--line-1)">
+      <h2>Repairs</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <figure>
+            <img loading="lazy" src="/assets/img/tile-pattern-dark.jpg.JPG"
+                 alt="Dark tile pattern for patch-matching reference">
+          </figure>
+          <div class="body">
+            <h3>Leak &amp; Grout Remediation</h3>
+            <p>Targeted fixes—regrout, recaulk, color seal, and movement joints—to extend service life without a full remodel.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Drywall -->
+    <section id="drywall" class="section" style="border-top:1px solid var(--line-1)">
+      <h2>Drywall</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <figure>
+            <img loading="lazy" src="/assets/img/drywall-greenboard.jpg.JPG"
+                 alt="Moisture-resistant greenboard with fastener patching">
+          </figure>
+          <div class="body">
+            <h3>Prep for a Clean Finish</h3>
+            <p>Repairs, seam taping, finishing, texture matching and paint-ready surfaces for tile or trim work.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p style="margin-top:1.5rem">
+      Ready to plan your project?
+      <a class="btn btn-accent" href="/contact.html">Start Your Project</a>
+      or <a class="btn" href="tel:+16096659350">Call (609) 665-9350</a>
+    </p>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h4 class="footer-title">Tillerstead LLC</h4>
-          <p>Tile, bath &amp; kitchen remodels • Design consultations • Atlantic County, NJ</p>
-          <address class="footer-contact" aria-label="Contact" style="font-style:normal">
-            <a href="mailto:info@tillerstead.com">info@tillerstead.com</a> •
-            <a href="tel:+16096659350">(609) 665-9350</a>
-          </address>
-          <p><small>New Jersey Home Improvement Contractor — Licensed, Bonded &amp; Insured<br>
-          HIC # <b>13VH10808800</b></small></p>
+          <h4>Tillerstead LLC</h4>
+          <p>Tile • Bath • Remodel — Atlantic County, NJ</p>
+          <p><a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
+          <p><small>NJ Home Improvement Contractor — HIC #13VH10808800</small></p>
         </div>
         <div>
           <h4>Links</h4>
           <ul class="unstyled">
             <li><a href="/">Home</a></li>
             <li><a href="/services.html" aria-current="page">Services</a></li>
-            <li><a href="/portfolio.html">Portfolio</a></li>
-            <li><a href="/about.html">About</a></li>
+            <li><a href="/portfolio.html">Gallery</a></li>
+            <li><a href="/reviews.html">Reviews</a></li>
+            <li><a href="/legacy.html">Legacy</a></li>
             <li><a href="/contact.html">Start Your Project</a></li>
+            <li><a href="/financing.html">Flexible Financing</a></li>
           </ul>
         </div>
         <div>
