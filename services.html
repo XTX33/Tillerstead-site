@@ -24,29 +24,9 @@
   <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- CSS / JS -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=8">
-  <script defer src="/assets/js/main.js?v=8"></script>
-
-  <!-- Breadcrumbs -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://tillerstead.com/"},
-    {"@type":"ListItem","position":2,"name":"Services","item":"https://tillerstead.com/services.html"}]}
-  </script>
-
-  <!-- LocalBusiness (concise) -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness",
-   "name":"Tillerstead LLC",
-   "url":"https://tillerstead.com/",
-   "telephone":"+1-609-665-9350",
-   "email":"info@tillerstead.com",
-   "image":"https://tillerstead.com/assets/img/Logo-light.png",
-   "logo":"https://tillerstead.com/assets/img/Logo-light.png",
-   "address":{"@type":"PostalAddress","streetAddress":"325 E. Jimmie Leeds Road, Suite 7-333","addressLocality":"Galloway","addressRegion":"NJ","postalCode":"08205","addressCountry":"US"},
-   "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"]}
-  </script>
+  <!-- Site CSS / JS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=9">
+  <script defer src="/assets/js/main.js?v=9"></script>
 
   <!-- Page-local styles -->
   <style>
@@ -64,7 +44,43 @@
     .thumbs img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line-1)}
     .section{padding-block:28px;border-top:1px solid var(--line-1)}
     h1,h2{scroll-margin-top:84px}
+
+    /* --- fixes: header safe-area + stronger CTA --- */
+    .appbar{
+      position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      padding:calc(8px + env(safe-area-inset-top)) 16px 8px;
+      background:rgba(11,11,11,.9);backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .brand img{height:44px;width:auto;display:block}
+    @media (max-width:440px){ .brand img{height:32px} }
+    .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none}
+    .btn.primary{background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.3)}
+    .btn.ghost{background:#161616;color:#fff;border:1px solid rgba(255,255,255,.12)}
+    .call-btn{font-weight:800;padding:12px 16px;border-radius:12px;background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.3)}
+    @media (max-width:420px){ .call-btn{flex:1 1 100%;text-align:center} }
+
+    /* --- footer: big centered logo --- */
+    .site-footer{padding-block:32px;background:#0f0f0f;border-top:1px solid rgba(255,255,255,.08)}
+    .site-footer a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.25)}
+    .site-footer a:hover{ text-decoration-color:rgba(255,255,255,.6) }
   </style>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://tillerstead.com/"},
+    {"@type":"ListItem","position":2,"name":"Services","item":"https://tillerstead.com/services.html"}]}
+  </script>
+
+  <!-- LocalBusiness -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness",
+   "name":"Tillerstead LLC","url":"https://tillerstead.com/","telephone":"+1-609-665-9350","email":"info@tillerstead.com",
+   "image":"https://tillerstead.com/assets/img/Logo-light.png","logo":"https://tillerstead.com/assets/img/Logo-light.png",
+   "address":{"@type":"PostalAddress","streetAddress":"325 E. Jimmie Leeds Road, Suite 7-333","addressLocality":"Galloway","addressRegion":"NJ","postalCode":"08205","addressCountry":"US"},
+   "areaServed":["Atlantic County, NJ","Galloway, NJ","Atlantic City, NJ"]}
+  </script>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
@@ -92,7 +108,7 @@
       </ul>
     </nav>
 
-    <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
+    <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead now">(609) 665-9350</a>
     <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
   </header>
 
@@ -117,12 +133,9 @@
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img
-              src="/assets/img/shower-white.jpg.JPG"
-              alt="White subway-tile shower with bench, niche and hex floor"
-              loading="lazy" decoding="async" width="1024" height="768"
-              srcset="/assets/img/shower-white.jpg.JPG 1024w"
-              sizes="(max-width: 640px) 100vw, 50vw">
+            <img src="/assets/img/shower-white.jpg.JPG" alt="White subway-tile shower with bench, niche and hex floor"
+                 loading="lazy" decoding="async" width="1024" height="768" srcset="/assets/img/shower-white.jpg.JPG 1024w"
+                 sizes="(max-width: 640px) 100vw, 50vw">
           </figure>
           <div class="body">
             <h3>Bonded Waterproofing &amp; Pans</h3>
@@ -135,12 +148,9 @@
 
         <article class="service-card">
           <figure>
-            <img
-              src="/assets/img/bathroom-gray.jpg.JPG"
-              alt="Modern bathroom with glass shower, gray vanity and wood-look tile floor"
-              loading="lazy" decoding="async" width="1024" height="768"
-              srcset="/assets/img/bathroom-gray.jpg.JPG 1024w"
-              sizes="(max-width: 640px) 100vw, 50vw">
+            <img src="/assets/img/bathroom-gray.jpg.JPG" alt="Modern bathroom with glass shower, gray vanity and wood-look tile floor"
+                 loading="lazy" decoding="async" width="1024" height="768" srcset="/assets/img/bathroom-gray.jpg.JPG 1024w"
+                 sizes="(max-width: 640px) 100vw, 50vw">
           </figure>
           <div class="body">
             <h3>Large-Format Layouts</h3>
@@ -156,11 +166,7 @@
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <!-- NOTE: file with space must be encoded to avoid 404 on GitHub Pages -->
-            <img
-              src="/assets/img/Bathroom%20Remodel.webp"
-              alt="Tiled room with clean transitions and fresh trim"
-              loading="lazy" width="1024" height="768">
+            <img src="/assets/img/Bathroom%20Remodel.webp" alt="Tiled room with clean transitions and fresh trim" loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Substrates &amp; Tile</h3>
@@ -170,10 +176,7 @@
 
         <article class="service-card">
           <figure>
-            <img
-              src="/assets/img/marble-bath.jpg.JPG"
-              alt="Polished marble bath with full-height wall tile and vanity top"
-              loading="lazy" width="1024" height="768">
+            <img src="/assets/img/marble-bath.jpg.JPG" alt="Polished marble bath with full-height wall tile and vanity top" loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Premium Materials</h3>
@@ -189,10 +192,7 @@
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img
-              src="/assets/img/kitchen-green.jpg.JPG"
-              alt="Kitchen with green cabinets and clean white subway backsplash"
-              loading="lazy" width="1024" height="768">
+            <img src="/assets/img/kitchen-green.jpg.JPG" alt="Kitchen with green cabinets and clean white subway backsplash" loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Clean Layouts</h3>
@@ -212,10 +212,7 @@
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img
-              src="/assets/img/tile-pattern-dark.jpg.JPG"
-              alt="Dark modular tile pattern used for patch matching"
-              loading="lazy" width="1024" height="768">
+            <img src="/assets/img/tile-pattern-dark.jpg.JPG" alt="Dark modular tile pattern used for patch matching" loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Leak &amp; Grout Remediation</h3>
@@ -231,10 +228,7 @@
       <div class="service-grid">
         <article class="service-card">
           <figure>
-            <img
-              src="/assets/img/drywall-greenboard.jpg.JPG"
-              alt="Moisture-resistant greenboard with fastener patching"
-              loading="lazy" width="1024" height="768">
+            <img src="/assets/img/drywall-greenboard.jpg.JPG" alt="Moisture-resistant greenboard with fastener patching" loading="lazy" width="1024" height="768">
           </figure>
           <div class="body">
             <h3>Prep for a Clean Finish</h3>
@@ -247,40 +241,36 @@
     <p style="margin-top:1.5rem">
       Ready to plan your project?
       <a class="btn btn-accent" href="/contact.html">Start Your Project</a>
-      or <a class="btn" href="tel:+16096659350">Call (609) 665-9350</a>
+      or <a class="btn primary" href="tel:+16096659350" aria-label="Call Tillerstead now">Call (609) 665-9350</a>
     </p>
   </main>
 
+  <!-- BIG-logo footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>Tillerstead LLC</h4>
-          <p>Tile • Bath • Remodel — Atlantic County, NJ</p>
-          <p><a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
-          <p><small>NJ Home Improvement Contractor — HIC #13VH10808800</small></p>
-        </div>
-        <div>
-          <h4>Links</h4>
-          <ul class="unstyled">
-            <li><a href="/">Home</a></li>
-            <li><a href="/services.html" aria-current="page">Services</a></li>
-            <li><a href="/portfolio.html">Gallery</a></li>
-            <li><a href="/reviews.html">Reviews</a></li>
-            <li><a href="/legacy.html">Legacy</a></li>
-            <li><a href="/contact.html">Start Your Project</a></li>
-            <li><a href="/financing.html">Flexible Financing</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Legal</h4>
-          <ul class="unstyled">
-            <li><a href="/privacy.html">Privacy</a></li>
-            <li><a href="/terms.html">Terms</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="copyright">© 2025 Tillerstead LLC. All rights reserved.</p>
+    <div class="container" style="text-align:center">
+      <a href="/" class="footer-logo" aria-label="Tillerstead Home">
+        <img src="/assets/img/Logo-light.png" alt="Tillerstead LLC logo"
+             style="display:block;margin:0 auto;max-width:min(320px,60vw);height:auto">
+      </a>
+
+      <p class="mt-1" style="color:var(--muted);margin:.75rem auto 0">
+        Tile • Bath • Remodel — Atlantic County, NJ<br>
+        Licensed &amp; Insured • NJ HIC #13VH10808800
+      </p>
+
+      <p style="margin:.5rem 0 1rem">
+        <a href="mailto:info@tillerstead.com">info@tillerstead.com</a> •
+        <a href="tel:+16096659350">(609) 665-9350</a>
+      </p>
+
+      <p style="margin:.25rem 0 1rem">
+        <a href="/services.html" aria-current="page">Services</a> •
+        <a href="/portfolio.html">Gallery</a> •
+        <a href="/about.html">About</a> •
+        <a href="/contact.html">Contact</a>
+      </p>
+
+      <p class="copyright" style="color:#9a9a9a">© 2025 Tillerstead LLC. All rights reserved.</p>
     </div>
   </footer>
 </body>
