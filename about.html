@@ -1,30 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <header class="appbar">
-  <a class="brand" href="/" aria-label="Tillerstead Home">
-    <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44" decoding="async" loading="eager">
-    <span class="sr-only">Tillerstead LLC</span>
-  </a>
-
-  <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
-    <span class="hamburger" aria-hidden="true"></span>
-  </button>
-
-  <nav id="nav" class="site-nav" aria-label="Main">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/portfolio.html">Gallery</a></li>
-      <li><a href="/reviews.html">Reviews</a></li>
-      <li><a href="/legacy.html">Legacy</a></li>
-      <li><a class="btn" href="/contact.html">Start Your Project</a></li>
-      <li><a class="btn btn-accent" href="/financing.html">Flexible Financing</a></li>
-    </ul>
-  </nav>
-
-  <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
-  <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
-</header>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +11,7 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://tillerstead.com/about.html">
 
-  <!-- Favicons / Logo (PNG — no more SVG 404s) -->
+  <!-- Favicons / Logo (PNG — avoid SVG 404s) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
@@ -51,9 +26,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://tillerstead.com/assets/img/og-image.png">
 
-  <!-- CSS / JS -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=4">
-  <script defer src="/assets/js/main.js?v=4"></script>
+  <!-- CSS / JS (cache-bust) -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=6">
+  <script defer src="/assets/js/main.js?v=6"></script>
 
   <!-- Page-local enhancements -->
   <style>
@@ -61,7 +36,7 @@
     .about-hero .lead{max-width:65ch;margin:0 auto;color:var(--muted)}
     .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-block:24px}
     .kpi{padding:16px;border:1px solid var(--line-2);border-radius:12px;background:var(--elev-1)}
-    .bio{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+    .bio{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-block:24px}
     @media (max-width: 900px){.bio{grid-template-columns:1fr}}
     .prose p{color:var(--fg)}
     .faqs details{background:var(--elev-1);border:1px solid var(--line-2);border-radius:12px;padding:.9rem 1rem}
@@ -132,13 +107,31 @@
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- App bar (consistent with other pages) -->
+  <!-- Unified app bar (single header on page) -->
   <header class="appbar">
     <a class="brand" href="/" aria-label="Tillerstead Home">
-      <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="112" height="28">
+      <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44" decoding="async" loading="eager">
       <span class="sr-only">Tillerstead LLC</span>
     </a>
+
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <nav id="nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/portfolio.html">Gallery</a></li>
+        <li><a href="/reviews.html">Reviews</a></li>
+        <li><a href="/legacy.html">Legacy</a></li>
+        <li><a class="btn" href="/contact.html">Start Your Project</a></li>
+        <li><a class="btn btn-accent" href="/financing.html">Flexible Financing</a></li>
+      </ul>
+    </nav>
+
     <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
+    <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
   </header>
 
   <main id="main">
@@ -148,55 +141,41 @@
       <p class="lead">New Jersey-licensed contractor serving Atlantic County with tile, bath, and remodel work that’s clean, code-compliant, and built to last.</p>
 
       <div class="kpis" aria-label="Quick facts">
-        <div class="kpi"><b>Tile Design • Bath Remodels • Consultations</b><br><small>Serving Atlantic County & Southern New Jersey</small></div>
-        <div class="kpi"><b>Labor-Only or Turn-Key</b><br><small>Use your own materials or let us source premium options</small></div>
-        <div class="kpi"><b>Standards & Compliance</b><br><small>Manufacturer specs, ANSI waterproofing, NJ code</small></div>
+        <div class="kpi"><b>Tile Design • Bath Remodels • Consultations</b><br><small>Serving Atlantic County & Southern NJ</small></div>
+        <div class="kpi"><b>Labor-Only or Turn-Key</b><br><small>Use your materials or we can source & deliver</small></div>
+        <div class="kpi"><b>Built to Manufacturer & NJ Code</b><br><small>Bonded waterproofing • Flood testing available</small></div>
       </div>
     </section>
 
-    <!-- Bio + Approach -->
-    <section class="container section bio">
-      <div class="prose">
-        <h2>About Devon Tyler &amp; Tillerstead LLC</h2>
-        <p>I’m <strong>Devon Tyler</strong>, founder, licensed contractor, and tile installer at Tillerstead LLC (NJ HIC #13VH10808800). I manage each project personally—planning, layout, prep, and finish—so the result is durable, clean, and respectful of your home.</p>
-        <p><strong>Approach:</strong> Free estimates and straight talk, premium materials installed to manufacturer standards, and a clean, predictable jobsite. I’m detail-focused and steady under pressure—because your project shouldn’t be stressful.</p>
-        <p><strong>Why I do this:</strong> I value discipline, honesty, and accountability. Challenges I’ve faced taught me how to rebuild with purpose. That’s why I treat every home like it’s my own—because business is personal and every detail matters.</p>
-        <div class="btn-row">
-          <a class="btn primary" href="/contact.html">Request an Estimate</a>
-          <a class="btn ghost" href="/portfolio.html">See Project Gallery</a>
-        </div>
-      </div>
-      <aside class="prose">
-        <h3>What We Do</h3>
+    <section class="container bio prose">
+      <div>
+        <h2>Approach</h2>
         <ul>
-          <li><strong>Tile Installation</strong> — large-format, custom layouts, precision cuts</li>
-          <li><strong>Carpentry &amp; Trim</strong> — substrate prep, baseboard &amp; casing, built-ins</li>
-          <li><strong>Bath Remodels</strong> — tub-to-shower, wet-area waterproofing, finishes</li>
+          <li>Free estimates, detailed proposals, straight talk</li>
+          <li>Premium materials installed to manufacturer specs</li>
+          <li>Respect for your home, schedule, and budget</li>
         </ul>
-        <p><em>Established 2019 · Reinstated 2025</em></p>
-      </aside>
+        <p><a class="btn btn-accent" href="/contact.html">Request an Estimate</a></p>
+      </div>
+      <div>
+        <h2>Who I Am</h2>
+        <p>I’m Devon Tyler, founder and licensed contractor (NJ HIC <b>13VH10808800</b>). I manage every project personally and stand behind the work with clear documentation and service follow-up.</p>
+      </div>
     </section>
 
-    <!-- Looking Ahead -->
-    <section class="container section prose">
-      <h2>Looking Ahead</h2>
-      <p>Tillerstead is more than a remodeling company—it’s stewardship. Today it’s tile, carpentry, and thoughtful renovations; tomorrow it’s maintaining properties with care and strengthening neighborhoods. The goal is simple: do right by people and create lasting value.</p>
-    </section>
-
-    <!-- FAQs visible (matches JSON-LD) -->
-    <section class="container section faqs">
+    <section class="container faqs">
       <h2>Common Questions</h2>
       <details>
         <summary>Are you licensed and insured?</summary>
-        <p>Yes. New Jersey Home Improvement Contractor <strong>HIC #13VH10808800</strong>, with required insurance.</p>
+        <p>Yes. We maintain required New Jersey credentials and insurance. NJ HIC <b>13VH10808800</b>.</p>
       </details>
       <details>
         <summary>Do you work with large-format tile?</summary>
-        <p>Yes. We prep substrates for flatness and use appropriate mortars, trowels, and movement joints.</p>
+        <p>Yes. We prep substrates for flatness and use the correct mortars, trowels, and movement joints.</p>
       </details>
       <details>
         <summary>Can you provide references or past projects?</summary>
-        <p>Yes—see the <a href="/portfolio.html">Portfolio</a> for representative builds and ask for full references.</p>
+        <p>Yes. See the <a href="/portfolio.html">Gallery</a> and ask for full references.</p>
       </details>
     </section>
   </main>
@@ -205,20 +184,16 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h4 class="footer-title">Tillerstead LLC</h4>
-          <p>Tile, bath &amp; kitchen remodels • Design consultations • Atlantic County, NJ</p>
-          <address class="footer-contact" aria-label="Contact" style="font-style:normal">
-            <a href="mailto:info@tillerstead.com">info@tillerstead.com</a> •
-            <a href="tel:+16096659350">(609) 665-9350</a>
-          </address>
-          <p><small>New Jersey Home Improvement Contractor — Licensed, Bonded &amp; Insured<br>
-          HIC # <b>13VH10808800</b></small></p>
+          <h4>Tillerstead LLC</h4>
+          <p>Tile • Bath • Remodel — Atlantic County, NJ</p>
+          <p><a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
+          <p><small>NJ HIC: <b>13VH10808800</b></small></p>
         </div>
         <div>
           <h4>Links</h4>
           <ul class="unstyled">
             <li><a href="/services.html">Services</a></li>
-            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li><a href="/portfolio.html">Gallery</a></li>
             <li><a href="/about.html" aria-current="page">About</a></li>
             <li><a href="/contact.html">Contact</a></li>
           </ul>
