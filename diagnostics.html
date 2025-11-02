@@ -1,0 +1,137 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Tillerstead – Site Diagnostics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;padding:16px;color:#111}
+  h1{font-size:20px;margin:0 0 12px}
+  table{width:100%;border-collapse:collapse;margin:12px 0}
+  th,td{border:1px solid #ddd;padding:8px;vertical-align:top}
+  th{background:#f5f5f5;text-align:left}
+  .ok{color:#0a7c2f;font-weight:700}
+  .warn{color:#b26a00;font-weight:700}
+  .err{color:#b00020;font-weight:700}
+  code{background:#f6f8fa;padding:2px 4px;border-radius:4px}
+  .small{font-size:12px;color:#555}
+</style>
+
+<h1>Tillerstead – Site Diagnostics</h1>
+<p class="small">This page tests headers, nav, links, and footers across your site.</p>
+
+<table id="report"><thead>
+<tr>
+  <th>Page</th>
+  <th>Header(s)</th>
+  <th>Nav <code>id="nav"</code></th>
+  <th>Header BG</th>
+  <th>Menu Links</th>
+  <th>Footer</th>
+  <th>Status</th>
+</tr></thead><tbody></tbody></table>
+
+<script>
+(async () => {
+  const pages = [
+    "/", "/index.html",
+    "/services.html","/portfolio.html","/reviews.html","/about.html",
+    "/legacy.html","/contact.html","/privacy.html","/terms.html","/financing.html"
+  ];
+
+  const tbody = document.querySelector("#report tbody");
+  const origin = location.origin;
+
+  function row(cells){ const tr=document.createElement("tr"); cells.forEach(td=>{const el=document.createElement("td"); el.innerHTML=td; tr.appendChild(el)}); tbody.appendChild(tr); }
+
+  function hasAlphaBg(style){
+    const bg = style.background || style.backgroundColor || "";
+    return /rgba\s*\(\s*\d+,\s*\d+,\s*\d+,\s*(0\.[0-9]+)\s*\)/i.test(bg);
+  }
+
+  for (const path of pages){
+    let url = path.startsWith("http") ? path : origin + path;
+    let html="", status = "", statusCell="";
+    try{
+      const res = await fetch(url, {cache:"no-store"});
+      status = res.status;
+      html = await res.text();
+    }catch(e){
+      row([path, "-", "-", "-", "-", "-", `<span class="err">Fetch failed</span>`]);
+      continue;
+    }
+    if (status === 404){
+      row([path, "-", "-", "-", "-", "-", `<span class="err">404 Not Found</span>`]);
+      continue;
+    }
+
+    const dom = new DOMParser().parseFromString(html, "text/html");
+    // headers
+    const headers = Array.from(dom.querySelectorAll("header"));
+    const appbar = dom.querySelector(".appbar");
+    const siteHeader = dom.querySelector(".site-header");
+    const headerCount = headers.length;
+
+    // nav
+    const nav = dom.querySelector('nav#nav');
+    const navOk = !!nav;
+
+    // header bg
+    let headerBgNote = "";
+    if (appbar){
+      const styleAttr = appbar.getAttribute("style") || "";
+      const computedLike = styleAttr.replace(/\s+/g," ");
+      const bgAlpha = /rgba\([^)]*,\s*(0?\.\d+)\s*\)/.exec(computedLike)?.[1] || null;
+      headerBgNote = bgAlpha && parseFloat(bgAlpha) < 1 ? `<span class="warn">transparent (${bgAlpha})</span>` : (computedLike ? `<span class="ok">inline style</span>` : `<span class="">unknown</span>`);
+    } else {
+      headerBgNote = siteHeader ? `<span class="warn">legacy .site-header present</span>` : `<span class="err">no .appbar</span>`;
+    }
+
+    // menu links
+    const menu = dom.querySelector('nav#nav ul');
+    let linksCell = `<span class="err">no nav list</span>`;
+    if (menu){
+      const links = Array.from(menu.querySelectorAll('a[href]')).map(a => a.getAttribute('href'));
+      const tests = [
+        ["/reviews.html","Reviews"],
+        ["/about.html","Legacy/About"],
+        ["/services.html","Services"],
+        ["/portfolio.html","Gallery"],
+        ["/contact.html","Contact"],
+      ].map(([href,label])=>{
+        const has = links.includes(href);
+        return has ? `<span class="ok">${label}</span>` : `<span class="warn">${label} missing</span>`;
+      }).join("<br>");
+      linksCell = tests;
+    }
+
+    // footer
+    const footer = dom.querySelector("footer.site-footer");
+    const footerLogo = dom.querySelector(".site-footer img");
+    const footerLinks = dom.querySelector(".site-footer a");
+    const footerCell = footer
+      ? `<span class="ok">footer</span>${footerLogo?" + logo":""}${footerLinks?" + links":""}`
+      : `<span class="warn">no .site-footer</span>`;
+
+    // status
+    let headerCell = "";
+    if (headerCount === 0) headerCell = `<span class="err">0</span>`;
+    else if (headerCount === 1) headerCell = `<span class="ok">1</span>`;
+    else headerCell = `<span class="warn">${headerCount}</span>`;
+
+    const navCell = navOk ? `<span class="ok">found</span>` : `<span class="err">missing</span>`;
+
+    // Final page status
+    const okAll = headerCount===1 && navOk;
+    const statusEl = okAll ? `<span class="ok">OK</span>` : `<span class="warn">Check</span>`;
+
+    row([
+      `<code>${path}</code>`,
+      headerCell + (siteHeader? `<div class="small">legacy .site-header present</div>`:""),
+      navCell,
+      headerBgNote,
+      linksCell,
+      footerCell,
+      statusEl
+    ]);
+  }
+})();
+</script>
