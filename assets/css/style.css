@@ -364,3 +364,17 @@ input::placeholder,textarea::placeholder{color:#9a9a9a}
 }
 /* TEMP: hide legacy header to prevent duplicates */
 .site-header{ display:none !important; }
+.site-footer {
+  background: #0b0b0b;
+  padding-block: 3rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.site-footer a {
+  color: var(--accent, #d4af37);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
