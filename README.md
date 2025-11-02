@@ -1,27 +1,16 @@
-# Tillerstead.com — Static Site
+# 🌿 Tillerstead.com — Static Site
 
-A clean, fast, and accessible static website for Tillerstead LLC (tile • bath • remodel), suitable for GitHub Pages hosting.
+A clean, fast, and accessible static website for **Tillerstead LLC**  
+> _Tile • Bath • Remodel — Built on trust, carried out with care._
 
-## Preview
-Open `index.html` locally or serve with any static server.
+This repo powers [tillerstead.com](https://tillerstead.com), a New Jersey–licensed home improvement business providing tile, bath, and remodel craftsmanship across Atlantic County and South Jersey.  
+Optimized for **GitHub Pages** + **Netlify**, using pure HTML, CSS, and JavaScript for speed, clarity, and maintainability.
 
-## Deploy to GitHub Pages
-1. Create a new GitHub repo (e.g., `tillerstead-site`).
-2. Upload the contents of this folder (or unzip the provided ZIP).
-3. In **Settings → Pages**, choose:
-   - Source: **Deploy from a branch**
-   - Branch: `main` (root)
-4. (Optional) Add `CNAME` with your domain: `tillerstead.com` (root of repo).
-5. Wait for Pages to build. Visit `https://<your-username>.github.io/tillerstead-site/`
+---
 
-## Custom Domain
-- Set a DNS `A` record to GitHub Pages IPs or use a `CNAME` pointing to `<username>.github.io`.
-- Add a `CNAME` file in repo root containing `tillerstead.com`.
+## 🧱 Preview
 
-## Edit Brand
-- Colors and spacing are controlled in `assets/css/style.css`.
-- Logo: `assets/img/logo.svg`.
-- Open Graph image: `assets/img/og-image.png`.
+Open `index.html` locally or serve with any static server:
 
-## Notes
-- Contact form posts to nowhere on GitHub Pages; for live submissions, use a form backend (Netlify, Formspree, etc.).
+```bash
+python3 -m http.server
