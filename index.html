@@ -3,139 +3,268 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tile • Bath • Remodel | Tillerstead LLC</title>
-  <meta name="description" content="Tile, bath and remodel craftsman serving Atlantic County, NJ. Showers that don't leak. Floors that stay true. Kitchens that feel like home.">
+  <title>Tile, Bath & Remodel Contractor | Tillerstead LLC, Atlantic County NJ</title>
+<meta name="description" content="Licensed New Jersey Home Improvement Contractor specializing in tile, bath, and remodel projects. Serving Atlantic County & South Jersey with clean, code-compliant craftsmanship.">
   <meta name="theme-color" content="#0b0b0b">
-  <link rel="icon" href="./assets/img/logo.svg" type="image/svg+xml">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="preload" as="image" href="./assets/img/logo.svg">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="assets/img/Logo-light.png" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preload" as="image" href="/assets/img/logo.svg">
+
+  <!-- Canonical & Social Metadata -->
   <link rel="canonical" href="https://tillerstead.com/">
-  <meta property="og:title" content="Tile • Bath • Remodel | Tillerstead LLC">
-  <meta property="og:description" content="Tile, bath and remodel craftsman serving Atlantic County, NJ. Showers that don't leak. Floors that stay true. Kitchens that feel like home.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Tile, Bath & Remodel Contractor | Tillerstead LLC, Atlantic County NJ">
+  <meta property="og:description" content="Licensed New Jersey Home Improvement Contractor providing tile, bath, and remodel services across Atlantic County & South Jersey. Showers that don’t leak. Floors that stay true. Kitchens that feel like home.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta property="og:url" content="https://tillerstead.com/">
+  <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
+  <meta property="og:site_name" content="Tillerstead LLC">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tile, Bath & Remodel Contractor | Tillerstead LLC, Atlantic County NJ">
+  <meta name="twitter:description" content="NJ-licensed home improvement contractor for tile, bath, and remodel projects. Serving Atlantic County & South Jersey.">
+  <meta name="twitter:image" content="https://tillerstead.com/assets/img/og-image.png">
+
+  <!-- Indexing -->
   <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script defer src="./assets/js/main.js"></script>
+
+
+  <!-- CSS & JS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    /* Page-local enhancements (keep minimal) */
+    .hero{padding-block:clamp(2rem,6vw,5rem);background:linear-gradient(180deg,var(--elev-1),transparent)}
+    .hero-inner{display:grid;gap:1rem}
+    .hero .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+    .trust{margin-block:1rem}
+    .trust .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
+    .cards .card{border:1px solid var(--border-2);background:var(--elev-1);border-radius:.8rem;padding:1rem}
+    .highlights .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .process{background:var(--elev-0);padding-block:clamp(1rem,3vw,2rem)}
+    .process ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;counter-reset:step}
+    .process li{border:1px solid var(--border-2);border-radius:.8rem;padding:1rem;background:var(--elev-1)}
+    .process li b::before{counter-increment:step;content:counter(step)".";margin-right:.5rem}
+    .coverage .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+    @media (max-width: 800px){.coverage .grid{grid-template-columns:1fr}}
+    .faq details{background:var(--elev-1);border:1px solid var(--border-2);border-radius:.8rem;padding:.75rem 1rem}
+    .faq details+details{margin-top:.6rem}
+  </style>
+  <script defer src="/assets/js/main.js"></script>
+
+  <!-- Organization / LocalBusiness schema -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Tillerstead LLC",
-  "url": "https://tillerstead.com/",
-  "logo": "https://tillerstead.com/assets/img/logo.svg",
-  "image": "https://tillerstead.com/assets/img/og-image.png",
-  "description": "Tile, bath and remodel craftsman serving Atlantic County, NJ.",
-  "telephone": "+1-609-665-9350",
-  "email": "Tyler@Tillerstead.com",
-  "priceRange": "$$",
-  "areaServed": [
-    "Atlantic County, NJ",
-    "Galloway, NJ",
-    "Atlantic City, NJ"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
-    "addressLocality": "Galloway",
-    "addressRegion": "NJ",
-    "postalCode": "08205",
-    "addressCountry": "US"
-  },
-  "foundingDate": "2020-01-01"
-}
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Tillerstead LLC",
+    "url": "https://tillerstead.com/",
+    "telephone": "+1-609-665-9350",
+    "email": "info@tillerstead.com",
+    "image": "https://tillerstead.com/assets/img/og-image.png",
+    "logo": "https://tillerstead.com/assets/img/logo.svg",
+    "description": "New Jersey-licensed Home Improvement Contractor providing tile, bath, carpentry, and remodel services.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
+      "addressLocality": "Galloway",
+      "addressRegion": "NJ",
+      "postalCode": "08205",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Atlantic County, NJ","Cape May County, NJ","Ocean County, NJ","Burlington County, NJ",
+      "Galloway, NJ","Egg Harbor Township, NJ","Mays Landing, NJ","Somers Point, NJ",
+      "Ventnor, NJ","Margate, NJ","Brigantine, NJ","Hammonton, NJ","Ocean City, NJ"
+    ],
+    "knowsAbout": [
+      "bonded waterproofing","flood testing","large format tile","backsplashes","shower pans",
+      "drywall repair","light framing","trim and baseboard","carpentry"
+    ],
+    "additionalProperty": [
+      {"@type":"PropertyValue","name":"NJ HIC","value":"(add your HIC # here)"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ rich results (homepage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Are you licensed and insured in New Jersey?",
+       "acceptedAnswer":{"@type":"Answer","text":"Yes. Tillerstead LLC is a New Jersey-licensed and insured Home Improvement Contractor (HIC)."}},
+      {"@type":"Question","name":"Which areas do you serve?",
+       "acceptedAnswer":{"@type":"Answer","text":"Atlantic County and nearby South Jersey communities including Galloway, EHT, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, and Ocean City."}},
+      {"@type":"Question","name":"Do you handle tile-only and full bathroom remodels?",
+       "acceptedAnswer":{"@type":"Answer","text":"Yes. We offer tile-only installs and full bath remodels, both completed to manufacturer and code standards."}}
+    ]
+  }
   </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="./">
-      <img src="./assets/img/logo.svg" alt="Tillerstead logo" width="36" height="36" loading="eager">
-      <span>Tillerstead</span>
-    </a>
-    <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
-      <span class="hamburger" aria-hidden="true"></span>
-    </button>
-    <nav id="nav" class="site-nav" aria-label="Main">
-      <ul>
-        <li><a href="./services.html">Services</a></li>
-        <li><a href="./portfolio.html">Portfolio</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a class="btn btn-accent" href="./contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
-  </div>
-</header>
-<main id="main">
-
-<section class="hero">
-  <div class="container hero-inner">
-    <h1>Crafted Tile. Honest Work.</h1>
-    <p class="lead">Showers that don't leak. Floors that stay true. Kitchens that feel like home.</p>
-    <div class="actions">
-      <a class="btn btn-accent" href="./contact.html">Request an Estimate</a>
-      <a class="btn" href="./portfolio.html">View Portfolio</a>
-    </div>
-  </div>
-</section>
-
-<section class="highlights container">
-  <div class="cards">
-    <article class="card">
-      <h3>Shower Pans & Waterproofing</h3>
-      <p>Code-compliant, flood-tested bases using premium membranes and sloped drains.</p>
-    </article>
-    <article class="card">
-      <h3>Floors, Backsplashes, Fireplaces</h3>
-      <p>Flat, plumb, and true installations with crisp layouts and durable grout systems.</p>
-    </article>
-    <article class="card">
-      <h3>Repairs & Refresh</h3>
-      <p>Reset loose tile, regrout, recaulk, and seal to extend the life of existing installations.</p>
-    </article>
-  </div>
-</section>
-
-<section class="cta container">
-  <div class="cta-box">
-    <h2>Licensed & Insured • HIC NJ</h2>
-    <p>Serving Atlantic County and nearby. Flexible scheduling. Clean jobsites. Straight talk.</p>
-    <a class="btn btn-accent" href="./contact.html">Start your project</a>
-  </div>
-</section>
-
-</main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Tillerstead LLC</h4>
-        <p>Tile, Bath, Remodel — Atlantic County, NJ</p>
-        <p><a href="mailto:Tyler@Tillerstead.com">Tyler@Tillerstead.com</a> • <a href="tel:+16096659350">(609) 665-9350</a></p>
-      </div>
-      <div>
-        <h4>Links</h4>
-        <ul class="unstyled">
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./portfolio.html">Portfolio</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="Tillerstead logo" width="36" height="36" loading="eager" decoding="async">
+        <span>Tillerstead</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav id="nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a class="btn btn-accent" href="/contact.html">Contact</a></li>
         </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul class="unstyled">
-          <li><a href="./privacy.html">Privacy</a></li>
-          <li><a href="./terms.html">Terms</a></li>
-        </ul>
-      </div>
+      </nav>
+      <a class="btn btn-accent" href="tel:+16096659350" style="margin-left:.5rem">Call (609) 665‑9350</a>
+      <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
     </div>
-    <p class="copyright">© 2025 Tillerstead LLC. All rights reserved.</p>
-  </div>
-</footer>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Home Improvement Agreed, Delivered, and Done Right.</h1>
+        <p class="lead">Showers that don't leak. Floors that stay true. Kitchens that feel like home.</p>
+        <div class="actions">
+          <a class="btn btn-accent" href="/contact.html">Get Your Free Estimate</a>
+          <a class="btn" href="/portfolio.html">View Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust / quick creds -->
+    <section class="container trust" aria-label="Credentials">
+      <div class="cards">
+        <article class="card"><h3 style="margin:0">NJ Licensed & Insured</h3><p style="margin:.25rem 0 0">Home Improvement Contractor (HIC)</p></article>
+        <article class="card"><h3 style="margin:0">Manufacturer Standards</h3><p style="margin:.25rem 0 0">Bonded waterproofing • Flood tests available</p></article>
+        <article class="card"><h3 style="margin:0">Local & Responsive</h3><p style="margin:.25rem 0 0">Atlantic County & South Jersey</p></article>
+      </div>
+    </section>
+
+    <!-- Services snapshot -->
+    <section class="highlights container">
+      <div class="cards">
+        <article class="card">
+          <h3>Tile & Wet Areas</h3>
+          <p>Bonded membranes, flood-tested pans, large-format tile, showers, niches, and backsplashes.</p>
+          <p><a href="/services.html#tile">Learn more</a></p>
+        </article>
+        <article class="card">
+          <h3>Floors • Trim • Carpentry</h3>
+          <p>Flat, true substrates; baseboard & casing; light framing; built-ins and custom shelving.</p>
+          <p><a href="/services.html#carpentry">Learn more</a></p>
+        </article>
+        <article class="card">
+          <h3>Repairs & Refresh</h3>
+          <p>Regrout, recaulk, reset loose tile, sealers, and grout remediation for longer service life.</p>
+          <p><a href="/services.html#repairs">Learn more</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Coverage + CTA -->
+    <section class="coverage container">
+      <div class="grid">
+        <div>
+          <h2>Serving Atlantic County & Nearby</h2>
+          <p>Galloway, Egg Harbor Township, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, Ocean City — plus portions of Cape May, Ocean, and Burlington counties.</p>
+          <div class="actions" style="margin-top:.6rem;display:flex;gap:.5rem;flex-wrap:wrap">
+            <a class="btn btn-accent" href="/contact.html">Start Your Project</a>
+            <a class="btn" href="tel:+16096659350">Call (609) 665‑9350</a>
+          </div>
+        </div>
+        <aside class="kpis" aria-label="Quick facts" style="display:grid;gap:.6rem">
+          <div class="card"><b>Tile Design • Bath Remodels • Consults</b><br><small>Atlantic County & South Jersey</small></div>
+          <div class="card"><b>Labor‑Only or Turn‑Key</b><br><small>Your materials or sourced with help</small></div>
+          <div class="card"><b>Built to Code & Manufacturer Specs</b><br><small>Bonded waterproofing • Flood tests when specified</small></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="container">
+        <h2>How We Work</h2>
+        <ol>
+          <li><b>Consult</b><br><small>Scope, budget, and timeline. Clear expectations from day one.</small></li>
+          <li><b>Plan</b><br><small>Layout, materials, and prep—aligned to manufacturer standards.</small></li>
+          <li><b>Build</b><br><small>Clean jobsite, respectful crew, code-compliant workmanship.</small></li>
+          <li><b>Deliver</b><br><small>Walkthrough, care guide, and support after completion.</small></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ (visible copy to match JSON-LD) -->
+    <section class="container faq">
+      <h2>Common Questions</h2>
+      <details>
+        <summary>Are you licensed and insured in New Jersey?</summary>
+        <p>Yes—Tillerstead LLC is licensed and insured as a New Jersey Home Improvement Contractor (HIC). Add your HIC # to the footer and schema for easy reference.</p>
+      </details>
+      <details>
+        <summary>Do you serve my town?</summary>
+        <p>We cover Atlantic County and neighboring parts of South Jersey including Galloway, EHT, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, and Ocean City.</p>
+      </details>
+      <details>
+        <summary>Can you handle tile-only work and full bath remodels?</summary>
+        <p>Yes. We offer tile-only installations and full bathroom remodels delivered to manufacturer and code standards.</p>
+      </details>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta container">
+      <div class="cta-box">
+        <h2>Ready when you are.</h2>
+        <p>Tell us what you’re planning—get a clean, itemized estimate with straight talk and no surprises.</p>
+        <div class="actions">
+          <a class="btn btn-accent" href="/contact.html">Request an Estimate</a>
+          <a class="btn" href="/portfolio.html">See Recent Work</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Tillerstead LLC</h4>
+          <p>Tile • Bath • Remodel — Atlantic County, NJ</p>
+          <p><a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • <a href="tel:+16096659350">(609) 665‑9350</a></p>
+          <p><small>NJ HIC: (add your number)</small></p>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <ul class="unstyled">
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul class="unstyled">
+            <li><a href="/privacy.html">Privacy</a></li>
+            <li><a href="/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© 2025 Tillerstead LLC. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
