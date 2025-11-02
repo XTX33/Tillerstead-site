@@ -378,3 +378,63 @@ input::placeholder,textarea::placeholder{color:#9a9a9a}
 .site-footer a:hover {
   text-decoration: underline;
 }
+/* --- NAV MENU OVERRIDE --- */
+.site-nav {
+  background: rgba(15, 15, 15, 0.98);
+  backdrop-filter: blur(8px) saturate(140%);
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.site-nav.open {
+  display: flex;
+}
+
+/* Menu links visible on dark */
+.site-nav a {
+  color: #f5f5f5 !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: #e8cf7a !important; /* your gold accent */
+}
+
+/* Buttons inside nav */
+.site-nav .btn {
+  background: linear-gradient(#e8cf7a, #b8922f);
+  color: #111 !important;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* Ensure the toggle (hamburger) stays on top of overlay */
+.nav-toggle {
+  z-index: 10000;
+  position: relative;
+}
+
+/* Optional subtle animation */
+@media (prefers-reduced-motion: no-preference) {
+  .site-nav.open {
+    animation: fadeIn 0.25s ease-out;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+}
