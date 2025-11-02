@@ -555,3 +555,23 @@ input::placeholder,textarea::placeholder{color:#9a9a9a}
 
 /* If you’re using the big centered logo footer */
 .footer-logo img{ filter:none; opacity:1; }
+/* ==== HARDENED HEADER + MOBILE NAV (global override) ==== */
+.appbar{
+  background:#0b0b0b !important;   /* solid, not see-through */
+  backdrop-filter:none !important;  /* kill transparency blur */
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+@media (max-width:820px){
+  .site-nav{
+    background:#0b0b0b !important;  /* solid overlay */
+    backdrop-filter:none !important;
+  }
+  .site-nav a{ color:#f5f5f5 !important; }
+  .site-nav a:hover{ color:#e8cf7a !important; }
+}
+
+/* Footer nav/link readability on dark */
+.site-footer{ background:#0f0f0f; }
+.site-footer a{ color:#e8cf7a !important; text-decoration:none; }
+.site-footer a:hover{ text-decoration:underline; }
