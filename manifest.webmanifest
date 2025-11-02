@@ -2,7 +2,7 @@
   "name": "Tillerstead LLC — Tile • Bath • Remodel",
   "short_name": "Tillerstead",
   "description": "Licensed New Jersey Home Improvement Contractor providing tile, bath, and remodeling services across Atlantic County and South Jersey. Clean work, code-compliant installs, and lasting craftsmanship.",
-  "start_url": "/index.html",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
@@ -11,15 +11,15 @@
   "lang": "en-US",
   "dir": "ltr",
   "categories": ["home-improvement", "construction", "tile", "remodeling"],
-  "related_applications": [],
   "prefer_related_applications": false,
+
   "shortcuts": [
     {
       "name": "Request an Estimate",
       "short_name": "Estimate",
       "url": "/contact.html",
       "icons": [
-        { "src": "/assets/img/icons/estimate-72.png", "sizes": "72x72", "type": "image/png" }
+        { "src": "/assets/img/icons/icon-72.png", "sizes": "72x72", "type": "image/png" }
       ]
     },
     {
@@ -27,28 +27,35 @@
       "short_name": "Portfolio",
       "url": "/portfolio.html",
       "icons": [
-        { "src": "/assets/img/icons/gallery-72.png", "sizes": "72x72", "type": "image/png" }
+        { "src": "/assets/img/icons/icon-72.png", "sizes": "72x72", "type": "image/png" }
       ]
     }
   ],
+
   "icons": [
     {
-      "src": "/assets/img/Logo-light.png",
+      "src": "/assets/img/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/img/Logo-dark.png",
-      "sizes": "512x512",
+      "src": "/assets/img/icons/icon-256.png",
+      "sizes": "256x256",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/img/maskable-icon.png",
+      "src": "/assets/img/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }
