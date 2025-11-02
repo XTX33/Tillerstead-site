@@ -7,15 +7,11 @@
   <title>Tile, Bath & Remodel Contractor | Tillerstead LLC, Atlantic County NJ</title>
   <meta name="description" content="Licensed New Jersey Home Improvement Contractor specializing in tile, bath, and remodel projects. Serving Atlantic County & South Jersey with clean, code-compliant craftsmanship.">
   <meta name="theme-color" content="#0b0b0b">
-<!-- UI and performance enhancements -->
-<meta name="color-scheme" content="dark light">
-<link rel="preload" as="image" href="/assets/img/Logo-light.png">
-<meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
-<meta name="twitter:image" content="https://tillerstead.com/assets/img/og-image.png">
-  <!-- Canonical -->
+  <meta name="color-scheme" content="dark light">
   <link rel="canonical" href="https://tillerstead.com/">
+  <link rel="preload" as="image" href="/assets/img/Logo-light.png">
 
-  <!-- Favicons (uses your wide wordmark safely across browsers) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
   <link rel="shortcut icon" href="/assets/img/Logo-light.png">
@@ -25,53 +21,68 @@
   <meta property="og:description" content="Showers that don’t leak. Floors that stay true. Kitchens that feel like home.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tillerstead.com/">
-  <meta property="og:image" content="https://tillerstead.com/assets/img/Logo-light.png">
+  <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta property="og:site_name" content="Tillerstead LLC">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tile, Bath & Remodel Contractor | Tillerstead LLC, Atlantic County NJ">
   <meta name="twitter:description" content="NJ-licensed home improvement contractor for tile, bath, and remodel projects. Serving Atlantic County & South Jersey.">
-  <meta name="twitter:image" content="https://tillerstead.com/assets/img/Logo-light.png">
+  <meta name="twitter:image" content="https://tillerstead.com/assets/img/og-image.png">
 
-  <!-- Robots -->
   <meta name="robots" content="index, follow">
 
-  <!-- CSS (your global file); add ?v=bust to beat cache on first deploy -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=2">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=4">
 
-  <!-- Critical styles (compact header/hero/buttons) -->
+  <!-- Critical UI polish -->
   <style>
     :root{
       --bg:#0b0b0b; --fg:#f5f5f5; --muted:#cfcfcf; --accent:#d4af37;
       --b1:rgba(255,255,255,.08); --b2:rgba(255,255,255,.12);
       --rad:12px; --max:64rem;
     }
-    html,body{background:var(--bg);color:var(--fg);margin:0;font:500 16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    html,body{background:var(--bg);color:var(--fg);margin:0;font:500 16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     .container{max-width:var(--max);margin:0 auto;padding-inline:24px}
     .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-    /* App bar */
+    /* Header */
     .appbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
-      padding:10px 16px;background:rgba(11,11,11,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--b1)}
+      padding:12px 18px;background:rgba(11,11,11,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--b1)}
     .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
-    .brand img{display:block;height:28px;width:auto}
+    .brand img{display:block;height:44px;width:auto}
+    @media (max-width:440px){ .brand img{height:38px} }
     .call-btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;
       background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.25)}
 
-    /* Hero */
-    .hero{padding-block:clamp(60px,10vw,120px);text-align:center}
-    .hero h1{font-size:clamp(32px,6vw,64px);line-height:1.05;margin:0 0 16px}
-    .hero p{font-size:clamp(18px,3vw,24px);color:var(--muted);margin:0 0 28px}
+    /* Hero (consistent gradient, no banding) */
+    .hero{
+      padding-block:clamp(72px,12vw,140px);
+      text-align:center;
+      background:
+        radial-gradient(900px 420px at 20% -10%, rgba(212,175,55,.08), transparent),
+        radial-gradient(900px 420px at 80% -10%, rgba(212,175,55,.05), transparent),
+        linear-gradient(180deg,#0b0b0b 0%, #0d0d0d 100%);
+    }
+    .hero h1{font-size:clamp(36px,6.5vw,68px);line-height:1.05;margin:0 0 14px}
+    .hero p{font-size:clamp(18px,3.2vw,22px);color:var(--muted);margin:0 0 26px}
     .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-block;padding:14px 20px;border-radius:var(--rad);font-weight:700;text-decoration:none;transition:transform .15s ease}
-    .btn:hover{transform:translateY(-1px)}
+    .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none}
     .btn.primary{background:linear-gradient(#e8cf7a,#b8922f);color:#111;border:1px solid rgba(0,0,0,.25)}
-    .btn.ghost{background:#161616;color:var(--fg);border:1px solid var(--b1)}
+    .btn.ghost{background:#161616;color:#fff;border:1px solid var(--b1)}
 
-    /* Sections */
+    /* Sections & modern blocks */
     .section{padding-block:48px;border-top:1px solid var(--b1)}
     h2{font-size:clamp(22px,4.2vw,32px);margin:0 0 16px}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .card{border:1px solid var(--b2);background:#131313;border-radius:12px;padding:16px}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .feature{display:grid;gap:.35rem;padding:14px;border:1px solid var(--b1);border-radius:12px;background:#121212}
+    .feature h3{margin:0;font-size:18px}
+    .feature p{margin:0;color:#bdbdbd}
+
+    /* Recent work strip */
+    .showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+    .showcase figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--b1);background:#111}
+    .showcase img{display:block;width:100%;height:auto}
+    .showcase figcaption{padding:.55rem .7rem;font-size:.95rem;color:#bdbdbd}
 
     /* Footer */
     .site-footer{border-top:1px solid var(--b1);padding-block:32px}
@@ -82,7 +93,7 @@
   </style>
 
   <!-- Main JS -->
-  <script defer src="/assets/js/main.js?v=2"></script>
+  <script defer src="/assets/js/main.js?v=4"></script>
 
   <!-- Organization / LocalBusiness schema -->
   <script type="application/ld+json">
@@ -139,10 +150,10 @@
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- Compact app bar -->
+  <!-- Header -->
   <header class="appbar">
     <a class="brand" href="/" aria-label="Tillerstead Home">
-      <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="112" height="28">
+      <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44">
       <span class="sr-only">Tillerstead LLC</span>
     </a>
     <a class="call-btn" href="tel:+16096659350" aria-label="Call Tillerstead">(609) 665-9350</a>
@@ -153,7 +164,7 @@
     <section class="hero">
       <div class="container">
         <h1>Reliable Craft. Built to Last.</h1>
-        <p>Home Improvement Agreed, Delivered and Done Right.</p>
+        <p>Tile, bath, and remodel work delivered to manufacturer standards — clean, code-compliant, and built to serve your home for years.</p>
         <div class="btn-row">
           <a class="btn primary" href="/contact.html">Get Your Free Estimate</a>
           <a class="btn ghost" href="/portfolio.html">View Portfolio</a>
@@ -161,38 +172,78 @@
       </div>
     </section>
 
-    <!-- Trust strip -->
+    <!-- Features + What we do -->
     <section class="section">
       <div class="container">
-        <div class="cards" aria-label="Credentials">
-          <article class="card"><h2 style="margin:0;font-size:18px">NJ Licensed & Insured</h2><p style="margin:.25rem 0 0">Home Improvement Contractor NJ #13VH10808800</p></article>
-          <article class="card"><h2 style="margin:0;font-size:18px">Manufacturer Standards</h2><p style="margin:.25rem 0 0">Bonded waterproofing • Flood tests available</p></article>
-          <article class="card"><h2 style="margin:0;font-size:18px">Local & Responsive</h2><p style="margin:.25rem 0 0">Atlantic County & South Jersey</p></article>
+        <div class="features" aria-label="Why homeowners choose Tillerstead">
+          <article class="feature">
+            <h3>NJ Licensed & Insured</h3>
+            <p>Home Improvement Contractor • HIC #13VH10808800</p>
+          </article>
+          <article class="feature">
+            <h3>Manufacturer Standards</h3>
+            <p>Bonded waterproofing • Flood testing available</p>
+          </article>
+          <article class="feature">
+            <h3>Local & Responsive</h3>
+            <p>Atlantic County & South Jersey • Clear communication</p>
+          </article>
+        </div>
+
+        <h2 style="margin-top:28px">What We Do</h2>
+        <div class="features">
+          <article class="feature">
+            <h3>Tile & Wet Areas</h3>
+            <p>Showers, niches, tub surrounds, backsplashes, large-format tile.</p>
+            <p><a href="/services.html#showers">See shower systems</a></p>
+          </article>
+          <article class="feature">
+            <h3>Floors • Trim • Carpentry</h3>
+            <p>Flat substrates, baseboard & casing, light framing, built-ins.</p>
+            <p><a href="/services.html#floors-walls">See floors & walls</a></p>
+          </article>
+          <article class="feature">
+            <h3>Repairs & Refresh</h3>
+            <p>Leak diagnostics, regrout/recaulk, grout color-seal, tile resets.</p>
+            <p><a href="/services.html#repairs">Targeted repairs</a></p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Services snapshot -->
-    <section class="section">
+    <!-- Recent Work (uses your uploaded images) -->
+    <section class="section" aria-labelledby="recent-work">
       <div class="container">
-        <h2>What We Do</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Tile & Wet Areas</h3>
-            <p>Bonded membranes, flood-tested pans, large-format tile, showers, niches, and backsplashes.</p>
-            <p><a href="/services.html#tile">Learn more</a></p>
-          </article>
-          <article class="card">
-            <h3>Floors • Trim • Carpentry</h3>
-            <p>Flat, true substrates; baseboard &amp; casing; light framing; built-ins and custom shelving.</p>
-            <p><a href="/services.html#carpentry">Learn more</a></p>
-          </article>
-          <article class="card">
-            <h3>Repairs &amp; Refresh</h3>
-            <p>Regrout, recaulk, reset loose tile, sealers, and grout remediation for longer service life.</p>
-            <p><a href="/services.html#repairs">Learn more</a></p>
-          </article>
+        <h2 id="recent-work">Recent Work</h2>
+        <div class="showcase">
+          <figure>
+            <img src="/assets/img/shower-white.jpg.JPG" alt="Subway shower with niche and bench">
+            <figcaption>Subway shower • bench & niche • epoxy grout</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/kitchen-hex.jpg.JPG" alt="Hex backsplash meets range hood">
+            <figcaption>Hex backsplash • clean terminations</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/kitchen-green.jpg.JPG" alt="Kitchen with subway backsplash and pendant lights">
+            <figcaption>Kitchen backsplash • balanced outlets</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/marble-bath.jpg.JPG" alt="Marble-look bathroom with double vanity">
+            <figcaption>Marble look bath • large format alignment</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/shower-blue.jpg.JPG" alt="Blue patterned tile feature wall">
+            <figcaption>Feature wall • patterned layout</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/hardwood-room.jpg.JPG" alt="Refinished hardwoods with fresh trim">
+            <figcaption>Hardwood refinish • fresh trim</figcaption>
+          </figure>
         </div>
+        <p style="margin-top:14px">
+          <a class="btn ghost" href="/portfolio.html">Open full portfolio</a>
+        </p>
       </div>
     </section>
 
@@ -204,27 +255,6 @@
         <div class="btn-row" style="justify-content:flex-start">
           <a class="btn primary" href="/contact.html">Start Your Project</a>
           <a class="btn ghost" href="tel:+16096659350">Call (609) 665-9350</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ (visible copy to match JSON-LD) -->
-    <section class="section">
-      <div class="container">
-        <h2>Common Questions</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Are you licensed and insured in New Jersey?</h3>
-            <p>Yes—Tillerstead LLC is licensed and insured as a New Jersey Home Improvement Contractor (HIC). Add your HIC # to the footer and schema for easy reference.</p>
-          </article>
-          <article class="card">
-            <h3>Do you serve my town?</h3>
-            <p>We cover Atlantic County and neighboring parts of South Jersey including Galloway, EHT, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, and Ocean City.</p>
-          </article>
-          <article class="card">
-            <h3>Tile-only or full bath remodels?</h3>
-            <p>Both. We install to manufacturer and code standards, including bonded waterproofing and flood testing when specified.</p>
-          </article>
         </div>
       </div>
     </section>
@@ -246,20 +276,15 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-   <div>
-  <h4 class="footer-title">Tillerstead LLC</h4>
-  <p>Tile, bath &amp; kitchen remodels • Design consultations • Atlantic County, NJ</p>
-
-  <address class="footer-contact" aria-label="Contact" style="font-style:normal">
-    <a href="mailto:info@tillerstead.com">info@tillerstead.com</a> •
-    <a href="tel:+16096659350">(609) 665-9350</a>
-  </address>
-
-  <p><small>
-    New Jersey Home Improvement Contractor — Licensed, Bonded &amp; Insured<br>
-    HIC # <b>13VH10808800</b>
-  </small></p>
-</div>
+          <h4 class="footer-title">Tillerstead LLC</h4>
+          <p>Tile, bath &amp; kitchen remodels • Design consultations • Atlantic County, NJ</p>
+          <address class="footer-contact" aria-label="Contact" style="font-style:normal">
+            <a href="mailto:info@tillerstead.com">info@tillerstead.com</a> •
+            <a href="tel:+16096659350">(609) 665-9350</a>
+          </address>
+          <p><small>New Jersey Home Improvement Contractor — Licensed, Bonded &amp; Insured<br>
+          HIC # <b>13VH10808800</b></small></p>
+        </div>
         <div>
           <h4>Links</h4>
           <ul class="unstyled">
