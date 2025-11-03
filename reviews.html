@@ -5,53 +5,85 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reviews | Tillerstead LLC</title>
-  <meta name="description" content="Locally owned tile, bath, and remodel contractor serving Atlantic County, NJ. Licensed & insured for quality you can trust.">
+  <meta name="description" content="Real client reviews for Tillerstead LLC — tile, bath, and remodel contractor serving Atlantic County & South Jersey. Licensed & insured.">
   <meta name="theme-color" content="#0b0b0b">
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="index,follow">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://tillerstead.com/about.html">
+  <!-- Canonical (FIXED) -->
+  <link rel="canonical" href="https://tillerstead.com/reviews.html">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/Logo-light.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/Logo-light.png">
-  <link rel="shortcut icon" href="/assets/img/Logo-light.png">
   <link rel="manifest" href="/manifest.webmanifest">
 
-  <!-- Social / Open Graph -->
-  <meta property="og:title" content="About | Tillerstead LLC">
-  <meta property="og:description" content="Tillerstead LLC — Trusted tile, bath, and remodel craftsmanship across South Jersey.">
+  <!-- Social / Open Graph (FIXED) -->
+  <meta property="og:title" content="Reviews | Tillerstead LLC">
+  <meta property="og:description" content="Straight talk, clean installs, and follow-through. Read what homeowners say about working with Tillerstead.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tillerstead.com/about.html">
+  <meta property="og:url" content="https://tillerstead.com/reviews.html">
   <meta property="og:image" content="https://tillerstead.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- CSS / JS -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=9">
-  <script defer src="/assets/js/main.js?v=9"></script>
+  <!-- Site CSS / JS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10">
+  <script defer src="/assets/js/main.js?v=10"></script>
 
-  <!-- Structured Data -->
+  <!-- Page-local styles (simple + readable on dark) -->
+  <style>
+    .container{max-width:64rem;margin:0 auto;padding-inline:24px}
+    .pad{padding-block:32px}
+    .lead{max-width:65ch;color:var(--muted)}
+    .reviews{display:grid;gap:14px;margin-top:1rem}
+    .review{border:1px solid var(--line-2);background:var(--elev-1);border-radius:12px;padding:1rem}
+    .review header{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:baseline;margin-bottom:.35rem}
+    .review .name{font-weight:700}
+    .review time{color:#bdbdbd;font-size:.95rem}
+    .review .meta{color:#cfcfcf;font-size:.95rem;margin-bottom:.25rem}
+    .review .stars{color:var(--accent);letter-spacing:.02em}
+    .pill{display:inline-block;font-size:.85rem;border:1px solid var(--line-2);border-radius:999px;padding:.2rem .55rem;background:var(--elev-0);margin-right:.35rem}
+    .detail{color:#bdbdbd;font-size:.95rem}
+    .cta-row{margin-top:1rem}
+    .cta-row a.btn{margin-right:.5rem}
+    /* Footer links contrast on dark */
+    .site-footer a{color:#e8e8e8}
+    .site-footer a:hover{color:#fff}
+  </style>
+
+  <!-- Structured Data: three individual reviews -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "name": "Tillerstead LLC",
-    "url": "https://tillerstead.com/",
-    "logo": "https://tillerstead.com/assets/img/Logo-light.png",
-    "image": "https://tillerstead.com/assets/img/og-image.png",
-    "description": "Tile, bath, and remodel contractor serving Atlantic County, NJ.",
-    "telephone": "+1-609-665-9350",
-    "email": "info@tillerstead.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
-      "addressLocality": "Galloway",
-      "addressRegion": "NJ",
-      "postalCode": "08205",
-      "addressCountry": "US"
-    },
-    "areaServed": ["Atlantic County, NJ", "Galloway, NJ", "Atlantic City, NJ"]
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Tillerstead LLC Reviews",
+    "url":"https://tillerstead.com/reviews.html",
+    "hasPart":[
+      {
+        "@type":"Review",
+        "author":{"@type":"Person","name":"Alexandra S."},
+        "datePublished":"2025-08-19",
+        "reviewBody":"It was a pleasure working with Devon to repair our ceiling in our closet. We chose to repair it rather than replace. Devon walked us through what that would look like offering the most cost effective option. He was very professional. I recommend working with him!!",
+        "itemReviewed":{"@type":"LocalBusiness","name":"Tillerstead LLC"},
+        "reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"}
+      },
+      {
+        "@type":"Review",
+        "author":{"@type":"Person","name":"Ahmed A."},
+        "datePublished":"2025-07-20",
+        "reviewBody":"I recently hired Devon for a bathroom remodel, and my wife and I couldn’t be happier with the results. From start to finish, Devon was professional, punctual, and detail-oriented. He took the time to listen to what we wanted, offered helpful suggestions, and executed everything with precision. Devon kept the work area tidy throughout the project and completed the job on time without cutting corners. It’s rare to find someone who truly takes pride in their work the way Devon does. I’d highly recommend him.",
+        "itemReviewed":{"@type":"LocalBusiness","name":"Tillerstead LLC"},
+        "reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"}
+      },
+      {
+        "@type":"Review",
+        "author":{"@type":"Person","name":"Maria J."},
+        "datePublished":"2025-05-06",
+        "reviewBody":"I hired Devon Tyler for tile work in my home and was impressed by his patience, precision, and professionalism. He took his time to get every cut right and made sure the job was solid and clean. I’d absolutely recommend him to anyone looking for quality tile work done with care.",
+        "itemReviewed":{"@type":"LocalBusiness","name":"Tillerstead LLC"},
+        "reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"}
+      }
+    ]
   }
   </script>
 </head>
@@ -76,7 +108,7 @@
         <li><a href="/services.html">Services</a></li>
         <li><a href="/portfolio.html">Gallery</a></li>
         <li><a href="/reviews.html" aria-current="page">Reviews</a></li>
-        <li><a href="/about.html">Legacy</a></li>
+        <li><a href="/about.html">About</a></li>
         <li><a class="btn" href="/contact.html">Start Your Project</a></li>
         <li><a class="btn btn-accent" href="/financing.html">Flexible Financing</a></li>
       </ul>
@@ -93,28 +125,57 @@
     </header>
 
     <section class="reviews" aria-label="Client reviews">
+      <!-- Alexandra S. -->
       <article class="review">
-        <div class="who">K. — Galloway, NJ</div>
-        <div class="loc"><span class="stars">★★★★★</span> Shower re-tile & waterproofing</div>
-        <p>Communicated clearly, showed up on time, and flood-tested the shower pan. Looks great and feels solid.</p>
+        <header>
+          <div class="name">Alexandra S.</div>
+          <time datetime="2025-08-19">Aug 19, 2025</time>
+          <span class="pill">Hired on Thumbtack</span>
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        </header>
+        <p>It was a pleasure working with Devon to repair our ceiling in our closet. We chose to repair it rather than replace. Devon walked us through what that would look like offering the most cost effective option. He was very professional. I recommend working with him!!</p>
+        <p class="detail"><strong>Details:</strong> Fill in cracks • Patch damaged drywall • Replace one or more sheets of drywall • 1 room • Wall(s) • Residential</p>
+        <p class="detail"><em>Category:</em> Drywall Repair and Texturing</p>
       </article>
+
+      <!-- Ahmed A. -->
       <article class="review">
-        <div class="who">M. — Egg Harbor Township, NJ</div>
-        <div class="loc"><span class="stars">★★★★★</span> Kitchen backsplash</div>
-        <p>Cuts around outlets are tight and the edges are sealed perfectly. Left the space spotless.</p>
+        <header>
+          <div class="name">Ahmed A.</div>
+          <time datetime="2025-07-20">Jul 20, 2025</time>
+          <span class="pill">Hired on Thumbtack</span>
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        </header>
+        <p>I recently hired Devon for a bathroom remodel, and my wife and I couldn’t be happier with the results. From start to finish, Devon was professional, punctual, and detail-oriented. He took the time to listen to what we wanted, offered helpful suggestions, and executed everything with precision. Devon kept the work area tidy throughout the project and completed the job on time without cutting corners. It’s rare to find someone who truly takes pride in their work the way Devon does. I’d highly recommend him.</p>
+        <p class="detail"><strong>Details:</strong> Bathroom • Floor • Wall • 101–200 sq ft • Wood • Porcelain • Yes, materials supplied</p>
+        <p class="detail"><em>Category:</em> Tile Installation and Replacement</p>
       </article>
+
+      <!-- Maria J. -->
       <article class="review">
-        <div class="who">S. — Mays Landing, NJ</div>
-        <div class="loc"><span class="stars">★★★★★</span> Floor leveling & large-format tile</div>
-        <p>Took time to prep the floor so the big tile sits flat. Worth doing right.</p>
+        <header>
+          <div class="name">Maria J.</div>
+          <time datetime="2025-05-06">May 6, 2025</time>
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        </header>
+        <p>I hired Devon Tyler for tile work in my home and was impressed by his patience, precision, and professionalism. He took his time to get every cut right and made sure the job was solid and clean. I’d absolutely recommend him to anyone looking for quality tile work done with care.</p>
       </article>
     </section>
 
-    <p style="margin-top:1.25rem">
-      Have a project in mind? <a class="btn btn-accent" href="/contact.html">Start Your Project</a>
-    </p>
+    <div class="cta-row">
+      <a class="btn btn-accent" href="/contact.html">Start Your Project</a>
+      <a class="btn" href="https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199" target="_blank" rel="noopener">See more on Thumbtack ↗</a>
+    </div>
+
+    <hr style="margin:1.5rem 0;border:0;border-top:1px solid var(--line-1)">
+
+    <section aria-label="Credentials">
+      <p class="detail"><strong>Credentials:</strong> License type: Home Improvement Contractor • License state: NJ • License verified on 10/5/2025</p>
+      <p class="detail"><strong>Background Check:</strong> Devon Materio-Barber</p>
+    </section>
   </main>
-  <!-- Big-logo footer -->
+
+  <!-- Big-logo footer (high-contrast links) -->
   <footer class="site-footer">
     <div class="container" style="text-align:center">
       <a href="/" class="footer-logo" aria-label="Tillerstead Home">
