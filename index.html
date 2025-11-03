@@ -2,107 +2,105 @@
 layout: default
 title: Home
 ---
-<body>
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <h1>Reliable Craft. Built to Last.</h1>
-        <p>Tile, bath, and remodel work delivered to manufacturer standards — clean, code-compliant, and built to serve your home for years.</p>
-        <div class="btn-row">
-          <a class="btn primary" href="/contact.html">Get Your Free Estimate</a>
-          <a class="btn ghost" href="/portfolio.html">View Portfolio</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Features + What we do -->
-    <section class="section">
-      <div class="container">
-        <div class="features" aria-label="Why homeowners choose Tillerstead">
-          <article class="feature"><h3>NJ Licensed & Insured</h3><p>Home Improvement Contractor • HIC #13VH10808800</p></article>
-          <article class="feature"><h3>Manufacturer Standards</h3><p>Bonded waterproofing • Flood testing available</p></article>
-          <article class="feature"><h3>Local & Responsive</h3><p>Atlantic County & South Jersey • Clear communication</p></article>
-        </div>
-
-        <h2 style="margin-top:28px">What We Do</h2>
-        <div class="features">
-          <article class="feature">
-            <h3>Tile & Wet Areas</h3>
-            <p>Showers, niches, tub surrounds, backsplashes, large-format tile.</p>
-            <p><a href="/services.html#showers">See shower systems</a></p>
-          </article>
-          <article class="feature">
-            <h3>Floors • Trim • Carpentry</h3>
-            <p>Flat substrates, baseboard & casing, light framing, built-ins.</p>
-            <p><a href="/services.html#floors-walls">See floors & walls</a></p>
-          </article>
-          <article class="feature">
-            <h3>Repairs & Refresh</h3>
-            <p>Leak diagnostics, regrout/recaulk, grout color-seal, tile resets.</p>
-            <p><a href="/services.html#repairs">Targeted repairs</a></p>
-          </article>
-        </div>
+<main id="main">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Reliable Craft. Built to Last.</h1>
+      <p>Tile, bath, and remodel work delivered to manufacturer standards — clean, code-compliant, and built to serve your home for years.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="{{ '/contact.html' | relative_url }}">Get Your Free Estimate</a>
+        <a class="btn ghost" href="{{ '/portfolio.html' | relative_url }}">View Portfolio</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Recent Work -->
-    <section class="section" aria-labelledby="recent-work">
-      <div class="container">
-        <h2 id="recent-work">Recent Work</h2>
-        <div class="showcase">
-          <figure>
-            <img loading="lazy" src="/assets/img/shower-white.jpg.JPG" alt="Subway shower with niche and bench">
-            <figcaption>Subway shower • bench & niche • epoxy grout</figcaption>
-          </figure>
-          <figure>
-            <img loading="lazy" src="/assets/img/kitchen-hex.jpg.JPG" alt="Hex backsplash meets range hood">
-            <figcaption>Hex backsplash • clean terminations</figcaption>
-          </figure>
-          <figure>
-            <img loading="lazy" src="/assets/img/kitchen-green.jpg.JPG" alt="Kitchen with subway backsplash and pendant lights">
-            <figcaption>Kitchen backsplash • balanced outlets</figcaption>
-          </figure>
-          <figure>
-            <img loading="lazy" src="/assets/img/marble-bath.jpg.JPG" alt="Marble-look bathroom with double vanity">
-            <figcaption>Marble look bath • large format alignment</figcaption>
-          </figure>
-          <figure>
-            <img loading="lazy" src="/assets/img/shower-blue.jpg.JPG" alt="Blue patterned tile feature wall">
-            <figcaption>Feature wall • patterned layout</figcaption>
-          </figure>
-          <figure>
-            <img loading="lazy" src="/assets/img/hardwood-room.jpg.JPG" alt="Refinished hardwoods with fresh trim">
-            <figcaption>Hardwood refinish • fresh trim</figcaption>
-          </figure>
-        </div>
-        <p style="margin-top:14px"><a class="btn ghost" href="/portfolio.html">Open full portfolio</a></p>
+  <!-- Features + What we do -->
+  <section class="section">
+    <div class="container">
+      <div class="features" aria-label="Why homeowners choose Tillerstead">
+        <article class="feature"><h3>NJ Licensed &amp; Insured</h3><p>Home Improvement Contractor • HIC #13VH10808800</p></article>
+        <article class="feature"><h3>Manufacturer Standards</h3><p>Bonded waterproofing • Flood testing available</p></article>
+        <article class="feature"><h3>Local &amp; Responsive</h3><p>Atlantic County &amp; South Jersey • Clear communication</p></article>
       </div>
-    </section>
 
-    <!-- Coverage + CTA -->
-    <section class="section">
-      <div class="container">
-        <h2>Serving Atlantic County & Nearby</h2>
-        <p>Galloway, Egg Harbor Township, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, Ocean City — plus portions of Cape May, Ocean, and Burlington counties.</p>
-        <div class="btn-row" style="justify-content:flex-start">
-          <a class="btn primary" href="/contact.html">Start Your Project</a>
-          <a class="btn ghost" href="tel:+16096659350">Call (609) 665-9350</a>
-        </div>
+      <h2 style="margin-top:28px">What We Do</h2>
+      <div class="features">
+        <article class="feature">
+          <h3>Tile &amp; Wet Areas</h3>
+          <p>Showers, niches, tub surrounds, backsplashes, large-format tile.</p>
+          <p><a href="{{ '/services/#showers' | relative_url }}">See shower systems</a></p>
+        </article>
+        <article class="feature">
+          <h3>Floors • Trim • Carpentry</h3>
+          <p>Flat substrates, baseboard &amp; casing, light framing, built-ins.</p>
+          <p><a href="{{ '/services/#floors-walls' | relative_url }}">See floors &amp; walls</a></p>
+        </article>
+        <article class="feature">
+          <h3>Repairs &amp; Refresh</h3>
+          <p>Leak diagnostics, regrout/recaulk, grout color-seal, tile resets.</p>
+          <p><a href="{{ '/services/#repairs' | relative_url }}">Targeted repairs</a></p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Final CTA -->
-    <section class="section">
-      <div class="container">
-        <h2>Ready when you are.</h2>
-        <p>Tell us what you’re planning—get a clean, itemized estimate with straight talk and no surprises.</p>
-        <div class="btn-row">
-          <a class="btn primary" href="/contact.html">Request an Estimate</a>
-          <a class="btn ghost" href="/portfolio.html">See Recent Work</a>
-        </div>
+  <!-- Recent Work -->
+  <section class="section" aria-labelledby="recent-work">
+    <div class="container">
+      <h2 id="recent-work">Recent Work</h2>
+      <div class="showcase">
+        <figure>
+          <img loading="lazy" src="{{ '/assets/img/shower-white.jpg.JPG' | relative_url }}" alt="Subway shower with niche and bench">
+          <figcaption>Subway shower • bench &amp; niche • epoxy grout</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="{{ '/assets/img/kitchen-hex.jpg.JPG' | relative_url }}" alt="Hex backsplash meets range hood">
+          <figcaption>Hex backsplash • clean terminations</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="{{ '/assets/img/kitchen-green.jpg.JPG' | relative_url }}" alt="Kitchen with subway backsplash and pendant lights">
+          <figcaption>Kitchen backsplash • balanced outlets</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="{{ '/assets/img/marble-bath.jpg.JPG' | relative_url }}" alt="Marble-look bathroom with double vanity">
+          <figcaption>Marble look bath • large format alignment</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="{{ '/assets/img/shower-blue.jpg.JPG' | relative_url }}" alt="Blue patterned tile feature wall">
+          <figcaption>Feature wall • patterned layout</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="{{ '/assets/img/hardwood-room.jpg.JPG' | relative_url }}" alt="Refinished hardwoods with fresh trim">
+          <figcaption>Hardwood refinish • fresh trim</figcaption>
+        </figure>
       </div>
-    </section>
-  </main>
-</body>
-</html>
+      <p style="margin-top:14px"><a class="btn ghost" href="{{ '/portfolio.html' | relative_url }}">Open full portfolio</a></p>
+    </div>
+  </section>
+
+  <!-- Coverage + CTA -->
+  <section class="section">
+    <div class="container">
+      <h2>Serving Atlantic County &amp; Nearby</h2>
+      <p>Galloway, Egg Harbor Township, Mays Landing, Somers Point, Ventnor, Margate, Brigantine, Hammonton, Ocean City — plus portions of Cape May, Ocean, and Burlington counties.</p>
+      <div class="btn-row" style="justify-content:flex-start">
+        <a class="btn primary" href="{{ '/contact.html' | relative_url }}">Start Your Project</a>
+        <a class="btn ghost" href="tel:+16096659350">Call (609) 665-9350</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container">
+      <h2>Ready when you are.</h2>
+      <p>Tell us what you’re planning—get a clean, itemized estimate with straight talk and no surprises.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="{{ '/contact.html' | relative_url }}">Request an Estimate</a>
+        <a class="btn ghost" href="{{ '/portfolio.html' | relative_url }}">See Recent Work</a>
+      </div>
+    </div>
+  </section>
+</main>
