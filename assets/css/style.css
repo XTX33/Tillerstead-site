@@ -407,7 +407,7 @@ input::placeholder,textarea::placeholder{
   :root {
     --site-favicon: url("/favicon.ico?v=3");
     --site-apple-touch: url("/apple-touch-icon.png?v=3");
-    --site-mask-icon: url("/assets/img/Logo-dark.png?v=3");
+    --site-mask-icon: url("/assets/img/Logo.png?v=3");
   }
 }
 link[rel="mask-icon"],
