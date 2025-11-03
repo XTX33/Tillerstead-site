@@ -1,6 +1,7 @@
 <header class="appbar">
-  <a class="brand" href="/" aria-label="Tillerstead Home">
-    <img src="/assets/img/Logo-light.png" alt="Tillerstead logo" width="168" height="44">
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} Home">
+    <img src="/assets/img/Logo-light.png" alt="{{ site.title }} logo" width="168" height="44" decoding="async" loading="eager">
+    <span class="sr-only">{{ site.title }}</span>
   </a>
 
   <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
@@ -9,16 +10,19 @@
 
   <nav id="nav" class="site-nav" aria-label="Main">
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/portfolio.html">Gallery</a></li>
-      <li><a href="/reviews.html">Reviews</a></li>
-      <li><a href="/legacy.html">Legacy</a></li>
-      <li><a class="btn" href="/contact.html">Start Your Project</a></li>
-      <li><a class="btn btn-accent" href="/financing.html">Flexible Financing</a></li>
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+      <li><a href="{{ '/portfolio/' | relative_url }}">Gallery</a></li>
+      <li><a href="{{ '/reviews/' | relative_url }}">Reviews</a></li>
+      <li><a href="{{ '/legacy/' | relative_url }}">Legacy</a></li>
+      <li><a class="btn" href="{{ '/contact/' | relative_url }}">Start Your Project</a></li>
+      <li><a class="btn btn-accent" href="{{ '/financing/' | relative_url }}">Flexible Financing</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
     </ul>
   </nav>
 
-  <a class="call-btn" href="tel:+16096659350">(609) 665-9350</a>
-  <button class="theme-toggle" title="Toggle theme" aria-pressed="false">◐</button>
+  <a class="call-btn" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
+    {{ site.company.phone_display | default: '(609) 665-9350' }}
+  </a>
+  <button class="theme-toggle" title="Toggle theme" aria-pressed="false" aria-label="Toggle theme">◐</button>
 </header>
