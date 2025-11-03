@@ -575,3 +575,41 @@ input::placeholder,textarea::placeholder{color:#9a9a9a}
 .site-footer{ background:#0f0f0f; }
 .site-footer a{ color:#e8cf7a !important; text-decoration:none; }
 .site-footer a:hover{ text-decoration:underline; }
+/* =========================
+   Favicon / Icon Overrides
+   Forces browsers to reload the correct site icons.
+   ========================= */
+
+/* Force cache-bust for old SVG or default browser icons */
+@layer reset-icons {
+  :root {
+    /* helps Safari pinned tabs & mobile homescreen icons */
+    --site-favicon: url("/favicon.ico?v=3");
+    --site-apple-touch: url("/apple-touch-icon.png?v=3");
+    --site-mask-icon: url("/Logo-light.png?v=3");
+  }
+}
+
+/* For WebKit pinned tabs or any element showing the old half-circle */
+link[rel="mask-icon"],
+link[rel="icon"],
+link[rel="shortcut icon"],
+link[rel="apple-touch-icon"] {
+  content: var(--site-favicon);
+}
+
+/* Make sure iOS and Safari use the correct background */
+:root {
+  color-scheme: dark light;
+  --favicon-filter: none;
+}
+
+/* Optional — visually replace tab/favicon in Safari pinned-tab preview */
+@supports (-webkit-mask-image: var(--site-mask-icon)) {
+  link[rel="mask-icon"] {
+    -webkit-mask-image: var(--site-mask-icon);
+    mask-image: var(--site-mask-icon);
+    -webkit-mask-repeat: no-repeat;
+    background-color: #d4af37; /* your gold accent */
+  }
+}
