@@ -341,3 +341,10 @@ link[rel="apple-touch-icon"] { content: var(--site-favicon); }
     background-color: var(--primary);
   }
 }
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.footer-logo img { max-width: 300px; height: auto; }
