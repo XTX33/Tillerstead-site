@@ -1,29 +1,38 @@
-<header class="appbar">
-  <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} Home">
-    <img src="/assets/img/Logo-light.png" alt="{{ site.title }} logo" width="168" height="44" decoding="async" loading="eager">
-    <span class="sr-only">{{ site.title }}</span>
+<header class="appbar site-header" role="banner">
+  <!-- Brand -->
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
+    <img
+      src="{{ '/assets/img/Logo-light.png' | relative_url }}"
+      alt="{{ site.title | default: 'Tillerstead' }} logo"
+      width="168"
+      height="44"
+      decoding="async"
+      loading="eager">
+    <span class="sr-only">{{ site.title | default: 'Tillerstead' }}</span>
   </a>
 
-  <button class="nav-toggle" aria-controls="nav" aria-expanded="false" title="Menu">
+  <!-- Mobile toggle -->
+  <button class="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="Toggle menu" title="Menu">
     <span class="hamburger" aria-hidden="true"></span>
   </button>
 
-  <nav id="nav" class="site-nav" aria-label="Main">
-    <ul>
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
-<li><a href="{{ '/about/' | relative_url }}">About</a></li>
-<li><a href="{{ '/services/' | relative_url }}">Services</a></li>
-<li><a href="{{ '/portfolio/' | relative_url }}">Gallery</a></li>
-<li><a href="{{ '/reviews/' | relative_url }}">Reviews</a></li>
-<li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-<li><a href="{{ '/financing/' | relative_url }}">Financing</a></li>
-<li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-<li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+  <!-- Primary nav -->
+  <nav id="nav" class="site-nav" aria-label="Primary">
+    <ul class="nav-list">
+      <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
+      <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}aria-current="page"{% endif %}>About</a></li>
+      <li><a href="{{ '/services/' | relative_url }}" {% if page.url contains '/services/' %}aria-current="page"{% endif %}>Services</a></li>
+      <li><a href="{{ '/portfolio/' | relative_url }}" {% if page.url contains '/portfolio/' %}aria-current="page"{% endif %}>Gallery</a></li>
+      <li><a href="{{ '/reviews/' | relative_url }}" {% if page.url contains '/reviews/' %}aria-current="page"{% endif %}>Reviews</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact/' %}aria-current="page"{% endif %}>Contact</a></li>
+      <li><a href="{{ '/financing/' | relative_url }}" {% if page.url contains '/financing/' %}aria-current="page"{% endif %}>Financing</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Blog</a></li>
+      <li><a href="{{ '/privacy/' | relative_url }}" {% if page.url contains '/privacy/' %}aria-current="page"{% endif %}>Privacy</a></li>
     </ul>
   </nav>
 
+  <!-- Call + theme -->
   <a class="call-btn" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
     {{ site.company.phone_display | default: '(609) 665-9350' }}
   </a>
-  <button class="theme-toggle" title="Toggle theme" aria-pressed="false" aria-label="Toggle theme">◐</button>
 </header>
