@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include header.html %}
+  <main id="main">
+    <article class="container section prose">
+      <header class="mb-1">
+        <h1>{{ page.title }}</h1>
+        <p><small>{{ page.date | date: "%B %e, %Y" }}</small></p>
+        {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+      </header>
+
+      {{ content }}
+    </article>
+
+    {% include cta-estimate.html %}
+  </main>
+  {% include footer.html %}
+</body>
+</html>
