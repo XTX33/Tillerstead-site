@@ -1,4 +1,16 @@
-{% include head.html %}
-{% include header.html %}
-<main id="main">{{ content }}</main>
-{% include footer.html %}
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    {%- comment -%} Include the header ONCE {%- endcomment -%}
+    {% include header.html %}
+
+    <main id="main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>
