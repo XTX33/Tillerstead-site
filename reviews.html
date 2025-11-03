@@ -3,60 +3,122 @@ layout: default
 title: Reviews
 permalink: /reviews/
 ---
-  <main id="main" class="container pad">
-    <header>
-      <h1>Reviews</h1>
-      <p class="lead">Straight talk, clean installs, and follow-through. Here’s what homeowners say about working with Tillerstead.</p>
-    </header>
 
-    <section class="reviews" aria-label="Client reviews">
-      <!-- Alexandra S. -->
-      <article class="review">
-        <header>
-          <div class="name">Alexandra S.</div>
-          <time datetime="2025-08-19">Aug 19, 2025</time>
-          <span class="pill">Hired on Thumbtack</span>
-          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
-        </header>
-        <p>It was a pleasure working with Devon to repair our ceiling in our closet. We chose to repair it rather than replace. Devon walked us through what that would look like offering the most cost effective option. He was very professional. I recommend working with him!!</p>
-        <p class="detail"><strong>Details:</strong> Fill in cracks • Patch damaged drywall • Replace one or more sheets of drywall • 1 room • Wall(s) • Residential</p>
-        <p class="detail"><em>Category:</em> Drywall Repair and Texturing</p>
-      </article>
+<!-- Page-scoped styles (boxed to #reviews-page only) -->
+<style>
+  /* local design tokens, with fallbacks in case site vars don't exist */
+  #reviews-page {
+    --bg: var(--surface-0, #fff);
+    --bg-soft: var(--surface-1, #fafafa);
+    --text: var(--text-1, #111);
+    --muted: var(--text-2, #555);
+    --line: var(--line-1, #e5e5e5);
+    --accent: var(--accent, #0a7cff);
+    color: var(--text);
+  }
 
-      <!-- Ahmed A. -->
-      <article class="review">
-        <header>
-          <div class="name">Ahmed A.</div>
-          <time datetime="2025-07-20">Jul 20, 2025</time>
-          <span class="pill">Hired on Thumbtack</span>
-          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
-        </header>
-        <p>I recently hired Devon for a bathroom remodel, and my wife and I couldn’t be happier with the results. From start to finish, Devon was professional, punctual, and detail-oriented. He took the time to listen to what we wanted, offered helpful suggestions, and executed everything with precision. Devon kept the work area tidy throughout the project and completed the job on time without cutting corners. It’s rare to find someone who truly takes pride in their work the way Devon does. I’d highly recommend him.</p>
-        <p class="detail"><strong>Details:</strong> Bathroom • Floor • Wall • 101–200 sq ft • Wood • Porcelain • Yes, materials supplied</p>
-        <p class="detail"><em>Category:</em> Tile Installation and Replacement</p>
-      </article>
+  #reviews-page .lead { font-size: 1.125rem; line-height: 1.6; color: var(--muted); }
 
-      <!-- Maria J. -->
-      <article class="review">
-        <header>
-          <div class="name">Maria J.</div>
-          <time datetime="2025-05-06">May 6, 2025</time>
-          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
-        </header>
-        <p>I hired Devon Tyler for tile work in my home and was impressed by his patience, precision, and professionalism. He took his time to get every cut right and made sure the job was solid and clean. I’d absolutely recommend him to anyone looking for quality tile work done with care.</p>
-      </article>
-    </section>
+  #reviews-page .reviews {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin-block: 1rem 1.5rem;
+  }
+  @media (min-width: 720px) {
+    #reviews-page .reviews { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
 
-    <div class="cta-row">
-      <a class="btn btn-accent" href="/contact.html">Start Your Project</a>
-      <a class="btn" href="https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199" target="_blank" rel="noopener">See more on Thumbtack ↗</a>
-    </div>
+  #reviews-page .review {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 1px 0 rgba(0,0,0,.03);
+  }
 
-    <hr style="margin:1.5rem 0;border:0;border-top:1px solid var(--line-1)">
+  #reviews-page .review > header {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem;
+    padding-bottom: .5rem; margin-bottom: .75rem; border-bottom: 1px solid var(--line);
+  }
+  #reviews-page .name { font-weight: 700; }
+  #reviews-page time { color: var(--muted); font-size: .9rem; }
+  #reviews-page .pill {
+    font-size: .8rem; line-height: 1.8; padding: 0 .6rem;
+    border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--bg-soft);
+  }
+  #reviews-page .stars { font-size: .95rem; letter-spacing: .08em; color: #e0aa0f; }
 
-    <section aria-label="Credentials">
-      <p class="detail"><strong>Credentials:</strong> License type: Home Improvement Contractor • License state: NJ • License verified on 10/5/2025</p>
-      <p class="detail"><strong>Background Check:</strong> Devon Barber</p>
-    </section>
-  </main>
-</html>
+  #reviews-page .detail { font-size: .92rem; color: var(--muted); }
+
+  #reviews-page .cta-row {
+    display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem;
+  }
+  #reviews-page .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: .6rem .9rem; border-radius: 8px; border: 1px solid var(--line);
+    text-decoration: none; font-weight: 600;
+  }
+  #reviews-page .btn-accent {
+    background: var(--accent); color: #fff; border-color: transparent;
+  }
+  #reviews-page .btn:hover { filter: brightness(.98); }
+  #reviews-page .btn-accent:hover { filter: brightness(.96); }
+</style>
+
+<section id="reviews-page" class="container pad" aria-labelledby="reviews-h1">
+  <header>
+    <h1 id="reviews-h1">Reviews</h1>
+    <p class="lead">Straight talk, clean installs, and follow-through. Here’s what homeowners say about working with Tillerstead.</p>
+  </header>
+
+  <section class="reviews" aria-label="Client reviews">
+    <!-- Alexandra S. -->
+    <article class="review">
+      <header>
+        <div class="name">Alexandra S.</div>
+        <time datetime="2025-08-19">Aug 19, 2025</time>
+        <span class="pill">Hired on Thumbtack</span>
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+      </header>
+      <p>It was a pleasure working with Devon to repair our ceiling in our closet. We chose to repair it rather than replace. Devon walked us through what that would look like offering the most cost effective option. He was very professional. I recommend working with him!!</p>
+      <p class="detail"><strong>Details:</strong> Fill in cracks • Patch damaged drywall • Replace one or more sheets of drywall • 1 room • Wall(s) • Residential</p>
+      <p class="detail"><em>Category:</em> Drywall Repair and Texturing</p>
+    </article>
+
+    <!-- Ahmed A. -->
+    <article class="review">
+      <header>
+        <div class="name">Ahmed A.</div>
+        <time datetime="2025-07-20">Jul 20, 2025</time>
+        <span class="pill">Hired on Thumbtack</span>
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+      </header>
+      <p>I recently hired Devon for a bathroom remodel, and my wife and I couldn’t be happier with the results. From start to finish, Devon was professional, punctual, and detail-oriented. He took the time to listen to what we wanted, offered helpful suggestions, and executed everything with precision. Devon kept the work area tidy throughout the project and completed the job on time without cutting corners. It’s rare to find someone who truly takes pride in their work the way Devon does. I’d highly recommend him.</p>
+      <p class="detail"><strong>Details:</strong> Bathroom • Floor • Wall • 101–200 sq ft • Wood • Porcelain • Yes, materials supplied</p>
+      <p class="detail"><em>Category:</em> Tile Installation and Replacement</p>
+    </article>
+
+    <!-- Maria J. -->
+    <article class="review">
+      <header>
+        <div class="name">Maria J.</div>
+        <time datetime="2025-05-06">May 6, 2025</time>
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+      </header>
+      <p>I hired Devon Tyler for tile work in my home and was impressed by his patience, precision, and professionalism. He took his time to get every cut right and made sure the job was solid and clean. I’d absolutely recommend him to anyone looking for quality tile work done with care.</p>
+    </article>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn btn-accent" href="{{ '/contact.html' | relative_url }}">Start Your Project</a>
+    <a class="btn" href="https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199" target="_blank" rel="noopener">See more on Thumbtack ↗</a>
+  </div>
+
+  <hr style="margin:1.5rem 0;border:0;border-top:1px solid var(--line)">
+
+  <section aria-label="Credentials">
+    <p class="detail"><strong>Credentials:</strong> License type: Home Improvement Contractor • License state: NJ • License verified on 10/5/2025</p>
+    <p class="detail"><strong>Background Check:</strong> Devon Barber</p>
+  </section>
+</section>
