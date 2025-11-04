@@ -596,6 +596,8 @@ body.nav-open {
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   z-index: 900;
+  pointer-events: none;   /* ✅ this line */
+}
 }
 
 /* ==== Tillerstead Modern Brass 2025 ====
