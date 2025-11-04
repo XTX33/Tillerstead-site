@@ -40,13 +40,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Manrope:wght@500..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+  <!-- ✅ CSS (fixed for all environments) -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=5' | relative_url }}">
   {% if page.styles %}
     {% for href in page.styles %}
       <link rel="stylesheet" href="{{ href | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
     {% endfor %}
   {% endif %}
+  <noscript><style>body{font-family:sans-serif;background:#fff;color:#000}</style></noscript>
 
   <!-- JS -->
   <script defer src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}"></script>
