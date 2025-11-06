@@ -1,0 +1,550 @@
+/* ============================================
+   Tillerstead – Global Theme (theme.css)
+   Unifies colors, typography, spacing & layout
+   ============================================ */
+
+/* 0) Reset & base
+   ------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 1) Design tokens (colors, type, space)
+   ------------------------------------------- */
+
+:root {
+  /* Brand palette */
+  --ts-ink:           #0b1018;  /* main text */
+  --ts-ink-soft:      #4b5563;  /* secondary text */
+  --ts-paper:         #f9fafb;  /* page background */
+  --ts-surface:       #ffffff;  /* cards / content */
+  --ts-surface-alt:   #020617;  /* dark header / footer */
+  --ts-muted-surface: #111827;  /* darker blocks */
+
+  --ts-brass:         #d1a638;
+  --ts-brass-dark:    #b4891f;
+  --ts-emerald:       #0f766e;
+  --ts-emerald-dark:  #0a4f49;
+
+  /* Borders & shadows */
+  --ts-border-subtle: #e5e7eb;
+  --ts-border-soft:   #d1d5db;
+  --ts-border-strong: #111827;
+  --ts-shadow-soft:   0 18px 45px rgba(15, 23, 42, 0.16);
+
+  /* Typographic scale (fluid where helpful) */
+  --ts-text-xs:   clamp(0.8rem, 0.76rem + 0.1vw, 0.9rem);
+  --ts-text-sm:   clamp(0.9rem, 0.84rem + 0.2vw, 1rem);
+  --ts-text-md:   clamp(1rem, 0.95rem + 0.3vw, 1.05rem);
+  --ts-text-lg:   clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem);
+  --ts-text-xl:   clamp(1.4rem, 1.15rem + 0.6vw, 1.7rem);
+  --ts-text-2xl:  clamp(1.8rem, 1.4rem + 1vw, 2.3rem);
+  --ts-text-3xl:  clamp(2.2rem, 1.8rem + 1.4vw, 3rem);
+
+  /* Spacing scale */
+  --ts-space-0:   0;
+  --ts-space-1:   0.5rem;
+  --ts-space-2:   0.75rem;
+  --ts-space-3:   1.25rem;
+  --ts-space-4:   2rem;
+  --ts-space-5:   3rem;
+  --ts-space-6:   4rem;
+
+  /* Radii */
+  --ts-radius-card:  1.25rem;
+  --ts-radius-chip:  999px;
+
+  /* Layout */
+  --ts-shell-width:  1120px;
+
+  /* Transition */
+  --ts-transition-fast: 0.18s ease;
+}
+
+/* 2) Body, typography, links
+   ------------------------------------------- */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  font-size: var(--ts-text-md);
+  line-height: 1.6;
+  color: var(--ts-ink);
+  background: var(--ts-surface-alt); /* dark chrome around page sections */
+}
+
+/* Main content area always on light paper */
+main {
+  background: var(--ts-paper);
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0 0 var(--ts-space-2);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--ts-ink);
+}
+
+h1 {
+  font-size: var(--ts-text-3xl);
+}
+
+h2 {
+  font-size: var(--ts-text-2xl);
+}
+
+h3 {
+  font-size: var(--ts-text-xl);
+}
+
+h4 {
+  font-size: var(--ts-text-lg);
+}
+
+/* Paragraphs & base text */
+
+p {
+  margin: 0 0 var(--ts-space-2);
+  color: var(--ts-ink-soft);
+}
+
+small,
+.text-small {
+  font-size: var(--ts-text-sm);
+}
+
+/* Links */
+
+a {
+  color: var(--ts-emerald);
+  text-decoration: none;
+  transition: color var(--ts-transition-fast), opacity var(--ts-transition-fast);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--ts-emerald-dark);
+}
+
+/* 3) Layout primitives
+   ------------------------------------------- */
+
+/* Content shell (use on almost every section) */
+.shell {
+  max-width: var(--ts-shell-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Vertical section spacing */
+.section {
+  padding-block: var(--ts-space-5);
+}
+
+.section--tight {
+  padding-block: var(--ts-space-4);
+}
+
+.section--flush-top {
+  padding-block-start: var(--ts-space-3);
+}
+
+/* Dark band for hero / footer, etc. */
+.section--dark {
+  background: var(--ts-surface-alt);
+  color: #e5e7eb;
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark p {
+  color: inherit;
+}
+
+/* Stacked layout helpers
+   (wrap elements and they’ll get even vertical rhythm) */
+
+.stack-sm > * + * {
+  margin-top: var(--ts-space-1);
+}
+
+.stack-md > * + * {
+  margin-top: var(--ts-space-2);
+}
+
+.stack-lg > * + * {
+  margin-top: var(--ts-space-3);
+}
+
+/* Grid helpers */
+
+.grid {
+  display: grid;
+  gap: var(--ts-space-3);
+}
+
+.grid-2 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Simple alignment utilities */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .text-md-left {
+    text-align: left;
+  }
+}
+
+/* 4) Cards, surfaces, and chips
+   ------------------------------------------- */
+
+.card {
+  background: var(--ts-surface);
+  border-radius: var(--ts-radius-card);
+  padding: var(--ts-space-3);
+  box-shadow: 0 0 0 1px var(--ts-border-subtle);
+}
+
+.card--lift {
+  box-shadow: var(--ts-shadow-soft);
+  border: none;
+}
+
+.card--muted {
+  background: #f3f4f6;
+}
+
+.card--dark {
+  background: var(--ts-muted-surface);
+  color: #e5e7eb;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.35);
+}
+
+.card--dark p {
+  color: inherit;
+}
+
+/* Small chips / badges (like “Tile • Bath • Remodel” label) */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--ts-radius-chip);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: var(--ts-text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* KPI-style cards in About / Home */
+
+.kpi {
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  font-size: var(--ts-text-sm);
+}
+
+.kpi b {
+  color: var(--ts-ink);
+}
+
+/* 5) Buttons & CTAs
+   ------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--ts-radius-chip);
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--ts-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background var(--ts-transition-fast),
+    color var(--ts-transition-fast),
+    box-shadow var(--ts-transition-fast),
+    transform 0.12s ease;
+}
+
+.btn-primary {
+  background: var(--ts-brass);
+  color: #111827;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--ts-brass-dark);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border-color: var(--ts-border-subtle);
+  color: var(--ts-ink);
+  background: #f9fafb;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  border-color: var(--ts-ink-soft);
+}
+
+.btn-inline {
+  padding-inline: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+/* 6) Lists & FAQ patterns
+   ------------------------------------------- */
+
+ul,
+ol {
+  padding-left: 1.2rem;
+  margin: 0 0 var(--ts-space-2);
+}
+
+.list-compact li + li {
+  margin-top: 0.25rem;
+}
+
+/* Simple accordion shell – structure only; JS toggle in separate file */
+
+.accordion {
+  border-radius: var(--ts-radius-card);
+  background: var(--ts-surface);
+  box-shadow: 0 0 0 1px var(--ts-border-subtle);
+  overflow: hidden;
+}
+
+.accordion__item + .accordion__item {
+  border-top: 1px solid var(--ts-border-subtle);
+}
+
+.accordion__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+  background: transparent;
+  border: none;
+  font-size: var(--ts-text-sm);
+  cursor: pointer;
+}
+
+.accordion__icon {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.accordion__panel {
+  display: none; /* JS will add .is-open */
+  padding: 0 1.2rem 1rem;
+  font-size: var(--ts-text-sm);
+  color: var(--ts-ink-soft);
+  border-top: 1px solid var(--ts-border-subtle);
+}
+
+.accordion__panel.is-open {
+  display: block;
+}
+
+/* 7) Media blocks (project gallery tiles)
+   ------------------------------------------- */
+
+.media-card {
+  border-radius: var(--ts-radius-card);
+  overflow: hidden;
+  background: var(--ts-surface);
+  box-shadow: 0 0 0 1px var(--ts-border-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+.media-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.media-card__body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.media-card__body h3 {
+  margin-bottom: 0.4rem;
+}
+
+/* 8) Header/footer basics (structure only;
+      nav-specific styling can live in style.css)
+   ------------------------------------------- */
+
+.site-footer {
+  background: var(--ts-surface-alt);
+  color: #e5e7eb;
+  padding-block: var(--ts-space-4);
+  font-size: var(--ts-text-sm);
+}
+
+.site-footer a {
+  color: #e5e7eb;
+}
+
+.site-footer a:hover {
+  opacity: 0.85;
+}
+
+/* 9) Helpers & accessibility
+   ------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content (already hooked in your layout) */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--ts-brass);
+  color: #111827;
+  border-radius: var(--ts-radius-chip);
+  z-index: 50;
+}
+
+.skip-link:focus-visible {
+  left: 1rem;
+}
+
+/* Max width for long text blocks (privacy, articles, etc.) */
+
+.prose {
+  max-width: 68ch;
+}
+
+/* 10) Forms (contact page baseline)
+   ------------------------------------------- */
+
+.form-grid {
+  display: grid;
+  gap: var(--ts-space-2);
+}
+
+@media (min-width: 768px) {
+  .form-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+label {
+  display: block;
+  font-size: var(--ts-text-sm);
+  margin-bottom: 0.25rem;
+  color: var(--ts-ink);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--ts-border-soft);
+  font: inherit;
+  color: var(--ts-ink);
+  background: var(--ts-surface);
+  transition: border-color var(--ts-transition-fast),
+              box-shadow var(--ts-transition-fast),
+              background var(--ts-transition-fast);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--ts-emerald);
+  box-shadow: 0 0 0 1px var(--ts-emerald);
+  background: #ffffff;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
