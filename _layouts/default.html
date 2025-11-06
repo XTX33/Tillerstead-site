@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="en">
-  {% include head.html %}
-  <body>
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="{{ page.body_class | default: '' }}">
     <!-- Accessibility skip link -->
     <a class="skip-link" href="#main">Skip to main content</a>
 
     {% include header.html %}
 
-    <main id="main">
+    <main id="main" class="site-main">
       {{ content }}
     </main>
 
- {% include footer.html %}
-{% include scripts.html %}
-</body>
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
 </html>
