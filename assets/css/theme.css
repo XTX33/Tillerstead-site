@@ -511,7 +511,7 @@ a:focus-visible {
     padding: 5rem 2rem 2rem;
     gap: 1.2rem;
     overflow-y: auto;
-    z-index: 900;
+    z-index: 1200;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
   }
@@ -526,7 +526,7 @@ a:focus-visible {
 
   .nav-toggle {
     position: relative;
-    z-index: 1000;
+    z-index: 1300;
   }
 }
 
