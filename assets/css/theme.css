@@ -1,6 +1,10 @@
 /* ============================================
    Tillerstead – Global Theme (theme.css)
    Unifies colors, typography, spacing & layout
+   Assumes:
+   - Header: .appbar.site-header, .brand, #nav, .site-nav,
+             .nav-toggle > .hamburger, .call-btn
+   - JS: toggles #nav.is-open and body.nav-open
    ============================================ */
 
 /* 0) Reset & base
@@ -41,7 +45,7 @@ html {
   --ts-ink-soft:      #4b5563;  /* secondary text */
   --ts-paper:         #f9fafb;  /* page background */
   --ts-surface:       #ffffff;  /* cards / content */
-  --ts-surface-alt:   #020617;  /* dark header / footer */
+  --ts-surface-alt:   #020617;  /* dark header / footer chrome */
   --ts-muted-surface: #111827;  /* darker blocks */
 
   --ts-brass:         #d1a638;
@@ -92,7 +96,7 @@ body {
   font-size: var(--ts-text-md);
   line-height: 1.6;
   color: var(--ts-ink);
-  background: var(--ts-surface-alt); /* dark chrome around page sections */
+  background: var(--ts-surface-alt); /* dark chrome behind sections */
 }
 
 /* Main content area always on light paper */
@@ -113,21 +117,10 @@ h4 {
   color: var(--ts-ink);
 }
 
-h1 {
-  font-size: var(--ts-text-3xl);
-}
-
-h2 {
-  font-size: var(--ts-text-2xl);
-}
-
-h3 {
-  font-size: var(--ts-text-xl);
-}
-
-h4 {
-  font-size: var(--ts-text-lg);
-}
+h1 { font-size: var(--ts-text-3xl); }
+h2 { font-size: var(--ts-text-2xl); }
+h3 { font-size: var(--ts-text-xl); }
+h4 { font-size: var(--ts-text-lg); }
 
 /* Paragraphs & base text */
 
@@ -190,20 +183,11 @@ a:focus-visible {
   color: inherit;
 }
 
-/* Stacked layout helpers
-   (wrap elements and they’ll get even vertical rhythm) */
+/* Stacked layout helpers */
 
-.stack-sm > * + * {
-  margin-top: var(--ts-space-1);
-}
-
-.stack-md > * + * {
-  margin-top: var(--ts-space-2);
-}
-
-.stack-lg > * + * {
-  margin-top: var(--ts-space-3);
-}
+.stack-sm > * + * { margin-top: var(--ts-space-1); }
+.stack-md > * + * { margin-top: var(--ts-space-2); }
+.stack-lg > * + * { margin-top: var(--ts-space-3); }
 
 /* Grid helpers */
 
@@ -224,7 +208,6 @@ a:focus-visible {
   .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .grid-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -232,18 +215,17 @@ a:focus-visible {
 
 /* Simple alignment utilities */
 
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
 
 @media (min-width: 768px) {
-  .text-md-left {
-    text-align: left;
-  }
+  .text-md-left { text-align: left; }
+}
+
+/* Max width for long text blocks (privacy, blog, etc.) */
+
+.prose {
+  max-width: 68ch;
 }
 
 /* 4) Cards, surfaces, and chips
@@ -275,7 +257,7 @@ a:focus-visible {
   color: inherit;
 }
 
-/* Small chips / badges (like “Tile • Bath • Remodel” label) */
+/* Chips / badges (e.g., "Tile • Bath • Remodel") */
 
 .badge {
   display: inline-flex;
@@ -290,7 +272,7 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
-/* KPI-style cards in About / Home */
+/* KPI-style blocks */
 
 .kpi {
   border-radius: 0.9rem;
@@ -359,63 +341,269 @@ a:focus-visible {
   box-shadow: none;
 }
 
-/* 6) Lists & FAQ patterns
+/* Call CTA in header */
+.call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--ts-radius-chip);
+  font-weight: 700;
+  background: var(--ts-brass);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+.call-btn:hover {
+  background: var(--ts-brass-dark);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .call-btn {
+    display: none;
+  }
+}
+
+/* 6) Header / nav
    ------------------------------------------- */
 
-ul,
-ol {
-  padding-left: 1.2rem;
-  margin: 0 0 var(--ts-space-2);
+.appbar.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 18px;
+  background: var(--ts-surface-alt);
+  color: #f9fafb;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
-.list-compact li + li {
-  margin-top: 0.25rem;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+.brand img {
+  height: 44px;
+  width: auto;
+  display: block;
+  filter: brightness(1.2);
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.brand-text span:first-child {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.brand-text span:last-child {
+  font-size: 13px;
+  color: rgba(249, 250, 251, 0.8);
 }
 
-/* Simple accordion shell – structure only; JS toggle in separate file */
+@media (max-width: 440px) {
+  .brand img { height: 38px; }
+  .brand-text { display: none; }
+}
 
-.accordion {
-  border-radius: var(--ts-radius-card);
-  background: var(--ts-surface);
-  box-shadow: 0 0 0 1px var(--ts-border-subtle);
+/* Nav toggle */
+
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  color: #f9fafb;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  position: relative;
+}
+.hamburger::before {
+  top: -6px;
+  position: relative;
+}
+.hamburger::after {
+  top: 6px;
+  position: relative;
+}
+
+/* Base nav styles */
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.4rem 0;
+  font-weight: 600;
+  color: #f9fafb;
+  text-decoration: none;
+}
+
+.site-nav a[aria-current='page'] {
+  color: var(--ts-emerald);
+}
+
+/* Desktop nav layout */
+
+@media (min-width: 900px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile nav overlay */
+
+@media (max-width: 899px) {
+  #nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.98);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 1.2rem;
+    overflow-y: auto;
+    z-index: 900;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  #nav.is-open {
+    transform: translateY(0);
+  }
+
+  #nav a {
+    font-size: 1.15rem;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 1000;
+  }
+}
+
+body.nav-open {
   overflow: hidden;
 }
 
-.accordion__item + .accordion__item {
-  border-top: 1px solid var(--ts-border-subtle);
-}
-
-.accordion__header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.9rem 1.2rem;
-  background: transparent;
-  border: none;
-  font-size: var(--ts-text-sm);
-  cursor: pointer;
-}
-
-.accordion__icon {
-  font-size: 1rem;
-  opacity: 0.7;
-}
-
-.accordion__panel {
-  display: none; /* JS will add .is-open */
-  padding: 0 1.2rem 1rem;
-  font-size: var(--ts-text-sm);
-  color: var(--ts-ink-soft);
-  border-top: 1px solid var(--ts-border-subtle);
-}
-
-.accordion__panel.is-open {
-  display: block;
-}
-
-/* 7) Media blocks (project gallery tiles)
+/* 7) Hero & media blocks
    ------------------------------------------- */
+
+.hero {
+  padding-block: clamp(72px, 11vw, 132px);
+  background:
+    radial-gradient(800px 400px at 15% 0%, rgba(184, 146, 47, 0.18), transparent),
+    radial-gradient(900px 480px at 85% 0%, rgba(15, 163, 177, 0.15), transparent),
+    linear-gradient(180deg, #111827 0%, #0b1120 40%, #f9fafb 100%);
+  color: #f9fafb;
+}
+
+.hero-inner {
+  max-width: var(--ts-shell-width);
+  margin: 0 auto;
+  padding-inline: 1.25rem;
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.hero-eyebrow {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(249, 250, 251, 0.8);
+}
+
+.hero h1 {
+  color: #f9fafb;
+}
+
+.hero .lead {
+  color: rgba(229, 231, 235, 0.9);
+}
+
+/* Hero actions row */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: var(--ts-space-3);
+}
+
+.hero-actions .btn {
+  min-width: 220px;
+}
+
+@media (max-width: 600px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Media cards / project tiles */
 
 .media-card {
   border-radius: var(--ts-radius-card);
@@ -436,68 +624,60 @@ ol {
   padding: 1rem 1.1rem 1.2rem;
 }
 
-.media-card__body h3 {
-  margin-bottom: 0.4rem;
-}
-
-/* 8) Header/footer basics (structure only;
-      nav-specific styling can live in style.css)
+/* 8) FAQ / accordion
    ------------------------------------------- */
 
-.site-footer {
-  background: var(--ts-surface-alt);
-  color: #e5e7eb;
-  padding-block: var(--ts-space-4);
-  font-size: var(--ts-text-sm);
+.faqs details {
+  background: var(--ts-surface);
+  border: 1px solid var(--ts-border-subtle);
+  border-radius: var(--ts-radius-card);
+  padding: 1rem 1.25rem;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-.site-footer a {
-  color: #e5e7eb;
+.faqs details + details {
+  margin-top: 0.6rem;
 }
 
-.site-footer a:hover {
-  opacity: 0.85;
+.faqs details[open] {
+  background: #f3f4f6;
+  border-color: var(--ts-emerald);
+  box-shadow: var(--ts-shadow-soft);
 }
 
-/* 9) Helpers & accessibility
-   ------------------------------------------- */
+.faqs summary {
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  list-style: none;
+  padding-right: 1.25rem;
+}
 
-.sr-only {
+.faqs summary::marker {
+  content: "";
+}
+
+.faqs summary::after {
+  content: "+";
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  right: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--ts-brass);
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-/* Skip to main content (already hooked in your layout) */
-
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--ts-brass);
-  color: #111827;
-  border-radius: var(--ts-radius-chip);
-  z-index: 50;
+.faqs details[open] summary::after {
+  content: "−";
+  color: var(--ts-emerald);
+  transform: rotate(180deg);
 }
 
-.skip-link:focus-visible {
-  left: 1rem;
+.faqs p {
+  color: var(--ts-ink-soft);
 }
 
-/* Max width for long text blocks (privacy, articles, etc.) */
-
-.prose {
-  max-width: 68ch;
-}
-
-/* 10) Forms (contact page baseline)
+/* 9) Forms (contact baseline)
    ------------------------------------------- */
 
 .form-grid {
@@ -530,9 +710,10 @@ select {
   font: inherit;
   color: var(--ts-ink);
   background: var(--ts-surface);
-  transition: border-color var(--ts-transition-fast),
-              box-shadow var(--ts-transition-fast),
-              background var(--ts-transition-fast);
+  transition:
+    border-color var(--ts-transition-fast),
+    box-shadow var(--ts-transition-fast),
+    background var(--ts-transition-fast);
 }
 
 input:focus-visible,
@@ -547,4 +728,101 @@ select:focus-visible {
 textarea {
   min-height: 140px;
   resize: vertical;
+}
+
+/* 10) Footer
+   ------------------------------------------- */
+
+.site-footer {
+  background: var(--ts-surface-alt);
+  color: #e5e7eb;
+  padding-block: var(--ts-space-4);
+  font-size: var(--ts-text-sm);
+  margin-top: var(--ts-space-5);
+}
+
+.site-footer a {
+  color: #e5e7eb;
+}
+
+.site-footer a:hover {
+  opacity: 0.85;
+}
+
+.site-footer .shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-meta {
+  font-size: var(--ts-text-xs);
+  color: rgba(249, 250, 251, 0.7);
+}
+
+/* 11) Helpers & accessibility
+   ------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--ts-brass);
+  color: #111827;
+  border-radius: var(--ts-radius-chip);
+  z-index: 50;
+}
+
+.skip-link:focus-visible {
+  left: 1rem;
+}
+
+/* Spacing utilities */
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--ts-space-2); }
+.mt-2 { margin-top: var(--ts-space-3); }
+.mt-3 { margin-top: var(--ts-space-4); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--ts-space-2); }
+.mb-2 { margin-bottom: var(--ts-space-3); }
+.mb-3 { margin-bottom: var(--ts-space-4); }
+
+/* 12) Print
+   ------------------------------------------- */
+
+@media print {
+  .appbar,
+  .site-footer,
+  .btn,
+  .nav-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  a {
+    text-decoration: underline;
+  }
 }
