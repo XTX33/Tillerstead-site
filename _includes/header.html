@@ -16,7 +16,7 @@
     <span class="hamburger" aria-hidden="true"></span>
   </button>
 
-  <!-- Primary nav -->
+  <!-- Primary navigation -->
   <nav id="nav" class="site-nav" aria-label="Primary">
     <ul class="nav-list">
       <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
@@ -31,8 +31,8 @@
     </ul>
   </nav>
 
-  <!-- Call + theme -->
-  <a class="call-btn" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
+  <!-- Call CTA -->
+  <a class="call-btn btn btn-primary" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
     {{ site.company.phone_display | default: '(609) 665-9350' }}
   </a>
 </header>
