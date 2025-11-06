@@ -10,6 +10,13 @@ url: https://tillerstead.com
 baseurl: ""                 # keep empty for apex/root
 timezone: America/New_York
 
+# Global keyword focus for SEO
+keywords:
+  - South Jersey tile contractor
+  - New Jersey home improvement contractor
+  - NJ HIC 13VH10808800
+  - Atlantic County bathroom remodeling
+
 # Use your own layouts/includes (no injected theme)
 theme: null
 
@@ -58,11 +65,15 @@ defaults:
 
 # Reusable business vars (use in includes via site.company.*)
 company:
+  owner: "Tyler of Tillerstead"
   phone_display: "(609) 665-9350"
   phone_link: "+16096659350"
   hic: "13VH10808800"
   address_line: "325 E. Jimmie Leeds Road, Suite 7-333"
   address_city: "Galloway, NJ 08205"
+  address_locality: "Galloway"
+  address_region: "NJ"
+  address_postal_code: "08205"
   email: "info@tillerstead.com"
 
 # Cache-busting helper (append ?v={{ site.assets_version }} to CSS/JS)

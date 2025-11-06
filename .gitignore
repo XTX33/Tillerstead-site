@@ -1,0 +1,13 @@
+# Jekyll build outputs
+_site/
+.sass-cache/
+.jekyll-cache/
+.bundle/
+vendor/bundle/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Ruby/bundler
+Gemfile.lock
