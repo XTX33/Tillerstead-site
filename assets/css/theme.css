@@ -602,7 +602,19 @@ body.nav-open {
     justify-content: center;
   }
 }
+/* Hero credentials strip */
+.hero-cred p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(229, 231, 235, 0.9);
+}
 
+.hero-cred strong {
+  color: #ffffff;
+}
+.hero-cred {
+  margin-top: 0.75rem;
+}
 /* Media cards / project tiles */
 
 .media-card {
@@ -805,6 +817,7 @@ textarea {
 .mb-1 { margin-bottom: var(--ts-space-2); }
 .mb-2 { margin-bottom: var(--ts-space-3); }
 .mb-3 { margin-bottom: var(--ts-space-4); }
+
 
 /* 12) Print
    ------------------------------------------- */
