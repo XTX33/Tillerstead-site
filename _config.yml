@@ -22,46 +22,12 @@ theme: null
 
 # Build & content
 permalink: pretty           # /about/ instead of /about.html
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-
-# Blog (Jekyll posts)
-collections:
-  posts:
-    output: true
-    permalink: /blog/:title/
-
-# Pagination for /blog/
-paginate: 6
-paginate_path: "/blog/page:num/"
-plugins:
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  # - jekyll-feed        # uncomment if you want /feed.xml
 
 # Social/SEO defaults
 social:
   name: Tillerstead LLC
   links:
     - https://tillerstead.com
-
-# Global defaults
-defaults:
-  - scope:                # all site pages
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-      og_image: "/assets/img/og-image.png"
-  - scope:                # all blog posts
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      og_image: "/assets/img/og-image.png"
 
 # Reusable business vars (use in includes via site.company.*)
 company:
@@ -96,4 +62,4 @@ keep_files:
   - CNAME
   - assets/
 
-# Sitemap provided by jekyll-sitemap at /sitemap.xml
+# sitemap.xml is maintained manually in the repo root

@@ -18,19 +18,22 @@ python3 -m http.server
 
 ---
 
-## 🔧 Full Jekyll Build
-This site now ships with a Bundler definition so you can run the canonical Jekyll pipeline (matching the GitHub Pages build process) locally.
+## 🔧 Offline-friendly `bundle exec jekyll build`
+To keep CI and air‑gapped machines happy, the repo includes a vendored `jekyll` gem (see `vendor/gems/jekyll`). Bundler only has to resolve a path dependency, so no external gem servers are contacted.
 
 ```bash
-# install gems into ./vendor/bundle to keep the repo clean
+# optional: keep Bundler installs local to the repo
 bundle config set --local path 'vendor/bundle'
+
+# install (purely local resolution)
 bundle install
 
-# build the production site into ./_site
+# render the site to ./_site using the custom builder
 bundle exec jekyll build
-
-# or serve locally with live reload
-bundle exec jekyll serve
 ```
 
-If Bundler cannot reach https://rubygems.org/ (common on locked-down CI or offline environments), retry the `bundle install` step later or mirror the required gems. Once the gems are installed, `bundle exec jekyll build` will run without additional configuration.
+The custom CLI currently supports the `build` command. Use any static file server (e.g., `python3 -m http.server`) to preview `_site` after a build.
+
+If something fails inside the builder, re-run with `JEKYLL_TRACE=1 bundle exec jekyll build` to surface a full backtrace.
+
+> **Heads-up:** This lightweight builder implements the Liquid features and Markdown coverage used across the site. If you introduce new Liquid tags or filters, add support inside `vendor/gems/jekyll/lib/jekyll/liquid_engine.rb` before expecting the build to pass.

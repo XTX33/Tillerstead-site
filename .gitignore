@@ -9,5 +9,3 @@ vendor/bundle/
 .DS_Store
 Thumbs.db
 
-# Ruby/bundler
-Gemfile.lock
