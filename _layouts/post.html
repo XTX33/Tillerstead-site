@@ -1,23 +1,25 @@
-<!doctype html>
-<html lang="en">
-<head>
-  {% include head.html %}
-</head>
-<body>
-  {% include header.html %}
-  <main id="main">
-    <article class="container section prose">
-      <header class="mb-1">
+---
+layout: default
+---
+
+<section class="section">
+  <div class="shell">
+    <article class="prose">
+      <header class="stack-sm">
         <h1>{{ page.title }}</h1>
-        <p><small>{{ page.date | date: "%B %e, %Y" }}</small></p>
-        {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+
+        <p class="text-small">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </p>
+
+        {% if page.description %}
+          <p class="lead">{{ page.description }}</p>
+        {% endif %}
       </header>
 
       {{ content }}
     </article>
+  </div>
+</section>
 
-    {% include cta-estimate.html %}
-  </main>
-  {% include footer.html %}
-</body>
-</html>
+{% include cta-estimate.html %}
