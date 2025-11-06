@@ -680,6 +680,30 @@ body.nav-open{overflow:hidden}
   color:var(--text-muted);
   font-size:14px;
 }
+/* Hero primary actions row */
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  align-items:center;
+  margin-top: var(--s-6);
+}
+
+.hero-actions .btn{
+  min-width:220px;
+}
+
+/* Stack buttons nicely on small screens */
+@media (max-width:600px){
+  .hero-actions{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero-actions .btn{
+    width:100%;
+    justify-content:center;
+  }
+}
 
 /* -------------------------
    6) FAQ
