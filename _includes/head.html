@@ -1,16 +1,22 @@
-<!doctype html>
-<html lang="en">
 <head>
   <!-- Core meta -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    {% if page.title %}{{ page.title }} | Tillerstead LLC{% else %}Tillerstead LLC{% endif %}
+    {% if page.title %}
+      {{ page.title }} | Tillerstead LLC
+    {% else %}
+      Tillerstead LLC
+    {% endif %}
   </title>
-  <meta name="description" content="{{ page.description | default: site.description | default: 'Tile, bath, and remodel work in Atlantic County, NJ — clean, code-compliant, and built to last.' }}">
 
-  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <meta name="description"
+        content="{{ page.description | default: site.description | default: 'Tile, bath, and remodel work in Atlantic County, NJ — clean, code-compliant, and built to last.' }}">
+
+  {% if page.noindex %}
+    <meta name="robots" content="noindex, nofollow">
+  {% endif %}
 
   <!-- Canonical -->
   {% if site.url %}
@@ -18,17 +24,18 @@
   {% endif %}
 
   <!-- Theme / icons -->
-  <meta name="theme-color" content="#0b0b0b">
+  <meta name="theme-color" content="#020617">
   <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
   <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
   <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
-  <link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#0b0b0b">
+  <link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#020617">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page.title | default: 'Tillerstead LLC' }}">
-  <meta property="og:description" content="{{ page.description | default: site.description | default: 'Tile, bath, and remodel work in Atlantic County, NJ — clean, code-compliant, and built to last.' }}">
+  <meta property="og:description"
+        content="{{ page.description | default: site.description | default: 'Tile, bath, and remodel work in Atlantic County, NJ — clean, code-compliant, and built to last.' }}">
   {% if site.url %}
     <meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html','' }}">
     <meta property="og:image" content="{{ site.url }}{{ '/assets/img/og.jpg' | relative_url }}">
@@ -38,18 +45,19 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Manrope:wght@500..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Manrope:wght@500..800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
-    <!-- CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=5' | relative_url }}">
+  <!-- CSS: global theme first, then page/site styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/theme.css'  | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css'  | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+
   {% if page.styles %}
     {% for href in page.styles %}
       <link rel="stylesheet" href="{{ href | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
     {% endfor %}
   {% endif %}
+
   <!-- JS -->
   <script defer src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}"></script>
 </head>
-
-<body>
-  <a class="sr-only" href="#main">Skip to content</a>
