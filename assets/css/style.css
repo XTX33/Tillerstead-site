@@ -151,6 +151,12 @@ p {
   color: var(--text-muted);
 }
 
+.microcopy {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 .lead {
   font-size: clamp(18px, 3vw, 22px);
   color: var(--text-muted);
@@ -185,6 +191,10 @@ p {
   padding-block: 60px;
   border-top: 1px solid var(--border);
   background-color: var(--surface);
+}
+
+.section--tint {
+  background-color: var(--surface-2);
 }
 
 .unstyled {
@@ -300,7 +310,19 @@ p {
 .hero .lead {
   color: rgba(229, 231, 235, 0.9);
 }
+.hero-note {
+  font-size: 0.95rem;
+  margin: 0 0 var(--s-4);
+}
+.hero-note strong {
+  color: #f9fafb;
+}
+.text-light-subtle {
+  color: rgba(229, 231, 235, 0.85);
+}
 .hero-kpis {
+  list-style: none;
+  padding: 0;
   margin-top: var(--s-6);
   display: grid;
   gap: 12px;
@@ -311,6 +333,29 @@ p {
 }
 .hero-kpi strong {
   color: #fff;
+}
+.hero-list {
+  list-style: none;
+  margin: var(--s-4) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: rgba(229, 231, 235, 0.9);
+}
+.hero-callout {
+  margin-top: var(--s-4);
+}
+.btn-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin-top: var(--s-3);
+}
+.btn-phone span {
+  font-size: 1.1rem;
 }
 .hero-secondary {
   border-radius: 24px;
@@ -392,6 +437,50 @@ p {
   padding: 0.65rem 0.75rem;
   color: var(--text-muted);
   font-size: 14px;
+}
+
+/* Licensing grid */
+.licensing-grid {
+  display: grid;
+  gap: var(--s-6);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .licensing-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+}
+
+.licensing-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.credential-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: var(--s-4) 0;
+}
+
+.credential-list div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.credential-list dt {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.credential-list dd {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 /* Hero primary actions row */
@@ -537,6 +626,12 @@ textarea::placeholder {
   gap: 1.25rem;
   align-items: center;
   text-align: center;
+}
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(249, 250, 251, 0.95);
+  margin: 0;
 }
 .footer-logo img {
   max-width: 260px;
