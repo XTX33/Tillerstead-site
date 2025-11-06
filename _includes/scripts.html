@@ -1,0 +1,19 @@
+{%- comment -%}
+  Global and per-page scripts
+  - main.js: site-wide behaviors (nav, small interactions)
+  - page.scripts: optional array of additional script paths in front matter
+{%- endcomment -%}
+
+<script
+  defer
+  src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+</script>
+
+{% if page.scripts %}
+  {% for src in page.scripts %}
+    <script
+      defer
+      src="{{ src | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+    </script>
+  {% endfor %}
+{% endif %}
