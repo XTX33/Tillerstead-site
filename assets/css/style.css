@@ -932,3 +932,27 @@ input::placeholder,textarea::placeholder{
     justify-content: center;
   }
 }
+/* === TEMP HOTFIX: restore clicks on nav & buttons === */
+
+body,
+main,
+header,
+nav,
+footer,
+a,
+button {
+  pointer-events: auto !important;
+}
+
+/* Disable any full-screen overlay from blocking clicks */
+.overlay,
+.nav-overlay,
+.menu-backdrop,
+.page-dim,
+.backdrop {
+  pointer-events: none !important;
+}
+
+
+
+
