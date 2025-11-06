@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+description: Clear, contractor-grade guidance for tile, bath, and remodel projects in South Jersey.
+---
+
+<section class="section">
+  <div class="shell">
+    <h1>Project Notes & Product Insights</h1>
+    <p class="lead">
+      Straight talk on waterproofing systems, layout, materials, and timelines—
+      so your project starts clean and finishes right.
+    </p>
+
+    <ul class="grid grid-2 stack-md">
+      {% assign posts_sorted = site.posts | sort: "date" | reverse %}
+      {% for post in posts_sorted %}
+        <li class="card stack-sm">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.description %}
+            <p class="lead">{{ post.description }}</p>
+          {% endif %}
+          <p><small>{{ post.date | date: "%B %e, %Y" }}</small></p>
+          <p><a class="btn btn-ghost" href="{{ post.url | relative_url }}">Read article →</a></p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
