@@ -182,29 +182,3 @@
       if (window.innerWidth < BP_DESKTOP) closeNav();
     });
   }
-})();
-toggle.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  document.body.classList.toggle('nav-open', open);
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('nav');
-
-  if (!toggle || !nav) return;
-
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('nav-open', isOpen);
-  });
-
-  // Close nav when clicking a link
-  nav.addEventListener('click', (e) => {
-    if (e.target.tagName.toLowerCase() === 'a') {
-      nav.classList.remove('is-open');
-      document.body.classList.remove('nav-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
