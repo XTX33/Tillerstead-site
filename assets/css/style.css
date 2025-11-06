@@ -810,3 +810,125 @@ input::placeholder,textarea::placeholder{
   body{background:#fff; color:#000}
   a{text-decoration:underline}
 }
+/* -----------------------------
+   Site Header / Appbar
+----------------------------- */
+
+.appbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--ts-surface-alt);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  height: 64px;
+}
+
+.brand img {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: var(--ts-radius-chip);
+  background: rgba(15, 23, 42, 0.8);
+  cursor: pointer;
+  z-index: 50;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #e5e7eb;
+  border-radius: 1px;
+  content: "";
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Navigation */
+.site-nav {
+  position: fixed;
+  inset: 64px 0 0;
+  background: rgba(15, 23, 42, 0.98);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.site-nav.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-list {
+  list-style: none;
+  padding: var(--ts-space-4);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.nav-list a {
+  color: #e5e7eb;
+  font-size: var(--ts-text-lg);
+  text-decoration: none;
+}
+
+.nav-list a[aria-current="page"] {
+  color: var(--ts-brass);
+}
+
+.call-btn {
+  display: none; /* hide on mobile, show on desktop */
+}
+
+@media (min-width: 900px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    background: transparent;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .nav-list a {
+    font-size: var(--ts-text-sm);
+    color: #e5e7eb;
+  }
+
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
