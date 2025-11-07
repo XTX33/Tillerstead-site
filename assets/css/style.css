@@ -797,3 +797,8 @@ textarea::placeholder {
   max-width: var(--max);
   margin-inline: auto;
 }
+.hero-list,
+.hero-list li,
+.hero-callout {
+  color: var(--brand-ink) !important;
+}
