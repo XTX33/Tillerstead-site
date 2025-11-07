@@ -11,7 +11,7 @@
     {% include header.html %}
 
     <main id="main" class="site-main" role="main">
-      {%- unless page.hide_hero -%}
+      {%- unless page.hide_hero or page.url == '/' -%}
         {%- include page-hero.html -%}
       {%- endunless -%}
 
