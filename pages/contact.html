@@ -2,63 +2,151 @@
 layout: default
 title: Contact
 permalink: /contact/
+description: Tell me about your tile or bath project for a clear, itemized estimate with no surprises.
+body_class: page-contact
 ---
-  <main id="main" class="container">
-    <section class="hero">
-      <h1>Contact</h1>
-      <p class="lead">Tell me about your project and target timeline. You’ll get a clear, itemized estimate—no surprises.</p>
-      <div class="btn-row" style="justify-content:center">
-        <a class="btn primary" href="tel:+16096659350">Call Now</a>
-        <a class="btn ghost" href="mailto:info@tillerstead.com">Email</a>
-      </div>
-    </section>
 
-    <section class="section" style="border-top:0;padding-top:0">
-      <!-- Netlify-ready form with honeypot; GH Pages auto-thanks via main.js -->
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="sr-only">
-          <label>Don’t fill this out if you're human:
-            <input name="bot-field" autocomplete="off">
-          </label>
-        </p>
-
-        <div class="grid">
-          <label for="name">Full Name
-            <input id="name" name="name" required autocomplete="name" placeholder="Your name">
-          </label>
-          <label for="email">Email
-            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
-          </label>
-          <label for="phone">Phone
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(609) 665-9350">
-          </label>
-          <label for="city">City / Area
-            <input id="city" name="city" placeholder="Galloway, Atlantic County">
-          </label>
-        </div>
-
-        <label for="message">Project Details
-          <textarea id="message" name="message" rows="6" placeholder="Shower pan + tile walls, bonded waterproofing, schedule, budget range…"></textarea>
-        </label>
-
-        <div class="btn-row">
-          <button class="btn primary" type="submit">Send</button>
-          <a class="btn ghost" href="mailto:info@tillerstead.com">Email Instead</a>
-        </div>
-      </form>
-
-      <p class="mt-1">Prefer email? <a href="mailto:info@tillerstead.com">info@tillerstead.com</a></p>
-      <p>Or call/text: <a href="tel:+16096659350">(609) 665-9350</a></p>
-    </section>
-
-    <section class="section">
-      <h2>Response Time</h2>
+<header class="hero hero-page hero-contact">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Contact</p>
+      <h1>Tell me about your project and timeline.</h1>
       <p class="lead">
-        Most inquiries are answered the same day. For urgent issues like active leaks or safety hazards,
-        contact a licensed plumber or emergency professional. I don’t provide emergency plumbing services.
-        For tile, waterproofing, and repair questions, I’ll get back to you as soon as possible.
+        You’ll get a clear, itemized estimate—no pressure, no games. Just straight talk about scope, budget, and what it takes to do it right.
       </p>
-    </section>
-  </main>
-</html>
+
+      <div class="hero-actions">
+        <a
+          href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
+          class="btn btn-primary"
+          aria-label="Call Tillerstead at {{ site.company.phone_display | default: '(609) 665-9350' }}"
+        >
+          Call Now
+        </a>
+        <a
+          href="mailto:{{ site.company.email | default: 'info@tillerstead.com' }}"
+          class="btn ghost"
+        >
+          Email
+        </a>
+      </div>
+
+      <ul class="hero-list">
+        <li>Licensed NJ Home Improvement Contractor (HIC #{{ site.company.hic }})</li>
+        <li>Showers, bathrooms, and large-format tile you can live with for decades</li>
+        <li>Serving {{ site.company.service_area | default: 'Atlantic County and nearby shore towns' }}</li>
+        <li>Respectful scheduling with text updates before each workday</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="section section-form">
+  <div class="container">
+    <h2>Request a callback or estimate</h2>
+    <p class="lead">
+      Share a few details below. I’ll follow up with questions if needed, then send a clear plan for next steps.
+    </p>
+
+    <form
+      name="contact"
+      id="contact-form"
+      data-contact-form
+      method="post"
+    >
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="name">Full Name<span aria-hidden="true">*</span></label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            placeholder="Your name">
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email<span aria-hidden="true">*</span></label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.com">
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone<span aria-hidden="true">*</span></label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            placeholder="{{ site.company.phone_display | default: '(609) 665-9350' }}">
+        </div>
+
+        <div class="form-field">
+          <label for="city">City / Area<span aria-hidden="true">*</span></label>
+          <input
+            id="city"
+            name="city"
+            type="text"
+            required
+            placeholder="Galloway, Atlantic County">
+        </div>
+
+        <div class="form-field">
+          <label for="project-type">Project Type</label>
+          <select id="project-type" name="project_type">
+            <option value="">Select an option</option>
+            <option>Full bathroom remodel</option>
+            <option>New custom shower</option>
+            <option>Floor tile only</option>
+            <option>Shower repair or rebuild</option>
+            <option>Kitchen backsplash</option>
+            <option>Other / not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="timeline">Ideal Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select an option</option>
+            <option>As soon as possible</option>
+            <option>Within 1–3 months</option>
+            <option>3–6 months out</option>
+            <option>Just planning / budgeting</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="details">Project details<span aria-hidden="true">*</span></label>
+        <textarea
+          id="details"
+          name="details"
+          rows="5"
+          required
+          placeholder="Tell me about the space, tile size, what’s there now, and any must-haves or concerns."
+        ></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="photos">Link to photos (optional)</label>
+        <input
+          id="photos"
+          name="photos"
+          type="url"
+          placeholder="Link to Google Drive, iCloud, or photos">
+      </div>
+
+      <p class="form-note">
+        I don’t share or sell your info. It’s only used to follow up about your project.
+      </p>
+
+      <button type="submit" class="btn btn-primary">
+        Submit Request
+      </button>
+    </form>
+  </div>
+</section>
