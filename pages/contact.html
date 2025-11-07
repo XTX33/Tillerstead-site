@@ -4,95 +4,103 @@ title: Contact
 permalink: /contact/
 description: Tell me about your tile or bath project for a clear, itemized estimate with no surprises.
 body_class: page-contact
+
+hero_eyebrow: Contact
+hero_title: Tell me about your project and timeline.
+hero_subtitle: >
+  You’ll get a clear, itemized estimate – no pressure, no games. Just straight talk
+  about scope, budget, and what it takes to do it right.
+hero_list:
+  - "Licensed New Jersey Home Improvement Contractor (HIC #{{ site.company.hic }})"
+  - "Showers, bathrooms, and large-format tile you can live with for decades"
+  - "Serving {{ site.company.service_area | default: 'Atlantic County and nearby shore towns' }}"
+  - "Respectful scheduling with text updates before each workday"
+hero_cta_primary_url: "tel:{{ site.company.phone_link | default: '+16096659350' }}"
+hero_cta_primary_label: "Call Now"
+hero_cta_secondary_url: "mailto:{{ site.company.email | default: 'info@tillerstead.com' }}"
+hero_cta_secondary_label: "Email"
 ---
 
-<header class="hero hero-page hero-contact">
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <p class="eyebrow">Contact</p>
-      <h1>Tell me about your project and timeline.</h1>
-      <p class="lead">
-        You’ll get a clear, itemized estimate—no pressure, no games. Just straight talk about scope, budget, and what it takes to do it right.
-      </p>
-
-      <div class="hero-actions">
-        <a
-          href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
-          class="btn btn-primary"
-          aria-label="Call Tillerstead at {{ site.company.phone_display | default: '(609) 665-9350' }}"
-        >
-          Call Now
-        </a>
-        <a
-          href="mailto:{{ site.company.email | default: 'info@tillerstead.com' }}"
-          class="btn ghost"
-        >
-          Email
-        </a>
-      </div>
-
-      <ul class="hero-list">
-        <li>Licensed NJ Home Improvement Contractor (HIC #{{ site.company.hic }})</li>
-        <li>Showers, bathrooms, and large-format tile you can live with for decades</li>
-        <li>Serving {{ site.company.service_area | default: 'Atlantic County and nearby shore towns' }}</li>
-        <li>Respectful scheduling with text updates before each workday</li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-<section class="section section-form">
+<section class="section section-form" aria-labelledby="contact-heading">
   <div class="container">
-    <h2>Request a callback or estimate</h2>
-    <p class="lead">
-      Share a few details below. I’ll follow up with questions if needed, then send a clear plan for next steps.
+    <h2 id="contact-heading">Request a callback or estimate</h2>
+
+    <p class="lead" id="form-intro">
+      Share a few details below. I’ll review your project, follow up with any questions,
+      and then send a clear, itemized plan for next steps.
     </p>
+
+    <div class="contact-steps" aria-label="What happens after you send this form">
+      <ol>
+        <li><strong>Review:</strong> I look over your project details, photos, and location.</li>
+        <li><strong>Follow up:</strong> I’ll reach out by text, call, or email to clarify scope and timing.</li>
+        <li><strong>Estimate:</strong> You receive a written, itemized estimate with options where helpful.</li>
+      </ol>
+    </div>
 
     <form
       name="contact"
       id="contact-form"
       data-contact-form
       method="post"
+      action="{{ page.url | relative_url }}"
+      aria-describedby="form-intro"
     >
       <div class="form-grid">
         <div class="form-field">
-          <label for="name">Full Name<span aria-hidden="true">*</span></label>
+          <label for="name">
+            Full Name<span aria-hidden="true">*</span>
+          </label>
           <input
             id="name"
             name="name"
             type="text"
             required
-            placeholder="Your name">
+            autocomplete="name"
+            placeholder="Your name"
+          >
         </div>
 
         <div class="form-field">
-          <label for="email">Email<span aria-hidden="true">*</span></label>
+          <label for="email">
+            Email<span aria-hidden="true">*</span>
+          </label>
           <input
             id="email"
             name="email"
             type="email"
             required
-            placeholder="you@example.com">
+            autocomplete="email"
+            placeholder="you@example.com"
+          >
         </div>
 
         <div class="form-field">
-          <label for="phone">Phone<span aria-hidden="true">*</span></label>
+          <label for="phone">
+            Phone<span aria-hidden="true">*</span>
+          </label>
           <input
             id="phone"
             name="phone"
             type="tel"
             required
-            placeholder="{{ site.company.phone_display | default: '(609) 665-9350' }}">
+            autocomplete="tel"
+            placeholder="{{ site.company.phone_display | default: '(609) 665-9350' }}"
+          >
         </div>
 
         <div class="form-field">
-          <label for="city">City / Area<span aria-hidden="true">*</span></label>
+          <label for="city">
+            City / Area<span aria-hidden="true">*</span>
+          </label>
           <input
             id="city"
             name="city"
             type="text"
             required
-            placeholder="Galloway, Atlantic County">
+            autocomplete="address-level2"
+            placeholder="Galloway, Atlantic County"
+          >
         </div>
 
         <div class="form-field">
@@ -121,7 +129,9 @@ body_class: page-contact
       </div>
 
       <div class="form-field">
-        <label for="details">Project details<span aria-hidden="true">*</span></label>
+        <label for="details">
+          Project details<span aria-hidden="true">*</span>
+        </label>
         <textarea
           id="details"
           name="details"
@@ -137,11 +147,14 @@ body_class: page-contact
           id="photos"
           name="photos"
           type="url"
-          placeholder="Link to Google Drive, iCloud, or photos">
+          inputmode="url"
+          placeholder="Link to Google Drive, iCloud, or photos"
+        >
       </div>
 
       <p class="form-note">
-        I don’t share or sell your info. It’s only used to follow up about your project.
+        I don’t share or sell your information. It’s used only to follow up about your project
+        and prepare an accurate estimate.
       </p>
 
       <button type="submit" class="btn btn-primary">
