@@ -28,9 +28,9 @@ html {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 0ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -51,6 +51,10 @@ html {
   --color-brass-dark:    #b4891f;  /* Hover state */
   --color-emerald:       #0f766e;  /* Secondary accent */
   --color-emerald-dark:  #0a4f49;  /* Hover state */
+  
+  /* Text on dark backgrounds */
+  --color-text-on-dark:      #f9fafb;  /* Primary text on dark */
+  --color-text-on-dark-muted: rgba(249, 250, 251, 0.85);  /* Muted text on dark */
   
   /* Borders & Shadows */
   --border-subtle:       #e5e7eb;
@@ -101,13 +105,13 @@ html {
   --transition-base:   0.2s ease;
   --transition-slow:   0.3s ease;
   
-  /* Z-index Scale */
-  --z-base:      0;
-  --z-dropdown:  100;
-  --z-sticky:    200;
-  --z-overlay:   300;
-  --z-modal:     400;
-  --z-toast:     500;
+  /* Z-index Scale (Layering Hierarchy) */
+  --z-base:      0;      /* Normal document flow */
+  --z-dropdown:  100;    /* Dropdowns, tooltips */
+  --z-sticky:    200;    /* Sticky headers, floating elements */
+  --z-overlay:   300;    /* Mobile nav overlay, backdrops */
+  --z-modal:     400;    /* Modal dialogs */
+  --z-toast:     500;    /* Notifications, alerts */
 }
 
 /* 2) Typography
@@ -369,7 +373,7 @@ li {
 
 .btn-primary {
   background: var(--color-brass);
-  color: #0b1018;
+  color: var(--color-ink);
   border-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 12px rgba(209, 166, 56, 0.3);
 }
@@ -382,7 +386,7 @@ li {
 
 .btn-accent {
   background: var(--color-emerald);
-  color: #ffffff;
+  color: var(--color-surface);
   border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -596,7 +600,7 @@ textarea::placeholder {
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius-full);
   background: var(--color-brass);
-  color: #0b1018;
+  color: var(--color-ink);
   font-weight: 700;
   font-size: var(--text-sm);
   text-decoration: none;
@@ -649,7 +653,7 @@ textarea::placeholder {
   padding: var(--space-3) 0;
   font-size: var(--text-lg);
   font-weight: 700;
-  color: #f9fafb;
+  color: var(--color-text-on-dark);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -770,28 +774,28 @@ body.nav-open {
 }
 
 .hero h1 {
-  color: #f9fafb;
+  color: var(--color-text-on-dark);
   margin-bottom: var(--space-5);
 }
 
 .hero .lead {
-  color: rgba(229, 231, 235, 0.9);
+  color: var(--color-text-on-dark-muted);
   margin-bottom: var(--space-6);
 }
 
 .hero-note {
   font-size: var(--text-sm);
-  color: rgba(229, 231, 235, 0.8);
+  color: var(--color-text-on-dark-muted);
   margin-bottom: var(--space-4);
 }
 
 .hero-note strong {
-  color: #f9fafb;
+  color: var(--color-text-on-dark);
   font-weight: 700;
 }
 
 .text-light-subtle {
-  color: rgba(229, 231, 235, 0.75);
+  color: var(--color-text-on-dark-muted);
 }
 
 .hero-actions {
@@ -826,12 +830,12 @@ body.nav-open {
 }
 
 .hero-secondary h3 {
-  color: #f9fafb;
+  color: var(--color-text-on-dark);
   margin-bottom: var(--space-4);
 }
 
 .hero-secondary p {
-  color: rgba(229, 231, 235, 0.85);
+  color: var(--color-text-on-dark-muted);
 }
 
 .hero-badges {
@@ -849,7 +853,7 @@ body.nav-open {
   display: grid;
   gap: var(--space-3);
   font-size: var(--text-sm);
-  color: rgba(229, 231, 235, 0.9);
+  color: var(--color-text-on-dark-muted);
 }
 
 .hero-list li::before {
@@ -870,13 +874,13 @@ body.nav-open {
 
 .hero-kpi {
   font-size: var(--text-sm);
-  color: rgba(229, 231, 235, 0.85);
+  color: var(--color-text-on-dark-muted);
   line-height: 1.5;
 }
 
 .hero-kpi strong {
   display: block;
-  color: #f9fafb;
+  color: var(--color-text-on-dark);
   font-size: var(--text-base);
   margin-bottom: var(--space-2);
 }
@@ -994,14 +998,14 @@ body.nav-open {
 
 .site-footer {
   background: var(--color-surface-alt);
-  color: rgba(249, 250, 251, 0.85);
+  color: var(--color-text-on-dark-muted);
   padding-block: var(--space-16);
   margin-top: var(--space-20);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .site-footer a {
-  color: rgba(249, 250, 251, 0.9);
+  color: var(--color-text-on-dark);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -1017,7 +1021,7 @@ body.nav-open {
 .footer-heading {
   font-size: var(--text-xl);
   font-weight: 700;
-  color: #f9fafb;
+  color: var(--color-text-on-dark);
   margin-bottom: var(--space-4);
 }
 
@@ -1059,7 +1063,7 @@ address.footer-meta {
   top: var(--space-4);
   padding: var(--space-3) var(--space-5);
   background: var(--color-brass);
-  color: #0b1018;
+  color: var(--color-ink);
   font-weight: 700;
   border-radius: var(--radius-lg);
   z-index: var(--z-toast);
@@ -1240,12 +1244,12 @@ address.footer-meta {
   }
 
   .hero {
-    background: #ffffff;
-    color: #000000;
+    background: var(--color-surface);
+    color: var(--color-ink);
   }
 
   .hero h1,
   .hero p {
-    color: #000000;
+    color: var(--color-ink);
   }
 }
