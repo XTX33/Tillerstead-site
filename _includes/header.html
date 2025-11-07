@@ -20,7 +20,9 @@
         type="button"
         aria-controls="site-nav"
         aria-expanded="false"
-        aria-label="Toggle menu">
+        aria-label="Toggle menu"
+        data-nav-toggle
+      >
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -37,7 +39,12 @@
   </div>
 
   <!-- Primary navigation overlay / desktop inline -->
-  <nav id="site-nav" class="site-nav" aria-label="Primary">
+  <nav
+    id="site-nav"
+    class="site-nav"
+    aria-label="Primary"
+    data-nav
+  >
     <ul>
       <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
       <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}aria-current="page"{% endif %}>About</a></li>
