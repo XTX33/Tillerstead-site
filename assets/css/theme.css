@@ -741,6 +741,37 @@ textarea {
   min-height: 140px;
   resize: vertical;
 }
+.page-contact .hero-contact {
+  /* make sure the gradient covers just the hero */
+  padding: 3rem 0 2.5rem;
+}
+
+.section-form {
+  padding: 2.5rem 0 3rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.form-field label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+}
 
 /* 10) Footer
    ------------------------------------------- */
