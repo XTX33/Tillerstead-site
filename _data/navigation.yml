@@ -1,0 +1,39 @@
+primary:
+  - title: Home
+    url: /
+    exact: /
+  - title: About
+    url: /about/
+    match: /about/
+  - title: Services
+    url: /services/
+    match: /services/
+  - title: Gallery
+    url: /portfolio/
+    match: /portfolio/
+  - title: Reviews
+    url: /reviews/
+    match: /reviews/
+  - title: Contact
+    url: /contact/
+    match: /contact/
+  - title: Financing
+    url: /financing/
+    match: /financing/
+  - title: Blog
+    url: /blog/
+    match: /blog/
+  - title: Privacy
+    url: /privacy/
+    match: /privacy/
+footer:
+  - title: Services
+    url: /services/
+  - title: Gallery
+    url: /portfolio/
+  - title: About
+    url: /about/
+  - title: Reviews
+    url: /reviews/
+  - title: Contact
+    url: /contact/
