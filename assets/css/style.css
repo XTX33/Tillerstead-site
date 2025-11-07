@@ -813,3 +813,19 @@ textarea::placeholder {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+
+.footer-logo img {
+  height: auto;
+  max-width: 160px;
+  filter: brightness(0) invert(0.95); /* subtle glow on dark footer backgrounds */
+  transition: opacity 0.25s ease-in-out;
+}
+
+.footer-logo:hover img {
+  opacity: 0.85;
+}
