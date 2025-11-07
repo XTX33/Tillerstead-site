@@ -184,6 +184,37 @@ a:focus-visible {
   color: inherit;
 }
 
+/* Universal page hero */
+.hero-page.section--dark {
+  padding: 3rem 0 2.5rem;
+}
+
+.hero-page .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero-page .lead {
+  margin-top: 0.35rem;
+  max-width: 48rem;
+}
+
+.hero-page .hero-list {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.hero-page .hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 /* Stacked layout helpers */
 
 .stack-sm > * + * { margin-top: var(--ts-space-1); }
