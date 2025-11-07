@@ -564,21 +564,6 @@ body.nav-open {
   color: #f9fafb;
 }
 
-.hero-inner {
-  max-width: var(--ts-shell-width);
-  margin: 0 auto;
-  padding-inline: 1.25rem;
-  display: grid;
-  gap: 32px;
-}
-
-@media (min-width: 768px) {
-  .hero-inner {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    align-items: center;
-  }
-}
-
 .hero-eyebrow,
 .eyebrow {
   font-family: "Manrope", system-ui, sans-serif;
@@ -637,6 +622,250 @@ body.nav-open {
 }
 .hero-cred {
   margin-top: 0.75rem;
+}
+
+/* Hero – homepage */
+
+.hero--homepage {
+  position: relative;
+  padding: 4rem 1.5rem 3.5rem;
+  background:
+    radial-gradient(circle at top left, rgba(15, 163, 177, 0.26), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(184, 146, 47, 0.22), transparent 55%),
+    var(--brand-paper, #f9fafb);
+  color: var(--brand-ink, #111827);
+}
+
+@media (min-width: 900px) {
+  .hero--homepage {
+    padding: 5rem 1.5rem 4.5rem;
+  }
+}
+
+.hero--homepage .hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 899px) {
+  .hero--homepage .hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero--homepage .hero-main {
+  max-width: 44rem;
+}
+
+.hero--homepage .hero-eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  color: var(--brand-emerald, #0fa3b1);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.hero--homepage .hero-eyebrow::before,
+.hero--homepage .hero-eyebrow::after {
+  content: "—";
+  color: var(--brand-brass, #b8922f);
+  letter-spacing: normal;
+}
+
+.hero--homepage .hero-note--trust {
+  font-size: 0.92rem;
+  margin-bottom: 0.85rem;
+}
+
+.hero--homepage h1 {
+  font-size: clamp(2.1rem, 2.5vw + 1.6rem, 2.9rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  font-weight: 800;
+}
+
+.hero--homepage .lead {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.hero--homepage .hero-note {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+.text-light-subtle {
+  color: rgba(17, 24, 39, 0.65);
+}
+
+/* Hero actions */
+
+.hero--homepage .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.6rem 0 1.4rem;
+}
+
+.hero--homepage .btn-lg {
+  padding-inline: 1.4rem;
+  padding-block: 0.85rem;
+  font-size: 0.98rem;
+}
+
+/* KPIs */
+
+.hero--homepage .hero-cred {
+  margin-bottom: 1.25rem;
+}
+
+.hero--homepage .hero-kpis {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 720px) {
+  .hero--homepage .hero-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.hero--homepage .hero-kpi {
+  font-size: 0.9rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.75rem;
+  background-color: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.hero--homepage .hero-kpi-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+  color: rgba(17, 24, 39, 0.85);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Secondary card */
+
+.hero--homepage .hero-secondary {
+  align-self: stretch;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem 1.6rem;
+  background: #ffffff;
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.14),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+@media (min-width: 900px) {
+  .hero--homepage .hero-secondary {
+    margin-top: 0.75rem;
+  }
+}
+
+.hero--homepage .hero-secondary h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+.hero--homepage .hero-secondary .small {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Badges */
+
+.hero--homepage .hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: linear-gradient(
+    135deg,
+    rgba(184, 146, 47, 0.05),
+    rgba(15, 163, 177, 0.08)
+  );
+}
+
+/* List + callout */
+
+.hero--homepage .hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.hero--homepage .hero-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero--homepage .hero-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.2rem;
+  top: 0;
+  color: var(--brand-emerald, #0fa3b1);
+}
+
+.hero--homepage .hero-callout {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Secondary actions */
+
+.hero--homepage .hero-secondary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero--homepage .btn-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.hero--homepage .btn-phone span {
+  font-size: 1.1rem;
+}
+
+.hero--homepage .hero-secondary-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--brand-emerald, #0fa3b1);
+}
+
+.hero--homepage .hero-secondary-link:hover {
+  text-decoration: underline;
 }
 
 /* Media cards / project tiles */
