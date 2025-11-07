@@ -3,18 +3,29 @@
   <head>
     {% include head.html %}
   </head>
-  <body class="{{ page.body_class | default: '' }}">
+
+  <body class="site-body {{ page.body_class | default: '' }}">
     <!-- Accessibility skip link -->
     <a class="skip-link" href="#main">Skip to main content</a>
 
     {% include header.html %}
 
-    <main id="main" class="site-main">
-      {{ content }}
+    <main id="main" class="site-main" role="main">
+      {%- unless page.hide_hero -%}
+        {%- include page-hero.html -%}
+      {%- endunless -%}
+
+      <section class="page-content section">
+        <div class="container">
+          {{ content }}
+        </div>
+      </section>
     </main>
 
     {% include footer.html %}
+
     {% include scripts.html %}
- <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
-</body>
+    <!-- Ensure main.js is not already loaded in scripts.html -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  </body>
 </html>
