@@ -643,7 +643,144 @@ textarea::placeholder {
   font-size: 13px;
   color: rgba(249, 250, 251, 0.7);
 }
+/* ===== Tillerstead Header & Nav (Faith Frontier pattern) ===== */
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f5f5f5; /* light header so logo pops */
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.site-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo */
+.site-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Hamburger button (mobile) */
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: auto; /* pushes nav / call button to the right on mobile */
+}
+
+.nav-toggle-bar {
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: #111111; /* dark so it's visible */
+}
+
+/* Call button */
+.call-btn {
+  margin-left: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Mobile nav panel (overlay) */
+.site-nav {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 5rem 1.5rem 0;
+  padding: 0;
+}
+
+.site-nav li + li {
+  margin-top: 1rem;
+}
+
+.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* When menu is open */
+.site-nav.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Desktop layout */
+@media (min-width: 800px) {
+  .nav-toggle {
+    display: none; /* hide burger on desktop */
+  }
+
+  .site-header-inner {
+    justify-content: space-between;
+  }
+
+  .site-nav {
+    position: static;
+    height: auto;
+    background: transparent;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-nav ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .site-nav a {
+    color: #111111;
+    font-size: 0.95rem;
+  }
+
+  .call-btn {
+    margin-left: 1.5rem;
+  }
+}
+
+/* Screen-reader only text (for logo span) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 /* =========================
    UTILITIES
    ========================= */
