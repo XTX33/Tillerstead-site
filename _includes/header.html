@@ -1,6 +1,6 @@
 <header class="site-header" role="banner">
   <div class="site-header-inner">
-    <!-- Brand / Logo -->
+    <!-- Brand -->
     <a class="site-logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
       <img
         src="{{ '/assets/img/Logo-light.png' | relative_url }}"
@@ -15,16 +15,16 @@
     <!-- Mobile toggle -->
     <button
       class="nav-toggle"
-      type="button"
-      aria-label="Toggle navigation"
-      aria-expanded="false">
+      aria-controls="site-nav"
+      aria-expanded="false"
+      aria-label="Toggle menu">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
     </button>
 
     <!-- Primary navigation -->
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul>
         <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
         <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}aria-current="page"{% endif %}>About</a></li>
