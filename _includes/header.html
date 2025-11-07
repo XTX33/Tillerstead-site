@@ -1,15 +1,8 @@
 <header class="site-header" role="banner">
   <div class="site-header-inner">
     <!-- Brand -->
-    <a class="site-logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
-      <img
-        src="{{ '/assets/img/Logo-light.png' | relative_url }}"
-        alt="{{ site.title | default: 'Tillerstead' }} logo"
-        width="180"
-        height="48"
-        decoding="async"
-        loading="eager">
-      <span class="sr-only">{{ site.title | default: 'Tillerstead' }}</span>
+    <a class="site-logo text-logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
+      <span class="logo-text">Tillerstead LLC</span>
     </a>
 
     <!-- Right-side controls: nav + call -->
@@ -28,7 +21,7 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <!-- Call CTA (hidden on small screens by CSS below) -->
+      <!-- Call CTA -->
       <a
         class="call-btn btn btn-primary"
         href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
@@ -38,13 +31,8 @@
     </div>
   </div>
 
-  <!-- Primary navigation overlay / desktop inline -->
-  <nav
-    id="site-nav"
-    class="site-nav"
-    aria-label="Primary"
-    data-nav
-  >
+  <!-- Primary navigation -->
+  <nav id="site-nav" class="site-nav" aria-label="Primary" data-nav>
     <ul>
       <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
       <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}aria-current="page"{% endif %}>About</a></li>
