@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!doctype html>
 <meta charset="utf-8">
 <title>Tillerstead – Site Diagnostics</title>
@@ -31,11 +34,15 @@
 
 <script>
 (async () => {
-  const pages = [
-    "/", "/index.html",
-    "/services.html","/portfolio.html","/reviews.html","/about.html",
-    "/legacy.html","/contact.html","/privacy.html","/terms.html","/financing.html"
+  const navTargets = {{ site.data.navigation.primary | jsonify }};
+  const navPaths = navTargets.map((item) => item.url).filter(Boolean);
+  const extras = [
+    "/",
+    "/index.html",
+    "/legacy.html",
+    "/terms.html"
   ];
+  const pages = Array.from(new Set([...extras, ...navPaths]));
 
   const tbody = document.querySelector("#report tbody");
   const origin = location.origin;
@@ -90,15 +97,15 @@
     let linksCell = `<span class="err">no nav list</span>`;
     if (menu){
       const links = Array.from(menu.querySelectorAll('a[href]')).map(a => a.getAttribute('href'));
-      const tests = [
-        ["/reviews.html","Reviews"],
-        ["/about.html","Legacy/About"],
-        ["/services.html","Services"],
-        ["/portfolio.html","Gallery"],
-        ["/contact.html","Contact"],
-      ].map(([href,label])=>{
-        const has = links.includes(href);
-        return has ? `<span class="ok">${label}</span>` : `<span class="warn">${label} missing</span>`;
+      const tests = navTargets.map((item) => {
+        const options = [item.url];
+        if (item.url && item.url.endsWith('/')) {
+          options.push(item.url.replace(/\/$/, '.html'));
+        }
+        const has = options.some((href) => links.includes(href));
+        return has
+          ? `<span class="ok">${item.title}</span>`
+          : `<span class="warn">${item.title} missing</span>`;
       }).join("<br>");
       linksCell = tests;
     }

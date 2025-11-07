@@ -22,12 +22,30 @@
       </p>
 
       {% assign footer_links = site.data.navigation.footer %}
+      {% assign primary_links = site.data.navigation.primary %}
       <nav aria-label="Footer navigation" class="footer-meta">
         {% for item in footer_links %}
-          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% unless forloop.last %}
-          <span aria-hidden="true">·</span>{% endunless %}
+          {% assign link = item %}
+          {% if item.ref %}
+            {% assign link = nil %}
+            {% for primary in primary_links %}
+              {% if primary.id == item.ref %}
+                {% assign link = primary %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if link and link.url %}
+            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>{% unless forloop.last %}
+            <span aria-hidden="true">·</span>{% endunless %}
+          {% endif %}
         {% endfor %}
       </nav>
+
+      {% assign nav_actions_items = site.data.navigation.actions %}
+      {% assign nav_actions_variant = 'nav-actions--footer' %}
+      {% include nav-actions.html %}
+      {% assign nav_actions_variant = nil %}
+      {% assign nav_actions_items = nil %}
 
       <p class="footer-meta">
         <a href="tel:{{ site.company.phone_link }}" itemprop="telephone">{{ site.company.phone_display }}</a><br>

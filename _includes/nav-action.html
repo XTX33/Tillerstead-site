@@ -1,0 +1,54 @@
+{% assign action = nav_action %}
+{% if action %}
+  {% assign href = action.url %}
+  {% if action.id == 'call' and (href == nil or href == '') %}
+    {% assign href = 'tel:' | append: site.company.phone_link | default: '+16096659350' %}
+  {% endif %}
+  {% assign display = action.title %}
+  {% if action.id == 'call' and (display == nil or display == '') %}
+    {% assign display = site.company.phone_display | default: '(609) 665-9350' %}
+  {% endif %}
+  {% assign aria_label = action.aria_label %}
+  {% if aria_label == nil or aria_label == '' %}
+    {% if action.id == 'call' %}
+      {% assign aria_label = 'Call ' | append: (site.title | default: 'Tillerstead LLC') %}
+    {% elsif action.id == 'quote' %}
+      {% assign aria_label = 'Request an estimate from ' | append: (site.title | default: 'Tillerstead LLC') %}
+    {% endif %}
+  {% endif %}
+  {% assign classes = 'btn' %}
+  {% if action.style %}
+    {% assign classes = classes | append: ' ' | append: action.style %}
+  {% else %}
+    {% assign classes = classes | append: ' btn-primary' %}
+  {% endif %}
+  {% if action.class %}
+    {% assign classes = classes | append: ' ' | append: action.class %}
+  {% endif %}
+  {% if include.additional_class %}
+    {% assign classes = classes | append: ' ' | append: include.additional_class %}
+  {% endif %}
+  {% assign final_href = href %}
+  {% assign should_target_blank = false %}
+  {% if action.external %}
+    {% assign should_target_blank = true %}
+  {% endif %}
+  {% if href %}
+    {% if href contains 'mailto:' %}
+      {% assign final_href = href %}
+    {% elsif href contains 'tel:' %}
+      {% assign final_href = href %}
+    {% elsif href contains '://' %}
+      {% assign final_href = href %}
+      {% assign should_target_blank = true %}
+    {% else %}
+      {% assign final_href = href | relative_url %}
+    {% endif %}
+  {% else %}
+    {% assign final_href = '' %}
+  {% endif %}
+  <a class="{{ classes }}" href="{{ final_href }}"{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}{% if should_target_blank %} target="_blank" rel="noopener"{% endif %}>
+    <span class="btn-label">{{ display }}</span>
+  </a>
+{% endif %}
+{% assign nav_action = nil %}

@@ -341,29 +341,86 @@ a:focus-visible {
   box-shadow: none;
 }
 
-/* Call CTA in header */
-.call-btn {
-  display: inline-flex;
+/* Universal nav actions */
+.nav-actions {
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: var(--ts-radius-chip);
+  gap: 0.75rem;
+}
+
+.nav-actions .btn {
   font-weight: 700;
-  background: var(--ts-brass);
-  color: #111827;
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  text-decoration: none;
+}
+
+.nav-actions--menu {
+  display: none;
+}
+
+.nav-actions--inline {
+  display: none;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.nav-actions--inline .btn-primary {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
-.call-btn:hover {
-  background: var(--ts-brass-dark);
+
+.nav-actions--inline .btn-primary:hover,
+.nav-actions--inline .btn-primary:focus-visible {
   transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
-  .call-btn {
-    display: none;
+@media (min-width: 900px) {
+  .nav-actions--inline {
+    display: inline-flex;
   }
+}
+
+@media (max-width: 899px) {
+  .nav-actions--menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2.5rem;
+    gap: 0.75rem;
+  }
+
+  .nav-actions--menu .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.05rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.nav-actions--footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.nav-actions--footer .btn {
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.site-footer .nav-actions--footer .btn-primary {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.site-footer .nav-actions--footer .btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(249, 250, 251, 0.94);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.site-footer .nav-actions--footer .btn-ghost:hover,
+.site-footer .nav-actions--footer .btn-ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 }
 
 /* 6) Header / nav
@@ -485,12 +542,14 @@ a:focus-visible {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex: 1 1 auto;
   }
 
   .site-nav ul {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex: 1 1 auto;
   }
 }
 
