@@ -1,0 +1,38 @@
+<section class="hero hero-page section--dark">
+  <div class="container">
+    <h1>
+      {{ page.hero_title | default: page.title }}
+    </h1>
+
+    {% if page.hero_subtitle %}
+      <p class="lead">
+        {{ page.hero_subtitle }}
+      </p>
+    {% elsif page.description %}
+      <p class="lead">
+        {{ page.description }}
+      </p>
+    {% endif %}
+
+    {% if page.hero_list %}
+      <ul class="hero-list">
+        {% for item in page.hero_list %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if page.hero_cta_primary_url %}
+      <p class="hero-actions">
+        <a class="btn" href="{{ page.hero_cta_primary_url }}">
+          {{ page.hero_cta_primary_label | default: "Get started" }}
+        </a>
+        {% if page.hero_cta_secondary_url %}
+          <a class="btn ghost" href="{{ page.hero_cta_secondary_url }}">
+            {{ page.hero_cta_secondary_label | default: "Learn more" }}
+          </a>
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+</section>
