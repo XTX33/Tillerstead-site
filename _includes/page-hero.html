@@ -1,5 +1,9 @@
 <section class="hero hero-page section--dark">
   <div class="container">
+    {% if page.hero_eyebrow %}
+      <p class="eyebrow">{{ page.hero_eyebrow }}</p>
+    {% endif %}
+
     <h1>
       {{ page.hero_title | default: page.title }}
     </h1>
@@ -27,6 +31,7 @@
         <a class="btn" href="{{ page.hero_cta_primary_url }}">
           {{ page.hero_cta_primary_label | default: "Get started" }}
         </a>
+
         {% if page.hero_cta_secondary_url %}
           <a class="btn ghost" href="{{ page.hero_cta_secondary_url }}">
             {{ page.hero_cta_secondary_label | default: "Learn more" }}
