@@ -72,9 +72,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Manrope:wght@500..800&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-  <!-- CSS: global theme first, then page/site styles -->
-  <link rel="stylesheet" href="{{ '/assets/css/theme.css'  | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css'  | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+  <!-- CSS: unified design system -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css'  | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
 
   {% if page.styles %}
     {% for href in page.styles %}
