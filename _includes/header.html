@@ -12,7 +12,13 @@
   </a>
 
   <!-- Mobile toggle -->
-  <button class="nav-toggle" id="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="Toggle menu" title="Menu">
+  <button
+    class="nav-toggle"
+    id="nav-toggle"
+    aria-controls="nav"
+    aria-expanded="false"
+    aria-label="Toggle menu"
+    title="Menu">
     <span class="hamburger" aria-hidden="true"></span>
   </button>
 
@@ -32,7 +38,10 @@
   </nav>
 
   <!-- Call CTA -->
-  <a class="call-btn btn btn-primary" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
+  <a
+    class="call-btn btn btn-primary"
+    href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
+    aria-label="Call Tillerstead">
     {{ site.company.phone_display | default: '(609) 665-9350' }}
   </a>
 </header>
