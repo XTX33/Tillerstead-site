@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tillerstead Site Changes - Before & After</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #111827; margin-bottom: 30px; }
+        h2 { color: #374151; margin-top: 40px; border-bottom: 3px solid #0fa3b1; padding-bottom: 10px; }
+        h3 { color: #4b5563; margin-top: 30px; }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .card h4 {
+            margin-top: 0;
+            color: #111827;
+            font-size: 1.2em;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        .label {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        .before { background: #fee2e2; color: #991b1b; }
+        .after { background: #d1fae5; color: #065f46; }
+        
+        /* Demo: Hero Secondary Box */
+        .demo-hero-secondary {
+            padding: 20px;
+            border-radius: 16px;
+            margin: 15px 0;
+        }
+        .demo-hero-secondary.old {
+            background: rgba(15, 23, 42, 0.86);
+            border: 1px solid rgba(148, 163, 184, 0.65);
+            color: rgba(229, 231, 235, 0.9);
+        }
+        .demo-hero-secondary.new {
+            background: rgba(249, 250, 251, 0.98);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            color: #4b5563;
+        }
+        .demo-hero-secondary h3 {
+            margin-top: 0;
+        }
+        .demo-hero-secondary.old h3 { color: #f9fafb; }
+        .demo-hero-secondary.new h3 { color: #111827; font-weight: 700; }
+        
+        .demo-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 4px;
+        }
+        .demo-badge.old {
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            color: rgba(209, 213, 219, 0.95);
+        }
+        .demo-badge.new {
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #1f2937;
+            background: rgba(59, 130, 246, 0.08);
+        }
+        
+        /* Demo: Logo */
+        .demo-logo-container {
+            background: #020617;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+        }
+        .demo-logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #f9fafb;
+            letter-spacing: -0.02em;
+        }
+        .logo-tagline {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #d1a638;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: -0.2rem;
+        }
+        
+        /* Demo: Cards Grid */
+        .demo-cards {
+            display: grid;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .demo-cards.old {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .demo-cards.new {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 767px) {
+            .demo-cards.new {
+                grid-template-columns: 1fr;
+            }
+        }
+        .demo-card {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            padding: 18px;
+            min-height: 120px;
+        }
+        .demo-card h5 {
+            margin: 0 0 10px 0;
+            color: #111827;
+        }
+        .demo-card p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #4b5563;
+        }
+        
+        .width-demo {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border: 2px dashed #9ca3af;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .width-demo.old { max-width: 64rem; }
+        .width-demo.new { max-width: 72rem; }
+        
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #991b1b;
+        }
+        
+        ul {
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 900px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🏗️ Tillerstead Site Improvements - Visual Changes Summary</h1>
+    
+    <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid #0fa3b1;">
+        <h3 style="margin-top: 0;">Summary of Changes</h3>
+        <p>This document illustrates the visual improvements made to the Tillerstead website to address contrast, layout, branding, and responsive design issues.</p>
+    </div>
+
+    <h2>1. Contrast Fix: "Why Homeowners Call Tillerstead" Section</h2>
+    <p><strong>Issue:</strong> Dark background with light text had poor contrast and was difficult to read.</p>
+    
+    <div class="comparison">
+        <div class="card">
+            <div class="label before">BEFORE</div>
+            <h4>Dark Background (Poor Contrast)</h4>
+            <div class="demo-hero-secondary old">
+                <h3>Why Homeowners Call Tillerstead</h3>
+                <p>Careful prep, laser-straight lines, and written scopes.</p>
+                <div>
+                    <span class="demo-badge old">Atlantic County, NJ</span>
+                    <span class="demo-badge old">Tile Showers</span>
+                    <span class="demo-badge old">NJ HIC Licensed</span>
+                </div>
+            </div>
+            <ul>
+                <li>Background: <code>rgba(15, 23, 42, 0.86)</code></li>
+                <li>Text: Light gray on dark (low contrast)</li>
+                <li>Badges: Light borders, difficult to read</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <div class="label after">AFTER</div>
+            <h4>Light Background (High Contrast) ✓</h4>
+            <div class="demo-hero-secondary new">
+                <h3>Why Homeowners Call Tillerstead</h3>
+                <p>Careful prep, laser-straight lines, and written scopes.</p>
+                <div>
+                    <span class="demo-badge new">Atlantic County, NJ</span>
+                    <span class="demo-badge new">Tile Showers</span>
+                    <span class="demo-badge new">NJ HIC Licensed</span>
+                </div>
+            </div>
+            <ul>
+                <li>Background: <code>rgba(249, 250, 251, 0.98)</code></li>
+                <li>Text: Dark gray on light (WCAG AAA)</li>
+                <li>Badges: Subtle blue tint, easy to read</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>2. Desktop Width Improvement</h2>
+    <p><strong>Issue:</strong> Container was too narrow on large desktop screens.</p>
+    
+    <div class="comparison">
+        <div class="card">
+            <div class="label before">BEFORE</div>
+            <h4>64rem (1024px)</h4>
+            <div class="width-demo old">
+                <p><strong>Max Width: 1024px</strong></p>
+                <p>Content felt cramped on larger monitors</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="label after">AFTER</div>
+            <h4>72rem (1152px) ✓</h4>
+            <div class="width-demo new">
+                <p><strong>Max Width: 1152px</strong></p>
+                <p>Better use of space on desktop screens</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>3. Header Logo Replacement</h2>
+    <p><strong>Issue:</strong> Image logo looked unprofessional and was difficult to maintain.</p>
+    
+    <div class="comparison">
+        <div class="card">
+            <div class="label before">BEFORE</div>
+            <h4>Image Logo (Logo-light.png)</h4>
+            <div class="demo-logo-container">
+                <p style="color: #f9fafb; font-style: italic;">[Image: Logo-light.png]</p>
+            </div>
+            <ul>
+                <li>Using PNG image file</li>
+                <li>Fixed size, not responsive</li>
+                <li>Required asset management</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <div class="label after">AFTER</div>
+            <h4>Text Logo ✓</h4>
+            <div class="demo-logo-container">
+                <div class="demo-logo-text">
+                    <span class="logo-text">Tillerstead</span>
+                    <span class="logo-tagline">LLC</span>
+                </div>
+            </div>
+            <ul>
+                <li>Professional text-based logo</li>
+                <li>Fully responsive</li>
+                <li>Image moved to footer for branding</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>4. Service Cards Grid Alignment</h2>
+    <p><strong>Issue:</strong> Cards had uneven layout and poor responsive behavior.</p>
+    
+    <div class="comparison">
+        <div class="card">
+            <div class="label before">BEFORE</div>
+            <h4>Auto-fit Grid (Uneven)</h4>
+            <div class="demo-cards old">
+                <div class="demo-card">
+                    <h5>Custom Showers</h5>
+                    <p>Waterproof solutions...</p>
+                </div>
+                <div class="demo-card">
+                    <h5>Tile Floors</h5>
+                    <p>Large format layouts...</p>
+                </div>
+                <div class="demo-card">
+                    <h5>Kitchens</h5>
+                    <p>Backsplash updates...</p>
+                </div>
+                <div class="demo-card">
+                    <h5>Repairs</h5>
+                    <p>Re-grout & consults...</p>
+                </div>
+            </div>
+            <ul>
+                <li>Gap: 18px (tight)</li>
+                <li>Auto-fit could create 1, 2, 3, or 4 columns</li>
+                <li>Inconsistent on different screen sizes</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <div class="label after">AFTER</div>
+            <h4>2x2 Grid (Consistent) ✓</h4>
+            <div class="demo-cards new">
+                <div class="demo-card">
+                    <h5>Custom Showers</h5>
+                    <p>Waterproof solutions...</p>
+                </div>
+                <div class="demo-card">
+                    <h5>Tile Floors</h5>
+                    <p>Large format layouts...</p>
+                </div>
+                <div class="demo-card">
+                    <h5>Kitchens</h5>
+                    <p>Backsplash updates...</p>
+                </div>
+                <div class="demo-card">
+                    <h5>Repairs</h5>
+                    <p>Re-grout & consults...</p>
+                </div>
+            </div>
+            <ul>
+                <li>Gap: 24px (better breathing room)</li>
+                <li>1 column on mobile, 2x2 on tablet+</li>
+                <li>Consistent and professional layout</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Summary of Technical Changes</h2>
+    <div class="card" style="margin-top: 20px;">
+        <h4>Files Modified</h4>
+        <ul>
+            <li><strong>_includes/header.html</strong> - Replaced image logo with text logo</li>
+            <li><strong>_includes/footer.html</strong> - Added logo image to footer</li>
+            <li><strong>assets/css/style.css</strong> - Updated contrast, width, and grid styles</li>
+            <li><strong>assets/css/theme.css</strong> - Added text logo styling</li>
+        </ul>
+        
+        <h4>Accessibility Improvements</h4>
+        <ul>
+            <li>✓ WCAG AAA contrast compliance in hero-secondary section</li>
+            <li>✓ Better text readability across all screen sizes</li>
+            <li>✓ Improved visual hierarchy with proper color contrast</li>
+        </ul>
+        
+        <h4>Responsive Design Improvements</h4>
+        <ul>
+            <li>✓ Consistent card layout across breakpoints</li>
+            <li>✓ Text logo scales properly on all devices</li>
+            <li>✓ Better use of desktop screen real estate</li>
+        </ul>
+    </div>
+
+    <div style="background: #d1fae5; border-left: 4px solid #065f46; padding: 20px; border-radius: 8px; margin-top: 40px;">
+        <h3 style="margin-top: 0; color: #065f46;">✅ All Requirements Addressed</h3>
+        <p style="color: #047857; margin: 0;">All four requirements from the problem statement have been successfully implemented with professional web standards and best practices.</p>
+    </div>
+</body>
+</html>
