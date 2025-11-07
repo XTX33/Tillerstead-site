@@ -1,4 +1,4 @@
-=======================================
+/* =======================================
    Tillerstead — 2025 Global Theme
    Charcoal • Brass • Emerald (Light Only)
    ======================================= */
@@ -31,7 +31,6 @@
   --bg:               var(--brand-paper);
   --surface:          #ffffff;
   --surface-2:        #f3f4f6;
-  --surface-header:   #111111;
   --surface-footer:   #111111;
 
   /* Text */
@@ -53,7 +52,6 @@
   /* Layout */
   --max:              64rem;   /* ~1024px */
   --gutter:           24px;
-  --appbar-h:         64px;
 
   /* Type */
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -207,9 +205,12 @@ p {
   position: absolute;
   width: 1px;
   height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0,0,0,0);
   white-space: nowrap;
+  border: 0;
 }
 
 /* Skip link */
@@ -230,6 +231,7 @@ p {
   color: #111;
   border-radius: 8px;
 }
+
 /* =========================
    BUTTONS / CHIPS
    ========================= */
@@ -242,8 +244,11 @@ p {
   background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
-  transition: transform 0.15s ease, background 0.2s ease,
-              border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .btn:hover {
   transform: translateY(-1px);
@@ -251,7 +256,7 @@ p {
   background: #f9fafb;
 }
 
-/* Primary solid button */
+/* Primary buttons */
 .btn-accent,
 .btn-primary {
   background: var(--primary);
@@ -273,7 +278,7 @@ p {
 }
 
 /* =========================
-   HERO / PROOF / CARDS
+   HERO / CARDS / CONTENT
    ========================= */
 .hero {
   padding-block: clamp(72px, 11vw, 132px);
@@ -320,6 +325,7 @@ p {
 .text-light-subtle {
   color: rgba(229, 231, 235, 0.85);
 }
+
 .hero-kpis {
   list-style: none;
   padding: 0;
@@ -334,6 +340,7 @@ p {
 .hero-kpi strong {
   color: #fff;
 }
+
 .hero-list {
   list-style: none;
   margin: var(--s-4) 0 0;
@@ -343,9 +350,11 @@ p {
   font-size: 0.9rem;
   color: rgba(229, 231, 235, 0.9);
 }
+
 .hero-callout {
   margin-top: var(--s-4);
 }
+
 .btn-phone {
   display: inline-flex;
   align-items: center;
@@ -357,6 +366,7 @@ p {
 .btn-phone span {
   font-size: 1.1rem;
 }
+
 .hero-secondary {
   border-radius: 24px;
   padding: 18px 18px 16px;
@@ -384,7 +394,7 @@ p {
   color: rgba(209, 213, 219, 0.95);
 }
 
-/* KPIs / cards section (e.g., services) */
+/* KPIs / cards */
 .kpis {
   margin-top: var(--s-6);
   display: grid;
@@ -431,7 +441,6 @@ p {
 .proofgrid img {
   width: 100%;
   height: auto;
-  display: block;
 }
 .proofgrid figcaption {
   padding: 0.65rem 0.75rem;
@@ -445,35 +454,29 @@ p {
   gap: var(--s-6);
   align-items: start;
 }
-
 @media (min-width: 768px) {
   .licensing-grid {
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   }
 }
-
 .licensing-card {
   background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-
 .credential-list {
   display: grid;
   gap: 0.75rem;
   margin: var(--s-4) 0;
 }
-
 .credential-list div {
   display: grid;
   gap: 0.15rem;
 }
-
 .credential-list dt {
   font-weight: 700;
   color: var(--text);
 }
-
 .credential-list dd {
   margin: 0;
   color: var(--text-muted);
@@ -637,19 +640,20 @@ textarea::placeholder {
   max-width: 260px;
   height: auto;
   filter: brightness(1.2);
-  opacity: 1;
 }
 .footer-meta {
   font-size: 13px;
   color: rgba(249, 250, 251, 0.7);
 }
-/* ===== Tillerstead Header & Nav (Faith Frontier pattern) ===== */
 
+/* =========================
+   HEADER & NAV
+   ========================= */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #f5f5f5; /* light header so logo pops */
+  background: #f5f5f5;
   border-bottom: 1px solid #e3e3e3;
 }
 
@@ -659,14 +663,21 @@ textarea::placeholder {
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 
 /* Logo */
 .site-logo img {
-  height: 40px;
+  height: 48px;
   width: auto;
-  display: block;
+}
+
+/* Group toggle + phone button on the right */
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 /* Hamburger button (mobile) */
@@ -675,74 +686,69 @@ textarea::placeholder {
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   padding: 0;
-  border: none;
-  background: transparent;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #ffffff;
   cursor: pointer;
-  margin-left: auto; /* pushes nav / call button to the right on mobile */
 }
-
 .nav-toggle-bar {
-  width: 100%;
+  width: 70%;
   height: 3px;
-  border-radius: 2px;
-  background: #111111; /* dark so it's visible */
+  border-radius: 999px;
+  background: #111827;
+  margin-inline: auto;
 }
 
 /* Call button */
 .call-btn {
-  margin-left: 0.75rem;
   white-space: nowrap;
 }
 
-/* Mobile nav panel (overlay) */
+/* Mobile nav overlay */
 .site-nav {
   position: fixed;
   inset-block-start: 0;
   inset-inline: 0;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
-
 .site-nav ul {
   list-style: none;
   margin: 5rem 1.5rem 0;
   padding: 0;
 }
-
 .site-nav li + li {
   margin-top: 1rem;
 }
-
 .site-nav a {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.1rem;
 }
 
-/* When menu is open */
+/* Nav open */
 .site-nav.is-open {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Desktop layout */
+/* Mobile: hide call button to avoid crowding */
+@media (max-width: 800px) {
+  .call-btn {
+    display: none;
+  }
+}
+
+/* Desktop nav */
 @media (min-width: 800px) {
-  .nav-toggle {
-    display: none; /* hide burger on desktop */
-  }
-
-  .site-header-inner {
-    justify-content: space-between;
-  }
-
   .site-nav {
     position: static;
     height: auto;
@@ -751,42 +757,28 @@ textarea::placeholder {
     opacity: 1;
     pointer-events: auto;
   }
-
   .site-nav ul {
     margin: 0;
     display: flex;
     align-items: center;
     gap: 1.5rem;
   }
-
   .site-nav a {
     color: #111111;
     font-size: 0.95rem;
   }
-
-  .call-btn {
-    margin-left: 1.5rem;
+  .nav-toggle {
+    display: none;
   }
 }
 
-/* Screen-reader only text (for logo span) */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
 /* =========================
    UTILITIES
    ========================= */
 .center {
   text-align: center;
 }
+
 .mt-0 { margin-top: 0; }
 .mt-1 { margin-top: var(--s-4); }
 .mt-2 { margin-top: var(--s-6); }
@@ -804,165 +796,4 @@ textarea::placeholder {
 .max {
   max-width: var(--max);
   margin-inline: auto;
-}
-
-/* =========================
-   PRINT
-   ========================= */
-@media print {
-  .appbar,
-  .site-footer,
-  .btn,
-  .nav-toggle {
-    display: none !important;
-  }
-  body {
-    background: #fff;
-    color: #000;
-  }
-  a {
-    text-decoration: underline;
-  }
-}
-/* Screen-reader only utility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Header layout */
-.appbar.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  background: var(--brand-paper, #ffffff);
-  border-bottom: 1px solid var(--border-subtle, #e5e7eb);
-}
-
-/* Brand logo link */
-.appbar .brand {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-/* Mobile toggle button */
-.nav-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  background: #ffffff;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* Hamburger icon */
-.nav-toggle .hamburger {
-  position: relative;
-  width: 1.25rem;
-  height: 2px;
-  border-radius: 999px;
-  background: #111827;
-}
-.nav-toggle .hamburger::before,
-.nav-toggle .hamburger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 1.25rem;
-  height: 2px;
-  border-radius: 999px;
-  background: #111827;
-}
-.nav-toggle .hamburger::before {
-  top: -5px;
-}
-.nav-toggle .hamburger::after {
-  top: 5px;
-}
-
-/* Mobile nav panel */
-.site-nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 80%;
-  max-width: 320px;
-  background: #ffffff;
-  box-shadow: -8px 0 24px rgba(15, 23, 42, 0.2);
-  transform: translateX(100%);
-  transition: transform 0.25s ease;
-  padding: 5rem 1.5rem 2rem;
-}
-
-.site-nav .nav-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.site-nav a {
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-/* Open state */
-body.nav-open .site-nav,
-.site-nav.is-open {
-  transform: translateX(0);
-}
-
-/* Call button */
-.call-btn {
-  margin-left: 0.5rem;
-}
-
-/* Desktop view */
-@media (min-width: 900px) {
-  .nav-toggle {
-    display: none;
-  }
-
-  .appbar.site-header {
-    padding: 0.75rem 2rem;
-  }
-
-  .site-nav {
-    position: static;
-    height: auto;
-    width: auto;
-    box-shadow: none;
-    transform: none;
-    padding: 0;
-  }
-
-  .site-nav .nav-list {
-    flex-direction: row;
-    align-items: center;
-    gap: 1.25rem;
-  }
-
-  .call-btn {
-    margin-left: 1.25rem;
-  }
 }
