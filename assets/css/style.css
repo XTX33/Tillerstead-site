@@ -50,7 +50,7 @@
   --shadow:           0 12px 30px rgba(15, 23, 42, 0.22);
 
   /* Layout */
-  --max:              64rem;   /* ~1024px */
+  --max:              72rem;   /* ~1152px - improved for desktop viewing */
   --gutter:           24px;
 
   /* Type */
@@ -369,14 +369,25 @@ p {
 
 .hero-secondary {
   border-radius: 24px;
-  padding: 18px 18px 16px;
-  background: rgba(15, 23, 42, 0.86);
-  border: 1px solid rgba(148, 163, 184, 0.65);
-  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.8);
+  padding: 24px 22px 20px;
+  /* Improved contrast: lighter background with better text visibility */
+  background: rgba(249, 250, 251, 0.98);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.3);
 }
 .hero-secondary h3 {
-  color: #f9fafb;
+  color: #111827;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.hero-secondary p,
+.hero-secondary .small,
+.hero-secondary .hero-list,
+.hero-secondary .hero-callout {
+  color: #4b5563;
+}
+.hero-secondary .text-light-subtle {
+  color: #6b7280;
 }
 .hero-badges {
   display: flex;
@@ -387,11 +398,12 @@ p {
 .badge {
   padding: 0.35rem 0.65rem;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(209, 213, 219, 0.95);
+  color: #1f2937;
+  background: rgba(59, 130, 246, 0.08);
 }
 
 /* KPIs / cards */
@@ -411,8 +423,20 @@ p {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+  /* Improved responsive grid: 1 col mobile, 2 cols tablet, 2x2 desktop */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .cards {
+    /* 2x2 grid for 4 cards on desktop */
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .card {
   border: 1px solid var(--border);

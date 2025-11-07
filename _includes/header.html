@@ -1,15 +1,9 @@
 <header class="site-header" role="banner">
   <div class="site-header-inner">
-    <!-- Brand -->
-    <a class="site-logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
-      <img
-        src="{{ '/assets/img/Logo-light.png' | relative_url }}"
-        alt="{{ site.title | default: 'Tillerstead' }} logo"
-        width="180"
-        height="48"
-        decoding="async"
-        loading="eager">
-      <span class="sr-only">{{ site.title | default: 'Tillerstead' }}</span>
+    <!-- Brand - Text Logo -->
+    <a class="site-logo site-logo--text" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
+      <span class="logo-text">Tillerstead</span>
+      <span class="logo-tagline">LLC</span>
     </a>
 
     <!-- Right-side controls: nav + call -->
