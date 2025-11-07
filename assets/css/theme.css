@@ -2,9 +2,9 @@
    Tillerstead – Global Theme (theme.css)
    Unifies colors, typography, spacing & layout
    Assumes:
-   - Header: .appbar.site-header, .brand, #nav, .site-nav,
-             .nav-toggle > .hamburger, .call-btn
-   - JS: toggles #nav.is-open and body.nav-open
+   - Header: .site-header, .site-header-inner, .site-logo,
+             .site-nav, .nav-toggle > .nav-toggle-bar, .call-btn
+   - JS: toggles #site-nav.is-open and body.nav-open
    ============================================ */
 
 /* 0) Reset & base
@@ -151,7 +151,8 @@ a:focus-visible {
    ------------------------------------------- */
 
 /* Content shell (use on almost every section) */
-.shell {
+.shell,
+.container {
   max-width: var(--ts-shell-width);
   margin-inline: auto;
   padding-inline: 1.25rem;
@@ -369,56 +370,47 @@ a:focus-visible {
 /* 6) Header / nav
    ------------------------------------------- */
 
-.appbar.site-header {
+/* Sticky app bar that visually belongs to the hero */
+.site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 18px;
   background: var(--ts-surface-alt);
   color: #f9fafb;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
-.brand {
+.site-header-inner {
+  max-width: var(--ts-shell-width);
+  margin-inline: auto;
+  padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: inherit;
-  text-decoration: none;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.brand img {
-  height: 44px;
+
+/* Logo */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-logo img {
+  height: 40px;
   width: auto;
   display: block;
-  filter: brightness(1.2);
-}
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.brand-text span:first-child {
-  font-family: "Manrope", system-ui, sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  font-size: 13px;
-  text-transform: uppercase;
-}
-.brand-text span:last-child {
-  font-size: 13px;
-  color: rgba(249, 250, 251, 0.8);
 }
 
 @media (max-width: 440px) {
-  .brand img { height: 38px; }
-  .brand-text { display: none; }
+  .site-logo img {
+    height: 34px;
+  }
 }
 
-/* Nav toggle */
+/* Nav toggle (hamburger button) */
 
 .nav-toggle {
   background: none;
@@ -433,25 +425,16 @@ a:focus-visible {
   color: #f9fafb;
 }
 
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  content: "";
+.nav-toggle-bar {
   display: block;
   width: 22px;
   height: 2px;
-  background: currentColor;
   border-radius: 1px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  position: relative;
+  background: currentColor;
 }
-.hamburger::before {
-  top: -6px;
-  position: relative;
-}
-.hamburger::after {
-  top: 6px;
-  position: relative;
+
+.nav-toggle-bar + .nav-toggle-bar {
+  margin-top: 4px;
 }
 
 /* Base nav styles */
@@ -481,6 +464,10 @@ a:focus-visible {
     display: none;
   }
 
+  .site-header-inner {
+    gap: 1.5rem;
+  }
+
   .site-nav {
     display: flex;
     align-items: center;
@@ -497,7 +484,7 @@ a:focus-visible {
 /* Mobile nav overlay */
 
 @media (max-width: 899px) {
-  #nav {
+  .site-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -516,11 +503,11 @@ a:focus-visible {
     transition: transform 0.3s ease;
   }
 
-  #nav.is-open {
+  .site-nav.is-open {
     transform: translateY(0);
   }
 
-  #nav a {
+  .site-nav a {
     font-size: 1.15rem;
   }
 
@@ -542,7 +529,7 @@ body.nav-open {
   background:
     radial-gradient(800px 400px at 15% 0%, rgba(184, 146, 47, 0.18), transparent),
     radial-gradient(900px 480px at 85% 0%, rgba(15, 163, 177, 0.15), transparent),
-    linear-gradient(180deg, #111827 0%, #0b1120 40%, #f9fafb 100%);
+    #020617; /* solid dark base */
   color: #f9fafb;
 }
 
@@ -561,20 +548,23 @@ body.nav-open {
   }
 }
 
-.hero-eyebrow {
+.hero-eyebrow,
+.eyebrow {
   font-family: "Manrope", system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: 12px;
   color: rgba(249, 250, 251, 0.8);
+  margin-bottom: 0.4rem;
 }
 
 .hero h1 {
   color: #f9fafb;
 }
 
-.hero .lead {
+.hero .lead,
+.hero p.lead {
   color: rgba(229, 231, 235, 0.9);
 }
 
@@ -602,7 +592,9 @@ body.nav-open {
     justify-content: center;
   }
 }
+
 /* Hero credentials strip */
+
 .hero-cred p {
   margin: 0;
   font-size: 0.9rem;
@@ -615,6 +607,7 @@ body.nav-open {
 .hero-cred {
   margin-top: 0.75rem;
 }
+
 /* Media cards / project tiles */
 
 .media-card {
@@ -741,24 +734,15 @@ textarea {
   min-height: 140px;
   resize: vertical;
 }
+
+/* Contact page refinements */
+
 .page-contact .hero-contact {
-  /* make sure the gradient covers just the hero */
   padding: 3rem 0 2.5rem;
 }
 
 .section-form {
   padding: 2.5rem 0 3rem;
-}
-
-.form-grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .form-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .form-field label {
@@ -792,7 +776,8 @@ textarea {
   opacity: 0.85;
 }
 
-.site-footer .shell {
+.site-footer .shell,
+.site-footer .container {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -849,12 +834,11 @@ textarea {
 .mb-2 { margin-bottom: var(--ts-space-3); }
 .mb-3 { margin-bottom: var(--ts-space-4); }
 
-
 /* 12) Print
    ------------------------------------------- */
 
 @media print {
-  .appbar,
+  .site-header,
   .site-footer,
   .btn,
   .nav-toggle {
