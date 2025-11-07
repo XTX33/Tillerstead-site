@@ -16,20 +16,37 @@ description: "Clear, contractor-grade guidance for tile, bath, and remodel proje
       </p>
     </header>
 
-    <ul class="cards mt-2">
-      {% assign posts_sorted = site.posts | sort: "date" | reverse %}
-      {% for post in posts_sorted %}
-      <li class="card stack-sm">
-        <h2 style="margin-bottom:.25rem">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        {% if post.description %}
-        <p class="lead" style="margin-bottom:.35rem">{{ post.description }}</p>
-        {% endif %}
-        <p><small>{{ post.date | date: "%B %e, %Y" }}</small></p>
-        <p><a class="btn btn-ghost" href="{{ post.url | relative_url }}">Read article →</a></p>
-      </li>
-      {% endfor %}
-    </ul>
+    {% assign posts_sorted = site.posts | sort: "date" | reverse %}
+
+    {% if posts_sorted.size == 0 %}
+      <p class="microcopy center mt-2">
+        No articles are live yet. Project notes and product breakdowns will be posted
+        as recent jobs are documented and photographed.
+      </p>
+    {% else %}
+      <ul class="cards mt-2 unstyled">
+        {% for post in posts_sorted %}
+          <li class="card stack-sm">
+            <h2 style="margin-bottom:.25rem">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+
+            {% if post.description %}
+              <p class="lead" style="margin-bottom:.35rem">
+                {{ post.description }}
+              </p>
+            {% endif %}
+
+            <p><small>{{ post.date | date: "%B %e, %Y" }}</small></p>
+
+            <p>
+              <a class="btn btn-ghost" href="{{ post.url | relative_url }}">
+                Read article →
+              </a>
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </div>
 </section>
