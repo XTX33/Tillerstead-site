@@ -839,3 +839,18 @@ textarea {
     text-decoration: underline;
   }
 }
+/* Unified site hero background token (added by fix/nav-gradient-canonicalize) */
+:root {
+  --site-hero-bg:
+    radial-gradient(800px 400px at 15% 0%, rgba(184,146,47,0.18), transparent),
+    radial-gradient(900px 480px at 85% 0%, rgba(15,163,177,0.15), transparent),
+    linear-gradient(180deg, #0b1220 0%, #0f1724 40%, rgba(249,250,251,0.02) 100%);
+}
+
+/* Default hero uses the centralized token */
+.hero {
+  background: var(--site-hero-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--site-foreground, #f9fafb);
+}

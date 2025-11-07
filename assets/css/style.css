@@ -687,3 +687,7 @@ textarea::placeholder {
     text-decoration: underline;
   }
 }
+/* Ensure uniform hero gradient site-wide (added by fix/nav-gradient-canonicalize) */
+.hero {
+  background: var(--site-hero-bg) !important;
+}
