@@ -1,9 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script to delete all branches except main
 # This script will delete all remote branches except 'main'
 
 set -e
+
+# Function to get list of branches to delete
+get_branches_to_delete() {
+    git for-each-ref --format='%(refname:short)' refs/remotes/origin/ | \
+        grep -v '^origin/HEAD$' | \
+        grep -v '^origin/main$' | \
+        sed 's|^origin/||'
+}
 
 echo "=========================================="
 echo "Branch Deletion Script"
@@ -31,10 +39,7 @@ branches_found=false
 while IFS= read -r branch; do
     branches_found=true
     echo "$branch"
-done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/ | \
-         grep -v '^origin/HEAD$' | \
-         grep -v '^origin/main$' | \
-         sed 's|^origin/||')
+done < <(get_branches_to_delete)
 
 if [ "$branches_found" = false ]; then
     echo "No branches to delete (only main exists)"
@@ -62,10 +67,7 @@ while IFS= read -r branch; do
     else
         echo "✗ Failed to delete: $branch"
     fi
-done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/ | \
-         grep -v '^origin/HEAD$' | \
-         grep -v '^origin/main$' | \
-         sed 's|^origin/||')
+done < <(get_branches_to_delete)
 
 echo ""
 echo "=========================================="
