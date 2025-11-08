@@ -1224,3 +1224,11 @@ textarea {
     display: none;
   }
 }
+.text-logo .logo-gradient {
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: linear-gradient(90deg, var(--brand-brass, #b8922f), var(--brand-emerald, #0fa3b1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
