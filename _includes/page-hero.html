@@ -1,39 +1,52 @@
-<section class="hero hero-page section--dark">
+<section
+  class="hero hero-page section--dark"
+  aria-labelledby="page-hero-title"
+>
   <div class="container">
     {% if page.hero_eyebrow %}
-      <p class="eyebrow">{{ page.hero_eyebrow }}</p>
+      <p class="eyebrow">
+        {{ page.hero_eyebrow }}
+      </p>
     {% endif %}
 
-    <h1>
-      {{ page.hero_title | default: page.title }}
-    </h1>
+    {% assign hero_title = page.hero_title | default: page.title %}
+    {% if hero_title %}
+      <h1 id="page-hero-title">
+        {{ hero_title }}
+      </h1>
+    {% endif %}
 
-    {% if page.hero_subtitle %}
+    {% assign hero_sub = page.hero_subtitle | default: page.description %}
+    {% if hero_sub %}
       <p class="lead">
-        {{ page.hero_subtitle }}
-      </p>
-    {% elsif page.description %}
-      <p class="lead">
-        {{ page.description }}
+        {{ hero_sub }}
       </p>
     {% endif %}
 
     {% if page.hero_list %}
       <ul class="hero-list">
         {% for item in page.hero_list %}
-          <li>{{ item }}</li>
+          {% if item %}
+            <li>{{ item }}</li>
+          {% endif %}
         {% endfor %}
       </ul>
     {% endif %}
 
     {% if page.hero_cta_primary_url %}
       <p class="hero-actions">
-        <a class="btn" href="{{ page.hero_cta_primary_url }}">
+        <a
+          class="btn"
+          href="{{ page.hero_cta_primary_url | relative_url }}"
+        >
           {{ page.hero_cta_primary_label | default: "Get started" }}
         </a>
 
         {% if page.hero_cta_secondary_url %}
-          <a class="btn ghost" href="{{ page.hero_cta_secondary_url }}">
+          <a
+            class="btn ghost"
+            href="{{ page.hero_cta_secondary_url | relative_url }}"
+          >
             {{ page.hero_cta_secondary_label | default: "Learn more" }}
           </a>
         {% endif %}
