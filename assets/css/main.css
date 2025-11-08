@@ -1440,3 +1440,104 @@ address.footer-meta {
   border-radius: 999px;
   font-weight: 500;
 }
+/* =========================
+   HOMEPAGE HERO LAYOUT
+   ========================= */
+
+.hero-inner {
+  display: grid;
+  gap: 2rem;
+}
+
+/* phone-first: content stacked */
+.hero-main,
+.hero-secondary {
+  min-width: 0; /* fix overflow in narrow viewports */
+}
+
+/* larger screens: side-by-side */
+@media (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+    align-items: stretch;
+  }
+}
+/* =========================
+   MOBILE NAV OVERLAY
+   ========================= */
+
+.site-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+
+  /* dark overlay so links are readable */
+  background: rgba(2, 6, 23, 0.98);
+  color: #e5e7eb;
+
+  padding: 4.25rem 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out;
+}
+
+/* when JS adds .is-open */
+.site-nav.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #e5e7eb;
+}
+
+.site-nav a[aria-current="page"] {
+  color: #0f766e; /* accent for active item */
+}
+
+/* Desktop: turn overlay into inline nav bar */
+@media (min-width: 900px) {
+  .site-nav {
+    position: static;
+    inset: auto;
+    z-index: auto;
+    background: transparent;
+    padding: 0;
+
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .site-nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .site-nav a {
+    padding: 0;
+    font-size: 0.95rem;
+  }
+}
