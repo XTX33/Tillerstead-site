@@ -46,6 +46,8 @@ html {
   --color-surface:       #ffffff;  /* Cards, content areas */
   --color-surface-alt:   #020617;  /* Dark header/footer */
   --color-surface-muted: #f3f4f6;  /* Subtle backgrounds */
+  --color-overlay-strong: rgba(2, 6, 23, 0.98); /* Mobile nav backdrop */
+  --color-overlay-soft:   rgba(15, 23, 42, 0.94);
   
   --color-brass:         #d1a638;  /* Primary accent */
   --color-brass-dark:    #b4891f;  /* Hover state */
@@ -625,13 +627,22 @@ textarea::placeholder {
   position: fixed;
   inset: 0;
   z-index: var(--z-overlay);
-  background: rgba(2, 6, 23, 0.98);
-  backdrop-filter: blur(8px);
-  padding: 5rem 2rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: clamp(4rem, 10vw, 5.25rem) clamp(1.5rem, 8vw, 3rem) clamp(2rem, 12vw, 3rem);
+  background:
+    radial-gradient(120% 140% at 20% 12%, rgba(15, 118, 110, 0.28), transparent 70%),
+    linear-gradient(180deg, var(--color-overlay-strong) 0%, rgba(4, 10, 24, 0.97) 55%, var(--color-overlay-soft) 100%);
+  color: var(--color-text-on-dark);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 28px 60px rgba(2, 6, 23, 0.6);
   overflow-y: auto;
   transform: translateY(-100%);
   opacity: 0;
   transition: transform var(--transition-slow), opacity var(--transition-slow);
+  isolation: isolate;
 }
 
 .site-nav.is-open {
@@ -643,40 +654,72 @@ textarea::placeholder {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: min(22rem, 100%);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
+}
+
+.site-nav li {
+  width: 100%;
 }
 
 .site-nav a {
-  display: block;
-  padding: var(--space-3) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-text-on-dark);
+  color: rgba(241, 245, 249, 0.98);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  background: rgba(15, 23, 42, 0.62);
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.15);
+  transition: color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .site-nav a:hover {
-  color: var(--color-brass);
+  color: #fefce8;
+  background: rgba(15, 118, 110, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.45);
+  transform: translateX(2px);
+}
+
+.site-nav a:focus-visible {
+  outline: none;
+  color: #fefce8;
+  background: rgba(15, 118, 110, 0.45);
+  box-shadow: inset 0 0 0 2px rgba(56, 189, 248, 0.45);
 }
 
 .site-nav a[aria-current="page"] {
-  color: var(--color-emerald);
+  color: #fefce8;
   position: relative;
+  background: rgba(15, 118, 110, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.45);
+}
+
+.site-nav li > a[aria-current="page"],
+.site-nav a[aria-current="page"]:hover,
+.site-nav a[aria-current="page"]:focus-visible {
+  color: #fefce8 !important;
 }
 
 .site-nav a[aria-current="page"]::before {
   content: "";
   position: absolute;
-  left: -1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  inset: 18% auto 18% -0.75rem;
   width: 4px;
-  height: 60%;
   background: var(--color-emerald);
-  border-radius: 2px;
+  border-radius: 999px;
+}
+
+@media (max-width: 899px) {
+  .site-nav a[aria-current="page"]::before {
+    display: none;
+  }
 }
 
 /* Desktop Navigation */
@@ -688,8 +731,12 @@ textarea::placeholder {
   .site-nav {
     position: static;
     inset: auto;
+    display: flex;
+    align-items: center;
     background: transparent;
     backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
     padding: 0;
     overflow: visible;
     transform: none;
@@ -700,12 +747,18 @@ textarea::placeholder {
   .site-nav ul {
     flex-direction: row;
     gap: var(--space-6);
+    width: auto;
   }
 
   .site-nav a {
     padding: var(--space-2) 0;
     font-size: var(--text-sm);
     position: relative;
+    background: transparent;
+    color: var(--color-text-on-dark);
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
   }
 
   .site-nav a::after {
@@ -725,8 +778,21 @@ textarea::placeholder {
     transform: scaleX(1);
   }
 
+  .site-nav a:hover,
+  .site-nav a:focus-visible {
+    color: var(--color-brass);
+    background: transparent;
+    box-shadow: none;
+  }
+
   .site-nav a[aria-current="page"]::before {
     display: none;
+  }
+
+  .site-nav a[aria-current="page"] {
+    color: var(--color-emerald);
+    background: transparent;
+    box-shadow: none;
   }
 }
 
@@ -1330,38 +1396,57 @@ address.footer-meta {
 
 /* Individual gallery item */
 .gitem {
-  background: var(--surface-elevated, #111);
-  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.gitem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .gitem a {
   display: block;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.12), rgba(15, 118, 110, 0.08));
 }
 
 /* THE IMPORTANT PART: keep images inside the card */
 .gitem img {
   width: 100%;
   height: 100%;
-  max-height: 260px;   /* tweak this for taller/shorter crops */
   object-fit: cover;
   display: block;
+  transition: transform var(--transition-fast);
+}
+
+.gitem a:hover img {
+  transform: scale(1.03);
 }
 
 /* Caption */
 .gitem figcaption {
-  padding: 0.75rem 1rem 1rem;
+  padding: 0.9rem 1.1rem 1.2rem;
   font-size: 0.9rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
 }
 
 /* Placeholder state for missing images */
 .gitem .placeholder {
   padding: 2.5rem 1.5rem 1.25rem;
   text-align: center;
-  opacity: 0.8;
+  opacity: 0.85;
+  color: var(--color-ink-soft);
 }
 
 .gitem .placeholder svg {

@@ -124,7 +124,7 @@ const PROJECTS = [
     if(p.thumb && p.full){
       fig.innerHTML = `
         <a href="${p.full}" class="lightbox" aria-label="Open image: ${p.alt}">
-          <img loading="lazy" decoding="async" src="${p.thumb}" alt="${p.alt}">
+          <img src="${p.thumb}" alt="${p.alt}">
         </a>
         <figcaption>${p.caption||''}</figcaption>
       `;
