@@ -79,8 +79,8 @@
       rel="stylesheet">
 
 <!-- CSS: unified design system -->
-<link rel="stylesheet"
-      href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+<link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css'  | relative_url }}">
 
 {% if page.styles %}
   {% for href in page.styles %}
