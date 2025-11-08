@@ -1357,3 +1357,26 @@ address.footer-meta {
   color: #fff;
   cursor: pointer;
 }
+/* --- Ghost Button Override (dark hero safe) --- */
+.section--dark .btn.btn-ghost,
+.hero.hero-page.section--dark .btn.btn-ghost {
+  color: #e5f0ff;
+  border-color: rgba(229, 240, 255, 0.7);
+  background-color: transparent;
+}
+
+.section--dark .btn.btn-ghost:hover,
+.section--dark .btn.btn-ghost:focus-visible,
+.hero.hero-page.section--dark .btn.btn-ghost:hover,
+.hero.hero-page.section--dark .btn.btn-ghost:focus-visible {
+  color: #0f172a; /* dark ink */
+  background-color: #e5f0ff;
+  border-color: #e5f0ff;
+}
+
+/* optional: better padding + visibility */
+.btn.btn-ghost.btn-lg {
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
