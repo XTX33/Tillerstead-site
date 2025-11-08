@@ -1298,11 +1298,6 @@ address.footer-meta {
     background: #ffffff;
   }
 
-  a {
-    text-decoration: underline;
-    color: #000000;
-  }
-
   .hero {
     background: var(--color-surface);
     color: var(--color-ink);
