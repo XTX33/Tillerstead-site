@@ -8,8 +8,8 @@ body_class: page-contact
 hero_eyebrow: Contact
 hero_title: Tell me about your project and timeline.
 hero_subtitle: >
-  You’ll get a clear, itemized estimate – no pressure, no games. Just straight talk
-  about scope, budget, and what it takes to do it right.
+  You’ll get a clear, itemized estimate — no pressure, no games. Just straight talk
+  about scope, budget, and what it takes to do it right in your home.
 hero_list:
   - "Licensed New Jersey Home Improvement Contractor (HIC #{{ site.company.hic }})"
   - "Showers, bathrooms, and large-format tile you can live with for decades"
@@ -22,25 +22,28 @@ hero_cta_secondary_label: "Email"
 ---
 
 <section class="section section-form" aria-labelledby="contact-heading">
-  <div class="container">
-    <h2 id="contact-heading">Request a callback or estimate</h2>
+  <div class="container contact-shell">
+    <header class="contact-header">
+      <h2 id="contact-heading">Request a callback or estimate</h2>
 
-    <p class="lead" id="form-intro">
-      Share a few details below. I’ll review your project, follow up with any questions,
-      and then send a clear, itemized plan for next steps.
-    </p>
+      <p class="lead" id="form-intro">
+        Share a few details below. I’ll review your project, follow up with any key questions,
+        and then send a clear, line-item estimate with options where it makes sense.
+      </p>
 
-    <div class="contact-steps" aria-label="What happens after you send this form">
-      <ol>
-        <li><strong>Review:</strong> I look over your project details, photos, and location.</li>
-        <li><strong>Follow up:</strong> I’ll reach out by text, call, or email to clarify scope and timing.</li>
-        <li><strong>Estimate:</strong> You receive a written, itemized estimate with options where helpful.</li>
-      </ol>
-    </div>
+      <div class="contact-steps" aria-label="What happens after you send this form">
+        <ol>
+          <li><strong>Review:</strong> I look over your project notes, photos, and location.</li>
+          <li><strong>Follow up:</strong> You get a call, text, or email to confirm scope and timing.</li>
+          <li><strong>Estimate:</strong> You receive a written, itemized estimate — no surprise add-ons.</li>
+        </ol>
+      </div>
+    </header>
 
     <form
       name="contact"
       id="contact-form"
+      class="contact-form"
       data-contact-form
       method="post"
       action="{{ page.url | relative_url }}"
@@ -49,7 +52,7 @@ hero_cta_secondary_label: "Email"
       <div class="form-grid">
         <div class="form-field">
           <label for="name">
-            Full Name<span aria-hidden="true">*</span>
+            Full name<span aria-hidden="true">*</span>
           </label>
           <input
             id="name"
@@ -91,7 +94,7 @@ hero_cta_secondary_label: "Email"
 
         <div class="form-field">
           <label for="city">
-            City / Area<span aria-hidden="true">*</span>
+            City / area<span aria-hidden="true">*</span>
           </label>
           <input
             id="city"
@@ -99,12 +102,12 @@ hero_cta_secondary_label: "Email"
             type="text"
             required
             autocomplete="address-level2"
-            placeholder="Galloway, Atlantic County"
+            placeholder="e.g., Galloway, Atlantic City, Brigantine"
           >
         </div>
 
         <div class="form-field">
-          <label for="project-type">Project Type</label>
+          <label for="project-type">Project type</label>
           <select id="project-type" name="project_type">
             <option value="">Select an option</option>
             <option>Full bathroom remodel</option>
@@ -117,7 +120,7 @@ hero_cta_secondary_label: "Email"
         </div>
 
         <div class="form-field">
-          <label for="timeline">Ideal Timeline</label>
+          <label for="timeline">Ideal timeline</label>
           <select id="timeline" name="timeline">
             <option value="">Select an option</option>
             <option>As soon as possible</option>
@@ -135,31 +138,48 @@ hero_cta_secondary_label: "Email"
         <textarea
           id="details"
           name="details"
-          rows="5"
+          rows="6"
           required
-          placeholder="Tell me about the space, tile size, what’s there now, and any must-haves or concerns."
+          placeholder="Tell me about the space, what’s there now, tile size or products you’re considering, and any must-haves or concerns (leaks, soft spots, renters, timelines, etc.)."
         ></textarea>
       </div>
 
       <div class="form-field">
-        <label for="photos">Link to photos (optional)</label>
+        <label for="photos">Link to photos or plans (optional)</label>
         <input
           id="photos"
           name="photos"
           type="url"
           inputmode="url"
-          placeholder="Link to Google Drive, iCloud, or photos"
+          placeholder="Link to Google Drive, iCloud, or photo album"
         >
       </div>
 
       <p class="form-note">
-        I don’t share or sell your information. It’s used only to follow up about your project
-        and prepare an accurate estimate.
+        Your information stays with Tillerstead. It’s used only to follow up about your project
+        and prepare an accurate estimate — never sold or shared.
       </p>
 
       <button type="submit" class="btn btn-primary">
-        Submit Request
+        Submit request
       </button>
     </form>
+
+    <aside class="contact-alt">
+      <h3>Prefer to call or text?</h3>
+      <p>
+        You can also reach out directly at
+        <a href="tel:{{ site.company.phone_link | default: '+16096659350' }}">
+          {{ site.company.phone_display | default: '(609) 665-9350' }}
+        </a>
+        or email
+        <a href="mailto:{{ site.company.email | default: 'info@tillerstead.com' }}">
+          {{ site.company.email | default: 'info@tillerstead.com' }}
+        </a>.
+      </p>
+      <p class="microcopy">
+        For the fastest estimate, send a few photos of the space and a rough idea of your timeline.
+      </p>
+    </aside>
   </div>
 </section>
