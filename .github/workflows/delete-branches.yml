@@ -32,7 +32,7 @@ jobs:
           echo "Branch Deletion Workflow"
           echo "=========================================="
           echo "Fetching all remote branches..."
-          git fetch --all
+          git fetch --all --prune
 
           echo ""
           echo "Getting list of all remote branches except main..."

@@ -29,6 +29,10 @@ fi
 echo "Fetching all remote branches..."
 git fetch --all --prune
 
+# Get current branch
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+echo "Current branch: $current_branch"
+
 # Get list of all remote branches except main
 echo ""
 echo "Branches that will be deleted:"
@@ -36,9 +40,13 @@ echo "=========================================="
 
 # Use git for-each-ref for cleaner, safer branch listing
 branches_found=false
+current_branch_will_be_deleted=false
 while IFS= read -r branch; do
     branches_found=true
     echo "$branch"
+    if [ "$branch" = "$current_branch" ]; then
+        current_branch_will_be_deleted=true
+    fi
 done < <(get_branches_to_delete)
 
 if [ "$branches_found" = false ]; then
@@ -49,13 +57,28 @@ fi
 echo "=========================================="
 echo ""
 
+# Warn if current branch will be deleted
+if [ "$current_branch_will_be_deleted" = true ]; then
+    echo "⚠️  WARNING: You are currently on branch '$current_branch'"
+    echo "⚠️  This branch will be deleted! Consider switching to 'main' first."
+    echo ""
+fi
+
 # Ask for confirmation
 read -p "Are you sure you want to delete these branches? (yes/no): " confirmation
 
-if [ "$confirmation" != "yes" ]; then
-    echo "Aborted."
-    exit 0
-fi
+# Normalize input to lowercase for comparison
+confirmation=$(echo "$confirmation" | tr '[:upper:]' '[:lower:]')
+
+case "$confirmation" in
+    yes|y)
+        echo "Proceeding with deletion..."
+        ;;
+    *)
+        echo "Aborted."
+        exit 0
+        ;;
+esac
 
 # Delete each branch
 echo ""
