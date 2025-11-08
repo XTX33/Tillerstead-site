@@ -8,30 +8,58 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Delete all branches except main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          echo "=========================================="
+          echo "Branch Deletion Workflow"
+          echo "=========================================="
           echo "Fetching all remote branches..."
           git fetch --all
-          
+
+          echo ""
           echo "Getting list of all remote branches except main..."
-          branches=$(git branch -r | grep -v '\->' | grep -v 'origin/main' | sed 's/origin\///')
-          
+          branches=$(git branch -r | grep -v '\->' | \
+            grep -v 'origin/main' | sed 's/origin\///' | grep -v '^$')
+
+          if [ -z "$branches" ]; then
+            echo "✓ No branches to delete (only main exists)"
+            exit 0
+          fi
+
           echo "Branches to delete:"
+          echo "=========================================="
           echo "$branches"
-          
+          echo "=========================================="
+          echo ""
+
+          # Track results
+          success_count=0
+          fail_count=0
+
           # Delete each branch
           for branch in $branches; do
             echo "Deleting branch: $branch"
-            git push origin --delete "$branch" || echo "Failed to delete $branch"
+            if git push origin --delete "$branch"; then
+              echo "✓ Successfully deleted: $branch"
+              success_count=$((success_count + 1))
+            else
+              echo "✗ Failed to delete: $branch"
+              fail_count=$((fail_count + 1))
+            fi
           done
-          
+
+          echo ""
+          echo "=========================================="
           echo "Branch deletion complete!"
+          echo "Successfully deleted: $success_count"
+          echo "Failed: $fail_count"
+          echo "=========================================="
