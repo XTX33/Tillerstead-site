@@ -19,7 +19,7 @@ python3 -m http.server
 ---
 
 ## 🔧 Offline-friendly `bundle exec jekyll build`
-To keep CI and air‑gapped machines happy, the repo includes a vendored `jekyll` gem (see `vendor/gems/jekyll`). Bundler only has to resolve a path dependency, so no external gem servers are contacted.
+To keep CI and air-gapped machines happy, the repo includes a vendored `jekyll` gem (see `vendor/gems/jekyll`). Bundler only has to resolve a path dependency, so no external gem servers are contacted.
 
 ```bash
 # optional: keep Bundler installs local to the repo
