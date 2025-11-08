@@ -1,0 +1,37 @@
+name: Delete All Branches Except Main
+
+on:
+  workflow_dispatch:
+
+jobs:
+  delete-branches:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Delete all branches except main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Fetching all remote branches..."
+          git fetch --all
+          
+          echo "Getting list of all remote branches except main..."
+          branches=$(git branch -r | grep -v '\->' | grep -v 'origin/main' | sed 's/origin\///')
+          
+          echo "Branches to delete:"
+          echo "$branches"
+          
+          # Delete each branch
+          for branch in $branches; do
+            echo "Deleting branch: $branch"
+            git push origin --delete "$branch" || echo "Failed to delete $branch"
+          done
+          
+          echo "Branch deletion complete!"
