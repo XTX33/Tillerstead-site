@@ -15,24 +15,30 @@ hero_list:
 ---
 
 <section class="about-hero" aria-label="Quick facts about Tillerstead">
-  <div class="kpis" aria-label="Quick facts">
-    <div class="kpi">
-      <b>Tile Design • Bath Remodels • Consultations</b><br>
-      <small>Serving Atlantic County &amp; Southern New Jersey</small>
+  <div class="about-kpis" aria-label="Quick facts">
+    <div class="about-kpi">
+      <span class="about-kpi-label">What We Do</span>
+      <span class="about-kpi-body">
+        Tile design, bath remodels, and consultations across Atlantic County &amp; the South Jersey shore.
+      </span>
     </div>
-    <div class="kpi">
-      <b>Labor-Only or Turn-Key</b><br>
-      <small>Use your materials, or we can source, stage &amp; deliver</small>
+    <div class="about-kpi">
+      <span class="about-kpi-label">How We Work</span>
+      <span class="about-kpi-body">
+        Labor-only or turn-key — use your materials, or we can source, stage &amp; deliver.
+      </span>
     </div>
-    <div class="kpi">
-      <b>Built to Manufacturer Specs &amp; NJ Code</b><br>
-      <small>Bonded waterproofing • Flood testing available where needed</small>
+    <div class="about-kpi">
+      <span class="about-kpi-label">Standards</span>
+      <span class="about-kpi-body">
+        Built to manufacturer specs &amp; NJ code with bonded waterproofing and flood testing available.
+      </span>
     </div>
   </div>
 </section>
 
 <section class="bio prose" aria-label="Approach and background">
-  <div class="card">
+  <div class="card about-card">
     <h2>Approach</h2>
     <ul>
       <li><strong>Free estimates</strong>, line-item proposals, and straight talk about options.</li>
@@ -40,18 +46,19 @@ hero_list:
       <li><strong>Respect for your home, schedule, and budget</strong> from demo through final cleanup.</li>
     </ul>
     <p>
-      <a class="btn btn-accent" href="/contact/">
+      <a class="btn btn-accent" href="{{ '/contact/' | relative_url }}">
         Request an Estimate
       </a>
     </p>
   </div>
 
-  <div class="card">
+  <div class="card about-card">
     <h2>Who I Am</h2>
     <p>
       I’m <strong>Devon Tyler</strong>, founder of Tillerstead and a New Jersey licensed contractor
-      (<strong>HIC #13VH10808800</strong>). I manage every project personally — from scope and layout
-      to punch list — and stand behind the work with clear documentation and service follow-up.
+      (<strong>HIC #13VH10808800</strong>).
+      I manage every project personally — from scope and layout to punch list — and stand behind the work
+      with clear documentation and service follow-up.
     </p>
     <p>
       The goal is simple: <strong>deliver craft you can trust</strong> — showers that don’t leak,
@@ -95,69 +102,161 @@ hero_list:
   <h2 id="proof-title">Proof in Pictures</h2>
 
   <div class="proofgrid">
-    <figure>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/img/shower-white.jpg.JPG"
-        alt="Subway-tile shower with bench, niche, and upgraded fixtures"
-      >
+
+    <figure class="proof-item">
+      <picture>
+        <source
+          srcset="
+            {{ '/assets/img/shower-white.avif'  | relative_url }} 1x,
+            {{ '/assets/img/shower-white@2x.avif' | relative_url }} 2x
+          "
+          type="image/avif">
+        <source
+          srcset="
+            {{ '/assets/img/shower-white.webp'  | relative_url }} 1x,
+            {{ '/assets/img/shower-white@2x.webp' | relative_url }} 2x
+          "
+          type="image/webp">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="{{ '/assets/img/shower-white.jpg.JPG' | relative_url }}"
+          alt="Subway-tile shower with bench, niche, and upgraded fixtures"
+          width="900" height="1200"
+          sizes="(min-width: 960px) 33vw, 100vw">
+      </picture>
       <figcaption>Flood-tested shower • bench, niche &amp; updated fixtures</figcaption>
     </figure>
 
-    <figure>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/img/marble-bath.jpg.JPG"
-        alt="Marble-look bath with large-format tile layout and aligned joints"
-      >
+    <figure class="proof-item">
+      <picture>
+        <source
+          srcset="
+            {{ '/assets/img/marble-bath.avif'  | relative_url }} 1x,
+            {{ '/assets/img/marble-bath@2x.avif' | relative_url }} 2x
+          "
+          type="image/avif">
+        <source
+          srcset="
+            {{ '/assets/img/marble-bath.webp'  | relative_url }} 1x,
+            {{ '/assets/img/marble-bath@2x.webp' | relative_url }} 2x
+          "
+          type="image/webp">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="{{ '/assets/img/marble-bath.jpg.JPG' | relative_url }}"
+          alt="Marble-look bath with large-format tile layout and aligned joints"
+          width="900" height="1200"
+          sizes="(min-width: 960px) 33vw, 100vw">
+      </picture>
       <figcaption>Marble-look bath • large-format alignment</figcaption>
     </figure>
 
-    <figure>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/img/kitchen-green.jpg.JPG"
-        alt="Kitchen backsplash with green tile and clean outlet cuts"
-      >
+    <figure class="proof-item">
+      <picture>
+        <source
+          srcset="
+            {{ '/assets/img/kitchen-green.avif'  | relative_url }} 1x,
+            {{ '/assets/img/kitchen-green@2x.avif' | relative_url }} 2x
+          "
+          type="image/avif">
+        <source
+          srcset="
+            {{ '/assets/img/kitchen-green.webp'  | relative_url }} 1x,
+            {{ '/assets/img/kitchen-green@2x.webp' | relative_url }} 2x
+          "
+          type="image/webp">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="{{ '/assets/img/kitchen-green.jpg.JPG' | relative_url }}"
+          alt="Kitchen backsplash with green tile and clean outlet cuts"
+          width="900" height="1200"
+          sizes="(min-width: 960px) 33vw, 100vw">
+      </picture>
       <figcaption>Backsplash • clean cuts around outlets &amp; edges</figcaption>
     </figure>
 
-    <figure>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/img/kitchen-hex.jpg.JPG"
-        alt="Hex tile backsplash detail near range hood"
-      >
+    <figure class="proof-item">
+      <picture>
+        <source
+          srcset="
+            {{ '/assets/img/kitchen-hex.avif'  | relative_url }} 1x,
+            {{ '/assets/img/kitchen-hex@2x.avif' | relative_url }} 2x
+          "
+          type="image/avif">
+        <source
+          srcset="
+            {{ '/assets/img/kitchen-hex.webp'  | relative_url }} 1x,
+            {{ '/assets/img/kitchen-hex@2x.webp' | relative_url }} 2x
+          "
+          type="image/webp">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="{{ '/assets/img/kitchen-hex.jpg.JPG' | relative_url }}"
+          alt="Hex tile backsplash detail near range hood"
+          width="900" height="1200"
+          sizes="(min-width: 960px) 33vw, 100vw">
+      </picture>
       <figcaption>Hex feature wall • crisp terminations at hood &amp; cabinets</figcaption>
     </figure>
 
-    <figure>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/img/shower-blue.jpg.JPG"
-        alt="Patterned shower feature wall with balanced layout"
-      >
+    <figure class="proof-item">
+      <picture>
+        <source
+          srcset="
+            {{ '/assets/img/shower-blue.avif'  | relative_url }} 1x,
+            {{ '/assets/img/shower-blue@2x.avif' | relative_url }} 2x
+          "
+          type="image/avif">
+        <source
+          srcset="
+            {{ '/assets/img/shower-blue.webp'  | relative_url }} 1x,
+            {{ '/assets/img/shower-blue@2x.webp' | relative_url }} 2x
+          "
+          type="image/webp">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="{{ '/assets/img/shower-blue.jpg.JPG' | relative_url }}"
+          alt="Patterned shower feature wall with balanced layout"
+          width="900" height="1200"
+          sizes="(min-width: 960px) 33vw, 100vw">
+      </picture>
       <figcaption>Patterned feature • centered, balanced layout</figcaption>
     </figure>
 
-    <figure>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/img/hardwood-room.jpg.JPG"
-        alt="Hardwood room with new trim and clean flooring transitions"
-      >
+    <figure class="proof-item">
+      <picture>
+        <source
+          srcset="
+            {{ '/assets/img/hardwood-room.avif'  | relative_url }} 1x,
+            {{ '/assets/img/hardwood-room@2x.avif' | relative_url }} 2x
+          "
+          type="image/avif">
+        <source
+          srcset="
+            {{ '/assets/img/hardwood-room.webp'  | relative_url }} 1x,
+            {{ '/assets/img/hardwood-room@2x.webp' | relative_url }} 2x
+          "
+          type="image/webp">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="{{ '/assets/img/hardwood-room.jpg.JPG' | relative_url }}"
+          alt="Hardwood room with new trim and clean flooring transitions"
+          width="900" height="1200"
+          sizes="(min-width: 960px) 33vw, 100vw">
+      </picture>
       <figcaption>Floors &amp; trim • clean transitions between rooms</figcaption>
     </figure>
+
   </div>
 
   <p style="margin:.85rem 0 0">
-    <a class="btn" href="/portfolio/">
+    <a class="btn" href="{{ '/portfolio/' | relative_url }}">
       See full gallery
     </a>
   </p>
@@ -166,18 +265,16 @@ hero_list:
 <section class="faqs" style="margin-top:20px">
   <h2>Common Questions</h2>
 
-  <details>
+  <details class="faq-item">
     <summary>Are you licensed and insured?</summary>
     <p>
       <strong>New Jersey Licensed Home Improvement Contractor</strong><br>
       Tillerstead LLC is registered as a New Jersey Home Improvement Contractor.<br>
       <strong>NJ HIC #13VH10808800</strong>
     </p>
-    <!-- When current insurance coverage is in place, this can be expanded to say
-         "licensed and insured" with basic policy details if you want to show that upfront. -->
   </details>
 
-  <details>
+  <details class="faq-item">
     <summary>Do you work with large-format tile?</summary>
     <p>
       Yes. Large-format tile demands very flat substrates, the right mortar, and the right trowel
@@ -186,7 +283,7 @@ hero_list:
     </p>
   </details>
 
-  <details>
+  <details class="faq-item">
     <summary>Do you waterproof behind and under tile?</summary>
     <p>
       Yes. In showers, tub surrounds, and other high-moisture areas, we install membranes that meet the
@@ -198,7 +295,7 @@ hero_list:
     </p>
   </details>
 
-  <details>
+  <details class="faq-item">
     <summary>What are movement joints, and why do they matter?</summary>
     <p>
       Movement joints are flexible gaps built into tile installations to absorb expansion and contraction
@@ -220,10 +317,10 @@ hero_list:
     </p>
   </details>
 
-  <details>
+  <details class="faq-item">
     <summary>Can you provide references or past projects?</summary>
     <p>
-      Yes. You can browse the <a href="/portfolio/">gallery</a> and visit the
+      Yes. You can browse the <a href="{{ '/portfolio/' | relative_url }}">gallery</a> and visit the
       <a href="https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199"
          target="_blank" rel="noopener noreferrer">
         Thumbtack profile
