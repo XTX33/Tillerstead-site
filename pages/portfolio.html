@@ -116,20 +116,85 @@ const PROJECTS = [
   const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
   const gallery = $('#gallery');
   const chips = $$('.chip');
+  const PLACEHOLDER_SRC = 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=';
+  const DEFAULT_SIZES = '(min-width: 1024px) 25vw, (min-width: 768px) 40vw, 100vw';
+  let lazyObserver = null;
+
+  function applySources(img){
+    if(!img) return;
+    const { src: current } = img;
+    const nextSrc = img.dataset.src;
+    if(nextSrc && current !== nextSrc){
+      img.src = nextSrc;
+    }
+    const nextSrcset = img.dataset.srcset;
+    if(nextSrcset){
+      img.srcset = nextSrcset;
+    }
+    const nextSizes = img.dataset.sizes;
+    if(nextSizes){
+      img.sizes = nextSizes;
+    }
+    img.removeAttribute('data-src');
+    img.removeAttribute('data-srcset');
+    img.removeAttribute('data-sizes');
+  }
+
+  function getObserver(){
+    if(lazyObserver !== null) return lazyObserver;
+    if('IntersectionObserver' in window){
+      lazyObserver = new IntersectionObserver((entries, observer)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            applySources(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '200px 0px' });
+    } else {
+      lazyObserver = false;
+    }
+    return lazyObserver;
+  }
+
+  function queueImage(img){
+    if(!img) return;
+    const observer = getObserver();
+    if(observer){
+      observer.observe(img);
+    } else {
+      applySources(img);
+    }
+  }
 
   function figFor(p){
     const fig = document.createElement('figure');
     fig.className = "gitem";
     fig.dataset.tags = (p.tags||[]).join(',');
     if(p.thumb && p.full){
-      fig.innerHTML = `
-        <a href="${p.full}" class="lightbox" aria-label="Open image: ${p.alt}">
-          <img loading="lazy" decoding="async" src="${p.thumb}" alt="${p.alt}">
-        </a>
-        <figcaption>${p.caption||''}</figcaption>
-      `;
-      // Fallback if image 404s
-      const img = fig.querySelector('img');
+      const link = document.createElement('a');
+      link.href = p.full;
+      link.className = 'lightbox';
+      link.setAttribute('aria-label', `Open image: ${p.alt}`);
+
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.alt = p.alt;
+      img.src = PLACEHOLDER_SRC;
+      img.dataset.src = p.thumb;
+      img.dataset.sizes = p.sizes || DEFAULT_SIZES;
+      if(p.full && p.full !== p.thumb){
+        img.dataset.srcset = `${p.thumb} 1x, ${p.full} 2x`;
+      }
+
+      link.appendChild(img);
+      fig.appendChild(link);
+
+      const caption = document.createElement('figcaption');
+      caption.textContent = p.caption || '';
+      fig.appendChild(caption);
+
       img.addEventListener('error', ()=>{
         fig.innerHTML = `
           <div class="placeholder">
@@ -141,6 +206,8 @@ const PROJECTS = [
           <figcaption>${p.caption||''}</figcaption>
         `;
       }, { once:true });
+
+      queueImage(img);
     } else {
       fig.innerHTML = `
         <div class="placeholder">
