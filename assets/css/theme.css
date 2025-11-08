@@ -36,6 +36,13 @@ html {
   }
 }
 
+/* Focus visible for better accessibility */
+*:focus-visible {
+  outline: 2px solid var(--ts-emerald, #0f766e);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* 1) Design tokens (colors, type, space)
    ------------------------------------------- */
 
@@ -268,11 +275,23 @@ a:focus-visible {
   border-radius: var(--ts-radius-card);
   padding: var(--ts-space-3);
   box-shadow: 0 0 0 1px var(--ts-border-subtle);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+  transform: translateY(-2px);
 }
 
 .card--lift {
   box-shadow: var(--ts-shadow-soft);
   border: none;
+  transition: all 0.3s ease;
+}
+
+.card--lift:hover {
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.22);
+  transform: translateY(-4px);
 }
 
 .card--muted {
@@ -347,23 +366,59 @@ a:focus-visible {
   background: var(--ts-brass);
   color: #111827;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
   background: var(--ts-brass-dark);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.3);
+}
+
+.btn-accent {
+  background: var(--ts-emerald);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(15, 118, 110, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover,
+.btn-accent:focus-visible {
+  background: var(--ts-emerald-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(15, 118, 110, 0.45);
+  color: #ffffff;
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(15, 118, 110, 0.3);
 }
 
 .btn-ghost {
   border-color: var(--ts-border-subtle);
   color: var(--ts-ink);
   background: #f9fafb;
+  transition: all 0.2s ease;
 }
 
 .btn-ghost:hover,
 .btn-ghost:focus-visible {
   border-color: var(--ts-ink-soft);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
 }
 
 .btn-inline {
