@@ -1253,3 +1253,107 @@ address.footer-meta {
     color: var(--color-ink);
   }
 }
+/* Portfolio layout */
+.portfolio-page {
+  padding-block: 3rem;
+}
+
+/* Filters row */
+.portfolio-page .filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual gallery item */
+.gitem {
+  background: var(--surface-elevated, #111);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gitem a {
+  display: block;
+}
+
+/* THE IMPORTANT PART: keep images inside the card */
+.gitem img {
+  width: 100%;
+  height: 100%;
+  max-height: 260px;   /* tweak this for taller/shorter crops */
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption */
+.gitem figcaption {
+  padding: 0.75rem 1rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Placeholder state for missing images */
+.gitem .placeholder {
+  padding: 2.5rem 1.5rem 1.25rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.gitem .placeholder svg {
+  margin-bottom: 0.75rem;
+}
+
+/* Lightbox overlay */
+.lb {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out;
+  z-index: 999;
+}
+
+.lb.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lb img {
+  max-width: min(90vw, 900px);
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.lb-cap {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.lb-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
