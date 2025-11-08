@@ -147,50 +147,135 @@ schema:
     </div>
     <style>
   /* ============================================
-     KPIs / Quick Facts – Tillerstead Theme
-     Works on dark (charcoal) header background
+     HERO KPIs – make labels readable on dark bg
      ============================================ */
 
   .hero-kpis {
     list-style: none;
-    margin: 1.5rem auto;
+    margin: 1.75rem auto 0;
     padding: 0;
     max-width: 48rem;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--brand-light, #f9fafb);
+    color: var(--brand-stone, #e5e7eb);
   }
 
-  .hero-kpis li {
+  .hero-kpis .hero-kpi {
     margin-bottom: 1.25rem;
-    border-left: 3px solid var(--brand-brass, #b8922f);
-    padding-left: 0.75rem;
   }
 
   .hero-kpi-label {
     display: block;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.25rem;
-    color: var(--brand-emerald, #0fa3b1);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    color: var(--brand-emerald, #0fa3b1) !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  }
+
+  /* If some old rule is lowering opacity on the whole KPI row */
+  .hero-kpis .hero-kpi,
+  .hero-kpis .hero-kpi * {
+    opacity: 1 !important;
   }
 
   .hero-kpis .nowrap {
     white-space: nowrap;
   }
 
-  /* For contrast on very dark backgrounds */
-  @media (prefers-color-scheme: dark) {
-    .hero-kpis {
-      color: #f1f5f9;
-    }
-    .hero-kpi-label {
-      color: #10b981; /* bright emerald accent for dark mode */
-    }
+  /* ============================================
+     Credentials card typography
+     ============================================ */
+
+  .licensing-card {
+    border-radius: 0.75rem;
+    border: 1px solid rgba(184, 146, 47, 0.35);
+    background: radial-gradient(circle at top left,
+                rgba(15, 163, 177, 0.12),
+                rgba(15, 23, 42, 0.98));
+    padding: 1.75rem 1.5rem;
+    color: var(--brand-ink, #0f172a);
+  }
+
+  .licensing-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-brass, #b8922f);
+  }
+
+  .credential-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .credential-list > div {
+    margin-bottom: 0.9rem;
+  }
+
+  .credential-list dt {
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--brand-emerald, #0fa3b1);
+    margin-bottom: 0.1rem;
+  }
+
+  .credential-list dd {
+    margin: 0;
+    color: var(--brand-ink, #e5e7eb);
+  }
+
+  .credential-list a {
+    color: var(--brand-emerald, #0fa3b1);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+
+  /* ============================================
+     Section headings / microcopy polish
+     ============================================ */
+
+  .section h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--brand-ink, #111827);
+    margin-bottom: 0.5rem;
+  }
+
+  .section .lead {
+    max-width: 44rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--brand-ink, #111827);
+  }
+
+  .section .microcopy {
+    font-size: 0.85rem;
+    color: rgba(15, 23, 42, 0.75);
+    margin-top: 0.5rem;
+  }
+
+  .cards.mt-2 .card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+    color: var(--brand-ink, #111827);
+  }
+
+  .cards.mt-2 .card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 </style>
+  
 
     <!-- Side card unchanged -->
     <aside class="hero-secondary card card--lift" aria-labelledby="hero-why-heading">
@@ -269,34 +354,41 @@ schema:
   <strong>clear expectations</strong> for timelines and inspections.
 </p>
     </div>
-
-    <div class="card licensing-card" aria-labelledby="credential-heading">
-      <h3 id="credential-heading">Credentials &amp; Assurances</h3>
-      <dl class="credential-list">
-        <div>
-          <dt>License</dt>
-          <dd>New Jersey Home Improvement Contractor <span class="nowrap">HIC #{{ site.company.hic }}</span></dd>
-        </div>
-        <div>
-          <dt>Standards</dt>
-          <dd>TCNA, ANSI A108, and local building code references baked into each scope of work</dd>
-        </div>
-        <div>
-          <dt>Project Types</dt>
-          <dd>Showers, baths, backsplashes, floor tile, and select small remodels and upgrades</dd>
-        </div>
-        <div>
-          <dt>Verification</dt>
-          <dd>
-            Confirm current registration anytime on the
-            <a href="https://newjersey.mylicense.com/verification/" rel="noopener" target="_blank">
-              NJ Consumer Affairs license lookup
-            </a>.
-          </dd>
-        </div>
-      </dl>
+<div class="card licensing-card" aria-labelledby="credential-heading">
+  <h3 id="credential-heading">Credentials &amp; Assurances</h3>
+  <dl class="credential-list">
+    <div>
+      <dt>License</dt>
+      <dd>
+        New Jersey <strong>Home Improvement Contractor</strong>
+        <span class="nowrap">HIC #{{ site.company.hic }}</span>
+      </dd>
     </div>
-  </div>
+    <div>
+      <dt>Standards</dt>
+      <dd>
+        <strong>TCNA</strong>, <strong>ANSI&nbsp;A108</strong>, and local building-code references
+        baked into each scope of work.
+      </dd>
+    </div>
+    <div>
+      <dt>Project Types</dt>
+      <dd>
+        Showers, baths, backsplashes, floor tile, and select
+        small remodels and upgrades tuned for South Jersey homes.
+      </dd>
+    </div>
+    <div>
+      <dt>Verification</dt>
+      <dd>
+        Confirm current registration anytime on the
+        <a href="https://newjersey.mylicense.com/verification/" rel="noopener" target="_blank">
+          NJ Consumer Affairs license lookup
+        </a>.
+      </dd>
+    </div>
+  </dl>
+</div>
 </section>
 
 <!-- Services: Tile & Home Upgrades in South Jersey -->
