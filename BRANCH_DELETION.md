@@ -65,13 +65,20 @@ git push origin --delete BRANCH_NAME
 
 ## Example Commands
 
-To delete all branches except main in one command:
+To delete all branches except main safely with a loop:
 
 ```bash
-git fetch --all && git branch -r | grep -v '\->' | grep -v 'origin/main' | sed 's/origin\///' | xargs -I {} git push origin --delete {}
+git fetch --all
+while IFS= read -r branch; do
+  echo "Deleting: $branch"
+  git push origin --delete "$branch"
+done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/ | \
+         grep -v '^origin/HEAD$' | \
+         grep -v '^origin/main$' | \
+         sed 's|^origin/||')
 ```
 
-⚠️ **Warning:** This command will immediately delete all branches without confirmation!
+⚠️ **Warning:** This will delete branches without confirmation. Review the list first!
 
 ## Verification
 

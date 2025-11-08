@@ -27,17 +27,25 @@ jobs:
 
           echo ""
           echo "Getting list of all remote branches except main..."
-          branches=$(git branch -r | grep -v '\->' | \
-            grep -v 'origin/main' | sed 's/origin\///' | grep -v '^$')
 
-          if [ -z "$branches" ]; then
+          # Use git for-each-ref for safer branch listing
+          branches_found=false
+          echo "Branches to delete:"
+          echo "=========================================="
+          while IFS= read -r branch; do
+            branches_found=true
+            echo "$branch"
+          done < <(git for-each-ref --format='%(refname:short)' \
+                   refs/remotes/origin/ | \
+                   grep -v '^origin/HEAD$' | \
+                   grep -v '^origin/main$' | \
+                   sed 's|^origin/||')
+
+          if [ "$branches_found" = false ]; then
             echo "✓ No branches to delete (only main exists)"
             exit 0
           fi
 
-          echo "Branches to delete:"
-          echo "=========================================="
-          echo "$branches"
           echo "=========================================="
           echo ""
 
@@ -46,7 +54,7 @@ jobs:
           fail_count=0
 
           # Delete each branch
-          for branch in $branches; do
+          while IFS= read -r branch; do
             echo "Deleting branch: $branch"
             if git push origin --delete "$branch"; then
               echo "✓ Successfully deleted: $branch"
@@ -55,7 +63,11 @@ jobs:
               echo "✗ Failed to delete: $branch"
               fail_count=$((fail_count + 1))
             fi
-          done
+          done < <(git for-each-ref --format='%(refname:short)' \
+                   refs/remotes/origin/ | \
+                   grep -v '^origin/HEAD$' | \
+                   grep -v '^origin/main$' | \
+                   sed 's|^origin/||')
 
           echo ""
           echo "=========================================="

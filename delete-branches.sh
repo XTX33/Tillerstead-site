@@ -25,14 +25,22 @@ git fetch --all --prune
 echo ""
 echo "Branches that will be deleted:"
 echo "=========================================="
-branches=$(git branch -r | grep -v '\->' | grep -v 'origin/main' | sed 's/origin\///' | grep -v '^$')
 
-if [ -z "$branches" ]; then
+# Use git for-each-ref for cleaner, safer branch listing
+branches_found=false
+while IFS= read -r branch; do
+    branches_found=true
+    echo "$branch"
+done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/ | \
+         grep -v '^origin/HEAD$' | \
+         grep -v '^origin/main$' | \
+         sed 's|^origin/||')
+
+if [ "$branches_found" = false ]; then
     echo "No branches to delete (only main exists)"
     exit 0
 fi
 
-echo "$branches"
 echo "=========================================="
 echo ""
 
@@ -47,14 +55,17 @@ fi
 # Delete each branch
 echo ""
 echo "Deleting branches..."
-for branch in $branches; do
+while IFS= read -r branch; do
     echo "Deleting: $branch"
     if git push origin --delete "$branch"; then
         echo "✓ Successfully deleted: $branch"
     else
         echo "✗ Failed to delete: $branch"
     fi
-done
+done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/ | \
+         grep -v '^origin/HEAD$' | \
+         grep -v '^origin/main$' | \
+         sed 's|^origin/||')
 
 echo ""
 echo "=========================================="
