@@ -2,18 +2,18 @@
   <div class="site-header-inner">
     <!-- Brand -->
     <a class="site-logo text-logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
-      <span class="logo-text">Tillerstead LLC</span>
+      <span class="logo-gradient">{{ site.title | default: 'Tillerstead LLC' }}</span>
     </a>
 
-    <!-- Right-side controls: nav + call -->
+    <!-- Right-side controls -->
     <div class="site-header-actions">
-      <!-- Mobile toggle -->
+      <!-- Mobile nav toggle -->
       <button
         class="nav-toggle"
         type="button"
         aria-controls="site-nav"
         aria-expanded="false"
-        aria-label="Toggle menu"
+        aria-label="Toggle navigation"
         data-nav-toggle
       >
         <span class="nav-toggle-bar"></span>
@@ -21,19 +21,20 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <!-- Call CTA -->
+      <!-- Call-to-action -->
       <a
         class="call-btn btn btn-primary"
         href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
-        aria-label="Call Tillerstead">
+        aria-label="Call Tillerstead"
+      >
         {{ site.company.phone_display | default: '(609) 665-9350' }}
       </a>
     </div>
   </div>
 
-  <!-- Primary navigation -->
-  <nav id="site-nav" class="site-nav" aria-label="Primary" data-nav>
-    <ul>
+  <!-- Primary Navigation -->
+  <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
+    <ul class="nav-list">
       <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
       <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}aria-current="page"{% endif %}>About</a></li>
       <li><a href="{{ '/services/' | relative_url }}" {% if page.url contains '/services/' %}aria-current="page"{% endif %}>Services</a></li>
