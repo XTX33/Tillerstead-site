@@ -341,83 +341,7 @@ li {
 }
 
 /* 5) Components — Buttons
-   ------------------------------------------- */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-full);
-  border: 1px solid transparent;
-  font-family: inherit;
-  font-size: var(--text-sm);
-  font-weight: 700;
-  line-height: 1;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: 
-    background-color var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-base);
-}
-
-.btn:focus-visible {
-  outline: 3px solid var(--color-emerald);
-  outline-offset: 3px;
-}
-
-.btn-primary {
-  background: var(--color-brass);
-  color: var(--color-ink);
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 12px rgba(209, 166, 56, 0.3);
-}
-
-.btn-primary:hover {
-  background: var(--color-brass-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(209, 166, 56, 0.4);
-}
-
-.btn-accent {
-  background: var(--color-emerald);
-  color: var(--color-surface);
-  border-color: rgba(0, 0, 0, 0.1);
-}
-
-.btn-accent:hover {
-  background: var(--color-emerald-dark);
-  transform: translateY(-1px);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--color-ink);
-  border-color: var(--border-soft);
-}
-
-.btn-ghost:hover {
-  background: var(--color-surface-muted);
-  border-color: var(--border-strong);
-}
-
-/* Small button variant */
-.btn-sm {
-  padding: 0.5rem 1rem;
-  font-size: var(--text-xs);
-}
-
-/* Full width on mobile */
-@media (max-width: 640px) {
-  .btn-mobile-full {
-    width: 100%;
-  }
-}
+   (base styles now live in theme.css to avoid duplication) */
 
 /* 6) Components — Badges
    ------------------------------------------- */
@@ -594,31 +518,7 @@ textarea::placeholder {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* Call Button (hidden on mobile) */
-.call-btn {
-  display: none;
-  padding: 0.625rem 1.25rem;
-  border-radius: var(--radius-full);
-  background: var(--color-brass);
-  color: var(--color-ink);
-  font-weight: 700;
-  font-size: var(--text-sm);
-  text-decoration: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 12px rgba(209, 166, 56, 0.4);
-  transition: all var(--transition-fast);
-}
-
-.call-btn:hover {
-  background: var(--color-brass-dark);
-  transform: translateY(-1px);
-}
-
-@media (min-width: 768px) {
-  .call-btn {
-    display: inline-flex;
-  }
-}
+/* Call Button styles now handled by theme.css */
 
 /* Navigation */
 .site-nav {
