@@ -702,9 +702,9 @@ textarea::placeholder {
 }
 
 .site-nav li > a[aria-current="page"],
-.site-nav a[aria-current="page"]:hover,
-.site-nav a[aria-current="page"]:focus-visible {
-  color: #fefce8 !important;
+.site-nav li > a[aria-current="page"]:hover,
+.site-nav li > a[aria-current="page"]:focus-visible {
+  color: #fefce8;
 }
 
 .site-nav a[aria-current="page"]::before {
