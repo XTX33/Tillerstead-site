@@ -1493,7 +1493,188 @@ address.footer-meta {
 .site-nav a[aria-current="page"] {
   color: #0f766e; /* accent for active item */
 }
+/* ===========================
+   ABOUT PAGE LAYOUT
+   =========================== */
 
+.page-about .section,
+.page-about .bio,
+.page-about .proof,
+.page-about .faqs {
+  max-width: 1080px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.25rem;
+}
+
+/* --- Hero KPIs --- */
+
+.about-kpis {
+  display: grid;
+  gap: 1rem;
+  max-width: 1080px;
+  margin: 1.5rem auto 2.5rem;
+  padding: 0 1.25rem;
+}
+
+.about-kpi {
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(184, 146, 47, 0.35); /* brass */
+  background: radial-gradient(circle at top left,
+              rgba(15, 163, 177, 0.1),
+              rgba(249, 250, 251, 0.95));
+}
+
+.about-kpi-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--brand-emerald, #0fa3b1);
+  margin-bottom: 0.2rem;
+}
+
+.about-kpi-body {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--brand-ink, #111827);
+}
+
+@media (min-width: 768px) {
+  .about-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* --- Bio cards --- */
+
+.page-about .bio {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .page-about .bio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.about-card {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: linear-gradient(
+    135deg,
+    rgba(248, 250, 252, 1),
+    rgba(229, 231, 235, 0.8)
+  );
+  padding: 1.5rem 1.25rem;
+}
+
+.about-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-ink, #111827);
+}
+
+/* --- Proof grid --- */
+
+.proofgrid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .proofgrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+.proof-item {
+  margin: 0;
+}
+
+.proof-item picture {
+  display: block;
+  width: 100%;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: #020617; /* dark fallback while image loads */
+  aspect-ratio: 3 / 4;
+}
+
+.proof-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.proof-item figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.9rem;
+  color: rgba(15, 23, 42, 0.8);
+}
+
+/* --- FAQs --- */
+
+.page-about .faqs h2 {
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--brand-ink, #111827);
+}
+
+.faq-item {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  margin-bottom: 0.75rem;
+  background: #f9fafb;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 0.75rem 0.9rem;
+  list-style: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "▾";
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  transition: transform 0.15s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  padding: 0 0.9rem 0.75rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-item a {
+  color: var(--brand-emerald, #0fa3b1);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
 /* Desktop: turn overlay into inline nav bar */
 @media (min-width: 900px) {
   .site-nav {
