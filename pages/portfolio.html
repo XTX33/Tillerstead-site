@@ -3,219 +3,221 @@ layout: default
 title: Portfolio
 permalink: /portfolio/
 ---
-  <main id="main" class="container" style="padding-block:48px">
-    <!-- Filters -->
-    <div class="filters" role="tablist" aria-label="Portfolio filters">
-      <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">All</button>
-      <button class="chip" role="tab" aria-selected="false" data-filter="showers">Showers</button>
-      <button class="chip" role="tab" aria-selected="false" data-filter="backsplashes">Backsplashes</button>
-      <button class="chip" role="tab" aria-selected="false" data-filter="floors">Floors</button>
-      <button class="chip" role="tab" aria-selected="false" data-filter="repairs">Repairs</button>
+
+<section class="portfolio-page container" style="padding-block:48px">
+  <!-- Filters -->
+  <div class="filters" role="tablist" aria-label="Portfolio filters">
+    <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+    <button class="chip" role="tab" aria-selected="false" data-filter="showers">Showers</button>
+    <button class="chip" role="tab" aria-selected="false" data-filter="backsplashes">Backsplashes</button>
+    <button class="chip" role="tab" aria-selected="false" data-filter="floors">Floors</button>
+    <button class="chip" role="tab" aria-selected="false" data-filter="repairs">Repairs</button>
+  </div>
+
+  <!-- Gallery -->
+  <div class="gallery" id="gallery" aria-live="polite"></div>
+
+  <section class="section" style="border:0;padding-top:18px">
+    <div class="btn-row" style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn primary" href="/contact.html">Request an Estimate</a>
+      <a class="btn ghost" href="tel:+16096659350">Call (609) 665-9350</a>
     </div>
+  </section>
+</section>
 
-    <!-- Gallery -->
-    <div class="gallery" id="gallery" aria-live="polite"></div>
+<!-- ==== PROJECTS ==== -->
+<script>
+// NOTE: webp files with spaces are pre-encoded as %20 to avoid 404s on GitHub Pages.
+const PROJECTS = [
+  /* --- Showers --- */
+  { id:"shower-white", tags:["showers"],
+    thumb:"/assets/img/shower-white.jpg.JPG", full:"/assets/img/shower-white.jpg.JPG",
+    alt:"White subway-tile shower with bench, niches and hex floor",
+    caption:"Subway shower with bench and hex floor — movement joints and sealed edges." },
 
-    <section class="section" style="border:0;padding-top:18px">
-      <div class="btn-row" style="display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn primary" href="/contact.html">Request an Estimate</a>
-        <a class="btn ghost" href="tel:+16096659350">Call (609) 665-9350</a>
-      </div>
-    </section>
-  </main>
-  <!-- ==== PROJECTS ==== -->
-  <script>
-  // NOTE: webp files with spaces are pre-encoded as %20 to avoid 404s on GitHub Pages.
-  const PROJECTS = [
-    /* --- Showers --- */
-    { id:"shower-white", tags:["showers"],
-      thumb:"/assets/img/shower-white.jpg.JPG", full:"/assets/img/shower-white.jpg.JPG",
-      alt:"White subway-tile shower with bench, niches and hex floor",
-      caption:"Subway shower with bench and hex floor — movement joints and sealed edges." },
+  { id:"shower-blue", tags:["showers"],
+    thumb:"/assets/img/shower-blue.jpg.JPG", full:"/assets/img/shower-blue.jpg.JPG",
+    alt:"Decorative blue patterned shower wall with rainfall and hand shower",
+    caption:"Patterned feature wall — aligned layout around fixtures and niche." },
 
-    { id:"shower-blue", tags:["showers"],
-      thumb:"/assets/img/shower-blue.jpg.JPG", full:"/assets/img/shower-blue.jpg.JPG",
-      alt:"Decorative blue patterned shower wall with rainfall and hand shower",
-      caption:"Patterned feature wall — aligned layout around fixtures and niche." },
+  { id:"bathroom-gray", tags:["showers","floors"],
+    thumb:"/assets/img/bathroom-gray.jpg.JPG", full:"/assets/img/bathroom-gray.jpg.JPG",
+    alt:"Modern bathroom with glass enclosure and wood-look tile floor",
+    caption:"Large-format layout — flat substrate and clean transitions." },
 
-    { id:"bathroom-gray", tags:["showers","floors"],
-      thumb:"/assets/img/bathroom-gray.jpg.JPG", full:"/assets/img/bathroom-gray.jpg.JPG",
-      alt:"Modern bathroom with glass enclosure and wood-look tile floor",
-      caption:"Large-format layout — flat substrate and clean transitions." },
+  { id:"marble-bath", tags:["showers"],
+    thumb:"/assets/img/marble-bath.jpg.JPG", full:"/assets/img/marble-bath.jpg.JPG",
+    alt:"Polished marble bath with full-height wall tile and long vanity",
+    caption:"Stone installation — matched setting materials and sealed stone." },
 
-    { id:"marble-bath", tags:["showers"],
-      thumb:"/assets/img/marble-bath.jpg.JPG", full:"/assets/img/marble-bath.jpg.JPG",
-      alt:"Polished marble bath with full-height wall tile and long vanity",
-      caption:"Stone installation — matched setting materials and sealed stone." },
+  /* --- Backsplashes --- */
+  { id:"kitchen-green", tags:["backsplashes"],
+    thumb:"/assets/img/kitchen-green.jpg.JPG", full:"/assets/img/kitchen-green.jpg.JPG",
+    alt:"Kitchen with green cabinets and white subway backsplash",
+    caption:"Subway backsplash — tight outlet cuts and caulked edges." },
 
-    /* --- Backsplashes --- */
-    { id:"kitchen-green", tags:["backsplashes"],
-      thumb:"/assets/img/kitchen-green.jpg.JPG", full:"/assets/img/kitchen-green.jpg.JPG",
-      alt:"Kitchen with green cabinets and white subway backsplash",
-      caption:"Subway backsplash — tight outlet cuts and caulked edges." },
+  { id:"kitchen-hex", tags:["backsplashes"],
+    thumb:"/assets/img/kitchen-hex.jpg.JPG", full:"/assets/img/kitchen-hex.jpg.JPG",
+    alt:"Hex tile backsplash feature",
+    caption:"Hex feature — balanced cuts and clean terminations." },
 
-    { id:"kitchen-hex", tags:["backsplashes"],
-      thumb:"/assets/img/kitchen-hex.jpg.JPG", full:"/assets/img/kitchen-hex.jpg.JPG",
-      alt:"Hex tile backsplash feature",
-      caption:"Hex feature — balanced cuts and clean terminations." },
+  { id:"backsplash-white", tags:["backsplashes"],
+    thumb:"/assets/img/backsplash-white.jpg.JPG", full:"/assets/img/backsplash-white.jpg.JPG",
+    alt:"Classic white subway backsplash with wood top",
+    caption:"Classic subway — lippage control and even joints." },
 
-    { id:"backsplash-white", tags:["backsplashes"],
-      thumb:"/assets/img/backsplash-white.jpg.JPG", full:"/assets/img/backsplash-white.jpg.JPG",
-      alt:"Classic white subway backsplash with wood top",
-      caption:"Classic subway — lippage control and even joints." },
+  /* --- Floors --- */
+  { id:"hardwood-room", tags:["floors"],
+    thumb:"/assets/img/hardwood-room.jpg.JPG", full:"/assets/img/hardwood-room.jpg.JPG",
+    alt:"Finished hardwood room with fresh trim and crown",
+    caption:"Flooring & trim — straight lines and clean scribe work." },
 
-    /* --- Floors --- */
-    { id:"hardwood-room", tags:["floors"],
-      thumb:"/assets/img/hardwood-room.jpg.JPG", full:"/assets/img/hardwood-room.jpg.JPG",
-      alt:"Finished hardwood room with fresh trim and crown",
-      caption:"Flooring & trim — straight lines and clean scribe work." },
+  { id:"tile-pattern-dark", tags:["floors"],
+    thumb:"/assets/img/tile-pattern-dark.jpg.JPG", full:"/assets/img/tile-pattern-dark.jpg.JPG",
+    alt:"Dark modular tile pattern reference",
+    caption:"Pattern layout — modular grid with consistent reveals." },
 
-    { id:"tile-pattern-dark", tags:["floors"],
-      thumb:"/assets/img/tile-pattern-dark.jpg.JPG", full:"/assets/img/tile-pattern-dark.jpg.JPG",
-      alt:"Dark modular tile pattern reference",
-      caption:"Pattern layout — modular grid with consistent reveals." },
+  /* --- Repairs / prep --- */
+  { id:"drywall-greenboard", tags:["repairs"],
+    thumb:"/assets/img/drywall-greenboard.jpg.JPG", full:"/assets/img/drywall-greenboard.jpg.JPG",
+    alt:"Moisture-resistant greenboard with fastener patches",
+    caption:"Drywall repairs — paint-ready prep for wet areas." },
 
-    /* --- Repairs / prep --- */
-    { id:"drywall-greenboard", tags:["repairs"],
-      thumb:"/assets/img/drywall-greenboard.jpg.JPG", full:"/assets/img/drywall-greenboard.jpg.JPG",
-      alt:"Moisture-resistant greenboard with fastener patches",
-      caption:"Drywall repairs — paint-ready prep for wet areas." },
+  { id:"ceiling-repair", tags:["repairs"],
+    thumb:"/assets/img/Ceiling-repair.webp", full:"/assets/img/Ceiling-repair.webp",
+    alt:"Ceiling repair patch and finish",
+    caption:"Ceiling repair — patched, skimmed and finished for paint." },
 
-    { id:"ceiling-repair", tags:["repairs"],
-      thumb:"/assets/img/Ceiling-repair.webp", full:"/assets/img/Ceiling-repair.webp",
-      alt:"Ceiling repair patch and finish",
-      caption:"Ceiling repair — patched, skimmed and finished for paint." },
+  /* --- Earlier bathroom set (webp with spaces encoded) --- */
+  { id:"bathroom-final", tags:["showers"],
+    thumb:"/assets/img/Bathroom%20Remodel%20Final.webp",
+    full:"/assets/img/Bathroom%20Remodel%20Final%202.webp",
+    alt:"Bathroom remodel — finished shower and walls",
+    caption:"Bathroom remodel (final) — code-compliant wet area." },
 
-    /* --- Earlier bathroom set (webp with spaces encoded) --- */
-    { id:"bathroom-final", tags:["showers"],
-      thumb:"/assets/img/Bathroom%20Remodel%20Final.webp",
-      full:"/assets/img/Bathroom%20Remodel%20Final%202.webp",
-      alt:"Bathroom remodel — finished shower and walls",
-      caption:"Bathroom remodel (final) — code-compliant wet area." },
+  { id:"bathroom-detail", tags:["showers"],
+    thumb:"/assets/img/Bathroom%20Remodel%202.webp",
+    full:"/assets/img/Bathroom%20Remodel%202.webp",
+    alt:"Shower detail — tile layout and niche",
+    caption:"Shower detail — even joints and proper cuts." },
 
-    { id:"bathroom-detail", tags:["showers"],
-      thumb:"/assets/img/Bathroom%20Remodel%202.webp",
-      full:"/assets/img/Bathroom%20Remodel%202.webp",
-      alt:"Shower detail — tile layout and niche",
-      caption:"Shower detail — even joints and proper cuts." },
+  { id:"bathroom-progress", tags:["showers"],
+    thumb:"/assets/img/Bathroom%20Remodel.webp",
+    full:"/assets/img/Bathroom%20Remodel.webp",
+    alt:"Bathroom remodel in progress",
+    caption:"In-progress — substrate prep prior to grout." }
+];
+</script>
 
-    { id:"bathroom-progress", tags:["showers"],
-      thumb:"/assets/img/Bathroom%20Remodel.webp",
-      full:"/assets/img/Bathroom%20Remodel.webp",
-      alt:"Bathroom remodel in progress",
-      caption:"In-progress — substrate prep prior to grout." }
-  ];
-  </script>
-  <!-- Renderer + filters + lightbox -->
-  <script>
-  (function(){
-    const $ = (s, c=document)=>c.querySelector(s);
-    const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
-    const gallery = $('#gallery');
-    const chips = $$('.chip');
+<!-- Renderer + filters + lightbox -->
+<script>
+(function(){
+  const $ = (s, c=document)=>c.querySelector(s);
+  const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
+  const gallery = $('#gallery');
+  const chips = $$('.chip');
 
-    function figFor(p){
-      const fig = document.createElement('figure');
-      fig.className = "gitem";
-      fig.dataset.tags = (p.tags||[]).join(',');
-      if(p.thumb && p.full){
-        fig.innerHTML = `
-          <a href="${p.full}" class="lightbox" aria-label="Open image: ${p.alt}">
-            <img loading="lazy" decoding="async" src="${p.thumb}" alt="${p.alt}">
-          </a>
-          <figcaption>${p.caption||''}</figcaption>
-        `;
-        // Fallback if image 404s
-        const img = fig.querySelector('img');
-        img.addEventListener('error', ()=>{
-          fig.innerHTML = `
-            <div class="placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 5h16v14H4z" stroke="currentColor" stroke-opacity=".5"/><path d="M8 13l3 3 4-5 5 6H4l4-4z" fill="currentColor" fill-opacity=".15"/><circle cx="9" cy="9" r="1.5" fill="currentColor" fill-opacity=".3"/>
-              </svg>
-              <p>Photo not found — check filename</p>
-            </div>
-            <figcaption>${p.caption||''}</figcaption>
-          `;
-        }, { once:true });
-      } else {
+  function figFor(p){
+    const fig = document.createElement('figure');
+    fig.className = "gitem";
+    fig.dataset.tags = (p.tags||[]).join(',');
+    if(p.thumb && p.full){
+      fig.innerHTML = `
+        <a href="${p.full}" class="lightbox" aria-label="Open image: ${p.alt}">
+          <img loading="lazy" decoding="async" src="${p.thumb}" alt="${p.alt}">
+        </a>
+        <figcaption>${p.caption||''}</figcaption>
+      `;
+      // Fallback if image 404s
+      const img = fig.querySelector('img');
+      img.addEventListener('error', ()=>{
         fig.innerHTML = `
           <div class="placeholder">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 5h16v14H4z" stroke="currentColor" stroke-opacity=".5"/><path d="M8 13l3 3 4-5 5 6H4l4-4z" fill="currentColor" fill-opacity=".15"/><circle cx="9" cy="9" r="1.5" fill="currentColor" fill-opacity=".3"/>
             </svg>
-            <p>Photo coming soon</p>
+            <p>Photo not found — check filename</p>
           </div>
           <figcaption>${p.caption||''}</figcaption>
         `;
-      }
-      return fig;
+      }, { once:true });
+    } else {
+      fig.innerHTML = `
+        <div class="placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 5h16v14H4z" stroke="currentColor" stroke-opacity=".5"/><path d="M8 13l3 3 4-5 5 6H4l4-4z" fill="currentColor" fill-opacity=".15"/><circle cx="9" cy="9" r="1.5" fill="currentColor" fill-opacity=".3"/>
+          </svg>
+          <p>Photo coming soon</p>
+        </div>
+        <figcaption>${p.caption||''}</figcaption>
+      `;
     }
+    return fig;
+  }
 
-    function render(list){
-      gallery.innerHTML = "";
-      list.forEach(p=> gallery.appendChild(figFor(p)));
-      initLightbox(); // re-init after render
+  function render(list){
+    gallery.innerHTML = "";
+    list.forEach(p=> gallery.appendChild(figFor(p)));
+    initLightbox(); // re-init after render
+  }
+
+  function applyFilter(key='all'){
+    chips.forEach(c=>{
+      const on = c.dataset.filter === key || (key==='all' && c.dataset.filter==='all');
+      c.classList.toggle('is-active', on);
+      c.setAttribute('aria-selected', on ? 'true':'false');
+    });
+    const items = $$('.gitem', gallery);
+    items.forEach(i=>{
+      const show = key==='all' || (i.dataset.tags||'').split(',').includes(key);
+      i.hidden = !show;
+    });
+    const url = new URL(location);
+    if(key==='all'){ url.searchParams.delete('filter'); } else { url.searchParams.set('filter', key); }
+    history.replaceState(null,'',url);
+  }
+
+  function initLightbox(){
+    const links = $$('.lightbox', gallery);
+    if(!links.length) return;
+    let overlay = $('.lb');
+    if(!overlay){
+      overlay = document.createElement('div');
+      overlay.className = 'lb';
+      overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap" role="note"></p>';
+      document.body.appendChild(overlay);
     }
+    const img = overlay.querySelector('img');
+    const cap = overlay.querySelector('.lb-cap');
+    const btnClose = overlay.querySelector('.lb-close');
+    let lastFocus = null;
 
-    function applyFilter(key='all'){
-      chips.forEach(c=>{
-        const on = c.dataset.filter === key || (key==='all' && c.dataset.filter==='all');
-        c.classList.toggle('is-active', on);
-        c.setAttribute('aria-selected', on ? 'true':'false');
+    function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; (lastFocus||document.body).focus(); }
+    btnClose.onclick = close;
+    overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+
+    links.forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        lastFocus = document.activeElement;
+        img.src = a.getAttribute('href');
+        const c = a.closest('figure').querySelector('figcaption');
+        cap.textContent = c ? c.textContent : '';
+        overlay.classList.add('open');
+        document.body.style.overflow='hidden';
+        btnClose.focus();
       });
-      const items = $$('.gitem', gallery);
-      items.forEach(i=>{
-        const show = key==='all' || (i.dataset.tags||'').split(',').includes(key);
-        i.hidden = !show;
-      });
-      const url = new URL(location);
-      if(key==='all'){ url.searchParams.delete('filter'); } else { url.searchParams.set('filter', key); }
-      history.replaceState(null,'',url);
-    }
+    });
+  }
 
-    function initLightbox(){
-      const links = $$('.lightbox', gallery);
-      if(!links.length) return;
-      let overlay = $('.lb');
-      if(!overlay){
-        overlay = document.createElement('div');
-        overlay.className = 'lb';
-        overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap" role="note"></p>';
-        document.body.appendChild(overlay);
-      }
-      const img = overlay.querySelector('img');
-      const cap = overlay.querySelector('.lb-cap');
-      const btnClose = overlay.querySelector('.lb-close');
-      let lastFocus = null;
+  // Mount
+  render(PROJECTS);
 
-      function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; (lastFocus||document.body).focus(); }
-      btnClose.onclick = close;
-      overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
-      document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
-
-      links.forEach(a=>{
-        a.addEventListener('click', e=>{
-          e.preventDefault();
-          lastFocus = document.activeElement;
-          img.src = a.getAttribute('href');
-          const c = a.closest('figure').querySelector('figcaption');
-          cap.textContent = c ? c.textContent : '';
-          overlay.classList.add('open');
-          document.body.style.overflow='hidden';
-          btnClose.focus();
-        });
-      });
-    }
-
-    // Mount
-    render(PROJECTS);
-
-    // Filters (wire up clicks + URL sync)
-    const initKey = new URL(location).searchParams.get('filter') || (location.hash||'').slice(1) || 'all';
-    document.querySelectorAll('.chip').forEach(b=> b.dataset.filter = b.dataset.filter || b.textContent.toLowerCase());
-    applyFilter(initKey);
-    document.querySelectorAll('.chip').forEach(chip=> chip.addEventListener('click', ()=> applyFilter(chip.dataset.filter)));
-  })();
-  </script>
-</html>
+  // Filters (wire up clicks + URL sync)
+  const initKey = new URL(location).searchParams.get('filter') || (location.hash||'').slice(1) || 'all';
+  document.querySelectorAll('.chip').forEach(b=> b.dataset.filter = b.dataset.filter || b.textContent.toLowerCase());
+  applyFilter(initKey);
+  document.querySelectorAll('.chip').forEach(chip=> chip.addEventListener('click', ()=> applyFilter(chip.dataset.filter)));
+})();
+</script>
