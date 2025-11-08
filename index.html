@@ -145,6 +145,52 @@ schema:
         </li>
       </ul>
     </div>
+    <style>
+  /* ============================================
+     KPIs / Quick Facts – Tillerstead Theme
+     Works on dark (charcoal) header background
+     ============================================ */
+
+  .hero-kpis {
+    list-style: none;
+    margin: 1.5rem auto;
+    padding: 0;
+    max-width: 48rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--brand-light, #f9fafb);
+  }
+
+  .hero-kpis li {
+    margin-bottom: 1.25rem;
+    border-left: 3px solid var(--brand-brass, #b8922f);
+    padding-left: 0.75rem;
+  }
+
+  .hero-kpi-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.25rem;
+    color: var(--brand-emerald, #0fa3b1);
+    text-transform: uppercase;
+  }
+
+  .hero-kpis .nowrap {
+    white-space: nowrap;
+  }
+
+  /* For contrast on very dark backgrounds */
+  @media (prefers-color-scheme: dark) {
+    .hero-kpis {
+      color: #f1f5f9;
+    }
+    .hero-kpi-label {
+      color: #10b981; /* bright emerald accent for dark mode */
+    }
+  }
+</style>
 
     <!-- Side card unchanged -->
     <aside class="hero-secondary card card--lift" aria-labelledby="hero-why-heading">
@@ -164,14 +210,13 @@ schema:
       </div>
 
       <ul class="hero-list">
-        <li>Owner on site — not a mystery crew rotating through your house</li>
-        <li>Written scopes and straightforward pricing for each phase of work</li>
-        <li>Flood testing / moisture checks when the project calls for it</li>
-        <li>Text updates before each workday so you know who’s coming and when</li>
+        <li>Owner/Manager on site — not a mystery crew rotating through your house</li>
+        <li>Clear written contracts and straightforward pricing for each phase of work</li>
+        <li>Text updates before/after each workday</li>
       </ul>
 
       <p class="hero-callout text-light-subtle">
-        Ready to talk through layouts, waterproofing, or a bath refresh that won’t fight your house?
+       Time to rethink your layout or waterproofing? Let’s build a bath that actually suits your home.
       </p>
 
       <div class="hero-secondary-actions">
@@ -192,16 +237,37 @@ schema:
   <div class="container licensing-grid">
     <div>
       <h2 id="licensing-heading">NJ Home Improvement Contractor Focused on Tile &amp; Finish Work</h2>
-      <p class="lead">
-        As an NJ-licensed HIC (#{{ site.company.hic }}) registered with the Division of Consumer Affairs,
-        Tillerstead delivers tile and finish work that respects New Jersey building codes, manufacturer specs,
-        and the way South Jersey homes are actually lived in.
-      </p>
-      <p>
-        Every project starts with a look at substrates, waterproofing paths, and transitions — before talking grout colors.
-        From Atlantic City condos to Galloway colonials, you get transparent pricing, written scopes, and clear expectations
-        around timelines and inspections.
-      </p>
+      <p class="lead" 
+   style="
+     line-height:1.7;
+     max-width:46rem;
+     margin:0 auto 0.85rem;
+     color:var(--brand-ink);
+   ">
+  As an <strong>NJ-licensed Home Improvement Contractor</strong>
+  (<span style="white-space:nowrap;">HIC #13VH10808800</span>) registered with the
+  <em>Division of Consumer Affairs</em>,
+  <strong>Tillerstead</strong> delivers tile and finish work that respects 
+  <span style="color:var(--brand-brass); font-weight:600;">New Jersey building codes</span>, 
+  manufacturer specifications, and the way 
+  <span style="color:var(--brand-emerald); font-weight:500;">South Jersey homes are actually lived in</span>.
+</p>
+
+<p 
+   style="
+     line-height:1.7;
+     max-width:46rem;
+     margin:0 auto;
+     color:var(--brand-ink);
+   ">
+  Every project starts with a close look at 
+  <strong>substrates</strong>, <strong>waterproofing paths</strong>, and 
+  <strong>transitions</strong> — long before grout colors.
+  From <em>Atlantic City condos</em> to <em>Galloway colonials</em>, 
+  you’ll get <strong>transparent pricing</strong>, 
+  <strong>written scopes</strong>, and 
+  <strong>clear expectations</strong> for timelines and inspections.
+</p>
     </div>
 
     <div class="card licensing-card" aria-labelledby="credential-heading">
