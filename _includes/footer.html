@@ -1,35 +1,37 @@
-<footer class="site-footer">
-  <div class="shell">
-    <div class="stack-sm text-center">
-      <p><strong>Tillerstead LLC</strong></p>
+<footer class="site-footer" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
+  <meta itemprop="name" content="Tillerstead LLC">
+  <meta itemprop="@id" content="{{ site.url }}/#contractor">
+  <meta itemprop="url" content="{{ site.url }}/">
+  <div class="shell container">
+    <div class="stack-sm center">
+      <p class="footer-heading">Tillerstead LLC</p>
 
       <p class="footer-meta">
-        Licensed New Jersey Home Improvement Contractor<br>
-        <b>HIC #13VH10808800</br></p>
-
-      <p class="footer-meta">
-        325 E. Jimmie Leeds Rd, Suite 7-333 · Absecon, NJ 08205<br>
-        Serving Atlantic County and surrounding South Jersey communities
+        Licensed New Jersey Home Improvement Contractor · HIC #{{ site.company.hic }}
       </p>
 
-      <p class="footer-meta">
-        Flexible on materials and scope — never on prep, waterproofing, or integrity.
+      <address class="footer-meta" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">{{ site.company.address_line }}</span><br>
+        <span itemprop="addressLocality">{{ site.company.address_locality }}</span>,
+        <span itemprop="addressRegion">{{ site.company.address_region }}</span>
+        <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
+      </address>
+
+      <p class="footer-meta" itemprop="areaServed">
+        Serving Atlantic County, Ocean County, and neighboring South Jersey coastal communities.
       </p>
 
-      <nav aria-label="Footer navigation">
-        <p class="footer-links">
-          <a href="/services/">Services</a> · 
-          <a href="/portfolio/">Gallery</a> · 
-          <a href="/about/">About</a> · 
-          <a href="/reviews/">Reviews</a> · 
-          <a href="/contact/">Contact</a>
-        </p>
+      {% assign footer_links = site.data.navigation.footer %}
+      <nav aria-label="Footer navigation" class="footer-meta">
+        {% for item in footer_links %}
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% unless forloop.last %}
+          <span aria-hidden="true">·</span>{% endunless %}
+        {% endfor %}
       </nav>
 
       <p class="footer-meta">
-        <a href="tel:+16096659350">(609) 665-9350</a><br>
-        <a href="mailto:info@tillerstead.com">info@tillerstead.com</a> · 
-        <a href="mailto:tyler@tillerstead.com">tyler@tillerstead.com</a>
+        <a href="tel:{{ site.company.phone_link }}" itemprop="telephone">{{ site.company.phone_display }}</a><br>
+        <a href="mailto:{{ site.company.email }}" itemprop="email">{{ site.company.email }}</a>
       </p>
 
       <p class="footer-meta">

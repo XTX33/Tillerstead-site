@@ -10,30 +10,18 @@ url: https://tillerstead.com
 baseurl: ""                 # keep empty for apex/root
 timezone: America/New_York
 
+# Global keyword focus for SEO
+keywords:
+  - South Jersey tile contractor
+  - New Jersey home improvement contractor
+  - NJ HIC 13VH10808800
+  - Atlantic County bathroom remodeling
+
 # Use your own layouts/includes (no injected theme)
 theme: null
 
 # Build & content
 permalink: pretty           # /about/ instead of /about.html
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-
-# Blog (Jekyll posts)
-collections:
-  posts:
-    output: true
-    permalink: /blog/:title/
-
-# Pagination for /blog/
-paginate: 6
-paginate_path: "/blog/page:num/"
-plugins:
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  # - jekyll-feed        # uncomment if you want /feed.xml
 
 # Social/SEO defaults
 social:
@@ -41,28 +29,17 @@ social:
   links:
     - https://tillerstead.com
 
-# Global defaults
-defaults:
-  - scope:                # all site pages
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-      og_image: "/assets/img/og-image.png"
-  - scope:                # all blog posts
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      og_image: "/assets/img/og-image.png"
-
 # Reusable business vars (use in includes via site.company.*)
 company:
+  owner: "Tyler of Tillerstead"
   phone_display: "(609) 665-9350"
   phone_link: "+16096659350"
   hic: "13VH10808800"
   address_line: "325 E. Jimmie Leeds Road, Suite 7-333"
   address_city: "Galloway, NJ 08205"
+  address_locality: "Galloway"
+  address_region: "NJ"
+  address_postal_code: "08205"
   email: "info@tillerstead.com"
 
 # Cache-busting helper (append ?v={{ site.assets_version }} to CSS/JS)
@@ -85,4 +62,4 @@ keep_files:
   - CNAME
   - assets/
 
-# Sitemap provided by jekyll-sitemap at /sitemap.xml
+# sitemap.xml is maintained manually in the repo root
