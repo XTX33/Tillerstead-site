@@ -452,32 +452,88 @@ schema:
     </p>
 
     <div class="proofgrid mt-2">
-      <figure>
-        <img src="{{ '/assets/img/projects/shower-large-format.jpg' | relative_url }}"
-             alt="Large-format tile shower with recessed niche installed in a South Jersey home"
-             loading="lazy" decoding="async" fetchpriority="low">
+
+      <figure class="proof-item">
+        <picture>
+          <source
+            srcset="
+              {{ '/assets/img/projects/shower-large-format.avif'  | relative_url }} 1x,
+              {{ '/assets/img/projects/shower-large-format@2x.avif' | relative_url }} 2x
+            "
+            type="image/avif">
+          <source
+            srcset="
+              {{ '/assets/img/projects/shower-large-format.webp'  | relative_url }} 1x,
+              {{ '/assets/img/projects/shower-large-format@2x.webp' | relative_url }} 2x
+            "
+            type="image/webp">
+          <img
+            src="{{ '/assets/img/projects/shower-large-format.jpg' | relative_url }}"
+            alt="Large-format tile shower with recessed niche installed in a South Jersey home"
+            loading="lazy"
+            decoding="async"
+            width="900" height="1200"
+            sizes="(min-width: 960px) 33vw, 100vw">
+        </picture>
         <figcaption>
           Large-format porcelain shower with recessed niche and brass fixtures, built on a flood-tested pan.
         </figcaption>
       </figure>
 
-      <figure>
-        <img src="{{ '/assets/img/projects/bath-floor-herringbone.jpg' | relative_url }}"
-             alt="Bathroom floor with herringbone tile pattern installed by Tillerstead"
-             loading="lazy" decoding="async" fetchpriority="low">
+      <figure class="proof-item">
+        <picture>
+          <source
+            srcset="
+              {{ '/assets/img/projects/bath-floor-herringbone.avif'  | relative_url }} 1x,
+              {{ '/assets/img/projects/bath-floor-herringbone@2x.avif' | relative_url }} 2x
+            "
+            type="image/avif">
+          <source
+            srcset="
+              {{ '/assets/img/projects/bath-floor-herringbone.webp'  | relative_url }} 1x,
+              {{ '/assets/img/projects/bath-floor-herringbone@2x.webp' | relative_url }} 2x
+            "
+            type="image/webp">
+          <img
+            src="{{ '/assets/img/projects/bath-floor-herringbone.jpg' | relative_url }}"
+            alt="Bathroom floor with herringbone tile pattern installed by Tillerstead"
+            loading="lazy"
+            decoding="async"
+            width="900" height="1200"
+            sizes="(min-width: 960px) 33vw, 100vw">
+        </picture>
         <figcaption>
           Herringbone floor tile and updated baseboards refreshing an older South Jersey bath.
         </figcaption>
       </figure>
 
-      <figure>
-        <img src="{{ '/assets/img/projects/kitchen-backsplash-subway.jpg' | relative_url }}"
-             alt="Subway tile backsplash installed in a South Jersey kitchen remodel"
-             loading="lazy" decoding="async" fetchpriority="low">
+      <figure class="proof-item">
+        <picture>
+          <source
+            srcset="
+              {{ '/assets/img/projects/kitchen-backsplash-subway.avif'  | relative_url }} 1x,
+              {{ '/assets/img/projects/kitchen-backsplash-subway@2x.avif' | relative_url }} 2x
+            "
+            type="image/avif">
+          <source
+            srcset="
+              {{ '/assets/img/projects/kitchen-backsplash-subway.webp'  | relative_url }} 1x,
+              {{ '/assets/img/projects/kitchen-backsplash-subway@2x.webp' | relative_url }} 2x
+            "
+            type="image/webp">
+          <img
+            src="{{ '/assets/img/projects/kitchen-backsplash-subway.jpg' | relative_url }}"
+            alt="Subway tile backsplash installed in a South Jersey kitchen remodel"
+            loading="lazy"
+            decoding="async"
+            width="900" height="1200"
+            sizes="(min-width: 960px) 33vw, 100vw">
+        </picture>
         <figcaption>
           Subway backsplash brightening a kitchen without the cost of a full gut remodel.
         </figcaption>
       </figure>
+
     </div>
 
     <p class="mt-2 center">
@@ -487,6 +543,36 @@ schema:
     </p>
   </div>
 </section>
+<style>.proofgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.proof-item {
+  margin: 0;
+}
+
+.proof-item picture {
+  display: block;
+  width: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #020617; /* dark fallback while loading */
+}
+
+.proof-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.proof-item figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(15, 23, 42, 0.8);
+}
+</style>
 
 <!-- Why Homeowners Choose Tillerstead -->
 <section class="section" aria-labelledby="why-heading">
