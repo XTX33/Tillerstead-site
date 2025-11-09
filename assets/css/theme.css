@@ -1286,3 +1286,129 @@ textarea {
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
+.site-footer {
+  background: var(--brand-dark, #0f172a);
+  color: var(--brand-light, #f9fafb);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  text-decoration: underline;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Brand block */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-logo {
+  width: 82px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(1.15);
+}
+
+.footer-name {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background: linear-gradient(90deg, #b8922f, #0fa3b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-tagline {
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Text blocks */
+.footer-hic,
+.footer-address,
+.footer-area {
+  margin: 0.15rem 0;
+}
+
+.footer-address {
+  font-style: normal;
+}
+
+.footer-area {
+  opacity: 0.9;
+}
+
+/* Nav */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-legal {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Larger screens: align a bit more “pro” */
+@media (min-width: 720px) {
+  .site-footer {
+    text-align: left;
+  }
+
+  .footer-inner {
+    align-items: stretch;
+  }
+
+  .footer-brand {
+    align-items: flex-start;
+  }
+
+  .footer-business {
+    max-width: 480px;
+  }
+
+  .footer-nav,
+  .footer-contact {
+    justify-content: flex-start;
+  }
+}
