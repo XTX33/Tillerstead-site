@@ -65,21 +65,24 @@ if [ "$current_branch_will_be_deleted" = true ]; then
 fi
 
 # Ask for confirmation
-read -p "Are you sure you want to delete these branches? (yes/no): " confirmation
-
-# Normalize input to lowercase for comparison
-confirmation=$(echo "$confirmation" | tr '[:upper:]' '[:lower:]')
-
-case "$confirmation" in
-    yes|y)
-        echo "Proceeding with deletion..."
-        ;;
-    *)
-        echo "Aborted."
-        exit 0
-        ;;
-esac
-
+while true; do
+    read -r -p "Are you sure you want to delete these branches? (yes/no): " confirmation
+    # Normalize input to lowercase for comparison
+    confirmation=$(echo "$confirmation" | tr '[:upper:]' '[:lower:]')
+    case "$confirmation" in
+        yes|y)
+            echo "Proceeding with deletion..."
+            break
+            ;;
+        no|n|"")
+            echo "Aborted."
+            exit 0
+            ;;
+        *)
+            echo "Please answer yes or no."
+            ;;
+    esac
+done
 # Delete each branch
 echo ""
 echo "Deleting branches..."
