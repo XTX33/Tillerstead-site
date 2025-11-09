@@ -1239,3 +1239,50 @@ textarea::placeholder {
 .hero--page .hero-card {
   margin-top: 0;
 }
+/* ============================================
+   Breadcrumbs
+   ============================================ */
+
+.breadcrumbs {
+  max-width: var(--ts-shell-width, 1120px);
+  margin: 0.75rem auto 0.25rem;
+  padding: 0 1.5rem;
+  font-size: 0.8rem;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.breadcrumbs-list {
+  list-style: none;          /* kills the 1., 2. numbering */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.breadcrumbs-list li {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* separator */
+.breadcrumbs-list li + li::before {
+  content: "›";
+  margin: 0 0.35rem;
+  color: rgba(148, 163, 184, 0.6);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: rgba(203, 213, 225, 0.95);
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: #22c55e;
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: rgba(148, 163, 184, 0.95);
+  font-weight: 500;
+}
