@@ -1045,3 +1045,184 @@ textarea::placeholder {
   font-size: 0.78rem;
   color: rgba(100, 116, 139, 0.95);
 }
+/* ============================================
+   Header & Navigation
+   ============================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #020617;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.95);
+}
+
+.site-header-inner {
+  max-width: var(--ts-shell-width, 1120px);
+  margin-inline: auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo */
+.site-logo {
+  text-decoration: none;
+}
+
+/* desktop: nav inline, burger hidden */
+.site-nav {
+  margin-left: 2rem;
+}
+
+.site-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-menu a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(209, 213, 219, 0.95);
+}
+
+.site-menu a[aria-current="page"] {
+  color: #22c55e;
+}
+
+.site-menu a:hover,
+.site-menu a:focus-visible {
+  color: #f9fafb;
+}
+
+/* header actions */
+.site-header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.call-btn.btn {
+  padding-inline: 0.9rem;
+  font-size: 0.9rem;
+}
+
+/* nav toggle base */
+.nav-toggle {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.95);
+  color: #f9fafb;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(30, 64, 175, 0.9);
+  border-color: rgba(191, 219, 254, 0.9);
+}
+
+.nav-toggle-bar {
+  width: 20px;
+  height: 2.5px;
+  border-radius: 999px;
+  background: currentColor;
+  display: block;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+/* hamburger → X when open */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ============================================
+   Mobile nav overlay
+   ============================================ */
+@media (max-width: 900px) {
+  .site-header-inner {
+    padding-inline: 1.1rem;
+  }
+
+  .site-nav {
+    /* hidden by default; becomes overlay */
+    position: fixed;
+    inset: 0;
+    padding: 4.5rem 1.5rem 2.5rem;
+    background: rgba(15, 23, 42, 0.97);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    z-index: 45;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .site-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .site-menu a {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  .site-header-actions .call-btn.btn {
+    display: none; /* hide call button in tight mobile header */
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+}
+
+/* ============================================
+   Desktop-only tweaks
+   ============================================ */
+@media (min-width: 901px) {
+  .site-nav {
+    position: static;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    background: transparent;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+}
