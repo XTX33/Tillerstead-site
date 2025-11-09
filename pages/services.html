@@ -223,4 +223,54 @@ hero_list:
       padding: 1.5rem;
     }
   }
+  /* =======================================
+   Tile Scope Headings (showers, floors, kitchens, repairs)
+   Used on light backgrounds
+======================================= */
+
+#showers-heading,
+#floors-heading,
+#kitchens-heading,
+#repairs-heading {
+  color: #0f172a; /* strong contrast on white */
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+  text-align: left;
+  position: relative;
+}
+
+/* Emerald → brass underline accent */
+#showers-heading::after,
+#floors-heading::after,
+#kitchens-heading::after,
+#repairs-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  height: 3px;
+  width: 60px;
+  background-image: linear-gradient(90deg, #22c55e, #facc15);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Center alignment for consistent symmetry if needed */
+.section--showers h2#showers-heading,
+.section--floors h2#floors-heading,
+.section--kitchens h2#kitchens-heading,
+.section--repairs h2#repairs-heading {
+  text-align: center;
+}
+
+.section--showers h2#showers-heading::after,
+.section--floors h2#floors-heading::after,
+.section--kitchens h2#kitchens-heading::after,
+.section--repairs h2#repairs-heading::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
 </style>
