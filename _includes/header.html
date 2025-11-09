@@ -1,20 +1,91 @@
 <header class="site-header" role="banner">
   <div class="site-header-inner">
     <!-- Brand -->
-   <a
-  class="site-logo text-logo"
-  href="{{ '/' | relative_url }}"
-  aria-label="{{ site.title | default: 'Tillerstead LLC – Home' }}"
->
-  <span class="logo-text logo-gradient">
-    {{ site.title | default: 'Tillerstead LLC' }}
-  </span>
-</a>
+    <a
+      class="site-logo text-logo"
+      href="{{ '/' | relative_url }}"
+      aria-label="{{ site.title | default: 'Tillerstead LLC – Home' }}"
+    >
+      <span class="logo-text logo-gradient">
+        {{ site.title | default: 'Tillerstead LLC' }}
+      </span>
+    </a>
+
+    <!-- Primary navigation (main.js toggles .is-open on this) -->
+    <nav
+      id="site-nav"
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <ul class="nav-list">
+        <li>
+          <a href="{{ '/' | relative_url }}"
+             {% if page.url == '/' %}aria-current="page"{% endif %}>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/for-general-contractors/' | relative_url }}"
+             {% if page.url contains '/for-general-contractors/' %}aria-current="page"{% endif %}>
+            For General Contractors
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/about/' | relative_url }}"
+             {% if page.url contains '/about/' %}aria-current="page"{% endif %}>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/services/' | relative_url }}"
+             {% if page.url contains '/services/' %}aria-current="page"{% endif %}>
+            Tile Services
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/portfolio/' | relative_url }}"
+             {% if page.url contains '/portfolio/' %}aria-current="page"{% endif %}>
+            Gallery
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/reviews/' | relative_url }}"
+             {% if page.url contains '/reviews/' %}aria-current="page"{% endif %}>
+            Reviews
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/contact/' | relative_url }}"
+             {% if page.url contains '/contact/' %}aria-current="page"{% endif %}>
+            Contact
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/financing/' | relative_url }}"
+             {% if page.url contains '/financing/' %}aria-current="page"{% endif %}>
+            Financing
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/blog/' | relative_url }}"
+             {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/privacy/' | relative_url }}"
+             {% if page.url contains '/privacy/' %}aria-current="page"{% endif %}>
+            Privacy
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <!-- Right-side controls: call + mobile toggle -->
     <div class="site-header-actions">
       <!-- Call CTA (hidden on small screens via CSS if you want) -->
       <a
-        class="call-btn btn btn-primary"
+        class="call-btn btn"
         href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
         aria-label="Call Tillerstead"
       >
@@ -35,74 +106,4 @@
       </button>
     </div>
   </div>
-
-  <!-- Primary navigation (main.js toggles .is-open on this) -->
-  <nav
-    id="site-nav"
-    class="site-nav"
-    aria-label="Primary navigation"
-  >
-    <ul class="nav-list">
-      <li>
-        <a href="{{ '/' | relative_url }}"
-           {% if page.url == '/' %}aria-current="page"{% endif %}>
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/for-general-contractors/' | relative_url }}"
-           {% if page.url contains '/for-general-contractors/' %}aria-current="page"{% endif %}>
-          For General Contractors
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/about/' | relative_url }}"
-           {% if page.url contains '/about/' %}aria-current="page"{% endif %}>
-          About
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/services/' | relative_url }}"
-           {% if page.url contains '/services/' %}aria-current="page"{% endif %}>
-          Tile Services
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/portfolio/' | relative_url }}"
-           {% if page.url contains '/portfolio/' %}aria-current="page"{% endif %}>
-          Gallery
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/reviews/' | relative_url }}"
-           {% if page.url contains '/reviews/' %}aria-current="page"{% endif %}>
-          Reviews
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/contact/' | relative_url }}"
-           {% if page.url contains '/contact/' %}aria-current="page"{% endif %}>
-          Contact
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/financing/' | relative_url }}"
-           {% if page.url contains '/financing/' %}aria-current="page"{% endif %}>
-          Financing
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/blog/' | relative_url }}"
-           {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>
-          Blog
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/privacy/' | relative_url }}"
-           {% if page.url contains '/privacy/' %}aria-current="page"{% endif %}>
-          Privacy
-        </a>
-      </li>
-    </ul>
-  </nav>
 </header>
