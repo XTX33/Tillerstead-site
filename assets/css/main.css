@@ -1910,3 +1910,11 @@ body[class^="page-"] .gc-card h3 {
   margin-top: 0;
   margin-bottom: 0.75rem;
 }
+/* Reduce extra space before footer on all pages */
+main > .section:last-of-type {
+  padding-bottom: 1.5rem;   /* or 0 if you want it tight */
+}
+
+main > .section:last-of-type > *:last-child {
+  margin-bottom: 0;
+}
