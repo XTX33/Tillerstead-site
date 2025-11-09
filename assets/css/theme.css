@@ -1226,3 +1226,16 @@ textarea::placeholder {
     position: sticky;
   }
 }
+/* Subpage hero – remove white strip under header */
+.page-hero,
+.hero--page {
+  background: transparent;
+  border-top: none;
+  padding-top: 1.5rem; /* or 0 if you want the card tight under the header */
+}
+
+/* If there’s a hero card inside, tighten its top margin */
+.page-hero .hero-card,
+.hero--page .hero-card {
+  margin-top: 0;
+}
