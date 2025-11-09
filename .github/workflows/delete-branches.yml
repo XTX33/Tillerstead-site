@@ -1,0 +1,78 @@
+name: Delete All Branches Except Main
+
+on:
+  workflow_dispatch:
+
+jobs:
+  delete-branches:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.2
+        with:
+          fetch-depth: 0
+
+      - name: Delete all branches except main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Function to get list of branches to delete
+          get_branches_to_delete() {
+            git for-each-ref --format='%(refname:short)' \
+                refs/remotes/origin/ | \
+                grep -v '^origin/HEAD$' | \
+                grep -v '^origin/main$' | \
+                sed 's|^origin/||'
+          }
+
+          echo "=========================================="
+          echo "Branch Deletion Workflow"
+          echo "=========================================="
+          echo "Fetching all remote branches..."
+          git fetch --all --prune
+
+          echo ""
+          echo "Getting list of all remote branches except main..."
+
+          # Use git for-each-ref for safer branch listing
+          branches_found=false
+          echo "Branches to delete:"
+          echo "=========================================="
+          while IFS= read -r branch; do
+            branches_found=true
+            echo "$branch"
+          done < <(get_branches_to_delete)
+
+          if [ "$branches_found" = false ]; then
+            echo "✓ No branches to delete (only main exists)"
+            exit 0
+          fi
+
+          echo "=========================================="
+          echo ""
+
+          # Track results
+          success_count=0
+          fail_count=0
+
+          # Delete each branch
+          while IFS= read -r branch; do
+            echo "Deleting branch: $branch"
+            if git push origin --delete "$branch"; then
+              echo "✓ Successfully deleted: $branch"
+              success_count=$((success_count + 1))
+            else
+              echo "✗ Failed to delete: $branch"
+              ((fail_count++)) || true
+            fi
+          done < <(get_branches_to_delete)
+
+          echo ""
+          echo "=========================================="
+          echo "Branch deletion complete!"
+          echo "Successfully deleted: $success_count"
+          echo "Failed: $fail_count"
+          echo "=========================================="
