@@ -25,90 +25,140 @@ permalink: /portfolio/
   </section>
 </section>
 
-<!-- ==== PROJECTS ==== -->
 <script>
-// NOTE: webp files with spaces are pre-encoded as %20 to avoid 404s on GitHub Pages.
 const PROJECTS = [
   /* --- Showers --- */
-  { id:"shower-white", tags:["showers"],
-    thumb:"/assets/img/shower-white.jpg", full:"/assets/img/shower-white.jpg",
-    alt:"White subway-tile shower with bench, niches and hex floor",
-    caption:"Subway shower with bench and hex floor — movement joints and sealed edges." },
+  {
+    id: "shower-white",
+    tags: ["showers"],
+    thumb: "{{ '/assets/img/shower-white.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/shower-white.jpg' | relative_url }}",
+    alt: "White subway-tile shower with bench, niches and hex floor",
+    caption: "Subway shower with bench and hex floor — movement joints and sealed edges."
+  },
 
-  { id:"shower-blue", tags:["showers"],
-    thumb:"/assets/img/shower-blue.jpg", full:"/assets/img/shower-blue.jpg",
-    alt:"Decorative blue patterned shower wall with rainfall and hand shower",
-    caption:"Patterned feature wall — aligned layout around fixtures and niche." },
+  {
+    id: "shower-blue",
+    tags: ["showers"],
+    thumb: "{{ '/assets/img/shower-blue.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/shower-blue.jpg' | relative_url }}",
+    alt: "Decorative blue patterned shower wall with rainfall and hand shower",
+    caption: "Patterned feature wall — aligned layout around fixtures and niche."
+  },
 
-  { id:"bathroom-gray", tags:["showers","floors"],
-    thumb:"/assets/img/bathroom-gray.jpg", full:"/assets/img/bathroom-gray.jpg",
-    alt:"Modern bathroom with glass enclosure and wood-look tile floor",
-    caption:"Large-format layout — flat substrate and clean transitions." },
+  {
+    id: "bathroom-gray",
+    tags: ["showers","floors"],
+    thumb: "{{ '/assets/img/bathroom-gray.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/bathroom-gray.jpg' | relative_url }}",
+    alt: "Modern bathroom with glass enclosure and wood-look tile floor",
+    caption: "Large-format layout — flat substrate and clean transitions."
+  },
 
-  { id:"marble-bath", tags:["showers"],
-    thumb:"/assets/img/marble-bath.jpg", full:"/assets/img/marble-bath.jpg",
-    alt:"Polished marble bath with full-height wall tile and long vanity",
-    caption:"Stone installation — matched setting materials and sealed stone." },
+  {
+    id: "marble-bath",
+    tags: ["showers"],
+    thumb: "{{ '/assets/img/marble-bath.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/marble-bath.jpg' | relative_url }}",
+    alt: "Polished marble bath with full-height wall tile and long vanity",
+    caption: "Stone installation — matched setting materials and sealed stone."
+  },
 
   /* --- Backsplashes --- */
-  { id:"kitchen-green", tags:["backsplashes"],
-    thumb:"/assets/img/kitchen-green.jpg", full:"/assets/img/kitchen-green.jpg",
-    alt:"Kitchen with green cabinets and white subway backsplash",
-    caption:"Subway backsplash — tight outlet cuts and caulked edges." },
+  {
+    id: "kitchen-green",
+    tags: ["backsplashes"],
+    thumb: "{{ '/assets/img/kitchen-green.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/kitchen-green.jpg' | relative_url }}",
+    alt: "Kitchen with green cabinets and white subway backsplash",
+    caption: "Subway backsplash — tight outlet cuts and caulked edges."
+  },
 
-  { id:"kitchen-hex", tags:["backsplashes"],
-    thumb:"/assets/img/kitchen-hex.jpg", full:"/assets/img/kitchen-hex.jpg",
-    alt:"Hex tile backsplash feature",
-    caption:"Hex feature — balanced cuts and clean terminations." },
+  {
+    id: "kitchen-hex",
+    tags: ["backsplashes"],
+    thumb: "{{ '/assets/img/kitchen-hex.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/kitchen-hex.jpg' | relative_url }}",
+    alt: "Hex tile backsplash feature",
+    caption: "Hex feature — balanced cuts and clean terminations."
+  },
 
-  { id:"backsplash-white", tags:["backsplashes"],
-    thumb:"/assets/img/backsplash-white.jpg", full:"/assets/img/backsplash-white.jpg",
-    alt:"Classic white subway backsplash with wood top",
-    caption:"Classic subway — lippage control and even joints." },
+  {
+    id: "backsplash-white",
+    tags: ["backsplashes"],
+    thumb: "{{ '/assets/img/backsplash-white.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/backsplash-white.jpg' | relative_url }}",
+    alt: "Classic white subway backsplash with wood top",
+    caption: "Classic subway — lippage control and even joints."
+  },
 
   /* --- Floors --- */
-  { id:"hardwood-room", tags:["floors"],
-    thumb:"/assets/img/hardwood-room.jpg", full:"/assets/img/hardwood-room.jpg",
-    alt:"Finished hardwood room with fresh trim and crown",
-    caption:"Flooring & trim — straight lines and clean scribe work." },
+  {
+    id: "hardwood-room",
+    tags: ["floors"],
+    thumb: "{{ '/assets/img/hardwood-room.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/hardwood-room.jpg' | relative_url }}",
+    alt: "Finished hardwood room with fresh trim and crown",
+    caption: "Flooring & trim — straight lines and clean scribe work."
+  },
 
-  { id:"tile-pattern-dark", tags:["floors"],
-    thumb:"/assets/img/tile-pattern-dark.jpg", full:"/assets/img/tile-pattern-dark.jpg",
-    alt:"Dark modular tile pattern reference",
-    caption:"Pattern layout — modular grid with consistent reveals." },
+  {
+    id: "tile-pattern-dark",
+    tags: ["floors"],
+    thumb: "{{ '/assets/img/tile-pattern-dark.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/tile-pattern-dark.jpg' | relative_url }}",
+    alt: "Dark modular tile pattern reference",
+    caption: "Pattern layout — modular grid with consistent reveals."
+  },
 
   /* --- Repairs / prep --- */
-  { id:"drywall-greenboard", tags:["repairs"],
-    thumb:"/assets/img/drywall-greenboard.jpg", full:"/assets/img/drywall-greenboard.jpg",
-    alt:"Moisture-resistant greenboard with fastener patches",
-    caption:"Drywall repairs — paint-ready prep for wet areas." },
+  {
+    id: "drywall-greenboard",
+    tags: ["repairs"],
+    thumb: "{{ '/assets/img/drywall-greenboard.jpg' | relative_url }}",
+    full:  "{{ '/assets/img/drywall-greenboard.jpg' | relative_url }}",
+    alt: "Moisture-resistant greenboard with fastener patches",
+    caption: "Drywall repairs — paint-ready prep for wet areas."
+  },
 
-  { id:"ceiling-repair", tags:["repairs"],
-    thumb:"/assets/img/Ceiling-repair.webp", full:"/assets/img/Ceiling-repair.webp",
-    alt:"Ceiling repair patch and finish",
-    caption:"Ceiling repair — patched, skimmed and finished for paint." },
+  {
+    id: "ceiling-repair",
+    tags: ["repairs"],
+    thumb: "{{ '/assets/img/Ceiling-repair.webp' | relative_url }}",
+    full:  "{{ '/assets/img/Ceiling-repair.webp' | relative_url }}",
+    alt: "Ceiling repair patch and finish",
+    caption: "Ceiling repair — patched, skimmed and finished for paint."
+  },
 
-  /* --- Earlier bathroom set (webp with spaces encoded) --- */
-  { id:"bathroom-final", tags:["showers"],
-    thumb:"/assets/img/bathroom-remodel-final.webp",
-    full:"/assets/img/bathroom-remodel-final-2.webp",
-    alt:"Bathroom remodel — finished shower and walls",
-    caption:"Bathroom remodel (final) — code-compliant wet area." },
+  /* --- Earlier bathroom set (webp) --- */
+  {
+    id: "bathroom-final",
+    tags: ["showers"],
+    thumb: "{{ '/assets/img/bathroom-remodel-final.webp' | relative_url }}",
+    full:  "{{ '/assets/img/bathroom-remodel-final-2.webp' | relative_url }}",
+    alt: "Bathroom remodel — finished shower and walls",
+    caption: "Bathroom remodel (final) — code-compliant wet area."
+  },
 
-  { id:"bathroom-detail", tags:["showers"],
-    thumb:"/assets/img/bathroom-remodel-2.webp",
-    full:"/assets/img/bathroom-remodel-2.webp",
-    alt:"Shower detail — tile layout and niche",
-    caption:"Shower detail — even joints and proper cuts." },
+  {
+    id: "bathroom-detail",
+    tags: ["showers"],
+    thumb: "{{ '/assets/img/bathroom-remodel-2.webp' | relative_url }}",
+    full:  "{{ '/assets/img/bathroom-remodel-2.webp' | relative_url }}",
+    alt: "Shower detail — tile layout and niche",
+    caption: "Shower detail — even joints and proper cuts."
+  },
 
-  { id:"bathroom-progress", tags:["showers"],
-    thumb:"/assets/img/bathroom-remodel.webp",
-    full:"/assets/img/bathroom-remodel.webp",
-    alt:"Bathroom remodel in progress",
-    caption:"In-progress — substrate prep prior to grout." }
+  {
+    id: "bathroom-progress",
+    tags: ["showers"],
+    thumb: "{{ '/assets/img/bathroom-remodel.webp' | relative_url }}",
+    full:  "{{ '/assets/img/bathroom-remodel.webp' | relative_url }}",
+    alt: "Bathroom remodel in progress",
+    caption: "In-progress — substrate prep prior to grout."
+  }
 ];
 </script>
-
 <!-- Renderer + filters + lightbox -->
 <script>
 (function(){
