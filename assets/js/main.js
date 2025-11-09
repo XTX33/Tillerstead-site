@@ -12,7 +12,7 @@
      NAV: mobile drawer
   ========================= */
   const navToggle = $('.nav-toggle');     // matches your button class
-  const nav = $('#nav');                  // matches <nav id="nav" class="site-nav">
+  const nav = $('#site-nav');                  // matches <nav id="nav" class="site-nav">
   const header = $('.site-header');
   let lastFocus = null;
   const BP_DESKTOP = 900; // px — adjust to your CSS breakpoint
