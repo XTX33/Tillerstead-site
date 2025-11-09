@@ -66,7 +66,7 @@ jobs:
               success_count=$((success_count + 1))
             else
               echo "✗ Failed to delete: $branch"
-              ((fail_count++))
+              ((fail_count++)) || true
             fi
           done < <(get_branches_to_delete)
 
