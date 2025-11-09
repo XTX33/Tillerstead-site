@@ -1,5 +1,5 @@
 <header class="site-header" role="banner">
-  <div class="site-header-inner">
+  <div class="site-header-inner container">
     <!-- Brand -->
     <a
       class="site-logo text-logo"
@@ -20,7 +20,7 @@
       class="site-nav"
       aria-label="Primary navigation"
     >
-      <ul class="nav-list">
+      <ul class="site-menu">
         <li>
           <a href="{{ '/' | relative_url }}"
              {% if page.url == '/' %}aria-current="page"{% endif %}>
@@ -84,7 +84,7 @@
       </ul>
     </nav>
 
-    <!-- Right-side controls: call + mobile toggle -->
+    <!-- Right-side actions -->
     <div class="site-header-actions">
       <a
         class="call-btn btn"
