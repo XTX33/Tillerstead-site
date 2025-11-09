@@ -99,20 +99,38 @@ hero_list:
 </section>
 
 <style>
-  .page-services .page-content {
-    padding-top: 0;
+  /* Page shell */
+  body.page-services {
+    background: #020617; /* deep navy to match rest of site */
   }
 
+  .page-services .page-content {
+    padding-top: 0;
+    padding-bottom: 3rem;
+  }
+
+  /* Layout */
   .services {
+    padding: 3.5rem 0 0;
     display: grid;
     gap: 2.5rem;
   }
 
+  .services .intro {
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
   .services .lead {
     max-width: 52rem;
+    color: #e5e7eb; /* readable against dark background */
   }
 
   .service-grid {
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
     display: grid;
     gap: 2.5rem;
   }
@@ -123,14 +141,16 @@ hero_list:
     }
   }
 
+  /* Service cards */
   .service-card {
     border: 1px solid rgba(148, 163, 184, 0.4);
     border-radius: 1rem;
     overflow: hidden;
-    background: #fff;
+    background: #f9fafb;
+    color: #0f172a;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
   }
 
   .service-card figure {
@@ -143,6 +163,7 @@ hero_list:
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 
   .service-card .body {
@@ -159,6 +180,7 @@ hero_list:
   .service-card p {
     margin: 0;
     line-height: 1.7;
+    font-size: 0.96rem;
   }
 
   .service-card ul {
@@ -167,18 +189,38 @@ hero_list:
     line-height: 1.6;
   }
 
+  .service-card li + li {
+    margin-top: 0.25rem;
+  }
+
+  /* CTA at bottom */
   .services-cta {
-    background: rgba(15, 23, 42, 0.05);
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem 0;
+    background: rgba(15, 23, 42, 1);
+    color: #e5e7eb;
     border-radius: 0.9rem;
-    padding: 1.75rem;
-    font-weight: 600;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.35);
+    font-weight: 500;
   }
 
   .services-cta a {
-    color: var(--brand-brass, #b8922f);
+    color: rgba(212, 175, 55, 1); /* brass accent */
+    font-weight: 600;
   }
 
   .services-cta a:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .services {
+      padding-top: 3rem;
+    }
+
+    .service-card .body {
+      padding: 1.5rem;
+    }
   }
 </style>
