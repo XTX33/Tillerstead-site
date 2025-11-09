@@ -361,29 +361,52 @@ schema:
     </div>
   </section>
 </main>
-
 <style>
+  /* ================================
+     Homepage Hero & Sections
+     (Tillerstead – GC focused)
+     ================================ */
+
   .hero--homepage {
-    padding: 4rem 0 2rem;
+    padding: 4.5rem 0 2.75rem;
+    background:
+      radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 60%),
+      radial-gradient(circle at bottom right, rgba(250, 204, 21, 0.12), transparent 55%),
+      #020617;
+    color: var(--brand-light, #e5e7eb);
+  }
+
+  .hero--homepage .shell {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
   }
 
   .hero-main {
-    max-width: 56rem;
+    max-width: 40rem;
   }
 
   .hero-eyebrow-text {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 600;
-    color: rgba(226, 232, 240, 0.8);
+    font-size: 0.78rem;
+    color: rgba(226, 232, 240, 0.78);
   }
 
   .hero h1 {
-    margin-top: 0.75rem;
+    margin-top: 0.9rem;
+    font-size: clamp(2.1rem, 2.6rem, 3rem);
+    line-height: 1.12;
+    color: #f9fafb;
   }
 
   .hero-note {
     max-width: 44rem;
+    margin-top: 0.9rem;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: rgba(226, 232, 240, 0.9);
   }
 
   .hero-kpis {
@@ -391,7 +414,7 @@ schema:
     margin: 2rem 0 0;
     padding: 0;
     display: grid;
-    gap: 1.25rem;
+    gap: 1.1rem;
   }
 
   @media (min-width: 768px) {
@@ -401,11 +424,11 @@ schema:
   }
 
   .hero-kpi {
-    background: rgba(15, 23, 42, 0.35);
-    border-radius: 0.75rem;
+    background: rgba(15, 23, 42, 0.7);
+    border-radius: 0.9rem;
     padding: 1.1rem 1.25rem;
-    color: rgba(226, 232, 240, 0.92);
-    border: 1px solid rgba(148, 163, 184, 0.35);
+    color: rgba(226, 232, 240, 0.94);
+    border: 1px solid rgba(148, 163, 184, 0.5);
   }
 
   .hero-kpi-label {
@@ -413,13 +436,17 @@ schema:
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     margin-bottom: 0.35rem;
-    color: rgba(248, 250, 252, 0.88);
+    color: rgba(248, 250, 252, 0.9);
   }
 
+  /* ================================
+     Generic sections
+     ================================ */
+
   .section {
-    padding: 3.5rem 0;
+    padding: 3.25rem 0;
   }
 
   .section h2 {
@@ -427,6 +454,7 @@ schema:
     margin-bottom: 1.5rem;
   }
 
+  /* Why Tillerstead grid */
   .why-grid {
     display: grid;
     gap: 1.75rem;
@@ -439,7 +467,7 @@ schema:
   }
 
   .why-item {
-    background: #fff;
+    background: #ffffff;
     border-radius: 0.9rem;
     padding: 1.75rem;
     border: 1px solid rgba(148, 163, 184, 0.4);
@@ -452,6 +480,7 @@ schema:
     font-size: 1.2rem;
   }
 
+  /* Scope cards */
   .section--scopes .scope-grid {
     display: grid;
     gap: 1.5rem;
@@ -464,7 +493,7 @@ schema:
   }
 
   .scope-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 0.9rem;
     overflow: hidden;
     border: 1px solid rgba(148, 163, 184, 0.4);
@@ -499,6 +528,7 @@ schema:
     font-weight: 600;
   }
 
+  /* Workflow */
   .workflow-shell {
     display: grid;
     gap: 2rem;
@@ -529,13 +559,14 @@ schema:
     height: 2rem;
     border-radius: 999px;
     background: var(--brand-brass, #b8922f);
-    color: #fff;
+    color: #ffffff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
   }
 
+  /* Service area */
   .service-area-shell {
     display: grid;
     gap: 2rem;
@@ -549,7 +580,7 @@ schema:
   }
 
   .service-area-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 0.9rem;
     border: 1px solid rgba(148, 163, 184, 0.4);
     padding: 1.5rem;
@@ -561,8 +592,9 @@ schema:
     line-height: 1.6;
   }
 
+  /* Section link styling (does NOT touch nav links) */
   .section a {
-    color: var(--brand-brass, #b8922f);
+    color: var(--brand-emerald, #059669);
     font-weight: 600;
   }
 
