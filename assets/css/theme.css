@@ -889,3 +889,97 @@ textarea::placeholder {
     text-align: left;
   }
 }
+/* ============================================
+   Image system – homepage + portfolio
+   ------------------------------------------- */
+
+/* Generic image reset */
+.hero img,
+.scope-card img,
+.gallery img,
+.gallery-grid img,
+.gallery-item img,
+.portfolio img,
+.portfolio-grid img,
+.gitem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Homepage "scope" cards – uniform 4:3 crops */
+.scope-card figure {
+  margin: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #020617;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+}
+
+/* Give the figure a consistent aspect ratio */
+.scope-card figure {
+  aspect-ratio: 4 / 3;
+}
+
+/* Portfolio / gallery grid – same idea */
+.gallery,
+.gallery-grid,
+.portfolio-grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+/* Adjust columns at breakpoints */
+@media (min-width: 640px) {
+  .gallery,
+  .gallery-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .gallery,
+  .gallery-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Individual gallery items */
+.gallery-item,
+.gitem,
+.portfolio-item {
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: #020617;
+  border: 1px solid rgba(15, 23, 42, 0.95);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+}
+
+/* Lock the visible window to 4:3 for cards */
+.gallery-item,
+.gitem,
+.portfolio-item {
+  aspect-ratio: 4 / 3;
+}
+
+/* Subtle hover zoom on desktop only */
+@media (hover: hover) and (pointer: fine) {
+  .gallery-item img,
+  .gitem img,
+  .portfolio-item img,
+  .scope-card figure img {
+    transition: transform 180ms ease-out;
+  }
+
+  .gallery-item:hover img,
+  .gitem:hover img,
+  .portfolio-item:hover img,
+  .scope-card:hover figure img {
+    transform: scale(1.03);
+  }
+}
