@@ -285,14 +285,6 @@ const PROJECTS = [
       (lastFocus || document.body).focus();
     }
 
-    btnClose.onclick = close;
-    overlay.addEventListener('click', e => {
-      if(e.target === overlay) close();
-    });
-    document.addEventListener('keydown', e => {
-      if(e.key === 'Escape') close();
-    });
-
     links.forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -302,7 +294,6 @@ const PROJECTS = [
         cap.textContent = c ? c.textContent : '';
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
-        btnClose.focus();
       });
     });
   }
