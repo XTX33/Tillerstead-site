@@ -544,7 +544,7 @@ textarea::placeholder {
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transition: transform var(--transition-slow), opacity var(--transition-slow);
 }
 
 .site-nav.is-open {
