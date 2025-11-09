@@ -1,63 +1,76 @@
-<footer class="site-footer" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness" 
-style="background:var(--brand-dark,#0f172a); color:var(--brand-light,#f9fafb); text-align:center; padding:3rem 1rem; line-height:1.6;">
+<footer class="site-footer"
+        itemscope
+        itemtype="https://schema.org/HomeAndConstructionBusiness">
 
   <meta itemprop="name" content="Tillerstead LLC">
   <meta itemprop="@id" content="{{ site.url }}/#contractor">
   <meta itemprop="url" content="{{ site.url }}/">
+  <meta itemprop="priceRange" content="$$">
+  <meta itemprop="telephone" content="{{ site.company.phone_link }}">
+  <meta itemprop="email" content="{{ site.company.email }}">
 
-  <div class="shell container" style="max-width:900px; margin:0 auto;">
+  <div class="shell container footer-inner">
 
-    <!-- Logo -->
-    <a href="{{ '/' | relative_url }}" aria-label="Tillerstead LLC Home" 
-       style="display:flex; flex-direction:column; align-items:center; text-decoration:none; gap:.35rem; margin-bottom:1rem;">
-
-      <span style="width:88px; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;">
-        <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Tillerstead LLC Logo" 
-             style="max-width:100%; height:auto; display:block; filter:brightness(1.15);">
+    <!-- Brand block -->
+    <a href="{{ '/' | relative_url }}"
+       class="footer-brand"
+       aria-label="Tillerstead LLC Home">
+      <span class="footer-logo">
+        <img src="{{ '/assets/img/logo.png' | relative_url }}"
+             alt="Tillerstead LLC Logo">
       </span>
 
-      <span style="font-weight:700; letter-spacing:.12em; text-transform:uppercase; 
-                   font-size:.9rem; background:linear-gradient(90deg,#b8922f,#0fa3b1); 
-                   -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
-        TILLERSTEAD LLC
-      </span>
+      <span class="footer-name">TILLERSTEAD LLC</span>
+      <span class="footer-tagline">Built to Last</span>
     </a>
 
-    <p style="margin:.25rem 0 1rem; font-weight:500;">Built to Last</p>
+    <!-- Business + address -->
+    <div class="footer-business">
+      <p class="footer-hic">
+        Licensed New Jersey Home Improvement Contractor ·
+        HIC #{{ site.company.hic }}
+      </p>
 
-    <p style="margin:.25rem 0;">Licensed New Jersey Home Improvement Contractor · HIC #{{ site.company.hic }}</p>
+      <address class="footer-address"
+               itemprop="address"
+               itemscope
+               itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">{{ site.company.address_line }}</span><br>
+        <span itemprop="addressLocality">{{ site.company.address_locality }}</span>,
+        <span itemprop="addressRegion">{{ site.company.address_region }}</span>
+        <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
+      </address>
 
-    <address style="margin:.25rem 0; font-style:normal;" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-      <span itemprop="streetAddress">{{ site.company.address_line }}</span><br>
-      <span itemprop="addressLocality">{{ site.company.address_locality }}</span>,
-      <span itemprop="addressRegion">{{ site.company.address_region }}</span>
-      <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
-    </address>
+      <p class="footer-area" itemprop="areaServed">
+        Serving Atlantic County, Ocean County, and nearby South Jersey coastal communities.
+      </p>
+    </div>
 
-    <p style="margin:.25rem 0;" itemprop="areaServed">
-      Serving Atlantic County, Ocean County, and nearby South Jersey coastal communities.
-    </p>
-
-    <nav aria-label="Footer navigation" style="margin:1rem 0; font-size:.9rem;">
-      <a href="/services/" style="color:inherit; text-decoration:none;">Services</a> ·
-      <a href="/portfolio/" style="color:inherit; text-decoration:none;">Gallery</a> ·
-      <a href="/about/" style="color:inherit; text-decoration:none;">About</a> ·
-      <a href="/reviews/" style="color:inherit; text-decoration:none;">Reviews</a> ·
-      <a href="/contact/" style="color:inherit; text-decoration:none;">Contact</a> ·
-      <a href="/terms/" style="color:inherit; text-decoration:none;">Terms &amp; Conditions</a>
+    <!-- Nav -->
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="{{ '/services/'  | relative_url }}">Services</a>
+      <a href="{{ '/portfolio/' | relative_url }}">Gallery</a>
+      <a href="{{ '/about/'     | relative_url }}">About</a>
+      <a href="{{ '/reviews/'   | relative_url }}">Reviews</a>
+      <a href="{{ '/contact/'   | relative_url }}">Contact</a>
+      <a href="{{ '/terms/'     | relative_url }}">Terms &amp; Conditions</a>
     </nav>
 
-    <p style="margin:.5rem 0;">
-      <a href="tel:{{ site.company.phone_link }}" style="color:inherit; text-decoration:none;" itemprop="telephone">
+    <!-- Contact -->
+    <div class="footer-contact">
+      <a href="tel:{{ site.company.phone_link }}"
+         itemprop="telephone">
         {{ site.company.phone_display }}
-      </a><br>
-      <a href="mailto:{{ site.company.email }}" style="color:inherit; text-decoration:none;" itemprop="email">
+      </a>
+      <a href="mailto:{{ site.company.email }}"
+         itemprop="email">
         {{ site.company.email }}
       </a>
-    </p>
+    </div>
 
-    <p style="margin-top:1rem; font-size:.85rem; opacity:.8;">
-      © {{ site.time | date: '%Y' }} Tillerstead LLC · All rights reserved
+    <!-- Legal line -->
+    <p class="footer-legal">
+      © {{ "now" | date: "%Y" }} Tillerstead LLC · All rights reserved
     </p>
   </div>
 </footer>
