@@ -1757,3 +1757,156 @@ address.footer-meta {
     font-size: 0.95rem;
   }
 }
+/* ============================================
+   General Page Styles (applies to all body classes starting with "page-")
+   Mirrors homepage hero + section rhythm
+   ============================================ */
+
+body[class^="page-"],
+body[class*=" page-"] {
+  background: var(--brand-paper, #f9fafb);
+  color: var(--brand-ink, #111827);
+  font-family: var(--font-base, 'Inter', sans-serif);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* Containers & layout */
+body[class^="page-"] .container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Section rhythm */
+body[class^="page-"] .section {
+  padding: 3.5rem 0;
+}
+
+@media (max-width: 640px) {
+  body[class^="page-"] .section {
+    padding: 2.5rem 0;
+  }
+}
+
+/* Eyebrow headings */
+body[class^="page-"] .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: rgba(71, 85, 105, 0.85);
+  margin-bottom: 0.35rem;
+}
+
+/* Page titles */
+body[class^="page-"] h1,
+body[class^="page-"] h2 {
+  color: var(--brand-ink, #111827);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body[class^="page-"] h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+body[class^="page-"] h2 {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+body[class^="page-"] p {
+  margin-bottom: 1rem;
+  color: var(--brand-ink, #1e293b);
+}
+
+/* Buttons */
+body[class^="page-"] .btn {
+  display: inline-block;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body[class^="page-"] .btn-accent {
+  background: var(--brand-emerald, #0fa3b1);
+  color: #fff;
+}
+
+body[class^="page-"] .btn-accent:hover {
+  background: #0c8591;
+}
+
+body[class^="page-"] .btn-ghost {
+  border: 2px solid var(--brand-brass, #b8922f);
+  color: var(--brand-brass, #b8922f);
+  background: transparent;
+}
+
+body[class^="page-"] .btn-ghost:hover {
+  background: var(--brand-brass, #b8922f);
+  color: #fff;
+}
+
+/* KPI / quick-fact block */
+body[class^="page-"] .page-kpis,
+body[class^="page-"] .gc-kpis,
+body[class^="page-"] .hero-kpis {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+body[class^="page-"] .hero-kpi,
+body[class^="page-"] .gc-kpi {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--brand-ink, #334155);
+}
+
+body[class^="page-"] .hero-kpi-label,
+body[class^="page-"] .gc-kpi-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 700;
+  color: var(--brand-brass, #b8922f);
+}
+
+@media (min-width: 900px) {
+  body[class^="page-"] .page-kpis,
+  body[class^="page-"] .gc-kpis,
+  body[class^="page-"] .hero-kpis {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25rem 2rem;
+  }
+}
+
+/* Cards */
+body[class^="page-"] .gc-card,
+body[class^="page-"] .docs-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+  padding: 1.75rem;
+}
+
+body[class^="page-"] .gc-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
