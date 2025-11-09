@@ -1315,3 +1315,17 @@ textarea::placeholder {
   color: #fff;
   box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
 }
+/* Section CTA links under 'Tile scopes' */
+.section-cta a:first-of-type {
+  color: #d4af37; /* brass for primary link */
+  font-weight: 600;
+}
+
+.section-cta a:last-of-type {
+  color: #22c55e; /* emerald green secondary */
+}
+
+.section-cta a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
