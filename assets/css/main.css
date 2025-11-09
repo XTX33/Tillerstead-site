@@ -535,7 +535,7 @@ textarea::placeholder {
   justify-content: flex-start;
   align-items: flex-start;
   padding: clamp(5rem, 11vw, 6rem) clamp(1.75rem, 8vw, 3.5rem) clamp(2.25rem, 12vw, 3.75rem);
-  background: rgba(2, 6, 23, 0.97);
+  background: var(--color-overlay-strong);
   color: var(--color-text-on-dark);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
