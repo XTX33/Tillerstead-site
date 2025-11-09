@@ -427,7 +427,7 @@ textarea::placeholder {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: var(--z-sticky);
+  z-index: 900;
   background: var(--color-surface-alt);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -450,6 +450,8 @@ textarea::placeholder {
   text-decoration: none;
   color: inherit;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1100;
 }
 
 .site-logo img {
@@ -470,6 +472,8 @@ textarea::placeholder {
   align-items: center;
   gap: var(--space-3);
   margin-left: auto;
+  position: relative;
+  z-index: 1100;
 }
 
 /* Navigation Toggle (Hamburger) */
@@ -526,13 +530,12 @@ textarea::placeholder {
 .site-nav {
   position: fixed;
   inset: 0;
-  z-index: var(--z-overlay);
+  z-index: 1000;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: clamp(4.25rem, 11vw, 5.75rem) clamp(1.75rem, 8vw, 3.5rem) clamp(2.25rem, 12vw, 3.75rem);
-  background:
-    linear-gradient(165deg, rgba(2, 6, 23, 0.96) 0%, rgba(15, 23, 42, 0.94) 55%, rgba(15, 23, 42, 0.9) 100%);
+  padding: clamp(5rem, 11vw, 6rem) clamp(1.75rem, 8vw, 3.5rem) clamp(2.25rem, 12vw, 3.75rem);
+  background: rgba(2, 6, 23, 0.97);
   color: var(--color-text-on-dark);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -540,13 +543,14 @@ textarea::placeholder {
   overflow-y: auto;
   transform: translateY(-100%);
   opacity: 0;
-  transition: transform var(--transition-slow), opacity var(--transition-slow);
-  isolation: isolate;
+  pointer-events: none;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .site-nav.is-open {
   transform: translateY(0);
   opacity: 1;
+  pointer-events: auto;
 }
 
 .site-nav ul {
@@ -641,6 +645,7 @@ textarea::placeholder {
     overflow: visible;
     transform: none;
     opacity: 1;
+    pointer-events: auto;
     transition: none;
   }
 
@@ -659,6 +664,7 @@ textarea::placeholder {
     border-radius: 0;
     box-shadow: none;
     transform: none;
+    border: none;
   }
 
   .site-nav a::after {
@@ -699,6 +705,8 @@ textarea::placeholder {
 /* Prevent body scroll when nav is open */
 body.nav-open {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 /* 9) Hero
@@ -921,7 +929,7 @@ body.nav-open {
   flex-wrap: wrap;
 }
 
-/* KPI section contrast */
+/* KPI section contrast - FIXED COLORS */
 .hero-kpis {
   margin-top: 1.5rem;
   display: grid;
@@ -934,7 +942,8 @@ body.nav-open {
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(248, 250, 252, 0.95);
+  font-weight: 700;
+  color: var(--color-brass);
 }
 /* 11) FAQ / Accordion
    ------------------------------------------- */
@@ -1497,57 +1506,7 @@ address.footer-meta {
     align-items: stretch;
   }
 }
-/* =========================
-   MOBILE NAV OVERLAY
-   ========================= */
 
-.site-nav {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-
-  /* dark overlay so links are readable */
-  background: rgba(2, 6, 23, 0.98);
-  color: #e5e7eb;
-
-  padding: 4.25rem 1.5rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    transform 0.2s ease-out,
-    opacity 0.2s ease-out;
-}
-
-/* when JS adds .is-open */
-.site-nav.is-open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.site-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav a {
-  display: block;
-  padding: 0.75rem 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: #e5e7eb;
-}
-
-.site-nav a[aria-current="page"] {
-  color: #0f766e; /* accent for active item */
-}
 /* ===========================
    ABOUT PAGE LAYOUT
    =========================== */
@@ -1729,31 +1688,4 @@ address.footer-meta {
   color: var(--brand-emerald, #0fa3b1);
   text-decoration: underline;
   text-underline-offset: 0.15em;
-}
-/* Desktop: turn overlay into inline nav bar */
-@media (min-width: 900px) {
-  .site-nav {
-    position: static;
-    inset: auto;
-    z-index: auto;
-    background: transparent;
-    padding: 0;
-
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
-
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .site-nav ul {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .site-nav a {
-    padding: 0;
-    font-size: 0.95rem;
-  }
 }
