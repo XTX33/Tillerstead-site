@@ -1921,34 +1921,32 @@ main > .section:last-of-type > *:last-child {
 /* ============================================
    Mobile nav – match FaithFrontier overlay
    ============================================ */
-
-#nav.site-nav {
+/* Mobile nav overlay */
+body.nav-open #site-nav.site-nav {
   position: fixed;
-  inset: 0; /* top/right/bottom/left: 0 */
+  inset: 0;
   padding: 4.5rem 1.5rem 2.5rem;
-  background: rgba(15, 23, 42, 0.97); /* dark slate overlay */
+  background: rgba(15, 23, 42, 0.97);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  z-index: 999;
+}
 
+/* default hidden state */
+#site-nav.site-nav {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);
   transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 999; /* above header */
 }
 
-/* When JS toggles body.nav-open / #nav.is-open, show the menu */
-body.nav-open #nav.site-nav,
-#nav.site-nav.is-open {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* Menu list */
-#nav.site-nav .site-menu {
+/* list + links */
+#site-nav.site-nav .nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1957,8 +1955,7 @@ body.nav-open #nav.site-nav,
   gap: 1.25rem;
 }
 
-/* Links – simple overlay text, no cards */
-#nav.site-nav .site-menu a {
+#site-nav.site-nav .nav-list a {
   display: block;
   padding: 0;
   background: none;
@@ -1968,17 +1965,4 @@ body.nav-open #nav.site-nav,
   font-size: 1.15rem;
   font-weight: 500;
   text-decoration: none;
-}
-
-/* Optional: highlight current page */
-#nav.site-nav .site-menu a[aria-current="page"] {
-  font-weight: 600;
-  color: #e5e7eb;
-}
-
-/* Small screens: make sure page content doesn't scroll behind */
-@media (max-width: 768px) {
-  body.nav-open {
-    overflow: hidden;
-  }
 }
