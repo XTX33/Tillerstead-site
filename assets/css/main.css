@@ -530,14 +530,13 @@ textarea::placeholder {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: clamp(4rem, 10vw, 5.25rem) clamp(1.5rem, 8vw, 3rem) clamp(2rem, 12vw, 3rem);
+  padding: clamp(4.25rem, 11vw, 5.75rem) clamp(1.75rem, 8vw, 3.5rem) clamp(2.25rem, 12vw, 3.75rem);
   background:
-    radial-gradient(120% 140% at 20% 12%, rgba(15, 118, 110, 0.28), transparent 70%),
-    linear-gradient(180deg, var(--color-overlay-strong) 0%, rgba(4, 10, 24, 0.97) 55%, var(--color-overlay-soft) 100%);
+    linear-gradient(165deg, rgba(2, 6, 23, 0.96) 0%, rgba(15, 23, 42, 0.94) 55%, rgba(15, 23, 42, 0.9) 100%);
   color: var(--color-text-on-dark);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 28px 60px rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 26px 65px rgba(2, 6, 23, 0.68);
   overflow-y: auto;
   transform: translateY(-100%);
   opacity: 0;
@@ -557,7 +556,7 @@ textarea::placeholder {
   width: min(22rem, 100%);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 .site-nav li {
@@ -572,33 +571,34 @@ textarea::placeholder {
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: rgba(241, 245, 249, 0.98);
+  color: rgba(248, 250, 252, 0.98);
   text-decoration: none;
-  background: rgba(15, 23, 42, 0.62);
-  border-radius: var(--radius-lg);
-  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.15);
+  background: rgba(15, 23, 42, 0.82);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(94, 234, 212, 0.12), 0 10px 22px rgba(2, 6, 23, 0.45);
   transition: color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .site-nav a:hover {
   color: #fefce8;
-  background: rgba(15, 118, 110, 0.42);
-  box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.45);
-  transform: translateX(2px);
+  background: rgba(15, 118, 110, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.42);
+  transform: translateX(3px);
 }
 
 .site-nav a:focus-visible {
   outline: none;
   color: #fefce8;
-  background: rgba(15, 118, 110, 0.45);
-  box-shadow: inset 0 0 0 2px rgba(56, 189, 248, 0.45);
+  background: rgba(15, 118, 110, 0.52);
+  box-shadow: inset 0 0 0 2px rgba(56, 189, 248, 0.55);
 }
 
 .site-nav a[aria-current="page"] {
   color: #fefce8;
   position: relative;
-  background: rgba(15, 118, 110, 0.55);
-  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.45);
+  background: rgba(15, 118, 110, 0.58);
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.5);
 }
 
 .site-nav li > a[aria-current="page"],
@@ -1182,6 +1182,61 @@ address.footer-meta {
   padding: var(--space-6);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-subtle);
+}
+
+.licensing-card--overlay {
+  background:
+    radial-gradient(160% 140% at 12% -20%, rgba(15, 118, 110, 0.22), transparent 65%),
+    linear-gradient(165deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.96));
+  color: var(--color-text-on-dark);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 22px 48px rgba(2, 6, 23, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.licensing-card--overlay h3 {
+  color: #fef3c7;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: clamp(0.95rem, 0.8rem + 0.6vw, 1.15rem);
+  margin-bottom: var(--space-5);
+}
+
+.licensing-card--overlay .credential-list {
+  margin: 0;
+}
+
+.licensing-card--overlay .credential-list div {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.licensing-card--overlay .credential-list dt {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(226, 232, 240, 0.85);
+}
+
+.licensing-card--overlay .credential-list dd {
+  margin: 0;
+  color: rgba(248, 250, 252, 0.9);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.licensing-card--overlay a {
+  color: #86efac;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.licensing-card--overlay a:hover,
+.licensing-card--overlay a:focus-visible {
+  color: #fef9c3;
 }
 
 .credential-list {
