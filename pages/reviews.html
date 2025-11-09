@@ -2,78 +2,143 @@
 layout: default
 title: Reviews
 permalink: /reviews/
+description: Verified client feedback for tile, bath, and remodel work completed by Tillerstead across Atlantic County and nearby shore towns.
+body_class: page-reviews
 ---
 
-<!-- Page-scoped styles (boxed to #reviews-page only) -->
 <style>
-  /* local design tokens, with fallbacks in case site vars don't exist */
-  #reviews-page {
-    --bg: var(--surface-0, #fff);
-    --bg-soft: var(--surface-1, #fafafa);
-    --text: var(--text-1, #111);
-    --muted: var(--text-2, #555);
-    --line: var(--line-1, #e5e5e5);
-    --accent: var(--accent, #0a7cff);
-    color: var(--text);
+  /* ===========
+     Tillerstead – Reviews
+     =========== */
+  .page-reviews {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+    color: var(--brand-ink, #111827);
   }
 
-  #reviews-page .lead { font-size: 1.125rem; line-height: 1.6; color: var(--muted); }
+  .page-reviews header h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: .4rem;
+  }
 
-  #reviews-page .reviews {
+  .page-reviews header .lead {
+    font-size: 1.05rem;
+    color: rgba(15,23,42,.75);
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
+    max-width: 42rem;
+  }
+
+  /* --- Reviews grid --- */
+  .page-reviews .reviews {
     display: grid;
-    gap: 1rem;
+    gap: 1.25rem;
     grid-template-columns: 1fr;
-    margin-block: 1rem 1.5rem;
-  }
-  @media (min-width: 720px) {
-    #reviews-page .reviews { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
-  #reviews-page .review {
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 1px 0 rgba(0,0,0,.03);
+  @media (min-width: 768px) {
+    .page-reviews .reviews {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
-  #reviews-page .review > header {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem;
-    padding-bottom: .5rem; margin-bottom: .75rem; border-bottom: 1px solid var(--line);
+  .review {
+    background: #fff;
+    border: 1px solid rgba(148,163,184,0.3);
+    border-radius: .9rem;
+    padding: 1.25rem 1.15rem 1.1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    transition: box-shadow .2s ease, transform .2s ease;
   }
-  #reviews-page .name { font-weight: 700; }
-  #reviews-page time { color: var(--muted); font-size: .9rem; }
-  #reviews-page .pill {
-    font-size: .8rem; line-height: 1.8; padding: 0 .6rem;
-    border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--bg-soft);
-  }
-  #reviews-page .stars { font-size: .95rem; letter-spacing: .08em; color: #e0aa0f; }
 
-  #reviews-page .detail { font-size: .92rem; color: var(--muted); }
+  .review:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  }
 
-  #reviews-page .cta-row {
-    display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem;
+  .review header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .4rem .8rem;
+    border-bottom: 1px solid rgba(148,163,184,0.3);
+    padding-bottom: .4rem;
+    margin-bottom: .65rem;
   }
-  #reviews-page .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    padding: .6rem .9rem; border-radius: 8px; border: 1px solid var(--line);
-    text-decoration: none; font-weight: 600;
+
+  .review .name {
+    font-weight: 600;
+    color: var(--brand-ink, #111827);
   }
-  #reviews-page .btn-accent {
-    background: var(--accent); color: #fff; border-color: transparent;
+
+  .review time {
+    font-size: .85rem;
+    color: rgba(15,23,42,.65);
   }
-  #reviews-page .btn:hover { filter: brightness(.98); }
-  #reviews-page .btn-accent:hover { filter: brightness(.96); }
+
+  .review .pill {
+    background: rgba(15,163,177,.08);
+    border-radius: 999px;
+    font-size: .8rem;
+    padding: 0 .55rem;
+    color: var(--brand-emerald, #0fa3b1);
+  }
+
+  .review .stars {
+    font-size: .95rem;
+    letter-spacing: .08em;
+    color: #e0aa0f;
+  }
+
+  .review p {
+    margin: .3rem 0;
+    line-height: 1.55;
+    font-size: .94rem;
+  }
+
+  .review .detail {
+    font-size: .86rem;
+    color: rgba(15,23,42,.75);
+  }
+
+  .page-reviews .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 1.25rem;
+  }
+
+  .page-reviews .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem .95rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid rgba(148,163,184,0.5);
+    text-decoration: none;
+  }
+
+  .page-reviews .btn-accent {
+    background: var(--brand-brass, #b8922f);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .page-reviews .btn:hover { filter: brightness(.97); }
+  .page-reviews .btn-accent:hover { filter: brightness(.93); }
 </style>
 
-<section id="reviews-page" class="container pad" aria-labelledby="reviews-h1">
+<section class="page-reviews" aria-labelledby="reviews-h1">
   <header>
     <h1 id="reviews-h1">Reviews</h1>
     <p class="lead">Straight talk, clean installs, and follow-through. Here’s what homeowners say about working with Tillerstead.</p>
   </header>
 
   <section class="reviews" aria-label="Client reviews">
-    <!-- Alexandra S. -->
     <article class="review">
       <header>
         <div class="name">Alexandra S.</div>
@@ -86,7 +151,6 @@ permalink: /reviews/
       <p class="detail"><em>Category:</em> Drywall Repair and Texturing</p>
     </article>
 
-    <!-- Ahmed A. -->
     <article class="review">
       <header>
         <div class="name">Ahmed A.</div>
@@ -99,7 +163,6 @@ permalink: /reviews/
       <p class="detail"><em>Category:</em> Tile Installation and Replacement</p>
     </article>
 
-    <!-- Maria J. -->
     <article class="review">
       <header>
         <div class="name">Maria J.</div>
@@ -115,10 +178,10 @@ permalink: /reviews/
     <a class="btn" href="https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199" target="_blank" rel="noopener">See more on Thumbtack ↗</a>
   </div>
 
-  <hr style="margin:1.5rem 0;border:0;border-top:1px solid var(--line)">
+  <hr style="margin:1.75rem 0;border:0;border-top:1px solid rgba(148,163,184,0.35);">
 
   <section aria-label="Credentials">
-    <p class="detail"><strong>Credentials:</strong> License type: Home Improvement Contractor • License state: NJ • License verified on 10/5/2025</p>
+    <p class="detail"><strong>Credentials:</strong> License type: Home Improvement Contractor • License state: NJ • Verified 10/5/2025</p>
     <p class="detail"><strong>Background Check:</strong> Devon Barber</p>
   </section>
 </section>
