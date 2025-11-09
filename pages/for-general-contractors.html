@@ -13,7 +13,7 @@ keywords:
 
 <main id="main" class="gc" aria-labelledby="gc-heading">
   <header class="gc-hero">
-    <div class="container">
+    <div class="container gc-hero-inner">
       <p class="eyebrow">For General Contractors &amp; Remodelers</p>
       <h1 id="gc-heading">Tile support for general contractors in Atlantic, Ocean, and Cape May Counties</h1>
       <p class="lead">
@@ -24,7 +24,24 @@ keywords:
         <a class="btn btn-accent" href="{{ '/contact/' | relative_url }}">Request availability &amp; quote</a>
         <a class="btn btn-ghost" href="{{ '/services/' | relative_url }}">See tile scopes</a>
       </div>
-      <p class="gc-note">Licensed New Jersey Home Improvement Contractor · HIC #{{ site.company.hic }} · Insurance certificates and W-9 on request.</p>
+      <p class="gc-note">
+        Licensed New Jersey Home Improvement Contractor · HIC #{{ site.company.hic }} · Insurance certificates and W-9 on request.
+      </p>
+
+      <ul class="gc-kpis" aria-label="Tile subcontractor quick facts for general contractors">
+        <li class="gc-kpi">
+          <span class="gc-kpi-label">Service Area</span>
+          Atlantic County base with projects across Ocean and Cape May counties. Travel available for multi-day scopes.
+        </li>
+        <li class="gc-kpi">
+          <span class="gc-kpi-label">Scope Focus</span>
+          Waterproof showers, floors, large-format tile, backsplashes, and select small commercial tenant improvements.
+        </li>
+        <li class="gc-kpi">
+          <span class="gc-kpi-label">GC Workflow</span>
+          Written estimates, documented change orders, and photo-backed punchlists to keep your schedule and billing aligned.
+        </li>
+      </ul>
     </div>
   </header>
 
@@ -35,13 +52,15 @@ keywords:
         <article class="gc-card">
           <h3>Bathroom remodels &amp; shower rebuilds</h3>
           <p>
-            Demolition, substrate prep, waterproof systems, and tile finish work for homeowners and condo associations who expect clean staging, daily updates, and respectful crews.
+            Demolition, substrate prep, waterproof systems, and tile finish work for homeowners and condo associations who expect clean staging,
+            daily updates, and respectful crews.
           </p>
         </article>
         <article class="gc-card">
           <h3>Spec homes &amp; multifamily units</h3>
           <p>
-            Coordinated tile packages for repeat floor plans, including shower pans, surrounds, backsplashes, and floor tile completed on builder schedules.
+            Coordinated tile packages for repeat floor plans, including shower pans, surrounds, backsplashes,
+            and floor tile completed on builder schedules.
           </p>
         </article>
         <article class="gc-card">
@@ -53,7 +72,8 @@ keywords:
         <article class="gc-card">
           <h3>Punchlist and warranty support</h3>
           <p>
-            When projects need finish repairs, punchlist completion, or a trusted installer to take over midstream, Tillerstead steps in to stabilize the scope.
+            When projects need finish repairs, punchlist completion, or a trusted installer to take over midstream,
+            Tillerstead steps in to stabilize the scope.
           </p>
         </article>
       </div>
@@ -101,7 +121,8 @@ keywords:
       <div class="docs-card">
         <h2 id="docs-heading">Insurance &amp; documentation</h2>
         <p>
-          Tillerstead maintains general liability coverage and can provide site-specific certificates naming your company or client. W-9, references, and sample punch documentation are available alongside your estimate.
+          Tillerstead maintains general liability coverage and can provide site-specific certificates naming your company or client.
+          W-9, references, and sample punch documentation are available alongside your estimate.
         </p>
         <p>
           Need to coordinate with property managers or HOA boards? We provide background checks or access badges as required.
@@ -115,28 +136,48 @@ keywords:
 </main>
 
 <style>
+  /* GC page shell */
+  .page-gc body,
+  .gc {
+    background: var(--bg, #f9fafb);
+  }
+
+  .gc .section {
+    padding: 3.5rem 0;
+  }
+
+  /* Hero – match homepage vibe */
   .gc-hero {
     padding: 4rem 0 3rem;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75));
-    color: #f8fafc;
-    text-align: left;
+    background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.92));
+    color: #f9fafb;
+  }
+
+  .gc-hero-inner {
+    max-width: 48rem;
   }
 
   .gc-hero .eyebrow {
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-weight: 600;
-    color: rgba(226, 232, 240, 0.75);
+    font-size: 0.8rem;
+    color: rgba(226, 232, 240, 0.78);
   }
 
   .gc-hero h1 {
-    margin-top: 0.75rem;
-    max-width: 48rem;
+    margin: 0.85rem 0 0.75rem;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.15;
   }
 
   .gc-hero .lead {
-    max-width: 48rem;
-    margin-bottom: 1.5rem;
+    max-width: 44rem;
+    margin: 0 0 1.75rem;
+    color: #e5e7eb;
+    font-size: 1.02rem;
+    line-height: 1.6;
   }
 
   .gc-cta {
@@ -147,14 +188,48 @@ keywords:
   }
 
   .gc-note {
-    font-size: 0.95rem;
-    color: rgba(226, 232, 240, 0.85);
+    font-size: 0.92rem;
+    color: rgba(226, 232, 240, 0.9);
+    margin: 0;
   }
 
-  .section {
-    padding: 3.5rem 0;
+  /* KPI strip – echo homepage hero KPIs */
+  .gc-kpis {
+    list-style: none;
+    margin: 1.75rem 0 0;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.65);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
+  .gc-kpi {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e5e7eb;
+    max-width: 20rem;
+  }
+
+  .gc-kpi-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-weight: 700;
+    color: #facc15; /* bright label like homepage */
+  }
+
+  @media (min-width: 900px) {
+    .gc-kpis {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.25rem 2rem;
+    }
+  }
+
+  /* Cards & grids */
   .gc-grid {
     display: grid;
     gap: 1.5rem;
@@ -167,10 +242,10 @@ keywords:
   }
 
   .gc-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 0.9rem;
     border: 1px solid rgba(148, 163, 184, 0.4);
-    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.05);
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
     padding: 1.75rem;
   }
 
@@ -186,12 +261,14 @@ keywords:
     line-height: 1.7;
   }
 
+  /* Docs card */
   .docs-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 0.9rem;
     border: 1px solid rgba(148, 163, 184, 0.4);
     padding: 2rem;
     max-width: 50rem;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
   }
 
   .docs-card a {
@@ -201,5 +278,20 @@ keywords:
 
   .docs-card a:hover {
     text-decoration: underline;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 640px) {
+    .gc-hero {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .gc-hero-inner {
+      max-width: 100%;
+    }
+
+    .gc-hero .lead {
+      font-size: 0.98rem;
+    }
   }
 </style>
