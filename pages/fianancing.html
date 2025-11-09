@@ -1,14 +1,233 @@
 ---
 layout: default
-title: Financing
+title: Financing & Payment Options
 permalink: /financing/
+description: Flexible payment options for tile, bath, and remodel work in Atlantic County — including third-party financing through Acorn Finance.
+body_class: page-financing
+
+hero_eyebrow: Financing
+hero_title: Flexible ways to pay for tile & bath projects.
+hero_subtitle: >
+  Not every project fits into a single paycheck. Tillerstead can help you plan the work,
+  phase it smartly, and connect you with third-party financing options when it makes sense.
+hero_list:
+  - "Clear, written scopes so you know exactly what you’re financing"
+  - "Options to phase work or mix cash and financing"
+  - "Third-party financing available through Acorn Finance"
 ---
-<main class="container" style="padding-block:32px">
-  <h1>Flexible Financing</h1>
-  <p class="lead">We’re finalizing financing options with trusted partners. In the meantime, let’s price your project and match the best plan for you.</p>
-  <p class="btn-row">
-    <a class="btn btn-accent" href="/contact.html">Start Your Project</a>
-    <a class="btn" href="tel:+16096659350">Call (609) 665-9350</a>
-  </p>
-</main>
-</html>
+
+<style>
+  /* ============
+     Financing page
+     ============ */
+
+  .page-financing .financing-shell {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 900px) {
+    .page-financing .financing-shell {
+      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1.1fr);
+      align-items: flex-start;
+    }
+  }
+
+  .page-financing .financing-main h1 {
+    font-size: 1.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0 0 0.75rem;
+    color: var(--brand-ink, #111827);
+  }
+
+  .page-financing .financing-main .lead {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-financing .financing-main .microcopy {
+    font-size: 0.9rem;
+    color: rgba(15, 23, 42, 0.75);
+  }
+
+  .page-financing .financing-steps {
+    margin: 1.5rem 0 1.25rem;
+    padding-left: 1.15rem;
+  }
+
+  .page-financing .financing-steps li {
+    margin-bottom: 0.45rem;
+  }
+
+  .page-financing .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 0.75rem;
+  }
+
+  /* Acorn / side panel */
+
+  .page-financing .financing-side {
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 1.25rem 1.1rem 1.35rem;
+    background: radial-gradient(circle at top left,
+                rgba(15, 163, 177, 0.08),
+                #f9fafb);
+  }
+
+  .page-financing .financing-side h2 {
+    font-size: 1.05rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .page-financing .financing-side p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 0.6rem;
+  }
+
+  .page-financing .acorn-banners {
+    margin-top: 0.75rem;
+    display: grid;
+    gap: 0.5rem;
+    justify-items: center;
+  }
+
+  .page-financing .acorn-banner {
+    display: block;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(15, 23, 42, 0.3);
+    padding: 2px;
+    background: #ffffff;
+    max-width: 100%;
+  }
+
+  .page-financing .acorn-banner img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.7rem;
+  }
+
+  /* Show vertical banner on small screens, horizontal on larger */
+
+  .page-financing .acorn-banner--vertical {
+    display: block;
+  }
+
+  .page-financing .acorn-banner--horizontal {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .page-financing .acorn-banner--vertical {
+      display: none;
+    }
+    .page-financing .acorn-banner--horizontal {
+      display: block;
+    }
+  }
+
+  .page-financing .disclaimer {
+    font-size: 0.78rem;
+    color: rgba(15, 23, 42, 0.7);
+    margin-top: 0.5rem;
+  }
+</style>
+
+<section class="section financing">
+  <div class="financing-shell">
+
+    <div class="financing-main">
+      <h1>Flexible Financing for Tile &amp; Bath Work</h1>
+      <p class="lead">
+        Good prep, waterproofing, and layout are long-term decisions. If you’d rather not cut corners
+        to fit everything into one month’s budget, we can price the project clearly and connect you with
+        financing options that match the scope.
+      </p>
+      <p>
+        Tillerstead doesn’t mark up rates or play games with “teaser” pricing. The sequence is simple:
+        define the work, put it in writing, and then decide whether to pay in full, phase the project,
+        or use third-party financing.
+      </p>
+
+      <h2>How it works</h2>
+      <ol class="financing-steps">
+        <li><strong>Scope the project:</strong> We walk through your space, talk through goals, and map out phases if needed.</li>
+        <li><strong>Price it clearly:</strong> You get a written, line-item estimate — labor, materials, and any options.</li>
+        <li><strong>Choose payment approach:</strong> Pay in full, phase the work, or apply for financing through Acorn Finance.</li>
+      </ol>
+
+      <p class="microcopy">
+        Financing isn’t required for any project. It’s just another tool to keep the work done right,
+        instead of dialing back waterproofing, prep, or materials to fit a rushed budget.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-accent" href="{{ '/contact/' | relative_url }}">
+          Start your project
+        </a>
+        <a class="btn" href="tel:{{ site.company.phone_link | default: '+16096659350' }}">
+          Call {{ site.company.phone_display | default: '(609) 665-9350' }}
+        </a>
+      </div>
+    </div>
+
+    <aside class="financing-side" aria-label="Financing through Acorn Finance">
+      <h2>Check payment options online</h2>
+      <p>
+        For qualified customers, Tillerstead offers access to <strong>third-party financing</strong> through
+        <strong>Acorn Finance</strong>. You can see potential payment options online without impacting the way
+        we scope or install your project.
+      </p>
+      <p>
+        Use the secure link below to see offers from multiple lenders. Approval, terms, and conditions
+        are handled directly through Acorn Finance and its lending partners.
+      </p>
+
+      <div class="acorn-banners">
+        <!-- Vertical banner (mobile-first) -->
+        <a
+          class="acorn-banner acorn-banner--vertical"
+          href="https://www.acornfinance.com/pre-qualify/?d=BR6CC&utm_medium=web_pre_qual_banner"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://fs.acornfinance.com/banners/acorn-finance-banner-easy-payment-options-vertical-large.png"
+            alt="Acorn Finance – check payment options from multiple lenders"
+          >
+        </a>
+
+        <!-- Horizontal banner (shown on larger screens) -->
+        <a
+          class="acorn-banner acorn-banner--horizontal"
+          href="https://www.acornfinance.com/pre-qualify/?d=BR6CC&utm_medium=web_pre_qual_banner"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://fs.acornfinance.com/banners/acorn-finance-banner-easy-payment-options-horizontal-medium.png"
+            alt="Acorn Finance – check payment options from multiple lenders"
+          >
+        </a>
+      </div>
+
+      <p class="disclaimer">
+        Financing is provided by Acorn Finance and its lending partners, not by Tillerstead directly.
+        All loan terms, approvals, and disclosures are handled on Acorn Finance’s website.
+      </p>
+    </aside>
+
+  </div>
+</section>
