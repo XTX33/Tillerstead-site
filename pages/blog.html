@@ -21,7 +21,10 @@ body_class: page-blog
         and when to push pause until the plan is right.
       </p>
     </header>
-
+<p style="color:#fff;font-size:.8rem;">
+  Posts seen: {{ site.posts | size }}<br>
+  Titles: {{ site.posts | map: "title" | join: " · " }}
+</p>
     {% assign posts_sorted = site.posts | sort: "date" | reverse %}
 
     {% if posts_sorted.size == 0 %}
