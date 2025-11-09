@@ -171,4 +171,58 @@ hero_list:
       padding-top: 3rem;
     }
   }
+  /* =======================================
+   Section Headings on Light Backgrounds
+   (process, expect, experience, approach, standards)
+======================================= */
+
+#process-heading,
+#expect-heading,
+#experience-heading,
+#approach-heading,
+#standards-heading {
+  color: #0f172a; /* deep ink for white background */
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.01em;
+  text-align: left;
+  position: relative;
+}
+
+/* Gradient underline accent (emerald → brass) */
+#process-heading::after,
+#expect-heading::after,
+#experience-heading::after,
+#approach-heading::after,
+#standards-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.45rem;
+  height: 3px;
+  width: 70px;
+  background-image: linear-gradient(90deg, #22c55e, #facc15);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Center alignment for sections that use it */
+.section--process h2#process-heading,
+.section--expect h2#expect-heading,
+.section--experience h2#experience-heading,
+.section--approach h2#approach-heading,
+.section--standards h2#standards-heading {
+  text-align: center;
+}
+
+.section--process h2#process-heading::after,
+.section--expect h2#expect-heading::after,
+.section--experience h2#experience-heading::after,
+.section--approach h2#approach-heading::after,
+.section--standards h2#standards-heading::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
 </style>
