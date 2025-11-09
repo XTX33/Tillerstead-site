@@ -63,7 +63,7 @@ jobs:
             echo "Deleting branch: $branch"
             if git push origin --delete "$branch"; then
               echo "✓ Successfully deleted: $branch"
-              ((success_count++))
+              success_count=$((success_count + 1))
             else
               echo "✗ Failed to delete: $branch"
               ((fail_count++))
