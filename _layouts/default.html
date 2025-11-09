@@ -52,17 +52,19 @@
 
     {% include header.html %}
 
-    <main id="main" class="site-main" role="main" tabindex="-1">
-      {%- unless page.hide_hero or page.url == '/' -%}
-        {%- include page-hero.html -%}
-      {%- endunless -%}
+    <main id="main" class="site-main" role="main">
+  {%- unless page.hide_hero or page.url == '/' -%}
+    {%- include page-hero.html -%}
+  {%- endunless -%}
 
-      <section class="page-content section">
-        <div class="container">
-          {{ content }}
-        </div>
-      </section>
-    </main>
+  {%- include breadcrumbs.html -%}
+
+  <section class="page-content section">
+    <div class="container">
+      {{ content }}
+    </div>
+  </section>
+</main>
 
     {% include footer.html %}
 
