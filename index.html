@@ -187,59 +187,6 @@ schema:
   }
 
   /* ============================================
-     Credentials card typography
-     ============================================ */
-
-  .licensing-card {
-    border-radius: 0.75rem;
-    border: 1px solid rgba(184, 146, 47, 0.35);
-    background: radial-gradient(circle at top left,
-                rgba(15, 163, 177, 0.12),
-                rgba(15, 23, 42, 0.98));
-    padding: 1.75rem 1.5rem;
-    color: var(--brand-ink, #0f172a);
-  }
-
-  .licensing-card h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--brand-brass, #b8922f);
-  }
-
-  .credential-list {
-    margin: 0;
-    padding: 0;
-  }
-
-  .credential-list > div {
-    margin-bottom: 0.9rem;
-  }
-
-  .credential-list dt {
-    font-size: 0.8rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--brand-emerald, #0fa3b1);
-    margin-bottom: 0.1rem;
-  }
-
-  .credential-list dd {
-    margin: 0;
-    color: var(--brand-ink, #e5e7eb);
-  }
-
-  .credential-list a {
-    color: var(--brand-emerald, #0fa3b1);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.15em;
-  }
-
-  /* ============================================
      Section headings / microcopy polish
      ============================================ */
 
@@ -354,7 +301,7 @@ schema:
   <strong>clear expectations</strong> for timelines and inspections.
 </p>
     </div>
-<div class="card licensing-card" aria-labelledby="credential-heading">
+<div class="card licensing-card licensing-card--overlay" aria-labelledby="credential-heading">
   <h3 id="credential-heading">Credentials &amp; Assurances</h3>
   <dl class="credential-list">
     <div>
@@ -477,18 +424,12 @@ schema:
         <picture>
           <source
             srcset="
-              {{ '/assets/img/projects/shower-large-format.avif'  | relative_url }} 1x,
-              {{ '/assets/img/projects/shower-large-format@2x.avif' | relative_url }} 2x
-            "
-            type="image/avif">
-          <source
-            srcset="
-              {{ '/assets/img/projects/shower-large-format.webp'  | relative_url }} 1x,
-              {{ '/assets/img/projects/shower-large-format@2x.webp' | relative_url }} 2x
+              {{ '/assets/img/bathroom-remodel-final.webp'   | relative_url }} 1x,
+              {{ '/assets/img/bathroom-remodel-final-2.webp' | relative_url }} 2x
             "
             type="image/webp">
           <img
-            src="{{ '/assets/img/projects/shower-large-format.jpg' | relative_url }}"
+            src="{{ '/assets/img/shower-white.jpg' | relative_url }}"
             alt="Large-format tile shower with recessed niche installed in a South Jersey home"
             loading="lazy"
             decoding="async"
@@ -504,18 +445,12 @@ schema:
         <picture>
           <source
             srcset="
-              {{ '/assets/img/projects/bath-floor-herringbone.avif'  | relative_url }} 1x,
-              {{ '/assets/img/projects/bath-floor-herringbone@2x.avif' | relative_url }} 2x
-            "
-            type="image/avif">
-          <source
-            srcset="
-              {{ '/assets/img/projects/bath-floor-herringbone.webp'  | relative_url }} 1x,
-              {{ '/assets/img/projects/bath-floor-herringbone@2x.webp' | relative_url }} 2x
+              {{ '/assets/img/bathroom-remodel.webp'  | relative_url }} 1x,
+              {{ '/assets/img/bathroom-remodel-2.webp' | relative_url }} 2x
             "
             type="image/webp">
           <img
-            src="{{ '/assets/img/projects/bath-floor-herringbone.jpg' | relative_url }}"
+            src="{{ '/assets/img/tile-pattern-dark.jpg' | relative_url }}"
             alt="Bathroom floor with herringbone tile pattern installed by Tillerstead"
             loading="lazy"
             decoding="async"
@@ -529,20 +464,8 @@ schema:
 
       <figure class="proof-item">
         <picture>
-          <source
-            srcset="
-              {{ '/assets/img/projects/kitchen-backsplash-subway.avif'  | relative_url }} 1x,
-              {{ '/assets/img/projects/kitchen-backsplash-subway@2x.avif' | relative_url }} 2x
-            "
-            type="image/avif">
-          <source
-            srcset="
-              {{ '/assets/img/projects/kitchen-backsplash-subway.webp'  | relative_url }} 1x,
-              {{ '/assets/img/projects/kitchen-backsplash-subway@2x.webp' | relative_url }} 2x
-            "
-            type="image/webp">
           <img
-            src="{{ '/assets/img/projects/kitchen-backsplash-subway.jpg' | relative_url }}"
+            src="{{ '/assets/img/kitchen-hex.jpg' | relative_url }}"
             alt="Subway tile backsplash installed in a South Jersey kitchen remodel"
             loading="lazy"
             decoding="async"
