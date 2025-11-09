@@ -16,7 +16,26 @@ layout: default
           <p class="lead">{{ page.description }}</p>
         {% endif %}
       </header>
+<style> body.page-blog .prose {
+  color: #ffffff; /* clean white text */
+  line-height: 1.7;
+}
 
+body.page-blog .prose h1,
+body.page-blog .prose h2,
+body.page-blog .prose h3 {
+  color: #22c55e; /* emerald green — matches your logo */
+}
+
+body.page-blog .prose a {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+body.page-blog .prose a:hover {
+  color: #d4af37; /* brass hover accent */
+}
+</style>
       {{ content }}
     </article>
   </div>
