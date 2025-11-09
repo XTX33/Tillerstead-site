@@ -63,20 +63,38 @@ hero_list:
 </section>
 
 <style>
-  .page-about .page-content {
-    padding-top: 0;
+  /* Page shell */
+  body.page-about {
+    background: #020617; /* deep navy to match the rest of the site */
   }
 
+  .page-about .page-content {
+    padding-top: 0;
+    padding-bottom: 3rem;
+  }
+
+  /* About section layout */
   .about {
+    padding: 3.5rem 0 0;
     display: grid;
     gap: 2.5rem;
   }
 
+  .about-intro {
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
   .about .lead {
     max-width: 54rem;
+    color: #e5e7eb; /* readable on navy */
   }
 
   .about-grid {
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
     display: grid;
     gap: 1.75rem;
   }
@@ -87,16 +105,25 @@ hero_list:
     }
   }
 
+  /* Cards */
   .about-card {
-    background: #fff;
+    background: #f9fafb;
+    color: #0f172a; /* fix low-contrast grey text */
     border-radius: 0.9rem;
     border: 1px solid rgba(148, 163, 184, 0.35);
     padding: 1.75rem;
-    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
   }
 
   .about-card h2 {
     margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-card p {
+    margin: 0 0 0.9rem;
+    font-size: 0.96rem;
+    line-height: 1.6;
   }
 
   .about-card ul {
@@ -105,22 +132,43 @@ hero_list:
     line-height: 1.7;
   }
 
+  .about-card strong {
+    color: #020617;
+  }
+
+  .about-card:last-of-type p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* CTA block at bottom */
   .about-cta {
-    background: rgba(15, 23, 42, 0.05);
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem 0;
+    background: rgba(15, 23, 42, 1);
+    color: #e5e7eb;
     border-radius: 0.9rem;
-    padding: 1.75rem;
-    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
+    font-weight: 500;
   }
 
   .about-cta a {
-    color: var(--brand-brass, #b8922f);
+    color: rgba(212, 175, 55, 1); /* brass accent */
+    font-weight: 600;
   }
 
   .about-cta a:hover {
     text-decoration: underline;
   }
 
+  /* Smooth anchor offset for in-page links */
   #about-heading {
     scroll-margin-top: 6rem;
+  }
+
+  @media (max-width: 640px) {
+    .about {
+      padding-top: 3rem;
+    }
   }
 </style>
