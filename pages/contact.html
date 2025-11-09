@@ -1,41 +1,41 @@
 ---
 layout: default
-title: Contact
+title: Work With Tillerstead
 permalink: /contact/
-description: Tell me about your tile or bath project for a clear, itemized estimate with no surprises.
+description: Send plans, photos, or scope notes to Tillerstead LLC for schedule-reliable tile subcontracting across South Jersey.
 body_class: page-contact
 
 hero_eyebrow: Contact
-hero_title: Tell me about your project and timeline.
+hero_title: Send tile scopes, plans, and timelines.
 hero_subtitle: >
-  You’ll get a clear, itemized estimate — no pressure, no games. Just straight talk
-  about scope, budget, and what it takes to do it right in your home.
+  Get a clear, line-item estimate with schedule coordination, documentation, and
+  change-order tracking tailored for general contractors and property managers in South Jersey.
 hero_list:
-  - "Licensed New Jersey Home Improvement Contractor (HIC #{{ site.company.hic }})"
-  - "Showers, bathrooms, and large-format tile you can live with for decades"
-  - "Serving {{ site.company.service_area | default: 'Atlantic County and nearby shore towns' }}"
-  - "Respectful scheduling with text updates before each workday"
-hero_cta_primary_url: "tel:+16096659350"
-hero_cta_primary_label: "Call Now"
-hero_cta_secondary_url: "mailto:info@tillerstead.com"
-hero_cta_secondary_label: "Email"
+  - "Licensed New Jersey Home Improvement Contractor (HIC #{{ site.company.hic }}) with insurance & W-9 ready"
+  - "Waterproof showers, large-format tile, backsplashes, and punchlist rescue"
+  - "Serving Atlantic, Ocean, and Cape May counties with travel for multi-day scopes"
+  - "Daily communication, schedule updates, and clean turnover for your clients"
+hero_cta_primary_url: "mailto:info@tillerstead.com"
+hero_cta_primary_label: "Email Project Details"
+hero_cta_secondary_url: "tel:+16096659350"
+hero_cta_secondary_label: "Call (609) 665-9350"
 ---
 
 <section class="section section-form" aria-labelledby="contact-heading">
   <div class="container contact-shell">
     <header class="contact-header">
-      <h2 id="contact-heading">Request a callback or estimate</h2>
+      <h2 id="contact-heading">Request availability or submit a bid invite</h2>
 
       <p class="lead" id="form-intro">
-        Share a few details below. I’ll review your project, follow up with any key questions,
-        and then send a clear, line-item estimate with options where it makes sense.
+        Share scope notes, spec sheets, or schedules below. I’ll review what you send, follow up with any key questions,
+        then return a written estimate with documentation requirements and proposed dates.
       </p>
 
       <div class="contact-steps" aria-label="What happens after you send this form">
         <ol>
-          <li><strong>Review:</strong> I look over your project notes, photos, and location.</li>
-          <li><strong>Follow up:</strong> You get a call, text, or email to confirm scope and timing.</li>
-          <li><strong>Estimate:</strong> You receive a written, itemized estimate — no surprise add-ons.</li>
+          <li><strong>Review:</strong> Plans, photos, and specs are reviewed for waterproofing, layout, and staging requirements.</li>
+          <li><strong>Follow up:</strong> We confirm scope, schedule windows, and any site logistics with your superintendent or client.</li>
+          <li><strong>Estimate:</strong> Receive a line-item proposal with allowances, exclusions, and change-order process outlined.</li>
         </ol>
       </div>
     </header>
@@ -61,6 +61,19 @@ hero_cta_secondary_label: "Email"
             required
             autocomplete="name"
             placeholder="Your name"
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="company">
+            Company / organization
+          </label>
+          <input
+            id="company"
+            name="company"
+            type="text"
+            autocomplete="organization"
+            placeholder="GC, remodeling firm, or property team"
           >
         </div>
 
@@ -110,11 +123,13 @@ hero_cta_secondary_label: "Email"
           <label for="project-type">Project type</label>
           <select id="project-type" name="project_type">
             <option value="">Select an option</option>
-            <option>Full bathroom remodel</option>
-            <option>New custom shower</option>
-            <option>Floor tile only</option>
-            <option>Shower repair or rebuild</option>
-            <option>Kitchen backsplash</option>
+            <option>Multi-bath remodel or addition</option>
+            <option>Spec home or multifamily package</option>
+            <option>Commercial / tenant improvement</option>
+            <option>Waterproof shower rebuild</option>
+            <option>Floor tile scope</option>
+            <option>Backsplash / feature wall</option>
+            <option>Punchlist or warranty support</option>
             <option>Other / not sure yet</option>
           </select>
         </div>
@@ -123,10 +138,10 @@ hero_cta_secondary_label: "Email"
           <label for="timeline">Ideal timeline</label>
           <select id="timeline" name="timeline">
             <option value="">Select an option</option>
-            <option>As soon as possible</option>
-            <option>Within 1–3 months</option>
-            <option>3–6 months out</option>
-            <option>Just planning / budgeting</option>
+            <option>Current bid / ASAP mobilization</option>
+            <option>Within 30-60 days</option>
+            <option>60-120 days out</option>
+            <option>Budgeting future work</option>
           </select>
         </div>
       </div>
@@ -140,24 +155,24 @@ hero_cta_secondary_label: "Email"
           name="details"
           rows="6"
           required
-          placeholder="Tell me about the space, what’s there now, tile size or products you’re considering, and any must-haves or concerns (leaks, soft spots, renters, timelines, etc.)."
+          placeholder="Share project scope, tile selections, waterproofing expectations, site conditions, and any scheduling constraints or documentation needs."
         ></textarea>
       </div>
 
       <div class="form-field">
-        <label for="photos">Link to photos or plans (optional)</label>
+        <label for="photos">Link to plans, photos, or bid package (optional)</label>
         <input
           id="photos"
           name="photos"
           type="url"
           inputmode="url"
-          placeholder="Link to Google Drive, iCloud, or photo album"
+          placeholder="Link to Google Drive, PlanGrid, Dropbox, etc."
         >
       </div>
 
       <p class="form-note">
-        Your information stays with Tillerstead. It’s used only to follow up about your project
-        and prepare an accurate estimate — never sold or shared.
+        Your information stays with Tillerstead. It’s used only to coordinate your tile scope,
+        prepare documentation, and keep you updated — never sold or shared.
       </p>
 
       <button type="submit" class="btn btn-primary">

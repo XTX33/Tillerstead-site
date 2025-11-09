@@ -50,6 +50,12 @@
         </a>
       </li>
       <li>
+        <a href="{{ '/for-general-contractors/' | relative_url }}"
+           {% if page.url contains '/for-general-contractors/' %}aria-current="page"{% endif %}>
+          For General Contractors
+        </a>
+      </li>
+      <li>
         <a href="{{ '/about/' | relative_url }}"
            {% if page.url contains '/about/' %}aria-current="page"{% endif %}>
           About
@@ -58,7 +64,7 @@
       <li>
         <a href="{{ '/services/' | relative_url }}"
            {% if page.url contains '/services/' %}aria-current="page"{% endif %}>
-          Services
+          Tile Services
         </a>
       </li>
       <li>
