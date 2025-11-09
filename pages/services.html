@@ -1,380 +1,184 @@
 ---
 layout: default
-title: Services
+title: Tile Services for New Jersey Builders and Remodelers
 permalink: /services/
-description: Tile, shower systems, bath remodels, backsplashes, repairs, and drywall prep for homeowners across Atlantic County and nearby shore towns.
 body_class: page-services
+description: Tile subcontractor services for South Jersey general contractors including waterproof showers, large-format floors, kitchens, and punchlist rescue work.
+hero_eyebrow: Tile Services
+hero_title: Tile installation for builders and remodelers in South Jersey
+hero_subtitle: Waterproof showers, large-format floors, and finish tile scopes delivered for general contractors, remodelers, and property managers who need a reliable tile partner.
+hero_list:
+  - ANSI A118.10 waterproofing, flood testing, and detailed layout notes on every shower
+  - Floors, backsplashes, and feature walls coordinated with your construction schedule
+  - Owner-operated oversight with documented change orders and clean punchlists
 ---
 
+<section class="services" aria-labelledby="services-overview">
+  <div class="intro">
+    <p id="services-overview" class="lead">
+      Tillerstead LLC brings an owner-operated tile crew to your project, aligning scope, schedule, and documentation so tile work finishes on time and ready for client walkthroughs.
+    </p>
+  </div>
+
+  <div class="service-grid">
+    <article class="service-card" id="showers" aria-labelledby="showers-heading">
+      <figure>
+        <img src="/assets/img/shower-white.jpg" alt="Waterproof tile shower with bench, niche, and large-format walls in New Jersey" loading="lazy" decoding="async" width="1024" height="768">
+      </figure>
+      <div class="body">
+        <h2 id="showers-heading">Showers &amp; wet areas for general contractors</h2>
+        <p>
+          New builds and gut remodels receive bonded waterproofing, flood tests when requested, and layout coordination with your plumber and glass installer. Linear drains, curbless transitions, steam prep, and accessory installs are handled with written scope confirmation.
+        </p>
+        <ul>
+          <li>Shower pans, foam trays, and custom mud beds</li>
+          <li>Bench, niche, and trim details called out on drawings</li>
+          <li>Documentation package for inspections and homeowner manuals</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-card" id="floors" aria-labelledby="floors-heading">
+      <figure>
+        <img src="/assets/img/marble-bath.jpg" alt="Large-format floor tile installation for a South Jersey remodeler" loading="lazy" decoding="async" width="1024" height="768">
+      </figure>
+      <div class="body">
+        <h2 id="floors-heading">Floors &amp; large-format tile</h2>
+        <p>
+          Subfloor inspection, prep, and crack isolation keep large-format tile flat and within tolerance. Heated floors, sound membranes, and expansion detailing are coordinated with your mechanical trades for condos, rentals, and light commercial tenant improvements.
+        </p>
+        <ul>
+          <li>Self-leveling underlayments and uncoupling membranes</li>
+          <li>Plank, 24x48, and oversized tile layout with movement joints</li>
+          <li>Night or off-hour work available for occupied units</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-card" id="kitchens" aria-labelledby="kitchens-heading">
+      <figure>
+        <img src="/assets/img/kitchen-green.jpg" alt="Tile subcontractor installing backsplash tile for a New Jersey kitchen remodel" loading="lazy" decoding="async" width="1024" height="768">
+      </figure>
+      <div class="body">
+        <h2 id="kitchens-heading">Kitchens, backsplashes &amp; feature walls</h2>
+        <p>
+          Backsplashes, bar walls, fireplaces, and accent details finished with sharp cuts, clean outlets, and matched accessories. We coordinate with cabinet, electrical, and countertop teams to limit downtime for your clients.
+        </p>
+        <ul>
+          <li>Layout mockups and approval photos before setting</li>
+          <li>Custom schluter, metal, or wood trim transitions</li>
+          <li>Dust control and protection for occupied homes</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-card" id="repairs" aria-labelledby="repairs-heading">
+      <figure>
+        <img src="/assets/img/kitchen-hex.jpg" alt="Tile subcontractor correcting backsplash punchlist items for a builder" loading="lazy" decoding="async" width="1024" height="768">
+      </figure>
+      <div class="body">
+        <h2 id="repairs-heading">Repairs &amp; punchlist rescue</h2>
+        <p>
+          When tile scopes stall or warranty issues surface, Tillerstead steps in to stabilize the project. We document issues, offer corrective options, and finish the work so you can hand over the job with confidence.
+        </p>
+        <ul>
+          <li>Leak investigations, re-grouts, and selective tear-outs</li>
+          <li>Takeover of partially complete tile installs</li>
+          <li>Detailed punch reports with before-and-after photos</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <aside class="services-cta" aria-label="Next steps for general contractors">
+    <p>
+      Ready to plug Tillerstead into your next schedule? <a href="{{ '/for-general-contractors/' | relative_url }}">See our GC process</a>
+      or <a href="{{ '/contact/' | relative_url }}">send plans for estimating</a>.
+    </p>
+  </aside>
+</section>
+
 <style>
-  /* ==========================
-     Tillerstead – Services Page
-     ========================== */
-
-  .page-services #main {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 3rem;
+  .page-services .page-content {
+    padding-top: 0;
   }
 
-  .page-services .section {
-    margin-bottom: 2.5rem;
-  }
-
-  .page-services .section > h2 {
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    color: var(--brand-ink, #111827);
-  }
-
-  .page-services .section > p.lead {
-    font-size: 0.98rem;
-    line-height: 1.7;
-    color: rgba(15, 23, 42, 0.8);
-    margin-bottom: 1.25rem;
-    max-width: 40rem;
-  }
-
-  /* --- Service grid --- */
-
-  .page-services .service-grid {
+  .services {
     display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  @media (min-width: 768px) {
-    .page-services .service-grid {
+  .services .lead {
+    max-width: 52rem;
+  }
+
+  .service-grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 960px) {
+    .service-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  .page-services .service-card {
-    background: #ffffff;
-    border-radius: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.45);
-    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+  .service-card {
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 1rem;
     overflow: hidden;
+    background: #fff;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
   }
 
-  .page-services .service-card:hover {
-    border-color: var(--brand-brass, #b8922f);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
-  }
-
-  .page-services .service-card figure {
+  .service-card figure {
     margin: 0;
-    overflow: hidden;
-    background: #020617;
     aspect-ratio: 4 / 3;
+    background: #0f172a;
   }
 
-  .page-services .service-card img {
+  .service-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
   }
 
-  .page-services .service-card .body {
-    padding: 1.05rem 1.1rem 1.1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  .service-card .body {
+    padding: 1.75rem;
+    display: grid;
+    gap: 1rem;
   }
 
-  .page-services .service-card h3 {
+  .service-card h2 {
     margin: 0;
-    font-size: 1.05rem;
-    color: var(--brand-ink, #111827);
+    font-size: 1.35rem;
   }
 
-  .page-services .service-card p {
+  .service-card p {
     margin: 0;
-    font-size: 0.93rem;
     line-height: 1.7;
-    color: rgba(15, 23, 42, 0.9);
   }
 
-  .page-services .service-card .thumbs {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  .service-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    line-height: 1.6;
   }
 
-  .page-services .service-card .thumbs img {
-    border-radius: 0.6rem;
-    width: 100%;
-    max-width: 160px;
-    height: auto;
-  }
-
-  /* --- Final CTA --- */
-
-  .page-services .services-cta {
-    margin-top: 1.75rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: center;
-  }
-
-  .page-services .services-cta span {
-    font-size: 0.95rem;
-  }
-
-  .page-services .services-cta .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(148, 163, 184, 0.6);
-    text-decoration: none;
+  .services-cta {
+    background: rgba(15, 23, 42, 0.05);
+    border-radius: 0.9rem;
+    padding: 1.75rem;
     font-weight: 600;
-    font-size: 0.9rem;
   }
 
-  .page-services .services-cta .btn-accent {
-    background: var(--brand-brass, #b8922f);
-    color: #fff;
-    border-color: transparent;
+  .services-cta a {
+    color: var(--brand-brass, #b8922f);
   }
 
-  .page-services .services-cta .btn:hover {
-    filter: brightness(0.97);
-  }
-  .page-services .services-cta .btn-accent:hover {
-    filter: brightness(0.93);
+  .services-cta a:hover {
+    text-decoration: underline;
   }
 </style>
-
-<main id="main">
-  <!-- Shower Systems -->
-  <section id="showers" class="section" aria-labelledby="showers-heading">
-    <h2 id="showers-heading">Shower Systems</h2>
-    <p class="lead">
-      From full tear-outs to new custom builds, showers are rebuilt from framing out — with bonded waterproofing,
-      proper slope, and finishes that actually belong in a wet area.
-    </p>
-
-    <div class="service-grid">
-      <article class="service-card">
-        <figure>
-          <img
-            src="/assets/img/shower-white.jpg"
-            alt="White subway-tile shower with bench, niche, and hex floor"
-            loading="lazy"
-            decoding="async"
-            width="1024"
-            height="768"
-          >
-        </figure>
-        <div class="body">
-          <h3>Bonded Waterproofing &amp; Pans</h3>
-          <p>
-            Traditional or foam pans with <strong>ANSI A118.10</strong> bonded membranes, proper pre-slope,
-            curbs, and niches. Flood testing available so you know the system holds before tile goes in.
-          </p>
-          <div class="thumbs">
-            <img
-              loading="lazy"
-              src="/assets/img/shower-blue.jpg"
-              alt="Blue patterned shower feature wall with balanced layout"
-              width="640"
-              height="480"
-            >
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <figure>
-          <img
-            src="/assets/img/bathroom-gray.jpg"
-            alt="Modern bathroom with glass shower, gray vanity, and wood-look tile floor"
-            loading="lazy"
-            decoding="async"
-            width="1024"
-            height="768"
-          >
-        </figure>
-        <div class="body">
-          <h3>Large-Format Shower &amp; Bath Layouts</h3>
-          <p>
-            Flat substrates, correct mortar and trowel technique, and movement joints where they belong.
-            Clean transitions at glass, fixtures, and floors for showers and baths that look built-in, not patched.
-          </p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Floors & Walls -->
-  <section id="floors-walls" class="section" aria-labelledby="floors-walls-heading">
-    <h2 id="floors-walls-heading">Floors &amp; Walls</h2>
-    <p class="lead">
-      Tile that stays quiet underfoot and true on the wall — built on solid prep, not just “good enough”
-      thinset over whatever is there.
-    </p>
-
-    <div class="service-grid">
-      <article class="service-card">
-        <figure>
-          <img
-            src="/assets/img/bathroom-remodel.webp"
-            alt="Tiled bath with clean transitions and fresh trim"
-            loading="lazy"
-            width="1024"
-            height="768"
-          >
-        </figure>
-        <div class="body">
-          <h3>Floor Prep, Substrates &amp; Tile</h3>
-          <p>
-            Self-leveling, crack isolation, and underlayments set the base for porcelain, ceramic, mosaic,
-            and stone. Layouts are aligned, cuts are clean, and grout lines stay straight across rooms.
-          </p>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <figure>
-          <img
-            src="/assets/img/marble-bath.jpg"
-            alt="Polished marble-look bath with full-height wall tile and vanity top"
-            loading="lazy"
-            width="1024"
-            height="768"
-          >
-        </figure>
-        <div class="body">
-          <h3>Premium Stone &amp; Large-Format Porcelain</h3>
-          <p>
-            Natural stone and large-format porcelain installed to manufacturer specs — with matched setting
-            and grout systems — for baths and living areas that need both durability and a finished look.
-          </p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Backsplashes -->
-  <section id="backsplashes" class="section" aria-labelledby="backsplashes-heading">
-    <h2 id="backsplashes-heading">Backsplashes</h2>
-    <p class="lead">
-      Kitchens and wet walls that look intentional: clean outlets, level lines, and edges finished so
-      the tile belongs to the room, not just the wall behind it.
-    </p>
-
-    <div class="service-grid">
-      <article class="service-card">
-        <figure>
-          <img
-            src="/assets/img/kitchen-green.jpg"
-            alt="Kitchen with green cabinets and clean white subway backsplash"
-            loading="lazy"
-            width="1024"
-            height="768"
-          >
-        </figure>
-        <div class="body">
-          <h3>Kitchen Backsplashes &amp; Features</h3>
-          <p>
-            Outlets cut tight, edges sealed, and patterns aligned — stacked, staggered, herringbone, or hex.
-            Great for light refreshes or as part of a larger kitchen update.
-          </p>
-          <div class="thumbs">
-            <img
-              loading="lazy"
-              src="/assets/img/kitchen-hex.jpg"
-              alt="Hex tile backsplash detail near range hood"
-              width="480"
-              height="360"
-            >
-            <img
-              loading="lazy"
-              src="/assets/img/backsplash-white.jpg"
-              alt="White subway backsplash close-up showing clean grout joints"
-              width="480"
-              height="360"
-            >
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Repairs -->
-  <section id="repairs" class="section" aria-labelledby="repairs-heading">
-    <h2 id="repairs-heading">Repairs &amp; Problem Solving</h2>
-    <p class="lead">
-      Not every project needs a full gut. Some just need honest diagnostics and targeted work so you know
-      whether to repair, rebuild, or plan for a later remodel.
-    </p>
-
-    <div class="service-grid">
-      <article class="service-card">
-        <figure>
-          <img
-            src="/assets/img/tile-pattern-dark.jpg"
-            alt="Dark modular tile pattern used for patch matching"
-            loading="lazy"
-            width="1024"
-            height="768"
-          >
-        </figure>
-        <div class="body">
-          <h3>Leak &amp; Grout Remediation</h3>
-          <p>
-            Targeted fixes — regrout, recaulk, color-seal, and new movement joints — to extend service
-            life where the structure is still sound. When a repair won’t hold, you’ll hear that too.
-          </p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Drywall -->
-  <section id="drywall" class="section" aria-labelledby="drywall-heading">
-    <h2 id="drywall-heading">Drywall &amp; Wall Prep</h2>
-    <p class="lead">
-      Tile and trim only look as good as the walls behind them. Basic repairs and greenboard work keep
-      surfaces ready for the finish you’re paying for.
-    </p>
-
-    <div class="service-grid">
-      <article class="service-card">
-        <figure>
-          <img
-            src="/assets/img/drywall-greenboard.jpg"
-            alt="Moisture-resistant greenboard with fastener patching"
-            loading="lazy"
-            width="1024"
-            height="768"
-          >
-        </figure>
-        <div class="body">
-          <h3>Prep for a Clean Finish</h3>
-          <p>
-            Repairs, seam taping, finishing, texture matching, and paint-ready surfaces for tile, trim,
-            or cabinet work — especially in baths, kitchens, and utility spaces.
-          </p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <div class="services-cta">
-    <span>Ready to plan your project?</span>
-    <a class="btn btn-accent" href="{{ '/contact/' | relative_url }}">Start your project</a>
-    <a class="btn" href="tel:+16096659350" aria-label="Call Tillerstead now">Call (609) 665-9350</a>
-  </div>
-</main>

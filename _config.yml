@@ -4,18 +4,18 @@
 
 # Site identity
 title: Tillerstead LLC
-tagline: Tile • Bath • Remodel
-description: Tile, bath, and remodel craftsmanship across South Jersey. Licensed & insured. NJ HIC #13VH10808800.
+tagline: Tile Subcontractor for New Jersey General Contractors
+description: Tillerstead LLC is a New Jersey-licensed tile subcontractor delivering waterproof showers, large-format tile, and clean punchlists for general contractors across Atlantic County and the South Jersey shore.
 url: https://tillerstead.com
 baseurl: ""                 # keep empty for apex/root
 timezone: America/New_York
 
 # Global keyword focus for SEO
 keywords:
-  - South Jersey tile contractor
-  - New Jersey home improvement contractor
-  - NJ HIC 13VH10808800
-  - Atlantic County bathroom remodeling
+  - Tile subcontractor for New Jersey general contractors
+  - South Jersey tile installer for builders
+  - Atlantic County NJ commercial tile contractor
+  - Waterproof shower systems NJ HIC 13VH10808800
 
 # Use your own layouts/includes (no injected theme)
 theme: null

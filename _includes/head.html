@@ -3,14 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>
-  {% if page.title %}
-    {{ page.title }} | Tillerstead LLC
+  {% if page.seo_title %}
+    {{ page.seo_title }}
+  {% elsif page.title %}
+    {{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}
   {% else %}
-    Tillerstead LLC
+    {{ site.title }} | {{ site.tagline | default: 'Tile Subcontractor in New Jersey' }}
   {% endif %}
 </title>
 
-{% assign meta_description = page.description | default: site.description | default: 'Tile, bath, and remodel work in Atlantic County, NJ — clean, code-compliant, and built to last.' %}
+{% assign meta_description = page.description | default: site.description | default: 'Tile subcontractor for New Jersey general contractors providing waterproof showers, large-format tile, and reliable schedules.' %}
 <meta name="description" content="{{ meta_description | escape }}">
 
 {% assign meta_keywords = page.keywords | default: site.keywords %}
