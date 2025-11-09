@@ -17,7 +17,7 @@ The **TCNA Handbook (Method TR115 & TR117)** requires substrates for large-forma
 
 - **1/8″ variation in 10 ft** (no more than 1/16″ in 24″) for tiles **<15″**,  
 - **1/8″ in 10 ft or better** for tiles **≥15″**,  
-- Checked with a 10-ft straightedge before setting.
+- Verified substrate flatness per TCNA tolerance (within 1/8″ in 10 ft, checked with a long straightedge level).
 
 We **grind or float high/low areas** before setting tile, using self-leveling underlayments or patch compounds as needed. That prep work prevents **lippage** and the hollow sound that means incomplete support.
 
