@@ -150,7 +150,7 @@ h3 {
 
 p {
   margin: 0 0 0.75rem;
-  color: var(--ts-muted-ink);
+  color: #cbd5e1; /* Improved contrast from rgba(148, 163, 184) */
 }
 
 /* Links */
@@ -201,7 +201,7 @@ ol {
   text-transform: uppercase;
   font-size: var(--ts-text-xs);
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.85);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.85) */
 }
 
 /* Stacks */
@@ -293,7 +293,7 @@ ol {
   letter-spacing: 0.16em;
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.28);
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
 }
 
 .badge--accent {
@@ -440,7 +440,7 @@ button.btn {
   text-transform: uppercase;
   font-size: var(--ts-text-xs);
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.9) */
 }
 
 .hero-heading {
@@ -477,7 +477,7 @@ button.btn {
   font-size: var(--ts-text-xs);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.9) */
 }
 
 .hero-kpi-value {
@@ -506,7 +506,7 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(148, 163, 184, 0.75);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.75) */
 }
 
 /* 9) Footer
@@ -543,7 +543,7 @@ textarea::placeholder {
 
 .footer-meta {
   font-size: var(--ts-text-xs);
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.9) */
   margin: 0.1rem 0;
 }
 
@@ -557,7 +557,7 @@ textarea::placeholder {
 }
 
 .footer-links a {
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
 }
 
 .footer-links a:hover {
@@ -874,7 +874,7 @@ textarea::placeholder {
 .gitem.portfolio-item figcaption {
   padding: 0.6rem 0.75rem 0.75rem;
   font-size: 0.85rem;
-  color: rgba(226, 232, 240, 0.95);
+  color: #f1f5f9; /* Improved contrast - was rgba(226, 232, 240, 0.95) */
   line-height: 1.4;
 }
 /* ============================================
@@ -886,7 +886,7 @@ textarea::placeholder {
   background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 100%);
   padding: 2.5rem 1.5rem 2rem;
   font-size: 0.9rem;
-  color: rgba(226, 232, 240, 0.92);
+  color: #e5e7eb; /* Improved contrast - was rgba(226, 232, 240, 0.92) */
 }
 
 .footer-inner {
@@ -951,13 +951,13 @@ textarea::placeholder {
 
 .footer-tagline {
   font-size: 0.86rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
 }
 
 .footer-area {
   margin-top: 0.4rem;
   font-size: 0.85rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
 }
 
 /* Nav */
@@ -972,7 +972,7 @@ textarea::placeholder {
 .footer-nav a {
   text-decoration: none;
   font-size: 0.88rem;
-  color: rgba(203, 213, 225, 0.96);
+  color: #e2e8f0; /* Improved contrast - was rgba(203, 213, 225, 0.96) */
 }
 
 .footer-nav a:hover,
@@ -990,7 +990,7 @@ textarea::placeholder {
 .footer-address {
   font-style: normal;
   font-size: 0.84rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
 }
 
 .footer-contact {
@@ -1003,7 +1003,7 @@ textarea::placeholder {
 .footer-contact a {
   text-decoration: none;
   font-size: 0.88rem;
-  color: rgba(226, 232, 240, 0.95);
+  color: #f1f5f9; /* Improved contrast - was rgba(226, 232, 240, 0.95) */
 }
 
 .footer-contact a:hover,
@@ -1025,7 +1025,7 @@ textarea::placeholder {
 
 .footer-credit {
   font-size: 0.82rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
   line-height: 1.5;
 }
 
@@ -1043,7 +1043,7 @@ textarea::placeholder {
 
 .footer-legal {
   font-size: 0.78rem;
-  color: rgba(100, 116, 139, 0.95);
+  color: #94a3b8; /* Improved contrast - was rgba(100, 116, 139, 0.95) */
 }
 /* ============================================
    Header & Navigation
@@ -1088,7 +1088,7 @@ textarea::placeholder {
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 500;
-  color: rgba(209, 213, 219, 0.95);
+  color: #e5e7eb; /* Improved contrast - was rgba(209, 213, 219, 0.95) */
 }
 
 .site-menu a[aria-current="page"] {
@@ -1248,7 +1248,7 @@ textarea::placeholder {
   margin: 0.75rem auto 0.25rem;
   padding: 0 1.5rem;
   font-size: 0.8rem;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.9) */
 }
 
 .breadcrumbs-list {
@@ -1274,7 +1274,7 @@ textarea::placeholder {
 
 .breadcrumbs a {
   text-decoration: none;
-  color: rgba(203, 213, 225, 0.95);
+  color: #e2e8f0; /* Improved contrast - was rgba(203, 213, 225, 0.95) */
 }
 
 .breadcrumbs a:hover,
@@ -1283,6 +1283,6 @@ textarea::placeholder {
 }
 
 .breadcrumbs [aria-current="page"] {
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
   font-weight: 500;
 }

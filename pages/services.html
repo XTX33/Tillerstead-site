@@ -131,6 +131,7 @@ hero_list:
     display: flex;
     flex-direction: column;
     box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
+    color: #1e293b; /* Dark text for white background */
   }
 
   .service-card figure {
@@ -154,11 +155,13 @@ hero_list:
   .service-card h2 {
     margin: 0;
     font-size: 1.35rem;
+    color: #0f172a; /* Very dark for headings on white */
   }
 
   .service-card p {
     margin: 0;
     line-height: 1.7;
+    color: #334155; /* Dark gray for body text on white */
   }
 
   .service-card ul {
@@ -167,15 +170,21 @@ hero_list:
     line-height: 1.6;
   }
 
+  .service-card li {
+    color: #334155; /* Dark gray for list items on white */
+  }
+
   .services-cta {
     background: rgba(15, 23, 42, 0.05);
     border-radius: 0.9rem;
     padding: 1.75rem;
     font-weight: 600;
+    color: #1e293b; /* Dark text for light background */
   }
 
   .services-cta a {
-    color: var(--brand-brass, #b8922f);
+    color: #92400e; /* Darker brass for better contrast */
+    font-weight: 600;
   }
 
   .services-cta a:hover {
