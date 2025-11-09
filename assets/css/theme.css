@@ -826,3 +826,66 @@ textarea::placeholder {
   background: rgba(15, 23, 42, 0.85);
   color: #f9fafb;
 }
+/* Footer logo & branding
+   ------------------------------------------- */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--brand-light, #f9fafb);
+  gap: 0.25rem;
+}
+
+.footer-logo img {
+  width: 96px; /* default desktop size */
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 0.25rem auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+@media (min-width: 768px) {
+  .footer-logo img {
+    width: 112px;
+  }
+}
+
+.footer-name {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(226, 232, 240, 0.9);
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+
+/* Footer layout polish */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 900px) {
+  .footer-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    text-align: left;
+  }
+
+  .footer-brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
