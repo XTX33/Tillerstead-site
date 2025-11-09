@@ -20,47 +20,41 @@ description: Recent tile subcontractor work by Tillerstead LLC for New Jersey ge
 
   <section class="section" style="border:0;padding-top:18px">
     <div class="btn-row" style="display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn primary" href="{{ '/for-general-contractors/' | relative_url }}">See GC Process</a>
-      <a class="btn ghost" href="{{ '/contact/' | relative_url }}">Send Plans &amp; Timeline</a>
+      <a class="btn btn-primary" href="{{ '/for-general-contractors/' | relative_url }}">See GC Process</a>
+      <a class="btn btn-ghost" href="{{ '/contact/' | relative_url }}">Send Plans &amp; Timeline</a>
     </div>
   </section>
 </section>
 
 <script>
+/* Image data – only filenames you actually have under /assets/img/ */
 const PROJECTS = [
   /* --- Showers --- */
   {
     id: "shower-white",
     tags: ["showers"],
-    thumb: "{{ '/assets/img/shower-white.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/shower-white.jpg' | relative_url }}",
-    alt: "Tile subcontractor-built waterproof shower with bench and niche in Atlantic County, New Jersey",
+    file: "shower-white.jpg",
+    alt: "Waterproof shower with white tile, bench, and niche in Atlantic County, New Jersey",
     caption: "Waterproof shower with bench and hex floor — movement joints and sealed edges."
   },
-
   {
     id: "shower-blue",
     tags: ["showers"],
-    thumb: "{{ '/assets/img/shower-blue.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/shower-blue.jpg' | relative_url }}",
-    alt: "Feature wall tile installation with patterned blue tile for a South Jersey remodeler",
+    file: "shower-blue.jpg",
+    alt: "Feature wall with patterned blue tile for a South Jersey remodeler",
     caption: "Patterned feature wall — aligned layout around fixtures and niche."
   },
-
   {
     id: "bathroom-gray",
     tags: ["showers","floors"],
-    thumb: "{{ '/assets/img/bathroom-gray.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/bathroom-gray.jpg' | relative_url }}",
-    alt: "Large-format tile floor and shower installation for New Jersey general contractor",
+    file: "bathroom-gray.jpg",
+    alt: "Large-format tile floor and shower installation for a New Jersey general contractor",
     caption: "Large-format layout — flat substrate and clean transitions."
   },
-
   {
     id: "marble-bath",
     tags: ["showers"],
-    thumb: "{{ '/assets/img/marble-bath.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/marble-bath.jpg' | relative_url }}",
+    file: "marble-bath.jpg",
     alt: "Marble-look bathroom tile installation completed for a South Jersey builder",
     caption: "Stone installation — matched setting materials and sealed stone."
   },
@@ -69,26 +63,21 @@ const PROJECTS = [
   {
     id: "kitchen-green",
     tags: ["backsplashes"],
-    thumb: "{{ '/assets/img/kitchen-green.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/kitchen-green.jpg' | relative_url }}",
+    file: "kitchen-green.jpg",
     alt: "Kitchen backsplash tile installation for a New Jersey remodeling contractor",
     caption: "Subway backsplash — tight outlet cuts and caulked edges."
   },
-
   {
     id: "kitchen-hex",
     tags: ["backsplashes"],
-    thumb: "{{ '/assets/img/kitchen-hex.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/kitchen-hex.jpg' | relative_url }}",
-    alt: "Hex backsplash tile detail completed during a South Jersey renovation",
+    file: "kitchen-hex.jpg",
+    alt: "Hex backsplash tile detail during a South Jersey renovation",
     caption: "Hex feature — balanced cuts and clean terminations."
   },
-
   {
     id: "backsplash-white",
     tags: ["backsplashes"],
-    thumb: "{{ '/assets/img/backsplash-white.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/backsplash-white.jpg' | relative_url }}",
+    file: "backsplash-white.jpg",
     alt: "Classic subway backsplash installed by tile subcontractor for local remodeler",
     caption: "Classic subway — lippage control and even joints."
   },
@@ -97,17 +86,14 @@ const PROJECTS = [
   {
     id: "hardwood-room",
     tags: ["floors"],
-    thumb: "{{ '/assets/img/hardwood-room.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/hardwood-room.jpg' | relative_url }}",
+    file: "hardwood-room.jpg",
     alt: "Tile-ready substrate and flooring prep for New Jersey builder",
     caption: "Flooring & trim — straight lines and clean scribe work."
   },
-
   {
     id: "tile-pattern-dark",
     tags: ["floors"],
-    thumb: "{{ '/assets/img/tile-pattern-dark.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/tile-pattern-dark.jpg' | relative_url }}",
+    file: "tile-pattern-dark.jpg",
     alt: "Modular tile pattern layout executed for a South Jersey commercial fit-out",
     caption: "Pattern layout — modular grid with consistent reveals."
   },
@@ -116,79 +102,68 @@ const PROJECTS = [
   {
     id: "drywall-greenboard",
     tags: ["repairs"],
-    thumb: "{{ '/assets/img/drywall-greenboard.jpg' | relative_url }}",
-    full:  "{{ '/assets/img/drywall-greenboard.jpg' | relative_url }}",
+    file: "drywall-greenboard.jpg",
     alt: "Tile substrate preparation with moisture-resistant board for GC project",
     caption: "Drywall repairs — blocking, fasteners, and seam treatment for tile-ready walls."
   },
-
   {
     id: "ceiling-repair",
     tags: ["repairs"],
-    thumb: "{{ '/assets/img/Ceiling-repair.webp' | relative_url }}",
-    full:  "{{ '/assets/img/Ceiling-repair.webp' | relative_url }}",
-    alt: "Ceiling repair patch completed for property management client",
-    caption: "Ceiling repair — patched, skimmed and finished for paint."
+    file: "Ceiling-repair.webp",
+    alt: "Ceiling repair patch completed for a property management client",
+    caption: "Ceiling repair — patched, skimmed, and finished for paint."
   },
 
-  /* --- Earlier bathroom set (webp) --- */
+  /* --- Bathroom set (webp) --- */
   {
     id: "bathroom-final",
     tags: ["showers"],
-    thumb: "{{ '/assets/img/bathroom-remodel-final.webp' | relative_url }}",
-    full:  "{{ '/assets/img/bathroom-remodel-final-2.webp' | relative_url }}",
+    file: "bathroom-remodel-final.webp",
     alt: "Finished bathroom remodel tile scope completed for New Jersey GC",
     caption: "Bathroom remodel (final) — code-compliant wet area."
   },
-
+  {
+    id: "bathroom-final-2",
+    tags: ["showers"],
+    file: "bathroom-remodel-final-2.webp",
+    alt: "Alternate angle of finished bathroom remodel tile scope",
+    caption: "Bathroom remodel (final, angle 2) — clean lines and sealed transitions."
+  },
   {
     id: "bathroom-detail",
     tags: ["showers"],
-    thumb: "{{ '/assets/img/bathroom-remodel-2.webp' | relative_url }}",
-    full:  "{{ '/assets/img/bathroom-remodel-2.webp' | relative_url }}",
+    file: "bathroom-remodel-2.webp",
     alt: "Shower detail showcasing tile layout and niche for South Jersey remodel",
     caption: "Shower detail — even joints and proper cuts."
   },
-
   {
     id: "bathroom-progress",
     tags: ["showers"],
-    thumb: "{{ '/assets/img/bathroom-remodel.webp' | relative_url }}",
-    full:  "{{ '/assets/img/bathroom-remodel.webp' | relative_url }}",
+    file: "bathroom-remodel.webp",
     alt: "Bathroom remodel in progress with waterproofing underway for GC partner",
     caption: "In-progress — substrate prep prior to grout."
   }
 ];
 </script>
-<!-- Renderer + filters + lightbox -->
+
 <script>
 (function(){
   const $ = (s, c=document)=>c.querySelector(s);
   const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
   const gallery = $('#gallery');
   const chips = $$('.chip');
-  const PLACEHOLDER_SRC = 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=';
-  const DEFAULT_SIZES = '(min-width: 1024px) 25vw, (min-width: 768px) 40vw, 100vw';
+  const BASE = "{{ '/assets/img/' | relative_url }}";
+  const DEFAULT_SIZES = "(min-width: 1024px) 25vw, (min-width: 768px) 40vw, 100vw";
+
   let lazyObserver = null;
 
   function applySources(img){
     if(!img) return;
-    const { src: current } = img;
     const nextSrc = img.dataset.src;
-    if(nextSrc && current !== nextSrc){
+    if(nextSrc && img.src !== nextSrc){
       img.src = nextSrc;
     }
-    const nextSrcset = img.dataset.srcset;
-    if(nextSrcset){
-      img.srcset = nextSrcset;
-    }
-    const nextSizes = img.dataset.sizes;
-    if(nextSizes){
-      img.sizes = nextSizes;
-    }
     img.removeAttribute('data-src');
-    img.removeAttribute('data-srcset');
-    img.removeAttribute('data-sizes');
   }
 
   function getObserver(){
@@ -201,7 +176,7 @@ const PROJECTS = [
             observer.unobserve(entry.target);
           }
         });
-      }, { rootMargin: '200px 0px' });
+      }, { rootMargin: "200px 0px" });
     } else {
       lazyObserver = false;
     }
@@ -220,122 +195,136 @@ const PROJECTS = [
 
   function figFor(p){
     const fig = document.createElement('figure');
-    fig.className = "gitem";
-    fig.dataset.tags = (p.tags||[]).join(',');
-    if(p.thumb && p.full){
-      const link = document.createElement('a');
-      link.href = p.full;
-      link.className = 'lightbox';
-      link.setAttribute('aria-label', `Open image: ${p.alt}`);
+    fig.className = "gitem portfolio-item";
+    fig.dataset.tags = (p.tags || []).join(',');
 
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.alt = p.alt;
-      img.src = PLACEHOLDER_SRC;
-      img.dataset.src = p.thumb;
-      img.dataset.sizes = p.sizes || DEFAULT_SIZES;
-      if(p.full && p.full !== p.thumb){
-        img.dataset.srcset = `${p.thumb} 1x, ${p.full} 2x`;
-      }
+    const link = document.createElement('a');
+    link.href = BASE + p.file;
+    link.className = "lightbox";
+    link.setAttribute('aria-label', `Open image: ${p.alt}`);
 
-      link.appendChild(img);
-      fig.appendChild(link);
+    const img = document.createElement('img');
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.alt = p.alt;
+    img.width = 1024;
+    img.height = 768;
+    img.src = "data:image/gif;base64,R0lGODlhAQABAAAAACw=";
+    img.dataset.src = BASE + p.file;
+    img.sizes = DEFAULT_SIZES;
 
-      const caption = document.createElement('figcaption');
-      caption.textContent = p.caption || '';
-      fig.appendChild(caption);
+    link.appendChild(img);
+    fig.appendChild(link);
 
-      img.addEventListener('error', ()=>{
-        fig.innerHTML = `
-          <div class="placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 5h16v14H4z" stroke="currentColor" stroke-opacity=".5"/><path d="M8 13l3 3 4-5 5 6H4l4-4z" fill="currentColor" fill-opacity=".15"/><circle cx="9" cy="9" r="1.5" fill="currentColor" fill-opacity=".3"/>
-            </svg>
-            <p>Photo not found — check filename</p>
-          </div>
-          <figcaption>${p.caption||''}</figcaption>
-        `;
-      }, { once:true });
+    const caption = document.createElement('figcaption');
+    caption.textContent = p.caption || "";
+    fig.appendChild(caption);
 
-      queueImage(img);
-    } else {
-      fig.innerHTML = `
-        <div class="placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 5h16v14H4z" stroke="currentColor" stroke-opacity=".5"/><path d="M8 13l3 3 4-5 5 6H4l4-4z" fill="currentColor" fill-opacity=".15"/><circle cx="9" cy="9" r="1.5" fill="currentColor" fill-opacity=".3"/>
-          </svg>
-          <p>Photo coming soon</p>
-        </div>
-        <figcaption>${p.caption||''}</figcaption>
-      `;
-    }
+    img.addEventListener('error', () => {
+      fig.classList.add('missing');
+      caption.textContent = (p.caption ? p.caption + " — " : "") + "Image not found.";
+      console.warn("Portfolio image missing:", p.file);
+    }, { once: true });
+
+    queueImage(img);
     return fig;
   }
 
   function render(list){
     gallery.innerHTML = "";
-    list.forEach(p=> gallery.appendChild(figFor(p)));
-    initLightbox(); // re-init after render
+    list.forEach(p => gallery.appendChild(figFor(p)));
+    initLightbox();
   }
 
-  function applyFilter(key='all'){
-    chips.forEach(c=>{
-      const on = c.dataset.filter === key || (key==='all' && c.dataset.filter==='all');
-      c.classList.toggle('is-active', on);
-      c.setAttribute('aria-selected', on ? 'true':'false');
+  function applyFilter(key="all"){
+    chips.forEach(c => {
+      const active = c.dataset.filter === key || (key === "all" && c.dataset.filter === "all");
+      c.classList.toggle("is-active", active);
+      c.setAttribute("aria-selected", active ? "true" : "false");
     });
+
     const items = $$('.gitem', gallery);
-    items.forEach(i=>{
-      const show = key==='all' || (i.dataset.tags||'').split(',').includes(key);
-      i.hidden = !show;
+    items.forEach(item => {
+      const tags = (item.dataset.tags || "").split(",");
+      const show = key === "all" || tags.includes(key);
+      item.hidden = !show;
     });
+
     const url = new URL(location);
-    if(key==='all'){ url.searchParams.delete('filter'); } else { url.searchParams.set('filter', key); }
-    history.replaceState(null,'',url);
+    if(key === "all") {
+      url.searchParams.delete("filter");
+    } else {
+      url.searchParams.set("filter", key);
+    }
+    history.replaceState(null, "", url);
   }
 
   function initLightbox(){
     const links = $$('.lightbox', gallery);
     if(!links.length) return;
+
     let overlay = $('.lb');
     if(!overlay){
       overlay = document.createElement('div');
       overlay.className = 'lb';
-      overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt=""><p class="lb-cap" role="note"></p>';
+      overlay.innerHTML =
+        '<button class="lb-close" aria-label="Close">×</button>' +
+        '<img alt="">' +
+        '<p class="lb-cap" role="note"></p>';
       document.body.appendChild(overlay);
     }
+
     const img = overlay.querySelector('img');
     const cap = overlay.querySelector('.lb-cap');
     const btnClose = overlay.querySelector('.lb-close');
     let lastFocus = null;
 
-    function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; (lastFocus||document.body).focus(); }
-    btnClose.onclick = close;
-    overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+    function close(){
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      (lastFocus || document.body).focus();
+    }
 
-    links.forEach(a=>{
-      a.addEventListener('click', e=>{
+    btnClose.onclick = close;
+    overlay.addEventListener('click', e => {
+      if(e.target === overlay) close();
+    });
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape') close();
+    });
+
+    links.forEach(a => {
+      a.addEventListener('click', e => {
         e.preventDefault();
         lastFocus = document.activeElement;
         img.src = a.getAttribute('href');
         const c = a.closest('figure').querySelector('figcaption');
         cap.textContent = c ? c.textContent : '';
         overlay.classList.add('open');
-        document.body.style.overflow='hidden';
+        document.body.style.overflow = 'hidden';
         btnClose.focus();
       });
     });
   }
 
-  // Mount
+  // Initialize
+  document.querySelectorAll('.chip').forEach(b => {
+    if (!b.dataset.filter) {
+      b.dataset.filter = (b.textContent || '').toLowerCase();
+    }
+  });
+
   render(PROJECTS);
 
-  // Filters (wire up clicks + URL sync)
-  const initKey = new URL(location).searchParams.get('filter') || (location.hash||'').slice(1) || 'all';
-  document.querySelectorAll('.chip').forEach(b=> b.dataset.filter = b.dataset.filter || b.textContent.toLowerCase());
-  applyFilter(initKey);
-  document.querySelectorAll('.chip').forEach(chip=> chip.addEventListener('click', ()=> applyFilter(chip.dataset.filter)));
+  const initialFilter =
+    new URL(location).searchParams.get('filter') ||
+    (location.hash || '').slice(1) ||
+    'all';
+
+  applyFilter(initialFilter);
+
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => applyFilter(chip.dataset.filter));
+  });
 })();
 </script>
