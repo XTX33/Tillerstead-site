@@ -17,7 +17,20 @@
 *::after {
   box-sizing: border-box;
 }
+:root {
+  --brand-brass: #d4af37;
+}
 
+.btn-ghost,
+.btn-secondary {
+  color: var(--brand-brass);
+  border-color: var(--brand-brass);
+}
+.btn-ghost:hover,
+.btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: #fff;
+}
 html,
 body {
   margin: 0;
@@ -1285,4 +1298,20 @@ textarea::placeholder {
 .breadcrumbs [aria-current="page"] {
   color: rgba(148, 163, 184, 0.95);
   font-weight: 500;
+}
+/* === Brand Accent Buttons — Tillerstead Gold === */
+.btn-ghost,
+.btn-secondary {
+  color: #d4af37;
+  border-color: #d4af37;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover,
+.btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #d4af37;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
 }
