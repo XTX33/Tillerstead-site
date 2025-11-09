@@ -9,25 +9,45 @@
   <meta itemprop="telephone" content="{{ site.company.phone_link }}">
   <meta itemprop="email" content="{{ site.company.email }}">
 
-  <div class="shell container footer-inner">
+  <div class="footer-inner container">
 
-    <!-- Brand block -->
-    <a href="{{ '/' | relative_url }}"
-       class="footer-brand"
-       aria-label="Tillerstead LLC Home">
-      <span class="footer-logo">
-        <img src="{{ '/assets/img/logo.png' | relative_url }}"
-             alt="Tillerstead LLC Logo">
-      </span>
+    <!-- Brand / summary -->
+    <div class="footer-col footer-col-brand">
+      <a href="{{ '/' | relative_url }}"
+         class="footer-brand"
+         aria-label="Tillerstead LLC Home">
+        <span class="footer-logo">
+          <img src="{{ '/assets/img/logo.png' | relative_url }}"
+               alt="Tillerstead LLC Logo">
+        </span>
+        <span class="footer-name">Tillerstead LLC</span>
+        <span class="footer-tagline">Tile subcontractor for South Jersey build teams</span>
+      </a>
 
-      <span class="footer-name">TILLERSTEAD LLC</span>
-      <span class="footer-tagline">Tile subcontractor for South Jersey build teams</span>
-    </a>
+      <p class="footer-area" itemprop="areaServed">
+        Serving Atlantic, Ocean, and Cape May counties and the South Jersey shore for multi-day tile scopes.
+      </p>
+    </div>
 
-    <!-- Business + address -->
-    <div class="footer-business">
+    <!-- Navigation -->
+    <div class="footer-col footer-col-nav">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="{{ '/for-general-contractors/' | relative_url }}">For General Contractors</a></li>
+          <li><a href="{{ '/services/'  | relative_url }}">Tile Services</a></li>
+          <li><a href="{{ '/portfolio/' | relative_url }}">Gallery</a></li>
+          <li><a href="{{ '/about/'     | relative_url }}">About</a></li>
+          <li><a href="{{ '/reviews/'   | relative_url }}">Reviews</a></li>
+          <li><a href="{{ '/contact/'   | relative_url }}">Contact</a></li>
+          <li><a href="{{ '/terms/'     | relative_url }}">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Contact / licensing -->
+    <div class="footer-col footer-col-contact">
       <p class="footer-hic">
-        Licensed New Jersey Home Improvement Contractor ·
+        Licensed New Jersey Home Improvement Contractor<br>
         HIC #{{ site.company.hic }}
       </p>
 
@@ -41,63 +61,25 @@
         <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
       </address>
 
-      <p class="footer-area" itemprop="areaServed">
-        Serving Atlantic County, Ocean County, Cape May County, and the South Jersey shore for multi-day tile scopes.
-      </p>
+      <div class="footer-contact">
+        <a href="tel:{{ site.company.phone_link }}" itemprop="telephone">
+          {{ site.company.phone_display }}
+        </a>
+        <a href="mailto:{{ site.company.email }}" itemprop="email">
+          {{ site.company.email }}
+        </a>
+      </div>
     </div>
+  </div>
 
-    <!-- Nav -->
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="{{ '/for-general-contractors/' | relative_url }}">For General Contractors</a>
-      <br></br>
-      <a href="{{ '/services/'  | relative_url }}"> Our Services </a>
-      <a href="{{ '/portfolio/' | relative_url }}"> View Gallery </a>
-      <a href="{{ '/about/'     | relative_url }}"> About Us </a>
-            <br></br>
-      <a href="{{ '/reviews/'   | relative_url }}"> Reviews </a>
-      <a href="{{ '/contact/'   | relative_url }}"> Contact Us </a>
-      <a href="{{ '/terms/'     | relative_url }}"> Terms &amp; Conditions </a>
-    </nav>
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <p class="footer-credit">
+      Website built and managed by <strong>Tillerstead&nbsp;LLC</strong>.  
+      We create fast, reliable static websites for contractors, trades, and small businesses.
+      <a href="{{ '/contact/' | relative_url }}">Get in touch</a> to discuss design and hosting options.
+    </p>
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <a href="tel:{{ site.company.phone_link }}"
-         itemprop="telephone">
-        {{ site.company.phone_display }}
-      </a>
-      <a href="mailto:{{ site.company.email }}"
-         itemprop="email">
-        {{ site.company.email }}
-      </a>
-    </div>
-<p class="footer-credit">
-  Website built and managed by <strong>Tillerstead&nbsp;LLC</strong>.<br>
-  We create fast, reliable static websites for contractors, trades, and small businesses.<br>
-  Need a professional site that reflects your work? 
-  <a href="{{ '/contact/' | relative_url }}">Get in touch</a> to discuss design and hosting options.
-</p>
-<style>
-
-.footer-credit {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: rgba(226, 232, 240, 0.9);
-  line-height: 1.5;
-  text-align: center;
-}
-
-.footer-credit a {
-  color: #22c55e;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-credit a:hover {
-  text-decoration: underline;
-  color: #16a34a;
-}
-</style>
-    <!-- Legal line -->
     <p class="footer-legal">
       © {{ "now" | date: "%Y" }} Tillerstead LLC · All rights reserved
     </p>
