@@ -69,7 +69,33 @@
         {{ site.company.email }}
       </a>
     </div>
+<p class="footer-credit">
+  Website built and managed by <strong>Tillerstead&nbsp;LLC</strong>.<br>
+  We create fast, reliable static websites for contractors, trades, and small businesses.<br>
+  Need a professional site that reflects your work? 
+  <a href="{{ '/contact/' | relative_url }}">Get in touch</a> to discuss design and hosting options.
+</p>
+<style>
 
+.footer-credit {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(226, 232, 240, 0.9);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer-credit a {
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+  color: #16a34a;
+}
+</style>
     <!-- Legal line -->
     <p class="footer-legal">
       © {{ "now" | date: "%Y" }} Tillerstead LLC · All rights reserved
