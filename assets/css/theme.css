@@ -1059,3 +1059,60 @@ textarea::placeholder {
   color: rgba(226, 232, 240, 0.95);
   line-height: 1.4;
 }
+/* ============================================
+   Mobile nav toggle refinements
+   ============================================ */
+
+.nav-toggle {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(148,163,184,0.35);
+  border-radius: 50%;
+  background: rgba(15,23,42,0.85);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(30,41,59,0.95);
+  border-color: rgba(148,163,184,0.55);
+}
+
+/* three clean bars */
+.nav-toggle-bar {
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: #f9fafb;
+  display: block;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle-bar + .nav-toggle-bar {
+  margin-top: 4px;
+}
+
+/* make sure all three bars show */
+.nav-toggle .nav-toggle-bar:nth-child(1),
+.nav-toggle .nav-toggle-bar:nth-child(2),
+.nav-toggle .nav-toggle-bar:nth-child(3) {
+  opacity: 1;
+}
+
+/* optional “X” animation when nav is open */
+body.nav-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+body.nav-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+body.nav-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
