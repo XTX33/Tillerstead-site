@@ -67,28 +67,28 @@ schema:
           text: 'Every project includes schedule checkpoints, written scope confirmation, and documented change orders so your client and site superintendent always know what comes next.'
 ---
 
+<!-- Homepage Hero -->
 <header class="hero hero--homepage" id="hero" aria-labelledby="hero-heading" aria-describedby="hero-summary">
-  <div class="hero-inner container">
+  <div class="hero-inner">
     <div class="hero-main">
       <p class="hero-eyebrow">
-       <span class="hero-eyebrow-text">
-  Tile Subcontractor for GCs &amp; Remodelers<br>
-  Serving South Jersey Homes
-</span>
+        <span class="hero-eyebrow-text">
+          Tile Subcontractor for GCs &amp; Remodelers · Serving South Jersey Homes
+        </span>
       </p>
 
       <h1 id="hero-heading">Reliable tile crew for South Jersey build teams</h1>
 
-      <p class="lead" id="hero-summary">
+      <p class="hero-lead" id="hero-summary">
         Tillerstead plugs into your projects as an owner-operated tile subcontractor focused on schedule reliability,
         clean communication, and waterproof installs that protect your reputation with homeowners and commercial clients.
       </p>
 
       <div class="hero-actions" role="group" aria-label="Primary calls to action">
-        <a href="{{ '/for-general-contractors/' | relative_url }}" class="btn btn-accent btn-lg">
+        <a href="{{ '/for-general-contractors/' | relative_url }}" class="btn btn-primary">
           See How We Work With GCs
         </a>
-        <a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost btn-lg">
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">
           Request Availability &amp; Quote
         </a>
       </div>
@@ -97,7 +97,7 @@ schema:
         <p class="hero-note">
           Bonded waterproofing, large-format layout, tidy punchlists, and respectful jobsite conduct on every tile scope.
         </p>
-        <p class="hero-note text-light-subtle">
+        <p class="hero-note text-meta">
           Licensed in New Jersey (HIC #{{ site.company.hic }}) and ready with insurance certificates, W-9, and references on request.
         </p>
       </div>
@@ -120,485 +120,191 @@ schema:
   </div>
 </header>
 
-<style>
-  /* Hero container & type */
-  #hero {
-    color: #f9fafb;
-  }
-
-  #hero .hero-main {
-    max-width: 44rem;
-  }
-
-  #hero .hero-eyebrow {
-    margin: 0 0 .5rem;
-  }
-
-  #hero .hero-eyebrow-text {
-    display: inline-block;
-    white-space: normal;
-    word-break: break-word;
-    color: #a7f3d0;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-
-  #hero h1 {
-    color: #ffffff;
-    font-size: clamp(1.9rem, 4vw, 2.6rem);
-    line-height: 1.15;
-    margin: 0 0 1rem;
-  }
-
-  #hero .lead {
-    color: #e5e7eb;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 1.75rem;
-  }
-
-  #hero .hero-note {
-    color: #cbd5f5;
-    font-size: 0.95rem;
-    margin: 0 0 .25rem;
-  }
-
-  #hero .hero-note.text-light-subtle {
-    opacity: 0.9;
-  }
-
-  /* KPIs */
-  #hero .hero-kpis {
-    list-style: none;
-    margin: 1.75rem 0 0;
-    padding: 1.5rem 0 0;
-    border-top: 1px solid rgba(148, 163, 184, 0.5);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  #hero .hero-kpi {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #e5e7eb;
-    max-width: 22rem;
-  }
-
-  #hero .hero-kpi-label {
-    display: block;
-    margin-bottom: 0.25rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    font-weight: 700;
-    color: #facc15; /* bright, readable against dark bg */
-  }
-
-  @media (min-width: 768px) {
-    #hero .hero-kpis {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 1.25rem 2rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    #hero .hero-eyebrow-text {
-      font-size: 0.75rem;
-      line-height: 1.3;
-    }
-
-    #hero .hero-main {
-      max-width: 100%;
-    }
-  }
-</style>
-
-<main id="main" class="homepage" aria-labelledby="why-heading">
-  <section class="section section--why" aria-labelledby="why-heading">
-    <div class="container">
-      <h2 id="why-heading">Why GCs work with Tillerstead</h2>
-      <div class="why-grid">
-        <article class="why-item">
-          <h3>Schedules you can count on</h3>
-          <p>
-            Tight coordination with your superintendent keeps tile scopes on track. You get real lead times up front,
-            text or email check-ins before each workday, and immediate notice if weather or material delays impact the plan.
-          </p>
-        </article>
-        <article class="why-item">
-          <h3>Documented scope &amp; change orders</h3>
-          <p>
-            Every project starts with a written scope referencing plans, tile selections, and prep requirements.
-            Any field changes are logged, priced, and signed off before work continues so billing stays clean.
-          </p>
-        </article>
-        <article class="why-item">
-          <h3>Clean jobsites &amp; respectful crews</h3>
-          <p>
-            Protective coverings, daily cleanup, and courteous communication keep homeowners, tenants, and other trades comfortable.
-            Expect door protection, dust control, and polite interactions on every job.
-          </p>
-        </article>
-        <article class="why-item">
-          <h3>Waterproof installs that last</h3>
-          <p>
-            Showers and wet areas are built with ANSI A118.10 waterproofing, flood testing when needed, and layout that meets TCNA standards.
-            Floors get the right prep for large-format and plank tile so you avoid callbacks.
-          </p>
-        </article>
-      </div>
+<!-- Why GCs work with Tillerstead -->
+<section class="section section--why" aria-labelledby="why-heading">
+  <div class="container">
+    <h2 id="why-heading">Why GCs work with Tillerstead</h2>
+    <div class="why-grid">
+      <article class="why-item">
+        <h3>Schedules you can count on</h3>
+        <p>
+          Tight coordination with your superintendent keeps tile scopes on track. You get real lead times up front,
+          text or email check-ins before each workday, and immediate notice if weather or material delays impact the plan.
+        </p>
+      </article>
+      <article class="why-item">
+        <h3>Documented scope &amp; change orders</h3>
+        <p>
+          Every project starts with a written scope referencing plans, tile selections, and prep requirements.
+          Any field changes are logged, priced, and signed off before work continues so billing stays clean.
+        </p>
+      </article>
+      <article class="why-item">
+        <h3>Clean jobsites &amp; respectful crews</h3>
+        <p>
+          Protective coverings, daily cleanup, and courteous communication keep homeowners, tenants, and other trades comfortable.
+          Expect door protection, dust control, and polite interactions on every job.
+        </p>
+      </article>
+      <article class="why-item">
+        <h3>Waterproof installs that last</h3>
+        <p>
+          Showers and wet areas are built with ANSI A118.10 waterproofing, flood testing when needed, and layout that meets TCNA standards.
+          Floors get the right prep for large-format and plank tile so you avoid callbacks.
+        </p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section--scopes" aria-labelledby="scopes-heading">
-    <div class="container">
-      <h2 id="scopes-heading">Tile scopes we handle for your projects</h2>
-      <div class="scope-grid">
-        <article class="scope-card">
-          <figure>
-            <img src="/assets/img/shower-white.jpg" alt="Waterproof tile shower installation with bench and niche in Atlantic County, New Jersey" loading="lazy" decoding="async" width="1024" height="768">
-          </figure>
-          <div class="scope-body">
-            <h3>Showers &amp; Wet Areas</h3>
-            <p>
-              Custom showers, tub surrounds, steam prep, and linear drains built with bonded waterproofing, flood tests, and precise layout for spec homes and remodels.
-            </p>
-          </div>
-        </article>
-        <article class="scope-card">
-          <figure>
-            <img src="/assets/img/marble-bath.jpg" alt="Large-format floor tile aligned in a New Jersey bathroom remodel" loading="lazy" decoding="async" width="1024" height="768">
-          </figure>
-          <div class="scope-body">
-            <h3>Floors &amp; Large-Format Tile</h3>
-            <p>
-              Proper substrate prep, crack isolation, and layout for large-format tile, plank tile, and heated floors in condos, rentals, and light commercial spaces.
-            </p>
-          </div>
-        </article>
-        <article class="scope-card">
-          <figure>
-            <img src="/assets/img/kitchen-green.jpg" alt="Tile subcontractor installing kitchen backsplash tile for a South Jersey remodeler" loading="lazy" decoding="async" width="1024" height="768">
-          </figure>
-          <div class="scope-body">
-            <h3>Kitchens &amp; Feature Walls</h3>
-            <p>
-              Backsplashes, bar walls, and fireplace surrounds with clean cuts around outlets, fixtures, and trim — ready for your punchlist walk.
-            </p>
-          </div>
-        </article>
-        <article class="scope-card">
-          <figure>
-            <img src="/assets/img/kitchen-hex.jpg" alt="Tile subcontractor resolving punchlist backsplash details for a New Jersey builder" loading="lazy" decoding="async" width="1024" height="768">
-          </figure>
-          <div class="scope-body">
-            <h3>Repairs &amp; Punchlist Rescue</h3>
-            <p>
-              Fast-response tile repairs, re-grouts, and scope corrections when you need a trusted installer to finish or fix existing work before handoff.
-            </p>
-          </div>
-        </article>
-      </div>
-      <p class="section-cta">
-        Need a tile partner for an upcoming build? <a href="{{ '/for-general-contractors/' | relative_url }}">See our GC process</a> or <a href="{{ '/contact/' | relative_url }}">request dates</a> today.
+<!-- Tile scopes section -->
+<section class="section section--scopes" aria-labelledby="scopes-heading">
+  <div class="container">
+    <h2 id="scopes-heading">Tile scopes we handle for your projects</h2>
+    <div class="scope-grid">
+      <article class="scope-card">
+        <figure>
+          <img src="/assets/img/shower-white.jpg"
+               alt="Waterproof tile shower installation with bench and niche in Atlantic County, New Jersey"
+               loading="lazy"
+               decoding="async"
+               width="1024"
+               height="768">
+        </figure>
+        <div class="scope-body">
+          <h3>Showers &amp; Wet Areas</h3>
+          <p>
+            Custom showers, tub surrounds, steam prep, and linear drains built with bonded waterproofing, flood tests,
+            and precise layout for spec homes and remodels.
+          </p>
+        </div>
+      </article>
+
+      <article class="scope-card">
+        <figure>
+          <img src="/assets/img/marble-bath.jpg"
+               alt="Large-format floor tile aligned in a New Jersey bathroom remodel"
+               loading="lazy"
+               decoding="async"
+               width="1024"
+               height="768">
+        </figure>
+        <div class="scope-body">
+          <h3>Floors &amp; Large-Format Tile</h3>
+          <p>
+            Proper substrate prep, crack isolation, and layout for large-format tile, plank tile, and heated floors
+            in condos, rentals, and light commercial spaces.
+          </p>
+        </div>
+      </article>
+
+      <article class="scope-card">
+        <figure>
+          <img src="/assets/img/kitchen-green.jpg"
+               alt="Tile subcontractor installing kitchen backsplash tile for a South Jersey remodeler"
+               loading="lazy"
+               decoding="async"
+               width="1024"
+               height="768">
+        </figure>
+        <div class="scope-body">
+          <h3>Kitchens &amp; Feature Walls</h3>
+          <p>
+            Backsplashes, bar walls, and fireplace surrounds with clean cuts around outlets, fixtures, and trim —
+            ready for your punchlist walk.
+          </p>
+        </div>
+      </article>
+
+      <article class="scope-card">
+        <figure>
+          <img src="/assets/img/kitchen-hex.jpg"
+               alt="Tile subcontractor resolving punchlist backsplash details for a New Jersey builder"
+               loading="lazy"
+               decoding="async"
+               width="1024"
+               height="768">
+        </figure>
+        <div class="scope-body">
+          <h3>Repairs &amp; Punchlist Rescue</h3>
+          <p>
+            Fast-response tile repairs, re-grouts, and scope corrections when you need a trusted installer
+            to finish or fix existing work before handoff.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <p class="section-cta">
+      Need a tile partner for an upcoming build?
+      <a href="{{ '/for-general-contractors/' | relative_url }}">See our GC process</a>
+      or
+      <a href="{{ '/contact/' | relative_url }}">request dates</a> today.
+    </p>
+  </div>
+</section>
+
+<!-- Workflow section -->
+<section class="section section--workflow" aria-labelledby="workflow-heading">
+  <div class="container workflow-shell">
+    <div class="workflow-copy">
+      <h2 id="workflow-heading">How we fit into your schedule &amp; workflow</h2>
+      <ol class="workflow-steps">
+        <li>
+          <strong>Scope review:</strong>
+          Send plans, selections, or site photos. You receive clarifying questions and a detailed proposal
+          with allowances for waterproofing, layout, and trim.
+        </li>
+        <li>
+          <strong>Schedule lock-in:</strong>
+          We hold dates with a signed estimate and deposit if required. Expect a written schedule,
+          site readiness checklist, and confirmation one week out.
+        </li>
+        <li>
+          <strong>On-site execution:</strong>
+          Daily check-ins cover progress, upcoming inspections, and coordination with your other subs.
+          Changes are priced in writing before proceeding.
+        </li>
+        <li>
+          <strong>Turnover &amp; punch:</strong>
+          Final walkthrough, photo documentation, and cleanup leave the space ready for paint, glass,
+          or homeowner occupancy.
+        </li>
+      </ol>
+      <p>
+        Need paperwork? Insurance COIs, W-9, and references are ready to send with your estimate package.
       </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section--workflow" aria-labelledby="workflow-heading">
-    <div class="container workflow-shell">
-      <div class="workflow-copy">
-        <h2 id="workflow-heading">How we fit into your schedule &amp; workflow</h2>
-        <ol class="workflow-steps">
-          <li>
-            <strong>Scope review:</strong> Send plans, selections, or site photos. You receive clarifying questions and a detailed proposal with allowances for waterproofing, layout, and trim.
-          </li>
-          <li>
-            <strong>Schedule lock-in:</strong> We hold dates with a signed estimate and deposit if required. Expect a written schedule, site readiness checklist, and confirmation one week out.
-          </li>
-          <li>
-            <strong>On-site execution:</strong> Daily check-ins cover progress, upcoming inspections, and coordination with your other subs.
-            Changes are priced in writing before proceeding.
-          </li>
-          <li>
-            <strong>Turnover &amp; punch:</strong> Final walkthrough, photo documentation, and cleanup leave the space ready for paint, glass, or homeowner occupancy.
-          </li>
-        </ol>
-        <p>
-          Need paperwork? Insurance COIs, W-9, and references are ready to send with your estimate package.
-        </p>
-      </div>
+<!-- Service area & licensing -->
+<section class="section section--service-area" aria-labelledby="service-area-heading">
+  <div class="container service-area-shell">
+    <div class="service-area-copy">
+      <h2 id="service-area-heading">Service area &amp; licensing</h2>
+      <p>
+        Based in Galloway Township, we support projects throughout Atlantic County — from Brigantine to Longport,
+        Egg Harbor Township, and Mays Landing — with regular travel into Ocean and Cape May counties
+        for multi-day tile scopes.
+      </p>
+      <p>
+        <strong>Tillerstead LLC</strong> · New Jersey Home Improvement Contractor
+        <span class="nowrap">HIC #{{ site.company.hic }}</span> · Owner-operated with more than a decade of tile experience.
+      </p>
+      <p>
+        Ready to plug us into your next build?
+        <a href="{{ '/contact/' | relative_url }}">Send plans or request availability</a>.
+      </p>
     </div>
-  </section>
 
-  <section class="section section--service-area" aria-labelledby="service-area-heading">
-    <div class="container service-area-shell">
-      <div class="service-area-copy">
-        <h2 id="service-area-heading">Service area &amp; licensing</h2>
-        <p>
-          Based in Galloway Township, we support projects throughout Atlantic County — from Brigantine to Longport, Egg Harbor Township, and Mays Landing — with regular travel into Ocean and Cape May counties for multi-day tile scopes.
-        </p>
-        <p>
-          <strong>Tillerstead LLC</strong> · New Jersey Home Improvement Contractor <span class="nowrap">HIC #{{ site.company.hic }}</span> · Owner-operated by Tyler with more than a decade of tile experience.
-        </p>
-        <p>
-          Ready to plug us into your next build? <a href="{{ '/contact/' | relative_url }}">Send plans or request availability</a>.
-        </p>
-      </div>
-      <div class="service-area-card" aria-label="Service area highlights">
-        <ul>
-          <li>Atlantic County: Galloway, Atlantic City, Brigantine, Linwood, Northfield, EHT</li>
-          <li>Ocean County: Little Egg Harbor, Tuckerton, Manahawkin</li>
-          <li>Cape May County: Ocean City, Sea Isle, Cape May, Stone Harbor</li>
-          <li>Light commercial tenant improvements and condo turnovers</li>
-        </ul>
-      </div>
+    <div class="service-area-card" aria-label="Service area highlights">
+      <ul>
+        <li>Atlantic County: Galloway, Atlantic City, Brigantine, Linwood, Northfield, EHT</li>
+        <li>Ocean County: Little Egg Harbor, Tuckerton, Manahawkin</li>
+        <li>Cape May County: Ocean City, Sea Isle, Cape May, Stone Harbor</li>
+        <li>Light commercial tenant improvements and condo turnovers</li>
+      </ul>
     </div>
-  </section>
-</main>
-<style>
-  /* ================================
-     Homepage Hero & Sections
-     (Tillerstead – GC focused)
-     ================================ */
-
-  .hero--homepage {
-    padding: 4.5rem 0 2.75rem;
-    background:
-      radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 60%),
-      radial-gradient(circle at bottom right, rgba(250, 204, 21, 0.12), transparent 55%),
-      #020617;
-    color: var(--brand-light, #e5e7eb);
-  }
-
-  .hero--homepage .shell {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-  }
-
-  .hero-main {
-    max-width: 40rem;
-  }
-
-  .hero-eyebrow-text {
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.78rem;
-    color: rgba(226, 232, 240, 0.78);
-  }
-
-  .hero h1 {
-    margin-top: 0.9rem;
-    font-size: clamp(2.1rem, 2.6rem, 3rem);
-    line-height: 1.12;
-    color: #f9fafb;
-  }
-
-  .hero-note {
-    max-width: 44rem;
-    margin-top: 0.9rem;
-    font-size: 0.98rem;
-    line-height: 1.7;
-    color: rgba(226, 232, 240, 0.9);
-  }
-
-  .hero-kpis {
-    list-style: none;
-    margin: 2rem 0 0;
-    padding: 0;
-    display: grid;
-    gap: 1.1rem;
-  }
-
-  @media (min-width: 768px) {
-    .hero-kpis {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  .hero-kpi {
-    background: rgba(15, 23, 42, 0.7);
-    border-radius: 0.9rem;
-    padding: 1.1rem 1.25rem;
-    color: rgba(226, 232, 240, 0.94);
-    border: 1px solid rgba(148, 163, 184, 0.5);
-  }
-
-  .hero-kpi-label {
-    display: block;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.78rem;
-    margin-bottom: 0.35rem;
-    color: rgba(248, 250, 252, 0.9);
-  }
-
-  /* ================================
-     Generic sections
-     ================================ */
-
-  .section {
-    padding: 3.25rem 0;
-  }
-
-  .section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Why Tillerstead grid */
-  .why-grid {
-    display: grid;
-    gap: 1.75rem;
-  }
-
-  @media (min-width: 900px) {
-    .why-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  .why-item {
-    background: #ffffff;
-    border-radius: 0.9rem;
-    padding: 1.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
-  }
-
-  .why-item h3 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
-  }
-
-  /* Scope cards */
-  .section--scopes .scope-grid {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 900px) {
-    .section--scopes .scope-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  .scope-card {
-    background: #ffffff;
-    border-radius: 0.9rem;
-    overflow: hidden;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .scope-card figure {
-    margin: 0;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #0f172a;
-  }
-
-  .scope-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .scope-body {
-    padding: 1.3rem 1.5rem 1.6rem;
-  }
-
-  .scope-body h3 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-  }
-
-  .section-cta {
-    margin-top: 2rem;
-    font-weight: 600;
-  }
-
-  /* Workflow */
-  .workflow-shell {
-    display: grid;
-    gap: 2rem;
-  }
-
-  .workflow-steps {
-    counter-reset: step;
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-    display: grid;
-    gap: 1.25rem;
-  }
-
-  .workflow-steps li {
-    position: relative;
-    padding-left: 2.75rem;
-    line-height: 1.6;
-  }
-
-  .workflow-steps li::before {
-    counter-increment: step;
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: 0.2rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 999px;
-    background: var(--brand-brass, #b8922f);
-    color: #ffffff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-  }
-
-  /* Service area */
-  .service-area-shell {
-    display: grid;
-    gap: 2rem;
-  }
-
-  @media (min-width: 900px) {
-    .service-area-shell {
-      grid-template-columns: 3fr 2fr;
-      align-items: start;
-    }
-  }
-
-  .service-area-card {
-    background: #ffffff;
-    border-radius: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    padding: 1.5rem;
-  }
-
-  .service-area-card ul {
-    margin: 0;
-    padding-left: 1.1rem;
-    line-height: 1.6;
-  }
-
-  /* Section link styling (does NOT touch nav links) */
-  .section a {
-    color: var(--brand-emerald, #059669);
-    font-weight: 600;
-  }
-
-  .section a:hover {
-    text-decoration: underline;
-  }
-</style>
+  </div>
+</section>
