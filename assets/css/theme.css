@@ -720,3 +720,52 @@ textarea::placeholder {
 .footer-links a:hover {
   color: #e5e7eb;
 }
+/* Logo – two-tone wordmark
+   ------------------------------------------- */
+
+.logo-two-tone {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+
+.logo-wordmark {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: 1.35rem;
+}
+
+@media (max-width: 480px) {
+  .logo-wordmark {
+    font-size: 1.15rem;
+  }
+}
+
+.logo-part-til {
+  color: #22c55e; /* emerald */
+}
+
+.logo-part-stead {
+  color: #facc15; /* brass */
+}
+
+.logo-llc {
+  margin-top: 0.05rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--logo-llc-color, #f9fafb);
+  opacity: 0.95;
+}
+
+/* Dark-background version (header, hero) */
+.logo-two-tone--dark {
+  --logo-llc-color: #f9fafb; /* white on dark */
+}
+
+/* Light-background version (e.g., footer on white panel) */
+.logo-two-tone--light {
+  --logo-llc-color: #020617; /* near-black on light */
+}
