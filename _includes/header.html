@@ -6,12 +6,15 @@
       href="{{ '/' | relative_url }}"
       aria-label="{{ site.title | default: 'Tillerstead LLC – Home' }}"
     >
-      <span class="logo-text logo-gradient">
-        {{ site.title | default: 'Tillerstead LLC' }}
+      <span class="logo-two-tone logo-two-tone--dark">
+        <span class="logo-wordmark">
+          <span class="logo-part logo-part-til">Tiller</span><span class="logo-part logo-part-stead">stead</span>
+        </span>
+        <span class="logo-llc">LLC</span>
       </span>
     </a>
 
-    <!-- Primary navigation (main.js toggles .is-open on this) -->
+    <!-- Primary navigation -->
     <nav
       id="site-nav"
       class="site-nav"
@@ -83,7 +86,6 @@
 
     <!-- Right-side controls: call + mobile toggle -->
     <div class="site-header-actions">
-      <!-- Call CTA (hidden on small screens via CSS if you want) -->
       <a
         class="call-btn btn"
         href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
@@ -92,7 +94,6 @@
         {{ site.company.phone_display | default: '(609) 665-9350' }}
       </a>
 
-      <!-- Mobile nav toggle (used by main.js) -->
       <button
         class="nav-toggle"
         type="button"
