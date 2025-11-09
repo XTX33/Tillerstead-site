@@ -156,27 +156,22 @@ schema:
     </div>
   </div>
 </section>
-
 <!-- Tile scopes section -->
 <section class="section section--scopes" aria-labelledby="scopes-heading">
   <div class="container">
     <h2 id="scopes-heading">Tile scopes we handle for your projects</h2>
-    <div class="scope-grid">
+
+    <div class="scope-gallery" aria-label="Tile project gallery">
       <article class="scope-card">
         <figure>
           <img src="/assets/img/shower-white.jpg"
                alt="Waterproof tile shower installation with bench and niche in Atlantic County, New Jersey"
                loading="lazy"
-               decoding="async"
-               width="1024"
-               height="768">
+               decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Showers &amp; Wet Areas</h3>
-          <p>
-            Custom showers, tub surrounds, steam prep, and linear drains built with bonded waterproofing, flood tests,
-            and precise layout for spec homes and remodels.
-          </p>
+          <p>Custom showers, tub surrounds, steam prep, and linear drains built with bonded waterproofing, flood tests, and precise layout for spec homes and remodels.</p>
         </div>
       </article>
 
@@ -185,16 +180,11 @@ schema:
           <img src="/assets/img/marble-bath.jpg"
                alt="Large-format floor tile aligned in a New Jersey bathroom remodel"
                loading="lazy"
-               decoding="async"
-               width="1024"
-               height="768">
+               decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Floors &amp; Large-Format Tile</h3>
-          <p>
-            Proper substrate prep, crack isolation, and layout for large-format tile, plank tile, and heated floors
-            in condos, rentals, and light commercial spaces.
-          </p>
+          <p>Proper substrate prep, crack isolation, and layout for large-format tile, plank tile, and heated floors in condos, rentals, and light commercial spaces.</p>
         </div>
       </article>
 
@@ -203,16 +193,11 @@ schema:
           <img src="/assets/img/kitchen-green.jpg"
                alt="Tile subcontractor installing kitchen backsplash tile for a South Jersey remodeler"
                loading="lazy"
-               decoding="async"
-               width="1024"
-               height="768">
+               decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Kitchens &amp; Feature Walls</h3>
-          <p>
-            Backsplashes, bar walls, and fireplace surrounds with clean cuts around outlets, fixtures, and trim —
-            ready for your punchlist walk.
-          </p>
+          <p>Backsplashes, bar walls, and fireplace surrounds with clean cuts around outlets, fixtures, and trim — ready for your punchlist walk.</p>
         </div>
       </article>
 
@@ -221,16 +206,11 @@ schema:
           <img src="/assets/img/kitchen-hex.jpg"
                alt="Tile subcontractor resolving punchlist backsplash details for a New Jersey builder"
                loading="lazy"
-               decoding="async"
-               width="1024"
-               height="768">
+               decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Repairs &amp; Punchlist Rescue</h3>
-          <p>
-            Fast-response tile repairs, re-grouts, and scope corrections when you need a trusted installer
-            to finish or fix existing work before handoff.
-          </p>
+          <p>Fast-response tile repairs, re-grouts, and scope corrections when you need a trusted installer to finish or fix existing work before handoff.</p>
         </div>
       </article>
     </div>
@@ -244,6 +224,80 @@ schema:
   </div>
 </section>
 
+<style>
+  /* Responsive hybrid gallery */
+  .scope-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.25rem;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+  }
+
+  .scope-card {
+    flex: 0 0 85%;
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    scroll-snap-align: center;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .scope-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+  }
+
+  .scope-card figure {
+    margin: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .scope-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scope-body {
+    padding: 1.5rem;
+  }
+
+  .scope-body h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--brand-ink, #0f172a);
+  }
+
+  .scope-body p {
+    margin: 0.5rem 0 0;
+    line-height: 1.6;
+  }
+
+  /* Tablet+ grid mode */
+  @media (min-width: 768px) {
+    .scope-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      overflow: visible;
+    }
+    .scope-card {
+      flex: none;
+      scroll-snap-align: unset;
+    }
+  }
+
+  /* Desktop+ 4-column grid */
+  @media (min-width: 1200px) {
+    .scope-gallery {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
 <!-- Workflow section -->
 <section class="section section--workflow" aria-labelledby="workflow-heading">
   <div class="container workflow-shell">
