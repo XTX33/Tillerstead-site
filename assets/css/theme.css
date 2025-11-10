@@ -8,9 +8,20 @@
    - Sections: .section, .hero, .hero--homepage
    - Footer: .site-footer
    ============================================ */
-/* Global backsplash pattern pieces */
+/* ============================================
+   Tillerstead Theme — Global + Homepage
+============================================ */
+
+/* 1. Global brand tokens and backsplash pieces */
 :root {
-  /* Subway tile lines */
+  /* Brand palette */
+  --ts-emerald: #22c55e;
+  --ts-emerald-deep: #16a34a;
+  --ts-brass: #facc15;
+  --ts-ink: #e5e7eb;
+  --ts-muted: #9ca3af;
+
+  /* Backsplash pattern pieces */
   --ts-bsp-horiz: linear-gradient(
     to bottom,
     rgba(148, 163, 184, 0.18) 1px,
@@ -21,8 +32,6 @@
     rgba(148, 163, 184, 0.18) 1px,
     transparent 1px
   );
-
-  /* Emerald herringbone accent block */
   --ts-bsp-block: linear-gradient(
     135deg,
     transparent 0%,
@@ -40,6 +49,10 @@
     transparent 8px
   );
 }
+
+/* 2. Site-wide elements (nav, footer, cards, etc.) */
+
+/* 3. Home-page specific styles:  body.page-home { … } */
 /* 0) Reset & base
    ------------------------------------------- */
 
@@ -1874,7 +1887,39 @@ body.page-home .section-cta a {
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
+/* Subtle herringbone accent in card corners */
+.hero-kpi::after,
+.why-item::after,
+.scope-card::after,
+.service-area-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -30px -30px auto; /* bottom-right bleed */
+  width: 60%;
+  height: 70%;
+  pointer-events: none;
+  opacity: 0.18;
 
+  background-image:
+    var(--ts-bsp-block),
+    var(--ts-bsp-herring);
+  background-size:
+    260px 200px,
+    12px 12px;
+  background-position:
+    bottom right,
+    bottom right;
+  background-repeat: no-repeat, repeat;
+}
+
+@media (max-width: 767px) {
+  .hero-kpi::after,
+  .why-item::after,
+  .scope-card::after,
+  .service-area-card::after {
+    opacity: 0.12; /* tone it down on small screens */
+  }
+}
 /* =========================
    WORKFLOW SECTION
 ========================= */
