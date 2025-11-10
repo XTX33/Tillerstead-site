@@ -2693,3 +2693,130 @@ html, body {
     display: none; /* no hamburger on desktop */
   }
 }
+/* ============================================
+   Tillerstead — NAV FIX (mobile + desktop sync)
+   - Works with main.js (BP_DESKTOP = 900)
+   - Assumes:
+     .nav-toggle button
+     <nav id="site-nav" class="site-nav">…</nav>
+============================================ */
+
+/* Mobile / tablet: slide-out drawer */
+@media (max-width: 899px) {
+  /* Make sure the hamburger is visible */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.96);
+    color: #e5e7eb;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* above nav drawer */
+  }
+
+  /* Base drawer (closed) */
+  #site-nav.site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 80%;
+    padding: 4.5rem 1.5rem 2.5rem;
+    background: var(--brand-dark, #020617);
+    color: var(--brand-light, #f9fafb);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transform: translateX(100%);         /* HIDDEN BY DEFAULT */
+    transition: transform 220ms ease;
+    box-shadow: -2px 0 18px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  /* When JS opens nav */
+  #site-nav.site-nav.is-open {
+    transform: translateX(0);
+  }
+
+  /* Stop page scroll when nav is open */
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* Clean link layout inside drawer */
+  #site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #site-nav li {
+    margin: 0;
+  }
+
+  #site-nav a {
+    display: block;
+    padding: 0.75rem 0;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #site-nav a:hover,
+  #site-nav a:focus-visible {
+    text-decoration: underline;
+  }
+
+  /* Kill any "desktop inline nav" styles on small screens */
+  .site-header .site-nav {
+    position: fixed;
+    margin-left: 0;
+  }
+}
+
+/* Desktop: inline nav bar */
+@media (min-width: 900px) {
+  #site-nav.site-nav {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  #site-nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #site-nav a {
+    display: inline-block;
+    padding: 0.25rem 0;
+  }
+
+  /* Hide hamburger on desktop */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Desktop should be scrollable always */
+  body.nav-open {
+    overflow: auto;
+  }
+}
