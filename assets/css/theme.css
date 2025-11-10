@@ -2441,6 +2441,83 @@ body.page-services #repairs-heading::after {
     text-decoration: none;
   }
 }
+/* ====== HEADER BALANCE FIX ====== */
+
+/* Make sure header uses full width but centers inner flex */
+.site-header {
+  background: #020617;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  overflow-x: hidden; /* stop right scroll */
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px; /* center content within page */
+  margin: 0 auto;    /* centers whole header block */
+  padding: 0.75rem 1rem;
+  gap: 1.5rem;
+}
+
+/* Keep logo flush left but not glued to edge */
+.site-logo {
+  flex-shrink: 0;
+  margin-right: auto; /* gives space to nav center */
+}
+
+/* Center nav horizontally inside available space */
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make menu consistent spacing */
+.site-menu {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Right side: phone + burger stay visible but not push off screen */
+.site-header-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* Prevent phone number from expanding too far */
+.call-btn {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  justify-content: center;
+}
+
+/* Small tweak for screens just under 1200px */
+@media (max-width: 1200px) {
+  .site-header-inner {
+    padding-inline: 1rem;
+  }
+  .site-menu {
+    gap: 0.75rem;
+  }
+  .call-btn {
+    font-size: 0.85rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+/* Safety: disable horizontal scrollbars on mobile entirely */
+html, body {
+  overflow-x: hidden;
+}
 /* =======================================
    Footer layout & nav spacing
    ======================================= */
