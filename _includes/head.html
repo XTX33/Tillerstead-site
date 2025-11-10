@@ -85,7 +85,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css'  | relative_url }}">
 <style>
-  /* FINAL OVERRIDES – buttons & hamburger */
+  /* FINAL OVERRIDES – hero buttons + nav */
 
   /* Hero primary button – high contrast green, readable text */
   .hero .btn-primary,
@@ -119,6 +119,162 @@
   .hero .btn.ghost:focus-visible {
     background: rgba(15, 23, 42, 0.9);
     color: #f9fafb;
+  }
+
+  /* ============================================
+     Tillerstead — Header & Nav Override
+     This wins over theme.css / style.css / main.css
+  ============================================= */
+
+  .site-header {
+    background: var(--brand-dark, #020617);
+    color: var(--brand-light, #f9fafb);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.7);
+  }
+
+  .site-header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* ========== MOBILE / TABLET (drawer nav) ========== */
+  @media (max-width: 899px) {
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.96);
+      color: #e5e7eb;
+      cursor: pointer;
+      padding: 0;
+      outline: none;
+      z-index: 1001;
+    }
+
+    .nav-toggle-bar {
+      display: block;
+      width: 1.25rem;
+      height: 2px;
+      margin: 3px 0;
+      background: currentColor;
+      border-radius: 999px;
+    }
+
+    #site-nav.site-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 280px;
+      max-width: 80%;
+      padding: 4.5rem 1.5rem 2.5rem;
+      background: var(--brand-dark, #020617);
+      color: var(--brand-light, #f9fafb);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%); /* hidden by default */
+      transition: transform 220ms ease;
+      box-shadow: -2px 0 18px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    #site-nav.site-nav.is-open {
+      transform: translateX(0);
+    }
+
+    body.nav-open {
+      overflow: hidden;
+    }
+
+    .site-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .site-menu a {
+      display: block;
+      padding: 0.75rem 0;
+      font-weight: 500;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .site-menu a:hover,
+    .site-menu a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .site-header .site-nav {
+      position: fixed;
+      margin-left: 0;
+    }
+  }
+
+  /* ========== DESKTOP (inline nav) ========== */
+  @media (min-width: 900px) {
+    #site-nav.site-nav {
+      position: static;
+      transform: none;
+      background: transparent;
+      box-shadow: none;
+      width: auto;
+      height: auto;
+      padding: 0;
+      display: block;
+    }
+
+    .site-menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-menu a {
+      display: inline-block;
+      padding: 0.25rem 0;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+    }
+
+    .site-menu a:hover,
+    .site-menu a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    body.nav-open {
+      overflow: auto;
+    }
   }
 </style>
 {% if page.styles %}
