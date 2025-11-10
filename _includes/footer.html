@@ -1,105 +1,171 @@
 <footer class="site-footer"
         itemscope
         itemtype="https://schema.org/HomeAndConstructionBusiness">
-<style>
-/* ========== Footer (Light Theme) ========== */
-.site-footer {
-  background: #ffffff;
-  color: #1e293b; /* dark slate ink for contrast */
-  padding: 3rem 1rem;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
 
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  align-items: start;
-}
+  <style>
+    /* ========== Footer (Light, Centered, Mobile-First) ========== */
+    .site-footer {
+      background: #ffffff;
+      color: #1e293b;
+      padding: 3rem 1.5rem 2.5rem;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-decoration: none;
-}
+    .site-footer a {
+      color: #334155;
+      text-decoration: none;
+    }
 
-.footer-logo img {
-  width: 160px;
-  height: auto;
-  margin-bottom: 0.75rem;
-  display: block;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-}
+    .site-footer a:hover {
+      color: var(--brand-green, #0a7f4f);
+    }
 
-.footer-name {
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: #0f172a;
-}
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      align-items: center;
+      text-align: center;
+    }
 
-.footer-tagline {
-  color: #475569;
-  font-size: 0.95rem;
-  margin-top: 0.25rem;
-}
+    .footer-col {
+      max-width: 420px;
+      width: 100%;
+    }
 
-.footer-area {
-  color: #64748b;
-  font-size: 0.9rem;
-  margin-top: 0.75rem;
-}
+    /* --- Brand block --- */
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
 
-.footer-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .footer-logo img {
+      width: 190px;
+      height: auto;
+      display: block;
+      margin: 0 auto 0.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+    }
 
-.footer-nav a {
-  color: #334155;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+    .footer-name {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #0f172a;
+    }
 
-.footer-nav a:hover {
-  color: var(--brand-green, #0a7f4f);
-}
+    .footer-tagline {
+      color: #475569;
+      font-size: 0.95rem;
+    }
 
-.footer-contact a {
-  display: block;
-  color: #334155;
-  text-decoration: none;
-  margin-bottom: 0.25rem;
-}
+    .footer-area {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+    }
 
-.footer-contact a:hover {
-  color: var(--brand-green, #0a7f4f);
-}
+    /* --- Nav block --- */
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.25rem;
+    }
 
-.footer-bottom {
-  margin-top: 2.5rem;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 1.5rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #64748b;
-}
+    .footer-nav a {
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
 
-.footer-credit a {
-  color: var(--brand-green, #0a7f4f);
-  text-decoration: none;
-  font-weight: 500;
-}
+    /* --- Contact block --- */
+    .footer-hic {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
 
-.footer-credit a:hover {
-  text-decoration: underline;
-}
-</style>
+    .footer-address {
+      font-style: normal;
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-contact a {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+
+    /* --- Bottom bar --- */
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2.5rem auto 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    .footer-credit {
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-credit a {
+      color: var(--brand-green, #0a7f4f);
+      font-weight: 500;
+    }
+
+    .footer-credit a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Slightly wider layout on larger screens --- */
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .footer-col {
+        max-width: 340px;
+      }
+
+      .footer-col-brand {
+        text-align: left;
+      }
+
+      .footer-brand {
+        align-items: flex-start;
+      }
+
+      .footer-area {
+        text-align: left;
+      }
+
+      .footer-contact a {
+        text-align: left;
+      }
+
+      .footer-nav ul {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+
   <meta itemprop="name" content="Tillerstead LLC">
   <meta itemprop="@id" content="{{ site.url }}/#contractor">
   <meta itemprop="url" content="{{ site.url }}/">
@@ -107,7 +173,7 @@
   <meta itemprop="telephone" content="{{ site.company.phone_link }}">
   <meta itemprop="email" content="{{ site.company.email }}">
 
-  <div class="footer-inner container">
+  <div class="footer-inner">
 
     <!-- Brand / summary -->
     <div class="footer-col footer-col-brand">
@@ -173,7 +239,7 @@
   <!-- Bottom bar -->
   <div class="footer-bottom">
     <p class="footer-credit">
-      Site built and managed by <strong>Tillerstead&nbsp;LLC</strong>.  
+      Site built and managed by <strong>Tillerstead&nbsp;LLC</strong>.
       We create reliable websites for contractors, trades, and small businesses.
       <a href="{{ '/contact/' | relative_url }}">Get in touch</a> to discuss design and hosting options.
     </p>
