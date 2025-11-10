@@ -2,18 +2,21 @@
   <div class="site-header-inner container">
     <!-- Brand -->
     <a
-      class="site-logo text-logo"
+      class="site-logo"
       href="{{ '/' | relative_url }}"
       aria-label="{{ site.title | default: 'Tillerstead LLC – Home' }}"
     >
-      <span class="logo-two-tone logo-two-tone--dark">
-        <span class="logo-wordmark">
-          <span class="logo-part logo-part-til">Tiller</span><span class="logo-part logo-part-stead">stead</span>
-        </span>
-        <span class="logo-llc">LLC</span>
+      <img
+        src="{{ '/assets/img/logo.png' | relative_url }}"
+        alt="{{ site.title | default: 'Tillerstead LLC' }}"
+        class="site-logo-img"
+        loading="lazy"
+      />
+      <!-- Accessible text fallback (not visible) -->
+      <span class="site-logo-text sr-only">
+        {{ site.title | default: 'Tillerstead LLC' }}
       </span>
     </a>
-
     <!-- Primary navigation -->
     <nav
       id="site-nav"
