@@ -51,9 +51,8 @@
     </style>
 
     {% include header.html %}
-
-    <main id="main" class="site-main" role="main">
-  {%- unless page.hide_hero or page.url == '/' -%}
+<main id="main" class="site-main" role="main">
+  {%- unless page.hide_hero -%}
     {%- include page-hero.html -%}
   {%- endunless -%}
 
@@ -65,7 +64,6 @@
     </div>
   </section>
 </main>
-
     {% include footer.html %}
 
     {% include scripts.html %}
