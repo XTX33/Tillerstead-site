@@ -2084,3 +2084,164 @@ body.page-home .nowrap {
     transform: none !important;
   }
 }
+/* =========================
+   Services page layout (body_class: page-services)
+   ========================= */
+
+body.page-services {
+  background: #020617; /* deep navy to match rest of site */
+}
+
+body.page-services .page-content {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+/* Layout */
+body.page-services .services {
+  padding: 3.5rem 0 0;
+  display: grid;
+  gap: 2.5rem;
+}
+
+body.page-services .services .intro {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+body.page-services .services .lead {
+  max-width: 52rem;
+  color: #e5e7eb; /* readable against dark background */
+}
+
+/* Grid of service cards */
+body.page-services .service-grid {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 960px) {
+  body.page-services .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Service cards */
+body.page-services .service-card {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f9fafb;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
+}
+
+body.page-services .service-card figure {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  background: #0f172a;
+}
+
+body.page-services .service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body.page-services .service-card .body {
+  padding: 1.75rem;
+  display: grid;
+  gap: 1rem;
+}
+
+body.page-services .service-card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+body.page-services .service-card p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+body.page-services .service-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  line-height: 1.6;
+}
+
+body.page-services .service-card li + li {
+  margin-top: 0.25rem;
+}
+
+/* CTA block at bottom */
+body.page-services .services-cta {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 0;
+  background: rgba(15, 23, 42, 1);
+  color: #e5e7eb;
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.35);
+  font-weight: 500;
+}
+
+body.page-services .services-cta a {
+  color: #facc15; /* brass accent */
+  font-weight: 600;
+}
+
+body.page-services .services-cta a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  body.page-services .services {
+    padding-top: 3rem;
+  }
+
+  body.page-services .service-card .body {
+    padding: 1.5rem;
+  }
+}
+
+/* Tile scope headings (showers, floors, kitchens, repairs) */
+
+body.page-services #showers-heading,
+body.page-services #floors-heading,
+body.page-services #kitchens-heading,
+body.page-services #repairs-heading {
+  color: #0f172a;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+  text-align: left;
+  position: relative;
+}
+
+/* Emerald → brass underline accent */
+body.page-services #showers-heading::after,
+body.page-services #floors-heading::after,
+body.page-services #kitchens-heading::after,
+body.page-services #repairs-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  height: 3px;
+  width: 60px;
+  background-image: linear-gradient(90deg, #22c55e, #facc15);
+  border-radius: 2px;
+  opacity: 0.9;
+}
