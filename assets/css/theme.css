@@ -1297,3 +1297,101 @@ textarea::placeholder {
   text-decoration: underline;
   opacity: 0.9;
 }
+/* Base hero spacing */
+.hero--homepage {
+  padding: 2.5rem 0 2.75rem; /* you can tweak if top feels too tall */
+}
+
+/* Surface wrapper so we can clip the pattern nicely */
+.hero-surface {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 2.75rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: radial-gradient(circle at top left,
+              rgba(15, 23, 42, 1),
+              rgba(15, 23, 42, 0.93));
+}
+
+/* Content stays above the pattern */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* The tile backsplash: subway grid + herringbone accent */
+.hero-pattern {
+  position: absolute;
+  inset: -40px -40px auto -40px; /* bleed a bit outside for smoother edges */
+  z-index: 0;
+  opacity: 0.45; /* keep it subtle so text is readable */
+  pointer-events: none;
+
+  /* 1) subway tile base
+     2) faint vertical grout
+     3) angled herringbone accent on the right */
+  background-image:
+    /* subway rectangles */
+    linear-gradient(
+      to bottom,
+      rgba(148, 163, 184, 0.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to right,
+      rgba(148, 163, 184, 0.18) 1px,
+      transparent 1px
+    ),
+    /* herringbone accent block */
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(34, 197, 94, 0.16) 35%,
+      rgba(34, 197, 94, 0.16) 65%,
+      transparent 65%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(148, 163, 184, 0.25) 0,
+      rgba(148, 163, 184, 0.25) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  background-size:
+    /* subway tile height */
+    100% 40px,
+    60px 100%,
+    /* herringbone block size */
+    320px 260px,
+    14px 14px;
+  background-position:
+    0 0,
+    0 0,
+    right -40px bottom -40px,
+    right -40px bottom -40px;
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
+}
+
+/* Optional: slightly stronger pattern on desktop only */
+@media (min-width: 900px) {
+  .hero-pattern {
+    opacity: 0.6;
+  }
+}
+
+/* Eyebrow refinements so it sits nicely over the pattern */
+.hero-eyebrow {
+  margin: 0 0 0.6rem;
+}
+
+.hero-eyebrow-text {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(148, 163, 184, 0.95);
+}
