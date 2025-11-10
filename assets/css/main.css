@@ -227,103 +227,216 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
 }
-/* ========= HEADER LAYOUT & NAV SPACING ========= */
 
+/* ============================================
+   HEADER + NAV
+   ============================================ */
+
+/* Sticky header shell */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   background: #020617;
   border-bottom: 1px solid rgba(148, 163, 184, 0.25);
 }
 
-/* Use a 3-column grid: logo | nav | phone */
+/* The inner container already has .container;
+   we just control flex + padding here. */
 .site-header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.6rem 1.5rem;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  display: flex;
   align-items: center;
-  column-gap: 1.75rem;
+  justify-content: space-between;
+  gap: 1.75rem;
+  padding: 0.65rem 1.25rem;
 }
 
-/* Logo lockup stays snug on the left */
+/* Logo lockup */
 .site-logo {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* Center nav between logo + phone, allow wrapping if needed */
-.site-nav {
-  justify-self: center;
-}
-
-.site-menu {
-  display: flex;
-  flex-wrap: wrap; /* lets items wrap instead of forcing horizontal scroll */
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem 1.4rem; /* tighter spacing so everything fits */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.site-menu > li > a {
-  display: inline-block;
-  padding: 0.15rem 0;
-  font-size: 0.78rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-/* Right-side actions: keep phone on-screen */
+/* Right-side actions (phone + burger) */
 .site-header-actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
-.call-btn {
+/* Call button */
+.call-btn.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  text-decoration: none;
   white-space: nowrap;
-  padding-inline: 1.4rem;
 }
 
-/* Desktop only: hide toggle, force horizontal layout */
-@media (min-width: 992px) {
-  .nav-toggle {
-    display: none;
-  }
-
-  #site-nav {
-    display: block !important; /* in case mobile styles were hiding it */
-  }
+/* Hamburger */
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 34px;
+  height: 32px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.95);
+  cursor: pointer;
 }
 
-/* Mobile / tablet: stack nicely, let your existing JS handle toggle */
-@media (max-width: 991px) {
+.nav-toggle-bar {
+  height: 2px;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* X state */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* ========= NAV – MOBILE FIRST (drawer) ========= */
+
+/* Drawer hidden by default */
+.site-nav {
+  position: fixed;
+  top: 3.25rem; /* just under header */
+  left: 0;
+  right: 0;
+  background: rgba(2, 6, 23, 0.98);
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  flex: 0 0 auto;
+}
+
+/* When JS adds .is-open */
+.site-nav.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.site-menu > li {
+  margin: 0;
+  padding: 0;
+}
+
+.site-menu a {
+  display: block;
+  padding: 0.45rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+.site-menu a:hover,
+.site-menu a:focus-visible {
+  color: #facc15;
+}
+
+.site-menu a[aria-current="page"] {
+  color: #facc15;
+}
+
+/* ========= DESKTOP ≥ 960px ========= */
+
+@media (min-width: 960px) {
   .site-header-inner {
-    grid-template-columns: auto auto; /* logo + actions row */
-    grid-template-rows: auto auto;
-    row-gap: 0.5rem;
+    padding-inline: 1.75rem;
+    gap: 2rem;
+  }
+
+  .site-logo {
+    margin-right: 1.5rem;
   }
 
   .site-nav {
-    grid-column: 1 / -1;
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    flex: 1 1 auto;
   }
 
   .site-menu {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0;
   }
 
-  .call-btn {
-    font-size: 0.85rem;
-    padding-inline: 1rem;
+  .site-menu a {
+    padding: 0.3rem 0;
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
   }
-} /* ========= FOOTER THEME ========= */
+
+  .site-menu a[aria-current="page"] {
+    border-bottom: 2px solid #facc15;
+  }
+
+  .call-btn.btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* Slight tightening on smaller desktops */
+@media (max-width: 1100px) and (min-width: 960px) {
+  .site-menu {
+    gap: 0.9rem;
+  }
+
+  .site-menu a {
+    font-size: 0.84rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* ============================================
+   FOOTER THEME
+   ============================================ */
 
 .site-footer {
   background: #020617;
@@ -381,9 +494,10 @@ main {
     justify-content: flex-start;
   }
 }
-/* ===========================================
+
+/* ============================================
    Logo – two-tone wordmark
-   =========================================== */
+   ============================================ */
 
 .logo-two-tone {
   display: inline-flex;
@@ -395,7 +509,7 @@ main {
 .logo-wordmark {
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-size: 1.35rem; /* header size; we'll scale down for footer */
+  font-size: 1.35rem; /* header size; scale down with --sm */
 }
 
 .logo-part-til {
@@ -418,14 +532,15 @@ main {
 
 /* Dark-background version (header, dark hero) */
 .logo-two-tone--dark {
-  --logo-llc-color: #f9fafb; /* white on dark */
+  --logo-llc-color: #f9fafb;
 }
 
-/* Light-background version (footer on light panel, white bg) */
+/* Light-background version (if you ever put logo on light bg) */
 .logo-two-tone--light {
-  --logo-llc-color: #020617; /* near-black on light */
+  --logo-llc-color: #020617;
 }
-/* Footer-sized wordmark */
+
+/* Smaller logo variant for footer / small contexts */
 .logo-two-tone--sm .logo-wordmark {
   font-size: 1rem;
 }
@@ -434,10 +549,10 @@ main {
   font-size: 0.65rem;
 }
 
-/* Footer layout niceties */
+/* Footer niceties */
 .footer-credit {
   font-size: 0.85rem;
-  color: #9ca3af; /* soft gray on dark */
+  color: #9ca3af;
 }
 
 .footer-logo-link {
