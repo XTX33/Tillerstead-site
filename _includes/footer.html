@@ -35,8 +35,10 @@
             {% endfor %}
           {% endif %}
           {% if link and link.url %}
-            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>{% unless forloop.last %}
-            <span aria-hidden="true">·</span>{% endunless %}
+            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+            {% unless forloop.last %}
+              <span aria-hidden="true">·</span>
+            {% endunless %}
           {% endif %}
         {% endfor %}
       </nav>
