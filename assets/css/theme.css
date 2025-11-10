@@ -1395,3 +1395,585 @@ textarea::placeholder {
   font-weight: 600;
   color: rgba(148, 163, 184, 0.95);
 }
+/* ============================================
+   Tillerstead Homepage Styles
+   Scoped via body.page-home
+   Brand: emerald (#22c55e) + brass (#facc15)
+============================================ */
+
+body.page-home {
+  --ts-emerald: #22c55e;
+  --ts-emerald-deep: #16a34a;
+  --ts-brass: #facc15;
+  --ts-ink: #e5e7eb;
+  --ts-muted: #9ca3af;
+  --ts-bg-elevated: rgba(15, 23, 42, 0.96);
+  --ts-bg-soft: rgba(15, 23, 42, 0.9);
+  --ts-border-subtle: rgba(148, 163, 184, 0.4);
+}
+
+/* Layout shells */
+
+body.page-home .section {
+  padding: 3.25rem 0;
+}
+
+body.page-home .section .container,
+body.page-home .hero-inner,
+body.page-home .service-area-shell,
+body.page-home .workflow-shell {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* =========================
+   HERO + BACKSPLASH
+========================= */
+
+body.page-home .hero.hero--homepage {
+  padding: 2.5rem 0 2.75rem;
+  background: transparent; /* let the surface handle background */
+}
+
+/* Surface wrapper so we can clip the pattern nicely */
+body.page-home .hero-surface {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 2.75rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at top left,
+    rgba(15, 23, 42, 1),
+    rgba(15, 23, 42, 0.93)
+  );
+}
+
+/* Content stays above the pattern */
+body.page-home .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* The tile backsplash: subway grid + herringbone accent */
+body.page-home .hero-pattern {
+  position: absolute;
+  inset: -40px; /* full coverage, bleeds out slightly for smooth edges */
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+
+  /* 1) subway rectangles
+     2) vertical grout
+     3) angled herringbone accent on the right */
+  background-image:
+    /* horizontal grout lines */
+    linear-gradient(
+      to bottom,
+      rgba(148, 163, 184, 0.18) 1px,
+      transparent 1px
+    ),
+    /* vertical grout lines */
+    linear-gradient(
+      to right,
+      rgba(148, 163, 184, 0.18) 1px,
+      transparent 1px
+    ),
+    /* emerald herringbone block */
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(34, 197, 94, 0.18) 35%,
+      rgba(34, 197, 94, 0.18) 65%,
+      transparent 65%,
+      transparent 100%
+    ),
+    /* herringbone pattern lines */
+    repeating-linear-gradient(
+      -45deg,
+      rgba(148, 163, 184, 0.25) 0,
+      rgba(148, 163, 184, 0.25) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+
+  background-size:
+    100% 40px,   /* horiz subway rows */
+    60px 100%,   /* vertical joints */
+    320px 260px, /* herringbone block */
+    14px 14px;   /* herringbone density */
+
+  background-position:
+    0 0,
+    0 0,
+    right -40px bottom -40px,
+    right -40px bottom -40px;
+
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
+}
+
+/* Slightly stronger pattern on desktop */
+@media (min-width: 900px) {
+  body.page-home .hero-pattern {
+    opacity: 0.6;
+  }
+}
+
+/* Hero content */
+
+body.page-home .hero-main {
+  max-width: 56rem;
+}
+
+body.page-home .hero-eyebrow {
+  margin: 0 0 0.6rem;
+}
+
+body.page-home .hero-eyebrow,
+body.page-home .hero-eyebrow-text {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ts-muted);
+}
+
+body.page-home .hero-eyebrow-text {
+  color: rgba(148, 163, 184, 0.95);
+}
+
+body.page-home #hero-heading {
+  margin-top: 0.85rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+body.page-home .hero-lead,
+body.page-home #hero-summary {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ts-ink);
+  max-width: 44rem;
+}
+
+body.page-home .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+body.page-home .hero-cred {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+body.page-home .hero-note {
+  color: var(--ts-ink);
+}
+
+body.page-home .hero-note.text-meta {
+  font-size: 0.9rem;
+  color: var(--ts-muted);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+body.page-home .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.45rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.1;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+/* Primary CTA: emerald → brass */
+
+body.page-home .btn-primary {
+  background-image: linear-gradient(
+    135deg,
+    var(--ts-emerald-deep) 0%,
+    var(--ts-emerald) 40%,
+    var(--ts-brass) 100%
+  );
+  color: #022c22;
+  border-color: transparent;
+  box-shadow:
+    0 14px 40px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.5);
+}
+
+body.page-home .btn-primary:hover,
+body.page-home .btn-primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow:
+    0 20px 55px rgba(15, 23, 42, 0.95),
+    0 0 0 1px rgba(15, 23, 42, 0.65);
+}
+
+/* Secondary / ghost CTA */
+
+body.page-home .btn-ghost {
+  background: transparent;
+  color: var(--ts-ink);
+  border-color: rgba(148, 163, 184, 0.8);
+  box-shadow: none;
+}
+
+body.page-home .btn-ghost:hover,
+body.page-home .btn-ghost:focus-visible {
+  background: rgba(15, 23, 42, 0.85);
+  color: #f9fafb;
+  border-color: var(--ts-emerald);
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.75);
+}
+
+/* =========================
+   HERO KPI CARDS
+========================= */
+
+body.page-home .hero-kpis {
+  list-style: none;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.15rem;
+}
+
+body.page-home .hero-kpi {
+  position: relative;
+  background: var(--ts-bg-soft);
+  border-radius: 1.1rem;
+  padding: 1rem 1rem 1.2rem;
+  border: 1px solid var(--ts-border-subtle);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+  overflow: hidden;
+  font-size: 0.95rem;
+  color: var(--ts-ink);
+}
+
+body.page-home .hero-kpi::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  background-image: linear-gradient(
+    135deg,
+    var(--ts-emerald),
+    var(--ts-brass)
+  );
+}
+
+body.page-home .hero-kpi-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ts-muted);
+  margin-bottom: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  body.page-home .hero-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   WHY GCs SECTION
+========================= */
+
+body.page-home .section--why h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+body.page-home .why-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+body.page-home .why-item {
+  position: relative;
+  background: var(--ts-bg-elevated);
+  border-radius: 1rem;
+  padding: 1.25rem 1.3rem;
+  border: 1px solid var(--ts-border-subtle);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+}
+
+body.page-home .why-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  color: var(--ts-ink);
+}
+
+body.page-home .why-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ts-ink);
+}
+
+@media (min-width: 768px) {
+  body.page-home .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   TILE SCOPES GALLERY
+========================= */
+
+body.page-home .section--scopes h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+body.page-home .scope-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+body.page-home .scope-card {
+  position: relative;
+  flex: 0 0 85%;
+  background: var(--ts-bg-elevated);
+  border-radius: 1rem;
+  overflow: hidden;
+  scroll-snap-align: center;
+  border: 1px solid var(--ts-border-subtle);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.page-home .scope-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 1);
+}
+
+body.page-home .scope-card figure {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+}
+
+body.page-home .scope-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.page-home .scope-body {
+  padding: 1.3rem 1.35rem 1.4rem;
+}
+
+body.page-home .scope-body h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+  color: var(--ts-ink);
+}
+
+body.page-home .scope-body p {
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+  color: var(--ts-ink);
+}
+
+/* Tablet+ grid mode */
+
+@media (min-width: 768px) {
+  body.page-home .scope-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    overflow: visible;
+  }
+
+  body.page-home .scope-card {
+    flex: none;
+    scroll-snap-align: unset;
+  }
+}
+
+/* Desktop+ 4-column grid */
+
+@media (min-width: 1200px) {
+  body.page-home .scope-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+body.page-home .section-cta {
+  margin-top: 1.75rem;
+  font-size: 0.95rem;
+}
+
+body.page-home .section-cta a {
+  color: var(--ts-emerald);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* =========================
+   WORKFLOW SECTION
+========================= */
+
+body.page-home .section--workflow h2 {
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
+}
+
+body.page-home .workflow-shell {
+  max-width: 52rem;
+}
+
+body.page-home .workflow-steps {
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+body.page-home .workflow-steps li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+body.page-home .workflow-steps strong {
+  color: var(--ts-ink);
+}
+
+/* =========================
+   SERVICE AREA SECTION
+========================= */
+
+body.page-home .section--service-area {
+  border-top: 1px solid rgba(15, 23, 42, 0.9);
+}
+
+body.page-home .service-area-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+body.page-home .service-area-copy p {
+  margin-bottom: 0.75rem;
+}
+
+body.page-home .service-area-card {
+  position: relative;
+  background: var(--ts-bg-elevated);
+  border-radius: 1rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--ts-border-subtle);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+  font-size: 0.95rem;
+}
+
+body.page-home .service-area-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+body.page-home .service-area-card li + li {
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  body.page-home .service-area-shell {
+    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   BRAND ACCENTS & UTILITIES
+========================= */
+
+/* Headings get a faint gradient underline */
+body.page-home .section h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+body.page-home .section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 60%;
+  background-image: linear-gradient(90deg, var(--ts-emerald), var(--ts-brass));
+  border-radius: 2px;
+}
+
+/* Card top edges with same gradient bar */
+body.page-home .why-item::before,
+body.page-home .scope-card::before,
+body.page-home .service-area-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: linear-gradient(135deg, var(--ts-emerald), var(--ts-brass));
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  opacity: 0.9;
+}
+
+/* Optional small emerald keyword highlight */
+body.page-home .text-emerald {
+  color: var(--ts-emerald);
+  font-weight: 600;
+}
+
+/* Optional brass keyword highlight */
+body.page-home .text-brass {
+  color: var(--ts-brass);
+  font-weight: 600;
+}
+
+/* Utilities */
+
+body.page-home .nowrap {
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-home .btn,
+  body.page-home .scope-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
