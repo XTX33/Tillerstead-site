@@ -3058,3 +3058,28 @@ html, body {
   color: var(--ts-brass, #facc15);
   text-decoration: underline;
 }
+/* ============================================
+   Global hero surface backsplash
+============================================ */
+.hero,
+.hero-surface,
+[class*="hero--"] {
+  position: relative;
+  background-image: var(--ts-bsp-horiz), var(--ts-bsp-vert);
+  background-repeat: repeat;
+  background-size: 100% auto, auto 100%;
+  background-blend-mode: overlay;
+  z-index: 0;
+}
+
+.hero::before,
+.hero-surface::before,
+[class*="hero--"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ts-bsp-horiz), var(--ts-bsp-vert);
+  opacity: 0.15; /* adjust strength */
+  pointer-events: none;
+  z-index: -1;
+}
