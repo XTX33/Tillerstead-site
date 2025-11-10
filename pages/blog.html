@@ -237,4 +237,28 @@ body_class: page-blog
     text-align: center;
     color: rgba(148, 163, 184, 0.96);
   }
+  /* =======================================
+   Blog Card Grid — 2x2 Desktop Layout
+   ======================================= */
+
+@media (min-width: 992px) {
+  .page-blog .blog-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 2rem 2rem; /* row, column spacing */
+    align-items: stretch;
+  }
+
+  .page-blog .blog-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .page-blog .blog-card-excerpt {
+    flex-grow: 1;
+  }
+}
 </style>
