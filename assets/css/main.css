@@ -227,3 +227,157 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
 }
+/* ========= HEADER LAYOUT & NAV SPACING ========= */
+
+.site-header {
+  background: #020617;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* Use a 3-column grid: logo | nav | phone */
+.site-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 1.75rem;
+}
+
+/* Logo lockup stays snug on the left */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Center nav between logo + phone, allow wrapping if needed */
+.site-nav {
+  justify-self: center;
+}
+
+.site-menu {
+  display: flex;
+  flex-wrap: wrap; /* lets items wrap instead of forcing horizontal scroll */
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1.4rem; /* tighter spacing so everything fits */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-menu > li > a {
+  display: inline-block;
+  padding: 0.15rem 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Right-side actions: keep phone on-screen */
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.call-btn {
+  white-space: nowrap;
+  padding-inline: 1.4rem;
+}
+
+/* Desktop only: hide toggle, force horizontal layout */
+@media (min-width: 992px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  #site-nav {
+    display: block !important; /* in case mobile styles were hiding it */
+  }
+}
+
+/* Mobile / tablet: stack nicely, let your existing JS handle toggle */
+@media (max-width: 991px) {
+  .site-header-inner {
+    grid-template-columns: auto auto; /* logo + actions row */
+    grid-template-rows: auto auto;
+    row-gap: 0.5rem;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+  }
+
+  .site-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .call-btn {
+    font-size: 0.85rem;
+    padding-inline: 1rem;
+  }
+} /* ========= FOOTER THEME ========= */
+
+.site-footer {
+  background: #020617;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 2.25rem 1.5rem 2rem;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.site-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+
+.site-footer a {
+  color: #c4c9ff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #facc15;
+}
+
+.site-footer-meta {
+  flex: 1 1 220px;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: flex-end;
+  flex: 1 1 220px;
+}
+
+.site-footer-nav a {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+/* Stack on small screens */
+@media (max-width: 768px) {
+  .site-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer-nav {
+    justify-content: flex-start;
+  }
+}
