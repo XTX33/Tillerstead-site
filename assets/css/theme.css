@@ -3021,3 +3021,40 @@ html, body {
     height: 68px;  /* was 48px */
   }
 }
+.footer-nav {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.footer-heading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ts-emerald, #22c55e);
+  margin-bottom: 0.75rem;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(226, 232, 240, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--ts-brass, #facc15);
+  text-decoration: underline;
+}
