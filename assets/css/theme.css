@@ -2588,3 +2588,108 @@ html, body {
     text-align: center;
   }
 }
+/* ================================
+   Tillerstead — Mobile Nav Override
+   Restores slide-out drawer on small screens
+   Assumes:
+   - .nav-toggle button in header
+   - <nav id="site-nav" class="site-nav">…</nav>
+   - JS toggles .site-nav.is-open and body.nav-open
+=================================== */
+
+/* Mobile: drawer */
+@media (max-width: 768px) {
+  /* Make sure the toggle is actually visible on mobile */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.96);
+    color: #e5e7eb;
+    cursor: pointer;
+    z-index: 1001; /* above the drawer */
+  }
+
+  /* Base mobile drawer (closed state) */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 80%;
+    padding: 4.5rem 1.5rem 2.5rem;
+    background: var(--brand-dark, #020617);
+    color: var(--brand-light, #f9fafb);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transform: translateX(100%);      /* hidden by default */
+    transition: transform 220ms ease; /* slide animation */
+    box-shadow: -2px 0 16px rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+  }
+
+  /* When JS opens the nav */
+  .site-nav.is-open {
+    transform: translateX(0);
+  }
+
+  /* Prevent the page behind from scrolling when menu is open */
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* Clean up list styles inside the drawer */
+  .site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav li {
+    margin: 0;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.75rem 0;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible {
+    text-decoration: underline;
+  }
+
+  /* Kill any “desktop inline nav” behavior on small screens */
+  .site-header .site-nav {
+    position: fixed;   /* force fixed in mobile */
+    margin-left: 0;
+  }
+}
+
+/* Desktop: keep your inline nav behavior above 768px */
+@media (min-width: 769px) {
+  .site-nav {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-toggle {
+    display: none; /* no hamburger on desktop */
+  }
+}
