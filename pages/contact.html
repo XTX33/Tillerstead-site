@@ -197,7 +197,6 @@ hero_cta_secondary_label: "Call (609) 665-9350"
     </aside>
   </div>
 </section>
-
 <style>
   /* Page shell */
   body.page-contact {
@@ -210,16 +209,17 @@ hero_cta_secondary_label: "Call (609) 665-9350"
   }
 
   .contact-shell {
-    max-width: 56rem;
+    max-width: 72rem;          /* was 56rem – gives the section room */
     margin: 0 auto;
-    padding-inline: 1.25rem;
+    padding-inline: 1.5rem;
     display: grid;
     gap: 2.5rem;
   }
 
+  /* Desktop: two columns, FORM slightly larger than copy */
   @media (min-width: 960px) {
     .contact-shell {
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
       align-items: flex-start;
       gap: 3rem;
     }
@@ -231,7 +231,7 @@ hero_cta_secondary_label: "Call (609) 665-9350"
 
   .contact-header .lead {
     color: #e5e7eb;
-    max-width: 38rem;
+    max-width: 40rem;
   }
 
   .contact-steps ol {
@@ -247,7 +247,7 @@ hero_cta_secondary_label: "Call (609) 665-9350"
     background: rgba(15, 23, 42, 0.98);
     border-radius: 1rem;
     border: 1px solid rgba(148, 163, 184, 0.6);
-    padding: 1.75rem 1.5rem 1.75rem;
+    padding: 2rem 1.75rem 1.9rem; /* a hair more breathing room */
     box-shadow: 0 14px 36px rgba(15, 23, 42, 0.8);
   }
 
@@ -357,10 +357,10 @@ hero_cta_secondary_label: "Call (609) 665-9350"
     color: rgba(148, 163, 184, 0.95);
   }
 
-  /* SITE-WIDE button gradient fix */
+  /* Button */
   .btn-primary {
-    background: #22c55e;               /* solid emerald */
-    background-image: none !important; /* kill old gradient */
+    background: #22c55e;
+    background-image: none !important;
     border: 1px solid #16a34a;
     color: #022c22;
     font-weight: 600;
@@ -378,5 +378,12 @@ hero_cta_secondary_label: "Call (609) 665-9350"
   .btn-primary:active {
     transform: translateY(0);
     box-shadow: 0 8px 18px rgba(22, 163, 74, 0.45);
+  }
+
+  /* Mobile stacking: keep it full-width and clean */
+  @media (max-width: 959.98px) {
+    .contact-shell {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
