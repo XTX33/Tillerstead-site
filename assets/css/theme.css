@@ -2380,3 +2380,61 @@ body.page-services #repairs-heading::after {
     gap: 1rem;
   }
 }
+/* =======================================
+   Header & Nav – clean desktop spacing
+   ======================================= */
+
+@media (min-width: 901px) {
+  .site-header {
+    background: #020617;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+  }
+
+  .site-header-inner {
+    max-width: var(--ts-shell-width, 1120px);
+    margin-inline: auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .site-header-inner .site-logo {
+    flex-shrink: 0;
+  }
+
+  .site-header-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  /* Nav list inline, even spacing */
+  .site-nav {
+    position: static;
+  }
+
+  .site-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-menu li {
+    margin: 0;
+  }
+
+  .site-menu a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
