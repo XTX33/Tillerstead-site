@@ -1,7 +1,105 @@
 <footer class="site-footer"
         itemscope
         itemtype="https://schema.org/HomeAndConstructionBusiness">
+<style>
+/* ========== Footer (Light Theme) ========== */
+.site-footer {
+  background: #ffffff;
+  color: #1e293b; /* dark slate ink for contrast */
+  padding: 3rem 1rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
 
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: start;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.footer-logo img {
+  width: 160px;
+  height: auto;
+  margin-bottom: 0.75rem;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.footer-name {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.footer-tagline {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.footer-area {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav a {
+  color: #334155;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--brand-green, #0a7f4f);
+}
+
+.footer-contact a {
+  display: block;
+  color: #334155;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+
+.footer-contact a:hover {
+  color: var(--brand-green, #0a7f4f);
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.footer-credit a {
+  color: var(--brand-green, #0a7f4f);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+</style>
   <meta itemprop="name" content="Tillerstead LLC">
   <meta itemprop="@id" content="{{ site.url }}/#contractor">
   <meta itemprop="url" content="{{ site.url }}/">
