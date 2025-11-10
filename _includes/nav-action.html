@@ -11,7 +11,7 @@
   {% assign aria_label = action.aria_label %}
   {% if aria_label == nil or aria_label == '' %}
     {% if action.id == 'call' %}
-      {% assign aria_label = 'Call ' | append: (site.title | default: 'Tillerstead LLC') %}
+      {% assign aria_label = 'Call ' | append: (site.title | default: 'Tillerstead LLC') | append: ' at ' | append: (site.company.phone_display | default: '(609) 665-9350') %}
     {% elsif action.id == 'quote' %}
       {% assign aria_label = 'Request an estimate from ' | append: (site.title | default: 'Tillerstead LLC') %}
     {% endif %}
