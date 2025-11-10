@@ -34,7 +34,8 @@ layout: null
 
 <script>
 (async () => {
-  const navTargets = {{ site.data.navigation.primary | jsonify }};
+  let navTargets = {{ site.data.navigation.primary | jsonify }};
+  if (!Array.isArray(navTargets)) navTargets = [];
   const navPaths = navTargets.map((item) => item.url).filter(Boolean);
   const extras = [
     "/",
