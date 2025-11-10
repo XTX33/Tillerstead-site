@@ -3001,3 +3001,48 @@ html, body {
     overflow: auto;
   }
 }
+/* Header logo image */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Make sure old text styles don't affect spacing */
+.site-logo-text {
+  font: inherit;
+}
+
+/* Hide the text visually but keep for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Base logo image sizing */
+.site-logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .site-logo-img {
+    height: 44px;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .site-logo-img {
+    height: 48px;
+  }
+}
