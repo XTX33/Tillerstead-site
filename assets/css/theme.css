@@ -542,7 +542,38 @@ button.btn {
   font-size: 1.15rem;
   color: #e5e7eb;
 }
+/* =========================
+   Tile accent refinement
+   (keep it inside cards, lighter)
+========================= */
 
+.hero-kpi::after,
+.why-item::after,
+.scope-card::after,
+.service-area-card::after {
+  inset: auto 0 0 auto;      /* sit in the bottom-right corner, no negative bleed */
+  width: 42%;                /* smaller footprint inside the card */
+  height: 52%;
+  opacity: 0.12;             /* lighter so it doesn’t read as a big block */
+  background-size:
+    220px 170px,             /* smaller emerald patch */
+    10px 10px;               /* tighter herringbone */
+  background-position:
+    bottom right,
+    bottom right;
+}
+
+/* Extra-gentle on small screens */
+@media (max-width: 767px) {
+  .hero-kpi::after,
+  .why-item::after,
+  .scope-card::after,
+  .service-area-card::after {
+    width: 38%;
+    height: 45%;
+    opacity: 0.08;
+  }
+}
 /* 8) Forms
    ------------------------------------------- */
 
