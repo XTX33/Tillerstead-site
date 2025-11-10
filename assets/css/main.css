@@ -425,3 +425,27 @@ main {
 .logo-two-tone--light {
   --logo-llc-color: #020617; /* near-black on light */
 }
+/* Footer-sized wordmark */
+.logo-two-tone--sm .logo-wordmark {
+  font-size: 1rem;
+}
+
+.logo-two-tone--sm .logo-llc {
+  font-size: 0.65rem;
+}
+
+/* Footer layout niceties */
+.footer-credit {
+  font-size: 0.85rem;
+  color: #9ca3af; /* soft gray on dark */
+}
+
+.footer-logo-link {
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.footer-logo-link:hover .logo-part-til,
+.footer-logo-link:hover .logo-part-stead {
+  opacity: 0.9;
+}
