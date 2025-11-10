@@ -2820,3 +2820,184 @@ html, body {
     overflow: auto;
   }
 }
+/* ============================================
+   Tillerstead — Header & Nav Override
+   Sync with main.js (BP_DESKTOP = 900)
+   HTML structure:
+   - .site-header
+     - .site-header-inner
+       - .site-logo
+       - <nav id="site-nav" class="site-nav">
+           <ul class="site-menu">…</ul>
+       - .site-header-actions (call button + .nav-toggle)
+============================================ */
+
+/* Base header layout (all viewports) */
+.site-header {
+  background: var(--brand-dark, #020617);
+  color: var(--brand-light, #f9fafb);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.7);
+}
+
+.site-header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Call button – keep it tidy in header */
+.site-header-actions .call-btn {
+  white-space: nowrap;
+}
+
+/* ========== MOBILE / TABLET (drawer nav) ========== */
+@media (max-width: 899px) {
+  /* Show hamburger on small screens */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.96);
+    color: #e5e7eb;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    z-index: 1001; /* above drawer */
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    margin: 3px 0;
+    background: currentColor;
+    border-radius: 999px;
+  }
+
+  /* Drawer base (closed state) */
+  #site-nav.site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 80%;
+    padding: 4.5rem 1.5rem 2.5rem;
+    background: var(--brand-dark, #020617);
+    color: var(--brand-light, #f9fafb);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);        /* HIDDEN BY DEFAULT */
+    transition: transform 220ms ease;
+    box-shadow: -2px 0 18px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  /* When JS adds .is-open */
+  #site-nav.site-nav.is-open {
+    transform: translateX(0);
+  }
+
+  /* Stop the page scrolling when nav is open */
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* Vertical menu in the drawer */
+  .site-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .site-menu li {
+    margin: 0;
+  }
+
+  .site-menu a {
+    display: block;
+    padding: 0.75rem 0;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .site-menu a:hover,
+  .site-menu a:focus-visible {
+    text-decoration: underline;
+  }
+
+  /* Make sure desktop-inline styles don't fight us on mobile */
+  .site-header .site-nav {
+    position: fixed;
+    margin-left: 0;
+  }
+}
+
+/* ========== DESKTOP (inline nav) ========== */
+@media (min-width: 900px) {
+  /* Inline nav row */
+  #site-nav.site-nav {
+    position: static;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: block;
+  }
+
+  .site-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-menu a {
+    display: inline-block;
+    padding: 0.25rem 0;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+  }
+
+  .site-menu a:hover,
+  .site-menu a:focus-visible {
+    text-decoration: underline;
+  }
+
+  /* Hide hamburger on desktop */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Desktop should always scroll normally */
+  body.nav-open {
+    overflow: auto;
+  }
+}
