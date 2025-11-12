@@ -52,11 +52,10 @@
 
     {% include header.html %}
 <main id="main" class="site-main" role="main">
+{%- include breadcrumbs.html -%}
   {%- unless page.hide_hero -%}
     {%- include page-hero.html -%}
   {%- endunless -%}
-
-  {%- include breadcrumbs.html -%}
 
   <section class="page-content section">
     <div class="container">
