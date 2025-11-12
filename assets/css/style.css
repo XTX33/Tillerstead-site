@@ -49,7 +49,7 @@
 
 .section-banner-subtitle {
   font-size: 0.9rem;
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
 }
 
 .section-banner-actions {
@@ -173,7 +173,7 @@
 
 .faq-answer {
   font-size: 0.88rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
 }
 
 /* 4) Testimonials
@@ -213,13 +213,13 @@
 
 .testimonial-quote {
   font-size: 0.95rem;
-  color: rgba(226, 232, 240, 0.96);
+  color: #f1f5f9; /* Improved contrast - was rgba(226, 232, 240, 0.96) */
   margin-bottom: 0.75rem;
 }
 
 .testimonial-meta {
   font-size: 0.82rem;
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
 }
 
 .testimonial-meta strong {
@@ -262,12 +262,12 @@
 
 .estimate-copy p {
   font-size: 0.9rem;
-  color: rgba(226, 232, 240, 0.96);
+  color: #f1f5f9; /* Improved contrast - was rgba(226, 232, 240, 0.96) */
 }
 
 .estimate-copy .meta {
   font-size: 0.8rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
   margin-top: 0.35rem;
 }
 
@@ -293,7 +293,7 @@
   font-size: 0.78rem;
   font-weight: 500;
   margin-bottom: 0.2rem;
-  color: rgba(203, 213, 225, 0.96);
+  color: #e2e8f0; /* Improved contrast - was rgba(203, 213, 225, 0.96) */
 }
 
 /* Use inputs from theme.css; only adjust spacing here */
@@ -342,13 +342,13 @@
 
 .service-tile p {
   font-size: 0.86rem;
-  color: rgba(148, 163, 184, 0.98);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.98) */
 }
 
 .service-tile-meta {
   margin-top: 0.5rem;
   font-size: 0.78rem;
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
 }
 
 /* 7) Small helpers tied to these components
@@ -358,12 +358,12 @@
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
 }
 
 .text-kicker {
   font-size: 0.85rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
 }
 
 .chip-row {
@@ -378,7 +378,7 @@
   padding: 0.2rem 0.6rem;
   font-size: 0.75rem;
   border: 1px solid rgba(148, 163, 184, 0.4);
-  color: rgba(209, 213, 219, 0.96);
+  color: #e5e7eb; /* Improved contrast - was rgba(209, 213, 219, 0.96) */
   background: rgba(15, 23, 42, 0.95);
 }
 /* ========= HEADER LAYOUT RESET ========= */

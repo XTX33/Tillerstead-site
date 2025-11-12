@@ -34,7 +34,7 @@ body.home .hero-lead {
   padding: 0.25rem 0.7rem;
   border: 1px solid rgba(148, 163, 184, 0.4);
   font-size: 0.75rem;
-  color: rgba(226, 232, 240, 0.9);
+  color: #e5e7eb; /* Improved contrast - was rgba(226, 232, 240, 0.9) */
   background: rgba(15, 23, 42, 0.9);
 }
 
@@ -70,7 +70,7 @@ body.page-gc main.gc {
   text-transform: uppercase;
   font-size: var(--ts-text-xs);
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.9) */
 }
 
 .gc-hero-title {
@@ -87,7 +87,7 @@ body.page-gc main.gc {
 .gc-hero-meta {
   margin-top: 0.75rem;
   font-size: 0.8rem;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.9) */
 }
 
 .gc-highlight-card {
@@ -132,7 +132,7 @@ body.page-gc main.gc {
   position: relative;
   padding-left: 1.35rem;
   margin-bottom: 0.65rem;
-  color: var(--ts-muted-ink);
+  color: #cbd5e1; /* Improved contrast - was var(--ts-muted-ink) */
   font-size: 0.96rem;
 }
 
@@ -215,11 +215,11 @@ main {
 
 .text-meta {
   font-size: 0.78rem;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast - was rgba(148, 163, 184, 0.9) */
 }
 
 .text-soft {
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
 }
 
 .kpi-row {
