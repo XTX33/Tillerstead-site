@@ -73,7 +73,7 @@ schema:
 hero_eyebrow: "Property Care, Done Right"
 hero_title: "Property Maintenance & Remodeling in South Jersey"
 hero_summary: >
-  Reliable monthly upkeep, thoughtful remodels, and tile work built to last—delivered with clear communication and documented change orders.
+  Reliable monthly upkeep, thoughtful remodels, and tile work built to last—delivered with clear communication, photo documentation, and documented change orders.
 hero_primary_url: "/contact/"
 hero_primary_label: "Start a Monthly Plan"
 hero_secondary_url: "/services/"
@@ -94,194 +94,683 @@ The default layout should include head.html, header.html, and page-hero.html.
 We keep the rest of the homepage sections here.
 {% endcomment %}
 
-<!-- Monthly Maintenance Plans -->
-<section class="section section--plans" aria-labelledby="plans-heading">
-  <div class="container">
-    <header class="plans-header">
-      <h2 id="plans-heading">Monthly Maintenance Plans</h2>
-      <p class="section-intro">
-        Dependable property care with priority scheduling, photo-documented work, and proactive upkeep to protect your investment.
-      </p>
-    </header>
+<main id="main">
 
-    <div class="plans-grid" role="list">
-      <article class="plan-card" role="listitem">
-        <div class="plan-head">
-          <h3 class="plan-title">Essential</h3>
-          <p class="plan-tag">Core coverage</p>
-        </div>
-        <ul class="plan-list">
-          <li>Seasonal inspections</li>
-          <li>Minor repairs</li>
-          <li>Priority scheduling</li>
-          <li>Service logs with photos</li>
-        </ul>
-      </article>
+  <!-- Monthly Maintenance Plans -->
+  <section class="ts-section ts-section--muted section section--plans" aria-labelledby="plans-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header plans-header">
+       <p class="ts-eyebrow">Proactive property care</p>
+        <h2 id="plans-heading" class="ts-section-title">
+          Monthly Maintenance Plans
+        </h2>
+        <p class="ts-section-subtitle section-intro">
+  Stay ahead of leaks, wear, and small failures with recurring visits,
+  photo-documented work, and a clear plan for your property.
+</p>
+      </header>
 
-      <article class="plan-card plan-card--featured" role="listitem" aria-labelledby="plan-standard">
-        <div class="plan-head">
-          <h3 id="plan-standard" class="plan-title">Standard</h3>
-          <p class="plan-tag plan-tag--featured">Most selected</p>
-        </div>
-        <ul class="plan-list">
-          <li>Everything in Essential</li>
-          <li>Small carpentry & paint touch-ups</li>
-          <li>Fixture swaps</li>
-          <li>Grout & caulk refresh</li>
-          <li>Monthly check-ins</li>
-        </ul>
-      </article>
+      <div class="plans-grid" role="list">
+        <article class="plan-card" role="listitem">
+          <div class="plan-head">
+            <h3 class="plan-title">Essential</h3>
+            <p class="plan-tag">Core coverage</p>
+          </div>
+          <ul class="plan-list">
+            <li>Seasonal inspections and visual walkthroughs</li>
+            <li>Minor repairs and small fixes up to an agreed threshold</li>
+            <li>Priority scheduling when issues pop up</li>
+            <li>Service logs with photos and notes after each visit</li>
+          </ul>
+          <p class="plan-footnote">
+            Ideal for owner-occupied homes and smaller rentals that need a consistent set of eyes.
+          </p>
+        </article>
 
-      <article class="plan-card" role="listitem">
-        <div class="plan-head">
-          <h3 class="plan-title">Complete</h3>
-          <p class="plan-tag">Full care</p>
-        </div>
-        <ul class="plan-list">
-          <li>Everything in Standard</li>
-          <li>Tile & stone care</li>
-          <li>Preventive waterproofing checks</li>
-          <li>Quarterly punch-list</li>
-          <li>Annual maintenance planning</li>
-        </ul>
-      </article>
+        <article class="plan-card plan-card--featured" role="listitem" aria-labelledby="plan-standard">
+          <div class="plan-head">
+            <h3 id="plan-standard" class="plan-title">Standard</h3>
+            <p class="plan-tag plan-tag--featured">Most selected</p>
+          </div>
+          <ul class="plan-list">
+            <li>Everything in Essential</li>
+            <li>Small carpentry and paint touch-ups</li>
+            <li>Fixture swaps (faucets, trim kits, hardware)</li>
+            <li>Grout and caulk refresh in wet areas</li>
+            <li>Monthly check-ins with clear summaries</li>
+          </ul>
+          <p class="plan-footnote">
+            Best fit for landlords and busy owners who want units and common areas kept ready.
+          </p>
+        </article>
+
+        <article class="plan-card" role="listitem">
+          <div class="plan-head">
+            <h3 class="plan-title">Complete</h3>
+            <p class="plan-tag">Full care</p>
+          </div>
+          <ul class="plan-list">
+            <li>Everything in Standard</li>
+            <li>Tile and stone care visits</li>
+            <li>Preventive waterproofing checks at showers and wet walls</li>
+            <li>Quarterly punch-list reviews</li>
+            <li>Annual maintenance planning with budget notes</li>
+          </ul>
+          <p class="plan-footnote">
+            Designed for multi-unit properties, shore homes, and owners who want a true steward.
+          </p>
+        </article>
+      </div>
+
+      <div class="plans-bottom">
+        <p class="section-intro">
+          Every plan is customized to your property and comfort level. Pricing depends on scope,
+          visit frequency, and number of units or systems we support.
+        </p>
+        <p class="section-cta">
+          <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">
+            Request a monthly plan proposal
+          </a>
+          <span class="cta-note">
+            Share your address, a few photos, and your priorities — we’ll respond with a clear, written starting quote.
+          </span>
+        </p>
+      </div>
     </div>
+  </section>
 
-    <p class="section-cta">
-      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Request a monthly plan proposal</a>
-    </p>
-  </div>
-</section>
+  <!-- Who We Serve -->
+  <section class="ts-section section--who" aria-labelledby="who-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Who we support</p>
+        <h2 id="who-heading" class="ts-section-title">
+          For homeowners, landlords, and small commercial spaces
+        </h2>
+        <p class="ts-section-subtitle">
+          Tillerstead plugs into your world as a steady, owner-operated maintenance and remodel
+          partner — not a revolving door of unfamiliar techs.
+        </p>
+      </header>
 
-<!-- Why property owners choose Tillerstead -->
-<section class="section section--why" aria-labelledby="why-heading">
-  <div class="container">
-    <h2 id="why-heading">Why property owners trust Tillerstead</h2>
-    <div class="why-grid">
-      <article class="why-item">
-        <h3>Reliable maintenance plans</h3>
-        <p>Scheduled inspections, preventive repairs, and priority response when issues arise.</p>
-      </article>
-      <article class="why-item">
-        <h3>Clear documentation</h3>
-        <p>Written scope, photo documentation, and itemized invoicing — no mysteries.</p>
-      </article>
-      <article class="why-item">
-        <h3>Professional approach</h3>
-        <p>Clean work areas and respectful communication for homeowners and landlords.</p>
-      </article>
-      <article class="why-item">
-        <h3>Work done with integrity</h3>
-        <p>From minor repairs to remodels, we treat your property like our own.</p>
-      </article>
+      <div class="who-grid">
+        <article class="who-card">
+          <h3>Homeowners</h3>
+          <p>
+            Keep your home safe, dry, and ready to enjoy. We handle the lists that never seem to
+            shrink — from grout cracks to sticking doors.
+          </p>
+          <ul>
+            <li>Maintenance plans tailored around your schedule</li>
+            <li>Respectful protection of finishes and furnishings</li>
+            <li>Clear communication before, during, and after each visit</li>
+          </ul>
+        </article>
+
+        <article class="who-card">
+          <h3>Landlords &amp; Property Managers</h3>
+          <p>
+            Stay ahead of tenant calls and turnovers. We treat every unit like a long-term asset,
+            not just another ticket.
+          </p>
+          <ul>
+            <li>Recurring inspections and punch-list work</li>
+            <li>Turnover repairs and refreshes</li>
+            <li>Photo documentation for your records and owners</li>
+          </ul>
+        </article>
+
+        <article class="who-card">
+          <h3>Shore Homes &amp; Second Properties</h3>
+          <p>
+            When you’re not on site, you still need eyes on the building. We keep watch through
+            seasonal checks and targeted maintenance.
+          </p>
+          <ul>
+            <li>Off-season walkthroughs and reports</li>
+            <li>Storm follow-up and water-intrusion checks</li>
+            <li>Preventive waterproofing and envelope attention</li>
+          </ul>
+        </article>
+
+        <article class="who-card">
+          <h3>General Contractors &amp; Small Commercial</h3>
+          <p>
+            Plug an owner-operated finisher into your projects or small commercial space — focused
+            on clean handoffs and schedule reliability.
+          </p>
+          <ul>
+            <li>Tile scopes, punch-list rescue, and small remodels</li>
+            <li>Photo-documented work for your clients</li>
+            <li>Coordination that respects your schedule and reputation</li>
+          </ul>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Services section -->
-<section class="section section--scopes" aria-labelledby="scopes-heading">
-  <div class="container">
-    <h2 id="scopes-heading">Property maintenance, remodeling, and tile services</h2>
+  <!-- Why property owners choose Tillerstead -->
+  <section class="ts-section ts-section--muted section section--why" aria-labelledby="why-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Built on trust</p>
+        <h2 id="why-heading" class="ts-section-title">
+          Why property owners trust Tillerstead
+        </h2>
+        <p class="ts-section-subtitle">
+          You’re not hiring a random crew. You’re working with an owner who documents the work,
+          shows up when promised, and treats each job like it will be inspected.
+        </p>
+      </header>
 
-    <!-- FIX: use .scope-grid (matches CSS) -->
-    <div class="scope-grid" aria-label="Service gallery">
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/shower-white.jpg" alt="Waterproof tile shower installation in Atlantic County, New Jersey" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Tile Installation &amp; Restoration</h3>
-          <p>Custom showers with waterproof assemblies, large-format floors, backsplashes, and ANSI A118.10-compliant methods.</p>
-        </div>
-      </article>
+      <div class="why-grid">
+        <article class="why-item">
+          <h3>Reliable maintenance plans</h3>
+          <p>
+            We agree on a cadence, scope, and budget together — then stick to it. No surprise visits
+            or vague “we’ll get to it” promises.
+          </p>
+        </article>
 
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/marble-bath.jpg" alt="Bathroom remodeling project in South Jersey" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Remodeling &amp; Finish Work</h3>
-          <p>Kitchens & baths, flooring, drywall/paint, trim, and fixture swaps with documented change orders.</p>
-        </div>
-      </article>
+        <article class="why-item">
+          <h3>Clear documentation</h3>
+          <p>
+            Written scope, before-and-after photos, and itemized invoices make it easy to track
+            what was done, when, and why.
+          </p>
+        </article>
 
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/kitchen-green.jpg" alt="Property maintenance services in Atlantic County NJ" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Property Maintenance</h3>
-          <p>Seasonal inspections, minor repairs, grout/caulk refresh, and recurring service plans.</p>
-        </div>
-      </article>
+        <article class="why-item">
+          <h3>Professional communication</h3>
+          <p>
+            Homeowners, tenants, and managers are kept in the loop. We communicate access needs,
+            timelines, and any change in conditions.
+          </p>
+        </article>
 
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/kitchen-hex.jpg" alt="Repair work and maintenance in South Jersey" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Repairs &amp; Service Calls</h3>
-          <p>Fast-response repairs, re-grouts, fixture swaps, and small carpentry to keep units tenant-ready.</p>
-        </div>
-      </article>
+        <article class="why-item">
+          <h3>Work done with integrity</h3>
+          <p>
+            Whether it’s a small repair or a full bathroom remodel, the goal is the same:
+            work that holds up and respects your property.
+          </p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Page-local fixes -->
+  <!-- Services section -->
+  <section class="ts-section section section--scopes" aria-labelledby="scopes-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Scopes we handle</p>
+        <h2 id="scopes-heading" class="ts-section-title">
+          Property maintenance, remodeling, and tile services
+        </h2>
+        <p class="ts-section-subtitle">
+          One contact for recurring maintenance, focused remodel scopes, and detailed tile work.
+          You can call for a single project — or roll it into your ongoing plan.
+        </p>
+      </header>
+
+      <div class="scope-grid" aria-label="Service gallery">
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/shower-white.jpg"
+              alt="Waterproof tile shower installation in Atlantic County, New Jersey"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Tile Installation &amp; Restoration</h3>
+            <p>
+              Custom showers, large-format floors, feature walls, and backsplashes — built on
+              proper prep, waterproofing, and layout planning.
+            </p>
+          </div>
+        </article>
+
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/marble-bath.jpg"
+              alt="Bathroom remodeling project in South Jersey"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Remodeling &amp; Finish Work</h3>
+            <p>
+              Kitchens and baths, flooring, drywall and paint, trim, and fixture swaps — with
+              documented change orders and clean handoffs.
+            </p>
+          </div>
+        </article>
+
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/kitchen-green.jpg"
+              alt="Property maintenance services in Atlantic County NJ"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Property Maintenance</h3>
+            <p>
+              Seasonal inspections, small repairs, grout and caulk refresh, fixture replacements,
+              and recurring service tuned to your property.
+            </p>
+          </div>
+        </article>
+
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/kitchen-hex.jpg"
+              alt="Repair work and maintenance in South Jersey"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Repairs &amp; Service Calls</h3>
+            <p>
+              Fast-response repairs, re-grouts, minor leak investigations, and punch-list items
+              that keep units safe, dry, and tenant-ready.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="scopes-cta-row">
+        <p class="section-intro">
+          Not sure where your project fits? Start with a walkthrough. We’ll build a simple plan
+          that can grow with your property.
+        </p>
+        <p class="section-cta">
+          <a href="{{ '/services/' | relative_url }}" class="btn btn-ghost">
+            Explore services in detail
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How a monthly plan works -->
+  <section class="ts-section ts-section--muted section section--process" aria-labelledby="process-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Simple onboarding</p>
+        <h2 id="process-heading" class="ts-section-title">
+          How a monthly plan with Tillerstead works
+        </h2>
+        <p class="ts-section-subtitle">
+          We keep the process straightforward so you always know what’s next — from first call
+          to the first maintenance visit.
+        </p>
+      </header>
+
+      <ol class="process-grid">
+        <li class="process-step">
+          <h3>1. Walkthrough &amp; priorities</h3>
+          <p>
+            We start with a walkthrough or detailed photo review, noting existing conditions,
+            pain points, and your top concerns.
+          </p>
+        </li>
+        <li class="process-step">
+          <h3>2. Written plan &amp; estimate</h3>
+          <p>
+            You receive a written plan outlining visit frequency, typical tasks, and pricing,
+            with room to grow as needs change.
+          </p>
+        </li>
+        <li class="process-step">
+          <h3>3. Ongoing care &amp; check-ins</h3>
+          <p>
+            We handle visits, document the work, and keep you updated — adjusting scope as new
+            priorities surface.
+          </p>
+        </li>
+      </ol>
+
+      <div class="section-cta process-cta">
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">
+          Start with a walkthrough
+        </a>
+        <span class="cta-note">
+          No pressure, no hard sell — just a clear picture of what your property needs.
+        </span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Page-local styling to smooth things out -->
 <style>
+  /* Brand tokens & heading color fixes */
+  :root {
+    --ts-emerald: #22c55e;
+    --ts-emerald-deep: #16a34a;
+    --ts-brass: #facc15;
+    --ts-ink-deep: #0f172a;
+    --ts-muted: #6b7280;
+  }
+
   /* Ensure header stays above hero decorations and is clickable */
-  .site-header { z-index: 1000; position: sticky; top: 0; }
+  .site-header {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+  }
 
-  /* Hero readability + layering */
-  .hero--homepage { padding: 3.75rem 0 2rem; }
-  .hero--homepage .hero-eyebrow-text { color: rgba(229, 231, 235, 0.9); }
-  .hero--homepage h1 { color: #e7edf6; line-height: 1.15; }
-  .hero--homepage .hero-lead { color: #cbd5e1; }
-  .hero-pattern { pointer-events: none; } /* prevent overlay from blocking nav clicks */
+  /* Hero readability + layering (works with page-hero include) */
+  .hero--homepage {
+    padding: 3.75rem 0 2rem;
+  }
+  .hero--homepage .hero-eyebrow-text {
+    color: rgba(229, 231, 235, 0.9);
+  }
+  .hero--homepage h1 {
+    color: #e7edf6;
+    line-height: 1.15;
+  }
+  .hero--homepage .hero-lead {
+    color: #cbd5e1;
+  }
+  .hero-pattern {
+    pointer-events: none;
+  }
 
-  /* Buttons high-contrast (works with head.html overrides) */
-  .btn-primary { color: #ecfdf5; }
-  .btn-ghost { color: #e5e7eb; border: 1px solid rgba(148,163,184,.8); }
+  /* Unified sections for homepage */
+  .page-home .ts-section {
+    padding: 3rem 1.5rem;
+  }
+  .page-home .ts-section--muted {
+    background: #f9fafb;
+  }
+  .page-home .ts-section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .page-home .ts-section-header {
+    margin-bottom: 2rem;
+  }
+  .page-home .ts-eyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-weight: 600;
+    color: var(--ts-muted);
+    margin-bottom: 0.4rem;
+  }
+  .page-home .ts-section-title {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    color: var(--ts-emerald);
+  }
+  .page-home .ts-section-subtitle {
+    margin: 0;
+    color: #4b5563;
+  }
 
-  /* KPI cards balanced heights */
-  .hero-kpis { gap: 1rem; }
-  .hero-kpi { min-height: 7rem; display: flex; flex-direction: column; }
+  /* IDs you called out: make emerald */
+  #plans-heading,
+  #why-heading,
+  #scopes-heading {
+    color: var(--ts-emerald);
+  }
+
+  .section-intro {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1rem;
+  }
+
+  /* Buttons high-contrast and consistent */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+    font-size: 0.95rem;
+  }
+  .btn-primary {
+    background: var(--ts-emerald);
+    color: #ffffff;
+    border-color: var(--ts-emerald);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--ts-emerald-deep);
+    border-color: var(--ts-emerald-deep);
+    color: #ffffff;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ts-emerald);
+    border-color: rgba(148, 163, 184, 0.9);
+  }
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    background: rgba(34, 197, 94, 0.06);
+  }
+  .cta-note {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  /* KPI cards balanced heights (if used in hero include) */
+  .hero-kpis {
+    gap: 1rem;
+  }
+  .hero-kpi {
+    min-height: 7rem;
+    display: flex;
+    flex-direction: column;
+  }
 
   /* Plan cards grid */
   .plans-grid {
     display: grid;
     gap: 1.25rem;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
   @media (min-width: 800px) {
-    .plans-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .plans-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
   .plan-card {
     background: #0b1222;
     color: #e2e8f0;
-    border: 1px solid rgba(148,163,184,.35);
-    border-radius: .9rem;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 0.9rem;
     padding: 1.2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
   }
   .plan-card--featured {
     border-color: #22c55e;
-    box-shadow: 0 8px 28px rgba(34,197,94,.25);
+    box-shadow: 0 8px 28px rgba(34, 197, 94, 0.25);
   }
-  .plan-title { margin: 0 0 .35rem; color: #ffffff; }
-  .plan-tag { margin: 0; color: #a9b4c2; }
-  .plan-tag--featured { color: #22c55e; font-weight: 700; }
+  .plan-title {
+    margin: 0 0 0.35rem;
+    color: #ffffff;
+  }
+  .plan-tag {
+    margin: 0;
+    color: #a9b4c2;
+    font-size: 0.88rem;
+  }
+  .plan-tag--featured {
+    color: #22c55e;
+    font-weight: 700;
+  }
+  .plan-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+  }
+  .plan-footnote {
+    margin: 0.6rem 0 0;
+    font-size: 0.86rem;
+    color: #a9b4c2;
+  }
+  .plans-bottom {
+    margin-top: 2rem;
+  }
+  .plans-bottom .section-cta {
+    margin-top: 0.75rem;
+  }
+
+  /* Who we serve grid */
+  .who-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  @media (min-width: 900px) {
+    .who-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .who-card {
+    background: #ffffff;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    padding: 1.5rem;
+  }
+  .who-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    color: var(--ts-ink-deep);
+  }
+  .who-card p {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    color: #4b5563;
+  }
+  .who-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.92rem;
+    color: #4b5563;
+  }
 
   /* Why cards */
-  .why-grid { display: grid; gap: 1.25rem; }
-  @media (min-width: 900px) { .why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-  .why-item { background:#fff; color:#0f172a; border:1px solid rgba(148,163,184,.4); border-radius:.9rem; padding:1.5rem; }
+  .why-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  @media (min-width: 900px) {
+    .why-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .why-item {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 0.9rem;
+    padding: 1.5rem;
+  }
+  .why-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
 
-  /* Services grid – fix class name and spacing */
-  .section--scopes .scope-grid { display:grid; gap:1.25rem; }
-  @media (min-width: 900px) { .section--scopes .scope-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-  .scope-card { background:#fff; border:1px solid rgba(148,163,184,.4); border-radius:.9rem; overflow:hidden; display:flex; flex-direction:column; }
-  .scope-card figure { margin:0; aspect-ratio:4/3; background:#0f172a; }
-  .scope-card img { width:100%; height:100%; object-fit:cover; }
-  .scope-body { padding:1.2rem 1.4rem 1.5rem; }
+  /* Services grid */
+  .section--scopes .scope-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  @media (min-width: 900px) {
+    .section--scopes .scope-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .scope-card {
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 0.9rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .scope-card figure {
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    background: #0f172a;
+  }
+  .scope-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .scope-body {
+    padding: 1.2rem 1.4rem 1.5rem;
+  }
+  .scopes-cta-row {
+    margin-top: 2rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .scopes-cta-row {
+      grid-template-columns: minmax(0, 2fr) auto;
+      align-items: center;
+    }
+  }
+
+  /* Process / steps */
+  .process-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  @media (min-width: 900px) {
+    .process-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .process-step {
+    background: #ffffff;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    padding: 1.4rem 1.3rem;
+  }
+  .process-step h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ts-ink-deep);
+  }
+  .process-cta {
+    margin-top: 2rem;
+  }
 </style>
