@@ -2950,3 +2950,378 @@ body.page-services #repairs-heading::after {
   .process-cta {
     margin-top: 2rem;
   }
+  /* ============================================
+   Tillerstead – Global Core
+   Brand colors, layout, headings, buttons,
+   and shared section styles
+============================================ */
+
+/* Brand tokens – used everywhere */
+:root {
+  --ts-emerald: #22c55e;
+  --ts-emerald-deep: #16a34a;
+  --ts-brass: #facc15;
+  --ts-ink-deep: #0f172a;
+  --ts-muted: #6b7280;
+}
+
+/* Basic layout primitives used across pages */
+.section {
+  padding: 3rem 1.5rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Generic typography */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: var(--ts-ink-deep);
+  line-height: 1.2;
+}
+
+/* Specific headings you mentioned: emerald */
+#plans-heading,
+#why-heading,
+#scopes-heading {
+  color: var(--ts-emerald);
+}
+
+/* “Intro” paragraphs under section headings */
+.section-intro {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Services page list intro also uses this ID */
+#services-overview.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* ============================================
+   Buttons – shared across all pages
+============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+  font-size: 0.95rem;
+}
+
+/* Main CTA button (contact / homepage / services) */
+.btn-primary {
+  background: var(--ts-emerald);
+  color: #ffffff;
+  border-color: var(--ts-emerald);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--ts-emerald-deep);
+  border-color: var(--ts-emerald-deep);
+  color: #ffffff;
+}
+
+/* Outline / “secondary” buttons – used on homepage, GC page, etc. */
+.btn-ghost {
+  background: transparent;
+  color: var(--ts-emerald);
+  border-color: rgba(148, 163, 184, 0.9);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: rgba(34, 197, 94, 0.06);
+}
+
+/* Accent buttons – used on reviews + financing pages */
+.btn-accent {
+  background: var(--ts-brass);
+  color: #1f2933;
+  border-color: #eab308;
+  box-shadow: 0 6px 12px rgba(250, 204, 21, 0.25);
+}
+
+.btn-accent:hover,
+.btn-accent:focus-visible {
+  filter: brightness(0.96);
+}
+
+/* Small helper text under CTAs */
+.cta-note {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ============================================
+   Hero / header sanity – affects pages that
+   use the shared hero include
+============================================ */
+
+/* Keep header above hero pattern so nav is clickable */
+.site-header {
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+/* Homepage hero readability */
+.hero--homepage {
+  padding: 3.75rem 0 2rem;
+}
+
+.hero--homepage .hero-eyebrow-text {
+  color: rgba(229, 231, 235, 0.9);
+}
+
+.hero--homepage h1 {
+  color: #e7edf6;
+  line-height: 1.15;
+}
+
+.hero--homepage .hero-lead {
+  color: #cbd5e1;
+}
+
+.hero-pattern {
+  pointer-events: none;
+}
+
+/* ============================================
+   Shared grids used on home/services
+============================================ */
+
+/* Plan cards grid (home + services pages if reused) */
+.plans-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 800px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.plan-card {
+  background: #0b1222;
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.2rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.plan-card--featured {
+  border-color: #22c55e;
+  box-shadow: 0 8px 28px rgba(34, 197, 94, 0.25);
+}
+
+.plan-title {
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+}
+
+.plan-tag {
+  margin: 0;
+  color: #a9b4c2;
+  font-size: 0.88rem;
+}
+
+.plan-tag--featured {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.plan-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.plan-footnote {
+  margin: 0.6rem 0 0;
+  font-size: 0.86rem;
+  color: #a9b4c2;
+}
+
+.plans-bottom {
+  margin-top: 2rem;
+}
+
+.plans-bottom .section-cta {
+  margin-top: 0.75rem;
+}
+
+/* “Who we serve” cards – about/home can use this */
+.who-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .who-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.who-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 1.5rem;
+}
+
+.who-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: var(--ts-ink-deep);
+}
+
+.who-card p {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #4b5563;
+}
+
+.who-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+/* “Why Tillerstead” cards */
+.why-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.why-item {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 0.9rem;
+  padding: 1.5rem;
+}
+
+.why-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Services gallery cards – used on home + can be re-used elsewhere */
+.section--scopes .scope-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .section--scopes .scope-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.scope-card {
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.scope-card figure {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  background: #0f172a;
+}
+
+.scope-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scope-body {
+  padding: 1.2rem 1.4rem 1.5rem;
+}
+
+.scopes-cta-row {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .scopes-cta-row {
+    grid-template-columns: minmax(0, 2fr) auto;
+    align-items: center;
+  }
+}
+
+/* Process / steps list – used on home (“How a monthly plan works”) */
+.process-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.process-step {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 1.4rem 1.3rem;
+}
+
+.process-step h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--ts-ink-deep);
+}
+
+.process-cta {
+  margin-top: 2rem;
+}
