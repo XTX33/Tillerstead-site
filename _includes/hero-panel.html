@@ -1,0 +1,44 @@
+<header class="hero hero--page" id="hero" aria-labelledby="hero-heading" aria-describedby="hero-summary">
+  <div class="hero-surface">
+    <div class="hero-pattern" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-main">
+
+        {% if page.hero_eyebrow %}
+          <p class="hero-eyebrow">
+            <span class="hero-eyebrow-text">
+              {{ page.hero_eyebrow }}
+            </span>
+          </p>
+        {% endif %}
+
+        <h1 id="hero-heading">
+          {{ page.hero_title | default: page.title }}
+        </h1>
+
+        {% if page.hero_summary %}
+          <p class="hero-lead" id="hero-summary">
+            {{ page.hero_summary }}
+          </p>
+        {% endif %}
+
+        {% if page.hero_primary_url or page.hero_secondary_url %}
+          <div class="hero-actions" role="group" aria-label="Primary calls to action">
+            {% if page.hero_primary_url and page.hero_primary_label %}
+              <a href="{{ page.hero_primary_url | relative_url }}" class="btn btn-primary">
+                {{ page.hero_primary_label }}
+              </a>
+            {% endif %}
+            {% if page.hero_secondary_url and page.hero_secondary_label %}
+              <a href="{{ page.hero_secondary_url | relative_url }}" class="btn btn-ghost">
+                {{ page.hero_secondary_label }}
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</header>

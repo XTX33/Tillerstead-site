@@ -21,12 +21,17 @@ hero_list:
      Financing page
      ============ */
 
+  body.page-financing {
+    background: #020617; /* match site dark navy */
+  }
+
   .page-financing .financing-shell {
     max-width: 960px;
     margin: 0 auto;
     padding: 2.5rem 1.25rem 3rem;
     display: grid;
     gap: 2rem;
+    color: #e5e7eb;
   }
 
   @media (min-width: 900px) {
@@ -38,21 +43,43 @@ hero_list:
 
   .page-financing .financing-main h1 {
     font-size: 1.7rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     margin: 0 0 0.75rem;
-    color: var(--brand-ink, #111827);
+    color: #0f172a; /* Very dark for main heading */
+    color: rgba(212, 175, 55, 1); /* bright brass brand color */
+  }
+
+  .page-financing .financing-main h2 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #22c55e; /* emerald accent */
+  }
+
+  .page-financing .financing-main p {
+    color: #e5e7eb;
   }
 
   .page-financing .financing-main .lead {
     font-size: 1.02rem;
     line-height: 1.7;
     margin-bottom: 0.75rem;
+    color: #334155; /* Dark gray for lead text */
+    color: #f9fafb;
+  }
+
+  .page-financing .financing-main strong {
+    color: rgba(212, 175, 55, 1);
+    font-weight: 600;
   }
 
   .page-financing .financing-main .microcopy {
     font-size: 0.9rem;
-    color: rgba(15, 23, 42, 0.75);
+    color: #475569; /* Medium gray for microcopy */
+    color: rgba(148, 163, 184, 0.96);
   }
 
   .page-financing .financing-steps {
@@ -62,6 +89,8 @@ hero_list:
 
   .page-financing .financing-steps li {
     margin-bottom: 0.45rem;
+    color: #334155; /* Dark gray for list items */
+    line-height: 1.6;
   }
 
   .page-financing .btn-row {
@@ -75,25 +104,37 @@ hero_list:
 
   .page-financing .financing-side {
     border-radius: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.7);
     padding: 1.25rem 1.1rem 1.35rem;
     background: radial-gradient(circle at top left,
                 rgba(15, 163, 177, 0.08),
                 #f9fafb);
+    color: #1e293b; /* Dark text on light background */
+                rgba(34, 197, 94, 0.12),
+                rgba(15, 23, 42, 0.98));
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.8);
+    color: #e5e7eb;
   }
 
   .page-financing .financing-side h2 {
     font-size: 1.05rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
+    color: #0f172a; /* Very dark for headings */
+    color: #22c55e; /* emerald heading */
   }
 
   .page-financing .financing-side p {
     font-size: 0.9rem;
     line-height: 1.6;
     margin: 0 0 0.6rem;
+    color: #334155; /* Dark gray for body text */
+  }
+
+  .page-financing .financing-side strong {
+    color: rgba(212, 175, 55, 1); /* brass emphasis */
   }
 
   .page-financing .acorn-banners {
@@ -106,7 +147,7 @@ hero_list:
   .page-financing .acorn-banner {
     display: block;
     border-radius: 0.75rem;
-    border: 1px solid rgba(15, 23, 42, 0.3);
+    border: 1px solid rgba(15, 23, 42, 0.4);
     padding: 2px;
     background: #ffffff;
     max-width: 100%;
@@ -140,7 +181,7 @@ hero_list:
 
   .page-financing .disclaimer {
     font-size: 0.78rem;
-    color: rgba(15, 23, 42, 0.7);
+    color: rgba(148, 163, 184, 0.9);
     margin-top: 0.5rem;
   }
 </style>

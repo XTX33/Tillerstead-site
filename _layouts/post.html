@@ -16,7 +16,43 @@ layout: default
           <p class="lead">{{ page.description }}</p>
         {% endif %}
       </header>
+<style> /* Blog posts – dark navy shell */
+body.page-blog {
+  background: #020617;
+}
 
+/* Main post body text */
+body.page-blog .prose {
+  color: #ffffff;        /* white body text */
+  line-height: 1.7;
+}
+
+/* Headings inside posts */
+body.page-blog .prose h1,
+body.page-blog .prose h2,
+body.page-blog .prose h3 {
+  color: #22c55e;        /* logo green */
+}
+
+/* Date/small text */
+body.page-blog .prose .text-small {
+  color: rgba(148, 163, 184, 0.9);
+}
+
+/* Lead paragraph under title */
+body.page-blog .prose .lead {
+  color: #f9fafb;
+}
+
+/* Links inside posts */
+body.page-blog .prose a {
+  color: #22c55e;
+  text-decoration: underline;
+}
+body.page-blog .prose a:hover {
+  color: #d4af37;        /* brass hover */
+}
+</style>
       {{ content }}
     </article>
   </div>
