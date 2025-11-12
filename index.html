@@ -11,13 +11,14 @@ keywords:
   - NJ HIC remodeling Atlantic County
   - Property maintenance and remodeling with tile specialty
   - Waterproof tile assemblies Atlantic County NJ
-
 schema:
   - '@context': 'https://schema.org'
-    '@type': 'HomeAndConstructionBusiness'
+    '@type':
+      - 'HomeAndConstructionBusiness'
+      - 'Contractor'
     '@id': '{{ site.url }}/#contractor'
     name: 'Tillerstead LLC'
-    image: '{{ site.url }}/assets/img/og.jpg'
+    image: '{{ site.url }}{{ site.default_og_image | default: "/assets/img/og.jpg" }}'
     url: '{{ site.url }}/'
     telephone: '{{ site.company.phone_display }}'
     email: '{{ site.company.email }}'
@@ -33,6 +34,11 @@ schema:
       - 'Atlantic County NJ'
       - 'Ocean County NJ'
       - 'Cape May County NJ'
+      - 'South Jersey shore'
+    sameAs:
+      - 'https://tillerstead.com'
+      # - 'https://www.facebook.com/your-handle'
+      # - 'https://www.instagram.com/your-handle'
     hasCredential:
       '@type': 'EducationalOccupationalCredential'
       credentialCategory: 'Professional License'
@@ -46,6 +52,7 @@ schema:
       - 'Recurring maintenance service'
       - 'Kitchen and bathroom remodeling'
       - 'Tile installation and restoration'
+
   - '@context': 'https://schema.org'
     '@type': 'FAQPage'
     mainEntity:
