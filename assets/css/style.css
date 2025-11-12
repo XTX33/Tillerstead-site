@@ -16,7 +16,7 @@
   padding: 2rem 0;
   border-top: 1px solid rgba(15, 23, 42, 0.95);
   border-bottom: 1px solid rgba(15, 23, 42, 0.95);
-  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #020617 100%);
+  background: #0f172a;
 }
 
 .section-banner-inner {
@@ -95,9 +95,10 @@
   align-items: flex-start;
   padding: 0.9rem 1rem;
   border-radius: var(--ts-radius-md);
-  background: rgba(15, 23, 42, 0.95);
+  background: #0f172a;
   border: 1px solid rgba(30, 64, 175, 0.9);
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
 }
 
 .process-step-index {
@@ -117,6 +118,7 @@
 .process-step-body h3 {
   font-size: 0.98rem;
   margin-bottom: 0.2rem;
+  color: #22c55e;
 }
 
 .process-step-body p {
@@ -159,9 +161,10 @@
 .faq-item {
   border-radius: var(--ts-radius-md);
   border: 1px solid rgba(30, 64, 175, 0.95);
-  background: rgba(15, 23, 42, 0.98);
+  background: #0f172a;
   padding: 1rem 1.1rem;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
 }
 
 .faq-question {
@@ -205,10 +208,11 @@
 .testimonial-card {
   border-radius: var(--ts-radius-lg);
   border: 1px solid rgba(30, 64, 175, 0.9);
-  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #020617 100%);
+  background: #0f172a;
   padding: 1.4rem 1.5rem;
   box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
   position: relative;
+  color: #e5e7eb;
 }
 
 .testimonial-quote {
@@ -241,10 +245,11 @@
 
 .estimate-card {
   border-radius: var(--ts-radius-lg);
-  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #020617 100%);
+  background: #0f172a;
   border: 1px solid rgba(34, 197, 94, 0.6);
   box-shadow: 0 24px 60px rgba(22, 163, 74, 0.55);
   padding: 1.5rem 1.5rem 1.4rem;
+  color: #e5e7eb;
 }
 
 @media (min-width: 840px) {
@@ -329,15 +334,17 @@
 
 .service-tile {
   border-radius: var(--ts-radius-lg);
-  background: rgba(15, 23, 42, 0.97);
+  background: #0f172a;
   border: 1px solid rgba(30, 64, 175, 0.9);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
   padding: 1.1rem 1.1rem;
+  color: #e5e7eb;
 }
 
 .service-tile h3 {
   font-size: 0.98rem;
   margin-bottom: 0.25rem;
+  color: #22c55e;
 }
 
 .service-tile p {
