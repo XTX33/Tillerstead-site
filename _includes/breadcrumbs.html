@@ -1,0 +1,61 @@
+{%- comment -%}
+  Breadcrumbs
+  - Uses page.breadcrumb_title or page.title for the last item
+  - Hides on the homepage or if page.breadcrumb == false
+{%- endcomment -%}
+
+{%- if page.url == "/" or page.breadcrumb == false -%}
+  {%- comment -%}No breadcrumbs on home or when explicitly disabled{%- endcomment -%}
+{%- else -%}
+  {%- assign path = page.url | replace: 'index.html', '' -%}
+  {%- assign segments = path | split: '/' -%}
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol class="breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+      {%- assign position = 1 -%}
+
+      <!-- Home -->
+      <li itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{ '/' | relative_url }}">
+          <span itemprop="name">Home</span>
+        </a>
+        <meta itemprop="position" content="{{ position }}">
+      </li>
+
+      {%- assign position = position | plus: 1 -%}
+      {%- assign current_path = "" -%}
+
+      {%- for segment in segments -%}
+        {%- if segment == "" -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- assign current_path = current_path | append: "/" | append: segment -%}
+        {%- assign is_last = forloop.last -%}
+
+        {%- if is_last -%}
+          {%- assign label = page.breadcrumb_title | default: page.title | default: segment | replace: '-', ' ' | capitalize -%}
+        {%- else -%}
+          {%- assign label = segment | replace: '-', ' ' | capitalize -%}
+        {%- endif -%}
+
+        <li itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem">
+          {%- if is_last -%}
+            <span itemprop="name" aria-current="page">{{ label }}</span>
+          {%- else -%}
+            <a itemprop="item" href="{{ current_path | append:'/' | relative_url }}">
+              <span itemprop="name">{{ label }}</span>
+            </a>
+          {%- endif -%}
+          <meta itemprop="position" content="{{ position }}">
+        </li>
+
+        {%- assign position = position | plus: 1 -%}
+      {%- endfor -%}
+    </ol>
+  </nav>
+{%- endif -%}

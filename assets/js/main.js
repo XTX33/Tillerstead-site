@@ -11,13 +11,20 @@
   /* =========================
      NAV: mobile drawer
   ========================= */
-    const navToggle = $('.nav-toggle');      // matches your button class
-  const nav = $('#site-nav');             // matches your nav id
+  const navToggle = $('.nav-toggle');
+  const nav = $('#site-nav');
   const header = $('.site-header');
   let lastFocus = null;
-  const BP_DESKTOP = 900; // px — adjust to your CSS breakpoint
+  const BP_DESKTOP = 960; // keep in sync with CSS breakpoint
 
-  const isNavOpen = () => nav?.classList.contains('is-open');
+  const isNavOpen = () => !!nav && nav.classList.contains('is-open');
+
+  const onKeydownEsc = (e) => {
+    if (e.key === 'Escape' && isNavOpen()) {
+      e.preventDefault();
+      closeNav();
+    }
+  };
 
   const trapFocus = (e) => {
     if (!isNavOpen() || e.key !== 'Tab') return;
@@ -43,7 +50,7 @@
 
   const outsideClick = (e) => {
     if (!isNavOpen()) return;
-    if (header?.contains(e.target) || nav.contains(e.target)) return;
+    if (header?.contains(e.target) || nav?.contains(e.target)) return;
     closeNav();
   };
 
@@ -54,13 +61,12 @@
     navToggle?.setAttribute('aria-expanded', 'true');
     document.body.classList.add('nav-open');
 
-    // focus first link for keyboard users
     const firstLink = $('a, button', nav);
     firstLink?.focus();
 
     document.addEventListener('keydown', trapFocus);
     document.addEventListener('keydown', onKeydownEsc);
-    document.addEventListener('click', outsideClick, { capture: true });
+    document.addEventListener('click', outsideClick, true);
   };
 
   const closeNav = () => {
@@ -71,16 +77,9 @@
 
     document.removeEventListener('keydown', trapFocus);
     document.removeEventListener('keydown', onKeydownEsc);
-    document.removeEventListener('click', outsideClick, { capture: true });
+    document.removeEventListener('click', outsideClick, true);
 
     (lastFocus || navToggle || document.body).focus?.();
-  };
-
-  const onKeydownEsc = (e) => {
-    if (e.key === 'Escape' && isNavOpen()) {
-      e.preventDefault();
-      closeNav();
-    }
   };
 
   navToggle?.addEventListener('click', () => {
@@ -128,7 +127,6 @@
     themeBtn?.setAttribute('aria-pressed', String(isLight));
   };
 
-  // init from storage or system
   let saved = null;
   try {
     saved = localStorage.getItem(THEME_KEY);
@@ -138,7 +136,6 @@
 
   applyTheme(saved || getSystemPref());
 
-  // keep in sync with system changes (only if user hasn't chosen)
   if (!saved && window.matchMedia) {
     const mq = window.matchMedia('(prefers-color-scheme: light)');
     mq.addEventListener?.('change', (e) =>
@@ -179,7 +176,7 @@
     e.preventDefault();
     const behavior = prefersReduced ? 'auto' : 'smooth';
     target.scrollIntoView({ behavior, block: 'start' });
-    target.setAttribute('tabindex', '-1'); // focusable for a moment
+    target.setAttribute('tabindex', '-1');
     target.focus({ preventScroll: true });
     setTimeout(() => target.removeAttribute('tabindex'), 1000);
   });
@@ -195,9 +192,8 @@
       const isNetlify = !!(
         contactForm.getAttribute('data-netlify') || contactForm.action
       );
-      if (isNetlify) return; // let Netlify handle it
+      if (isNetlify) return; // Netlify handles it
 
-      // GH Pages or local: intercept
       e.preventDefault();
       const submitBtn = $(
         'button[type="submit"], input[type="submit"]',
@@ -205,7 +201,6 @@
       );
       submitBtn?.setAttribute('disabled', 'true');
 
-      // Basic required check (optional: add more constraints)
       const invalid = $$('[required]', contactForm).find(
         (el) => !el.value?.trim()
       );
@@ -216,7 +211,6 @@
         return;
       }
 
-      // Simulated success (GH Pages)
       try {
         await new Promise((r) => setTimeout(r, 250));
         alert('Thanks! Your message has been submitted.');

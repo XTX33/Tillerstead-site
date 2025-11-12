@@ -2,32 +2,64 @@
         itemscope
         itemtype="https://schema.org/HomeAndConstructionBusiness">
 
+  <!-- Structured data / business basics -->
   <meta itemprop="name" content="Tillerstead LLC">
   <meta itemprop="@id" content="{{ site.url }}/#contractor">
   <meta itemprop="url" content="{{ site.url }}/">
   <meta itemprop="priceRange" content="$$">
   <meta itemprop="telephone" content="{{ site.company.phone_link }}">
   <meta itemprop="email" content="{{ site.company.email }}">
+  <meta itemprop="areaServed"
+        content="Atlantic County NJ, Ocean County NJ, Cape May County NJ, South Jersey shore">
+  <meta itemprop="description"
+        content="Property maintenance and remodeling with tile specialty for South Jersey homeowners, landlords, and small commercial properties. Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies.">
 
-  <div class="shell container footer-inner">
+  <div class="footer-inner">
 
-    <!-- Brand block -->
-    <a href="{{ '/' | relative_url }}"
-       class="footer-brand"
-       aria-label="Tillerstead LLC Home">
-      <span class="footer-logo">
-        <img src="{{ '/assets/img/logo.png' | relative_url }}"
-             alt="Tillerstead LLC Logo">
-      </span>
+    <!-- Brand / summary -->
+    <section class="footer-col footer-col-brand" aria-label="Tillerstead overview">
+      <a href="{{ '/' | relative_url }}"
+         class="footer-brand"
+         aria-label="Tillerstead LLC Home"
+         itemprop="url">
+        <span class="footer-logo">
+          <img src="{{ '/assets/img/logo.png' | relative_url }}"
+               alt="Tillerstead LLC logo"
+               class="footer-logo-img">
+        </span>
+        <span class="footer-name" itemprop="name">Tillerstead LLC</span>
+      </a>
 
-      <span class="footer-name">TILLERSTEAD LLC</span>
-      <span class="footer-tagline">Tile subcontractor for South Jersey build teams</span>
-    </a>
+      <p class="footer-tagline" itemprop="slogan">
+        Property Maintenance · Remodeling · Tile — NJ Licensed HIC #{{ site.company.hic }}
+      </p>
 
-    <!-- Business + address -->
-    <div class="footer-business">
+      <p class="footer-area">
+        Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies
+        for homeowners, landlords, and small commercial properties across
+        Atlantic, Ocean, and Cape May counties in South Jersey.
+      </p>
+    </section>
+
+    <nav class="footer-nav" aria-label="Property services">
+  <h2 class="footer-heading">Property services</h2>
+  <ul class="footer-links">
+    <li><a href="{{ '/services/'  | relative_url }}">Maintenance Plans</a></li>
+    <li><a href="{{ '/services/'  | relative_url }}">Remodeling</a></li>
+    <li><a href="{{ '/services/'  | relative_url }}">Tile</a></li>
+    <li><a href="{{ '/about/'     | relative_url }}">About</a></li>
+    <li><a href="{{ '/contact/'   | relative_url }}">Contact</a></li>
+    <li><a href="{{ '/for-general-contractors/' | relative_url }}">For General Contractors</a></li>
+    <li><a href="{{ '/terms/'     | relative_url }}">Terms &amp; Conditions</a></li>
+  </ul>
+</nav>
+
+    <!-- Contact / licensing -->
+    <section class="footer-col footer-col-contact" aria-label="Contact and licensing">
+      <h2 class="footer-heading">Licensed New Jersey contractor</h2>
+
       <p class="footer-hic">
-        Licensed New Jersey Home Improvement Contractor ·
+        Licensed New Jersey Home Improvement Contractor<br>
         HIC #{{ site.company.hic }}
       </p>
 
@@ -41,36 +73,31 @@
         <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
       </address>
 
-      <p class="footer-area" itemprop="areaServed">
-        Serving Atlantic County, Ocean County, Cape May County, and the South Jersey shore for multi-day tile scopes.
-      </p>
-    </div>
+      <div class="footer-contact">
+        <a href="tel:{{ site.company.phone_link }}" itemprop="telephone">
+          {{ site.company.phone_display }}
+        </a>
+        <a href="mailto:{{ site.company.email }}" itemprop="email">
+          {{ site.company.email }}
+        </a>
+      </div>
+    </section>
+  </div>
 
-    <!-- Nav -->
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="{{ '/for-general-contractors/' | relative_url }}">For General Contractors</a>
-      <a href="{{ '/services/'  | relative_url }}">Tile Services</a>
-      <a href="{{ '/portfolio/' | relative_url }}">Gallery</a>
-      <a href="{{ '/about/'     | relative_url }}">About</a>
-            <br></br>
-      <a href="{{ '/reviews/'   | relative_url }}">Reviews</a>
-      <a href="{{ '/contact/'   | relative_url }}">Contact</a>
-      <a href="{{ '/terms/'     | relative_url }}">Terms &amp; Conditions</a>
-    </nav>
+<!-- Bottom bar -->
+<div class="footer-bottom">
+  <p class="footer-credit">
+    Site built and managed by
+    <a href="https://tillerstead.com" class="footer-logo-link" rel="noopener">
+      <span class="logo-two-tone logo-two-tone--light logo-two-tone--sm">
+        <span class="logo-wordmark">
+          <span class="logo-part logo-part-til">Tiller</span> <span class="logo-part logo-part-stead">stead.</span>
+        </span>
+        <span class="logo-llc">LLC</span>
+      </span>
+  </p>
+</div>
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <a href="tel:{{ site.company.phone_link }}"
-         itemprop="telephone">
-        {{ site.company.phone_display }}
-      </a>
-      <a href="mailto:{{ site.company.email }}"
-         itemprop="email">
-        {{ site.company.email }}
-      </a>
-    </div>
-
-    <!-- Legal line -->
     <p class="footer-legal">
       © {{ "now" | date: "%Y" }} Tillerstead LLC · All rights reserved
     </p>

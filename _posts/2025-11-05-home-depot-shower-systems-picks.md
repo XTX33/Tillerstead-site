@@ -85,3 +85,7 @@ If you’re in **South Jersey or Atlantic County**, we’re happy to help you pl
 
 **Next step:**  
 Send your shower photos and goals to **info@tillerstead.com**, or visit the [Contact page](/contact.html) to start a consultation.
+
+---
+
+Do the work with integrity and care.

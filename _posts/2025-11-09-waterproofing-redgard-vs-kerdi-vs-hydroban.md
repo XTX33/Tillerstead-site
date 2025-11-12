@@ -99,3 +99,7 @@ We document every waterproofing phase—**photos, flood-test logs, and substrate
 
 **Next Step:**  
 If you’re planning a shower rebuild in **Atlantic County or anywhere in South Jersey**, send us a few photos and notes to **info@tillerstead.com** or [request a consultation](/contact.html). We’ll help match your space and budget with the right waterproofing system—and install it by the book.
+
+---
+
+Do the work with integrity and care.

@@ -1,20 +1,19 @@
 ---
 layout: default
-title: Work With Tillerstead
+title: Contact Tillerstead | Property Maintenance & Remodeling
 permalink: /contact/
-description: Send plans, photos, or scope notes to Tillerstead LLC for schedule-reliable tile subcontracting across South Jersey.
+description: Request a monthly maintenance plan or project estimate from Tillerstead LLC. Serving homeowners, landlords, and small commercial properties across South Jersey. NJ Licensed HIC #13VH10808800.
 body_class: page-contact
 
 hero_eyebrow: Contact
-hero_title: Send tile scopes, plans, and timelines.
+hero_title: Request a maintenance plan or project estimate
 hero_subtitle: >
-  Get a clear, line-item estimate with schedule coordination, documentation, and
-  change-order tracking tailored for general contractors and property managers in South Jersey.
+  Get a detailed proposal for monthly property maintenance, remodeling projects, or tile work—with clear pricing, timeline, and full licensing documentation.
 hero_list:
-  - "Licensed New Jersey Home Improvement Contractor (HIC #{{ site.company.hic }}) with insurance & W-9 ready"
-  - "Waterproof showers, large-format tile, backsplashes, and punchlist rescue"
-  - "Serving Atlantic, Ocean, and Cape May counties with travel for multi-day scopes"
-  - "Daily communication, schedule updates, and clean turnover for your clients"
+  - "Licensed New Jersey Home Improvement Contractor (HIC #13VH10808800) with full insurance coverage"
+  - "Monthly maintenance plans, remodeling, and waterproof tile assemblies"
+  - "Serving Atlantic County and surrounding South Jersey communities"
+  - "Clear documentation and professional service"
 hero_cta_primary_url: "mailto:info@tillerstead.com"
 hero_cta_primary_label: "Email Project Details"
 hero_cta_secondary_url: "tel:+16096659350"
@@ -24,7 +23,7 @@ hero_cta_secondary_label: "Call (609) 665-9350"
 <section class="section section-form" aria-labelledby="contact-heading">
   <div class="container contact-shell">
     <header class="contact-header">
-      <h2 id="contact-heading">Request availability or submit a bid invite</h2>
+      <h2 id="contact-heading">Request a maintenance plan or project estimate</h2>
 
       <p class="lead" id="form-intro">
         Share scope notes, spec sheets, or schedules below. I’ll review what you send, follow up with any key questions,
@@ -33,9 +32,9 @@ hero_cta_secondary_label: "Call (609) 665-9350"
 
       <div class="contact-steps" aria-label="What happens after you send this form">
         <ol>
-          <li><strong>Review:</strong> Plans, photos, and specs are reviewed for waterproofing, layout, and staging requirements.</li>
-          <li><strong>Follow up:</strong> We confirm scope, schedule windows, and any site logistics with your superintendent or client.</li>
-          <li><strong>Estimate:</strong> Receive a line-item proposal with allowances, exclusions, and change-order process outlined.</li>
+          <li><strong>Review:</strong> Property details, maintenance needs, or project scope reviewed for feasibility and scheduling.</li>
+          <li><strong>Follow up:</strong> Quick call or email to confirm details, discuss options, and clarify any questions.</li>
+          <li><strong>Proposal:</strong> Receive a detailed estimate with itemized pricing, timeline, and service agreement terms.</li>
         </ol>
       </div>
     </header>
@@ -120,16 +119,28 @@ hero_cta_secondary_label: "Call (609) 665-9350"
         </div>
 
         <div class="form-field">
+          <label for="property-type">Property type</label>
+          <select id="property-type" name="property_type">
+            <option value="">Select an option</option>
+            <option>Single-family home</option>
+            <option>Rental property / landlord</option>
+            <option>Multi-unit residential</option>
+            <option>Small commercial</option>
+            <option>Condo / townhouse</option>
+          </select>
+        </div>
+
+        <div class="form-field">
           <label for="project-type">Project type</label>
           <select id="project-type" name="project_type">
             <option value="">Select an option</option>
-            <option>Multi-bath remodel or addition</option>
-            <option>Spec home or multifamily package</option>
-            <option>Commercial / tenant improvement</option>
+            <option>Monthly Maintenance Plan</option>
+            <option>Kitchen or Bathroom Remodel</option>
+            <option>Tile Installation (shower, floor, backsplash)</option>
+            <option>Property Repairs & Maintenance</option>
             <option>Waterproof shower rebuild</option>
-            <option>Floor tile scope</option>
-            <option>Backsplash / feature wall</option>
-            <option>Punchlist or warranty support</option>
+            <option>Flooring installation</option>
+            <option>Small commercial / tenant improvement</option>
             <option>Other / not sure yet</option>
           </select>
         </div>
@@ -138,10 +149,11 @@ hero_cta_secondary_label: "Call (609) 665-9350"
           <label for="timeline">Ideal timeline</label>
           <select id="timeline" name="timeline">
             <option value="">Select an option</option>
-            <option>Current bid / ASAP mobilization</option>
-            <option>Within 30-60 days</option>
-            <option>60-120 days out</option>
-            <option>Budgeting future work</option>
+            <option>ASAP / urgent</option>
+            <option>Within 30 days</option>
+            <option>1-3 months</option>
+            <option>3-6 months</option>
+            <option>Planning for future</option>
           </select>
         </div>
       </div>
@@ -155,7 +167,7 @@ hero_cta_secondary_label: "Call (609) 665-9350"
           name="details"
           rows="6"
           required
-          placeholder="Share project scope, tile selections, waterproofing expectations, site conditions, and any scheduling constraints or documentation needs."
+          placeholder="Share details about your property, maintenance needs, remodeling scope, or tile project. Include address/location, property type, timeline, and any specific concerns or requirements."
         ></textarea>
       </div>
 
@@ -198,3 +210,193 @@ hero_cta_secondary_label: "Call (609) 665-9350"
     </aside>
   </div>
 </section>
+<style>
+  /* Page shell */
+  body.page-contact {
+    background: #020617; /* match site dark navy */
+  }
+
+  .section-form {
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .contact-shell {
+    max-width: 72rem;          /* was 56rem – gives the section room */
+    margin: 0 auto;
+    padding-inline: 1.5rem;
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  /* Desktop: two columns, FORM slightly larger than copy */
+  @media (min-width: 960px) {
+    .contact-shell {
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+      align-items: flex-start;
+      gap: 3rem;
+    }
+  }
+
+  .contact-header h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-header .lead {
+    color: #e5e7eb;
+    max-width: 40rem;
+  }
+
+  .contact-steps ol {
+    margin: 1.25rem 0 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+    color: #cbd5f5;
+    font-size: 0.95rem;
+  }
+
+  /* Form layout */
+  .contact-form {
+    background: rgba(15, 23, 42, 0.98);
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 2rem 1.75rem 1.9rem; /* a hair more breathing room */
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.8);
+  }
+
+  .form-grid {
+    display: grid;
+    gap: 1rem 1.25rem;
+  }
+
+  @media (min-width: 720px) {
+    .form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .form-field {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .contact-form label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #e5e7eb;
+  }
+
+  /* Inputs / selects / textareas */
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    border-radius: 0.6rem;
+    border: 1px solid rgba(148, 163, 184, 0.75);
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    outline: none;
+    width: 100%;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: rgba(148, 163, 184, 0.9);
+  }
+
+  .contact-form select {
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, rgba(148, 163, 184, 0.9) 50%),
+      linear-gradient(135deg, rgba(148, 163, 184, 0.9) 50%, transparent 50%);
+    background-position:
+      calc(100% - 16px) 50%,
+      calc(100% - 11px) 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 2rem;
+  }
+
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    border-color: rgba(212, 175, 55, 1);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.6);
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 7rem;
+  }
+
+  .form-note {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: rgba(148, 163, 184, 0.9);
+  }
+
+  .contact-form .btn-primary {
+    margin-top: 1.25rem;
+  }
+
+  /* Alt contact block */
+  .contact-alt {
+    color: #e5e7eb;
+  }
+
+  .contact-alt h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-alt p {
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-alt a {
+    color: rgba(212, 175, 55, 1);
+    font-weight: 600;
+  }
+
+  .contact-alt a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-alt .microcopy {
+    font-size: 0.85rem;
+    color: rgba(148, 163, 184, 0.95);
+  }
+
+  /* Button */
+  .btn-primary {
+    background: #22c55e;
+    background-image: none !important;
+    border: 1px solid #16a34a;
+    color: #d4af37;
+    font-weight: 600;
+    box-shadow: 0 10px 24px rgba(22, 163, 74, 0.45);
+    transition: background-color 140ms ease, transform 120ms ease, box-shadow 140ms ease;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: #16a34a;
+    box-shadow: 0 14px 32px rgba(22, 163, 74, 0.55);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(22, 163, 74, 0.45);
+  }
+
+  /* Mobile stacking: keep it full-width and clean */
+  @media (max-width: 959.98px) {
+    .contact-shell {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
