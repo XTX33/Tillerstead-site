@@ -5745,3 +5745,6 @@ body.page-home .process-cta {
     overflow: auto;
   }
 }
+body.page-home #hero-heading {
+  color: #f9fafb;
+}
