@@ -32,17 +32,7 @@ primary:
     url: /contact/
     match: /contact/
 
-footer:
-  - ref: services
-  - ref: portfolio
-  - ref: gc
-  - ref: reviews
-  - ref: financing
-  - ref: contact
-  - ref: privacy
-  - ref: blog
-
-# Items that only live in the footer
+# Items that only appear in footer / legal
 secondary:
   - id: blog
     title: Blog
@@ -52,15 +42,19 @@ secondary:
     title: Privacy
     url: /privacy/
     match: /privacy/
+  - id: terms
+    title: Terms & Conditions
+    url: /terms/
+    match: /terms/
 
-actions:
-  - id: quote
-    title: Request Estimate
-    url: /contact/
-    style: btn-primary
-    aria_label: Request an estimate consultation
-  - id: call
-    title: (609) 665-9350
-    url: tel:+16096659350
-    style: btn-ghost
-    aria_label: Call Tillerstead LLC
+footer:
+  - ref: services
+  - ref: portfolio
+  - ref: gc
+  - ref: reviews
+  - ref: financing
+  - ref: about
+  - ref: contact
+  - ref: blog
+  - ref: privacy
+  - ref: terms
