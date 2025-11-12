@@ -544,7 +544,7 @@ textarea::placeholder {
 /* 9) Footer
    ------------------------------------------- */
 .site-footer {
-  background: #0f172a;
+  background-color: #0f172a;
   padding: 3rem 1.25rem 2rem;
   margin-top: 3rem;
   background-image: linear-gradient(45deg, rgba(186, 150, 77, 0.1) 25%, transparent 25%, transparent 75%, rgba(186, 150, 77, 0.1) 75%, rgba(186, 150, 77, 0.1)),
