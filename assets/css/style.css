@@ -420,6 +420,15 @@
   padding: 0;
 }
 
+/* Call button */
+.call-btn {
+  white-space: nowrap;
+}
+
+/* Mobile: hide call button to avoid crowding */
+@media (max-width: 800px) {
+  .call-btn {
+    display: none;
 /* List items don’t have extra margins */
 .site-menu > li {
   margin: 0;
@@ -490,6 +499,17 @@
     gap: 0.75rem;
   }
 
+/* =========================
+   UTILITIES
+   ========================= */
+.center {
+  text-align: center;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--s-4); }
+.mt-2 { margin-top: var(--s-6); }
+.mt-3 { margin-top: var(--s-8); }
   .site-menu a {
     font-size: 0.85rem;
     letter-spacing: 0.03em;

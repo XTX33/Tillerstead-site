@@ -434,6 +434,8 @@ button.btn {
   }
 }
 
+body.nav-open {
+  overflow: hidden;
 /* Header actions: call button + nav toggle */
 .site-header-actions {
   display: flex;
@@ -1092,6 +1094,53 @@ textarea::placeholder {
    Header & Navigation
    ============================================ */
 
+/* Spacing utilities */
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--ts-space-2); }
+.mt-2 { margin-top: var(--ts-space-3); }
+.mt-3 { margin-top: var(--ts-space-4); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--ts-space-2); }
+.mb-2 { margin-bottom: var(--ts-space-3); }
+.mb-3 { margin-bottom: var(--ts-space-4); }
+
+/* 12) Print
+   ------------------------------------------- */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .btn,
+  .nav-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+.text-logo .logo-gradient {
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: linear-gradient(90deg, var(--brand-brass, #b8922f), var(--brand-emerald, #0fa3b1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.site-footer {
+  background: var(--brand-dark, #0f172a);
+  color: var(--brand-light, #f9fafb);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
 .site-header {
   position: sticky;
   top: 0;
