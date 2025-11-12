@@ -389,6 +389,7 @@ button.btn {
   background: rgba(15, 23, 42, 0.95);
 }
 
+/* 6) Hero & media blocks
 /* 6) Header / Navigation
    ------------------------------------------- */
 
@@ -1125,6 +1126,22 @@ textarea::placeholder {
   a {
     text-decoration: underline;
   }
+}
+
+.text-logo .logo-gradient {
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: linear-gradient(90deg, var(--brand-brass, #b8922f), var(--brand-emerald, #0fa3b1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.site-footer {
+  background: var(--brand-dark, #0f172a);
+  color: var(--brand-light, #f9fafb);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
 }
 .text-logo .logo-gradient {
   font-weight: 800;

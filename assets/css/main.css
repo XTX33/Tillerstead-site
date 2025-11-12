@@ -258,12 +258,18 @@ main {
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1100;
 }
 
 /* Right-side actions (phone + burger) */
 .site-header-actions {
   display: flex;
   align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+  position: relative;
+  z-index: 1100;
   gap: 0.75rem;
   flex-shrink: 0;
 }
@@ -341,6 +347,21 @@ main {
 .site-nav {
   position: fixed;
   inset: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: clamp(5rem, 11vw, 6rem) clamp(1.75rem, 8vw, 3.5rem) clamp(2.25rem, 12vw, 3.75rem);
+  background: var(--color-overlay-strong);
+  color: var(--color-text-on-dark);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 26px 65px rgba(2, 6, 23, 0.68);
+  overflow-y: auto;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--transition-slow), opacity var(--transition-slow);
   z-index: 999;
   background: rgba(0, 0, 0, 0.95);
   transform: translateY(-100%);
@@ -446,6 +467,25 @@ main {
     transform: none;
     opacity: 1;
     pointer-events: auto;
+    transition: none;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    gap: var(--space-6);
+    width: auto;
+  }
+
+  .site-nav a {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    position: relative;
+    background: transparent;
+    color: var(--color-text-on-dark);
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+    border: none;
     overflow: visible;
     transition: none;
   }
@@ -477,6 +517,8 @@ main {
 /* Prevent body scroll when nav is open */
 body.nav-open {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 /* 9) Hero
@@ -677,7 +719,7 @@ body.nav-open {
   flex-wrap: wrap;
 }
 
-/* KPI section contrast */
+/* KPI section contrast - FIXED COLORS */
 .hero-kpis {
   margin-top: 1.5rem;
   display: grid;
@@ -690,7 +732,8 @@ body.nav-open {
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(248, 250, 252, 0.95);
+  font-weight: 700;
+  color: var(--color-brass);
 }
 /* 11) FAQ / Accordion
    ------------------------------------------- */
@@ -1253,6 +1296,7 @@ address.footer-meta {
     align-items: stretch;
   }
 }
+
 /* ===========================
    ABOUT PAGE LAYOUT
    =========================== */

@@ -251,6 +251,207 @@ hero_secondary_label: "Tile & Remodel Services"
         </div>
       </article>
     </div>
+  </section>
+</main>
+
+<style>
+  .hero--homepage {
+    padding: 4rem 0 2rem;
+  }
+
+  .hero-main {
+    max-width: 56rem;
+  }
+
+  .hero-eyebrow-text {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(226, 232, 240, 0.8);
+  }
+
+  .hero h1 {
+    margin-top: 0.75rem;
+  }
+
+  .hero-note {
+    max-width: 44rem;
+  }
+
+  .hero-kpis {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero-kpis {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .hero-kpi {
+    background: rgba(15, 23, 42, 0.35);
+    border-radius: 0.75rem;
+    padding: 1.1rem 1.25rem;
+    color: rgba(226, 232, 240, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+  }
+
+  .hero-kpi-label {
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    margin-bottom: 0.35rem;
+    color: var(--color-brass);
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .why-grid {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 900px) {
+    .why-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .why-item {
+    background: #fff;
+    border-radius: 0.9rem;
+    padding: 1.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
+  }
+
+  .why-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+
+  .section--scopes .scope-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .section--scopes .scope-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .scope-card {
+    background: #fff;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scope-card figure {
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #0f172a;
+  }
+
+  .scope-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scope-body {
+    padding: 1.3rem 1.5rem 1.6rem;
+  }
+
+  .scope-body h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-cta {
+    margin-top: 2rem;
+    font-weight: 600;
+  }
+
+  .workflow-shell {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .workflow-steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .workflow-steps li {
+    position: relative;
+    padding-left: 2.75rem;
+    line-height: 1.6;
+  }
+
+  .workflow-steps li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: var(--brand-brass, #b8922f);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+
+  .service-area-shell {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 900px) {
+    .service-area-shell {
+      grid-template-columns: 3fr 2fr;
+      align-items: start;
+    }
+  }
+
+  .service-area-card {
+    background: #fff;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 1.5rem;
+  }
+
+  .service-area-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    line-height: 1.6;
+  }
 
     <p class="section-cta">
       Interested in monthly property care?
