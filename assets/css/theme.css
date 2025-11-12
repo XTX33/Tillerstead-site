@@ -3083,3 +3083,82 @@ html, body {
   pointer-events: none;
   z-index: -1;
 }
+/* ===== Hero credibility band ===== */
+.hero-cred {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+.hero-note {
+  margin: 0.25rem 0;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.6;
+}
+.hero-note.text-meta {
+  opacity: 0.82;
+  letter-spacing: 0.02em;
+}
+.nowrap { white-space: nowrap; }
+
+/* ===== KPI list (grid on desktop, stacked on mobile) ===== */
+.hero-kpis {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .hero-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* KPI card look without heavy chrome */
+.hero-kpi {
+  background: rgba(0, 0, 0, 0.035);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.85rem;
+  padding: 0.9rem 1rem;
+  line-height: 1.55;
+}
+@media (prefers-color-scheme: dark) {
+  .hero-kpi {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.09);
+  }
+}
+
+/* Label & text balance */
+.hero-kpi-label {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+  padding-right: 0.5rem;
+  border-right: 1px solid rgba(0,0,0,0.12);
+}
+@media (prefers-color-scheme: dark) {
+  .hero-kpi-label { border-right-color: rgba(255,255,255,0.18); }
+}
+
+/* Subtle “dot” accent using brand emerald if present */
+.hero-kpi-label::before {
+  content: "";
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--ts-emerald, #22c55e);
+  margin-right: 0.45rem;
+  transform: translateY(-1px);
+}
+
+/* Text runs clean after the label */
+.hero-kpi .hero-kpi-label + * {
+  display: inline;
+  margin-left: 0.5rem;
+  font-size: 0.98rem;
+}
