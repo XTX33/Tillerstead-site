@@ -429,6 +429,9 @@
 @media (max-width: 800px) {
   .call-btn {
     display: none;
+  }
+}
+
 /* List items don’t have extra margins */
 .site-menu > li {
   margin: 0;
