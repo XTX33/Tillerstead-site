@@ -2,18 +2,21 @@
   <div class="site-header-inner container">
     <!-- Brand -->
     <a
-      class="site-logo text-logo"
+      class="site-logo"
       href="{{ '/' | relative_url }}"
       aria-label="{{ site.title | default: 'Tillerstead LLC – Home' }}"
     >
-      <span class="logo-two-tone logo-two-tone--dark">
-        <span class="logo-wordmark">
-          <span class="logo-part logo-part-til">Tiller</span><span class="logo-part logo-part-stead">stead</span>
-        </span>
-        <span class="logo-llc">LLC</span>
+      <img
+        src="{{ '/assets/img/logo.png' | relative_url }}"
+        alt="{{ site.title | default: 'Tillerstead LLC' }}"
+        class="site-logo-img"
+        loading="lazy"
+      />
+      <!-- Accessible text fallback (not visible) -->
+      <span class="site-logo-text sr-only">
+        {{ site.title | default: 'Tillerstead LLC' }}
       </span>
     </a>
-
     <!-- Primary navigation -->
     <nav
       id="site-nav"
@@ -28,9 +31,9 @@
           </a>
         </li>
         <li>
-          <a href="{{ '/for-general-contractors/' | relative_url }}"
-             {% if page.url contains '/for-general-contractors/' %}aria-current="page"{% endif %}>
-            For General Contractors
+          <a href="{{ '/services/' | relative_url }}"
+             {% if page.url contains '/services/' %}aria-current="page"{% endif %}>
+            Services
           </a>
         </li>
         <li>
@@ -40,9 +43,9 @@
           </a>
         </li>
         <li>
-          <a href="{{ '/services/' | relative_url }}"
-             {% if page.url contains '/services/' %}aria-current="page"{% endif %}>
-            Tile Services
+          <a href="{{ '/contact/' | relative_url }}"
+             {% if page.url contains '/contact/' %}aria-current="page"{% endif %}>
+            Contact
           </a>
         </li>
         <li>
@@ -58,27 +61,15 @@
           </a>
         </li>
         <li>
-          <a href="{{ '/contact/' | relative_url }}"
-             {% if page.url contains '/contact/' %}aria-current="page"{% endif %}>
-            Contact
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/financing/' | relative_url }}"
-             {% if page.url contains '/financing/' %}aria-current="page"{% endif %}>
-            Financing
+          <a href="{{ '/for-general-contractors/' | relative_url }}"
+             {% if page.url contains '/for-general-contractors/' %}aria-current="page"{% endif %}>
+            For GCs
           </a>
         </li>
         <li>
           <a href="{{ '/blog/' | relative_url }}"
              {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>
             Blog
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/privacy/' | relative_url }}"
-             {% if page.url contains '/privacy/' %}aria-current="page"{% endif %}>
-            Privacy
           </a>
         </li>
       </ul>

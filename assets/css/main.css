@@ -227,3 +227,340 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+/* ============================================
+   HEADER + NAV
+   ============================================ */
+
+/* Sticky header shell */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #020617;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* The inner container already has .container;
+   we just control flex + padding here. */
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+  padding: 0.65rem 1.25rem;
+}
+
+/* Logo lockup */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Right-side actions (phone + burger) */
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Call button */
+.call-btn.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 34px;
+  height: 32px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.95);
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  height: 2px;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* X state */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* ========= NAV – MOBILE FIRST (drawer) ========= */
+
+/* Drawer hidden by default */
+.site-nav {
+  position: fixed;
+  top: 3.25rem; /* just under header */
+  left: 0;
+  right: 0;
+  background: rgba(2, 6, 23, 0.98);
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  flex: 0 0 auto;
+}
+
+/* When JS adds .is-open */
+.site-nav.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.site-menu > li {
+  margin: 0;
+  padding: 0;
+}
+
+.site-menu a {
+  display: block;
+  padding: 0.45rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+.site-menu a:hover,
+.site-menu a:focus-visible {
+  color: #facc15;
+}
+
+.site-menu a[aria-current="page"] {
+  color: #facc15;
+}
+
+/* ========= DESKTOP ≥ 960px ========= */
+
+@media (min-width: 960px) {
+  .site-header-inner {
+    padding-inline: 1.75rem;
+    gap: 2rem;
+  }
+
+  .site-logo {
+    margin-right: 1.5rem;
+  }
+
+  .site-nav {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    flex: 1 1 auto;
+  }
+
+  .site-menu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0;
+  }
+
+  .site-menu a {
+    padding: 0.3rem 0;
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
+  }
+
+  .site-menu a[aria-current="page"] {
+    border-bottom: 2px solid #facc15;
+  }
+
+  .call-btn.btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* Slight tightening on smaller desktops */
+@media (max-width: 1100px) and (min-width: 960px) {
+  .site-menu {
+    gap: 0.9rem;
+  }
+
+  .site-menu a {
+    font-size: 0.84rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* ============================================
+   FOOTER THEME
+   ============================================ */
+
+.site-footer {
+  background: #020617;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 2.25rem 1.5rem 2rem;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.site-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+
+.site-footer a {
+  color: #c4c9ff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #facc15;
+}
+
+.site-footer-meta {
+  flex: 1 1 220px;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: flex-end;
+  flex: 1 1 220px;
+}
+
+.site-footer-nav a {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+/* Stack on small screens */
+@media (max-width: 768px) {
+  .site-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer-nav {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================
+   Logo – two-tone wordmark
+   ============================================ */
+
+.logo-two-tone {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+
+.logo-wordmark {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: 1.35rem; /* header size; scale down with --sm */
+}
+
+.logo-part-til {
+  color: #22c55e; /* emerald */
+}
+
+.logo-part-stead {
+  color: #facc15; /* brass */
+}
+
+.logo-llc {
+  margin-top: 0.05rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--logo-llc-color, #f9fafb);
+  opacity: 0.95;
+}
+
+/* Dark-background version (header, dark hero) */
+.logo-two-tone--dark {
+  --logo-llc-color: #f9fafb;
+}
+
+/* Light-background version (if you ever put logo on light bg) */
+.logo-two-tone--light {
+  --logo-llc-color: #020617;
+}
+
+/* Smaller logo variant for footer / small contexts */
+.logo-two-tone--sm .logo-wordmark {
+  font-size: 1rem;
+}
+
+.logo-two-tone--sm .logo-llc {
+  font-size: 0.65rem;
+}
+
+/* Footer niceties */
+.footer-credit {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.footer-logo-link {
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.footer-logo-link:hover .logo-part-til,
+.footer-logo-link:hover .logo-part-stead {
+  opacity: 0.9;
+}

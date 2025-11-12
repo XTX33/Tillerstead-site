@@ -51,13 +51,11 @@
     </style>
 
     {% include header.html %}
-
-    <main id="main" class="site-main" role="main">
-  {%- unless page.hide_hero or page.url == '/' -%}
+<main id="main" class="site-main" role="main">
+{%- include breadcrumbs.html -%}
+  {%- unless page.hide_hero -%}
     {%- include page-hero.html -%}
   {%- endunless -%}
-
-  {%- include breadcrumbs.html -%}
 
   <section class="page-content section">
     <div class="container">
@@ -65,11 +63,7 @@
     </div>
   </section>
 </main>
-
     {% include footer.html %}
-
     {% include scripts.html %}
-    <!-- Ensure main.js is not already loaded in scripts.html -->
-    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </body>
 </html>

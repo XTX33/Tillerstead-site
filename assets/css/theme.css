@@ -1,17 +1,60 @@
-/* ============================================
-   Tillerstead – Global Theme (theme.css)
-   Unifies colors, typography, spacing & layout
-   Assumes:
-   - Header: .site-header, .site-header-inner, .site-logo,
-             .site-header-actions, .site-nav
-   - JS: toggles .site-nav.is-open and body.nav-open
-   - Sections: .section, .hero, .hero--homepage
-   - Footer: .site-footer
-   ============================================ */
+/* =========================================================
+   Tillerstead — Unified Theme
+   Single source of truth for tokens, layout, nav, hero, cards
+   Breakpoint sync with main.js: BP_DESKTOP = 900px
+========================================================= */
 
-/* 0) Reset & base
-   ------------------------------------------- */
+/* ========== 1) Tokens ==========
+   Colors, type, space, radii, shadows
+*/
+:root{
+  /* Brand */
+  --ts-emerald:#22c55e;
+  --ts-emerald-deep:#16a34a;
+  --ts-brass:#facc15;
 
+  /* Ink & surfaces (dark-first design) */
+  --ts-ink:#e5e7eb;
+  --ts-ink-strong:#f9fafb;
+  --ts-muted:#9ca3af;
+  --ts-muted-ink:#94a3b8;
+
+  --ts-surface:#0f172a;
+  --ts-surface-alt:#020617;
+  --ts-surface-soft:#111827;
+  --ts-bg:#020617;
+
+  --ts-border:rgba(148,163,184,.28);
+  --ts-border-subtle:rgba(148,163,184,.18);
+
+  /* Type */
+  --ts-font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Inter","Manrope","Segoe UI",sans-serif;
+  --ts-font-mono:"IBM Plex Mono",SFMono-Regular,Menlo,Consolas,monospace;
+
+  /* Scale */
+  --ts-shell:1080px;
+  --ts-radius-sm:.375rem;
+  --ts-radius-md:.75rem;
+  --ts-radius-lg:1rem;
+  --ts-radius-xl:1.5rem;
+  --ts-pill:999px;
+
+  --ts-shadow-soft:0 14px 30px rgba(15,23,42,.45);
+  --ts-shadow-card:0 18px 45px rgba(15,23,42,.6);
+
+  --ts-fast:150ms ease-out;
+  --ts-med:200ms ease-out;
+
+  /* Backsplash patterns */
+  --ts-bsp-horiz:linear-gradient(to bottom,rgba(148,163,184,.18) 1px,transparent 1px);
+  --ts-bsp-vert:linear-gradient(to right,rgba(148,163,184,.18) 1px,transparent 1px);
+  --ts-bsp-block:linear-gradient(135deg,transparent 0,transparent 35%,rgba(34,197,94,.18) 35%,rgba(34,197,94,.18) 65%,transparent 65%,transparent 100%);
+  --ts-bsp-herring:repeating-linear-gradient(-45deg,rgba(148,163,184,.25) 0,rgba(148,163,184,.25) 2px,transparent 2px,transparent 8px);
+}
+
+/* ========== 2) Base ==========
+   Normalize + type + links
+*/
 *,
 *::before,
 *::after {
@@ -1285,4 +1328,244 @@ textarea::placeholder {
 .breadcrumbs [aria-current="page"] {
   color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
   font-weight: 500;
+}
+*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{
+  font-family:var(--ts-font-sans);
+  font-size:1rem; line-height:1.6;
+  color:var(--ts-ink); background:var(--ts-bg);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;line-height:1.15;color:var(--ts-ink-strong);font-weight:700}
+h1{font-size:clamp(2.25rem,3vw,3rem)}
+h2{font-size:clamp(1.75rem,2.4vw,2.25rem)}
+h3{font-size:clamp(1.35rem,2.1vw,1.75rem)}
+p{margin:0 0 .75rem;color:var(--ts-muted-ink)}
+a{color:var(--ts-emerald);text-decoration:none;transition:color var(--ts-fast),opacity var(--ts-fast)}
+a:hover,a:focus-visible{color:var(--ts-emerald-deep)}
+ul,ol{margin:0 0 1rem;padding-left:1.25rem}
+
+/* Layout primitives */
+.container,.shell{max-width:var(--ts-shell);margin-inline:auto;padding-inline:1.25rem}
+.section{padding:3.25rem 0}
+.section--tight{padding:2rem 0}
+.center{text-align:center}
+
+/* Utilities */
+.nowrap{white-space:nowrap}
+.mt-0{margin-top:0!important}.mb-0{margin-bottom:0!important}
+
+/* ========== 3) Header & Nav ==========
+   One implementation. Breakpoint aligns with main.js (900px)
+*/
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  background:var(--ts-surface-alt);
+  border-bottom:1px solid rgba(15,23,42,.75);
+  color:var(--ts-ink-strong);box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+.site-header-inner{
+  max-width:var(--ts-shell);margin-inline:auto;
+  padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem
+}
+.site-logo{display:inline-flex;align-items:center;flex-shrink:0;color:inherit;text-decoration:none}
+.site-logo img,.site-logo .site-logo-img{height:52px;width:auto;display:block}
+@media (min-width:640px){.site-logo img,.site-logo .site-logo-img{height:60px}}
+@media (min-width:1024px){.site-logo img,.site-logo .site-logo-img{height:68px}}
+
+.site-nav{margin-left:1rem}
+.site-header-actions{margin-left:auto;display:flex;align-items:center;gap:.75rem;white-space:nowrap}
+
+.call-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.55rem .9rem;border-radius:var(--ts-pill);font-weight:600;
+  background:var(--ts-emerald);color:#022c22;border:1px solid transparent
+}
+.call-btn:hover{background:var(--ts-emerald-deep)}
+
+.nav-toggle{display:none}
+
+/* Mobile / tablet: drawer */
+@media (max-width:899px){
+  .nav-toggle{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:2.5rem;height:2.5rem;border-radius:999px;
+    border:1px solid rgba(148,163,184,.7);
+    background:rgba(15,23,42,.96);color:#e5e7eb;cursor:pointer;z-index:1001
+  }
+  #site-nav.site-nav{
+    position:fixed;inset:auto 0 0 auto;top:0;right:0;bottom:0;
+    width:280px;max-width:80%;
+    padding:4.5rem 1.5rem 2.5rem;
+    background:var(--ts-surface-alt);color:var(--ts-ink-strong);
+    display:flex;flex-direction:column;gap:.75rem;
+    transform:translateX(100%);transition:transform 220ms ease;
+    box-shadow:-2px 0 18px rgba(0,0,0,.5);z-index:1000
+  }
+  #site-nav.site-nav.is-open{transform:translateX(0)}
+  body.nav-open{overflow:hidden}
+  .site-menu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.25rem}
+  .site-menu a{display:block;padding:.75rem 0;color:inherit;font-weight:500}
+}
+
+/* Desktop inline nav */
+@media (min-width:900px){
+  #site-nav.site-nav{position:static;transform:none;background:transparent;box-shadow:none;padding:0}
+  .site-menu{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}
+  .site-menu a{color:rgba(249,250,251,.9);font-weight:500}
+  .site-menu a:hover,.site-menu a:focus-visible{color:#fff;text-decoration:underline}
+  .nav-toggle{display:none}
+}
+
+/* ========== 4) Hero (Global) ==========
+   Same surface/pattern for all pages
+*/
+.hero{padding:3.5rem 0 2.5rem}
+.hero--homepage{padding:4rem 0 2.5rem}
+.hero-inner{max-width:var(--ts-shell);margin-inline:auto;padding-inline:1.25rem;display:grid;gap:2rem}
+@media (min-width:900px){.hero-inner{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:center}}
+.hero-eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;font-weight:600;color:rgba(148,163,184,.9);margin:0 0 .6rem}
+.hero-heading{margin-top:.75rem}
+.hero-lead{max-width:40rem}
+
+.hero-surface{
+  position:relative;max-width:1100px;margin:0 auto;
+  padding:2.5rem 1.25rem 2.75rem;border-radius:var(--ts-radius-xl);
+  overflow:hidden;background:radial-gradient(circle at top left,rgba(15,23,42,1),rgba(15,23,42,.93))
+}
+.hero-pattern{
+  position:absolute;inset:-40px;z-index:0;opacity:.5;pointer-events:none;
+  background-image:
+    var(--ts-bsp-horiz),
+    var(--ts-bsp-vert),
+    var(--ts-bsp-block),
+    var(--ts-bsp-herring);
+  background-size:100% 40px,60px 100%,320px 260px,14px 14px;
+  background-position:0 0,0 0,right -40px bottom -40px,right -40px bottom -40px;
+  background-repeat:repeat,repeat,no-repeat,no-repeat
+}
+@media (min-width:900px){.hero-pattern{opacity:.6}}
+.hero-inner{position:relative;z-index:1}
+
+/* “Cred band” + KPI cards reused everywhere */
+.hero-cred{margin-top:1rem;margin-bottom:.75rem}
+.hero-note{margin:.25rem 0;font-size:clamp(.95rem,1.8vw,1.05rem);line-height:1.6}
+.hero-note.text-meta{opacity:.82;letter-spacing:.02em}
+
+.hero-kpis{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.9rem;grid-template-columns:1fr}
+@media (min-width:768px){.hero-kpis{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}}
+.hero-kpi{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:.85rem;padding:.9rem 1rem;line-height:1.55;position:relative;overflow:hidden
+}
+.hero-kpi-label{display:inline-block;font-weight:600;font-size:.92rem;letter-spacing:.02em;margin-bottom:.25rem;padding-right:.5rem;border-right:1px solid rgba(255,255,255,.18)}
+.hero-kpi-label::before{content:"";display:inline-block;width:.42rem;height:.42rem;border-radius:50%;background:var(--ts-emerald);margin-right:.45rem;transform:translateY(-1px)}
+.hero-kpi .hero-kpi-label+*{display:inline;margin-left:.5rem;font-size:.98rem}
+
+/* ========== 5) Cards / Surfaces ==========
+   Unified card look for plans, why, scopes, service-area
+*/
+.card{
+  background:var(--ts-surface-soft);
+  border:1px solid var(--ts-border);
+  border-radius:1.1rem;
+  box-shadow:var(--ts-shadow-card);
+  padding:1.1rem
+}
+.card--subtle{
+  background:var(--ts-surface);
+  border:1px solid var(--ts-border-subtle);
+  box-shadow:var(--ts-shadow-soft)
+}
+
+/* Corner herringbone accent (subtle) */
+.card::after,.hero-kpi::after,.service-area-card::after{
+  content:"";position:absolute;inset:auto -30px -30px auto;width:50%;height:60%;
+  pointer-events:none;opacity:.14;background-image:var(--ts-bsp-block),var(--ts-bsp-herring);
+  background-size:240px 190px,12px 12px;background-position:bottom right,bottom right;background-repeat:no-repeat,repeat
+}
+@media (max-width:767px){
+  .card::after,.hero-kpi::after,.service-area-card::after{opacity:.1}
+}
+
+/* ========== 6) Buttons ==========
+   Primary emerald → brass, secondary ghost
+*/
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.4rem;
+  padding:.7rem 1.35rem;border-radius:var(--ts-pill);
+  font-size:.95rem;font-weight:600;border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:background-color var(--ts-fast),color var(--ts-fast),border-color var(--ts-fast),box-shadow var(--ts-fast),transform var(--ts-fast)
+}
+.btn-primary{
+  background-image:linear-gradient(135deg,var(--ts-emerald-deep) 0%,var(--ts-emerald) 40%,var(--ts-brass) 100%);
+  color:#022c22;box-shadow:0 14px 40px rgba(15,23,42,.9),0 0 0 1px rgba(15,23,42,.5)
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 20px 55px rgba(15,23,42,.95),0 0 0 1px rgba(15,23,42,.65)}
+.btn-ghost{background:transparent;color:var(--ts-ink);border-color:rgba(148,163,184,.8)}
+.btn-ghost:hover{background:rgba(15,23,42,.85);color:#fff;border-color:var(--ts-emerald)}
+
+/* ========== 7) Forms ==========
+*/
+input[type="text"],input[type="email"],input[type="tel"],textarea,select{
+  width:100%;padding:.6rem .75rem;border-radius:.75rem;border:1px solid rgba(148,163,184,.5);
+  background:rgba(15,23,42,.9);color:#e5e7eb;font-family:var(--ts-font-sans);font-size:.95rem
+}
+input::placeholder,textarea::placeholder{color:rgba(148,163,184,.75)}
+
+/* ========== 8) Footer ==========
+   One footer, dark-on-light alt removed to avoid conflict
+*/
+.site-footer{
+  border-top:1px solid rgba(15,23,42,.9);
+  background:radial-gradient(circle at top,#020617 0,#020617 40%,#020617 100%);
+  color:rgba(226,232,240,.92);padding:2.5rem 1.5rem 2rem;font-size:.9rem
+}
+.footer-inner{max-width:var(--ts-shell);margin-inline:auto;display:grid;gap:1.75rem;text-align:center}
+@media (min-width:880px){.footer-inner{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.1fr);text-align:left;align-items:flex-start}}
+.footer-col{display:flex;flex-direction:column;gap:.5rem}
+.footer-nav ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.footer-nav a{color:rgba(203,213,225,.96)}
+.footer-nav a:hover{color:var(--ts-emerald)}
+.footer-bottom{border-top:1px solid rgba(30,64,175,.6);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.82rem;color:rgba(148,163,184,.96)}
+.footer-bottom a{color:var(--ts-emerald)}
+.footer-bottom a:hover{text-decoration:underline}
+
+/* ========== 9) Page Variants ==========
+   Apply same hero to subpages; add helpful wrappers
+*/
+.hero--page,.page-hero{background:transparent;border-top:none;padding-top:1.5rem}
+.hero--page .hero-surface,.page-hero .hero-surface{border-radius:var(--ts-radius-xl)}
+.section-cta a:first-of-type{color:var(--ts-brass);font-weight:600}
+.section-cta a:last-of-type{color:var(--ts-emerald)}
+
+/* ========== 10) Services Page ==========
+   Reuse card styles; minimal page-specific overrides
+*/
+body.page-services{background:var(--ts-bg)}
+body.page-services .services{padding:3.5rem 0 0;display:grid;gap:2.5rem}
+body.page-services .services .intro{max-width:54rem;margin:0 auto;padding:0 1.25rem}
+body.page-services .services .lead{max-width:52rem;color:var(--ts-ink)}
+body.page-services .service-grid{max-width:54rem;margin:0 auto;padding:0 1.25rem;display:grid;gap:1.5rem}
+@media (min-width:960px){body.page-services .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+body.page-services .service-card{position:relative;background:#0b1220;border:1px solid var(--ts-border);border-radius:1rem;overflow:hidden;box-shadow:var(--ts-shadow-soft);color:var(--ts-ink)}
+body.page-services .service-card figure{margin:0;aspect-ratio:4/3;background:#0f172a}
+body.page-services .service-card img{width:100%;height:100%;object-fit:cover;display:block}
+body.page-services .service-card .body{padding:1.35rem;display:grid;gap:1rem}
+body.page-services .services-cta{max-width:54rem;margin:0 auto;padding:1.5rem;border-radius:.9rem;background:rgba(15,23,42,1);box-shadow:var(--ts-shadow-soft)}
+
+/* ========== 11) Images ==========
+*/
+img{max-width:100%;height:auto;display:block;border-radius:.75rem}
+
+/* ========== 12) Safety Tweaks ==========
+*/
+@media (max-width:1200px){
+  .site-menu{gap:.9rem}
+  .call-btn{max-width:160px;overflow:hidden;text-overflow:ellipsis}
 }

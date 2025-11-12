@@ -21,7 +21,6 @@ body_class: page-blog
         and when to push pause until the plan is right.
       </p>
     </header>
-
     {% assign posts_sorted = site.posts | sort: "date" | reverse %}
 
     {% if posts_sorted.size == 0 %}
@@ -65,11 +64,16 @@ body_class: page-blog
 
   </div>
 </section>
+
 <style>
   /* =======================================
      Tillerstead — Blog Index Styling
      Applies when body has .page-blog
      ======================================= */
+
+  body.page-blog {
+    background: #020617; /* deep navy shell */
+  }
 
   .page-blog .blog-index {
     padding: 3rem 1.25rem 3.5rem;
@@ -92,27 +96,27 @@ body_class: page-blog
     letter-spacing: 0.14em;
     font-size: 0.78rem;
     margin-bottom: 0.3rem;
-    color: rgba(15, 23, 42, 0.65);
+    color: #22c55e; /* emerald accent */
   }
 
   .page-blog .blog-hero h1 {
     margin: 0 0 0.65rem;
     font-size: 1.7rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--brand-ink, #111827);
+    color: rgba(212, 175, 55, 1); /* brass headline */
   }
 
   .page-blog .blog-hero .lead {
     font-size: 1.02rem;
     line-height: 1.7;
-    color: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
     margin-bottom: 0.4rem;
   }
 
   .page-blog .blog-hero .microcopy {
     font-size: 0.9rem;
-    color: rgba(15, 23, 42, 0.7);
+    color: rgba(148, 163, 184, 0.96);
     margin: 0.35rem 0 0;
   }
 
@@ -137,9 +141,8 @@ body_class: page-blog
     border-radius: 0.9rem;
     border: 1px solid rgba(148, 163, 184, 0.6);
     padding: 1.35rem 1.25rem 1.2rem;
-    background: radial-gradient(circle at top left,
-                rgba(15, 163, 177, 0.08),
-                rgba(249, 250, 251, 1));
+    background:
+      radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), rgba(15, 23, 42, 0.98));
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -148,15 +151,16 @@ body_class: page-blog
       transform 0.18s ease,
       border-color 0.18s ease,
       background 0.18s ease;
+    color: #e5e7eb;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
   }
 
   .page-blog .blog-card:hover {
-    border-color: var(--brand-brass, #b8922f);
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    border-color: rgba(212, 175, 55, 1);
+    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.85);
     transform: translateY(-2px);
-    background: radial-gradient(circle at top left,
-                rgba(15, 163, 177, 0.12),
-                #ffffff);
+    background:
+      radial-gradient(circle at top left, rgba(212, 175, 55, 0.18), rgba(15, 23, 42, 1));
   }
 
   /* --- Card Header --- */
@@ -173,7 +177,7 @@ body_class: page-blog
 
   .page-blog .blog-card-title a {
     text-decoration: none;
-    color: var(--brand-ink, #111827);
+    color: #f9fafb;
     position: relative;
   }
 
@@ -184,7 +188,7 @@ body_class: page-blog
     bottom: -0.08em;
     width: 0;
     height: 2px;
-    background: var(--brand-brass, #b8922f);
+    background: rgba(212, 175, 55, 1);
     transition: width 0.18s ease;
   }
 
@@ -197,7 +201,7 @@ body_class: page-blog
     font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(15, 23, 42, 0.55);
+    color: rgba(148, 163, 184, 0.9);
   }
 
   /* --- Excerpt / CTA --- */
@@ -206,7 +210,7 @@ body_class: page-blog
     margin: 0.3rem 0 0.2rem;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
   }
 
   .page-blog .blog-card-cta {
@@ -216,6 +220,13 @@ body_class: page-blog
   .page-blog .blog-card-cta .btn.btn-ghost {
     font-size: 0.9rem;
     padding: 0.4rem 0.85rem;
+    color: rgba(212, 175, 55, 1);
+    border-color: rgba(212, 175, 55, 0.6);
+  }
+
+  .page-blog .blog-card-cta .btn.btn-ghost:hover {
+    border-color: rgba(212, 175, 55, 1);
+    background: rgba(212, 175, 55, 0.08);
   }
 
   /* --- Empty State --- */
@@ -224,5 +235,30 @@ body_class: page-blog
     max-width: 30rem;
     margin: 2rem auto 0;
     text-align: center;
+    color: rgba(148, 163, 184, 0.96);
   }
+  /* =======================================
+   Blog Card Grid — 2x2 Desktop Layout
+   ======================================= */
+
+@media (min-width: 992px) {
+  .page-blog .blog-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 2rem 2rem; /* row, column spacing */
+    align-items: stretch;
+  }
+
+  .page-blog .blog-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .page-blog .blog-card-excerpt {
+    flex-grow: 1;
+  }
+}
 </style>

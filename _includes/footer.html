@@ -2,50 +2,62 @@
         itemscope
         itemtype="https://schema.org/HomeAndConstructionBusiness">
 
+  <!-- Structured data / business basics -->
   <meta itemprop="name" content="Tillerstead LLC">
   <meta itemprop="@id" content="{{ site.url }}/#contractor">
   <meta itemprop="url" content="{{ site.url }}/">
   <meta itemprop="priceRange" content="$$">
   <meta itemprop="telephone" content="{{ site.company.phone_link }}">
   <meta itemprop="email" content="{{ site.company.email }}">
+  <meta itemprop="areaServed"
+        content="Atlantic County NJ, Ocean County NJ, Cape May County NJ, South Jersey shore">
+  <meta itemprop="description"
+        content="Property maintenance and remodeling with tile specialty for South Jersey homeowners, landlords, and small commercial properties. Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies.">
 
-  <div class="footer-inner container">
+  <div class="footer-inner">
 
     <!-- Brand / summary -->
-    <div class="footer-col footer-col-brand">
+    <section class="footer-col footer-col-brand" aria-label="Tillerstead overview">
       <a href="{{ '/' | relative_url }}"
          class="footer-brand"
-         aria-label="Tillerstead LLC Home">
+         aria-label="Tillerstead LLC Home"
+         itemprop="url">
         <span class="footer-logo">
           <img src="{{ '/assets/img/logo.png' | relative_url }}"
-               alt="Tillerstead LLC Logo">
+               alt="Tillerstead LLC logo"
+               class="footer-logo-img">
         </span>
-        <span class="footer-name">Tillerstead LLC</span>
-        <span class="footer-tagline">Tile subcontractor for South Jersey build teams</span>
+        <span class="footer-name" itemprop="name">Tillerstead LLC</span>
       </a>
 
-      <p class="footer-area" itemprop="areaServed">
-        Serving Atlantic, Ocean, and Cape May counties and the South Jersey shore for multi-day tile scopes.
+      <p class="footer-tagline" itemprop="slogan">
+        Property Maintenance · Remodeling · Tile — NJ Licensed HIC #{{ site.company.hic }}
       </p>
-    </div>
 
-    <!-- Navigation -->
-    <div class="footer-col footer-col-nav">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <ul>
-          <li><a href="{{ '/for-general-contractors/' | relative_url }}">For General Contractors</a></li>
-          <li><a href="{{ '/services/'  | relative_url }}">Tile Services</a></li>
-          <li><a href="{{ '/portfolio/' | relative_url }}">Gallery</a></li>
-          <li><a href="{{ '/about/'     | relative_url }}">About</a></li>
-          <li><a href="{{ '/reviews/'   | relative_url }}">Reviews</a></li>
-          <li><a href="{{ '/contact/'   | relative_url }}">Contact</a></li>
-          <li><a href="{{ '/terms/'     | relative_url }}">Terms &amp; Conditions</a></li>
-        </ul>
-      </nav>
-    </div>
+      <p class="footer-area">
+        Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies
+        for homeowners, landlords, and small commercial properties across
+        Atlantic, Ocean, and Cape May counties in South Jersey.
+      </p>
+    </section>
+
+    <nav class="footer-nav" aria-label="Property services">
+  <h2 class="footer-heading">Property services</h2>
+  <ul class="footer-links">
+    <li><a href="{{ '/services/'  | relative_url }}">Maintenance Plans</a></li>
+    <li><a href="{{ '/services/'  | relative_url }}">Remodeling</a></li>
+    <li><a href="{{ '/services/'  | relative_url }}">Tile</a></li>
+    <li><a href="{{ '/about/'     | relative_url }}">About</a></li>
+    <li><a href="{{ '/contact/'   | relative_url }}">Contact</a></li>
+    <li><a href="{{ '/for-general-contractors/' | relative_url }}">For General Contractors</a></li>
+    <li><a href="{{ '/terms/'     | relative_url }}">Terms &amp; Conditions</a></li>
+  </ul>
+</nav>
 
     <!-- Contact / licensing -->
-    <div class="footer-col footer-col-contact">
+    <section class="footer-col footer-col-contact" aria-label="Contact and licensing">
+      <h2 class="footer-heading">Licensed New Jersey contractor</h2>
+
       <p class="footer-hic">
         Licensed New Jersey Home Improvement Contractor<br>
         HIC #{{ site.company.hic }}
@@ -69,16 +81,22 @@
           {{ site.company.email }}
         </a>
       </div>
-    </div>
+    </section>
   </div>
 
-  <!-- Bottom bar -->
-  <div class="footer-bottom">
-    <p class="footer-credit">
-      Website built and managed by <strong>Tillerstead&nbsp;LLC</strong>.  
-      We create fast, reliable static websites for contractors, trades, and small businesses.
-      <a href="{{ '/contact/' | relative_url }}">Get in touch</a> to discuss design and hosting options.
-    </p>
+<!-- Bottom bar -->
+<div class="footer-bottom">
+  <p class="footer-credit">
+    Site built and managed by
+    <a href="https://tillerstead.com" class="footer-logo-link" rel="noopener">
+      <span class="logo-two-tone logo-two-tone--light logo-two-tone--sm">
+        <span class="logo-wordmark">
+          <span class="logo-part logo-part-til">Tiller</span> <span class="logo-part logo-part-stead">stead.</span>
+        </span>
+        <span class="logo-llc">LLC</span>
+      </span>
+  </p>
+</div>
 
     <p class="footer-legal">
       © {{ "now" | date: "%Y" }} Tillerstead LLC · All rights reserved
