@@ -2437,3 +2437,197 @@ body.page-services #repairs-heading::after {
   color: inherit;
   text-decoration: none;
 }
+/* ============================================
+   Tillerstead – Layout Sections & Typography
+============================================ */
+
+/* Brand tokens (in case they aren't set above) */
+:root {
+  --ts-emerald: #22c55e;
+  --ts-emerald-deep: #16a34a;
+  --ts-brass: #facc15;
+  --ts-ink-deep: #0f172a;
+  --ts-muted: #6b7280;
+}
+
+/* Generic page section wrapper */
+.ts-section {
+  padding: 3rem 1.5rem;
+}
+
+.ts-section--tight {
+  padding-block: 2rem;
+}
+
+.ts-section--muted {
+  background: #f9fafb;
+}
+
+/* Constrain width */
+.ts-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Section header (eyebrow + title + subtitle) */
+.ts-section-header {
+  margin-bottom: 2rem;
+}
+
+.ts-eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--ts-muted);
+  margin-bottom: 0.5rem;
+}
+
+.ts-section-title {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  color: var(--ts-emerald);
+}
+
+.ts-section-subtitle {
+  margin: 0;
+  color: #4b5563;
+}
+
+/* Lead paragraph */
+.ts-lead,
+#services-overview.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* Hero heading (top of page) */
+#hero-heading {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--ts-ink-deep);
+}
+
+/* ============================================
+   Buttons – unified
+============================================ */
+
+.btn,
+.ts-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+  font-size: 0.95rem;
+}
+
+/* Primary button: solid emerald, white text */
+.btn-primary,
+.ts-btn-primary {
+  background: var(--ts-emerald);
+  color: #ffffff;
+  border-color: var(--ts-emerald);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible,
+.ts-btn-primary:hover,
+.ts-btn-primary:focus-visible {
+  background: var(--ts-emerald-deep);
+  border-color: var(--ts-emerald-deep);
+  color: #ffffff;
+}
+
+/* Ghost button: outline */
+.btn-ghost,
+.ts-btn-ghost {
+  background: transparent;
+  color: var(--ts-emerald);
+  border-color: currentColor;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible,
+.ts-btn-ghost:hover,
+.ts-btn-ghost:focus-visible {
+  background: rgba(34, 197, 94, 0.06);
+}
+
+/* Make sure nested links don't override button color */
+.btn a,
+.ts-btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   Service sections
+============================================ */
+
+.service-sections-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 800px) {
+  .service-sections-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.service-section {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #ffffff;
+}
+
+.service-section h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--ts-emerald);
+}
+
+.section-intro {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.service-list {
+  padding-left: 1.1rem;
+  margin: 0;
+  list-style: disc;
+  color: #4b5563;
+}
+
+/* Plans module aside */
+.plans-module {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.plans-module h2 {
+  color: var(--ts-emerald);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.plans-module p {
+  margin-bottom: 1rem;
+  color: #e5e7eb;
+}
