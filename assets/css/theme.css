@@ -5191,3 +5191,366 @@ body.page-home .process-grid {
   max-width: 54rem;
   margin: 0 auto;
 }
+/* ============================================
+   Tillerstead — Homepage Layout & Contrast
+   Applies when body has .page-home
+=============================================== */
+
+/* Shell: spacing & backgrounds */
+body.page-home .ts-section {
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 900px) {
+  body.page-home .ts-section {
+    padding: 3.5rem 1.75rem;
+  }
+}
+
+body.page-home .ts-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Alternate light/dark banding */
+body.page-home .section--plans,
+body.page-home .section--process {
+  background: radial-gradient(circle at top left,
+              rgba(15, 23, 42, 0.98),
+              rgba(15, 23, 42, 0.92));
+}
+
+body.page-home .section--who,
+body.page-home .section--scopes,
+body.page-home .section--why {
+  background: #f9fafb;
+}
+
+/* Section headers */
+body.page-home .ts-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0 0 0.4rem;
+}
+
+body.page-home .ts-section-title {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  color: var(--ts-emerald, #22c55e);
+}
+
+body.page-home .ts-section-subtitle {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* On dark sections, flip text colors */
+body.page-home .section--plans .ts-section-title,
+body.page-home .section--plans .ts-section-subtitle,
+body.page-home .section--plans .ts-eyebrow,
+body.page-home .section--plans .section-intro,
+body.page-home .section--plans,
+body.page-home .section--plans p,
+body.page-home .section--plans li {
+  color: #e5e7eb;
+}
+
+body.page-home .section--process .ts-section-title,
+body.page-home .section--process .ts-section-subtitle,
+body.page-home .section--process .ts-eyebrow,
+body.page-home .section--process .section-intro,
+body.page-home .section--process,
+body.page-home .section--process p,
+body.page-home .section--process li {
+  color: #e5e7eb;
+}
+
+body.page-home .section--plans .ts-section-title,
+body.page-home .section--process .ts-section-title {
+  color: #ffffff;
+}
+
+/* Hero heading & summary (from page-hero include) */
+body.page-home #hero-heading,
+body.page-home .hero h1,
+body.page-home .hero-title {
+  color: #ffffff !important;
+}
+
+body.page-home .hero-summary,
+body.page-home .hero p {
+  color: #e5e7eb !important;
+}
+
+/* GLOBAL BUTTON BASE (already defined elsewhere) just override colors on home */
+body.page-home .btn-primary {
+  background-image: linear-gradient(
+    135deg,
+    var(--ts-emerald-deep, #16a34a) 0%,
+    var(--ts-emerald, #22c55e) 40%,
+    var(--ts-brass, #facc15) 100%
+  );
+  color: #022c22 !important;
+  border-color: transparent;
+  box-shadow:
+    0 14px 40px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.5);
+  font-weight: 600;
+}
+
+body.page-home .btn-primary:hover,
+body.page-home .btn-primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow:
+    0 20px 55px rgba(15, 23, 42, 0.95),
+    0 0 0 1px rgba(15, 23, 42, 0.75);
+}
+
+/* On dark bands, force primary button text to white */
+body.page-home .section--plans .btn-primary,
+body.page-home .section--process .btn-primary {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Ghost buttons on home */
+body.page-home .btn-ghost {
+  background: transparent;
+  color: var(--ts-emerald, #22c55e);
+  border-color: rgba(148, 163, 184, 0.9);
+}
+
+body.page-home .btn-ghost:hover,
+body.page-home .btn-ghost:focus-visible {
+  background: rgba(34, 197, 94, 0.06);
+}
+
+/* Section intro + CTA note */
+body.page-home .section-intro {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+body.page-home .cta-note {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* Plans grid */
+body.page-home .plans-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 800px) {
+  body.page-home .plans-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body.page-home .plan-card {
+  background: #020617;
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+body.page-home .plan-card--featured {
+  border-color: #22c55e;
+  box-shadow: 0 8px 28px rgba(34, 197, 94, 0.25);
+}
+
+body.page-home .plan-title {
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+}
+
+body.page-home .plan-tag {
+  margin: 0;
+  color: #a9b4c2;
+  font-size: 0.88rem;
+}
+
+body.page-home .plan-tag--featured {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+body.page-home .plan-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+body.page-home .plan-footnote {
+  margin: 0.6rem 0 0;
+  font-size: 0.86rem;
+  color: #a9b4c2;
+}
+
+body.page-home .plans-bottom {
+  margin-top: 2rem;
+}
+
+/* Who we serve cards */
+body.page-home .who-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  body.page-home .who-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.page-home .who-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 1.5rem;
+}
+
+body.page-home .who-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: #0f172a;
+}
+
+/* Why cards */
+body.page-home .why-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  body.page-home .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.page-home .why-item {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 0.9rem;
+  padding: 1.5rem;
+}
+
+/* Services (scope) grid */
+body.page-home .section--scopes .scope-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  body.page-home .section--scopes .scope-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.page-home .scope-card {
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body.page-home .scope-card figure {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  background: #0f172a;
+}
+
+body.page-home .scope-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body.page-home .scope-body {
+  padding: 1.2rem 1.4rem 1.5rem;
+}
+
+body.page-home .scopes-cta-row {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  body.page-home .scopes-cta-row {
+    grid-template-columns: minmax(0, 2fr) auto;
+    align-items: center;
+  }
+}
+
+/* Process / steps */
+body.page-home .process-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  max-width: 54rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  body.page-home .process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body.page-home .process-step {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 1.4rem 1.3rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+}
+
+body.page-home .process-step h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+body.page-home .process-step p {
+  margin: 0;
+  color: #e2e8f0;
+}
+
+/* Process CTA row */
+body.page-home .process-cta {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  body.page-home .process-cta {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
