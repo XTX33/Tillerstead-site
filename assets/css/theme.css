@@ -3454,3 +3454,177 @@ body.page-reviews {
 .page-reviews .btn {
   text-decoration: none;
 }
+/* ============================================
+   Page: About (/about/)
+   ============================================ */
+
+body.page-about {
+  background: var(--ts-bg-dark); /* deep navy */
+  color: #e5e7eb;
+}
+
+/* Remove layout padding duplication */
+.page-about .page-content {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+/* Core about layout */
+.page-about .about {
+  padding: 3.5rem 0 0;
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .page-about .about {
+    padding-top: 3rem;
+  }
+}
+
+.page-about .about-intro {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.page-about .about .lead {
+  max-width: 54rem;
+  color: #e5e7eb;
+}
+
+/* About grid */
+.page-about .about-grid {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .page-about .about-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Cards */
+.page-about .about-card {
+  background: #f9fafb;
+  color: #1e293b;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 1.75rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+}
+
+.page-about .about-card h2 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.page-about .about-card p {
+  color: #334155;
+  margin: 0 0 0.9rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.page-about .about-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+  line-height: 1.7;
+}
+
+.page-about .about-card li {
+  color: #334155;
+}
+
+.page-about .about-card strong {
+  color: #020617;
+}
+
+/* Bottom CTA block */
+.page-about .about-cta {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 1.75rem;
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 0.9rem;
+  box-shadow: 0 8px 20px rgba(15,23,42,0.18);
+}
+
+.page-about .about-cta a {
+  color: var(--ts-brass);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.page-about .about-cta a:hover {
+  text-decoration: underline;
+}
+
+/* In-page anchor offset */
+#about-heading {
+  scroll-margin-top: 6rem;
+}
+
+/* =======================================
+   Section Headings (Process, Expect, etc.)
+   With emerald → brass gradient underline
+======================================= */
+
+#process-heading,
+#expect-heading,
+#experience-heading,
+#approach-heading,
+#standards-heading {
+  color: var(--ts-ink-deep);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.01em;
+  text-align: left;
+  position: relative;
+}
+
+/* Gradient underline accent using brand vars */
+#process-heading::after,
+#expect-heading::after,
+#experience-heading::after,
+#approach-heading::after,
+#standards-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.45rem;
+  height: 3px;
+  width: 70px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ts-emerald),
+    var(--ts-brass)
+  );
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Center alignment for sections that use center layout */
+.section--process h2#process-heading,
+.section--expect h2#expect-heading,
+.section--experience h2#experience-heading,
+.section--approach h2#approach-heading,
+.section--standards h2#standards-heading {
+  text-align: center;
+}
+
+.section--process h2#process-heading::after,
+.section--expect h2#expect-heading::after,
+.section--experience h2#experience-heading::after,
+.section--approach h2#approach-heading::after,
+.section--standards h2#standards-heading::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
