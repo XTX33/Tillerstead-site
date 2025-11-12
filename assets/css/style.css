@@ -392,7 +392,7 @@ p {
   color: #f9fafb;
   margin-bottom: 0.5rem;
 }
-.hero-secondary__lede {
+.hero-secondary .lede {
   color: rgba(248, 250, 252, 0.88);
   text-shadow: 0 1px 3px rgba(8, 12, 24, 0.55);
 }
