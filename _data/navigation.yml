@@ -38,11 +38,11 @@ footer:
   - ref: gc
   - ref: reviews
   - ref: financing
-  - ref: blog
-  - ref: privacy
   - ref: contact
+  - ref: privacy
+  - ref: blog
 
-# Secondary nav-only items (footer only)
+# Items that only live in the footer
 secondary:
   - id: blog
     title: Blog
