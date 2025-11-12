@@ -1893,6 +1893,51 @@ body.page-services .services .intro {
 body.page-services .services .lead {
   max-width: 52rem;
   color: #e5e7eb; /* readable against dark background */
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* Service section headings */
+body.page-services .service-section h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+body.page-services .section-intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+body.page-services .service-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+body.page-services .service-list li {
+  margin-bottom: 0.85rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+body.page-services .service-list strong {
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+/* Plans module in services page */
+body.page-services .plans-module h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
 }
 
 /* Grid of service cards */
@@ -1943,13 +1988,25 @@ body.page-services .service-card .body {
 
 body.page-services .service-card h2 {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: clamp(1.5rem, 2.2vw, 1.85rem);
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+body.page-services .service-card h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 body.page-services .service-card p {
   margin: 0;
   line-height: 1.7;
-  font-size: 0.96rem;
+  font-size: 1.05rem;
+  color: #334155;
 }
 
 body.page-services .service-card ul {
@@ -2001,10 +2058,10 @@ body.page-services #floors-heading,
 body.page-services #kitchens-heading,
 body.page-services #repairs-heading {
   color: #0f172a;
-  font-size: 1.35rem;
+  font-size: clamp(1.5rem, 2.2vw, 1.85rem);
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-align: left;
   position: relative;
@@ -2018,9 +2075,9 @@ body.page-services #repairs-heading::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.35rem;
+  bottom: -0.5rem;
   height: 3px;
-  width: 60px;
+  width: 80px;
   background-image: linear-gradient(90deg, #22c55e, #facc15);
   border-radius: 2px;
   opacity: 0.9;
