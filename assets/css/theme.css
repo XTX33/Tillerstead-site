@@ -3325,3 +3325,132 @@ h3 {
 .process-cta {
   margin-top: 2rem;
 }
+/* ============================================
+   Page: Reviews (/reviews/)
+   ============================================ */
+
+body.page-reviews {
+  background: #f9fafb;
+}
+
+/* Shell + header */
+.page-reviews {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  color: #1e293b;
+}
+
+.page-reviews header h1 {
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  color: var(--ts-ink-deep);
+}
+
+.page-reviews header .lead {
+  max-width: 46rem;
+}
+
+/* Reviews grid */
+.page-reviews .reviews {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .page-reviews .reviews {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Individual review cards */
+.review {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 1.4rem 1.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.review header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+  font-size: 0.9rem;
+}
+
+.review .name {
+  font-weight: 600;
+  color: var(--ts-ink-deep);
+}
+
+.review time {
+  color: #6b7280;
+  font-size: 0.88rem;
+}
+
+.review .pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.review .stars {
+  margin-left: auto;
+  font-size: 0.95rem;
+  color: #fbbf24; /* warm gold */
+}
+
+.review p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* CTA section under reviews */
+.review-cta {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.review-cta h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--ts-ink-deep);
+}
+
+.review-cta p {
+  margin: 0 0 1rem;
+  color: #4b5563;
+}
+
+.review-cta .btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.review-cta .microcopy {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Use global .btn + .btn-accent styles you already added */
+.page-reviews .btn {
+  text-decoration: none;
+}
