@@ -5042,8 +5042,7 @@ body.nav-open {
   font-size: 0.88rem;
   color: rgba(148, 163, 184, 0.95);
 }
-
-/* Gradient primary CTA buttons — high contrast, pill shape */
+/* Main pill buttons */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -5057,10 +5056,10 @@ body.nav-open {
     var(--ts-brass, #facc15)
   );
   background-color: var(--ts-emerald, #22c55e);
-  color: #f9fafb;            /* <<< readable text */
+  color: #f9fafb;          /* <<< white-ish text */
   font-weight: 600;
   font-size: 0.98rem;
-  text-decoration: none;     /* <<< remove underline */
+  text-decoration: none;   /* <<< no underline */
   box-shadow:
     0 14px 35px rgba(15, 23, 42, 0.45),
     0 0 0 1px rgba(15, 23, 42, 0.15);
@@ -5072,13 +5071,6 @@ body.nav-open {
     color 0.15s ease;
 }
 
-/* Make sure nested links/spans don’t re-add underlines */
-.btn-primary a,
-.btn-primary span {
-  text-decoration: none;
-}
-
-/* Hover / focus */
 .btn-primary:hover,
 .btn-primary:focus-visible {
   background-image: linear-gradient(
@@ -5093,7 +5085,6 @@ body.nav-open {
     0 0 0 1px rgba(15, 23, 42, 0.2);
 }
 
-/* On very small screens, tighten the pill width slightly */
 @media (max-width: 480px) {
   .btn-primary {
     padding-inline: 1.4rem;
