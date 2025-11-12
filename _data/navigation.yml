@@ -3,30 +3,47 @@ primary:
     title: Home
     url: /
     exact: /
-  - id: about
-    title: About
-    url: /about/
-    match: /about/
   - id: services
     title: Services
     url: /services/
     match: /services/
-  - id: gallery
-    title: Gallery
+  - id: portfolio
+    title: Portfolio
     url: /portfolio/
     match: /portfolio/
+  - id: gc
+    title: For Contractors
+    url: /for-general-contractors/
+    match: /for-general-contractors/
   - id: reviews
     title: Reviews
     url: /reviews/
     match: /reviews/
-  - id: contact
-    title: Contact
-    url: /contact/
-    match: /contact/
+  - id: about
+    title: About
+    url: /about/
+    match: /about/
   - id: financing
     title: Financing
     url: /financing/
     match: /financing/
+  - id: contact
+    title: Contact
+    url: /contact/
+    match: /contact/
+
+footer:
+  - ref: services
+  - ref: portfolio
+  - ref: gc
+  - ref: reviews
+  - ref: financing
+  - ref: blog
+  - ref: privacy
+  - ref: contact
+
+# Secondary nav-only items (footer only)
+secondary:
   - id: blog
     title: Blog
     url: /blog/
@@ -35,13 +52,6 @@ primary:
     title: Privacy
     url: /privacy/
     match: /privacy/
-
-footer:
-  - ref: services
-  - ref: gallery
-  - ref: about
-  - ref: reviews
-  - ref: contact
 
 actions:
   - id: quote
