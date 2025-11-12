@@ -11,22 +11,23 @@ keywords:
   - NJ HIC remodeling Atlantic County
   - Property maintenance and remodeling with tile specialty
   - Waterproof tile assemblies Atlantic County NJ
+
 schema:
   - '@context': 'https://schema.org'
     '@type': 'HomeAndConstructionBusiness'
-    '@id': 'https://tillerstead.com/#contractor'
+    '@id': '{{ site.url }}/#contractor'
     name: 'Tillerstead LLC'
-    image: 'https://tillerstead.com/assets/img/og.jpg'
-    url: 'https://tillerstead.com/'
-    telephone: '+1-609-665-9350'
-    email: 'info@tillerstead.com'
+    image: '{{ site.url }}/assets/img/og.jpg'
+    url: '{{ site.url }}/'
+    telephone: '{{ site.company.phone_display }}'
+    email: '{{ site.company.email }}'
     priceRange: '$$'
     address:
       '@type': 'PostalAddress'
-      streetAddress: '325 E. Jimmie Leeds Road, Suite 7-333'
-      addressLocality: 'Galloway'
-      addressRegion: 'NJ'
-      postalCode: '08205'
+      streetAddress: '{{ site.company.address_line }}'
+      addressLocality: '{{ site.company.address_locality }}'
+      addressRegion: '{{ site.company.address_region }}'
+      postalCode: '{{ site.company.address_postal_code }}'
       addressCountry: 'US'
     areaServed:
       - 'Atlantic County NJ'
@@ -36,7 +37,7 @@ schema:
       '@type': 'EducationalOccupationalCredential'
       credentialCategory: 'Professional License'
       name: 'NJ Home Improvement Contractor License'
-      identifier: '13VH10808800'
+      identifier: '{{ site.company.hic }}'
       issuingBody: 'New Jersey Division of Consumer Affairs'
     serviceType:
       - 'Monthly property maintenance'
@@ -57,7 +58,7 @@ schema:
         name: 'Are you licensed and insured in New Jersey?'
         acceptedAnswer:
           '@type': 'Answer'
-          text: 'Yes. Tillerstead LLC holds New Jersey Home Improvement Contractor license 13VH10808800 and maintains full insurance coverage.'
+          text: 'Yes. Tillerstead LLC holds New Jersey Home Improvement Contractor license {{ site.company.hic }} and maintains full insurance coverage.'
       - '@type': 'Question'
         name: 'What services are included in monthly maintenance plans?'
         acceptedAnswer:
