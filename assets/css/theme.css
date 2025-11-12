@@ -2350,3 +2350,90 @@ body.page-services #repairs-heading::after {
   margin-left: 0.5rem;
   font-size: 0.98rem;
 }
+/* ============================
+   Tillerstead – Headings & Buttons
+   ============================ */
+
+/* --- Emerald brand color fallback --- */
+:root {
+  --ts-emerald: #22c55e;      /* main green */
+  --ts-emerald-deep: #16a34a; /* hover/active */
+  --ts-ink-deep: #0f172a;     /* dark text */
+}
+
+/* --- Key headings: make emerald green --- */
+#plans-heading,
+#why-heading,
+#scopes-heading {
+  color: var(--ts-emerald, #22c55e);
+}
+
+/* Hero H1 */
+#hero-heading {
+  color: var(--ts-ink-deep, #0f172a);
+  /* if you want it emerald too, swap: */
+  /* color: var(--ts-emerald, #22c55e); */
+}
+
+/* Section headings inside service sections */
+.service-section > h2 {
+  color: var(--ts-emerald, #22c55e);
+}
+
+/* Lead paragraph under services overview */
+#services-overview.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563; /* slate-ish body text */
+}
+
+/* ============================
+   Buttons
+   ============================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Primary button: solid emerald, white text so it's readable */
+.btn-primary {
+  background: var(--ts-emerald, #22c55e);
+  color: #ffffff;
+  border-color: var(--ts-emerald, #22c55e);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--ts-emerald-deep, #16a34a);
+  border-color: var(--ts-emerald-deep, #16a34a);
+  color: #ffffff;
+}
+
+/* Ghost button: outline, reads well on light + dark backgrounds */
+.btn-ghost {
+  background: transparent;
+  color: var(--ts-emerald, #22c55e);
+  border-color: currentColor;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: rgba(34, 197, 94, 0.06);
+}
+
+/* Make sure links inside buttons don’t override color */
+.btn a {
+  color: inherit;
+  text-decoration: none;
+}
