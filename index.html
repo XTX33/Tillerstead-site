@@ -69,7 +69,7 @@ schema:
           '@type': 'Answer'
           text: 'Yes. Tillerstead provides complete remodeling services including kitchens and bathrooms, plus specialty tile installation with waterproof assemblies for showers, floors, and backsplashes.'
 
-# Hero content (used by _includes/page-hero.html)
+# Hero content (consumed by _includes/page-hero.html)
 hero_eyebrow: "Property Care, Done Right"
 hero_title: "Property Maintenance & Remodeling in South Jersey"
 hero_summary: >
@@ -88,6 +88,12 @@ hero_kpis:
   - label: "Our Approach"
     text: "Clear documentation, reliable scheduling, and work done with integrity and care."
 ---
+
+{% comment %}
+The default layout should include head.html, header.html, and page-hero.html.
+We keep the rest of the homepage sections here.
+{% endcomment %}
+
 <!-- Monthly Maintenance Plans -->
 <section class="section section--plans" aria-labelledby="plans-heading">
   <div class="container">
@@ -97,6 +103,7 @@ hero_kpis:
         Dependable property care with priority scheduling, photo-documented work, and proactive upkeep to protect your investment.
       </p>
     </header>
+
     <div class="plans-grid" role="list">
       <article class="plan-card" role="listitem">
         <div class="plan-head">
@@ -146,35 +153,26 @@ hero_kpis:
   </div>
 </section>
 
-
-<!-- Why homeowners and landlords choose Tillerstead -->
+<!-- Why property owners choose Tillerstead -->
 <section class="section section--why" aria-labelledby="why-heading">
   <div class="container">
     <h2 id="why-heading">Why property owners trust Tillerstead</h2>
     <div class="why-grid">
       <article class="why-item">
         <h3>Reliable maintenance plans</h3>
-        <p>
-          Monthly service plans keep your property in top condition with scheduled inspections, preventive repairs, and priority response when issues arise.
-        </p>
+        <p>Scheduled inspections, preventive repairs, and priority response when issues arise.</p>
       </article>
       <article class="why-item">
         <h3>Clear documentation</h3>
-        <p>
-          Every project and service visit includes written scope, photo documentation, and itemized invoicing so you always know what work was performed and why.
-        </p>
+        <p>Written scope, photo documentation, and itemized invoicing — no mysteries.</p>
       </article>
       <article class="why-item">
         <h3>Professional approach</h3>
-        <p>
-          Respectful communication, clean work areas, and courteous service whether you're a homeowner, landlord with multiple units, or managing commercial space.
-        </p>
+        <p>Clean work areas and respectful communication for homeowners and landlords.</p>
       </article>
       <article class="why-item">
         <h3>Work done with integrity</h3>
-        <p>
-          From minor repairs to full remodels, every task is approached with honesty, care, and attention to detail—treating your property as if it were our own.
-        </p>
+        <p>From minor repairs to remodels, we treat your property like our own.</p>
       </article>
     </div>
   </div>
@@ -185,618 +183,127 @@ hero_kpis:
   <div class="container">
     <h2 id="scopes-heading">Property maintenance, remodeling, and tile services</h2>
 
-    <div class="scope-gallery" aria-label="Service gallery">
+    <!-- FIX: use .scope-grid (matches CSS) -->
+    <div class="scope-grid" aria-label="Service gallery">
       <article class="scope-card">
         <figure>
-          <img src="/assets/img/shower-white.jpg"
-               alt="Waterproof tile shower installation in Atlantic County, New Jersey"
-               loading="lazy"
-               decoding="async">
+          <img src="/assets/img/shower-white.jpg" alt="Waterproof tile shower installation in Atlantic County, New Jersey" loading="lazy" decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Tile Installation &amp; Restoration</h3>
-          <p>Custom showers with waterproof assemblies, large-format floor tile, backsplashes, and tile repairs built to ANSI A118.10 standards.</p>
+          <p>Custom showers with waterproof assemblies, large-format floors, backsplashes, and ANSI A118.10-compliant methods.</p>
         </div>
       </article>
 
       <article class="scope-card">
         <figure>
-          <img src="/assets/img/marble-bath.jpg"
-               alt="Bathroom remodeling project in South Jersey"
-               loading="lazy"
-               decoding="async">
+          <img src="/assets/img/marble-bath.jpg" alt="Bathroom remodeling project in South Jersey" loading="lazy" decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Remodeling &amp; Finish Work</h3>
-          <p>Kitchen and bathroom remodels, flooring installation, drywall and paint, trim carpentry, and fixture replacements with documented change orders.</p>
+          <p>Kitchens & baths, flooring, drywall/paint, trim, and fixture swaps with documented change orders.</p>
         </div>
       </article>
 
       <article class="scope-card">
         <figure>
-          <img src="/assets/img/kitchen-green.jpg"
-               alt="Property maintenance services in Atlantic County NJ"
-               loading="lazy"
-               decoding="async">
+          <img src="/assets/img/kitchen-green.jpg" alt="Property maintenance services in Atlantic County NJ" loading="lazy" decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Property Maintenance</h3>
-          <p>Seasonal inspections, minor repairs, grout and caulk refresh, fixture maintenance, and recurring service plans for homeowners and landlords.</p>
+          <p>Seasonal inspections, minor repairs, grout/caulk refresh, and recurring service plans.</p>
         </div>
       </article>
 
       <article class="scope-card">
         <figure>
-          <img src="/assets/img/kitchen-hex.jpg"
-               alt="Repair work and maintenance in South Jersey"
-               loading="lazy"
-               decoding="async">
+          <img src="/assets/img/kitchen-hex.jpg" alt="Repair work and maintenance in South Jersey" loading="lazy" decoding="async">
         </figure>
         <div class="scope-body">
           <h3>Repairs &amp; Service Calls</h3>
-          <p>Fast-response repairs, re-grouts, fixture swaps, and small carpentry work to keep your property maintained and tenant-ready.</p>
+          <p>Fast-response repairs, re-grouts, fixture swaps, and small carpentry to keep units tenant-ready.</p>
         </div>
       </article>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
+<!-- Page-local fixes -->
 <style>
-  .hero--homepage {
-    padding: 4rem 0 2rem;
-  }
+  /* Ensure header stays above hero decorations and is clickable */
+  .site-header { z-index: 1000; position: sticky; top: 0; }
 
-  .hero-main {
-    max-width: 56rem;
-  }
+  /* Hero readability + layering */
+  .hero--homepage { padding: 3.75rem 0 2rem; }
+  .hero--homepage .hero-eyebrow-text { color: rgba(229, 231, 235, 0.9); }
+  .hero--homepage h1 { color: #e7edf6; line-height: 1.15; }
+  .hero--homepage .hero-lead { color: #cbd5e1; }
+  .hero-pattern { pointer-events: none; } /* prevent overlay from blocking nav clicks */
 
-  .hero-eyebrow-text {
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: rgba(226, 232, 240, 0.8);
-  }
+  /* Buttons high-contrast (works with head.html overrides) */
+  .btn-primary { color: #ecfdf5; }
+  .btn-ghost { color: #e5e7eb; border: 1px solid rgba(148,163,184,.8); }
 
-  .hero h1 {
-    margin-top: 0.75rem;
-  }
+  /* KPI cards balanced heights */
+  .hero-kpis { gap: 1rem; }
+  .hero-kpi { min-height: 7rem; display: flex; flex-direction: column; }
 
-  .hero-note {
-    max-width: 44rem;
-  }
-
-  .hero-kpis {
-    list-style: none;
-    margin: 2rem 0 0;
-    padding: 0;
+  /* Plan cards grid */
+  .plans-grid {
     display: grid;
     gap: 1.25rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-
-  @media (min-width: 768px) {
-    .hero-kpis {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+  @media (min-width: 800px) {
+    .plans-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
-
-  .hero-kpi {
-    background: rgba(15, 23, 42, 0.35);
-    border-radius: 0.75rem;
-    padding: 1.1rem 1.25rem;
-    color: rgba(226, 232, 240, 0.92);
-    border: 1px solid rgba(148, 163, 184, 0.35);
+  .plan-card {
+    background: #0b1222;
+    color: #e2e8f0;
+    border: 1px solid rgba(148,163,184,.35);
+    border-radius: .9rem;
+    padding: 1.2rem 1.3rem;
   }
-
-  .hero-kpi-label {
-    display: block;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.8rem;
-    margin-bottom: 0.35rem;
-    color: var(--color-brass);
+  .plan-card--featured {
+    border-color: #22c55e;
+    box-shadow: 0 8px 28px rgba(34,197,94,.25);
   }
+  .plan-title { margin: 0 0 .35rem; color: #ffffff; }
+  .plan-tag { margin: 0; color: #a9b4c2; }
+  .plan-tag--featured { color: #22c55e; font-weight: 700; }
 
-  .section {
-    padding: 3.5rem 0;
-  }
+  /* Why cards */
+  .why-grid { display: grid; gap: 1.25rem; }
+  @media (min-width: 900px) { .why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  .why-item { background:#fff; color:#0f172a; border:1px solid rgba(148,163,184,.4); border-radius:.9rem; padding:1.5rem; }
 
-  .section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
+  /* Services grid – fix class name and spacing */
+  .section--scopes .scope-grid { display:grid; gap:1.25rem; }
+  @media (min-width: 900px) { .section--scopes .scope-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  .scope-card { background:#fff; border:1px solid rgba(148,163,184,.4); border-radius:.9rem; overflow:hidden; display:flex; flex-direction:column; }
+  .scope-card figure { margin:0; aspect-ratio:4/3; background:#0f172a; }
+  .scope-card img { width:100%; height:100%; object-fit:cover; }
+  .scope-body { padding:1.2rem 1.4rem 1.5rem; }
+</style>
 
-  .why-grid {
-    display: grid;
-    gap: 1.75rem;
-  }
-
-  @media (min-width: 900px) {
-    .why-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  .why-item {
-    background: #fff;
-    border-radius: 0.9rem;
-    padding: 1.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
-  }
-
-  .why-item h3 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
-  }
-
-  .section--scopes .scope-grid {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 900px) {
-    .section--scopes .scope-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  .scope-card {
-    background: #fff;
-    border-radius: 0.9rem;
-    overflow: hidden;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .scope-card figure {
-    margin: 0;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #0f172a;
-  }
-
-  .scope-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .scope-body {
-    padding: 1.3rem 1.5rem 1.6rem;
-  }
-
-  .scope-body h3 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-  }
-
-  .section-cta {
-    margin-top: 2rem;
-    font-weight: 600;
-  }
-
-  .workflow-shell {
-    display: grid;
-    gap: 2rem;
-  }
-
-  .workflow-steps {
-    counter-reset: step;
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-    display: grid;
-    gap: 1.25rem;
-  }
-
-  .workflow-steps li {
-    position: relative;
-    padding-left: 2.75rem;
-    line-height: 1.6;
-  }
-
-  .workflow-steps li::before {
-    counter-increment: step;
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: 0.2rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 999px;
-    background: var(--brand-brass, #b8922f);
-    color: #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-  }
-
-  .service-area-shell {
-    display: grid;
-    gap: 2rem;
-  }
-
-  @media (min-width: 900px) {
-    .service-area-shell {
-      grid-template-columns: 3fr 2fr;
-      align-items: start;
-    }
-  }
-
-  .service-area-card {
-    background: #fff;
-    border-radius: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    padding: 1.5rem;
-  }
-
-  .service-area-card ul {
-    margin: 0;
-    padding-left: 1.1rem;
-    line-height: 1.6;
-  }
-
-    <p class="section-cta">
-      Interested in monthly property care?
-      <a href="{{ '/contact/' | relative_url }}">Request a maintenance plan proposal</a>
-      or
-      <a href="{{ '/services/' | relative_url }}">learn more about our services</a>.
-    </p>
-  </div>
-</section>
-
-<!-- Service approach -->
-<section class="section section--workflow" aria-labelledby="workflow-heading">
-  <div class="container workflow-shell">
-    <div class="workflow-copy">
-      <h2 id="workflow-heading">How we approach property maintenance and remodeling</h2>
-      <ol class="workflow-steps">
-        <li>
-          <strong>Consultation:</strong>
-          Share your maintenance needs, remodel ideas, or repair priorities. You receive a detailed proposal
-          with scope, timeline, and pricing.
-        </li>
-        <li>
-          <strong>Schedule coordination:</strong>
-          We coordinate start dates and service visits around your schedule, with written confirmation
-          and reminders before each visit.
-        </li>
-        <li>
-          <strong>Professional execution:</strong>
-          Clear communication throughout the project, photo documentation of work performed,
-          and documented change orders when scope adjustments are needed.
-        </li>
-        <li>
-          <strong>Quality completion:</strong>
-          Final walkthrough, cleanup, and a service summary showing what was completed, 
-          materials used, and recommendations for future maintenance.
-        </li>
-      </ol>
-      <p>
-        Licensed, insured, and ready to provide references from homeowners, landlords, and property managers across South Jersey.
-=======
-<!-- Hero: South Jersey Tile & Bath -->
-<section class="hero hero--homepage" id="hero" aria-labelledby="hero-heading" aria-describedby="hero-summary">
-  <div class="hero-inner">
-    <div>
-      <p class="hero-eyebrow">Tile • Bath • Remodel</p>
-      <h1 id="hero-heading">NJ-Licensed Tile &amp; Bathroom Remodeling in South Jersey</h1>
-      <p class="lead" id="hero-summary">
-        Tillerstead is a New Jersey Home Improvement Contractor (HIC #{{ site.company.hic }}) focused on tile installation,
-        waterproof walk-in showers, and bathroom remodels for Atlantic County shore homes and year-round residences.
-        Expect code-compliant prep, respectful communication, and a finish that feels purposeful in your space.
-      </p>
-      <p class="hero-note text-light-subtle">
-        Owner-operated out of {{ site.company.address_locality }}, NJ and ready for projects across Atlantic, Ocean, and Cape May counties.
-      </p>
-
-      <!-- Primary hero actions -->
-      <div class="hero-actions" role="group" aria-label="Primary calls to action">
-        <a href="{{ '/contact/' | relative_url }}" class="btn btn-accent">
-          Request a Free Tile Estimate
-        </a>
-        <a href="{{ '/portfolio/' | relative_url }}" class="btn btn-ghost">
-          View Recent NJ Projects
-        </a>
-      </div>
-
-      <!-- Hero credentials line -->
-      <div class="hero-cred stack-sm mt-1" aria-label="Service commitments">
-        <p class="hero-note">
-          <strong>TCNA-documented waterproofing, inspection-ready workmanship, and tidy daily cleanup.</strong>
-        </p>
-        <p class="hero-note text-light-subtle">
-          Flexible on tile brands and finishes — never on substrate prep, slope, or flood-testing when it protects your home.
-        </p>
-      </div>
-
-      <!-- Supporting highlights -->
-      <ul class="hero-kpis" aria-label="South Jersey service highlights">
-        <li class="hero-kpi">
-          <strong>Service Area</strong><br>
-          Atlantic County · Ocean County · Longport · Margate · Somers Point · Brigantine
-        </li>
-        <li class="hero-kpi">
-          <strong>Core Services</strong><br>
-          Tile showers, heated floors, waterproofing, backsplashes, and small bathroom remodels built for NJ humidity.
-        </li>
-        <li class="hero-kpi">
-          <strong>Licensed &amp; Insured</strong><br>
-          NJ HIC #{{ site.company.hic }} with liability coverage sized for residential tile and bath projects.
-        </li>
-      </ul>
-    </div>
-
-    <aside class="hero-secondary card card--lift" aria-labelledby="hero-why-heading">
-      <h2 class="sr-only" id="hero-why-heading">Why South Jersey Homeowners Choose Tillerstead</h2>
-      <h3>Why Homeowners Call Tillerstead</h3>
-      <p class="small text-light-subtle">
-        Careful prep, laser-straight lines, and transparent scopes — tuned for primary homes and vacation rentals down the shore.
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Service area & licensing -->
-<section class="section section--service-area" aria-labelledby="service-area-heading">
-  <div class="container service-area-shell">
-    <div class="service-area-copy">
-      <h2 id="service-area-heading">Service area &amp; licensing</h2>
-      <p>
-        Based in Galloway Township, Tillerstead serves homeowners, landlords, and small commercial properties throughout 
-        Atlantic County—from Brigantine to Longport, Egg Harbor Township, and Mays Landing—with regular service 
-        into Ocean and Cape May counties.
-      </p>
-      <p>
-        <strong>Tillerstead LLC</strong> · Property Maintenance · Remodeling · Tile — 
-        <span class="nowrap">NJ Licensed HIC #{{ site.company.hic }}</span>
-      </p>
-      <p>
-        Ready to start a monthly maintenance plan or discuss a remodeling project?
-        <a href="{{ '/contact/' | relative_url }}">Get in touch today</a>.
-      </p>
-    </div>
-
-    <div class="service-area-card" aria-label="Service area highlights">
-      <ul>
-        <li>Atlantic County: Galloway, Atlantic City, Brigantine, Linwood, Northfield, EHT</li>
-        <li>Ocean County: Little Egg Harbor, Tuckerton, Manahawkin</li>
-        <li>Cape May County: Ocean City, Sea Isle, Cape May, Stone Harbor</li>
-        <li>Serving homeowners, landlords, and small commercial properties</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Licensing & Approach -->
-<section class="section section--tint" id="nj-hic" aria-labelledby="licensing-heading">
-  <div class="shell container licensing-grid">
-    <div>
-      <h2 id="licensing-heading">Licensed NJ Home Improvement Contractor Focused on Tile</h2>
-      <p class="lead">
-        As an NJ HIC (#{{ site.company.hic }}) registered with the Division of Consumer Affairs, Tillerstead delivers tile and bath work
-        that honors New Jersey building codes, manufacturer specifications, and homeowner expectations.
-      </p>
-      <p>
-        Every project starts with a walkthrough of waterproofing, substrate corrections, and ventilation needs. From Atlantic City condos to
-        Galloway colonials, you get transparent pricing, written scopes, and detailed punch lists so there are no surprises before inspection or turnover.
-      </p>
-    </div>
-
-    <div class="card licensing-card" aria-labelledby="credential-heading">
-      <h3 id="credential-heading">Credentials &amp; Assurances</h3>
-      <dl class="credential-list">
-        <div>
-          <dt>License</dt>
-          <dd>New Jersey Home Improvement Contractor <span class="nowrap">#{{ site.company.hic }}</span></dd>
-        </div>
-        <div>
-          <dt>Coverage</dt>
-          <dd>General liability sized for residential tile, bath, and small remodeling work</dd>
-        </div>
-        <div>
-          <dt>Standards</dt>
-          <dd>TCNA, ANSI A108, and plumbing code references built into every scope</dd>
-        </div>
-        <div>
-          <dt>Service Areas</dt>
-          <dd>Atlantic, Ocean, and Cape May counties — shore towns, rentals, and primary homes</dd>
-        </div>
-      </dl>
-      <p class="microcopy">
-        Verify active registration anytime on the
-        <a href="https://newjersey.mylicense.com/verification/" rel="noopener" target="_blank">NJ Consumer Affairs license lookup</a>.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Services: Tile & Remodeling in South Jersey -->
-<section class="section" aria-labelledby="services-heading">
-  <div class="shell container">
-    <h2 id="services-heading">Tile &amp; Remodeling Services in South Jersey</h2>
-    <p class="lead">
-      Whether you’re refreshing a small bath or re-doing a full shower, Tillerstead focuses on
-      clean, durable work that fits South Jersey homes and shore lifestyles.
-    </p>
-
-    <div class="cards mt-2">
-      <article class="card">
-        <h3>Custom Showers &amp; Tub Surrounds</h3>
-        <p>
-          Demo aging surrounds, correct framing and substrates, waterproof to TCNA-backed methods,
-          and set tile with clean miters and properly sloped pans. Ideal for primary baths, guest
-          baths, and shore rentals that need NJ code-compliant upgrades before summer turnover.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Tile Floors &amp; Large-Format Tile</h3>
-        <p>
-          Floor prep, self-leveling, uncoupling membranes, and laser-aligned layout that respects
-          transitions and grout joints. Perfect for kitchens, entries, and open-plan living areas
-          that demand durable, low-maintenance tile in South Jersey humidity.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Small Bathroom Remodels</h3>
-        <p>
-          Coordinate tile, fixtures, lighting, and ventilation to transform compact baths and powder
-          rooms. Sourcing assistance keeps selections on budget while meeting NJ ventilation and moisture
-          requirements.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Repairs, Re-Grout &amp; Consults</h3>
-        <p>
-          Spot repairs, grout and caulk refreshes, leak tracking, and honest assessments of when it’s
-          smarter to rebuild instead of patch. Available for homeowners, landlords, and property managers
-          throughout Atlantic County.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Proof / Recent Work -->
-<section class="section" aria-labelledby="projects-heading">
-  <div class="shell container">
-    <h2 id="projects-heading">Recent Tile &amp; Bath Projects</h2>
-    <p class="lead">
-      A few examples of the tile and bathroom remodeling work Tillerstead delivers in Atlantic County and the South
-      Jersey region. Every installation shown here was completed by an NJ HIC contractor and documented for homeowners.
-    </p>
-    <p class="microcopy">
-      Looking for something specific? Ask about curbless showers, steam details, or patterned floor layouts completed nearby.
-    </p>
-
-    <div class="proofgrid mt-2">
-      <figure>
-        <img src="{{ '/assets/img/projects/shower-large-format.jpg' | relative_url }}"
-             alt="Large-format tile shower with niche installed in a South Jersey home">
-        <figcaption>
-          Large-format porcelain shower with recessed niche and brass fixtures in Egg Harbor Township, built on a flood-tested pan.
-        </figcaption>
-      </figure>
-
-      <figure>
-        <img src="{{ '/assets/img/projects/bath-floor-herringbone.jpg' | relative_url }}"
-             alt="Bathroom floor with herringbone tile pattern installed by Tillerstead">
-        <figcaption>
-          Herringbone floor tile and updated baseboards to refresh an older shore bathroom in Galloway, NJ.
-        </figcaption>
-      </figure>
-
-      <figure>
-        <img src="{{ '/assets/img/projects/kitchen-backsplash-subway.jpg' | relative_url }}"
-             alt="Subway tile backsplash installed in a South Jersey kitchen remodel">
-        <figcaption>
-          Durable subway backsplash brightening a Linwood kitchen without the cost of a full gut remodel.
-        </figcaption>
-      </figure>
-    </div>
-
-    <p class="mt-2 center">
-      <a href="{{ '/portfolio/' | relative_url }}" class="btn btn-ghost">
-        View more tile &amp; remodeling work in South Jersey
-      </a>
-    </p>
-  </div>
-</section>
-
-<!-- Why Homeowners Choose Tillerstead -->
-<section class="section" aria-labelledby="why-heading">
-  <div class="shell container">
-    <h2 id="why-heading">Why South Jersey Homeowners Choose Tillerstead</h2>
-    <div class="kpis mt-1">
-      <div class="kpi">
-        <strong>Respect for your home</strong><br>
-        Floor protection, daily cleanup, and communication so you always know what’s happening next.
-      </div>
-      <div class="kpi">
-        <strong>Code-compliant installs</strong><br>
-        Focus on prep, waterproofing, flatness, and the right mortars for the tile you choose — all documented to NJ building standards.
-      </div>
-      <div class="kpi">
-        <strong>Local, owner-operated</strong><br>
-        Work directly with the NJ HIC contractor doing the job, not a distant call center.
-      </div>
-      <div class="kpi">
-        <strong>Permits &amp; inspections</strong><br>
-        Guidance on when permits, flood tests, or moisture reports are required so projects sail through local approvals.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ: Tile & Bathroom Remodeling in Atlantic County -->
-<section class="section" aria-labelledby="faq-heading">
-  <div class="shell container">
-    <h2 id="faq-heading">South Jersey Tile &amp; Bath FAQ</h2>
-    <div class="faqs mt-1">
-      <details>
-        <summary>What areas of South Jersey do you serve?</summary>
-        <p>
-          Tillerstead focuses on Atlantic County and nearby communities, including Egg Harbor Township,
-          Galloway, Northfield, Linwood, Brigantine, Longport, and surrounding shore towns. If you’re in
-          Ocean or Cape May counties, reach out — travel is available for multi-day installs.
-        </p>
-      </details>
-
-      <details>
-        <summary>Do you help with design and tile selections?</summary>
-        <p>
-          Yes. Bring your own tile or lean on recommendations for size, finish, trim, and layout that fit
-          your budget. Every scope includes guidance on grout, sealants, and waterproofing systems that
-          hold up to South Jersey humidity and rental traffic.
-        </p>
-      </details>
-
-      <details>
-        <summary>How far in advance should I schedule a bathroom remodel?</summary>
-        <p>
-          For full shower or bathroom remodels, reach out a few weeks in advance so we can walk the space,
-          review waterproofing details, and get permits or inspections scheduled if needed. Smaller tile
-          repairs or backsplashes can often be booked on shorter timelines.
-        </p>
-      </details>
-
-      <details>
-        <summary>Are you licensed and insured in New Jersey?</summary>
-        <p>
-          Yes. Tillerstead operates as a New Jersey-licensed home improvement contractor (HIC #{{ site.company.hic }})
-          and carries general liability coverage appropriate for residential tile and bath work. Larger projects
-          can be bonded or insured to match the scope while keeping craftsmanship standards fixed.
-        </p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- Final CTA -->
-<section class="section" aria-labelledby="cta-heading">
-  <div class="shell container center">
-    <h2 id="cta-heading">Ready to plan your tile or bathroom project?</h2>
-    <p class="lead">
-      Share a few details about your South Jersey home, and we’ll follow up with next steps and
-      a straightforward estimate.
-    </p>
-    <p class="mt-2">
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-accent">
-        Start Your Tile &amp; Bath Estimate
-      </a>
-    </p>
-    <p class="microcopy mt-1">
-      Prefer to talk it through? Call or text
-      <a href="tel:{{ site.company.phone_link }}">{{ site.company.phone_display }}</a> — NJ HIC #{{ site.company.hic }}.
-    </p>
-  </div>
-</section>
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
+<!-- Minimal JS to open/close mobile nav (needed for clickability) -->
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      document.body.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close drawer on link click
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        nav.classList.remove('is-open');
+        document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
