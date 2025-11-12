@@ -40,34 +40,67 @@
         Atlantic, Ocean, and Cape May counties in South Jersey.
       </p>
     </section>
+    <!-- Nav columns -->
+    <section class="footer-col footer-col-nav" aria-label="Site navigation">
+      {% assign nav_data = site.data.navigation %}
+      {% assign service_ids = "services,portfolio,gc,reviews,financing,contact" | split: "," %}
+      {% assign company_ids = "about,blog,privacy,terms" | split: "," %}
 
-     <nav class="footer-nav" aria-label="Site links">
-      <h2 class="footer-heading">Site links</h2>
-      <ul class="footer-links">
-        {% assign nav_data = site.data.navigation %}
+      <!-- Property services column -->
+      <nav class="footer-nav footer-nav-services" aria-label="Property services">
+        <h2 class="footer-heading">Property services</h2>
+        <ul class="footer-links">
+          {% for id in service_ids %}
+            {% assign link = nav_data.primary | where: "id", id | first %}
+            {% if link %}
+              {% assign is_current = false %}
+              {% if link.exact and page.url == link.exact %}
+                {% assign is_current = true %}
+              {% elsif link.match and page.url contains link.match %}
+                {% assign is_current = true %}
+              {% endif %}
 
-        {% for item_ref in nav_data.footer %}
-          {% assign link = nil %}
+              <li>
+                <a
+                  href="{{ link.url | relative_url }}"
+                  {% if is_current %}aria-current="page"{% endif %}
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
 
-          {% assign primary_match = nav_data.primary | where: "id", item_ref.ref | first %}
-          {% if primary_match %}
-            {% assign link = primary_match %}
-          {% else %}
-            {% assign secondary_match = nav_data.secondary | where: "id", item_ref.ref | first %}
-            {% assign link = secondary_match %}
-          {% endif %}
-
-          {% if link %}
-            <li>
-              <a href="{{ link.url | relative_url }}">
-                {{ link.title }}
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </nav>
-
+      <!-- Company & legal column -->
+      <nav class="footer-nav footer-nav-company" aria-label="Company and legal">
+        <h2 class="footer-heading">Company &amp; legal</h2>
+        <ul class="footer-links">
+          {% for id in company_ids %}
+            {% assign primary_link = nav_data.primary | where: "id", id | first %}
+            {% assign secondary_link = nav_data.secondary | where: "id", id | first %}
+            {% assign link = primary_link | default: secondary_link %}
+            {% if link %}
+              {% assign is_current = false %}
+              {% if link.exact and page.url == link.exact %}
+                {% assign is_current = true %}
+              {% elsif link.match and page.url contains link.match %}
+                {% assign is_current = true %}
+              {% endif %}
+              <li>
+                <a
+                  href="{{ link.url | relative_url }}"
+                  {% if is_current %}aria-current="page"{% endif %}
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </section>
     <!-- Contact / licensing -->
     <section class="footer-col footer-col-contact" aria-label="Contact and licensing">
       <h2 class="footer-heading">Licensed New Jersey contractor</h2>
