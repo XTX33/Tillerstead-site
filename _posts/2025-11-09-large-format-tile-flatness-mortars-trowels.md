@@ -77,3 +77,7 @@ Large-format tile rewards precision. Whether you’re planning a porcelain floor
 
 **Next Step:**  
 Schedule your consultation or send project photos to **info@tillerstead.com** to verify your substrate is ready for large-format tile.
+
+---
+
+Do the work with integrity and care.
