@@ -5115,3 +5115,79 @@ body.nav-open {
 .section--process .step-card p {
   color: #cbd5e1;
 }
+/* ============================================
+   Tillerstead — Homepage Dark Mode Fixes
+   Ensures white text on dark homepage sections
+=============================================== */
+
+/* 1. Hero Heading + Hero Text */
+body.page-home .hero h1,
+body.page-home .hero-title,
+body.page-home #hero-heading {
+  color: #ffffff !important;
+}
+
+body.page-home .hero-summary,
+body.page-home .hero p,
+body.page-home .hero .ts-section-subtitle {
+  color: #e5e7eb !important;
+}
+
+/* 2. Primary Button (fix unreadable dark text) */
+body.page-home .btn-primary {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* 3. Ghost Button */
+body.page-home .btn-ghost {
+  color: #f8fafc !important;
+  border-color: rgba(255,255,255,0.5) !important;
+}
+
+/* 4. Monthly plan section (dark -> white) */
+body.page-home .section--plans,
+body.page-home .section--plans * {
+  color: #e5e7eb;
+}
+
+body.page-home .section--plans h2,
+body.page-home .section--plans h3 {
+  color: #ffffff;
+}
+
+/* Fix "Request a monthly plan proposal" button */
+body.page-home .section--plans .btn-primary {
+  color: #ffffff !important;
+}
+
+/* 5. Process section — make all text readable + centered properly */
+body.page-home .section--process,
+body.page-home .section--process * {
+  color: #e5e7eb;
+}
+
+body.page-home .process-step h3 {
+  color: #ffffff;
+}
+
+body.page-home .process-step p {
+  color: #e2e8f0;
+  max-width: 52ch;
+}
+
+/* Fix "Start with a walkthrough" button */
+body.page-home .section--process .btn-primary {
+  color: #ffffff !important;
+}
+
+/* 6. Fix list bullets inside dark sections */
+body.page-home ul li {
+  color: #e5e7eb;
+}
+
+/* 7. Container alignment fix (ensures process steps don't stretch full width) */
+body.page-home .process-grid {
+  max-width: 54rem;
+  margin: 0 auto;
+}
