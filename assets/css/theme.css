@@ -3077,40 +3077,6 @@ h3 {
 }
 
 /* ============================================
-   Hero / header sanity – affects pages that
-   use the shared hero include
-============================================ */
-
-/* Keep header above hero pattern so nav is clickable */
-.site-header {
-  z-index: 1000;
-  position: sticky;
-  top: 0;
-}
-
-/* Homepage hero readability */
-.hero--homepage {
-  padding: 3.75rem 0 2rem;
-}
-
-.hero--homepage .hero-eyebrow-text {
-  color: rgba(229, 231, 235, 0.9);
-}
-
-.hero--homepage h1 {
-  color: #e7edf6;
-  line-height: 1.15;
-}
-
-.hero--homepage .hero-lead {
-  color: #cbd5e1;
-}
-
-.hero-pattern {
-  pointer-events: none;
-}
-
-/* ============================================
    Shared grids used on home/services
 ============================================ */
 
@@ -4813,4 +4779,230 @@ body.page-portfolio {
   margin: 0;
   color: #6b7280;
   font-size: 0.85rem;
+}
+/* ======================================================
+   Tillerstead Header — Global, Responsive, Brand-Matched
+   Applies to every page
+====================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.96); /* deep navy */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+.site-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo */
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo-img {
+  display: block;
+  width: 160px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .site-logo-img {
+    width: 140px;
+  }
+}
+
+/* Nav base */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-menu a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.1rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #e5e7eb;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Hover */
+
+.site-menu a:hover,
+.site-menu a:focus-visible {
+  color: var(--ts-emerald, #22c55e);
+  transform: translateY(-1px);
+}
+
+/* Active link */
+
+.site-menu a[aria-current="page"] {
+  color: var(--ts-emerald, #22c55e);
+  font-weight: 600;
+}
+
+.site-menu a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.18rem;
+  width: 1.6rem;
+  height: 2px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ts-emerald, #22c55e),
+    var(--ts-brass, #facc15)
+  );
+  border-radius: 999px;
+}
+
+/* Header actions (phone button + toggle) */
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Call button piggybacks on .btn but is a bit tighter */
+
+.call-btn.btn,
+.call-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.75);
+  background: transparent;
+  color: #e5e7eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-btn:hover,
+.call-btn:focus-visible {
+  border-color: var(--ts-emerald, #22c55e);
+  color: #ecfdf5;
+  background: rgba(34, 197, 94, 0.14);
+}
+
+/* Mobile nav toggle */
+
+.nav-toggle {
+  display: none;
+  width: 38px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.75);
+  background: rgba(15, 23, 42, 0.98);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.nav-toggle-bar + .nav-toggle-bar {
+  margin-top: 4px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 880px) {
+  .site-header-inner {
+    padding: 0.55rem 0.9rem;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 1px solid rgba(30, 64, 175, 0.5);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .site-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1.25rem 1.1rem;
+    gap: 0.35rem;
+  }
+
+  .site-menu a {
+    padding: 0.35rem 0;
+    width: 100%;
+  }
+
+  .site-header-actions {
+    gap: 0.5rem;
+  }
+
+  .call-btn.btn,
+  .call-btn {
+    padding-inline: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+}
+
+/* Optional: when body has .nav-open (if your JS sets it), prevent background scroll */
+body.nav-open {
+  overflow: hidden;
 }
