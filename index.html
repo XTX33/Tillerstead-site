@@ -78,78 +78,87 @@ hero_primary_label: "Start a Monthly Plan"
 hero_secondary_url: "/services/"
 hero_secondary_label: "Tile & Remodel Services"
 ---
-
 <div class="hero-cred" aria-label="Service commitments">
   <p class="hero-note">
-    Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies for homeowners, landlords, and commercial properties.
+    Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies for homeowners, landlords, and small commercial properties.
   </p>
   <p class="hero-note text-meta">
-    Property Maintenance · Remodeling · Tile — NJ Licensed HIC #{{ site.company.hic }}
+    Property Maintenance · Remodeling · Tile — <span class="nowrap">NJ Licensed HIC #{{ site.company.hic }}</span>
   </p>
 </div>
 
 <ul class="hero-kpis" aria-label="South Jersey property maintenance quick facts">
   <li class="hero-kpi">
     <span class="hero-kpi-label">Service Area</span>
-    Atlantic County and surrounding South Jersey communities including Ocean and Cape May counties.
+    Atlantic County and the South Jersey shore, with regular service into Ocean and Cape May counties.
   </li>
   <li class="hero-kpi">
     <span class="hero-kpi-label">Service Focus</span>
-    Monthly property maintenance, kitchen and bathroom remodeling, waterproof tile assemblies, and recurring service contracts.
+    Monthly property maintenance, kitchen &amp; bath remodeling, waterproof tile assemblies, and recurring service contracts.
   </li>
   <li class="hero-kpi">
     <span class="hero-kpi-label">Our Approach</span>
-    Clear documentation, schedule reliability, and work done with integrity and care.
+    Clear documentation, reliable scheduling, and work done with integrity and care.
   </li>
 </ul>
-
 <!-- Monthly Maintenance Plans -->
 <section class="section section--plans" aria-labelledby="plans-heading">
   <div class="container">
-    <h2 id="plans-heading">Monthly Maintenance Plans</h2>
-    <p class="section-intro">
-      Dependable property care with priority scheduling, documented work, and proactive upkeep to protect your investment.
-    </p>
-    
-    <div class="plans-grid">
-      <article class="plan-card">
-        <h3>Essential</h3>
-        <ul>
+    <header class="plans-header">
+      <h2 id="plans-heading">Monthly Maintenance Plans</h2>
+      <p class="section-intro">
+        Dependable property care with priority scheduling, photo-documented work, and proactive upkeep to protect your investment.
+      </p>
+    </header>
+    <div class="plans-grid" role="list">
+      <article class="plan-card" role="listitem">
+        <div class="plan-head">
+          <h3 class="plan-title">Essential</h3>
+          <p class="plan-tag">Core coverage</p>
+        </div>
+        <ul class="plan-list">
           <li>Seasonal inspections</li>
           <li>Minor repairs</li>
           <li>Priority scheduling</li>
-          <li>Documented service logs</li>
+          <li>Service logs with photos</li>
         </ul>
       </article>
-      
-      <article class="plan-card plan-card--featured">
-        <h3>Standard</h3>
-        <ul>
+
+      <article class="plan-card plan-card--featured" role="listitem" aria-labelledby="plan-standard">
+        <div class="plan-head">
+          <h3 id="plan-standard" class="plan-title">Standard</h3>
+          <p class="plan-tag plan-tag--featured">Most selected</p>
+        </div>
+        <ul class="plan-list">
           <li>Everything in Essential</li>
-          <li>Small carpentry and paint touch-ups</li>
+          <li>Small carpentry & paint touch-ups</li>
           <li>Fixture swaps</li>
-          <li>Grout and caulk refresh</li>
+          <li>Grout & caulk refresh</li>
           <li>Monthly check-ins</li>
         </ul>
       </article>
-      
-      <article class="plan-card">
-        <h3>Complete</h3>
-        <ul>
+
+      <article class="plan-card" role="listitem">
+        <div class="plan-head">
+          <h3 class="plan-title">Complete</h3>
+          <p class="plan-tag">Full care</p>
+        </div>
+        <ul class="plan-list">
           <li>Everything in Standard</li>
-          <li>Tile and stone care</li>
+          <li>Tile & stone care</li>
           <li>Preventive waterproofing checks</li>
           <li>Quarterly punch-list</li>
           <li>Annual maintenance planning</li>
         </ul>
       </article>
     </div>
-    
+
     <p class="section-cta">
-      <a href="{{ '/contact/' | relative_url }}">Request a monthly plan proposal</a>
+      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Request a monthly plan proposal</a>
     </p>
   </div>
 </section>
+
 
 <!-- Why homeowners and landlords choose Tillerstead -->
 <section class="section section--why" aria-labelledby="why-heading">
