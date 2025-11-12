@@ -11,12 +11,10 @@ hero_summary: >
   Not every project fits into a single paycheck. Tillerstead can help you plan the work,
   phase it smartly, and connect you with third-party financing options when it makes sense.
 hero_kpis:
-  - label: "Clear Scoping"
-    text: "Written scopes so you know exactly what you're financing"
-  - label: "Flexible Options"
-    text: "Phase work or mix cash and financing"
-  - label: "Third-Party Financing"
-    text: "Financing available through Acorn Finance"
+  -   - label: "Clear Scoping"
+    text: "Written scopes so you know exactly what you’re financing"
+  - "Options to phase work or mix cash and financing"
+  - "Third-party financing available through Acorn Finance"
 ---
 
 <style>
