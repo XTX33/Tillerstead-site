@@ -4617,3 +4617,119 @@ body.page-portfolio {
     padding: 1rem;
   }
 }
+/* ======================================================
+   Tillerstead Footer — Unified Global Styling
+   Applies to every page automatically
+====================================================== */
+
+.site-footer {
+  background: #ffffff;
+  color: #1e293b;
+  padding: 3rem 1rem 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+}
+
+/* Brand column */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.footer-logo-img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+.footer-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.footer-tagline,
+.footer-area {
+  color: #334155;
+  margin: 0.5rem 0 0;
+  max-width: 32rem;
+}
+
+/* Navigation columns */
+.footer-col-nav {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .footer-col-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.footer-heading {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0.25rem 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #475569;
+}
+
+.footer-links a:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* Contact and Licensing */
+.footer-col-contact {
+  color: #334155;
+}
+
+.footer-col-contact a {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.footer-col-contact a:hover {
+  color: #22c55e;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.9rem;
+}
