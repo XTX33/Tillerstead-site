@@ -384,6 +384,7 @@ button.btn {
   box-shadow: none;
 }
 
+<<<<<<< HEAD
 .btn-outline:hover,
 .btn-outline:focus-visible {
   background: rgba(15, 23, 42, 0.95);
@@ -391,6 +392,91 @@ button.btn {
 
 /* 6) Hero & media blocks
 /* 6) Header / Navigation
+=======
+/* Universal nav actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-actions .btn {
+  font-weight: 700;
+}
+
+.nav-actions--menu {
+  display: none;
+}
+
+.nav-actions--inline {
+  display: none;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.nav-actions--inline .btn-primary {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.nav-actions--inline .btn-primary:hover,
+.nav-actions--inline .btn-primary:focus-visible {
+  transform: translateY(-1px);
+}
+
+@media (min-width: 900px) {
+  .nav-actions--inline {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 899px) {
+  .nav-actions--menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2.5rem;
+    gap: 0.75rem;
+  }
+
+  .nav-actions--menu .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.05rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.nav-actions--footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.nav-actions--footer .btn {
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.site-footer .nav-actions--footer .btn-primary {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.site-footer .nav-actions--footer .btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(249, 250, 251, 0.94);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.site-footer .nav-actions--footer .btn-ghost:hover,
+.site-footer .nav-actions--footer .btn-ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* 6) Header / nav
+>>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
    ------------------------------------------- */
 
 /* Sticky dark app bar */
@@ -430,8 +516,130 @@ button.btn {
 }
 
 @media (max-width: 440px) {
+<<<<<<< HEAD
   .site-logo img {
     height: 34px;
+=======
+  .brand img { height: 38px; }
+  .brand-text { display: none; }
+}
+
+/* Nav toggle */
+
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  color: #f9fafb;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  position: relative;
+}
+.hamburger::before {
+  top: -6px;
+  position: relative;
+}
+.hamburger::after {
+  top: 6px;
+  position: relative;
+}
+
+/* Base nav styles */
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.4rem 0;
+  font-weight: 600;
+  color: #f9fafb;
+  text-decoration: none;
+}
+
+.site-nav a[aria-current='page'] {
+  color: var(--ts-emerald);
+}
+
+/* Desktop nav layout */
+
+@media (min-width: 900px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1 1 auto;
+  }
+
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1 1 auto;
+  }
+}
+
+/* Mobile nav overlay */
+
+@media (max-width: 899px) {
+  #nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.98);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 1.2rem;
+    overflow-y: auto;
+    z-index: 900;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+
+  #nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #nav a {
+    font-size: 1.15rem;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 1000;
+>>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
   }
 }
 

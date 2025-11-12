@@ -1,0 +1,56 @@
+primary:
+  - id: home
+    title: Home
+    url: /
+    exact: /
+  - id: about
+    title: About
+    url: /about/
+    match: /about/
+  - id: services
+    title: Services
+    url: /services/
+    match: /services/
+  - id: gallery
+    title: Gallery
+    url: /portfolio/
+    match: /portfolio/
+  - id: reviews
+    title: Reviews
+    url: /reviews/
+    match: /reviews/
+  - id: contact
+    title: Contact
+    url: /contact/
+    match: /contact/
+  - id: financing
+    title: Financing
+    url: /financing/
+    match: /financing/
+  - id: blog
+    title: Blog
+    url: /blog/
+    match: /blog/
+  - id: privacy
+    title: Privacy
+    url: /privacy/
+    match: /privacy/
+
+footer:
+  - ref: services
+  - ref: gallery
+  - ref: about
+  - ref: reviews
+  - ref: contact
+
+actions:
+  - id: quote
+    title: Request Estimate
+    url: /contact/
+    style: btn-primary
+    aria_label: Request an estimate consultation
+  - id: call
+    title: (609) 665-9350
+    url: tel:+16096659350
+    style: btn-ghost
+    aria_label: Call Tillerstead LLC

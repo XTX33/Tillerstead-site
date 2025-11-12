@@ -12,10 +12,17 @@ timezone: America/New_York
 
 # Global keyword focus for SEO
 keywords:
+<<<<<<< HEAD
   - Monthly property maintenance South Jersey
   - NJ HIC remodeling Atlantic County
   - Property maintenance and remodeling with tile specialty
   - Waterproof tile assemblies NJ HIC 13VH10808800
+=======
+  - South Jersey tile contractor
+  - New Jersey home improvement contractor
+  - NJ HIC 13VH10808800
+  - Atlantic County bathroom remodeling
+>>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
 
 # Use your own layouts/includes (no injected theme)
 theme: null

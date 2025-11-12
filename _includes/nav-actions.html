@@ -1,0 +1,10 @@
+{% assign actions = nav_actions_items | default: site.data.navigation.actions %}
+{% if actions %}
+  {% assign variant_class = nav_actions_variant %}
+  <div class="nav-actions{% if variant_class %} {{ variant_class }}{% endif %}">
+    {% for action in actions %}
+      {% assign nav_action = action %}
+      {% include nav-action.html %}
+    {% endfor %}
+  </div>
+{% endif %}

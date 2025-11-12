@@ -75,6 +75,7 @@
       </ul>
     </nav>
 
+<<<<<<< HEAD
     <!-- Right-side actions -->
     <div class="site-header-actions">
       <a
@@ -99,3 +100,68 @@
     </div>
   </div>
 </header>
+=======
+  <!-- Mobile toggle -->
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Toggle menu" title="Menu">
+    <span class="hamburger" aria-hidden="true"></span>
+  </button>
+
+  {% assign current_url = page.url | default: '/' %}
+  {% assign nav_items = site.data.navigation.primary %}
+  {% assign nav_actions = site.data.navigation.actions %}
+  <!-- Primary navigation -->
+  <nav id="nav" class="site-nav" aria-label="Primary">
+    <ul class="nav-list">
+      {% for item in nav_items %}
+        {% assign is_current = false %}
+        {% if item.exact %}
+          {% if current_url == item.exact %}
+            {% assign is_current = true %}
+          {% endif %}
+        {% elsif item.match %}
+          {% if current_url contains item.match %}
+            {% assign is_current = true %}
+          {% endif %}
+        {% endif %}
+        {% assign href = item.url %}
+        {% assign external = false %}
+        {% if item.external %}
+          {% assign external = true %}
+        {% endif %}
+        {% if href %}
+          {% if href contains 'mailto:' %}
+            {% assign final_href = href %}
+          {% elsif href contains 'tel:' %}
+            {% assign final_href = href %}
+          {% elsif href contains '://' %}
+            {% assign final_href = href %}
+            {% assign external = true %}
+          {% else %}
+            {% assign final_href = href | relative_url %}
+          {% endif %}
+        {% else %}
+          {% assign final_href = '' %}
+        {% endif %}
+        {% assign item_classes = 'nav-item' %}
+        {% if item.id %}
+          {% assign item_classes = item_classes | append: ' nav-item--' | append: item.id %}
+        {% endif %}
+        <li class="{{ item_classes }}">
+          <a href="{{ final_href }}"{% if item.aria_label %} aria-label="{{ item.aria_label }}"{% endif %}{% if is_current %} aria-current="page"{% endif %}{% if external %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% assign nav_actions_items = nav_actions %}
+    {% assign nav_actions_variant = 'nav-actions--menu' %}
+    {% include nav-actions.html %}
+    {% assign nav_actions_variant = nil %}
+    {% assign nav_actions_items = nil %}
+  </nav>
+
+  {% assign nav_actions_items = nav_actions %}
+  {% assign nav_actions_variant = 'nav-actions--inline' %}
+  {% include nav-actions.html %}
+  {% assign nav_actions_variant = nil %}
+  {% assign nav_actions_items = nil %}
+</header>
+>>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
