@@ -4618,15 +4618,18 @@ body.page-portfolio {
   }
 }
 /* ======================================================
-   Tillerstead Footer — Unified Global Styling
-   Applies to every page automatically
+   Tillerstead Footer — Brand-Driven, Responsive
+   Applies to every page
 ====================================================== */
 
 .site-footer {
-  background: #ffffff;
-  color: #1e293b;
-  padding: 3rem 1rem 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background:
+    radial-gradient(circle at top left,
+      rgba(34, 197, 94, 0.06),
+      rgba(250, 250, 250, 1));
+  color: #0f172a;
+  padding: 3rem 1rem 2.5rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -4637,37 +4640,51 @@ body.page-portfolio {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  align-items: start;
+  align-items: flex-start;
 }
 
 /* Brand column */
-.footer-brand {
+
+.footer-col-brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
+  gap: 0.5rem;
+}
+
+.footer-brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-decoration: none;
 }
 
 .footer-logo-img {
-  width: 160px;
+  width: 170px;
   height: auto;
   display: block;
 }
 
 .footer-name {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ts-ink-deep, #020617);
 }
 
-.footer-tagline,
+.footer-tagline {
+  margin: 0.2rem 0 0.4rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
 .footer-area {
-  color: #334155;
-  margin: 0.5rem 0 0;
+  margin: 0;
+  color: #6b7280;
   max-width: 32rem;
+  font-size: 0.9rem;
 }
 
-/* Navigation columns */
+/* Nav columns */
+
 .footer-col-nav {
   display: grid;
   gap: 1.75rem;
@@ -4679,11 +4696,17 @@ body.page-portfolio {
   }
 }
 
+.footer-nav {
+  /* allows each nav block to grow independently */
+}
+
 .footer-heading {
   margin: 0 0 0.75rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ts-ink-deep, #020617);
 }
 
 .footer-links {
@@ -4692,44 +4715,102 @@ body.page-portfolio {
   padding: 0;
 }
 
-.footer-links li {
-  margin: 0.25rem 0;
+.footer-links li + li {
+  margin-top: 0.3rem;
 }
 
 .footer-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
   text-decoration: none;
-  color: #475569;
+  color: #4b5563;
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
 }
 
-.footer-links a:hover {
-  color: #22c55e;
+/* Hover state */
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--ts-emerald, #22c55e);
+  transform: translateX(1px);
+}
+
+/* Active page state in footer */
+
+.footer-links a[aria-current="page"] {
+  font-weight: 600;
+  color: var(--ts-emerald, #16a34a);
+}
+
+.footer-links a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.18rem;
+  width: 1.6rem;
+  height: 2px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ts-emerald, #22c55e),
+    var(--ts-brass, #facc15)
+  );
+  border-radius: 999px;
+}
+
+/* Contact / licensing column */
+
+.footer-col-contact {
+  color: #4b5563;
+}
+
+.footer-hic {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.footer-address {
+  margin: 0 0 0.75rem;
+  font-style: normal;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.footer-contact {
+  margin: 0;
+}
+
+.footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--ts-ink-deep, #020617);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: var(--ts-emerald, #22c55e);
   text-decoration: underline;
 }
 
-/* Contact and Licensing */
-.footer-col-contact {
-  color: #334155;
-}
-
-.footer-col-contact a {
-  color: #0f172a;
-  font-weight: 600;
-}
-
-.footer-col-contact a:hover {
-  color: #22c55e;
-}
-
 /* Bottom bar */
+
 .footer-bottom {
-  margin-top: 2rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
   text-align: center;
 }
 
-.footer-bottom p {
+.footer-bottom .footer-copyright {
   margin: 0;
-  color: #475569;
-  font-size: 0.9rem;
+  color: #6b7280;
+  font-size: 0.85rem;
 }
