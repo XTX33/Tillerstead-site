@@ -104,7 +104,6 @@
   width: 2rem;
   height: 2rem;
   border-radius: 999px;
-<<<<<<< HEAD
   border: 1px solid rgba(96, 165, 250, 0.7);
   display: flex;
   align-items: center;
@@ -118,27 +117,6 @@
 .process-step-body h3 {
   font-size: 0.98rem;
   margin-bottom: 0.2rem;
-=======
-}
-h3 {
-  font: 700 var(--fs-3) / 1.25 var(--font-ui);
-  margin: 0 0 var(--s-3);
-}
-p {
-  margin: 0 0 var(--s-4);
-  color: var(--text);
-}
-
-.microcopy {
-  font-size: 0.9rem;
-  color: #1f2937;
-  line-height: 1.6;
-}
-
-.lead {
-  font-size: clamp(18px, 3vw, 22px);
-  color: #1f2937;
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
 }
 
 .process-step-body p {
@@ -158,7 +136,6 @@ p {
   padding-inline: 1.25rem;
 }
 
-<<<<<<< HEAD
 .faq-grid {
   display: grid;
   gap: 2rem;
@@ -438,13 +415,6 @@ p {
   align-items: center;
   justify-content: center;
   gap: 1.25rem;                 /* control horizontal spacing here */
-=======
-.section--tint {
-  background-color: var(--surface-2);
-}
-
-.unstyled {
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
   list-style: none;
   margin: 0;
   padding: 0;
@@ -455,11 +425,13 @@ p {
   white-space: nowrap;
 }
 
-<<<<<<< HEAD
 /* Mobile: hide call button to avoid crowding */
 @media (max-width: 800px) {
   .call-btn {
     display: none;
+  }
+}
+
 /* List items don’t have extra margins */
 .site-menu > li {
   margin: 0;
@@ -475,411 +447,6 @@ p {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-=======
-/* Skip link */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.skip-link:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0.5rem 1rem;
-  background: var(--accent);
-  color: #111;
-  border-radius: 8px;
-}
-/* =========================
-   BUTTONS / CHIPS
-   ========================= */
-.btn {
-  display: inline-block;
-  padding: 14px 18px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  text-decoration: none;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  transition: transform 0.15s ease, background 0.2s ease,
-              border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-  background: #f9fafb;
-}
-
-/* Primary solid button */
-.btn-accent,
-.btn-primary {
-  background: var(--primary);
-  color: var(--primary-contrast) !important;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-.btn-accent:hover,
-.btn-primary:hover {
-  background: #a07f22;
-  text-decoration: none;
-}
-
-/* Ghost variant */
-.btn.ghost,
-.btn-ghost {
-  background: var(--surface-2);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-/* =========================
-   HERO / PROOF / CARDS
-   ========================= */
-.hero {
-  padding-block: clamp(72px, 11vw, 132px);
-  background:
-    radial-gradient(800px 400px at 15% 0%, rgba(184, 146, 47, 0.18), transparent),
-    radial-gradient(900px 480px at 85% 0%, rgba(15, 163, 177, 0.15), transparent),
-    linear-gradient(180deg, #111827 0%, #0b1120 40%, #f9fafb 100%);
-  color: #f9fafb;
-}
-.hero-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding-inline: var(--gutter);
-  display: grid;
-  gap: 32px;
-}
-@media (min-width: 768px) {
-  .hero-inner {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    align-items: center;
-  }
-}
-.hero-eyebrow {
-  font-family: var(--font-ui);
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(249, 250, 251, 0.8);
-}
-.hero h1 {
-  color: #f9fafb;
-}
-.hero .lead {
-  color: rgba(243, 244, 246, 0.96);
-}
-.hero-note {
-  font-size: 0.95rem;
-  margin: 0 0 var(--s-4);
-  color: rgba(243, 244, 246, 0.94);
-}
-.hero-note strong {
-  color: #f9fafb;
-}
-.text-light-subtle {
-  color: rgba(243, 244, 246, 0.92);
-}
-.hero-kpis {
-  list-style: none;
-  padding: 0;
-  margin-top: var(--s-6);
-  display: grid;
-  gap: 12px;
-}
-.hero-kpi {
-  font-size: 14px;
-  color: rgba(243, 244, 246, 0.94);
-}
-.hero-kpi strong {
-  color: #fff;
-}
-.hero-list {
-  list-style: none;
-  margin: var(--s-4) 0 0;
-  padding: 0;
-  display: grid;
-  gap: 0.35rem;
-  font-size: 0.9rem;
-  color: rgba(229, 231, 235, 0.9);
-}
-.hero-callout {
-  margin-top: var(--s-4);
-}
-.btn-phone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  width: 100%;
-  margin-top: var(--s-3);
-}
-.btn-phone span {
-  font-size: 1.1rem;
-}
-.hero-secondary {
-  border-radius: 24px;
-  padding: 18px 18px 16px;
-  background: rgba(15, 23, 42, 0.86);
-  border: 1px solid rgba(148, 163, 184, 0.65);
-  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.8);
-}
-.hero-secondary h3 {
-  color: #f9fafb;
-  margin-bottom: 0.5rem;
-}
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 0.75rem;
-}
-.badge {
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(209, 213, 219, 0.95);
-}
-
-/* KPIs / cards section (e.g., services) */
-.kpis {
-  margin-top: var(--s-6);
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-.kpis .kpi {
-  padding: 16px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  border-radius: var(--radius);
-  color: var(--text);
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-}
-.card {
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow-sm);
-}
-.card p {
-  color: var(--text);
-}
-
-/* Project / proof grid */
-.proofgrid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-.proofgrid figure {
-  margin: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.proofgrid img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.proofgrid figcaption {
-  padding: 0.65rem 0.75rem;
-  color: var(--text);
-  font-size: 14px;
-}
-
-/* Licensing grid */
-.licensing-grid {
-  display: grid;
-  gap: var(--s-6);
-  align-items: start;
-}
-
-@media (min-width: 768px) {
-  .licensing-grid {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  }
-}
-
-.licensing-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.credential-list {
-  display: grid;
-  gap: 0.75rem;
-  margin: var(--s-4) 0;
-}
-
-.credential-list div {
-  display: grid;
-  gap: 0.15rem;
-}
-
-.credential-list dt {
-  font-weight: 700;
-  color: var(--text);
-}
-
-.credential-list dd {
-  margin: 0;
-  color: var(--text);
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-/* Hero primary actions row */
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-  margin-top: var(--s-6);
-}
-.hero-actions .btn {
-  min-width: 220px;
-}
-@media (max-width: 600px) {
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .hero-actions .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* =========================
-   FAQ
-   ========================= */
-.faqs details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
-.faqs details + details {
-  margin-top: 0.6rem;
-}
-.faqs details[open] {
-  background: var(--surface-2);
-  border-color: var(--primary);
-  box-shadow: var(--shadow-sm);
-}
-.faqs summary {
-  cursor: pointer;
-  font-weight: 700;
-  position: relative;
-  list-style: none;
-  padding-right: 1.25rem;
-}
-.faqs summary::marker {
-  content: "";
-}
-.faqs summary::after {
-  content: "+";
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-weight: 700;
-  color: var(--primary);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.faqs details[open] summary::after {
-  content: "−";
-  color: var(--accent);
-  transform: rotate(180deg);
-}
-.faqs p {
-  color: var(--text);
-}
-.faqs details > p,
-.faqs details > div {
-  animation: faqFadeIn 0.3s ease both;
-}
-@keyframes faqFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   FORMS
-   ========================= */
-.contact-form {
-  display: grid;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-.contact-form .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-label {
-  display: grid;
-  gap: 0.4rem;
-}
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 0.85rem 0.9rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-}
-textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-input::placeholder,
-textarea::placeholder {
-  color: rgba(75, 85, 99, 0.75);
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-.site-footer {
-  border-top: 1px solid #111827;
-  padding-block: 3rem;
-  background: var(--surface-footer);
-  margin-top: var(--s-8);
-  color: var(--text-on-dark);
-}
-.site-footer a {
-  color: var(--accent);
-  font-weight: 600;
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
   text-decoration: none;
   color: #e5e7eb;
   white-space: nowrap;          /* stop weird wrapping mid-word */
@@ -904,7 +471,6 @@ textarea::placeholder {
   gap: 0.75rem;
   flex-shrink: 0;
 }
-<<<<<<< HEAD
 
 /* Phone button */
 .call-btn {
@@ -918,19 +484,6 @@ textarea::placeholder {
   font-size: 0.9rem;
   text-decoration: none;
   white-space: nowrap;
-=======
-.footer-heading {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: rgba(249, 250, 251, 0.95);
-  margin: 0;
-}
-.footer-logo img {
-  max-width: 260px;
-  height: auto;
-  filter: brightness(1.2);
-  opacity: 1;
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
 }
 
 /* Burger button */
@@ -949,6 +502,12 @@ textarea::placeholder {
     gap: 0.75rem;
   }
 
+  .site-menu a {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+  }
+}
+
 /* =========================
    UTILITIES
    ========================= */
@@ -960,11 +519,6 @@ textarea::placeholder {
 .mt-1 { margin-top: var(--s-4); }
 .mt-2 { margin-top: var(--s-6); }
 .mt-3 { margin-top: var(--s-8); }
-  .site-menu a {
-    font-size: 0.85rem;
-    letter-spacing: 0.03em;
-  }
-}
 
 /* Mobile: hide inline nav, use burger */
 @media (max-width: 900px) {
@@ -992,7 +546,7 @@ textarea::placeholder {
 
   /* If you’re toggling a class like .nav-open on the body or header,
      show the menu as a dropdown when open. Adjust selector to your JS. */
-  .site-header.nav-open .site-nav {
+  body.nav-open .site-nav {
     display: block;
     position: absolute;
     inset-inline: 0;
@@ -1001,7 +555,7 @@ textarea::placeholder {
     border-bottom: 1px solid rgba(148, 163, 184, 0.3);
   }
 
-  .site-header.nav-open .site-menu {
+  body.nav-open .site-menu {
     flex-direction: column;
     align-items: flex-start;
     padding: 0.75rem 1.5rem 1rem;

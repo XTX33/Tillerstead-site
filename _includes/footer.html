@@ -67,25 +67,28 @@
                itemprop="address"
                itemscope
                itemtype="https://schema.org/PostalAddress">
-=======
-<footer class="site-footer" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
-  <meta itemprop="name" content="Tillerstead LLC">
-  <meta itemprop="@id" content="{{ site.url }}/#contractor">
-  <meta itemprop="url" content="{{ site.url }}/">
-  <div class="shell container">
-    <div class="stack-sm center">
-      <p class="footer-heading">Tillerstead LLC</p>
-
-      <p class="footer-meta">
-        Licensed New Jersey Home Improvement Contractor · HIC #{{ site.company.hic }}
-      </p>
-
-      <address class="footer-meta" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <span itemprop="streetAddress">{{ site.company.address_line }}</span><br>
         <span itemprop="addressLocality">{{ site.company.address_locality }}</span>,
         <span itemprop="addressRegion">{{ site.company.address_region }}</span>
         <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
       </address>
+
+      <p class="footer-contact">
+        <a href="tel:{{ site.company.phone_link }}" itemprop="telephone">
+          {{ site.company.phone_display }}
+        </a><br>
+        <a href="mailto:{{ site.company.email }}" itemprop="email">
+          {{ site.company.email }}
+        </a>
+      </p>
+    </section>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copyright">
+      &copy; {{ 'now' | date: '%Y' }} Tillerstead LLC. All rights reserved.
     </p>
   </div>
+
 </footer>
