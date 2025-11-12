@@ -3807,3 +3807,54 @@ body.page-contact {
   font-size: 0.85rem;
   color: rgba(148, 163, 184, 0.95);
 }
+/* ============================================
+   Page: Services (/services/)
+   ============================================ */
+
+body.page-services {
+  background: #ffffff; /* keep services page light */
+}
+
+/* Remove extra top padding Jekyll might add */
+.page-services .page-content {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+/* Main services shell */
+.page-services .services {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 3rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* Intro copy under hero */
+.page-services .services .intro {
+  max-width: 52rem;
+}
+
+.page-services .services .lead {
+  max-width: 52rem;
+}
+
+/* Grid that holds the three service categories + plans module */
+.page-services .service-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 960px) {
+  .page-services .service-grid {
+    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+  }
+}
+
+/* Individual service sections (Maintenance, Remodeling, Tile) */
+.page-services .service-section {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding:
