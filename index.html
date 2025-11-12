@@ -285,25 +285,3 @@ We keep the rest of the homepage sections here.
   .scope-card img { width:100%; height:100%; object-fit:cover; }
   .scope-body { padding:1.2rem 1.4rem 1.5rem; }
 </style>
-
-<!-- Minimal JS to open/close mobile nav (needed for clickability) -->
-<script>
-  (function () {
-    var toggle = document.querySelector('.nav-toggle');
-    var nav = document.getElementById('site-nav');
-    if (!toggle || !nav) return;
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
-      document.body.classList.toggle('nav-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    // Close drawer on link click
-    nav.addEventListener('click', function (e) {
-      if (e.target.closest('a')) {
-        nav.classList.remove('is-open');
-        document.body.classList.remove('nav-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  })();
-</script>

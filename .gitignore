@@ -9,3 +9,6 @@ vendor/bundle/
 .DS_Store
 Thumbs.db
 
+# Backup files
+*.backup
+
