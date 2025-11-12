@@ -8,14 +8,14 @@
   {% elsif page.title %}
     {{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}
   {% else %}
-    {{ site.title }} | {{ site.tagline | default: 'Tile Subcontractor in New Jersey' }}
+    {{ site.title }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}
   {% endif %}
 </title>
 
-{% assign meta_description = page.description | default: site.description | default: 'Tile subcontractor for New Jersey general contractors providing waterproof showers, large-format tile, and reliable schedules.' %}
+{%- assign meta_description = page.description | default: site.description | default: 'Tillerstead LLC provides monthly property maintenance, remodeling, and waterproof tile installations for South Jersey homeowners, landlords, and small commercial spaces.' -%}
 <meta name="description" content="{{ meta_description | escape }}">
 
-{% assign meta_keywords = page.keywords | default: site.keywords %}
+{%- assign meta_keywords = page.keywords | default: site.keywords -%}
 {% if meta_keywords %}
   <meta name="keywords" content="{{ meta_keywords | join: ', ' }}">
 {% endif %}
@@ -33,7 +33,7 @@
 {% endif %}
 
 {% if site.url %}
-  <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html','' }}">
+  <link rel="canonical" href="{{ page.url | replace: 'index.html','' | absolute_url }}">
 {% endif %}
 
 <!-- Theme / icons -->
@@ -44,24 +44,30 @@
 <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
 <link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#020617">
 
-<!-- Open Graph / Twitter -->
+{%- comment -%}
+Open Graph / Twitter: use per-page overrides if present,
+otherwise fall back to global defaults from _config.yml
+{%- endcomment -%}
+
+{%- assign og_title = page.seo_title | default: page.title | default: site.title -%}
+{%- assign og_description = meta_description -%}
+{%- assign og_image = page.og_image | default: site.default_og_image | default: '/assets/img/og.jpg' -%}
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}{% else %}{{ site.title }} | {{ site.tagline | default: 'Tile Subcontractor in New Jersey' }}{% endif %}">
-<meta property="og:description" content="{{ meta_description | escape }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ og_description | escape }}">
 <meta property="og:site_name" content="Tillerstead LLC">
 <meta property="og:locale" content="en_US">
 {% if site.url %}
   {% assign og_url = page.url | replace: 'index.html','' %}
   <meta property="og:url" content="{{ site.url }}{{ og_url }}">
-  <meta property="og:image" content="{{ site.url }}{{ '/assets/img/og.jpg' | relative_url }}">
 {% endif %}
+<meta property="og:image" content="{{ og_image | absolute_url }}">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}{% else %}{{ site.title }} | {{ site.tagline | default: 'Tile Subcontractor in New Jersey' }}{% endif %}">
-<meta name="twitter:description" content="{{ meta_description | escape }}">
-{% if site.url %}
-  <meta name="twitter:image" content="{{ site.url }}{{ '/assets/img/og.jpg' | relative_url }}">
-{% endif %}
+<meta name="twitter:title" content="{{ og_title }}">
+<meta name="twitter:description" content="{{ og_description | escape }}">
+<meta name="twitter:image" content="{{ og_image | absolute_url }}">
 
 <!-- Business contact microdata helpers -->
 <meta property="business:contact_data:street_address" content="{{ site.company.address_line | default: '' }}">
@@ -84,6 +90,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css'  | relative_url }}">
+
 <style>
   /* FINAL OVERRIDES – hero buttons + nav */
 
@@ -277,6 +284,7 @@
     }
   }
 </style>
+
 {% if page.styles %}
   {% for href in page.styles %}
     <link rel="stylesheet"
