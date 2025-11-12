@@ -6,13 +6,16 @@ description: Legal terms, service conditions, and privacy commitments for Tiller
 body_class: page-legal
 
 hero_eyebrow: Legal
-hero_title: Terms &amp; Conditions
-hero_subtitle: >
+hero_title: Terms & Conditions
+hero_summary: >
   How Tillerstead handles website content, estimates, services, and your information — in plain language.
-hero_list:
-  - "Website content is informational only — work is defined in writing"
-  - "Estimates become binding only through signed proposals or contracts"
-  - "Basic analytics and contact details are used to serve you, not sold"
+hero_kpis:
+  - label: "Website Content"
+    text: "Content is informational only — work is defined in writing"
+  - label: "Estimates"
+    text: "Become binding only through signed proposals or contracts"
+  - label: "Privacy"
+    text: "Basic analytics and contact details are used to serve you, not sold"
 ---
 
 <main class="container prose pad" aria-labelledby="terms-heading">
