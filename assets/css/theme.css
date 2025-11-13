@@ -4782,7 +4782,15 @@ body.page-portfolio {
 }
 /* ======================================================
    Tillerstead Header — Global, Responsive, Brand-Matched
-   Mobile breakpoint: 768px (switches to hamburger + drawer)
+   
+   MOBILE BREAKPOINT: ≤768px
+   - Below 768px: Hamburger menu + dropdown drawer
+   - Above 768px: Inline horizontal navigation
+   
+   JavaScript toggle: assets/js/main.js
+   - Toggles .is-open class on .site-nav
+   - Toggles body.nav-open (locks scroll)
+   - Manages ARIA attributes and focus
 ====================================================== */
 
 .site-header {
@@ -4879,11 +4887,24 @@ body.page-portfolio {
   height: 2px;
   border-radius: 999px;
   background: #e5e7eb;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .nav-toggle-bar + .nav-toggle-bar {
   margin-top: 4px;
+}
+
+/* Animate hamburger to X when nav is open */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Nav - desktop inline layout by default */
@@ -4951,6 +4972,26 @@ body.page-portfolio {
   /* Show hamburger button */
   .nav-toggle {
     display: flex;
+  }
+
+  /* Backdrop overlay when nav is open */
+  .site-header::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(2, 6, 23, 0.75);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 998; /* below nav (999) but above everything else */
+  }
+
+  body.nav-open .site-header::after {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   /* Hide nav by default, show as dropdown when .is-open */
