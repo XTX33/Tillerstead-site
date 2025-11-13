@@ -23,55 +23,26 @@
       class="site-nav"
       aria-label="Primary navigation"
     >
-      <ul class="site-menu">
-        <li>
-          <a href="{{ '/' | relative_url }}"
-             {% if page.url == '/' %}aria-current="page"{% endif %}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/services/' | relative_url }}"
-             {% if page.url contains '/services/' %}aria-current="page"{% endif %}>
-            Services
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/about/' | relative_url }}"
-             {% if page.url contains '/about/' %}aria-current="page"{% endif %}>
-            About
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/contact/' | relative_url }}"
-             {% if page.url contains '/contact/' %}aria-current="page"{% endif %}>
-            Contact
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/portfolio/' | relative_url }}"
-             {% if page.url contains '/portfolio/' %}aria-current="page"{% endif %}>
-            Gallery
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/reviews/' | relative_url }}"
-             {% if page.url contains '/reviews/' %}aria-current="page"{% endif %}>
-            Reviews
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/for-general-contractors/' | relative_url }}"
-             {% if page.url contains '/for-general-contractors/' %}aria-current="page"{% endif %}>
-            For GCs
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/blog/' | relative_url }}"
-             {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>
-            Blog
-          </a>
-        </li>
+         <ul class="site-menu">
+        {% assign nav_items = site.data.navigation.primary %}
+        {% for item in nav_items %}
+          {% assign is_current = false %}
+
+          {% if item.exact and page.url == item.exact %}
+            {% assign is_current = true %}
+          {% elsif item.match and page.url contains item.match %}
+            {% assign is_current = true %}
+          {% endif %}
+
+          <li>
+            <a
+              href="{{ item.url | relative_url }}"
+              {% if is_current %}aria-current="page"{% endif %}
+            >
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
 

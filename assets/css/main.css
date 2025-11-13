@@ -1034,9 +1034,8 @@ address.footer-meta {
   padding: 0.9rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(184, 146, 47, 0.35); /* brass */
-  background: radial-gradient(circle at top left,
-              rgba(15, 163, 177, 0.1),
-              rgba(249, 250, 251, 0.95));
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
 .about-kpi-label {
@@ -1045,14 +1044,14 @@ address.footer-meta {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--brand-emerald, #0fa3b1);
+  color: #facc15;
   margin-bottom: 0.2rem;
 }
 
 .about-kpi-body {
   display: block;
   font-size: 0.95rem;
-  color: var(--brand-ink, #111827);
+  color: #e5e7eb;
 }
 
 @media (min-width: 768px) {
@@ -1077,12 +1076,9 @@ address.footer-meta {
 .about-card {
   border-radius: 0.9rem;
   border: 1px solid rgba(148, 163, 184, 0.45);
-  background: linear-gradient(
-    135deg,
-    rgba(248, 250, 252, 1),
-    rgba(229, 231, 235, 0.8)
-  );
+  background: #0f172a;
   padding: 1.5rem 1.25rem;
+  color: #e5e7eb;
 }
 
 .about-card h2 {
@@ -1091,7 +1087,7 @@ address.footer-meta {
   font-size: 1.2rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--brand-ink, #111827);
+  color: #22c55e;
 }
 
 /* --- Proof grid --- */
@@ -1141,15 +1137,16 @@ address.footer-meta {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  color: var(--brand-ink, #111827);
+  color: #22c55e;
 }
 
 .faq-item {
   border-radius: 0.75rem;
   border: 1px solid rgba(148, 163, 184, 0.6);
   margin-bottom: 0.75rem;
-  background: #f9fafb;
+  background: #0f172a;
   overflow: hidden;
+  color: #e5e7eb;
 }
 
 .faq-item summary {
@@ -1196,8 +1193,8 @@ address.footer-meta {
 
 body[class^="page-"],
 body[class*=" page-"] {
-  background: var(--brand-paper, #f9fafb);
-  color: var(--brand-ink, #111827);
+  background: #ffffff;
+  color: #0f172a;
   font-family: var(--font-base, 'Inter', sans-serif);
   line-height: 1.7;
   scroll-behavior: smooth;
@@ -1234,7 +1231,7 @@ body[class^="page-"] .eyebrow {
 /* Page titles */
 body[class^="page-"] h1,
 body[class^="page-"] h2 {
-  color: var(--brand-ink, #111827);
+  color: #22c55e;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -1253,7 +1250,7 @@ body[class^="page-"] h2 {
 /* Paragraphs */
 body[class^="page-"] p {
   margin-bottom: 1rem;
-  color: var(--brand-ink, #1e293b);
+  color: #64748b;
 }
 
 /* Buttons */
@@ -1315,7 +1312,7 @@ body[class^="page-"] .gc-kpi-label {
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-weight: 700;
-  color: var(--brand-brass, #b8922f);
+  color: #facc15;
 }
 
 @media (min-width: 900px) {
@@ -1331,11 +1328,12 @@ body[class^="page-"] .gc-kpi-label {
 /* Cards */
 body[class^="page-"] .gc-card,
 body[class^="page-"] .docs-card {
-  background: #ffffff;
+  background: #0f172a;
   border-radius: 0.9rem;
   border: 1px solid rgba(148, 163, 184, 0.35);
   box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
   padding: 1.75rem;
+  color: #e5e7eb;
 }
 
 body[class^="page-"] .gc-card h3 {
