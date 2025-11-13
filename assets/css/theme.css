@@ -187,22 +187,26 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5rem;
-  font-weight: 650;
-  line-height: 1.15;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
   color: #f9fafb;
+  letter-spacing: -0.01em;
 }
 
 h1 {
-  font-size: clamp(2.25rem, 3vw, 3rem);
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  font-size: clamp(2rem, 2.8vw, 2.75rem);
+  margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  margin-bottom: 0.85rem;
 }
 
 p {
@@ -1559,35 +1563,41 @@ body.page-home .hero-kpi-label {
 ========================= */
 
 body.page-home .section--why h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 body.page-home .why-grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 body.page-home .why-item {
   position: relative;
   background: var(--ts-bg-elevated);
-  border-radius: 1rem;
-  padding: 1.25rem 1.3rem;
+  border-radius: 1.1rem;
+  padding: 1.75rem 1.75rem 2rem;
   border: 1px solid var(--ts-border-subtle);
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
 }
 
 body.page-home .why-item h3 {
   margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 1.05rem;
-  color: var(--ts-ink);
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.4rem, 2vw, 1.65rem);
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 body.page-home .why-item p {
   margin: 0;
-  font-size: 0.95rem;
-  color: var(--ts-ink);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
 }
 
 @media (min-width: 768px) {
@@ -1601,15 +1611,18 @@ body.page-home .why-item p {
 ========================= */
 
 body.page-home .section--scopes h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.75rem;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 body.page-home .scope-gallery {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 1.25rem;
+  gap: 1.5rem;
   padding-bottom: 1rem;
   scroll-behavior: smooth;
 }
@@ -1618,7 +1631,7 @@ body.page-home .scope-card {
   position: relative;
   flex: 0 0 85%;
   background: var(--ts-bg-elevated);
-  border-radius: 1rem;
+  border-radius: 1.1rem;
   overflow: hidden;
   scroll-snap-align: center;
   border: 1px solid var(--ts-border-subtle);
@@ -1627,8 +1640,8 @@ body.page-home .scope-card {
 }
 
 body.page-home .scope-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 22px 55px rgba(15, 23, 42, 1);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 1);
 }
 
 body.page-home .scope-card figure {
@@ -1643,19 +1656,23 @@ body.page-home .scope-card img {
 }
 
 body.page-home .scope-body {
-  padding: 1.3rem 1.35rem 1.4rem;
+  padding: 1.75rem 1.75rem 2rem;
 }
 
 body.page-home .scope-body h3 {
   margin-top: 0;
-  font-size: 1.05rem;
-  color: var(--ts-ink);
+  font-size: clamp(1.4rem, 2vw, 1.65rem);
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
 }
 
 body.page-home .scope-body p {
-  margin: 0.5rem 0 0;
-  line-height: 1.6;
-  color: var(--ts-ink);
+  margin: 0;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #cbd5e1;
 }
 
 /* Tablet+ grid mode */
@@ -1889,6 +1906,51 @@ body.page-services .services .intro {
 body.page-services .services .lead {
   max-width: 52rem;
   color: #e5e7eb; /* readable against dark background */
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* Service section headings */
+body.page-services .service-section h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+body.page-services .section-intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+body.page-services .service-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+body.page-services .service-list li {
+  margin-bottom: 0.85rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+body.page-services .service-list strong {
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+/* Plans module in services page */
+body.page-services .plans-module h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #f9fafb;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
 }
 
 /* Grid of service cards */
@@ -1939,13 +2001,25 @@ body.page-services .service-card .body {
 
 body.page-services .service-card h2 {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: clamp(1.5rem, 2.2vw, 1.85rem);
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+body.page-services .service-card h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 body.page-services .service-card p {
   margin: 0;
   line-height: 1.7;
-  font-size: 0.96rem;
+  font-size: 1.05rem;
+  color: #334155;
 }
 
 body.page-services .service-card ul {
@@ -1997,10 +2071,10 @@ body.page-services #floors-heading,
 body.page-services #kitchens-heading,
 body.page-services #repairs-heading {
   color: #0f172a;
-  font-size: 1.35rem;
+  font-size: clamp(1.5rem, 2.2vw, 1.85rem);
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-align: left;
   position: relative;
@@ -2014,9 +2088,9 @@ body.page-services #repairs-heading::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.35rem;
+  bottom: -0.5rem;
   height: 3px;
-  width: 60px;
+  width: 80px;
   background-image: linear-gradient(90deg, #22c55e, #facc15);
   border-radius: 2px;
   opacity: 0.9;
