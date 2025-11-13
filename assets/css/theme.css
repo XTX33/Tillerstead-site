@@ -5871,3 +5871,157 @@ header#hero.hero.hero--page.hero--homepage div.hero-surface
 div.hero-inner div.hero-main h1#hero-heading {
   color: #ffffff !important;
 }
+  /* Hero readability + layering */
+  .hero--homepage { padding: 3.75rem 0 2rem; }
+  .hero--homepage .hero-eyebrow-text { color: rgba(229, 231, 235, 0.9); }
+  .hero--homepage h1 { color: #f9fafb; line-height: 1.15; }
+  .hero--homepage .hero-lead { color: #cbd5e1; }
+  .hero-pattern { pointer-events: none; }
+
+  /* Plans section heading */
+  .section--plans .plans-header h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin-bottom: 1rem;
+    color: #f9fafb;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .section--plans .section-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    max-width: 48rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Plan cards grid */
+  .plans-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  @media (min-width: 800px) {
+    .plans-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .plan-card {
+    background: radial-gradient(circle at top left, #0f172a 0%, #0b1220 100%);
+    color: #e2e8f0;
+    border: 1px solid rgba(148,163,184,.4);
+    border-radius: 1.1rem;
+    padding: 1.75rem 1.75rem 2rem;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+  }
+
+  .plan-card--featured {
+    border-color: #22c55e;
+    box-shadow: 0 12px 40px rgba(34,197,94,.35);
+  }
+
+  .plan-title {
+    margin: 0 0 0.5rem;
+    color: #f9fafb;
+    font-size: clamp(1.4rem, 2vw, 1.65rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .plan-tag {
+    margin: 0 0 1.25rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+  }
+
+  .plan-tag--featured {
+    color: #22c55e;
+    font-weight: 600;
+  }
+
+  .plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .plan-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+  }
+
+  .plan-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: 700;
+  }
+
+  /* Why cards */
+  .why-grid { display: grid; gap: 1.5rem; }
+  @media (min-width: 900px) {
+    .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .why-item {
+    background: radial-gradient(circle at top left, #0f172a 0%, #0b1220 100%);
+    color: #e2e8f0;
+    border: 1px solid rgba(148,163,184,.4);
+    border-radius: 1.1rem;
+    padding: 1.75rem 1.75rem 2rem;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+  }
+
+  .why-item h3 { color: #f9fafb; }
+
+  /* Services grid – dark cards */
+  .section--scopes .scope-grid { display:grid; gap:1.5rem; }
+  @media (min-width: 900px) {
+    .section--scopes .scope-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+
+  .scope-card {
+    background: radial-gradient(circle at top left, #0f172a 0%, #0b1220 100%);
+    border: 1px solid rgba(148,163,184,.4);
+    border-radius: 1.1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+  }
+
+  .scope-card figure {
+    margin: 0;
+    aspect-ratio: 4/3;
+    background: #020617;
+  }
+
+  .scope-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scope-body {
+    padding: 1.75rem 1.75rem 2rem;
+  }
+
+  .scope-body h3 {
+    margin-top: 0;
+    font-size: clamp(1.4rem, 2vw, 1.65rem);
+    color: #f9fafb;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+  }
+
+  .scope-body p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+  }
