@@ -5,77 +5,12 @@ seo_title: Property Maintenance & Remodeling in South Jersey | Tillerstead LLC
 permalink: /
 is_home: true
 body_class: page-home
-description: Tillerstead LLC provides reliable monthly property maintenance, thoughtful remodeling, and tile work built to last for homeowners, landlords, and small commercial properties across South Jersey. NJ Licensed HIC #13VH10808800.
+description: Tillerstead LLC provides reliable monthly property maintenance, thoughtful remodeling, and tile work built to last for homeowners, landlords, and small commercial properties across South Jersey.
 keywords:
   - Monthly property maintenance South Jersey
   - NJ HIC remodeling Atlantic County
   - Property maintenance and remodeling with tile specialty
   - Waterproof tile assemblies Atlantic County NJ
-schema:
-  - '@context': 'https://schema.org'
-    '@type':
-      - 'HomeAndConstructionBusiness'
-      - 'Contractor'
-    '@id': '{{ site.url }}/#contractor'
-    name: 'Tillerstead LLC'
-    image: '{{ site.url }}{{ site.default_og_image | default: "/assets/img/og.jpg" }}'
-    url: '{{ site.url }}/'
-    telephone: '{{ site.company.phone_display }}'
-    email: '{{ site.company.email }}'
-    priceRange: '$$'
-    address:
-      '@type': 'PostalAddress'
-      streetAddress: '{{ site.company.address_line }}'
-      addressLocality: '{{ site.company.address_locality }}'
-      addressRegion: '{{ site.company.address_region }}'
-      postalCode: '{{ site.company.address_postal_code }}'
-      addressCountry: 'US'
-    areaServed:
-      - 'Atlantic County NJ'
-      - 'Ocean County NJ'
-      - 'Cape May County NJ'
-      - 'South Jersey shore'
-    sameAs:
-      - 'https://tillerstead.com'
-      # - 'https://www.facebook.com/your-handle'
-      # - 'https://www.instagram.com/your-handle'
-    hasCredential:
-      '@type': 'EducationalOccupationalCredential'
-      credentialCategory: 'Professional License'
-      name: 'NJ Home Improvement Contractor License'
-      identifier: '{{ site.company.hic }}'
-      issuingBody: 'New Jersey Division of Consumer Affairs'
-    serviceType:
-      - 'Monthly property maintenance'
-      - 'Property maintenance and remodeling with tile specialty'
-      - 'Waterproof tile assemblies'
-      - 'Recurring maintenance service'
-      - 'Kitchen and bathroom remodeling'
-      - 'Tile installation and restoration'
-
-  - '@context': 'https://schema.org'
-    '@type': 'FAQPage'
-    mainEntity:
-      - '@type': 'Question'
-        name: 'What areas of New Jersey does Tillerstead serve for property maintenance?'
-        acceptedAnswer:
-          '@type': 'Answer'
-          text: 'Tillerstead serves homeowners, landlords, and small commercial properties throughout Atlantic County and the South Jersey shore, with regular service in Ocean and Cape May counties.'
-      - '@type': 'Question'
-        name: 'Are you licensed and insured in New Jersey?'
-        acceptedAnswer:
-          '@type': 'Answer'
-          text: 'Yes. Tillerstead LLC holds New Jersey Home Improvement Contractor license {{ site.company.hic }} and maintains full insurance coverage.'
-      - '@type': 'Question'
-        name: 'What services are included in monthly maintenance plans?'
-        acceptedAnswer:
-          '@type': 'Answer'
-          text: 'Monthly maintenance plans include seasonal inspections, minor repairs, priority scheduling, fixture replacements, grout and caulk refresh, small carpentry, paint touch-ups, and preventive waterproofing checks.'
-      - '@type': 'Question'
-        name: 'Do you handle remodeling projects and tile work?'
-        acceptedAnswer:
-          '@type': 'Answer'
-          text: 'Yes. Tillerstead provides complete remodeling services including kitchens and bathrooms, plus specialty tile installation with waterproof assemblies for showers, floors, and backsplashes.'
 
 # Hero content (consumed by _includes/page-hero.html)
 hero_eyebrow: "Property Care, Done Right"
@@ -87,7 +22,7 @@ hero_primary_label: "Start a Monthly Plan"
 hero_secondary_url: "/services/"
 hero_secondary_label: "Tile & Remodel Services"
 hero_cred_line_1: "Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies for homeowners, landlords, and small commercial properties."
-hero_cred_line_2: "Property Maintenance · Remodeling · Tile — NJ Licensed HIC #{{ site.company.hic }}"
+hero_cred_line_2: "Property Maintenance · Remodeling · Tile — NJ Licensed HIC"
 hero_kpis:
   - label: "Service Area"
     text: "Atlantic County and the South Jersey shore, with regular service into Ocean and Cape May counties."
@@ -102,6 +37,100 @@ The default layout includes head.html, header.html, and page-hero.html.
 Homepage sections live here so we can keep layouts reusable.
 {% endcomment %}
 
+{%- comment -%}
+Structured data (JSON-LD) – uses Liquid here in the template,
+not in the front matter.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["HomeAndConstructionBusiness", "Contractor"],
+  "@id": "{{ site.url }}/#contractor",
+  "name": "Tillerstead LLC",
+  "image": "{{ site.url }}{{ site.default_og_image | default: "/assets/img/og.jpg" }}",
+  "url": "{{ site.url }}/",
+  "telephone": "{{ site.company.phone_display }}",
+  "email": "{{ site.company.email }}",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.company.address_line }}",
+    "addressLocality": "{{ site.company.address_locality }}",
+    "addressRegion": "{{ site.company.address_region }}",
+    "postalCode": "{{ site.company.address_postal_code }}",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Atlantic County NJ",
+    "Ocean County NJ",
+    "Cape May County NJ",
+    "South Jersey shore"
+  ],
+  "sameAs": [
+    "https://tillerstead.com"
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Professional License",
+    "name": "NJ Home Improvement Contractor License",
+    "identifier": "{{ site.company.hic }}",
+    "issuingBody": "New Jersey Division of Consumer Affairs"
+  },
+  "serviceType": [
+    "Monthly property maintenance",
+    "Property maintenance and remodeling with tile specialty",
+    "Waterproof tile assemblies",
+    "Recurring maintenance service",
+    "Kitchen and bathroom remodeling",
+    "Tile installation and restoration"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What areas of New Jersey does Tillerstead serve for property maintenance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tillerstead serves homeowners, landlords, and small commercial properties throughout Atlantic County and the South Jersey shore, with regular service in Ocean and Cape May counties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed and insured in New Jersey?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tillerstead LLC holds New Jersey Home Improvement Contractor license {{ site.company.hic }} and maintains full insurance coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What services are included in monthly maintenance plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly maintenance plans include seasonal inspections, minor repairs, priority scheduling, fixture replacements, grout and caulk refresh, small carpentry, paint touch-ups, and preventive waterproofing checks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle remodeling projects and tile work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tillerstead provides complete remodeling services including kitchens and bathrooms, plus specialty tile installation with waterproof assemblies for showers, floors, and backsplashes."
+      }
+    }
+  ]
+}
+</script>
+
+{%- comment -%}
+Page-specific CSS overrides – moved out of the middle of the HTML.
+{%- endcomment -%}
 <main id="main">
 
   <!-- Monthly Maintenance Plans -->
@@ -117,7 +146,6 @@ Homepage sections live here so we can keep layouts reusable.
           photo-documented work, and a clear plan for your property.
         </p>
       </header>
-
       <div class="plans-grid" role="list">
         <article class="plan-card" role="listitem">
           <div class="plan-head">
@@ -616,5 +644,4 @@ Homepage sections live here so we can keep layouts reusable.
       </div>
     </div>
   </section>
-
 </main>
