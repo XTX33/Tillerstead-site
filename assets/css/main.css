@@ -228,9 +228,6 @@ main {
   gap: 1rem;
 }
 
-  width: 100%;
-}
-
 /* 9) Hero
    ------------------------------------------- */
 
@@ -241,6 +238,11 @@ main {
     radial-gradient(900px 500px at 80% 10%, rgba(15, 118, 110, 0.12), transparent),
     linear-gradient(180deg, #020617 0%, #0b1120 50%, #020617 100%);
   color: #f9fafb;
+}
+
+/* Desktop navigation styles (≥960px) */
+@media (min-width: 960px) {
+  .site-nav {
     transform: none;
     opacity: 1;
     pointer-events: auto;
