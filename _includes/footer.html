@@ -40,20 +40,67 @@
         Atlantic, Ocean, and Cape May counties in South Jersey.
       </p>
     </section>
+    <!-- Nav columns -->
+    <section class="footer-col footer-col-nav" aria-label="Site navigation">
+      {% assign nav_data = site.data.navigation %}
+      {% assign service_ids = "services,portfolio,gc,reviews,financing,contact" | split: "," %}
+      {% assign company_ids = "about,blog,privacy,terms" | split: "," %}
 
-    <nav class="footer-nav" aria-label="Property services">
-  <h2 class="footer-heading">Property services</h2>
-  <ul class="footer-links">
-    <li><a href="{{ '/services/'  | relative_url }}">Maintenance Plans</a></li>
-    <li><a href="{{ '/services/'  | relative_url }}">Remodeling</a></li>
-    <li><a href="{{ '/services/'  | relative_url }}">Tile</a></li>
-    <li><a href="{{ '/about/'     | relative_url }}">About</a></li>
-    <li><a href="{{ '/contact/'   | relative_url }}">Contact</a></li>
-    <li><a href="{{ '/for-general-contractors/' | relative_url }}">For General Contractors</a></li>
-    <li><a href="{{ '/terms/'     | relative_url }}">Terms &amp; Conditions</a></li>
-  </ul>
-</nav>
+      <!-- Property services column -->
+      <nav class="footer-nav footer-nav-services" aria-label="Property services">
+        <h2 class="footer-heading">Property services</h2>
+        <ul class="footer-links">
+          {% for id in service_ids %}
+            {% assign link = nav_data.primary | where: "id", id | first %}
+            {% if link %}
+              {% assign is_current = false %}
+              {% if link.exact and page.url == link.exact %}
+                {% assign is_current = true %}
+              {% elsif link.match and page.url contains link.match %}
+                {% assign is_current = true %}
+              {% endif %}
 
+              <li>
+                <a
+                  href="{{ link.url | relative_url }}"
+                  {% if is_current %}aria-current="page"{% endif %}
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <!-- Company & legal column -->
+      <nav class="footer-nav footer-nav-company" aria-label="Company and legal">
+        <h2 class="footer-heading">Company &amp; legal</h2>
+        <ul class="footer-links">
+          {% for id in company_ids %}
+            {% assign primary_link = nav_data.primary | where: "id", id | first %}
+            {% assign secondary_link = nav_data.secondary | where: "id", id | first %}
+            {% assign link = primary_link | default: secondary_link %}
+            {% if link %}
+              {% assign is_current = false %}
+              {% if link.exact and page.url == link.exact %}
+                {% assign is_current = true %}
+              {% elsif link.match and page.url contains link.match %}
+                {% assign is_current = true %}
+              {% endif %}
+              <li>
+                <a
+                  href="{{ link.url | relative_url }}"
+                  {% if is_current %}aria-current="page"{% endif %}
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </section>
     <!-- Contact / licensing -->
     <section class="footer-col footer-col-contact" aria-label="Contact and licensing">
       <h2 class="footer-heading">Licensed New Jersey contractor</h2>

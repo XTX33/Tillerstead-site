@@ -13,30 +13,37 @@ keywords:
   - Waterproof tile assemblies Atlantic County NJ
 schema:
   - '@context': 'https://schema.org'
-    '@type': 'HomeAndConstructionBusiness'
-    '@id': 'https://tillerstead.com/#contractor'
+    '@type':
+      - 'HomeAndConstructionBusiness'
+      - 'Contractor'
+    '@id': '{{ site.url }}/#contractor'
     name: 'Tillerstead LLC'
-    image: 'https://tillerstead.com/assets/img/og.jpg'
-    url: 'https://tillerstead.com/'
-    telephone: '+1-609-665-9350'
-    email: 'info@tillerstead.com'
+    image: '{{ site.url }}{{ site.default_og_image | default: "/assets/img/og.jpg" }}'
+    url: '{{ site.url }}/'
+    telephone: '{{ site.company.phone_display }}'
+    email: '{{ site.company.email }}'
     priceRange: '$$'
     address:
       '@type': 'PostalAddress'
-      streetAddress: '325 E. Jimmie Leeds Road, Suite 7-333'
-      addressLocality: 'Galloway'
-      addressRegion: 'NJ'
-      postalCode: '08205'
+      streetAddress: '{{ site.company.address_line }}'
+      addressLocality: '{{ site.company.address_locality }}'
+      addressRegion: '{{ site.company.address_region }}'
+      postalCode: '{{ site.company.address_postal_code }}'
       addressCountry: 'US'
     areaServed:
       - 'Atlantic County NJ'
       - 'Ocean County NJ'
       - 'Cape May County NJ'
+      - 'South Jersey shore'
+    sameAs:
+      - 'https://tillerstead.com'
+      # - 'https://www.facebook.com/your-handle'
+      # - 'https://www.instagram.com/your-handle'
     hasCredential:
       '@type': 'EducationalOccupationalCredential'
       credentialCategory: 'Professional License'
       name: 'NJ Home Improvement Contractor License'
-      identifier: '13VH10808800'
+      identifier: '{{ site.company.hic }}'
       issuingBody: 'New Jersey Division of Consumer Affairs'
     serviceType:
       - 'Monthly property maintenance'
@@ -45,6 +52,7 @@ schema:
       - 'Recurring maintenance service'
       - 'Kitchen and bathroom remodeling'
       - 'Tile installation and restoration'
+
   - '@context': 'https://schema.org'
     '@type': 'FAQPage'
     mainEntity:
@@ -57,7 +65,7 @@ schema:
         name: 'Are you licensed and insured in New Jersey?'
         acceptedAnswer:
           '@type': 'Answer'
-          text: 'Yes. Tillerstead LLC holds New Jersey Home Improvement Contractor license 13VH10808800 and maintains full insurance coverage.'
+          text: 'Yes. Tillerstead LLC holds New Jersey Home Improvement Contractor license {{ site.company.hic }} and maintains full insurance coverage.'
       - '@type': 'Question'
         name: 'What services are included in monthly maintenance plans?'
         acceptedAnswer:
@@ -90,148 +98,228 @@ hero_kpis:
 ---
 
 {% comment %}
-The default layout should include head.html, header.html, and page-hero.html.
-We keep the rest of the homepage sections here.
+The default layout includes head.html, header.html, and page-hero.html.
+Homepage sections live here so we can keep layouts reusable.
 {% endcomment %}
 
-<!-- Monthly Maintenance Plans -->
-<section class="section section--plans" aria-labelledby="plans-heading">
-  <div class="container">
-    <header class="plans-header">
-      <h2 id="plans-heading">Monthly Maintenance Plans</h2>
-      <p class="section-intro">
-        Dependable property care with priority scheduling, photo-documented work, and proactive upkeep to protect your investment.
-      </p>
-    </header>
+<main id="main">
 
-    <div class="plans-grid" role="list">
-      <article class="plan-card" role="listitem">
-        <div class="plan-head">
-          <h3 class="plan-title">Essential</h3>
-          <p class="plan-tag">Core coverage</p>
-        </div>
-        <ul class="plan-list">
-          <li>Seasonal inspections</li>
-          <li>Minor repairs</li>
-          <li>Priority scheduling</li>
-          <li>Service logs with photos</li>
-        </ul>
-      </article>
+  <!-- Monthly Maintenance Plans -->
+  <section class="ts-section ts-section--muted section section--plans" aria-labelledby="plans-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header plans-header">
+        <p class="ts-eyebrow">Proactive property care</p>
+        <h2 id="plans-heading" class="ts-section-title">
+          Monthly Maintenance Plans
+        </h2>
+        <p class="ts-section-subtitle section-intro">
+          Stay ahead of leaks, wear, and small failures with recurring visits,
+          photo-documented work, and a clear plan for your property.
+        </p>
+      </header>
 
-      <article class="plan-card plan-card--featured" role="listitem" aria-labelledby="plan-standard">
-        <div class="plan-head">
-          <h3 id="plan-standard" class="plan-title">Standard</h3>
-          <p class="plan-tag plan-tag--featured">Most selected</p>
-        </div>
-        <ul class="plan-list">
-          <li>Everything in Essential</li>
-          <li>Small carpentry & paint touch-ups</li>
-          <li>Fixture swaps</li>
-          <li>Grout & caulk refresh</li>
-          <li>Monthly check-ins</li>
-        </ul>
-      </article>
+      <div class="plans-grid" role="list">
+        <article class="plan-card" role="listitem">
+          <div class="plan-head">
+            <h3 class="plan-title">Essential</h3>
+            <p class="plan-tag">Core coverage</p>
+          </div>
+          <ul class="plan-list">
+            <li>Seasonal inspections and visual walkthroughs</li>
+            <li>Minor repairs and small fixes up to an agreed threshold</li>
+            <li>Priority scheduling when issues pop up</li>
+            <li>Service logs with photos and notes after each visit</li>
+          </ul>
+          <p class="plan-footnote">
+            Ideal for owner-occupied homes and smaller rentals that need a consistent set of eyes.
+          </p>
+        </article>
 
-      <article class="plan-card" role="listitem">
-        <div class="plan-head">
-          <h3 class="plan-title">Complete</h3>
-          <p class="plan-tag">Full care</p>
-        </div>
-        <ul class="plan-list">
-          <li>Everything in Standard</li>
-          <li>Tile & stone care</li>
-          <li>Preventive waterproofing checks</li>
-          <li>Quarterly punch-list</li>
-          <li>Annual maintenance planning</li>
-        </ul>
-      </article>
+        <article class="plan-card plan-card--featured" role="listitem" aria-labelledby="plan-standard">
+          <div class="plan-head">
+            <h3 id="plan-standard" class="plan-title">Standard</h3>
+            <p class="plan-tag plan-tag--featured">Most selected</p>
+          </div>
+          <ul class="plan-list">
+            <li>Everything in Essential</li>
+            <li>Small carpentry and paint touch-ups</li>
+            <li>Fixture swaps (faucets, trim kits, hardware)</li>
+            <li>Grout and caulk refresh in wet areas</li>
+            <li>Monthly check-ins with clear summaries</li>
+          </ul>
+          <p class="plan-footnote">
+            Best fit for landlords and busy owners who want units and common areas kept ready.
+          </p>
+        </article>
+
+        <article class="plan-card" role="listitem">
+          <div class="plan-head">
+            <h3 class="plan-title">Complete</h3>
+            <p class="plan-tag">Full care</p>
+          </div>
+          <ul class="plan-list">
+            <li>Everything in Standard</li>
+            <li>Tile and stone care visits</li>
+            <li>Preventive waterproofing checks at showers and wet walls</li>
+            <li>Quarterly punch-list reviews</li>
+            <li>Annual maintenance planning with budget notes</li>
+          </ul>
+          <p class="plan-footnote">
+            Designed for multi-unit properties, shore homes, and owners who want a true steward.
+          </p>
+        </article>
+      </div>
+
+      <div class="plans-bottom">
+        <p class="section-intro">
+          Every plan is customized to your property and comfort level. Pricing depends on scope,
+          visit frequency, and number of units or systems we support.
+        </p>
+        <p class="section-cta">
+          <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">
+            Request a monthly plan proposal
+          </a>
+          <span class="cta-note">
+            Share your address, a few photos, and your priorities — we’ll respond with a clear, written starting quote.
+          </span>
+        </p>
+      </div>
     </div>
+  </section>
 
-    <p class="section-cta">
-      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Request a monthly plan proposal</a>
-    </p>
-  </div>
-</section>
+  <!-- Who We Serve -->
+  <section class="ts-section section section--who" aria-labelledby="who-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Who we support</p>
+        <h2 id="who-heading" class="ts-section-title">
+          For homeowners, landlords, and small commercial spaces
+        </h2>
+        <p class="ts-section-subtitle">
+          Tillerstead plugs into your world as a steady, owner-operated maintenance and remodel
+          partner — not a revolving door of unfamiliar techs.
+        </p>
+      </header>
 
-<!-- Why property owners choose Tillerstead -->
-<section class="section section--why" aria-labelledby="why-heading">
-  <div class="container">
-    <h2 id="why-heading">Why property owners trust Tillerstead</h2>
-    <div class="why-grid">
-      <article class="why-item">
-        <h3>Reliable maintenance plans</h3>
-        <p>Scheduled inspections, preventive repairs, and priority response when issues arise.</p>
-      </article>
-      <article class="why-item">
-        <h3>Clear documentation</h3>
-        <p>Written scope, photo documentation, and itemized invoicing — no mysteries.</p>
-      </article>
-      <article class="why-item">
-        <h3>Professional approach</h3>
-        <p>Clean work areas and respectful communication for homeowners and landlords.</p>
-      </article>
-      <article class="why-item">
-        <h3>Work done with integrity</h3>
-        <p>From minor repairs to remodels, we treat your property like our own.</p>
-      </article>
+      <div class="who-grid">
+        <article class="who-card">
+          <h3>Homeowners</h3>
+          <p>
+            Keep your home safe, dry, and ready to enjoy. We handle the lists that never seem to
+            shrink — from grout cracks to sticking doors.
+          </p>
+          <ul>
+            <li>Maintenance plans tailored around your schedule</li>
+            <li>Respectful protection of finishes and furnishings</li>
+            <li>Clear communication before, during, and after each visit</li>
+          </ul>
+        </article>
+
+        <article class="who-card">
+          <h3>Landlords &amp; Property Managers</h3>
+          <p>
+            Stay ahead of tenant calls and turnovers. We treat every unit like a long-term asset,
+            not just another ticket.
+          </p>
+          <ul>
+            <li>Recurring inspections and punch-list work</li>
+            <li>Turnover repairs and refreshes</li>
+            <li>Photo documentation for your records and owners</li>
+          </ul>
+        </article>
+
+        <article class="who-card">
+          <h3>Shore Homes &amp; Second Properties</h3>
+          <p>
+            When you’re not on site, you still need eyes on the building. We keep watch through
+            seasonal checks and targeted maintenance.
+          </p>
+          <ul>
+            <li>Off-season walkthroughs and reports</li>
+            <li>Storm follow-up and water-intrusion checks</li>
+            <li>Preventive waterproofing and envelope attention</li>
+          </ul>
+        </article>
+
+        <article class="who-card">
+          <h3>General Contractors &amp; Small Commercial</h3>
+          <p>
+            Plug an owner-operated finisher into your projects or small commercial space — focused
+            on clean handoffs and schedule reliability.
+          </p>
+          <ul>
+            <li>Tile scopes, punch-list rescue, and small remodels</li>
+            <li>Photo-documented work for your clients</li>
+            <li>Coordination that respects your schedule and reputation</li>
+          </ul>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Services section -->
-<section class="section section--scopes" aria-labelledby="scopes-heading">
-  <div class="container">
-    <h2 id="scopes-heading">Property maintenance, remodeling, and tile services</h2>
+  <!-- Why property owners choose Tillerstead -->
+  <section class="ts-section ts-section--muted section section--why" aria-labelledby="why-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Built on trust</p>
+        <h2 id="why-heading" class="ts-section-title">
+          Why property owners trust Tillerstead
+        </h2>
+        <p class="ts-section-subtitle">
+          You’re not hiring a random crew. You’re working with an owner who documents the work,
+          shows up when promised, and treats each job like it will be inspected.
+        </p>
+      </header>
 
-    <!-- FIX: use .scope-grid (matches CSS) -->
-    <div class="scope-grid" aria-label="Service gallery">
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/shower-white.jpg" alt="Waterproof tile shower installation in Atlantic County, New Jersey" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Tile Installation &amp; Restoration</h3>
-          <p>Custom showers with waterproof assemblies, large-format floors, backsplashes, and ANSI A118.10-compliant methods.</p>
-        </div>
-      </article>
+      <div class="why-grid">
+        <article class="why-item">
+          <h3>Reliable maintenance plans</h3>
+          <p>
+            We agree on a cadence, scope, and budget together — then stick to it. No surprise visits
+            or vague “we’ll get to it” promises.
+          </p>
+        </article>
 
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/marble-bath.jpg" alt="Bathroom remodeling project in South Jersey" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Remodeling &amp; Finish Work</h3>
-          <p>Kitchens & baths, flooring, drywall/paint, trim, and fixture swaps with documented change orders.</p>
-        </div>
-      </article>
+        <article class="why-item">
+          <h3>Clear documentation</h3>
+          <p>
+            Written scope, before-and-after photos, and itemized invoices make it easy to track
+            what was done, when, and why.
+          </p>
+        </article>
 
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/kitchen-green.jpg" alt="Property maintenance services in Atlantic County NJ" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Property Maintenance</h3>
-          <p>Seasonal inspections, minor repairs, grout/caulk refresh, and recurring service plans.</p>
-        </div>
-      </article>
+        <article class="why-item">
+          <h3>Professional communication</h3>
+          <p>
+            Homeowners, tenants, and managers are kept in the loop. We communicate access needs,
+            timelines, and any change in conditions.
+          </p>
+        </article>
 
-      <article class="scope-card">
-        <figure>
-          <img src="/assets/img/kitchen-hex.jpg" alt="Repair work and maintenance in South Jersey" loading="lazy" decoding="async">
-        </figure>
-        <div class="scope-body">
-          <h3>Repairs &amp; Service Calls</h3>
-          <p>Fast-response repairs, re-grouts, fixture swaps, and small carpentry to keep units tenant-ready.</p>
-        </div>
-      </article>
+        <article class="why-item">
+          <h3>Work done with integrity</h3>
+          <p>
+            Whether it’s a small repair or a full bathroom remodel, the goal is the same:
+            work that holds up and respects your property.
+          </p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Page-local fixes -->
-<style>
-  /* Ensure header stays above hero decorations and is clickable */
-  .site-header { z-index: 1000; position: sticky; top: 0; }
+  <!-- Services section -->
+  <section class="ts-section section section--scopes" aria-labelledby="scopes-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Scopes we handle</p>
+        <h2 id="scopes-heading" class="ts-section-title">
+          Property maintenance, remodeling, and tile services
+        </h2>
+        <p class="ts-section-subtitle">
+          One contact for recurring maintenance, focused remodel scopes, and detailed tile work.
+          You can call for a single project — or roll it into your ongoing plan.
+        </p>
+      </header>
 
   /* Hero readability + layering */
   .hero--homepage { padding: 3.75rem 0 2rem; }
@@ -239,14 +327,60 @@ We keep the rest of the homepage sections here.
   .hero--homepage h1 { color: #f9fafb; line-height: 1.15; }
   .hero--homepage .hero-lead { color: #cbd5e1; }
   .hero-pattern { pointer-events: none; } /* prevent overlay from blocking nav clicks */
+      <div class="scope-grid" aria-label="Service gallery">
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/shower-white.jpg"
+              alt="Waterproof tile shower installation in Atlantic County, New Jersey"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Tile Installation &amp; Restoration</h3>
+            <p>
+              Custom showers, large-format floors, feature walls, and backsplashes — built on
+              proper prep, waterproofing, and layout planning.
+            </p>
+          </div>
+        </article>
 
-  /* Buttons high-contrast (works with head.html overrides) */
-  .btn-primary { color: #ecfdf5; }
-  .btn-ghost { color: #e5e7eb; border: 1px solid rgba(148,163,184,.8); }
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/marble-bath.jpg"
+              alt="Bathroom remodeling project in South Jersey"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Remodeling &amp; Finish Work</h3>
+            <p>
+              Kitchens and baths, flooring, drywall and paint, trim, and fixture swaps — with
+              documented change orders and clean handoffs.
+            </p>
+          </div>
+        </article>
 
-  /* KPI cards balanced heights */
-  .hero-kpis { gap: 1rem; }
-  .hero-kpi { min-height: 7rem; display: flex; flex-direction: column; }
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/kitchen-green.jpg"
+              alt="Property maintenance services in Atlantic County NJ"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Property Maintenance</h3>
+            <p>
+              Seasonal inspections, small repairs, grout and caulk refresh, fixture replacements,
+              and recurring service tuned to your property.
+            </p>
+          </div>
+        </article>
 
   /* Plans section heading */
   .section--plans .plans-header h2 {
@@ -390,3 +524,86 @@ We keep the rest of the homepage sections here.
     color: #cbd5e1;
   }
 </style>
+        <article class="scope-card">
+          <figure>
+            <img
+              src="/assets/img/kitchen-hex.jpg"
+              alt="Repair work and maintenance in South Jersey"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="scope-body">
+            <h3>Repairs &amp; Service Calls</h3>
+            <p>
+              Fast-response repairs, re-grouts, minor leak investigations, and punch-list items
+              that keep units safe, dry, and tenant-ready.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="scopes-cta-row">
+        <p class="section-intro">
+          Not sure where your project fits? Start with a walkthrough. We’ll build a simple plan
+          that can grow with your property.
+        </p>
+        <p class="section-cta">
+          <a href="{{ '/services/' | relative_url }}" class="btn btn-ghost">
+            Explore services in detail
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How a monthly plan works -->
+  <section class="ts-section ts-section--muted section section--process" aria-labelledby="process-heading">
+    <div class="ts-section-inner container">
+      <header class="ts-section-header">
+        <p class="ts-eyebrow">Simple onboarding</p>
+        <h2 id="process-heading" class="ts-section-title">
+          How a monthly plan with Tillerstead works
+        </h2>
+        <p class="ts-section-subtitle">
+          We keep the process straightforward so you always know what’s next — from first call
+          to the first maintenance visit.
+        </p>
+      </header>
+
+      <ol class="process-grid">
+        <li class="process-step">
+          <h3>1. Walkthrough &amp; priorities</h3>
+          <p>
+            We start with a walkthrough or detailed photo review, noting existing conditions,
+            pain points, and your top concerns.
+          </p>
+        </li>
+        <li class="process-step">
+          <h3>2. Written plan &amp; estimate</h3>
+          <p>
+            You receive a written plan outlining visit frequency, typical tasks, and pricing,
+            with room to grow as needs change.
+          </p>
+        </li>
+        <li class="process-step">
+          <h3>3. Ongoing care &amp; check-ins</h3>
+          <p>
+            We handle visits, document the work, and keep you updated — adjusting scope as new
+            priorities surface.
+          </p>
+        </li>
+      </ol>
+
+      <div class="section-cta process-cta">
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">
+          Start with a walkthrough
+        </a>
+        <span class="cta-note">
+          No pressure, no hard sell — just a clear picture of what your property needs.
+        </span>
+      </div>
+    </div>
+  </section>
+
+</main>
