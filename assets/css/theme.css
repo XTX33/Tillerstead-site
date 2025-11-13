@@ -5865,3 +5865,9 @@ body.page-home #hero-heading {
   color: #f9fafb !important;
   text-shadow: 0 0 18px rgba(15, 23, 42, 0.9);
 }
+/* Force homepage hero heading to be white */
+html.light body.site-body.page-home main#main.site-main
+header#hero.hero.hero--page.hero--homepage div.hero-surface
+div.hero-inner div.hero-main h1#hero-heading {
+  color: #ffffff !important;
+}
