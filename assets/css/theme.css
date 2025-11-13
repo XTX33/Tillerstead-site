@@ -5748,3 +5748,72 @@ body.page-home .process-cta {
 body.page-home #hero-heading {
   color: #f9fafb;
 }
+/* Force hero heading to be readable on dark background */
+.hero .hero-title,
+.hero h1#hero-heading,
+.hero--homepage h1#hero-heading {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #f9fafb !important;
+  color: #f9fafb !important;
+  text-shadow: 0 0 18px rgba(15, 23, 42, 0.9);
+}
+
+/* ========== Mobile-first nav reset ========== */
+
+/* Start: mobile (nav hidden until opened) */
+.site-header {
+  position: relative;
+  z-index: 40;
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* the hamburger button */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+/* nav list starts hidden on mobile */
+.site-nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: none;
+  padding: 0.75rem 1rem 1rem;
+  background: #020617; /* match header/hero background */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/* when JS toggles .is-open, show it */
+.site-nav.is-open {
+  display: block;
+}
+
+/* Desktop: show inline menu, hide hamburger */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    display: flex;
+    gap: 1.75rem;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+}
