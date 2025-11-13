@@ -33,7 +33,7 @@
         {% if page.hero_cred_line_1 or page.hero_cred_line_2 %}
           <div class="hero-cred" aria-label="Service commitments">
             {% if page.hero_cred_line_1 %}<p class="hero-note">{{ page.hero_cred_line_1 }}</p>{% endif %}
-            {% if page.hero_cred_line_2 %}<p class="hero-note text-meta">{{ page.hero_cred_line_2 }}</p>{% endif %}
+            {% if page.hero_cred_line_2 %}<p class="hero-note text-meta">{{ page.hero_cred_line_2 }}{{ site.company.hic }}</p>{% endif %}
           </div>
         {% endif %}
 
