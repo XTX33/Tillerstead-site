@@ -1479,7 +1479,7 @@ body.page-home .btn-primary {
     var(--ts-emerald) 40%,
     var(--ts-brass) 100%
   );
-  color: #022c22;
+  color: #ffffff;
   border-color: transparent;
   box-shadow:
     0 14px 40px rgba(15, 23, 42, 0.9),
@@ -1488,6 +1488,7 @@ body.page-home .btn-primary {
 
 body.page-home .btn-primary:hover,
 body.page-home .btn-primary:focus-visible {
+  color: #ffffff;
   transform: translateY(-1px);
   box-shadow:
     0 20px 55px rgba(15, 23, 42, 0.95),
@@ -2630,7 +2631,9 @@ body.page-services #repairs-heading::after {
 }
 
 /* Primary button: solid emerald, white text so it's readable */
-.btn-primary {
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited {
   background: var(--ts-emerald, #22c55e);
   color: #ffffff;
   border-color: var(--ts-emerald, #22c55e);
@@ -2732,7 +2735,7 @@ body.page-services #repairs-heading::after {
   font-size: clamp(2rem, 3vw, 2.6rem);
   line-height: 1.1;
   margin-bottom: 1rem;
-  color: var(--ts-ink-deep);
+  color: #f9fafb;
 }
 
 /* ============================================
@@ -3153,23 +3156,35 @@ body.page-services #repairs-heading::after {
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
-  @media (min-width: 900px) {
+  @media (max-width: 767px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (min-width: 768px) {
     .process-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .process-step {
-    background: #ffffff;
-    border-radius: 0.9rem;
+    display: block;
+    background: #020617;
+    border-radius: 1rem;
     border: 1px solid rgba(148, 163, 184, 0.45);
-    padding: 1.4rem 1.3rem;
+    padding: 1.5rem;
+    color: #e5e7eb;
+    overflow: visible;
   }
   .process-step h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    color: var(--ts-ink-deep);
+    color: #f9fafb;
+  }
+  .process-step p {
+    color: #e5e7eb;
+    margin: 0;
   }
   .process-cta {
     margin-top: 2rem;
@@ -3490,26 +3505,40 @@ h3 {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 767px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
   .process-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 .process-step {
-  background: #ffffff;
-  border-radius: 0.9rem;
+  display: block;
+  background: #020617;
+  border-radius: 1rem;
   border: 1px solid rgba(148, 163, 184, 0.45);
-  padding: 1.4rem 1.3rem;
+  padding: 1.5rem;
+  color: #e5e7eb;
+  overflow: visible;
 }
 
 .process-step h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  color: var(--ts-ink-deep);
+  color: #f9fafb;
+}
+
+.process-step p {
+  color: #e5e7eb;
+  margin: 0;
 }
 
 .process-cta {
@@ -5291,7 +5320,7 @@ body.nav-open {
 
 .hero-lead,
 .hero .hero-lead {
-  color: #cbd5e1;
+  color: #e5e7eb;
 }
 
 .hero-cred,
@@ -5557,7 +5586,7 @@ body.page-home .btn-primary {
     var(--ts-emerald, #22c55e) 40%,
     var(--ts-brass, #facc15) 100%
   );
-  color: #022c22 !important;
+  color: #ffffff !important;
   border-color: transparent;
   box-shadow:
     0 14px 40px rgba(15, 23, 42, 0.9),
@@ -5567,17 +5596,28 @@ body.page-home .btn-primary {
 
 body.page-home .btn-primary:hover,
 body.page-home .btn-primary:focus-visible {
+  color: #ffffff !important;
   transform: translateY(-1px);
   box-shadow:
     0 20px 55px rgba(15, 23, 42, 0.95),
     0 0 0 1px rgba(15, 23, 42, 0.75);
 }
 
-/* On dark bands, force primary button text to white */
+/* Hero and dark sections - force primary button text to white */
+body.page-home .hero .btn-primary,
 body.page-home .section--plans .btn-primary,
 body.page-home .section--process .btn-primary {
   color: #ffffff !important;
   text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+body.page-home .hero .btn-primary:hover,
+body.page-home .hero .btn-primary:focus-visible,
+body.page-home .section--plans .btn-primary:hover,
+body.page-home .section--plans .btn-primary:focus-visible,
+body.page-home .section--process .btn-primary:hover,
+body.page-home .section--process .btn-primary:focus-visible {
+  color: #ffffff !important;
 }
 
 /* Ghost buttons on home */
@@ -6025,3 +6065,38 @@ div.hero-inner div.hero-main h1#hero-heading {
     line-height: 1.7;
     color: #cbd5e1;
   }
+
+/* ========== MOBILE CONTRAST FIXES ========== */
+/* Ensure hero and section text maintain WCAG contrast on small screens */
+@media (max-width: 767px) {
+  /* Hero heading must be readable on mobile */
+  #hero-heading,
+  body.page-home #hero-heading,
+  .hero h1,
+  .hero--homepage h1 {
+    color: #f9fafb !important;
+  }
+
+  /* Hero intro text */
+  .ts-section-subtitle.section-intro,
+  p.section-intro,
+  .hero-lead,
+  body.page-home .hero-lead,
+  body.page-home .hero-summary,
+  body.page-home .hero p {
+    color: #e5e7eb !important;
+  }
+
+  /* Button text must be white on mobile */
+  body.page-home .btn-primary,
+  body.page-home .hero .btn-primary {
+    color: #ffffff !important;
+  }
+
+  body.page-home .btn-primary:hover,
+  body.page-home .btn-primary:focus-visible,
+  body.page-home .hero .btn-primary:hover,
+  body.page-home .hero .btn-primary:focus-visible {
+    color: #ffffff !important;
+  }
+}
