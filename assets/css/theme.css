@@ -170,8 +170,8 @@ body {
   font-family: var(--ts-font-sans);
   font-size: var(--ts-text-md);
   line-height: 1.6;
-  color: #e5e7eb;
-  background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 100%);
+  color: #0f172a;
+  background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -187,6 +187,10 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0 0 0.5rem;
+  font-weight: 650;
+  line-height: 1.15;
+  color: #22c55e;
   margin: 0 0 0.75rem;
   font-weight: 700;
   line-height: 1.2;
@@ -211,7 +215,7 @@ h3 {
 
 p {
   margin: 0 0 0.75rem;
-  color: var(--ts-muted-ink);
+  color: #64748b;
 }
 
 /* Links */
@@ -343,18 +347,20 @@ ol {
    ------------------------------------------- */
 
 .card {
-  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #020617 100%);
+  background: #0f172a;
   border-radius: var(--ts-radius-lg);
   border: 1px solid rgba(148, 163, 184, 0.22);
   box-shadow: var(--ts-shadow-card);
   padding: 1.5rem;
+  color: #e5e7eb;
 }
 
 .card--subtle {
   border-radius: var(--ts-radius-md);
-  background: #020617;
+  background: #0f172a;
   border: 1px solid rgba(15, 23, 42, 0.95);
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.72);
+  color: #e5e7eb;
 }
 
 .badge {
@@ -484,15 +490,16 @@ button.btn {
 .hero-kpi {
   border-radius: var(--ts-radius-md);
   border: 1px solid rgba(148, 163, 184, 0.28);
-  background: rgba(15, 23, 42, 0.95);
+  background: #0f172a;
   padding: 1rem 1.1rem;
+  color: #e5e7eb;
 }
 
 .hero-kpi-label {
   font-size: var(--ts-text-xs);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(148, 163, 184, 0.9);
+  color: #facc15;
 }
 
 .hero-kpi-value {
@@ -558,14 +565,14 @@ textarea::placeholder {
 /* 9) Footer
    ------------------------------------------- */
 .site-footer {
-  background: var(--brand-light);
+  background-color: #0f172a;
   padding: 3rem 1.25rem 2rem;
   margin-top: 3rem;
-  background-color: var(--brand-dark, #0f172a);
   background-image: linear-gradient(45deg, rgba(186, 150, 77, 0.1) 25%, transparent 25%, transparent 75%, rgba(186, 150, 77, 0.1) 75%, rgba(186, 150, 77, 0.1)),
                     linear-gradient(45deg, rgba(186, 150, 77, 0.1) 25%, transparent 25%, transparent 75%, rgba(186, 150, 77, 0.1) 75%, rgba(186, 150, 77, 0.1));
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
+  color: #e5e7eb;
 }
 
 .site-footer-inner {
@@ -606,7 +613,7 @@ textarea::placeholder {
 }
 
 .footer-links a {
-  color: rgb(0, 0, 0);
+  color: #e5e7eb;
 }
 
 .footer-links a:hover {
@@ -900,7 +907,7 @@ textarea::placeholder {
 
 .site-footer {
   border-top: 1px solid rgba(15, 23, 42, 0.95);
-  background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 100%);
+  background: #0f172a;
   padding: 2.5rem 1.5rem 2rem;
   font-size: 0.9rem;
   color: rgba(226, 232, 240, 0.92);
@@ -1577,15 +1584,22 @@ body.page-home .why-grid {
 
 body.page-home .why-item {
   position: relative;
+  background: #0f172a;
+  border-radius: 1rem;
+  padding: 1.25rem 1.3rem;
   background: var(--ts-bg-elevated);
   border-radius: 1.1rem;
   padding: 1.75rem 1.75rem 2rem;
   border: 1px solid var(--ts-border-subtle);
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+  color: #e5e7eb;
 }
 
 body.page-home .why-item h3 {
   margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  color: #22c55e;
   margin-bottom: 0.75rem;
   font-size: clamp(1.4rem, 2vw, 1.65rem);
   color: #f9fafb;
@@ -1630,6 +1644,8 @@ body.page-home .scope-gallery {
 body.page-home .scope-card {
   position: relative;
   flex: 0 0 85%;
+  background: #0f172a;
+  border-radius: 1rem;
   background: var(--ts-bg-elevated);
   border-radius: 1.1rem;
   overflow: hidden;
@@ -1637,6 +1653,7 @@ body.page-home .scope-card {
   border: 1px solid var(--ts-border-subtle);
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #e5e7eb;
 }
 
 body.page-home .scope-card:hover {
@@ -1661,6 +1678,8 @@ body.page-home .scope-body {
 
 body.page-home .scope-body h3 {
   margin-top: 0;
+  font-size: 1.05rem;
+  color: #22c55e;
   font-size: clamp(1.4rem, 2vw, 1.65rem);
   color: #f9fafb;
   font-weight: 700;
@@ -1790,12 +1809,13 @@ body.page-home .service-area-copy p {
 
 body.page-home .service-area-card {
   position: relative;
-  background: var(--ts-bg-elevated);
+  background: #0f172a;
   border-radius: 1rem;
   padding: 1.1rem 1.25rem;
   border: 1px solid var(--ts-border-subtle);
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
   font-size: 0.95rem;
+  color: #e5e7eb;
 }
 
 body.page-home .service-area-card ul {
@@ -1882,7 +1902,7 @@ body.page-home .nowrap {
    ========================= */
 
 body.page-services {
-  background: #020617; /* deep navy to match rest of site */
+  background: #ffffff;
 }
 
 body.page-services .page-content {
@@ -1905,6 +1925,7 @@ body.page-services .services .intro {
 
 body.page-services .services .lead {
   max-width: 52rem;
+  color: #64748b;
   color: #e5e7eb; /* readable against dark background */
   font-size: 1.15rem;
   line-height: 1.7;
@@ -1973,8 +1994,8 @@ body.page-services .service-card {
   border: 1px solid rgba(148, 163, 184, 0.4);
   border-radius: 1rem;
   overflow: hidden;
-  background: #f9fafb;
-  color: #0f172a;
+  background: #0f172a;
+  color: #e5e7eb;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
@@ -2001,6 +2022,8 @@ body.page-services .service-card .body {
 
 body.page-services .service-card h2 {
   margin: 0;
+  font-size: 1.35rem;
+  color: #22c55e;
   font-size: clamp(1.5rem, 2.2vw, 1.85rem);
   color: #0f172a;
   font-weight: 700;
@@ -2037,7 +2060,7 @@ body.page-services .services-cta {
   max-width: 54rem;
   margin: 0 auto;
   padding: 1.75rem 1.5rem 0;
-  background: rgba(15, 23, 42, 1);
+  background: #0f172a;
   color: #e5e7eb;
   border-radius: 0.9rem;
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.35);
@@ -2070,6 +2093,8 @@ body.page-services #showers-heading,
 body.page-services #floors-heading,
 body.page-services #kitchens-heading,
 body.page-services #repairs-heading {
+  color: #22c55e;
+  font-size: 1.35rem;
   color: #0f172a;
   font-size: clamp(1.5rem, 2.2vw, 1.85rem);
   font-weight: 700;
