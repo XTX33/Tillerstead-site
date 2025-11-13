@@ -303,6 +303,19 @@ ol {
 
 /* Utility classes */
 
+/* Screen reader only - visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .mt-0  { margin-top: 0 !important; }
 .mt-1  { margin-top: 0.5rem !important; }
 .mt-2  { margin-top: 1rem !important; }
@@ -4782,7 +4795,15 @@ body.page-portfolio {
 }
 /* ======================================================
    Tillerstead Header — Global, Responsive, Brand-Matched
-   Applies to every page
+   
+   MOBILE BREAKPOINT: ≤768px
+   - Below 768px: Hamburger menu + dropdown drawer
+   - Above 768px: Inline horizontal navigation
+   
+   JavaScript toggle: assets/js/main.js
+   - Toggles .is-open class on .site-nav
+   - Toggles body.nav-open (locks scroll)
+   - Manages ARIA attributes and focus
 ====================================================== */
 
 .site-header {
@@ -4824,7 +4845,82 @@ body.page-portfolio {
   }
 }
 
-/* Nav base */
+/* Header actions (phone button + toggle) */
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Call button */
+
+.call-btn.btn,
+.call-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.75);
+  background: transparent;
+  color: #e5e7eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.call-btn:hover,
+.call-btn:focus-visible {
+  border-color: var(--ts-emerald, #22c55e);
+  color: #ecfdf5;
+  background: rgba(34, 197, 94, 0.14);
+}
+
+/* Hamburger button - hidden on desktop */
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.75);
+  background: rgba(15, 23, 42, 0.98);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle-bar + .nav-toggle-bar {
+  margin-top: 4px;
+}
+
+/* Animate hamburger to X when nav is open */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Nav - desktop inline layout by default */
 
 .site-nav {
   display: flex;
@@ -4849,21 +4945,14 @@ body.page-portfolio {
   text-decoration: none;
   color: #e5e7eb;
   letter-spacing: 0.03em;
-  text-transform: none;
-  transition:
-    color 0.15s ease,
-    transform 0.15s ease;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
-
-/* Hover */
 
 .site-menu a:hover,
 .site-menu a:focus-visible {
   color: var(--ts-emerald, #22c55e);
   transform: translateY(-1px);
 }
-
-/* Active link */
 
 .site-menu a[aria-current="page"] {
   color: var(--ts-emerald, #22c55e);
@@ -4885,88 +4974,54 @@ body.page-portfolio {
   border-radius: 999px;
 }
 
-/* Header actions (phone button + toggle) */
+/* ========== MOBILE LAYOUT (≤768px) ========== */
+/* Switches to hamburger + dropdown drawer */
 
-.site-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-/* Call button piggybacks on .btn but is a bit tighter */
-
-.call-btn.btn,
-.call-btn {
-  padding: 0.4rem 0.9rem;
-  font-size: 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.75);
-  background: transparent;
-  color: #e5e7eb;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.call-btn:hover,
-.call-btn:focus-visible {
-  border-color: var(--ts-emerald, #22c55e);
-  color: #ecfdf5;
-  background: rgba(34, 197, 94, 0.14);
-}
-
-/* Mobile nav toggle */
-
-.nav-toggle {
-  display: none;
-  width: 38px;
-  height: 30px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.75);
-  background: rgba(15, 23, 42, 0.98);
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-toggle-bar {
-  display: block;
-  width: 18px;
-  height: 2px;
-  border-radius: 999px;
-  background: #e5e7eb;
-  transition:
-    transform 0.15s ease,
-    opacity 0.15s ease;
-}
-
-.nav-toggle-bar + .nav-toggle-bar {
-  margin-top: 4px;
-}
-
-/* Mobile layout */
-
-@media (max-width: 880px) {
+@media (max-width: 768px) {
   .site-header-inner {
     padding: 0.55rem 0.9rem;
   }
 
+  /* Show hamburger button */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Backdrop overlay when nav is open */
+  .site-header::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(2, 6, 23, 0.75);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 998; /* below nav (999) but above everything else */
+  }
+
+  body.nav-open .site-header::after {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Hide nav by default, show as dropdown when .is-open */
   .site-nav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(30, 64, 175, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transform: translateY(-10px);
     opacity: 0;
     pointer-events: none;
-    transition:
-      opacity 0.18s ease,
-      transform 0.18s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 999;
   }
 
   .site-nav.is-open {
@@ -4975,6 +5030,7 @@ body.page-portfolio {
     pointer-events: auto;
   }
 
+  /* Vertical menu layout */
   .site-menu {
     flex-direction: column;
     align-items: flex-start;
@@ -4983,26 +5039,20 @@ body.page-portfolio {
   }
 
   .site-menu a {
-    padding: 0.35rem 0;
+    padding: 0.5rem 0;
     width: 100%;
+    font-size: 1rem;
   }
 
-  .site-header-actions {
-    gap: 0.5rem;
-  }
-
+  /* Tighter spacing for call button on mobile */
   .call-btn.btn,
   .call-btn {
     padding-inline: 0.75rem;
     font-size: 0.85rem;
   }
-
-  .nav-toggle {
-    display: inline-flex;
-  }
 }
 
-/* Optional: when body has .nav-open (if your JS sets it), prevent background scroll */
+/* Prevent background scroll when mobile nav is open */
 body.nav-open {
   overflow: hidden;
 }
@@ -5554,7 +5604,7 @@ body.page-home .process-cta {
     gap: 1rem;
   }
 }
-/* FINAL OVERRIDES – hero buttons + nav */
+/* FINAL OVERRIDES – hero buttons */
 
 /* Hero primary button – high contrast green, readable text */
 .hero .btn-primary,
@@ -5590,165 +5640,11 @@ body.page-home .process-cta {
   color: #f9fafb;
 }
 
-/* ============================================
-   Tillerstead — Header & Nav Override
-   This wins over theme.css / style.css / main.css
-============================================= */
-
-.site-header {
-  background: var(--brand-dark, #020617);
-  color: var(--brand-light, #f9fafb);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.7);
-}
-
-.site-header-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.site-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-/* ========== MOBILE / TABLET (drawer nav) ========== */
-@media (max-width: 899px) {
-  .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.7);
-    background: rgba(15, 23, 42, 0.96);
-    color: #e5e7eb;
-    cursor: pointer;
-    padding: 0;
-    outline: none;
-    z-index: 1001;
-  }
-
-  .nav-toggle-bar {
-    display: block;
-    width: 1.25rem;
-    height: 2px;
-    margin: 3px 0;
-    background: currentColor;
-    border-radius: 999px;
-  }
-
-  #site-nav.site-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 280px;
-    max-width: 80%;
-    padding: 4.5rem 1.5rem 2.5rem;
-    background: var(--brand-dark, #020617);
-    color: var(--brand-light, #f9fafb);
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%); /* hidden by default */
-    transition: transform 220ms ease;
-    box-shadow: -2px 0 18px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-
-  #site-nav.site-nav.is-open {
-    transform: translateX(0);
-  }
-
-  body.nav-open {
-    overflow: hidden;
-  }
-
-  .site-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .site-menu a {
-    display: block;
-    padding: 0.75rem 0;
-    font-weight: 500;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .site-menu a:hover,
-  .site-menu a:focus-visible {
-    text-decoration: underline;
-  }
-
-  .site-header .site-nav {
-    position: fixed;
-    margin-left: 0;
-  }
-}
-
-/* ========== DESKTOP (inline nav) ========== */
-@media (min-width: 900px) {
-  #site-nav.site-nav {
-    position: static;
-    transform: none;
-    background: transparent;
-    box-shadow: none;
-    width: auto;
-    height: auto;
-    padding: 0;
-    display: block;
-  }
-
-  .site-menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.25rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .site-menu a {
-    display: inline-block;
-    padding: 0.25rem 0;
-    text-decoration: none;
-    color: inherit;
-    font-weight: 500;
-  }
-
-  .site-menu a:hover,
-  .site-menu a:focus-visible {
-    text-decoration: underline;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
-  body.nav-open {
-    overflow: auto;
-  }
-}
+/* Hero heading fix */
 body.page-home #hero-heading {
   color: #f9fafb;
 }
-/* Force hero heading to be readable on dark background */
+
 .hero .hero-title,
 .hero h1#hero-heading,
 .hero--homepage h1#hero-heading {
@@ -5757,63 +5653,4 @@ body.page-home #hero-heading {
   -webkit-text-fill-color: #f9fafb !important;
   color: #f9fafb !important;
   text-shadow: 0 0 18px rgba(15, 23, 42, 0.9);
-}
-
-/* ========== Mobile-first nav reset ========== */
-
-/* Start: mobile (nav hidden until opened) */
-.site-header {
-  position: relative;
-  z-index: 40;
-}
-
-.site-header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* the hamburger button */
-.nav-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 0;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-}
-
-/* nav list starts hidden on mobile */
-.site-nav {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  left: 0;
-  display: none;
-  padding: 0.75rem 1rem 1rem;
-  background: #020617; /* match header/hero background */
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
-/* when JS toggles .is-open, show it */
-.site-nav.is-open {
-  display: block;
-}
-
-/* Desktop: show inline menu, hide hamburger */
-@media (min-width: 768px) {
-  .nav-toggle {
-    display: none;
-  }
-
-  .site-nav {
-    position: static;
-    display: flex;
-    gap: 1.75rem;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
-  }
 }

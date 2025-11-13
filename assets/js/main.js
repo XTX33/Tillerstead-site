@@ -15,7 +15,7 @@
   const nav = $('#site-nav');
   const header = $('.site-header');
   let lastFocus = null;
-  const BP_DESKTOP = 900; // keep in sync with CSS breakpoint
+  const BP_DESKTOP = 768; // keep in sync with CSS breakpoint (mobile ≤768px)
 
   const isNavOpen = () => !!nav && nav.classList.contains('is-open');
 
