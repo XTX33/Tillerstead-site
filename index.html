@@ -472,6 +472,8 @@ Homepage sections live here so we can keep layouts reusable.
   /* Why cards - dark cards on dark background */
   .why-grid { display: grid; gap: 1.5rem; }
   @media (min-width: 900px) { .why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  .why-item { background:#fff; color:#0f172a; border:1px solid rgba(148,163,184,.4); border-radius:.9rem; padding:1.5rem; }
+  .why-item h3 { color: #0f172a; } /* Fix white-on-white heading contrast */
   
   .why-item { 
     background: radial-gradient(circle at top left, #0f172a 0%, #0b1220 100%);
@@ -485,6 +487,11 @@ Homepage sections live here so we can keep layouts reusable.
   /* Services grid – dark cards */
   .section--scopes .scope-grid { display:grid; gap:1.5rem; }
   @media (min-width: 900px) { .section--scopes .scope-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  .scope-card { background:#fff; border:1px solid rgba(148,163,184,.4); border-radius:.9rem; overflow:hidden; display:flex; flex-direction:column; }
+  .scope-card figure { margin:0; aspect-ratio:4/3; background:#0f172a; }
+  .scope-card img { width:100%; height:100%; object-fit:cover; }
+  .scope-body { padding:1.2rem 1.4rem 1.5rem; }
+  .scope-body h3 { color: #0f172a; } /* Fix white-on-white heading contrast */
   
   .scope-card { 
     background: radial-gradient(circle at top left, #0f172a 0%, #0b1220 100%);

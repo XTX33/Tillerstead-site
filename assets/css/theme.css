@@ -266,7 +266,7 @@ ol {
   text-transform: uppercase;
   font-size: var(--ts-text-xs);
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.85);
+  color: #94a3b8; /* Improved contrast for accessibility */
 }
 
 /* Stacks */
@@ -373,7 +373,7 @@ ol {
   letter-spacing: 0.16em;
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.28);
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast for accessibility */
 }
 
 .badge--accent {
@@ -461,7 +461,7 @@ button.btn {
   text-transform: uppercase;
   font-size: var(--ts-text-xs);
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast for accessibility */
 }
 
 .hero-heading {
@@ -499,6 +499,7 @@ button.btn {
   font-size: var(--ts-text-xs);
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: #94a3b8; /* Improved contrast for accessibility */
   color: #facc15;
 }
 
@@ -559,7 +560,7 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(148, 163, 184, 0.75);
+  color: #94a3b8; /* Improved contrast for accessibility */
 }
 
 /* 9) Footer
@@ -975,13 +976,13 @@ textarea::placeholder {
 
 .footer-tagline {
   font-size: 0.86rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast for accessibility */
 }
 
 .footer-area {
   margin-top: 0.4rem;
   font-size: 0.85rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast for accessibility */
 }
 
 /* Nav */
@@ -1014,7 +1015,7 @@ textarea::placeholder {
 .footer-address {
   font-style: normal;
   font-size: 0.84rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast for accessibility */
 }
 
 .footer-contact {
@@ -1049,7 +1050,7 @@ textarea::placeholder {
 
 .footer-credit {
   font-size: 0.82rem;
-  color: rgba(148, 163, 184, 0.96);
+  color: #cbd5e1; /* Improved contrast for accessibility */
   line-height: 1.5;
 }
 
@@ -1091,7 +1092,7 @@ textarea::placeholder {
   margin: 0.75rem auto 0.25rem;
   padding: 0 1.5rem;
   font-size: 0.8rem;
-  color: rgba(148, 163, 184, 0.9);
+  color: #94a3b8; /* Improved contrast for accessibility */
 }
 
 .breadcrumbs-list {
@@ -1112,7 +1113,7 @@ textarea::placeholder {
 .breadcrumbs-list li + li::before {
   content: "›";
   margin: 0 0.35rem;
-  color: rgba(148, 163, 184, 0.6);
+  color: #94a3b8; /* Improved contrast for accessibility */
 }
 
 .breadcrumbs a {
@@ -1126,7 +1127,7 @@ textarea::placeholder {
 }
 
 .breadcrumbs [aria-current="page"] {
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast for accessibility */
   font-weight: 500;
 }
 /* === Brand Accent Buttons — Tillerstead Gold === */
@@ -1255,7 +1256,7 @@ textarea::placeholder {
   text-transform: uppercase;
   font-size: 0.78rem;
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast for accessibility */
 }
 /* ============================================
    Tillerstead Homepage Styles
@@ -1400,11 +1401,11 @@ body.page-home .hero-eyebrow-text {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--ts-muted);
+  color: #94a3b8; /* Improved contrast for accessibility */
 }
 
 body.page-home .hero-eyebrow-text {
-  color: rgba(148, 163, 184, 0.95);
+  color: #cbd5e1; /* Improved contrast for accessibility */
 }
 
 body.page-home #hero-heading {
