@@ -349,12 +349,14 @@ Page-specific CSS overrides – moved out of the middle of the HTML.
         </p>
       </header>
 
+<style>
   /* Hero readability + layering */
   .hero--homepage { padding: 3.75rem 0 2rem; }
   .hero--homepage .hero-eyebrow-text { color: rgba(229, 231, 235, 0.9); }
   .hero--homepage h1 { color: #f9fafb; line-height: 1.15; }
   .hero--homepage .hero-lead { color: #cbd5e1; }
   .hero-pattern { pointer-events: none; } /* prevent overlay from blocking nav clicks */
+</style>
       <div class="scope-grid" aria-label="Service gallery">
         <article class="scope-card">
           <figure>
@@ -410,6 +412,7 @@ Page-specific CSS overrides – moved out of the middle of the HTML.
           </div>
         </article>
 
+<style>
   /* Plans section heading */
   .section--plans .plans-header h2 {
     font-size: clamp(2rem, 3vw, 2.5rem);
