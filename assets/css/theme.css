@@ -2385,6 +2385,53 @@ body.page-services #repairs-heading::after {
   .site-logo-img {
     height: 68px;  /* was 48px */
   }
+
+  /* Desktop-only header alignment and centering
+     Keep phone visible, prevent overflow
+     Issue: Desktop header nav center alignment + keep phone visible
+  */
+  .site-header-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo | nav | actions */
+    align-items: center;
+    gap: 1.25rem;
+    max-width: var(--ts-shell-width, 1080px); /* match site container */
+    margin-inline: auto;      /* centers the grid in the page */
+    padding-inline: 1rem;     /* breathing room at edges */
+  }
+
+  /* Center nav contents within its column */
+  .site-nav {
+    display: flex;
+    justify-content: center;  /* centers nav items */
+    gap: 1.25rem;
+    overflow: visible;        /* ensure dropdowns show */
+  }
+
+  /* Prevent the actions block (with phone) from collapsing or pushing off-screen */
+  .site-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 12ch;           /* room for phone CTA */
+    justify-content: flex-end; /* keep to the right */
+    flex-wrap: nowrap;
+  }
+
+  /* Make the phone resilient at narrow desktop widths */
+  .call-btn {
+    white-space: nowrap;       /* prevent awkward wraps */
+    max-width: 100%;
+    text-overflow: ellipsis;   /* if constrained by container */
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  /* If logo is too wide, allow it to shrink before pushing others */
+  .site-logo-img {
+    max-width: min(200px, 22vw);
+    height: auto;
+  }
 }
 .footer-nav {
   text-align: center;
