@@ -90,7 +90,7 @@
 
     while (high - low > 0.1) {
       const mid = (low + high) / 2;
-      const mixedLum = poleLum * (mid / 100);
+      const mixedLum = bgLum + (poleLum - bgLum) * (mid / 100);
       const ratio = getContrastRatio(bgLum, mixedLum);
 
       if (ratio >= targetRatio) {
