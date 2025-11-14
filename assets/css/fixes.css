@@ -286,7 +286,7 @@ body.page-home .section--process li {
 
 .hero h1,
 #hero-heading {
-  color: var(--ts-text-primary) !important;
+  color: var(--ts-text-primary);
   line-height: 1.15;
 }
 
