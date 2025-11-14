@@ -2,13 +2,44 @@
 layout: default
 title: Testimonials
 permalink: /reviews/
-description: Reviews from South Jersey general contractors, remodelers, and homeowners who count on Tillerstead LLC for high-quality tile installation and dependable general contracting services.
+description: Reviews from South Jersey general contractors, remodelers, and homeowners who rely on Tillerstead LLC for steady workmanship and clear communication.
 body_class: page-reviews
 hide_hero: true
 ---
 
 <section class="page-reviews" aria-labelledby="reviews-h1">
-  <header>...</header>
-  <section class="reviews">...</section>
-  <section class="review-cta">...</section>
+  <header class="reviews-header">
+    <div class="container">
+      <h1 id="reviews-h1">Client Testimonials</h1>
+      <p class="lead">
+        Feedback from South Jersey homeowners, landlords, and general contractors who count on
+        Tillerstead for dependable maintenance, remodeling support, and tile work done the right way.
+      </p>
+    </div>
+  </header>
+
+  <section class="reviews" aria-label="Client reviews">
+    <div class="container">
+      <div class="reviews-grid">
+        {% for review in site.data.reviews %}
+        <article class="review-card">
+          <p class="review-body">“{{ review.text }}”</p>
+          <p class="review-meta">
+            <span class="review-name">{{ review.name }}</span>
+            {% if review.role %}&middot; <span class="review-role">{{ review.role }}</span>{% endif %}
+            {% if review.location %}&middot; <span class="review-location">{{ review.location }}</span>{% endif %}
+          </p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="review-cta" aria-label="Share your experience">
+    <div class="container">
+      <h2>Have We Worked Together?</h2>
+      <p>If we’ve completed tile work, repairs, or a maintenance visit at your property, your review helps others know what to expect.</p>
+      <p>Email your feedback to <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>.</p>
+    </div>
+  </section>
 </section>
