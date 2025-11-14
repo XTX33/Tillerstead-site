@@ -2,13 +2,50 @@
 layout: default
 title: Testimonials
 permalink: /reviews/
-description: Reviews from South Jersey general contractors, remodelers, and homeowners who count on Tillerstead LLC for high-quality tile installation and dependable general contracting services.
+description: Reviews from South Jersey general contractors, remodelers, and homeowners who rely on Tillerstead LLC for steady workmanship and clear communication.
 body_class: page-reviews
 hide_hero: true
 ---
+<section class="ts-section ts-surface page-reviews" aria-labelledby="reviews-h1">
+  <header class="reviews-header">
+    <div class="container">
+      <h1 id="reviews-h1">Client Testimonials</h1>
+      <p class="lead">
+        Feedback from South Jersey homeowners and remodel clients who trusted Tillerstead with tile work,
+        drywall repairs, and small remodel scopes.
+      </p>
+    </div>
+  </header>
 
-<section class="page-reviews" aria-labelledby="reviews-h1">
-  <header>...</header>
-  <section class="reviews">...</section>
-  <section class="review-cta">...</section>
+  <section class="reviews" aria-label="Client reviews">
+    <div class="container">
+      <div class="reviews-grid">
+        {% for review in site.data.reviews %}
+        <article class="ts-card review-card">
+          <p class="review-body">“{{ review.text }}”</p>
+          <p class="review-meta">
+            <span class="review-name">{{ review.name }}</span>
+            {% if review.project %}&middot; <span class="review-project">{{ review.project }}</span>{% endif %}
+            {% if review.source %}&middot; <span class="review-source">{{ review.source }}</span>{% endif %}
+          </p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="review-cta" aria-label="Share your experience">
+    <div class="container">
+      <h2>Have We Worked Together?</h2>
+      <p>
+        If we’ve completed tile work, drywall repairs, or a maintenance visit at your property,
+        your review helps future clients understand what to expect.
+      </p>
+      <p>
+        You can share feedback by emailing
+        <a href="mailto:{% raw %}{{ site.company.email }}{% endraw %}">{% raw %}{{ site.company.email }}{% endraw %}</a>
+        or replying to your invoice link.
+      </p>
+    </div>
+  </section>
 </section>

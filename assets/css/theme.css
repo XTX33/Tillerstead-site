@@ -441,6 +441,7 @@ button.btn {
   font-weight: 700;
   letter-spacing: 0.02em;
   padding-inline: 1rem;
+  white-space: nowrap;
 }
 
 /* ============================================
@@ -1461,3 +1462,214 @@ textarea {
   color: var(--ts-text);
   font-weight: 500;
 }
+.page-reviews .reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.review-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.review-body {
+  margin: 0 0 0.75rem;
+}
+
+.review-meta {
+  font-size: 0.875rem;
+  color: var(--ts-text-muted);
+}
+/* assets/theme.css */
+/* ============================================================
+   Tillerstead Unified Theme – GLOBAL AUTO-CONTRAST
+   - Design tokens
+   - Surfaces & typography
+   - Global contrast helpers
+   ============================================================ */
+
+/* ===========================
+   1. DESIGN TOKENS
+   =========================== */
+
+:root {
+  /* Brand colors (adjust to your exact values) */
+  --ts-color-brand-primary:       #16a34a; /* emerald */
+  --ts-color-brand-primary-soft:  #15803d;
+  --ts-color-brand-accent:        #d4af37; /* brass */
+
+  /* Neutral surfaces */
+  --ts-color-bg:           #020617;  /* page background */
+  --ts-color-bg-alt:       #020617;
+  --ts-color-surface:      #020617;  /* default sections */
+  --ts-color-surface-alt:  #0b1220;  /* elevated panels / hero */
+
+  /* Text colors */
+  --ts-color-text-on-dark:  #f9fafb;
+  --ts-color-text-on-light: #020617;
+  --ts-color-text-muted:    #9ca3af;
+
+  /* Borders / outlines */
+  --ts-color-border-subtle: rgba(148, 163, 184, 0.35);
+  --ts-color-border-strong: rgba(148, 163, 184, 0.65);
+
+  /* Shadows */
+  --ts-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.7);
+
+  /* Contrast system defaults */
+  --contrast-target: 7; /* AAA by default */
+}
+
+/* Light mode overrides (if you support theme toggling) */
+:root[data-theme="light"] {
+  --ts-color-bg:           #f9fafb;
+  --ts-color-bg-alt:       #e5e7eb;
+  --ts-color-surface:      #ffffff;
+  --ts-color-surface-alt:  #f3f4f6;
+
+  --ts-color-text-on-dark:  #f9fafb;
+  --ts-color-text-on-light: #020617;
+}
+
+/* ===========================
+   2. SURFACES & TYPOGRAPHY
+   =========================== */
+
+/* Global page wrapper */
+body.ts-page {
+  background-color: var(--ts-color-bg);
+  min-height: 100vh;
+}
+
+/* Generic surface (sections, panels) */
+.ts-surface {
+  background-color: var(--ts-color-surface);
+}
+
+/* Slightly elevated/offset surface */
+.ts-surface-alt {
+  background-color: var(--ts-color-surface-alt);
+}
+
+/* Standard card */
+.ts-card {
+  background-color: var(--ts-color-surface-alt);
+  border-radius: 1rem;
+  border: 1px solid var(--ts-color-border-subtle);
+  padding: 1.5rem;
+  box-shadow: var(--ts-shadow-soft);
+}
+
+/* KPI / stat cards */
+.ts-kpi {
+  background-color: var(--ts-color-surface-alt);
+  border-radius: 0.75rem;
+  border: 1px solid var(--ts-color-border-subtle);
+  padding: 1rem 1.25rem;
+}
+
+/* Hero section – dark banner */
+.ts-hero {
+  background-color: var(--ts-color-surface-alt);
+}
+
+/* Generic section wrapper with spacing */
+.ts-section {
+  padding-block: 3rem;
+}
+
+/* Links aligned with brand colors (contrast engine will ensure readability) */
+body.ts-page a {
+  color: var(--ts-color-brand-primary);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+}
+
+body.ts-page a:hover,
+body.ts-page a:focus-visible {
+  color: var(--ts-color-brand-primary-soft);
+}
+
+/* Muted text helper */
+.ts-text-muted {
+  color: var(--ts-color-text-muted);
+}
+
+/* ===========================
+   3. GLOBAL CONTRAST SYSTEM
+   =========================== */
+
+/**
+ * GLOBAL AUTO-CONTRAST:
+ * - JS sets --c-contrast-color per element based on its background.
+ * - Every text element inherits that as its color.
+ * - This applies everywhere inside body.ts-page.
+ */
+
+/* Base: everything inside ts-page uses the computed contrast color,
+   falling back to "text on dark" token if JS hasn't run yet. */
+body.ts-page,
+body.ts-page * {
+  color: var(--c-contrast-color, var(--ts-color-text-on-dark));
+}
+
+/* Escape hatch: anything marked .no-contrast (and its children)
+   ignores auto-contrast and uses whatever color other CSS gives it. */
+body.ts-page .no-contrast,
+body.ts-page .no-contrast * {
+  color: inherit !important;
+}
+
+/* Buttons should preserve their specific colors */
+body.ts-page .btn,
+body.ts-page button.btn {
+  color: #022c1a !important;
+}
+
+body.ts-page .btn-ghost {
+  color: var(--ts-text) !important;
+}
+
+body.ts-page .btn-outline {
+  color: var(--ts-primary) !important;
+}
+
+body.ts-page .btn-accent {
+  color: #1b1504 !important;
+}
+
+/* Backward compatibility: if you still use .c-contrast in markup,
+   it's just a normal element under the global system. This is mostly
+   here so old templates don't break. */
+.c-contrast {
+  color: var(--c-contrast-color, var(--ts-color-text-on-dark));
+}
+
+/* Optional: legacy fallback levels if JS is disabled
+   (not strictly needed, but can be useful for manual overrides). */
+
+/* Light-on-dark fallback (e.g. white-ish text) */
+.c-contrast.c-lvl-1  { color: rgba(249, 250, 251, 0.10); }
+.c-contrast.c-lvl-2  { color: rgba(249, 250, 251, 0.20); }
+.c-contrast.c-lvl-3  { color: rgba(249, 250, 251, 0.35); }
+.c-contrast.c-lvl-4  { color: rgba(249, 250, 251, 0.50); }
+.c-contrast.c-lvl-5  { color: rgba(249, 250, 251, 0.65); }
+.c-contrast.c-lvl-6  { color: rgba(249, 250, 251, 0.80); }
+.c-contrast.c-lvl-7  { color: rgba(249, 250, 251, 0.90); }
+.c-contrast.c-lvl-8  { color: rgba(249, 250, 251, 0.95); }
+.c-contrast.c-lvl-9  { color: rgba(249, 250, 251, 0.98); }
+.c-contrast.c-lvl-10 { color: rgba(249, 250, 251, 1); }
+
+/* Dark-on-light fallback */
+.c-contrast.c-light.c-lvl-1  { color: rgba(15, 23, 42, 0.10); }
+.c-contrast.c-light.c-lvl-2  { color: rgba(15, 23, 42, 0.20); }
+.c-contrast.c-light.c-lvl-3  { color: rgba(15, 23, 42, 0.35); }
+.c-contrast.c-light.c-lvl-4  { color: rgba(15, 23, 42, 0.50); }
+.c-contrast.c-light.c-lvl-5  { color: rgba(15, 23, 42, 0.65); }
+.c-contrast.c-light.c-lvl-6  { color: rgba(15, 23, 42, 0.80); }
+.c-contrast.c-light.c-lvl-7  { color: rgba(15, 23, 42, 0.90); }
+.c-contrast.c-light.c-lvl-8  { color: rgba(15, 23, 42, 0.95); }
+.c-contrast.c-light.c-lvl-9  { color: rgba(15, 23, 42, 0.98); }
+.c-contrast.c-light.c-lvl-10 { color: rgba(15, 23, 42, 1); }

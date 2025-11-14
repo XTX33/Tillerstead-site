@@ -13,7 +13,7 @@ hero_summary: >
   and when to push pause until the plan is right.
 ---
 
-<section class="section blog-index" aria-labelledby="blog-heading">
+<section class="ts-section ts-surface section blog-index" aria-labelledby="blog-heading">
   <div class="container blog-shell">
     {% assign posts_sorted = site.posts | sort: "date" | reverse %}
 
@@ -25,7 +25,7 @@ hero_summary: >
     {% else %}
       <ul class="cards blog-cards mt-2 unstyled" aria-label="Tillerstead articles on tile, bath, and remodel work">
         {% for post in posts_sorted %}
-          <li class="card blog-card stack-sm">
+          <li class="ts-card card blog-card stack-sm">
             <header class="blog-card-header">
               <h2 class="blog-card-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
