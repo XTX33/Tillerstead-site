@@ -13,8 +13,18 @@
 
         <h1 id="hero-heading">{{ page.hero_title | default: page.title }}</h1>
 
-        {% if page.hero_summary %}
-          <p class="hero-lead" id="hero-summary">{{ page.hero_summary }}</p>
+        {% if page.hero_summary or page.hero_cred_line_1 or page.hero_cred_line_2 %}
+          <div class="hero-info-bubble" aria-label="Service overview">
+            {% if page.hero_summary %}
+              <p class="hero-lead" id="hero-summary">{{ page.hero_summary }}</p>
+            {% endif %}
+            {% if page.hero_cred_line_1 or page.hero_cred_line_2 %}
+              <div class="hero-cred">
+                {% if page.hero_cred_line_1 %}<p class="hero-note">{{ page.hero_cred_line_1 }}</p>{% endif %}
+                {% if page.hero_cred_line_2 %}<p class="hero-note text-meta">{{ page.hero_cred_line_2 }}{{ site.company.hic }}</p>{% endif %}
+              </div>
+            {% endif %}
+          </div>
         {% endif %}
 
         {% if page.hero_primary_url or page.hero_secondary_url %}
@@ -25,13 +35,6 @@
             {% if page.hero_secondary_url and page.hero_secondary_label %}
               <a href="{{ page.hero_secondary_url | relative_url }}" class="btn btn-ghost">{{ page.hero_secondary_label }}</a>
             {% endif %}
-          </div>
-        {% endif %}
-
-        {% if page.hero_cred_line_1 or page.hero_cred_line_2 %}
-          <div class="hero-cred" aria-label="Service commitments">
-            {% if page.hero_cred_line_1 %}<p class="hero-note">{{ page.hero_cred_line_1 }}</p>{% endif %}
-            {% if page.hero_cred_line_2 %}<p class="hero-note text-meta">{{ page.hero_cred_line_2 }}{{ site.company.hic }}</p>{% endif %}
           </div>
         {% endif %}
 

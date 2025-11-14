@@ -758,6 +758,26 @@ body.nav-open {
   gap: var(--ts-space-3);
 }
 
+.hero-info-bubble {
+  margin-top: var(--ts-space-5);
+  padding: 1.15rem 1.3rem;
+  border-radius: var(--ts-radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.75);
+  box-shadow: var(--ts-shadow-soft);
+}
+
+.hero-info-bubble .hero-lead {
+  margin-bottom: var(--ts-space-3);
+}
+
+.hero-info-bubble .hero-cred {
+  margin-top: 0;
+  display: grid;
+  gap: 0.5rem;
+  color: rgba(226, 232, 240, 0.85);
+}
+
 .hero-cred {
   margin-top: var(--ts-space-4);
   display: grid;

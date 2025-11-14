@@ -5,6 +5,10 @@ _site/
 .bundle/
 vendor/bundle/
 
+# Node modules
+node_modules/
+package-lock.json
+
 # OS noise
 .DS_Store
 Thumbs.db
