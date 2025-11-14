@@ -6,14 +6,13 @@ description: Reviews from South Jersey general contractors, remodelers, and home
 body_class: page-reviews
 hide_hero: true
 ---
-
 <section class="page-reviews" aria-labelledby="reviews-h1">
   <header class="reviews-header">
     <div class="container">
       <h1 id="reviews-h1">Client Testimonials</h1>
       <p class="lead">
-        Feedback from South Jersey homeowners, landlords, and general contractors who count on
-        Tillerstead for dependable maintenance, remodeling support, and tile work done the right way.
+        Feedback from South Jersey homeowners and remodel clients who trusted Tillerstead with tile work,
+        drywall repairs, and small remodel scopes.
       </p>
     </div>
   </header>
@@ -26,8 +25,8 @@ hide_hero: true
           <p class="review-body">“{{ review.text }}”</p>
           <p class="review-meta">
             <span class="review-name">{{ review.name }}</span>
-            {% if review.role %}&middot; <span class="review-role">{{ review.role }}</span>{% endif %}
-            {% if review.location %}&middot; <span class="review-location">{{ review.location }}</span>{% endif %}
+            {% if review.project %}&middot; <span class="review-project">{{ review.project }}</span>{% endif %}
+            {% if review.source %}&middot; <span class="review-source">{{ review.source }}</span>{% endif %}
           </p>
         </article>
         {% endfor %}
@@ -38,8 +37,15 @@ hide_hero: true
   <section class="review-cta" aria-label="Share your experience">
     <div class="container">
       <h2>Have We Worked Together?</h2>
-      <p>If we’ve completed tile work, repairs, or a maintenance visit at your property, your review helps others know what to expect.</p>
-      <p>Email your feedback to <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>.</p>
+      <p>
+        If we’ve completed tile work, drywall repairs, or a maintenance visit at your property,
+        your review helps future clients understand what to expect.
+      </p>
+      <p>
+        You can share feedback by emailing
+        <a href="mailto:{% raw %}{{ site.company.email }}{% endraw %}">{% raw %}{{ site.company.email }}{% endraw %}</a>
+        or replying to your invoice link.
+      </p>
     </div>
   </section>
 </section>
