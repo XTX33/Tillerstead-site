@@ -626,18 +626,23 @@ body.nav-open {
   overflow: hidden;
   border: 1px solid rgba(148, 163, 184, 0.18);
   box-shadow: var(--ts-shadow-lift);
+  z-index: 0;
 }
 
-.hero-pattern {
+.hero-surface::before {
+  content: "";
   position: absolute;
-  inset: -60px -60px auto -60px;
+  inset: -48px;
   background-image:
-    linear-gradient(to right, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
-    radial-gradient(circle at 85% 25%, rgba(26, 200, 122, 0.35), transparent 60%);
-  background-size: 36px 36px, 36px 36px, 520px 520px;
-  opacity: 0.35;
+    url("../img/patterns/sacred-tile.svg"),
+    radial-gradient(circle at 85% 25%, rgba(26, 200, 122, 0.32), transparent 62%);
+  background-repeat: repeat, no-repeat;
+  background-size: 120px 120px, 520px 520px;
+  background-position: top left, 85% 25%;
+  opacity: 0.18;
   pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
 }
 
 .hero-inner {
@@ -718,6 +723,11 @@ body.nav-open {
 }
 
 @media (min-width: 880px) {
+  .hero-surface::before {
+    background-size: 168px 168px, 640px 640px;
+    opacity: 0.22;
+  }
+
   .hero-inner {
     grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   }
