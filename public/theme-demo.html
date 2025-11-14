@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tillerstead Theme Demo - Design Tokens Showcase</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <style>
+    /* Demo-specific styles */
+    .demo-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .demo-section {
+      margin-bottom: 4rem;
+      padding: 2rem;
+      background: var(--color-surface-elevated);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+    }
+
+    .demo-section h2 {
+      margin-top: 0;
+      color: var(--color-primary);
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .token-item {
+      padding: 1.25rem;
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+
+    .token-name {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+      word-break: break-all;
+    }
+
+    .token-value {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .color-swatch {
+      width: 100%;
+      height: 60px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      margin-bottom: 0.5rem;
+    }
+
+    .gradient-swatch {
+      width: 100%;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      margin-bottom: 0.5rem;
+    }
+
+    .text-sample {
+      padding: 1rem;
+      background: var(--color-surface);
+      border-radius: var(--radius-sm);
+    }
+
+    .spacing-demo {
+      display: inline-block;
+      background: var(--color-primary-soft);
+      border: 1px dashed var(--color-primary);
+    }
+
+    .shadow-box {
+      padding: 1.5rem;
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+
+    .radius-demo {
+      width: 100%;
+      height: 80px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #022c1a;
+      font-weight: 600;
+    }
+
+    .utility-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .utility-example {
+      padding: 0.75rem 1.25rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-primary);
+      color: #022c1a;
+      text-decoration: none;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      transition: transform var(--transition-fast);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-shell">
+    <a href="../index.html" class="back-link">← Back to Site</a>
+    
+    <h1 style="font-size: var(--heading-1); margin-bottom: 0.5rem;">Tillerstead Theme Demo</h1>
+    <p style="color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: 3rem;">
+      Complete showcase of all design tokens and utility classes. Change any token value and see it reflected throughout the site.
+    </p>
+
+    <!-- Color Tokens -->
+    <section class="demo-section">
+      <h2>Color Tokens</h2>
+      
+      <h3 style="margin-top: 1.5rem;">Brand Colors</h3>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="color-swatch" style="background: var(--color-primary);"></div>
+          <div class="token-name">--color-primary</div>
+          <div class="token-value">#1ac87a</div>
+          <div class="text-sample" style="color: var(--color-primary);">Sample Text</div>
+        </div>
+        <div class="token-item">
+          <div class="color-swatch" style="background: var(--color-primary-strong);"></div>
+          <div class="token-name">--color-primary-strong</div>
+          <div class="token-value">#0fa868</div>
+          <div class="text-sample" style="color: var(--color-primary-strong);">Sample Text</div>
+        </div>
+        <div class="token-item">
+          <div class="color-swatch" style="background: var(--color-primary-soft);"></div>
+          <div class="token-name">--color-primary-soft</div>
+          <div class="token-value">rgba(26, 200, 122, 0.16)</div>
+        </div>
+        <div class="token-item">
+          <div class="color-swatch" style="background: var(--color-accent);"></div>
+          <div class="token-name">--color-accent</div>
+          <div class="token-value">#d8b25a</div>
+          <div class="text-sample" style="color: var(--color-accent);">Sample Text</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Surface Colors</h3>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="color-swatch" style="background: var(--color-bg);"></div>
+          <div class="token-name">--color-bg</div>
+          <div class="token-value">#020617</div>
+        </div>
+        <div class="token-item">
+          <div class="color-swatch" style="background: var(--color-surface);"></div>
+          <div class="token-name">--color-surface</div>
+          <div class="token-value">#0b1224</div>
+        </div>
+        <div class="token-item">
+          <div class="color-swatch" style="background: var(--color-surface-elevated);"></div>
+          <div class="token-name">--color-surface-elevated</div>
+          <div class="token-value">#111c33</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Text Colors</h3>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="token-name">--color-heading</div>
+          <div class="text-sample" style="color: var(--color-heading); font-size: 1.5rem; font-weight: 700;">
+            Heading Sample
+          </div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--color-text</div>
+          <div class="text-sample" style="color: var(--color-text);">
+            Body text sample
+          </div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--color-text-muted</div>
+          <div class="text-sample" style="color: var(--color-text-muted);">
+            Muted text sample
+          </div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--color-text-subtle</div>
+          <div class="text-sample" style="color: var(--color-text-subtle);">
+            Subtle text sample
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gradient Tokens -->
+    <section class="demo-section">
+      <h2>Gradient Tokens</h2>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="gradient-swatch" style="background: var(--gradient-primary);"></div>
+          <div class="token-name">--gradient-primary</div>
+          <div class="token-value">Brand primary gradient</div>
+        </div>
+        <div class="token-item">
+          <div class="gradient-swatch" style="background: var(--gradient-accent);"></div>
+          <div class="token-name">--gradient-accent</div>
+          <div class="token-value">Accent gradient</div>
+        </div>
+        <div class="token-item">
+          <div class="gradient-swatch" style="background: var(--gradient-surface);"></div>
+          <div class="token-name">--gradient-surface</div>
+          <div class="token-value">Surface gradient</div>
+        </div>
+        <div class="token-item">
+          <div class="gradient-swatch" style="background: var(--gradient-section);"></div>
+          <div class="token-name">--gradient-section</div>
+          <div class="token-value">Section gradient</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Tokens -->
+    <section class="demo-section">
+      <h2>Typography Tokens</h2>
+      
+      <h3 style="margin-top: 1.5rem;">Font Families</h3>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="token-name">--font-sans</div>
+          <div class="text-sample" style="font-family: var(--font-sans); font-size: 1.125rem;">
+            The quick brown fox jumps over the lazy dog
+          </div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--font-mono</div>
+          <div class="text-sample" style="font-family: var(--font-mono); font-size: 1rem;">
+            code { display: block; }
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Heading Sizes</h3>
+      <div style="margin-top: 1.5rem;">
+        <div style="margin-bottom: 2rem;">
+          <div class="token-name">--heading-1</div>
+          <h1 style="font-size: var(--heading-1); margin: 0.5rem 0;">Heading Level 1</h1>
+        </div>
+        <div style="margin-bottom: 2rem;">
+          <div class="token-name">--heading-2</div>
+          <h2 style="font-size: var(--heading-2); margin: 0.5rem 0;">Heading Level 2</h2>
+        </div>
+        <div style="margin-bottom: 2rem;">
+          <div class="token-name">--heading-3</div>
+          <h3 style="font-size: var(--heading-3); margin: 0.5rem 0;">Heading Level 3</h3>
+        </div>
+        <div style="margin-bottom: 2rem;">
+          <div class="token-name">--heading-4</div>
+          <h4 style="font-size: var(--heading-4); margin: 0.5rem 0;">Heading Level 4</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing Tokens -->
+    <section class="demo-section">
+      <h2>Spacing Scale</h2>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="token-name">--space-1</div>
+          <div class="spacing-demo" style="width: var(--space-1); height: var(--space-1);"></div>
+          <div class="token-value">0.25rem (4px)</div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--space-2</div>
+          <div class="spacing-demo" style="width: var(--space-2); height: var(--space-2);"></div>
+          <div class="token-value">0.5rem (8px)</div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--space-3</div>
+          <div class="spacing-demo" style="width: var(--space-3); height: var(--space-3);"></div>
+          <div class="token-value">0.75rem (12px)</div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--space-4</div>
+          <div class="spacing-demo" style="width: var(--space-4); height: var(--space-4);"></div>
+          <div class="token-value">1rem (16px)</div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--space-5</div>
+          <div class="spacing-demo" style="width: var(--space-5); height: var(--space-5);"></div>
+          <div class="token-value">1.5rem (24px)</div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--space-6</div>
+          <div class="spacing-demo" style="width: var(--space-6); height: var(--space-6);"></div>
+          <div class="token-value">2rem (32px)</div>
+        </div>
+        <div class="token-item">
+          <div class="token-name">--space-8</div>
+          <div class="spacing-demo" style="width: var(--space-8); height: var(--space-8);"></div>
+          <div class="token-value">3rem (48px)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Border Radius Tokens -->
+    <section class="demo-section">
+      <h2>Border Radius</h2>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="radius-demo" style="border-radius: var(--radius-sm);">--radius-sm</div>
+          <div class="token-value" style="margin-top: 0.5rem;">0.5rem</div>
+        </div>
+        <div class="token-item">
+          <div class="radius-demo" style="border-radius: var(--radius-md);">--radius-md</div>
+          <div class="token-value" style="margin-top: 0.5rem;">0.75rem</div>
+        </div>
+        <div class="token-item">
+          <div class="radius-demo" style="border-radius: var(--radius-lg);">--radius-lg</div>
+          <div class="token-value" style="margin-top: 0.5rem;">1.25rem</div>
+        </div>
+        <div class="token-item">
+          <div class="radius-demo" style="border-radius: var(--radius-xl);">--radius-xl</div>
+          <div class="token-value" style="margin-top: 0.5rem;">1.75rem</div>
+        </div>
+        <div class="token-item">
+          <div class="radius-demo" style="border-radius: var(--radius-pill);">--radius-pill</div>
+          <div class="token-value" style="margin-top: 0.5rem;">999px</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shadow Tokens -->
+    <section class="demo-section">
+      <h2>Shadow Tokens</h2>
+      <div class="token-grid">
+        <div class="token-item">
+          <div class="shadow-box" style="box-shadow: var(--shadow-soft);">
+            --shadow-soft
+          </div>
+        </div>
+        <div class="token-item">
+          <div class="shadow-box" style="box-shadow: var(--shadow-lift);">
+            --shadow-lift
+          </div>
+        </div>
+        <div class="token-item">
+          <div class="shadow-box" style="box-shadow: var(--shadow-sharp);">
+            --shadow-sharp
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Utility Classes -->
+    <section class="demo-section">
+      <h2>Utility Classes</h2>
+      
+      <h3 style="margin-top: 1.5rem;">Typography Utilities</h3>
+      <div class="utility-showcase">
+        <div class="utility-example text-primary">.text-primary</div>
+        <div class="utility-example text-accent">.text-accent</div>
+        <div class="utility-example text-muted">.text-muted</div>
+        <div class="utility-example text-subtle">.text-subtle</div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Background Utilities</h3>
+      <div class="utility-showcase">
+        <div class="utility-example bg-primary" style="color: #022c1a;">.bg-primary</div>
+        <div class="utility-example bg-accent" style="color: #1b1504;">.bg-accent</div>
+        <div class="utility-example bg-gradient" style="color: #022c1a;">.bg-gradient</div>
+        <div class="utility-example bg-gradient-accent" style="color: #1b1504;">.bg-gradient-accent</div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Border Radius Utilities</h3>
+      <div class="utility-showcase">
+        <div class="utility-example rounded-sm">.rounded-sm</div>
+        <div class="utility-example rounded-md">.rounded-md</div>
+        <div class="utility-example rounded-lg">.rounded-lg</div>
+        <div class="utility-example rounded-xl">.rounded-xl</div>
+        <div class="utility-example rounded-pill">.rounded-pill</div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Shadow Utilities</h3>
+      <div class="utility-showcase">
+        <div class="utility-example shadow-soft">.shadow-soft</div>
+        <div class="utility-example shadow-lift">.shadow-lift</div>
+        <div class="utility-example shadow-sharp">.shadow-sharp</div>
+      </div>
+    </section>
+
+    <!-- Button Examples -->
+    <section class="demo-section">
+      <h2>Button Components</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+        <button class="btn">Primary Button</button>
+        <button class="btn btn-ghost">Ghost Button</button>
+        <button class="btn btn-outline">Outline Button</button>
+      </div>
+    </section>
+
+    <!-- Instructions -->
+    <section class="demo-section" style="background: var(--gradient-surface-alt);">
+      <h2>How to Use These Tokens</h2>
+      <div style="color: var(--color-text-muted); line-height: 1.7;">
+        <p><strong>To change a token value:</strong></p>
+        <ol>
+          <li>Open <code style="color: var(--color-accent);">src/styles/tokens.css</code></li>
+          <li>Find the token you want to modify (e.g., <code style="color: var(--color-accent);">--color-primary</code>)</li>
+          <li>Update its value</li>
+          <li>Save the file and refresh your browser</li>
+        </ol>
+        <p style="margin-top: 1.5rem;"><strong>Example:</strong></p>
+        <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--radius-sm); overflow-x: auto; color: var(--color-text);"><code>/* Change primary color from green to blue */
+--color-primary: #3b82f6;  /* was #1ac87a */</code></pre>
+        <p style="margin-top: 1.5rem;">All instances throughout the site will automatically update!</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
