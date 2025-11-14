@@ -19,7 +19,7 @@ hero_kpis:
 ---
 
 <section class="container prose pad" aria-labelledby="terms-heading">
-  <h1 id="terms-heading">Terms &amp; Conditions</h1>
+  <h2 id="terms-heading">Terms &amp; Conditions</h2>
   <p><strong>Last updated:</strong> November 2025</p>
 
   <h2>1. General Terms</h2>
