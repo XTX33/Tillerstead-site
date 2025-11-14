@@ -1,390 +1,163 @@
 /* ============================================
-   Tillerstead – Components & Sections (style.css)
-   Reusable marketing blocks:
-   - Highlight banners
-   - Process steps
-   - FAQs
-   - Testimonials
-   - Contact / estimate panel
-   Relies on tokens + layout from theme.css
+   Tillerstead — Shared Components (style.css)
+   Supplements theme.css with reusable modules
    ============================================ */
 
-/* 1) Highlight banner
-   ------------------------------------------- */
-
-.section-banner {
-  padding: 2rem 0;
-  border-top: 1px solid rgba(15, 23, 42, 0.95);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.95);
-  background: #0f172a;
+/* Utility helpers */
+.center {
+  text-align: center;
 }
 
-.section-banner-inner {
-  max-width: var(--ts-shell-width);
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.mt-2 {
+  margin-top: var(--ts-space-5) !important;
 }
 
-@media (min-width: 768px) {
-  .section-banner-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.section-banner-text {
-  max-width: 34rem;
-}
-
-.section-banner-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #e5e7eb;
-  margin-bottom: 0.25rem;
-}
-
-.section-banner-subtitle {
-  font-size: 0.9rem;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
-}
-
-.section-banner-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-/* 2) Process steps
-   ------------------------------------------- */
-
-.process {
-  padding: 3rem 0;
-}
-
-.process-inner {
-  max-width: var(--ts-shell-width);
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-}
-
-.process-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 900px) {
-  .process-grid {
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-    align-items: flex-start;
-  }
-}
-
-.process-steps {
-  display: grid;
-  gap: 1rem;
-}
-
-.process-step {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.75rem 1rem;
-  align-items: flex-start;
-  padding: 0.9rem 1rem;
-  border-radius: var(--ts-radius-md);
-  background: #0f172a;
-  border: 1px solid rgba(30, 64, 175, 0.9);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
-  color: #e5e7eb;
-}
-
-.process-step-index {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  border: 1px solid rgba(96, 165, 250, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  color: #bfdbfe;
-  font-weight: 600;
-  margin-top: 0.2rem;
-}
-
-.process-step-body h3 {
-  font-size: 0.98rem;
-  margin-bottom: 0.2rem;
-  color: #22c55e;
-}
-
-.process-step-body p {
-  font-size: 0.88rem;
-}
-
-/* 3) FAQ
-   ------------------------------------------- */
-
-.faq {
-  padding: 3rem 0;
-}
-
-.faq-inner {
-  max-width: var(--ts-shell-width);
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-}
-
-.faq-grid {
-  display: grid;
-  gap: 2rem;
-}
-
-@media (min-width: 900px) {
-  .faq-grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-    align-items: flex-start;
-  }
-}
-
-.faq-list {
+.unstyled {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 1rem;
 }
 
-.faq-item {
-  border-radius: var(--ts-radius-md);
-  border: 1px solid rgba(30, 64, 175, 0.95);
-  background: #0f172a;
-  padding: 1rem 1.1rem;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
-  color: #e5e7eb;
-}
-
-.faq-question {
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: #e5e7eb;
-  margin-bottom: 0.35rem;
-}
-
-.faq-answer {
-  font-size: 0.88rem;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
-}
-
-/* 4) Testimonials
-   ------------------------------------------- */
-
-.testimonial-strip {
-  padding: 3rem 0;
-  border-top: 1px solid rgba(15, 23, 42, 0.95);
-}
-
-.testimonial-inner {
-  max-width: var(--ts-shell-width);
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-}
-
-.testimonial-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 900px) {
-  .testimonial-grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    align-items: center;
-  }
-}
-
-.testimonial-card {
-  border-radius: var(--ts-radius-lg);
-  border: 1px solid rgba(30, 64, 175, 0.9);
-  background: #0f172a;
-  padding: 1.4rem 1.5rem;
-  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
-  position: relative;
-  color: #e5e7eb;
-}
-
-.testimonial-quote {
-  font-size: 0.95rem;
-  color: #f1f5f9; /* Improved contrast - was rgba(226, 232, 240, 0.96) */
-  margin-bottom: 0.75rem;
-}
-
-.testimonial-meta {
-  font-size: 0.82rem;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
-}
-
-.testimonial-meta strong {
-  color: #e5e7eb;
-}
-
-/* 5) Contact / estimate panel
-   ------------------------------------------- */
-
-.estimate-panel {
-  padding: 3rem 0;
-}
-
-.estimate-inner {
-  max-width: var(--ts-shell-width);
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-}
-
-.estimate-card {
-  border-radius: var(--ts-radius-lg);
-  background: #0f172a;
-  border: 1px solid rgba(34, 197, 94, 0.6);
-  box-shadow: 0 24px 60px rgba(22, 163, 74, 0.55);
-  padding: 1.5rem 1.5rem 1.4rem;
-  color: #e5e7eb;
-}
-
-@media (min-width: 840px) {
-  .estimate-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-    gap: 1.75rem;
-    align-items: flex-start;
-  }
-}
-
-.estimate-copy h2 {
-  margin-bottom: 0.4rem;
-}
-
-.estimate-copy p {
-  font-size: 0.9rem;
-  color: #f1f5f9; /* Improved contrast - was rgba(226, 232, 240, 0.96) */
-}
-
-.estimate-copy .meta {
-  font-size: 0.8rem;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
-  margin-top: 0.35rem;
-}
-
-.estimate-form {
-  display: grid;
-  gap: 0.75rem;
-}
-
-/* Small two-column grid for short fields */
-.estimate-form-row {
-  display: grid;
-  gap: 0.6rem;
-}
-
-@media (min-width: 640px) {
-  .estimate-form-row--split {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.estimate-form label {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 500;
-  margin-bottom: 0.2rem;
-  color: #e2e8f0; /* Improved contrast - was rgba(203, 213, 225, 0.96) */
-}
-
-/* Use inputs from theme.css; only adjust spacing here */
-.estimate-form input,
-.estimate-form textarea,
-.estimate-form select {
-  font-size: 0.85rem;
-}
-
-/* 6) Simple “service tiles” layout
-   ------------------------------------------- */
-
-.service-tiles {
-  padding: 3rem 0;
-}
-
-.service-tiles-inner {
-  max-width: var(--ts-shell-width);
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-}
-
-.service-tiles-grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .service-tiles-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.service-tile {
-  border-radius: var(--ts-radius-lg);
-  background: #0f172a;
-  border: 1px solid rgba(30, 64, 175, 0.9);
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
-  padding: 1.1rem 1.1rem;
-  color: #e5e7eb;
-}
-
-.service-tile h3 {
-  font-size: 0.98rem;
-  margin-bottom: 0.25rem;
-  color: #22c55e;
-}
-
-.service-tile p {
-  font-size: 0.86rem;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.98) */
-}
-
-.service-tile-meta {
-  margin-top: 0.5rem;
-  font-size: 0.78rem;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
-}
-
-/* 7) Small helpers tied to these components
-   ------------------------------------------- */
-
-.text-label {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.95) */
-}
-
-.text-kicker {
-  font-size: 0.85rem;
-  color: #cbd5e1; /* Improved contrast - was rgba(148, 163, 184, 0.96) */
-}
-
-.chip-row {
+.btn-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
+  gap: var(--ts-space-3);
+  align-items: center;
 }
 
-.chip {
-  border-radius: 999px;
-  padding: 0.2rem 0.6rem;
-  font-size: 0.75rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  color: #e5e7eb; /* Improved contrast - was rgba(209, 213, 219, 0.96) */
-  background: rgba(15, 23, 42, 0.95);
+.microcopy {
+  font-size: 0.9rem;
+  color: var(--ts-text-subtle);
+}
+
+/* Card stacks */
+.cards {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.card {
+  border-radius: var(--ts-radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: linear-gradient(160deg, rgba(11, 18, 36, 0.94), rgba(2, 6, 23, 0.9));
+  padding: clamp(1.6rem, 3vw, 2.1rem);
+  box-shadow: var(--ts-shadow-soft);
+}
+
+.stack-sm {
+  display: grid;
+  gap: var(--ts-space-3);
+}
+
+/* Blog index */
+.blog-shell {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.blog-cards {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.blog-card-title a {
+  color: var(--ts-heading);
+}
+
+.blog-card-title a:hover,
+.blog-card-title a:focus-visible {
+  color: var(--ts-primary);
+}
+
+.blog-card-meta {
+  color: var(--ts-text-subtle);
+}
+
+.blog-card-cta {
+  margin-top: auto;
+}
+
+/* Financing */
+.financing-shell {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+  max-width: var(--ts-shell-width);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+@media (min-width: 960px) {
+  .financing-shell {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+
+.financing-main {
+  display: grid;
+  gap: var(--ts-space-4);
+}
+
+.financing-side {
+  border-radius: var(--ts-radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(11, 18, 36, 0.75);
+  padding: clamp(1.6rem, 3vw, 2.1rem);
+  box-shadow: var(--ts-shadow-soft);
+  display: grid;
+  gap: var(--ts-space-3);
+}
+
+.financing-steps {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--ts-accent) 0%, #f0d080 100%);
+  color: #1b1504;
+  box-shadow: 0 18px 36px rgba(216, 178, 90, 0.4);
+}
+
+.btn-accent:hover,
+.btn-accent:focus-visible {
+  color: #1b1504;
+  box-shadow: 0 24px 48px rgba(216, 178, 90, 0.46);
+}
+
+.acorn-banners {
+  display: grid;
+  gap: var(--ts-space-3);
+}
+
+.acorn-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--ts-radius-md);
+  box-shadow: var(--ts-shadow-soft);
+}
+
+@media (min-width: 720px) {
+  .acorn-banner--horizontal {
+    display: block;
+  }
+}
+
+@media (max-width: 719px) {
+  .acorn-banner--horizontal {
+    display: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .acorn-banner--vertical {
+    display: none;
+  }
+}
+
+/* Financing disclaimer */
+.disclaimer {
+  font-size: 0.85rem;
+  color: var(--ts-text-subtle);
 }
