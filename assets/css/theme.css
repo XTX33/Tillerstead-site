@@ -1330,3 +1330,23 @@ textarea {
     transform: translateY(0);
   }
 }
+.page-reviews .reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.review-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.review-body {
+  margin: 0 0 0.75rem;
+}
+
+.review-meta {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
