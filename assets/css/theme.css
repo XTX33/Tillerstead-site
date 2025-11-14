@@ -468,23 +468,48 @@ html.light .site-header {
   margin-left: auto;
 }
 
+/* Mobile nav toggle - hidden on desktop, shown on mobile */
 .nav-toggle {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  display: none; /* Hidden by default, shown below 960px via media query */
+  align-items: center;
+  gap: 0.35rem;
   border-radius: var(--ts-radius-pill);
   border: 1px solid rgba(148, 163, 184, 0.35);
   background: transparent;
-  padding: 0.35rem;
   cursor: pointer;
-  transition: background var(--ts-transition-fast);
+  transition: background var(--ts-transition-fast), border-color var(--ts-transition-fast);
+  
+  /* Thumb-friendly tap target: at least 44×44px */
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 0.9rem;
+  
+  /* Typography */
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ts-text);
 }
 
 .nav-toggle:hover,
 .nav-toggle:focus-visible {
   background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.45);
+}
+
+/* Menu label text */
+.nav-toggle-label {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Icon container for hamburger bars */
+.nav-toggle-icon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 1.25rem;
+  height: 1rem;
 }
 
 .nav-toggle-bar {
@@ -493,10 +518,7 @@ html.light .site-header {
   height: 2px;
   background: var(--ts-heading);
   border-radius: 999px;
-}
-
-.nav-toggle-bar + .nav-toggle-bar {
-  margin-top: 0.35rem;
+  transition: transform var(--ts-transition-fast), opacity var(--ts-transition-fast);
 }
 
 .site-nav {
@@ -543,6 +565,20 @@ html.light .site-header {
 .site-menu a:focus-visible,
 .site-menu [aria-current="page"] {
   color: var(--ts-text);
+}
+
+/* Mobile breakpoint: show toggle, adjust menu layout */
+@media (max-width: 959px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Enhance mobile menu item tap targets */
+  .site-menu a {
+    padding: 0.75rem 0;
+    min-height: 44px;
+    display: flex;
+  }
 }
 
 @media (min-width: 960px) {
