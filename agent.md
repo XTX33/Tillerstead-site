@@ -8,7 +8,7 @@ Safety: No external embeds or libraries are referenced, ensuring portable docume
 title: "NJ Home-Improvement Agent"
 description: "Fast, secure, SEO-optimized contact helper"
 tags: ["home-improvement","nj","local-business"]
-date: "2025-11-14T04:11:08Z"
+date: "2025-11-14T04:40:00Z"
 ---
 
 # Tillerstead NJ Home-Improvement Contractor

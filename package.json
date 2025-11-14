@@ -1,10 +1,10 @@
-/*
-  SEO: Tooling keeps code style consistent, preventing issues that harm search engine crawlability.
-  Accessibility: Linting enforces semantic HTML and ARIA patterns flagged by recommended configs.
-  Performance: Formatter and linters ensure minimal bundle size by avoiding stray assets and whitespace.
-  Safety: Dependencies are pinned to exact versions to avoid supply-chain surprises.
-*/
 {
+  "/**": [
+    "SEO: Tooling keeps code style consistent, preventing issues that harm search engine crawlability.",
+    "Accessibility: Linting enforces semantic HTML and ARIA patterns flagged by recommended configs.",
+    "Performance: Formatter and linters ensure minimal bundle size by avoiding stray assets and whitespace.",
+    "Safety: Dependencies are pinned to exact versions to avoid supply-chain surprises."
+  ],
   "private": true,
   "scripts": {
     "lint": "eslint . && htmlhint *.html",
