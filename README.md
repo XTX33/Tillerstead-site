@@ -37,3 +37,8 @@ The custom CLI currently supports the `build` command. Use any static file serve
 If something fails inside the builder, re-run with `JEKYLL_TRACE=1 bundle exec jekyll build` to surface a full backtrace.
 
 > **Heads-up:** This lightweight builder implements the Liquid features and Markdown coverage used across the site. If you introduce new Liquid tags or filters, add support inside `vendor/gems/jekyll/lib/jekyll/liquid_engine.rb` before expecting the build to pass.
+
+---
+
+## 🎨 Design assets
+- `assets/img/patterns/sacred-tile.svg` — geometric tile used for the hero surface texture. Adjust scale and opacity via the `.hero-surface::before` rule in `assets/css/theme.css`.
