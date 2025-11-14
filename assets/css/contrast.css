@@ -1,0 +1,101 @@
+/* ============================================
+   Tillerstead — High-Visibility Contrast System
+   Automatic text color adjustment for WCAG AAA compliance
+   ============================================ */
+
+:root {
+  /* Default WCAG AAA target ratio (7:1) for high visibility */
+  --contrast-target: 7;
+}
+
+/* 
+   Main contrast utility class
+   Uses color-mix() to blend between black/white poles
+   Variables are set dynamically by contrast.js:
+   - --mix-pole: "black" or "white"
+   - --mix-perc: percentage (0-100)
+*/
+.c-contrast {
+  color: color-mix(
+    in srgb,
+    var(--mix-pole, black) var(--mix-perc, 100%),
+    transparent
+  );
+}
+
+/* 
+   Discrete fallback levels for browsers without color-mix() support
+   or for manual override without JavaScript
+*/
+.c-lvl-1 {
+  color: rgba(0, 0, 0, 0.1);
+}
+.c-lvl-2 {
+  color: rgba(0, 0, 0, 0.2);
+}
+.c-lvl-3 {
+  color: rgba(0, 0, 0, 0.35);
+}
+.c-lvl-4 {
+  color: rgba(0, 0, 0, 0.5);
+}
+.c-lvl-5 {
+  color: rgba(0, 0, 0, 0.65);
+}
+.c-lvl-6 {
+  color: rgba(0, 0, 0, 0.8);
+}
+.c-lvl-7 {
+  color: rgba(0, 0, 0, 0.9);
+}
+.c-lvl-8 {
+  color: rgba(0, 0, 0, 0.95);
+}
+.c-lvl-9 {
+  color: rgba(0, 0, 0, 0.98);
+}
+.c-lvl-10 {
+  color: rgba(0, 0, 0, 1);
+}
+
+/* Support for light backgrounds */
+.c-contrast.c-light .c-lvl-1,
+.c-light .c-contrast.c-lvl-1 {
+  color: rgba(255, 255, 255, 0.1);
+}
+.c-contrast.c-light .c-lvl-2,
+.c-light .c-contrast.c-lvl-2 {
+  color: rgba(255, 255, 255, 0.2);
+}
+.c-contrast.c-light .c-lvl-3,
+.c-light .c-contrast.c-lvl-3 {
+  color: rgba(255, 255, 255, 0.35);
+}
+.c-contrast.c-light .c-lvl-4,
+.c-light .c-contrast.c-lvl-4 {
+  color: rgba(255, 255, 255, 0.5);
+}
+.c-contrast.c-light .c-lvl-5,
+.c-light .c-contrast.c-lvl-5 {
+  color: rgba(255, 255, 255, 0.65);
+}
+.c-contrast.c-light .c-lvl-6,
+.c-light .c-contrast.c-lvl-6 {
+  color: rgba(255, 255, 255, 0.8);
+}
+.c-contrast.c-light .c-lvl-7,
+.c-light .c-contrast.c-lvl-7 {
+  color: rgba(255, 255, 255, 0.9);
+}
+.c-contrast.c-light .c-lvl-8,
+.c-light .c-contrast.c-lvl-8 {
+  color: rgba(255, 255, 255, 0.95);
+}
+.c-contrast.c-light .c-lvl-9,
+.c-light .c-contrast.c-lvl-9 {
+  color: rgba(255, 255, 255, 0.98);
+}
+.c-contrast.c-light .c-lvl-10,
+.c-light .c-contrast.c-lvl-10 {
+  color: rgba(255, 255, 255, 1);
+}
