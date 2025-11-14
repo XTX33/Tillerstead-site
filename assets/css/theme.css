@@ -1461,6 +1461,13 @@ textarea {
 .breadcrumbs-list [aria-current="page"] {
   color: var(--ts-text);
   font-weight: 500;
+  pointer-events: none;
+}
+
+/* Prevent hover/focus color change for current page link */
+.breadcrumbs-list [aria-current="page"]:hover,
+.breadcrumbs-list [aria-current="page"]:focus-visible {
+  color: var(--ts-text);
 }
 .page-reviews .reviews-grid {
   display: grid;
