@@ -49,7 +49,7 @@
   function parseRGB(color) {
     const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
     if (!match) return [0, 0, 0];
-    return [parseInt(match[1]), parseInt(match[2]), parseInt(match[3])];
+    return [parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10)];
   }
 
   /**
