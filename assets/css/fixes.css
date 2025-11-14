@@ -396,6 +396,7 @@ body.page-home .section--process li {
 *:focus-visible {
   outline: 2px solid var(--ts-emerald);
   outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Smooth transitions on interactive elements */
@@ -417,6 +418,26 @@ body.page-home .section--process li {
     transform: translateY(-2px);
     box-shadow: var(--shadow-2xl);
   }
+  
+  /* Hero fade in on page load */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-main {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .hero-kpis {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
 }
 
 /* ==================================================
@@ -435,4 +456,212 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ==================================================
+   12. FORM ELEMENTS - CONSISTENT STYLING
+   ================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--ts-border);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--ts-text-secondary);
+  font-family: inherit;
+  font-size: var(--text-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--ts-emerald);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--ts-text-subtle);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ts-text-secondary);
+}
+
+/* ==================================================
+   13. UTILITY CLASSES
+   ================================================== */
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Text alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Display utilities */
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.hidden { display: none; }
+
+/* Flexbox utilities */
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+
+/* Gap utilities */
+.gap-xs { gap: var(--space-xs); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* Margin utilities */
+.mt-0 { margin-top: 0; }
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+/* Padding utilities */
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+
+/* ==================================================
+   14. RESPONSIVE BREAKPOINTS
+   ================================================== */
+
+/* Mobile-first responsive utilities */
+
+/* Tablet and up (768px+) */
+@media (min-width: 768px) {
+  .container,
+  .ts-section-inner {
+    padding-inline: var(--space-xl);
+  }
+  
+  /* Show on tablet+ only */
+  .hidden-mobile {
+    display: block;
+  }
+}
+
+/* Desktop and up (1024px+) */
+@media (min-width: 1024px) {
+  .section,
+  .ts-section {
+    padding-block: var(--space-3xl);
+  }
+}
+
+/* Mobile only (< 768px) */
+@media (max-width: 767px) {
+  /* Hide on mobile */
+  .hidden-mobile {
+    display: none;
+  }
+  
+  /* Smaller text on mobile */
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Stack buttons vertically on mobile */
+  .hero-actions,
+  .btn-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-actions .btn,
+  .btn-row .btn {
+    width: 100%;
+  }
+}
+
+/* ==================================================
+   15. PRINT STYLES
+   ================================================== */
+
+@media print {
+  /* Hide navigation and non-essential elements */
+  .site-header,
+  .site-nav,
+  .site-footer,
+  .hero-actions,
+  button,
+  .btn {
+    display: none !important;
+  }
+  
+  /* Ensure good contrast for printing */
+  body {
+    background: white;
+    color: black;
+  }
+  
+  /* Remove shadows and effects */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Ensure links are visible */
+  a {
+    text-decoration: underline;
+  }
+  
+  /* Page breaks */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  img {
+    page-break-inside: avoid;
+  }
 }
