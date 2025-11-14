@@ -1,0 +1,322 @@
+<!--
+  SEO: Structured data and semantic landmarks ensure search engines understand the contractor's services and location.
+  Accessibility: ARIA roles, descriptive labels, and strong colour contrast (#111 on #fff) support inclusive browsing.
+  Performance: Inline CSS, async JavaScript loading, and Service Worker registration reduce render-blocking resources.
+  Safety: No external libraries are loaded and all npm dependencies are pinned to exact versions.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata ensures character encoding and responsive behaviour for SEO and usability -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tillerstead NJ Home-Improvement Contractor</title>
+    <!-- Canonical link clarifies preferred URL for search engines -->
+    <link rel="canonical" href="https://www.tillerstead.com/nj-home-improvement" />
+    <style>
+      /* Base typography improves readability and maintains WCAG contrast */
+      :root {
+        color: #111;
+        background-color: #fff;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        line-height: 1.6;
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto 1fr auto auto;
+      }
+
+      header,
+      nav,
+      main,
+      aside,
+      footer {
+        padding: 1.5rem;
+      }
+
+      header {
+        background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+      }
+
+      nav {
+        background-color: #ffffff;
+        border-block-end: 1px solid #e0e0e0;
+      }
+
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav a {
+        color: #111;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      nav a:focus,
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .hero {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .services {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .service-list {
+        display: grid;
+        gap: 0.75rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 1rem;
+        max-width: 420px;
+      }
+
+      .contact-form label {
+        font-weight: 600;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 0.75rem;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        font: inherit;
+      }
+
+      .contact-form button {
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: 4px;
+        background-color: #111;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .contact-form button:focus,
+      .contact-form button:hover {
+        background-color: #333;
+      }
+
+      .form-feedback {
+        font-size: 0.875rem;
+        min-height: 1.25rem;
+      }
+
+      aside {
+        background-color: #fafafa;
+        border-block-start: 1px solid #e0e0e0;
+      }
+
+      footer {
+        background-color: #111;
+        color: #fff;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        body {
+          grid-template-columns: 3fr 1fr;
+          grid-template-rows: auto auto 1fr auto;
+        }
+
+        main {
+          grid-column: 1 / 2;
+        }
+
+        aside {
+          grid-column: 2 / 3;
+          grid-row: 3 / 4;
+        }
+
+        footer {
+          grid-column: 1 / -1;
+        }
+      }
+    </style>
+    <!-- Structured data informs search engines about business details -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "HomeAndConstructionBusiness",
+            "name": "Tillerstead Home Improvement",
+            "image": "https://www.tillerstead.com/assets/nj-contractor.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "125 Builder Lane",
+              "addressLocality": "Trenton",
+              "addressRegion": "NJ",
+              "postalCode": "08608",
+              "addressCountry": "US"
+            },
+            "telephone": "+1-609-555-0114",
+            "openingHours": "Mo-Fr 08:00-18:00",
+            "priceRange": "$$",
+            "serviceArea": {
+              "@type": "AdministrativeArea",
+              "name": "New Jersey"
+            },
+            "url": "https://www.tillerstead.com/nj-home-improvement",
+            "sameAs": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.tillerstead.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://www.tillerstead.com/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "NJ Home Improvement",
+                "item": "https://www.tillerstead.com/nj-home-improvement"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header introduces brand and location for local SEO -->
+    <header role="banner">
+      <h1>Tillerstead NJ Home-Improvement Contractor</h1>
+      <p>Licensed, insured, and on-call for New Jersey homes since 1998.</p>
+    </header>
+
+    <!-- Navigation uses ARIA role for assistive tech -->
+    <nav aria-label="Primary" role="navigation">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content outlines services and differentiators -->
+    <main id="main" role="main">
+      <section id="services" class="services" aria-labelledby="services-title">
+        <!-- Heading signals service list for SEO and screen readers -->
+        <h2 id="services-title">Kitchen, Bath, and Exterior Upgrades</h2>
+        <p>
+          Our team renovates kitchens, transforms bathrooms, and refreshes siding with
+          weather-ready materials for the Garden State.
+        </p>
+        <!-- Service bullets summarise offerings for quick scanning -->
+        <ul class="service-list">
+          <li>Custom cabinetry installation and countertop fabrication</li>
+          <li>Energy-efficient window replacement and insulation upgrades</li>
+          <li>Deck building compliant with New Jersey code</li>
+        </ul>
+      </section>
+
+      <section id="process" class="hero" aria-labelledby="process-title">
+        <!-- Heading explains process transparency -->
+        <h2 id="process-title">Transparent Process, Permits Included</h2>
+        <p>
+          We handle permit paperwork, material sourcing, and post-project inspections so
+          you can focus on enjoying your upgraded space.
+        </p>
+        <p>
+          Expect a dedicated project manager, licensed trades, and photo updates shared at
+          every milestone.
+        </p>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <!-- Form encourages conversions and captures leads -->
+        <h2 id="contact-title">Schedule Your Free Consultation</h2>
+        <form class="contact-form" data-agent-form>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required aria-required="true" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required aria-required="true" />
+
+          <label for="project">Project Details</label>
+          <textarea
+            id="project"
+            name="project"
+            rows="4"
+            required
+            aria-required="true"
+          ></textarea>
+
+          <button type="submit">Request Consultation</button>
+          <!-- Status message provides live feedback for screen readers -->
+          <p class="form-feedback" data-agent-feedback role="status" aria-live="polite"></p>
+        </form>
+        <p>
+          Prefer a call? Reach us at <a href="tel:+16095550114">(609) 555-0114</a> Monday
+          through Friday, 8&nbsp;AM to 6&nbsp;PM.
+        </p>
+      </section>
+    </main>
+
+    <!-- Aside reinforces trust signals and compliance -->
+    <aside id="credentials" aria-labelledby="credentials-title" role="complementary">
+      <h2 id="credentials-title">Credentials &amp; Coverage</h2>
+      <p>NJ HIC License: 13VH01234500 · Fully insured and bonded for residential projects.</p>
+      <p>Serving Mercer, Middlesex, and Monmouth Counties with rapid onsite assessments.</p>
+    </aside>
+
+    <!-- Footer provides contact citations and copyright -->
+    <footer role="contentinfo">
+      <small>&copy; <span id="year"></span> Tillerstead Home Improvement. All rights reserved.</small>
+    </footer>
+
+    <!-- Async script defers logic for faster paint -->
+    <script async src="./agent.js"></script>
+    <!-- Inline helper triggers agent initialization once DOM is ready -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.NJContractorAgent) {
+          window.NJContractorAgent.init();
+        }
+      });
+      window.addEventListener("load", () => {
+        if (window.NJContractorAgent && "serviceWorker" in navigator) {
+          window.NJContractorAgent.registerSW();
+        }
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
