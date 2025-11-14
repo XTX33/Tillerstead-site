@@ -1,8 +1,14 @@
 {%- comment -%}
   Global and per-page scripts
+  - contrast.js: global auto-contrast engine (theme-aware)
   - main.js: site-wide behaviors (nav, small interactions)
   - page.scripts: optional array of additional script paths in front matter
 {%- endcomment -%}
+
+<script
+  defer
+  src="{{ '/assets/js/contrast.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+</script>
 
 <script
   defer
