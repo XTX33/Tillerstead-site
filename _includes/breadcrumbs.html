@@ -44,13 +44,9 @@
         <li itemprop="itemListElement"
             itemscope
             itemtype="https://schema.org/ListItem">
-          {%- if is_last -%}
-            <span itemprop="name" aria-current="page">{{ label }}</span>
-          {%- else -%}
-            <a itemprop="item" href="{{ current_path | append:'/' | relative_url }}">
-              <span itemprop="name">{{ label }}</span>
-            </a>
-          {%- endif -%}
+          <a itemprop="item" href="{{ current_path | append:'/' | relative_url }}" {%- if is_last -%} aria-current="page"{%- endif -%}>
+            <span itemprop="name">{{ label }}</span>
+          </a>
           <meta itemprop="position" content="{{ position }}">
         </li>
 
