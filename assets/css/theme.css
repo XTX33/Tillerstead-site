@@ -1411,6 +1411,64 @@ textarea {
     transform: translateY(0);
   }
 }
+
+/* ============================================
+   Breadcrumbs
+   ============================================ */
+
+.breadcrumbs {
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  max-width: var(--ts-shell-width);
+  margin-inline: auto;
+  font-size: 0.875rem;
+}
+
+.breadcrumbs-list li {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.breadcrumbs-list li:not(:last-child)::after {
+  content: "›";
+  margin-left: 0.5rem;
+  color: var(--ts-text-subtle);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.breadcrumbs-list a {
+  color: var(--ts-text-muted);
+  text-decoration: none;
+  transition: color var(--ts-transition-fast);
+}
+
+.breadcrumbs-list a:hover,
+.breadcrumbs-list a:focus-visible {
+  color: var(--ts-primary);
+}
+
+.breadcrumbs-list [aria-current="page"] {
+  color: var(--ts-text);
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* Prevent hover/focus color change for current page link */
+.breadcrumbs-list [aria-current="page"]:hover,
+.breadcrumbs-list [aria-current="page"]:focus-visible {
+  color: var(--ts-text);
+}
 .page-reviews .reviews-grid {
   display: grid;
   gap: 1.5rem;
