@@ -4,12 +4,12 @@
     {% include head.html %}
   </head>
 
-  <body class="site-body {{ page.body_class | default: '' }}">
+  <body class="site-body ts-page {{ page.body_class | default: '' }}">
     <!-- Accessibility skip link -->
     <a class="skip-link" href="#main">Skip to main content</a>
 
     {% include header.html %}
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main ts-section ts-surface" role="main">
       {%- include breadcrumbs.html -%}
       {%- unless page.hide_hero -%}
         {%- include page-hero.html -%}
