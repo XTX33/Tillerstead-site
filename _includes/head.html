@@ -86,10 +86,10 @@ otherwise fall back to global defaults from _config.yml
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Manrope:wght@500..800&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet">
 
-<!-- CSS: unified design system -->
-<link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+<!-- CSS: legacy styles first, unified theme last so it can normalize colors/contrast -->
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css'  | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/theme.css'      | relative_url }}">
 
 {% if page.styles %}
   {% for href in page.styles %}
