@@ -1429,7 +1429,7 @@ textarea {
 
 .review-meta {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--ts-text-muted);
 }
 /* assets/theme.css */
 /* ============================================================
@@ -1569,6 +1569,24 @@ body.ts-page * {
 body.ts-page .no-contrast,
 body.ts-page .no-contrast * {
   color: inherit !important;
+}
+
+/* Buttons should preserve their specific colors */
+body.ts-page .btn,
+body.ts-page button.btn {
+  color: #022c1a !important;
+}
+
+body.ts-page .btn-ghost {
+  color: var(--ts-text) !important;
+}
+
+body.ts-page .btn-outline {
+  color: var(--ts-primary) !important;
+}
+
+body.ts-page .btn-accent {
+  color: #1b1504 !important;
 }
 
 /* Backward compatibility: if you still use .c-contrast in markup,
