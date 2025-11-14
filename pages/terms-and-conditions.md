@@ -18,8 +18,8 @@ hero_kpis:
     text: "Basic analytics and contact details are used to serve you, not sold"
 ---
 
-<main class="container prose pad" aria-labelledby="terms-heading">
-  <h1 id="terms-heading">Terms &amp; Conditions</h1>
+<section class="container prose pad" aria-labelledby="terms-heading">
+  <h2 id="terms-heading">Terms &amp; Conditions</h2>
   <p><strong>Last updated:</strong> November 2025</p>
 
   <h2>1. General Terms</h2>
@@ -103,4 +103,4 @@ hero_kpis:
     <a href="mailto:info@tillerstead.com">info@tillerstead.com</a> • 
     <a href="tel:+16096659350">(609) 665-9350</a>
   </address>
-</main>
+</section>
