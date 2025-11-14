@@ -6,7 +6,7 @@ description: Reviews from South Jersey general contractors, remodelers, and home
 body_class: page-reviews
 hide_hero: true
 ---
-<section class="page-reviews" aria-labelledby="reviews-h1">
+<section class="ts-section ts-surface page-reviews" aria-labelledby="reviews-h1">
   <header class="reviews-header">
     <div class="container">
       <h1 id="reviews-h1">Client Testimonials</h1>
@@ -21,7 +21,7 @@ hide_hero: true
     <div class="container">
       <div class="reviews-grid">
         {% for review in site.data.reviews %}
-        <article class="review-card">
+        <article class="ts-card review-card">
           <p class="review-body">“{{ review.text }}”</p>
           <p class="review-meta">
             <span class="review-name">{{ review.name }}</span>

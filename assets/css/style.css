@@ -25,6 +25,11 @@
   align-items: center;
 }
 
+.btn-row.center {
+  justify-content: center;
+  margin-block: 1rem 0.5rem;
+}
+
 .microcopy {
   font-size: 0.9rem;
   color: var(--ts-text-subtle);
