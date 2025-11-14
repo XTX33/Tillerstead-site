@@ -19,16 +19,17 @@ hero_kpis:
     text: "Work done with integrity and care"
 ---
 
-<section class="about" aria-labelledby="about-heading">
-  <div class="about-intro" id="about-heading">
+<section class="ts-section ts-surface about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-intro" id="about-heading">
     <p class="lead">
       Tillerstead exists to serve homeowners, landlords, and property managers with dependable maintenance,
       ethical remodeling practice, and careful stewardship of the spaces where people live and work.
     </p>
   </div>
 
-  <div class="about-grid">
-    <article class="about-card" aria-labelledby="experience-heading">
+    <div class="about-grid">
+    <article class="ts-card about-card" aria-labelledby="experience-heading">
       <h2 id="experience-heading">Background &amp; experience</h2>
       <p>
         I'm Tyler—a licensed contractor with more than a decade of hands-on experience in property maintenance,
@@ -41,7 +42,7 @@ hero_kpis:
       </p>
     </article>
 
-    <article class="about-card" aria-labelledby="approach-heading">
+    <article class="ts-card about-card" aria-labelledby="approach-heading">
       <h2 id="approach-heading">Approach to service</h2>
       <ul>
         <li><strong>Clear scope:</strong> Written proposals with itemized pricing, materials, and timeline expectations.</li>
@@ -54,7 +55,7 @@ hero_kpis:
       </p>
     </article>
 
-    <article class="about-card" aria-labelledby="standards-heading">
+    <article class="ts-card about-card" aria-labelledby="standards-heading">
       <h2 id="standards-heading">Licensing &amp; standards</h2>
       <p>
         Tillerstead LLC is a New Jersey Home Improvement Contractor (<strong>HIC #{{ site.company.hic }}</strong>) 
@@ -68,14 +69,18 @@ hero_kpis:
     </article>
   </div>
 
-  <aside class="about-cta" aria-label="Next steps">
+  <aside class="ts-card about-cta" aria-label="Next steps">
     <p>
-      Interested in monthly property maintenance or a remodeling consultation? 
-      <a href="{{ '/contact/' | relative_url }}">Get in touch</a> or 
+      Interested in monthly property maintenance or a remodeling consultation?
+      <a href="{{ '/contact/' | relative_url }}">Get in touch</a> or
       <a href="{{ '/services/' | relative_url }}">explore our services</a>.
     </p>
     <p>
       Looking for a tile specialist you can trust with your clients? <a href="{{ '/for-general-contractors/' | relative_url }}">Review our GC workflow</a> or <a href="{{ '/contact/' | relative_url }}">send plans for estimating</a>.
+      Looking for a tile specialist you trust with your clients?
+      <a href="{{ '/for-general-contractors/' | relative_url }}">Review our GC workflow</a>
+      or <a href="{{ '/contact/' | relative_url }}">send plans for estimating</a>.
     </p>
   </aside>
+  </div>
 </section>

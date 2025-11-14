@@ -11,27 +11,27 @@
   /* =========================
      NAV: mobile drawer
   ========================= */
-  const navToggle = $('.nav-toggle');
-  const nav = $('#site-nav');
-  const header = $('.site-header');
+  const navToggle = $(".nav-toggle");
+  const nav = $("#site-nav");
+  const header = $(".site-header");
   let lastFocus = null;
-  const BP_DESKTOP = 768; // keep in sync with CSS breakpoint (mobile ≤768px)
+  const BP_DESKTOP = 960; // keep in sync with CSS breakpoint (mobile ≤959px, desktop ≥960px)
 
-  const isNavOpen = () => !!nav && nav.classList.contains('is-open');
+  const isNavOpen = () => !!nav && nav.classList.contains("is-open");
 
   const onKeydownEsc = (e) => {
-    if (e.key === 'Escape' && isNavOpen()) {
+    if (e.key === "Escape" && isNavOpen()) {
       e.preventDefault();
       closeNav();
     }
   };
 
   const trapFocus = (e) => {
-    if (!isNavOpen() || e.key !== 'Tab') return;
+    if (!isNavOpen() || e.key !== "Tab") return;
 
     const focusables = $$(
       'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      nav
+      nav,
     ).filter((el) => el.offsetParent !== null);
 
     if (!focusables.length) return;
@@ -57,39 +57,39 @@
   const openNav = () => {
     if (!nav) return;
     lastFocus = document.activeElement;
-    nav.classList.add('is-open');
-    navToggle?.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('nav-open');
+    nav.classList.add("is-open");
+    navToggle?.setAttribute("aria-expanded", "true");
+    document.body.classList.add("nav-open");
 
-    const firstLink = $('a, button', nav);
+    const firstLink = $("a, button", nav);
     firstLink?.focus();
 
-    document.addEventListener('keydown', trapFocus);
-    document.addEventListener('keydown', onKeydownEsc);
-    document.addEventListener('click', outsideClick, true);
+    document.addEventListener("keydown", trapFocus);
+    document.addEventListener("keydown", onKeydownEsc);
+    document.addEventListener("click", outsideClick, true);
   };
 
   const closeNav = () => {
     if (!nav) return;
-    nav.classList.remove('is-open');
-    navToggle?.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
+    nav.classList.remove("is-open");
+    navToggle?.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
 
-    document.removeEventListener('keydown', trapFocus);
-    document.removeEventListener('keydown', onKeydownEsc);
-    document.removeEventListener('click', outsideClick, true);
+    document.removeEventListener("keydown", trapFocus);
+    document.removeEventListener("keydown", onKeydownEsc);
+    document.removeEventListener("click", outsideClick, true);
 
     (lastFocus || navToggle || document.body).focus?.();
   };
 
-  navToggle?.addEventListener('click', () => {
+  navToggle?.addEventListener("click", () => {
     isNavOpen() ? closeNav() : openNav();
   });
 
   // Close nav on link click (mobile only)
   if (nav) {
-    nav.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
+    nav.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
       if (!link) return;
       if (window.innerWidth < BP_DESKTOP && isNavOpen()) {
         closeNav();
@@ -99,7 +99,7 @@
 
   // Close nav if resized to desktop
   let resizeTimer;
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       if (window.innerWidth >= BP_DESKTOP && isNavOpen()) {
@@ -112,19 +112,19 @@
      THEME: system + memory
      - toggles html.classList 'light'
   ========================= */
-  const THEME_KEY = 'ts:theme';
-  const themeBtn = $('.theme-toggle');
+  const THEME_KEY = "ts:theme";
+  const themeBtn = $(".theme-toggle");
 
   const getSystemPref = () =>
     window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: light)').matches
-      ? 'light'
-      : 'dark';
+    window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
 
   const applyTheme = (theme) => {
-    const isLight = theme === 'light';
-    document.documentElement.classList.toggle('light', isLight);
-    themeBtn?.setAttribute('aria-pressed', String(isLight));
+    const isLight = theme === "light";
+    document.documentElement.classList.toggle("light", isLight);
+    themeBtn?.setAttribute("aria-pressed", String(isLight));
   };
 
   let saved = null;
@@ -137,20 +137,28 @@
   applyTheme(saved || getSystemPref());
 
   if (!saved && window.matchMedia) {
-    const mq = window.matchMedia('(prefers-color-scheme: light)');
-    mq.addEventListener?.('change', (e) =>
-      applyTheme(e.matches ? 'light' : 'dark')
-    );
+    const mq = window.matchMedia("(prefers-color-scheme: light)");
+    mq.addEventListener?.("change", (e) => {
+      applyTheme(e.matches ? "light" : "dark");
+      // Reapply contrast system after system theme change
+      if (typeof window.applyContrast === "function") {
+        window.applyContrast();
+      }
+    });
   }
 
-  themeBtn?.addEventListener('click', () => {
-    const isLight = document.documentElement.classList.toggle('light');
-    const theme = isLight ? 'light' : 'dark';
-    themeBtn.setAttribute('aria-pressed', String(isLight));
+  themeBtn?.addEventListener("click", () => {
+    const isLight = document.documentElement.classList.toggle("light");
+    const theme = isLight ? "light" : "dark";
+    themeBtn.setAttribute("aria-pressed", String(isLight));
     try {
       localStorage.setItem(THEME_KEY, theme);
     } catch (_) {
       /* ignore */
+    }
+    // Reapply contrast system after theme change
+    if (typeof window.applyContrast === "function") {
+      window.applyContrast();
     }
   });
 
@@ -160,25 +168,25 @@
   ========================= */
   const prefersReduced =
     window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
 
-    const href = a.getAttribute('href');
-    if (!href || href === '#') return;
+    const href = a.getAttribute("href");
+    if (!href || href === "#") return;
 
     const id = href.slice(1);
     const target = document.getElementById(id);
     if (!target) return;
 
     e.preventDefault();
-    const behavior = prefersReduced ? 'auto' : 'smooth';
-    target.scrollIntoView({ behavior, block: 'start' });
-    target.setAttribute('tabindex', '-1');
+    const behavior = prefersReduced ? "auto" : "smooth";
+    target.scrollIntoView({ behavior, block: "start" });
+    target.setAttribute("tabindex", "-1");
     target.focus({ preventScroll: true });
-    setTimeout(() => target.removeAttribute('tabindex'), 1000);
+    setTimeout(() => target.removeAttribute("tabindex"), 1000);
   });
 
   /* =========================
@@ -186,37 +194,37 @@
      - Netlify: normal POST
      - GitHub Pages: fake success
   ========================= */
-  const contactForm = document.forms?.contact || $('[data-contact-form]');
+  const contactForm = document.forms?.contact || $("[data-contact-form]");
   if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       const isNetlify = !!(
-        contactForm.getAttribute('data-netlify') || contactForm.action
+        contactForm.getAttribute("data-netlify") || contactForm.action
       );
       if (isNetlify) return; // Netlify handles it
 
       e.preventDefault();
       const submitBtn = $(
         'button[type="submit"], input[type="submit"]',
-        contactForm
+        contactForm,
       );
-      submitBtn?.setAttribute('disabled', 'true');
+      submitBtn?.setAttribute("disabled", "true");
 
-      const invalid = $$('[required]', contactForm).find(
-        (el) => !el.value?.trim()
+      const invalid = $$("[required]", contactForm).find(
+        (el) => !el.value?.trim(),
       );
       if (invalid) {
-        alert('Please fill in all required fields.');
-        submitBtn?.removeAttribute('disabled');
+        alert("Please fill in all required fields.");
+        submitBtn?.removeAttribute("disabled");
         invalid.focus();
         return;
       }
 
       try {
         await new Promise((r) => setTimeout(r, 250));
-        alert('Thanks! Your message has been submitted.');
+        alert("Thanks! Your message has been submitted.");
         contactForm.reset();
       } finally {
-        submitBtn?.removeAttribute('disabled');
+        submitBtn?.removeAttribute("disabled");
       }
     });
   }

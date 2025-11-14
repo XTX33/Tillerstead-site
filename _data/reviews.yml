@@ -1,0 +1,36 @@
+# _data/reviews.yml
+
+- name: "Alexandra S."
+  date: 2025-08-19
+  rating: 5
+  source: "Thumbtack"
+  project: "Drywall Repair and Texturing"
+  details: "Ceiling repair in closet; fill cracks, patch damaged drywall, replace one or more sheets of drywall; 1 room, walls, residential."
+  text: >
+    It was a pleasure working with Devon to repair our ceiling in our closet. We chose to repair it rather than
+    replace. Devon walked us through what that would look like, offering the most cost-effective option. He was
+    very professional. I recommend working with him!
+
+- name: "Ahmed A."
+  date: 2025-07-20
+  rating: 5
+  source: "Thumbtack"
+  project: "Bathroom Remodel – Tile Installation and Replacement"
+  details: "Bathroom floor and wall tile, 101–200 sq ft, wood subfloor, porcelain tile; client supplied tile."
+  text: >
+    I recently hired Devon for a bathroom remodel, and my wife and I couldn’t be happier with the results.
+    From start to finish, Devon was professional, punctual, and detail-oriented. He took the time to listen
+    to what we wanted, offered helpful suggestions, and executed everything with precision. Devon kept the
+    work area tidy throughout the project and completed the job on time without cutting corners. It’s rare
+    to find someone who truly takes pride in their work the way Devon does. I’d highly recommend him.
+
+- name: "Maria J."
+  date: 2025-05-06
+  rating: 5
+  source: "Thumbtack"
+  project: "Residential Tile Installation"
+  details: "Interior tile work for a homeowner."
+  text: >
+    I hired Devon Tyler for tile work in my home and was impressed by his patience, precision, and professionalism.
+    He took his time to get every cut right and made sure the job was solid and clean. I’d absolutely recommend
+    him to anyone looking for quality tile work done with care.
