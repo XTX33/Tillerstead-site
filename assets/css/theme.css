@@ -691,6 +691,7 @@ body.nav-open {
   .site-menu a {
     font-size: 1.0625rem;
     padding: 1rem 0.75rem;
+    min-height: 44px;
   }
 
   .site-menu a:hover,
