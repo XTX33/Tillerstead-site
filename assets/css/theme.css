@@ -692,7 +692,7 @@ body.nav-open {
   content: "";
   position: absolute;
   inset: -48px;
-  background-image: url("../img/patterns/sacred-tile.svg"),
+  background-image: var(--bg-pattern),
     radial-gradient(
       circle at 85% 25%,
       rgba(26, 200, 122, 0.32),
@@ -700,15 +700,39 @@ body.nav-open {
     );
   background-repeat: repeat, no-repeat;
   background-size:
-    120px 120px,
+    var(--bg-pattern-size),
     520px 520px;
   background-position:
     top left,
     85% 25%;
-  opacity: 0.18;
+  opacity: var(--bg-pattern-opacity);
   pointer-events: none;
   z-index: 0;
   border-radius: inherit;
+  /* Lazy loading - start with transparent, fade in when loaded */
+  animation: fadeInPattern 0.4s ease-in-out;
+}
+
+/* Fallback for browsers without WebP support */
+@supports not (background-image: url("file.webp")) {
+  .hero-surface::before {
+    background-image: var(--bg-pattern-fallback),
+      radial-gradient(
+        circle at 85% 25%,
+        rgba(26, 200, 122, 0.32),
+        transparent 62%
+      );
+  }
+}
+
+/* Fade in animation for pattern loading */
+@keyframes fadeInPattern {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: var(--bg-pattern-opacity);
+  }
 }
 
 .hero-inner {
@@ -811,9 +835,9 @@ body.nav-open {
 @media (min-width: 880px) {
   .hero-surface::before {
     background-size:
-      168px 168px,
+      calc(var(--bg-pattern-size) * 0.84),
       640px 640px;
-    opacity: 0.22;
+    opacity: calc(var(--bg-pattern-opacity) * 1.22);
   }
 
   .hero-inner {
