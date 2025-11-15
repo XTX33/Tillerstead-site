@@ -36,7 +36,7 @@
             {% assign is_current = true %}
           {% endif %}
 
-          <li role="listitem">
+          <li>
             <a
               href="{{ item.url | relative_url }}"
               {% if is_current %}aria-current="page"{% endif %}
