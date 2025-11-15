@@ -44,7 +44,7 @@
 .card {
   border-radius: var(--ts-radius-lg);
   border: 1px solid rgba(148, 163, 184, 0.22);
-  background: linear-gradient(160deg, rgba(11, 18, 36, 0.94), rgba(2, 6, 23, 0.9));
+  background: var(--ts-bg);
   padding: clamp(1.6rem, 3vw, 2.1rem);
   box-shadow: var(--ts-shadow-soft);
 }

@@ -23,7 +23,7 @@
   padding: clamp(1.4rem, 3vw, 1.8rem);
   border-radius: var(--ts-radius-lg);
   border: 1px solid rgba(148, 163, 184, 0.2);
-  background: rgba(11, 18, 36, 0.82);
+  background: var(--ts-surface-elevated);
   box-shadow: var(--ts-shadow-soft);
   color: var(--ts-text-muted);
 }
@@ -61,7 +61,7 @@
 .docs-card {
   border-radius: var(--ts-radius-lg);
   border: 1px solid rgba(148, 163, 184, 0.2);
-  background: linear-gradient(160deg, rgba(11, 18, 36, 0.92), rgba(2, 6, 23, 0.9));
+  background: var(--ts-bg);
   padding: clamp(1.6rem, 3vw, 2.2rem);
   box-shadow: var(--ts-shadow-soft);
   display: grid;
@@ -136,7 +136,7 @@
 
 .chip {
   border: 1px solid rgba(148, 163, 184, 0.28);
-  background: rgba(11, 18, 36, 0.8);
+  background: var(--ts-surface-elevated);
   color: var(--ts-text-muted);
   border-radius: var(--ts-radius-pill);
   padding: 0.45rem 0.9rem;
@@ -160,7 +160,7 @@
 .gallery-slider {
   border-radius: var(--ts-radius-xl);
   border: 1px solid rgba(148, 163, 184, 0.2);
-  background: linear-gradient(155deg, rgba(11, 18, 36, 0.95), rgba(2, 6, 23, 0.92));
+  background: var(--ts-surface-elevated);
   box-shadow: var(--ts-shadow-lift);
   padding: clamp(1.5rem, 3vw, 2rem);
   display: grid;
@@ -170,7 +170,7 @@
 .slide-media {
   border-radius: var(--ts-radius-lg);
   overflow: hidden;
-  background: rgba(2, 6, 23, 0.85);
+  background: var(--ts-bg);
 }
 
 .slide-media img {

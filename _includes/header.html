@@ -35,20 +35,21 @@
           {% elsif item.match and page.url contains item.match %}
             {% assign is_current = true %}
           {% endif %}
+<header class="site-header ts-header ts-theme" role="banner">
+  <div class="site-header-inner">
+    <div class="ts-brand">
+      <a class="site-logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Tillerstead LLC' }}">
+        <img src="{{ '/assets/img/logo-tillerstead.svg' | relative_url }}" alt="{{ site.title | default: 'Tillerstead LLC' }}" class="site-logo-img" width="160">
+      </a>
+    </div>
 
-          <li>
-            <a
-              href="{{ item.url | relative_url }}"
-              {% if is_current %}aria-current="page"{% endif %}
-            >
-              {{ item.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+    <nav id="ts-main-nav" class="ts-nav" role="navigation" aria-label="Primary navigation" aria-expanded="false">
+      {% assign nav_items = site.data.navigation.primary %}
+      {% for item in nav_items %}
+        <a href="{{ item.url | relative_url }}" {% if item.exact and page.url == item.exact %}aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
     </nav>
 
-    <!-- Right-side actions -->
     <div class="site-header-actions">
       <a
         class="call-btn btn"
@@ -74,6 +75,12 @@
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </span>
+      <a class="ts-call-btn" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
+        {{ site.company.phone_display | default: '(609) 665-9350' }}
+      </a>
+
+      <button class="ts-burger" id="ts-burger" aria-controls="ts-main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg width="22" height="14" viewBox="0 0 24 14" aria-hidden="true"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2 2h20M2 7h20M2 12h20"/></svg>
       </button>
     </div>
   </div>

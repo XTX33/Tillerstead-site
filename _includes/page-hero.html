@@ -1,55 +1,36 @@
-<header class="page-hero ts-section ts-hero hero hero--page {% if page.is_home %}hero--homepage{% endif %}" id="hero"
-        aria-labelledby="hero-heading"
-        aria-describedby="hero-summary">
-  <div class="hero-surface">
-    <div class="hero-inner">
-      <div class="hero-main">
+<header class="page-hero ts-section ts-hero hero {% if page.is_home %}hero--homepage{% endif %}" id="hero" aria-labelledby="hero-heading" aria-describedby="hero-summary">
+  <div class="ts-hero-inner ts-container">
+    <div class="hero-main">
+      {% if page.hero_eyebrow %}
+        <p class="hero-eyebrow"><span class="hero-eyebrow-text">{{ page.hero_eyebrow }}</span></p>
+      {% endif %}
 
-        {% if page.hero_eyebrow %}
-          <p class="hero-eyebrow">
-            <span class="hero-eyebrow-text">{{ page.hero_eyebrow }}</span>
-          </p>
-        {% endif %}
+      <h1 id="hero-heading" class="ts-hero-title">{{ page.hero_title | default: page.title }}</h1>
 
-        <h1 id="hero-heading">{{ page.hero_title | default: page.title }}</h1>
+      {% if page.hero_summary or page.hero_cred_line_1 or page.hero_cred_line_2 %}
+        <div class="hero-info-bubble" aria-label="Service overview">
+          {% if page.hero_summary %}
+            <p id="hero-summary" class="ts-hero-lead">{{ page.hero_summary }}</p>
+          {% endif %}
+          {% if page.hero_cred_line_1 or page.hero_cred_line_2 %}
+            <div class="hero-cred">
+              {% if page.hero_cred_line_1 %}<p class="hero-note">{{ page.hero_cred_line_1 }}</p>{% endif %}
+              {% if page.hero_cred_line_2 %}<p class="hero-note">{{ page.hero_cred_line_2 }} {{ site.company.hic }}</p>{% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
 
-        {% if page.hero_summary or page.hero_cred_line_1 or page.hero_cred_line_2 %}
-          <div class="hero-info-bubble" aria-label="Service overview">
-            {% if page.hero_summary %}
-              <p class="hero-lead" id="hero-summary">{{ page.hero_summary }}</p>
-            {% endif %}
-            {% if page.hero_cred_line_1 or page.hero_cred_line_2 %}
-              <div class="hero-cred">
-                {% if page.hero_cred_line_1 %}<p class="hero-note">{{ page.hero_cred_line_1 }}</p>{% endif %}
-                {% if page.hero_cred_line_2 %}<p class="hero-note text-meta">{{ page.hero_cred_line_2 }}{{ site.company.hic }}</p>{% endif %}
-              </div>
-            {% endif %}
-          </div>
-        {% endif %}
-
-        {% if page.hero_primary_url or page.hero_secondary_url %}
-          <div class="hero-actions" role="group" aria-label="Primary calls to action">
-            {% if page.hero_primary_url and page.hero_primary_label %}
-              <a href="{{ page.hero_primary_url | relative_url }}" class="btn btn-primary">{{ page.hero_primary_label }}</a>
-            {% endif %}
-            {% if page.hero_secondary_url and page.hero_secondary_label %}
-              <a href="{{ page.hero_secondary_url | relative_url }}" class="btn btn-ghost">{{ page.hero_secondary_label }}</a>
-            {% endif %}
-          </div>
-        {% endif %}
-
-        {% if page.hero_kpis %}
-          <ul class="hero-kpis" aria-label="Quick facts">
-            {% for k in page.hero_kpis %}
-              <li class="hero-kpi">
-                <span class="hero-kpi-label">{{ k.label }}</span>
-                {{ k.text }}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-      </div>
+      {% if page.hero_primary_url or page.hero_secondary_url %}
+        <div class="ts-actions" role="group" aria-label="Primary calls to action">
+          {% if page.hero_primary_url and page.hero_primary_label %}
+            <a href="{{ page.hero_primary_url | relative_url }}" class="btn-primary">{{ page.hero_primary_label }}</a>
+          {% endif %}
+          {% if page.hero_secondary_url and page.hero_secondary_label %}
+            <a href="{{ page.hero_secondary_url | relative_url }}" class="btn-ghost">{{ page.hero_secondary_label }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
   </div>
 </header>

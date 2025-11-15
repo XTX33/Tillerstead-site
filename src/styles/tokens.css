@@ -15,18 +15,18 @@
   --color-accent: #d8b25a;
   --color-accent-soft: rgba(216, 178, 90, 0.22);
 
-  /* Surface Colors */
+  /* Surface Colors - Unified for consistency */
   --color-bg: #020617;
-  --color-surface: #0b1224;
-  --color-surface-elevated: #111c33;
-  --color-surface-muted: #111a2e;
-  --color-surface-highlight: #16223d;
+  --color-surface: #020617;
+  --color-surface-elevated: #0b1224;
+  --color-surface-muted: #0b1224;
+  --color-surface-highlight: #111c33;
 
-  /* Text Colors */
-  --color-heading: #f8fafc;
-  --color-text: #f8fafc;
-  --color-text-muted: #cbd5e1;
-  --color-text-subtle: #94a3b8;
+  /* Text Colors - Enhanced for WCAG AAA (7:1) contrast */
+  --color-heading: #ffffff;
+  --color-text: #ffffff;
+  --color-text-muted: #e2e8f0;
+  --color-text-subtle: #cbd5e1;
 
   /* Border Colors */
   --color-border: rgba(148, 163, 184, 0.22);
@@ -41,14 +41,14 @@
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-strong) 100%);
   --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, #f0d080 100%);
   
-  /* Surface gradients */
-  --gradient-surface: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(6, 16, 34, 0.92));
-  --gradient-surface-alt: linear-gradient(165deg, rgba(11, 18, 36, 0.94), rgba(2, 6, 23, 0.92));
-  --gradient-section: linear-gradient(180deg, rgba(11, 18, 36, 0.92), rgba(2, 6, 23, 0.98));
+  /* Surface gradients - Unified background */
+  --gradient-surface: var(--color-bg);
+  --gradient-surface-alt: var(--color-surface-elevated);
+  --gradient-section: var(--color-bg);
   
   /* Radial gradients for effects */
-  --gradient-radial-primary: radial-gradient(circle at top left, rgba(26, 200, 122, 0.04), transparent 45%);
-  --gradient-radial-hero: radial-gradient(circle at 85% 25%, rgba(26, 200, 122, 0.32), transparent 62%);
+  --gradient-radial-primary: radial-gradient(circle at top left, rgba(26, 200, 122, 0.06), transparent 45%);
+  --gradient-radial-hero: radial-gradient(circle at 85% 25%, rgba(26, 200, 122, 0.25), transparent 62%);
 
   /* ===========================
      Typography Tokens
