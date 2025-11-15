@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Tillerstead Theme Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <style>
+        /* Demo specific styles */
+        .demo-container {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .demo-section {
+            margin-bottom: 3rem;
+        }
+        .demo-section h2 {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--ts-primary);
+        }
+        .contrast-checker {
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid var(--ts-border);
+            border-radius: var(--ts-radius-md);
+        }
+        .color-swatch {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-right: 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 style="text-align: center; margin-bottom: 3rem;">Enhanced Tillerstead Theme Demo</h1>
+        
+        <!-- Hero Card Demo -->
+        <div class="demo-section">
+            <h2>Enhanced Hero Card with Pattern Backsplash</h2>
+            <div class="hero ts-section ts-hero hero--page">
+                <div class="hero-surface">
+                    <div class="hero-inner">
+                        <div class="hero-main">
+                            <p class="hero-eyebrow">
+                                <span class="hero-eyebrow-text">Services</span>
+                            </p>
+                            <h1>Property Maintenance, Remodeling & Tile in South Jersey</h1>
+                            <div class="hero-info-bubble">
+                                <p class="hero-lead">
+                                    Practical property-care plans, steady interior remodeling, and fully waterproof tile installations—
+                                    for homeowners, landlords, and small commercial properties who want dependable scheduling, clear
+                                    communication, and work done the right way.
+                                </p>
+                                <div class="hero-cred">
+                                    <p class="hero-note">Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies.</p>
+                                    <p class="hero-note text-meta">Property Maintenance · Remodeling · Tile</p>
+                                </div>
+                            </div>
+                            <div class="hero-actions">
+                                <a href="#" class="btn btn-primary">Request a Maintenance Plan</a>
+                                <a href="#" class="btn btn-ghost">Get a Project Estimate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Tokens Demo -->
+        <div class="demo-section">
+            <h2>Enhanced Color Tokens (WCAG AAA Compliant)</h2>
+            <div class="contrast-checker" style="background: var(--ts-bg);">
+                <h3>Primary Background (#020617)</h3>
+                <p style="color: var(--ts-heading);">Heading Text (#ffffff) - Pure White</p>
+                <p style="color: var(--ts-text);">Body Text (#ffffff) - Pure White</p>
+                <p style="color: var(--ts-text-muted);">Muted Text (#e2e8f0) - Enhanced Contrast</p>
+                <p style="color: var(--ts-text-subtle);">Subtle Text (#cbd5e1) - Better Visibility</p>
+                <div style="margin-top: 1rem;">
+                    <span class="color-swatch" style="background: var(--ts-bg);"></span>
+                    <span class="color-swatch" style="background: var(--ts-heading);"></span>
+                    <span class="color-swatch" style="background: var(--ts-text-muted);"></span>
+                    <span class="color-swatch" style="background: var(--ts-text-subtle);"></span>
+                </div>
+            </div>
+            <div class="contrast-checker" style="background: var(--ts-surface-elevated);">
+                <h3>Elevated Surface (#0b1224)</h3>
+                <p style="color: var(--ts-heading);">Heading Text - High Contrast</p>
+                <p style="color: var(--ts-text-muted);">Muted Text - Still Readable</p>
+            </div>
+        </div>
+
+        <!-- Card Components Demo -->
+        <div class="demo-section">
+            <h2>Unified Card Components</h2>
+            <div class="plans-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="plan-card">
+                    <div class="plan-head">
+                        <h3 class="plan-title">Essential Plan</h3>
+                        <p class="plan-tag">Monthly Maintenance</p>
+                    </div>
+                    <ul class="plan-list">
+                        <li>Regular property inspections</li>
+                        <li>Preventive maintenance</li>
+                        <li>Priority scheduling</li>
+                    </ul>
+                    <p class="plan-footnote">Starting at $299/month</p>
+                </div>
+                <div class="plan-card plan-card--featured">
+                    <div class="plan-head">
+                        <h3 class="plan-title">Premium Plan</h3>
+                        <p class="plan-tag plan-tag--featured">Most Popular</p>
+                    </div>
+                    <ul class="plan-list">
+                        <li>Everything in Essential</li>
+                        <li>24/7 emergency response</li>
+                        <li>Quarterly deep cleaning</li>
+                    </ul>
+                    <p class="plan-footnote">Starting at $499/month</p>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-head">
+                        <h3 class="plan-title">Enterprise Plan</h3>
+                        <p class="plan-tag">Commercial Properties</p>
+                    </div>
+                    <ul class="plan-list">
+                        <li>Everything in Premium</li>
+                        <li>Dedicated property manager</li>
+                        <li>Custom service agreements</li>
+                    </ul>
+                    <p class="plan-footnote">Custom pricing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button Styles Demo -->
+        <div class="demo-section">
+            <h2>Button Styles</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-ghost">Ghost Button</button>
+                <button class="btn btn-outline">Outline Button</button>
+                <a href="#" class="call-btn btn btn-primary">Call (609) 665-9350</a>
+            </div>
+        </div>
+
+        <!-- Hero KPIs Demo -->
+        <div class="demo-section">
+            <h2>Hero KPI Cards</h2>
+            <ul class="hero-kpis" style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <li class="hero-kpi">
+                    <span class="hero-kpi-label">Service Area</span>
+                    Atlantic County and the South Jersey shore, with regular service into Ocean and Cape May counties.
+                </li>
+                <li class="hero-kpi">
+                    <span class="hero-kpi-label">Service Focus</span>
+                    Monthly property maintenance, kitchen & bath remodeling, waterproof tile assemblies, and recurring service contracts.
+                </li>
+                <li class="hero-kpi">
+                    <span class="hero-kpi-label">Our Approach</span>
+                    Clear documentation, reliable scheduling, and work done with integrity and care.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add pattern animation status indicator
+        const heroSurface = document.querySelector('.hero-surface');
+        if (heroSurface) {
+            const before = window.getComputedStyle(heroSurface, '::before');
+            console.log('Hero surface pattern animation active');
+            console.log('Pattern background:', before.backgroundImage);
+        }
+        
+        // Contrast ratio calculator
+        function getLuminance(r, g, b) {
+            const [rs, gs, bs] = [r, g, b].map(c => {
+                c = c / 255;
+                return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+            });
+            return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+        }
+
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+        function getContrastRatio(fg, bg) {
+            const l1 = getLuminance(fg.r, fg.g, fg.b);
+            const l2 = getLuminance(bg.r, bg.g, bg.b);
+            const lighter = Math.max(l1, l2);
+            const darker = Math.min(l1, l2);
+            return (lighter + 0.05) / (darker + 0.05);
+        }
+
+        // Test contrast ratios
+        console.log('=== Contrast Ratio Tests ===');
+        const tests = [
+            { bg: '#020617', fg: '#ffffff', name: 'Body bg + heading (white)' },
+            { bg: '#020617', fg: '#e2e8f0', name: 'Body bg + muted' },
+            { bg: '#020617', fg: '#cbd5e1', name: 'Body bg + subtle' },
+            { bg: '#0b1224', fg: '#ffffff', name: 'Surface elevated + heading' },
+            { bg: '#0b1224', fg: '#e2e8f0', name: 'Surface elevated + muted' }
+        ];
+
+        tests.forEach(test => {
+            const bgRgb = hexToRgb(test.bg);
+            const fgRgb = hexToRgb(test.fg);
+            const ratio = getContrastRatio(fgRgb, bgRgb);
+            const pass = ratio >= 7 ? '✓ AAA' : ratio >= 4.5 ? '✓ AA' : '✗ FAIL';
+            console.log(`${test.name}: ${ratio.toFixed(2)}:1 ${pass}`);
+        });
+    </script>
+</body>
+</html>

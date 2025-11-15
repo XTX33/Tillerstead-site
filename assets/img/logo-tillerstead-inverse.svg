@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="Tillerstead LLC logo (inverse)">
+  <defs>
+    <style>
+      .s-white{fill:#ffffff;}
+    </style>
+  </defs>
+
+  <rect x="110" y="40" width="420" height="420" class="s-white" opacity="0.06" rx="4"/>
+  <path d="M250 120 L320 60 L390 120 V300 H250 Z" class="s-white"/>
+
+  <path d="M360 230 L410 300 L340 330 L290 270 Z" class="s-white" transform="rotate(-22 360 280)" />
+
+  <g transform="translate(80,500)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" class="s-white">Tiller</text>
+    <text x="220" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" class="s-white">stead</text>
+    <text x="220" y="64" font-family="Georgia, 'Times New Roman', serif" font-size="42" class="s-white">LLC</text>
+  </g>
+</svg>
