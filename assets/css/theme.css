@@ -722,10 +722,6 @@ body.nav-open {
   /* Desktop navigation - static horizontal layout */
   .site-nav {
     position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
     background: transparent;
     border: none;
     padding: 0;
