@@ -59,10 +59,11 @@ This directory contains the background pattern assets used throughout the Tiller
 ```css
 :root {
   --bg-pattern: url("../../src/assets/patterns/sacred-geometry-tile.webp");
+  --bg-pattern-opacity: 0.18;  /* dark mode */
 }
 
 html.light {
-  --bg-pattern: url("../../src/assets/patterns/sacred-geometry-tile.webp");
+  --bg-pattern-opacity: 0.08;  /* light mode */
 }
 ```
 
