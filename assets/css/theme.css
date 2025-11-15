@@ -869,28 +869,6 @@ body.nav-open {
   }
   to {
     opacity: var(--bg-pattern-opacity);
-    140px 140px,
-    580px 580px;
-  background-position:
-    top left,
-    85% 25%;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
-  border-radius: inherit;
-  animation: patternShift 60s linear infinite;
-}
-
-@keyframes patternShift {
-  0% {
-    background-position:
-      0 0,
-      85% 25%;
-  }
-  100% {
-    background-position:
-      140px 140px,
-      85% 25%;
   }
 }
 
@@ -999,12 +977,9 @@ body.nav-open {
 @media (min-width: 880px) {
   .hero-surface::before {
     background-size:
-      calc(var(--bg-pattern-size) * 0.84),
+      calc(var(--bg-pattern-size) * 0.84) calc(var(--bg-pattern-size) * 0.84),
       640px 640px;
     opacity: calc(var(--bg-pattern-opacity) * 1.22);
-      180px 180px,
-      680px 680px;
-    opacity: 0.35;
   }
 
   .hero-inner {

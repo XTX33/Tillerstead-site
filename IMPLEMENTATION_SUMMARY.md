@@ -299,7 +299,7 @@ When deploying pattern changes:
 ## Dependencies
 
 ### npm Packages:
-- `sharp@0.33.5` - Image conversion (dev dependency)
+- `sharp@0.34.5` - Image conversion (dev dependency)
   - Used only for pattern generation
   - Not required for production site
   - Can be removed after initial pattern creation

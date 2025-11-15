@@ -38,32 +38,46 @@ This directory contains the background pattern assets used throughout the Tiller
 
 ## Usage
 
-### In CSS
-```css
-/* Modern browsers with WebP support */
-.hero-surface::before {
-  background-image: url("../../src/assets/patterns/sacred-geometry-tile.webp");
-  background-repeat: repeat;
-  background-size: 200px 200px;
-}
+### Via CSS Custom Properties (Recommended)
+The actual implementation uses CSS custom properties defined in `src/styles/tokens.css`:
 
-/* Fallback for older browsers */
-@supports not (background-image: url("file.webp")) {
-  .hero-surface::before {
-    background-image: url("../../src/assets/patterns/sacred-geometry-tile.png");
-  }
-}
-```
-
-### Via CSS Custom Properties
 ```css
 :root {
-  --bg-pattern: url("../../src/assets/patterns/sacred-geometry-tile.webp");
+  --bg-pattern: url("../assets/patterns/sacred-geometry-tile.webp");
   --bg-pattern-opacity: 0.18;  /* dark mode */
 }
 
 html.light {
   --bg-pattern-opacity: 0.08;  /* light mode */
+}
+```
+
+Then use them in your CSS (example from `assets/css/theme.css`):
+```css
+.hero-surface::before {
+  background-image: var(--bg-pattern);
+  background-repeat: repeat;
+  background-size: var(--bg-pattern-size) var(--bg-pattern-size);
+  opacity: var(--bg-pattern-opacity);
+}
+
+/* WebP fallback */
+@supports not (background-image: url("file.webp")) {
+  .hero-surface::before {
+    background-image: var(--bg-pattern-fallback);
+  }
+}
+```
+
+### Direct CSS Usage (if needed)
+If you need to reference the pattern directly without variables, adjust the path relative to your CSS file location:
+
+```css
+/* From assets/css/theme.css - use ../../src/assets/patterns/ */
+.hero-surface::before {
+  background-image: url("../../src/assets/patterns/sacred-geometry-tile.webp");
+  background-repeat: repeat;
+  background-size: 200px 200px;
 }
 ```
 
