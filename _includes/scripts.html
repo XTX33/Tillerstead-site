@@ -3,6 +3,9 @@
   - contrast.js: high-visibility contrast system (WCAG AAA)
   - main.js: site-wide behaviors (nav, theme toggle, smooth scroll, forms)
   - page.scripts: optional array of additional script paths in front matter
+  
+  IMPORTANT: Each script should only be loaded ONCE.
+  Duplicate script tags can cause infinite loops and crash Safari on iOS.
 {%- endcomment -%}
 
 <script
