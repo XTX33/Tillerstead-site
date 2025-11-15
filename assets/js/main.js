@@ -15,7 +15,7 @@
   const nav = $("#site-nav");
   const header = $(".site-header");
   let lastFocus = null;
-  const BP_DESKTOP = 960; // keep in sync with CSS breakpoint (mobile ≤959px, desktop ≥960px)
+  const BP_DESKTOP = 768; // Updated to match new CSS breakpoint (mobile/tablet <768px, desktop ≥768px)
 
   const isNavOpen = () => !!nav && nav.classList.contains("is-open");
 
@@ -59,6 +59,7 @@
     lastFocus = document.activeElement;
     nav.classList.add("is-open");
     navToggle?.setAttribute("aria-expanded", "true");
+    navToggle?.setAttribute("aria-label", "Close navigation menu");
     document.body.classList.add("nav-open");
 
     const firstLink = $("a, button", nav);
@@ -73,6 +74,7 @@
     if (!nav) return;
     nav.classList.remove("is-open");
     navToggle?.setAttribute("aria-expanded", "false");
+    navToggle?.setAttribute("aria-label", "Open navigation menu");
     document.body.classList.remove("nav-open");
 
     document.removeEventListener("keydown", trapFocus);
