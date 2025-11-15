@@ -26,3 +26,17 @@
     </script>
   {% endfor %}
 {% endif %}
+
+<!-- Tillerstead mobile nav script (namespaced, safe) -->
+<script>
+  (function(){
+    const burger = document.getElementById('ts-burger') || document.getElementById('nav-toggle');
+    const nav = document.getElementById('ts-main-nav') || document.getElementById('site-nav');
+    if(!burger || !nav) return;
+    burger.addEventListener('click', ()=> {
+      const expanded = nav.getAttribute('aria-expanded') === 'true';
+      nav.setAttribute('aria-expanded', String(!expanded));
+      burger.setAttribute('aria-expanded', String(!expanded));
+    });
+  })();
+</script>

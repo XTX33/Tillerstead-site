@@ -1,141 +1,63 @@
-<footer class="site-footer"
-        itemscope
-        itemtype="https://schema.org/HomeAndConstructionBusiness">
-
-  <!-- Structured data / business basics -->
+<footer class="site-footer ts-footer ts-theme" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
   <meta itemprop="name" content="Tillerstead LLC">
   <meta itemprop="@id" content="{{ site.url }}/#contractor">
   <meta itemprop="url" content="{{ site.url }}/">
   <meta itemprop="priceRange" content="$$">
   <meta itemprop="telephone" content="{{ site.company.phone_link }}">
   <meta itemprop="email" content="{{ site.company.email }}">
-  <meta itemprop="areaServed"
-        content="Atlantic County NJ, Ocean County NJ, Cape May County NJ, South Jersey shore">
-  <meta itemprop="description"
-        content="Property maintenance and remodeling with tile specialty for South Jersey homeowners, landlords, and small commercial properties. Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies.">
+  <meta itemprop="areaServed" content="Atlantic County NJ, Ocean County NJ, Cape May County NJ, South Jersey shore">
+  <meta itemprop="description" content="Property maintenance and remodeling with tile specialty for South Jersey homeowners, landlords, and small commercial properties.">
 
-  <div class="footer-inner">
-
-    <!-- Brand / summary -->
-    <section class="footer-col footer-col-brand" aria-label="Tillerstead overview">
-      <a href="{{ '/' | relative_url }}"
-         class="footer-brand"
-         aria-label="Tillerstead LLC Home"
-         itemprop="url">
-        <span class="footer-logo">
-          <img src="{{ '/assets/img/logo.png' | relative_url }}"
-               alt="Tillerstead LLC logo"
-               class="footer-logo-img">
-        </span>
+  <div class="ts-footer-inner footer-inner ts-container">
+    <section class="footer-col footer-col-brand">
+      <a href="{{ '/' | relative_url }}" class="footer-brand" aria-label="Tillerstead LLC Home" itemprop="url">
+        <img src="{{ '/assets/img/logo-tillerstead.svg' | relative_url }}" alt="Tillerstead LLC logo" class="footer-logo-img" style="height:42px;">
         <span class="footer-name" itemprop="name">Tillerstead LLC</span>
       </a>
-
-      <p class="footer-tagline" itemprop="slogan">
-        Property Maintenance · Remodeling · Tile — NJ Licensed HIC #{{ site.company.hic }}
-      </p>
-
-      <p class="footer-area">
-        Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies
-        for homeowners, landlords, and small commercial properties across
-        Atlantic, Ocean, and Cape May counties in South Jersey.
-      </p>
+      <p class="footer-tagline">Property Maintenance · Remodeling · Tile — NJ Licensed HIC #{{ site.company.hic }}</p>
+      <p class="footer-area">Monthly maintenance plans, reliable remodeling, and waterproof tile assemblies across Atlantic, Ocean, and Cape May counties.</p>
     </section>
-    <!-- Nav columns -->
-    <section class="footer-col footer-col-nav" aria-label="Site navigation">
-      {% assign nav_data = site.data.navigation %}
-      {% assign service_ids = "services,portfolio,gc,reviews,financing,contact" | split: "," %}
-      {% assign company_ids = "about,blog,privacy,terms" | split: "," %}
 
-      <!-- Property services column -->
+    <section class="footer-col footer-col-nav">
       <nav class="footer-nav footer-nav-services" aria-label="Property services">
         <h2 class="footer-heading">Property services</h2>
-        <ul class="footer-links">
-          {% for id in service_ids %}
-            {% assign link = nav_data.primary | where: "id", id | first %}
-            {% if link %}
-              {% assign is_current = false %}
-              {% if link.exact and page.url == link.exact %}
-                {% assign is_current = true %}
-              {% elsif link.match and page.url contains link.match %}
-                {% assign is_current = true %}
-              {% endif %}
-
-              <li>
-                <a
-                  href="{{ link.url | relative_url }}"
-                  {% if is_current %}aria-current="page"{% endif %}
-                >
-                  {{ link.title }}
-                </a>
-              </li>
-            {% endif %}
-          {% endfor %}
+        <ul class="footer-links ts-list-reset">
+          <li><a href="/services/drywall">Drywall repair & installation</a></li>
+          <li><a href="/services/trim-finish">Trim & finish carpentry</a></li>
+          <li><a href="/services/tile">Tile & backsplash</a></li>
+          <li><a href="/services/remodel">Bathroom & kitchen remodel</a></li>
+          <li><a href="/services/maintenance">Property maintenance plans</a></li>
         </ul>
       </nav>
 
-      <!-- Company & legal column -->
       <nav class="footer-nav footer-nav-company" aria-label="Company and legal">
-        <h2 class="footer-heading">Company &amp; legal</h2>
-        <ul class="footer-links">
-          {% for id in company_ids %}
-            {% assign primary_link = nav_data.primary | where: "id", id | first %}
-            {% assign secondary_link = nav_data.secondary | where: "id", id | first %}
-            {% assign link = primary_link | default: secondary_link %}
-            {% if link %}
-              {% assign is_current = false %}
-              {% if link.exact and page.url == link.exact %}
-                {% assign is_current = true %}
-              {% elsif link.match and page.url contains link.match %}
-                {% assign is_current = true %}
-              {% endif %}
-              <li>
-                <a
-                  href="{{ link.url | relative_url }}"
-                  {% if is_current %}aria-current="page"{% endif %}
-                >
-                  {{ link.title }}
-                </a>
-              </li>
-            {% endif %}
-          {% endfor %}
+        <h2 class="footer-heading">Company & legal</h2>
+        <ul class="footer-links ts-list-reset">
+          <li><a href="/about">About</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
     </section>
-    <!-- Contact / licensing -->
-    <section class="footer-col footer-col-contact" aria-label="Contact and licensing">
+
+    <section class="footer-col footer-col-contact">
       <h2 class="footer-heading">Licensed New Jersey contractor</h2>
+      <p class="footer-hic">Licensed New Jersey Home Improvement Contractor — HIC #{{ site.company.hic }}</p>
 
-      <p class="footer-hic">
-        Licensed New Jersey Home Improvement Contractor<br>
-        HIC #{{ site.company.hic }}
-      </p>
-
-      <address class="footer-address"
-               itemprop="address"
-               itemscope
-               itemtype="https://schema.org/PostalAddress">
-        <span itemprop="streetAddress">{{ site.company.address_line }}</span><br>
-        <span itemprop="addressLocality">{{ site.company.address_locality }}</span>,
-        <span itemprop="addressRegion">{{ site.company.address_region }}</span>
-        <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
+      <address class="footer-address">
+        <span>{{ site.company.address_line }}</span><br>
+        <span>{{ site.company.address_locality }}</span>, <span>{{ site.company.address_region }}</span> <span>{{ site.company.address_postal_code }}</span>
       </address>
 
       <p class="footer-contact">
-        <a href="tel:{{ site.company.phone_link }}" itemprop="telephone">
-          {{ site.company.phone_display }}
-        </a><br>
-        <a href="mailto:{{ site.company.email }}" itemprop="email">
-          {{ site.company.email }}
-        </a>
+        <a href="tel:{{ site.company.phone_link }}">{{ site.company.phone_display }}</a><br>
+        <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
       </p>
     </section>
-
   </div>
 
-  <div class="footer-bottom">
-    <p class="footer-copyright">
-      &copy; {{ 'now' | date: '%Y' }} Tillerstead LLC. All rights reserved.
-    </p>
+  <div class="footer-bottom ts-container">
+    <p class="footer-copyright ts-foot-small">&copy; {{ 'now' | date: '%Y' }} Tillerstead LLC. All rights reserved.</p>
   </div>
-
 </footer>

@@ -16,7 +16,8 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.2.0",
+    "htmlhint": "1.1.4",
     "prettier": "3.3.2",
-    "htmlhint": "1.1.4"
+    "sharp": "0.34.5"
   }
 }
