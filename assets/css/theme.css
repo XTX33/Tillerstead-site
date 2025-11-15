@@ -659,8 +659,6 @@ html.light .site-header {
 /* Prevent body scroll when menu is open */
 body.nav-open {
   overflow: hidden;
-  position: fixed;
-  width: 100%;
 }
 
 /* ============================================
