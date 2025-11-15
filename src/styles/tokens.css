@@ -60,7 +60,7 @@
   --bg-pattern-svg: url("../assets/patterns/sacred-geometry-tile.svg");
   
   /* Pattern display properties */
-  --bg-pattern-size: 200px 200px;
+  --bg-pattern-size: 200px;
   --bg-pattern-opacity: 0.18;
 
   /* ===========================
