@@ -862,12 +862,16 @@ body.nav-open {
   box-shadow: var(--ts-shadow-soft);
   transition:
     transform var(--ts-transition-med),
-    box-shadow var(--ts-transition-med);
+    box-shadow var(--ts-transition-med),
+    border-color var(--ts-transition-med);
 }
 
-.plan-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--ts-shadow-lift);
+@media (prefers-reduced-motion: no-preference) {
+  .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ts-shadow-lift);
+    border-color: rgba(148, 163, 184, 0.3);
+  }
 }
 
 .plan-card--featured {
@@ -961,6 +965,18 @@ body.nav-open {
     rgba(6, 16, 34, 0.96)
   );
   box-shadow: var(--ts-shadow-soft);
+  transition:
+    transform var(--ts-transition-med),
+    box-shadow var(--ts-transition-med),
+    border-color var(--ts-transition-med);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .who-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ts-shadow-lift);
+    border-color: rgba(148, 163, 184, 0.28);
+  }
 }
 
 .who-card h3 {
@@ -1012,11 +1028,18 @@ body.nav-open {
     rgba(2, 6, 23, 0.92)
   );
   box-shadow: var(--ts-shadow-soft);
-  transition: transform var(--ts-transition-fast);
+  transition:
+    transform var(--ts-transition-med),
+    box-shadow var(--ts-transition-med),
+    border-color var(--ts-transition-med);
 }
 
-.why-item:hover {
-  transform: translateY(-3px);
+@media (prefers-reduced-motion: no-preference) {
+  .why-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ts-shadow-lift);
+    border-color: rgba(148, 163, 184, 0.3);
+  }
 }
 
 .scope-grid {
@@ -1039,13 +1062,17 @@ body.nav-open {
   background: var(--ts-surface);
   box-shadow: var(--ts-shadow-soft);
   transition:
-    transform var(--ts-transition-fast),
-    box-shadow var(--ts-transition-fast);
+    transform var(--ts-transition-med),
+    box-shadow var(--ts-transition-med),
+    border-color var(--ts-transition-med);
 }
 
-.scope-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--ts-shadow-lift);
+@media (prefers-reduced-motion: no-preference) {
+  .scope-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ts-shadow-lift);
+    border-color: rgba(148, 163, 184, 0.3);
+  }
 }
 
 .scope-card figure {
