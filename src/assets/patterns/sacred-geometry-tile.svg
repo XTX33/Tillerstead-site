@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+  <!-- Sacred Geometry Pattern: Flower of Life inspired tile -->
+  <!-- Seamlessly repeatable on all edges -->
+  
+  <!-- Background subtle grid -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-width="0.15" opacity="0.12"/>
+    </pattern>
+    
+    <!-- Radial gradient for depth -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1ac87a;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#1ac87a;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background grid -->
+  <rect width="200" height="200" fill="url(#grid)"/>
+  
+  <!-- Central radial glow -->
+  <circle cx="100" cy="100" r="80" fill="url(#centerGlow)"/>
+  
+  <!-- Main hexagonal structure - centered -->
+  <g opacity="0.75" stroke="#8fa4c4" stroke-width="1.5" fill="none">
+    <!-- Outer hexagon -->
+    <path d="M 100 10 L 186.6 55 L 186.6 145 L 100 190 L 13.4 145 L 13.4 55 Z"/>
+    
+    <!-- Middle hexagon -->
+    <path d="M 100 35 L 156.6 67.5 L 156.6 132.5 L 100 165 L 43.4 132.5 L 43.4 67.5 Z"/>
+    
+    <!-- Inner hexagon -->
+    <path d="M 100 60 L 126.6 77.5 L 126.6 122.5 L 100 140 L 73.4 122.5 L 73.4 77.5 Z"/>
+  </g>
+  
+  <!-- Connecting lines creating sacred geometry -->
+  <g opacity="0.45" stroke="#38bdf8" stroke-width="1" fill="none">
+    <!-- Vertical lines -->
+    <path d="M 13.4 55 L 100 100 L 186.6 55"/>
+    <path d="M 13.4 145 L 100 100 L 186.6 145"/>
+    
+    <!-- Diagonal cross lines -->
+    <path d="M 43.4 67.5 L 100 35 L 156.6 67.5"/>
+    <path d="M 43.4 132.5 L 100 165 L 156.6 132.5"/>
+    
+    <!-- Triangular grid -->
+    <path d="M 73.4 77.5 L 100 60 L 126.6 77.5"/>
+    <path d="M 73.4 122.5 L 100 140 L 126.6 122.5"/>
+  </g>
+  
+  <!-- Corner decorative elements for seamless tiling -->
+  <g opacity="0.35" stroke="#94a3b8" stroke-width="0.8" fill="none">
+    <!-- Top left corner -->
+    <circle cx="0" cy="0" r="30" />
+    <circle cx="0" cy="0" r="20" />
+    
+    <!-- Top right corner -->
+    <circle cx="200" cy="0" r="30" />
+    <circle cx="200" cy="0" r="20" />
+    
+    <!-- Bottom left corner -->
+    <circle cx="0" cy="200" r="30" />
+    <circle cx="0" cy="200" r="20" />
+    
+    <!-- Bottom right corner -->
+    <circle cx="200" cy="200" r="30" />
+    <circle cx="200" cy="200" r="20" />
+  </g>
+  
+  <!-- Central focal points -->
+  <g>
+    <!-- Main center point -->
+    <circle cx="100" cy="100" r="8" fill="#1ec98e" fill-opacity="0.8"/>
+    <circle cx="100" cy="100" r="3" fill="#f8fafc"/>
+    
+    <!-- Six surrounding points on inner hexagon vertices -->
+    <circle cx="126.6" cy="77.5" r="4" fill="#1ec98e" fill-opacity="0.5"/>
+    <circle cx="126.6" cy="122.5" r="4" fill="#1ec98e" fill-opacity="0.5"/>
+    <circle cx="100" cy="140" r="4" fill="#1ec98e" fill-opacity="0.5"/>
+    <circle cx="73.4" cy="122.5" r="4" fill="#1ec98e" fill-opacity="0.5"/>
+    <circle cx="73.4" cy="77.5" r="4" fill="#1ec98e" fill-opacity="0.5"/>
+    <circle cx="100" cy="60" r="4" fill="#1ec98e" fill-opacity="0.5"/>
+  </g>
+  
+  <!-- Edge transition elements for seamless tiling -->
+  <g opacity="0.25" stroke="#94a3b8" stroke-width="0.5" fill="none">
+    <!-- Top edge -->
+    <path d="M 60 0 Q 80 -10, 100 0 Q 120 10, 140 0"/>
+    <!-- Bottom edge -->
+    <path d="M 60 200 Q 80 210, 100 200 Q 120 190, 140 200"/>
+    <!-- Left edge -->
+    <path d="M 0 60 Q -10 80, 0 100 Q 10 120, 0 140"/>
+    <!-- Right edge -->
+    <path d="M 200 60 Q 210 80, 200 100 Q 190 120, 200 140"/>
+  </g>
+</svg>

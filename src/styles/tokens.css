@@ -51,6 +51,19 @@
   --gradient-radial-hero: radial-gradient(circle at 85% 25%, rgba(26, 200, 122, 0.25), transparent 62%);
 
   /* ===========================
+     Background Pattern Assets
+     =========================== */
+  
+  /* Sacred geometry tile pattern - dark mode optimized */
+  --bg-pattern: url("../assets/patterns/sacred-geometry-tile.webp");
+  --bg-pattern-fallback: url("../assets/patterns/sacred-geometry-tile.png");
+  --bg-pattern-svg: url("../assets/patterns/sacred-geometry-tile.svg");
+  
+  /* Pattern display properties */
+  --bg-pattern-size: 200px;
+  --bg-pattern-opacity: 0.18;
+
+  /* ===========================
      Typography Tokens
      =========================== */
   
@@ -148,6 +161,9 @@ html.light {
   --shadow-lift: 0 32px 64px rgba(15, 23, 42, 0.16);
   --shadow-sharp: 0 16px 32px rgba(15, 23, 42, 0.18);
   --focus-ring: 0 0 0 3px rgba(26, 200, 122, 0.35);
+  
+  /* Background pattern - light mode variant */
+  --bg-pattern-opacity: 0.08;
 }
 
 /* ============================================
