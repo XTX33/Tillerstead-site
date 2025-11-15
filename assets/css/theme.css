@@ -414,6 +414,7 @@ button.btn {
 
 /* ============================================
    Header & navigation
+   Mobile-first responsive design with clear breakpoints
    ============================================ */
 
 .site-header {
@@ -433,7 +434,7 @@ html.light .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--ts-space-4);
+  gap: var(--ts-space-3);
   min-height: 4.5rem;
 }
 
@@ -442,10 +443,12 @@ html.light .site-header {
   align-items: center;
   gap: var(--ts-space-3);
   text-decoration: none;
+  /* Ensure logo doesn't shrink on small screens */
+  flex-shrink: 0;
 }
 
 .site-logo-img {
-  width: clamp(128px, 14vw, 148px);
+  width: clamp(120px, 14vw, 148px);
   height: auto;
 }
 
@@ -456,28 +459,35 @@ html.light .site-header {
   margin-left: auto;
 }
 
-/* Mobile nav toggle - hidden on desktop, shown on mobile */
+/* ============================================
+   Mobile Navigation — Base styles (mobile-first)
+   Hamburger menu with accessible overlay
+   ============================================ */
+
+/* Mobile nav toggle - visible on mobile/tablet, hidden on desktop */
 .nav-toggle {
-  display: none; /* Hidden by default, shown below 960px via media query */
+  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.5rem;
   border-radius: var(--ts-radius-pill);
   border: 1px solid rgba(148, 163, 184, 0.35);
   background: transparent;
   cursor: pointer;
   transition:
     background var(--ts-transition-fast),
-    border-color var(--ts-transition-fast);
+    border-color var(--ts-transition-fast),
+    transform var(--ts-transition-fast);
 
-  /* Thumb-friendly tap target: at least 44×44px */
+  /* WCAG 2.1 AAA touch target: minimum 44×44px */
   min-width: 44px;
   min-height: 44px;
   padding: 0.5rem 0.9rem;
 
   /* Typography */
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--ts-text);
+  line-height: 1;
 }
 
 .nav-toggle:hover,
@@ -486,22 +496,35 @@ html.light .site-header {
   border-color: rgba(148, 163, 184, 0.45);
 }
 
+.nav-toggle:active {
+  transform: scale(0.96);
+}
+
 /* Menu label text */
 .nav-toggle-label {
   display: inline-block;
   line-height: 1;
 }
 
-/* Icon container for hamburger bars */
+/* Hamburger icon - uses inline SVG in HTML for better control */
 .nav-toggle-icon {
   display: inline-flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  width: 1.25rem;
-  height: 1rem;
+  width: 20px;
+  height: 20px;
 }
 
+.nav-toggle-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--ts-heading);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: transform var(--ts-transition-fast);
+}
+
+/* Animated hamburger bars (fallback if no SVG) */
 .nav-toggle-bar {
   display: block;
   width: 100%;
@@ -513,14 +536,31 @@ html.light .site-header {
     opacity var(--ts-transition-fast);
 }
 
+/* Animate to X when open */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile navigation overlay */
 .site-nav {
   position: fixed;
-  inset: 4.5rem clamp(1rem, 6vw, 2.5rem) auto clamp(1rem, 6vw, 2.5rem);
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: var(--ts-surface-elevated);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: var(--ts-radius-lg);
-  padding: var(--ts-space-5);
-  box-shadow: var(--ts-shadow-lift);
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  padding: var(--ts-space-5) clamp(1.25rem, 4vw, 2rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -538,62 +578,113 @@ html.light .site-header {
   pointer-events: auto;
 }
 
+/* Mobile menu items */
 .site-menu {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: var(--ts-space-3);
+  gap: 0.25rem;
+}
+
+.site-menu li {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.site-menu li:last-child {
+  border-bottom: none;
 }
 
 .site-menu a {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--ts-text-muted);
-  padding: 0.35rem 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+  /* WCAG AAA touch target */
+  padding: 0.875rem 0.5rem;
+  min-height: 44px;
+  border-radius: var(--ts-radius-sm);
+  transition:
+    color var(--ts-transition-fast),
+    background var(--ts-transition-fast),
+    padding-left var(--ts-transition-fast);
 }
 
 .site-menu a:hover,
-.site-menu a:focus-visible,
-.site-menu [aria-current="page"] {
+.site-menu a:focus-visible {
   color: var(--ts-text);
+  background: rgba(148, 163, 184, 0.08);
+  padding-left: 0.75rem;
 }
 
-/* Mobile breakpoint: show toggle, adjust menu layout */
-@media (max-width: 959px) {
-  .nav-toggle {
-    display: inline-flex;
-  }
-
-  /* Enhance mobile menu item tap targets */
-  .site-menu a {
-    padding: 0.75rem 0;
-    min-height: 44px;
-    display: flex;
-  }
+.site-menu [aria-current="page"] {
+  color: var(--ts-primary);
+  background: var(--ts-primary-soft);
+  padding-left: 0.75rem;
 }
 
-@media (min-width: 960px) {
+.site-menu [aria-current="page"]::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--ts-primary);
+  margin-right: 0.5rem;
+}
+
+/* Prevent body scroll when menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+/* ============================================
+   Tablet Navigation (480px - 767px)
+   Enhanced spacing and layout for medium screens
+   ============================================ */
+
+@media (min-width: 480px) {
+  .site-header-inner {
+    gap: var(--ts-space-4);
+  }
+
+  .site-logo-img {
+    width: clamp(136px, 14vw, 148px);
+  }
+
   .nav-toggle {
-    display: none;
+    padding: 0.6rem 1rem;
+    gap: 0.6rem;
   }
 
   .site-nav {
-    position: static;
-    inset: auto;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    box-shadow: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    pointer-events: auto;
+    padding: var(--ts-space-6) clamp(1.5rem, 5vw, 2.5rem);
   }
 
+  .site-menu {
+    gap: 0.5rem;
+  }
+
+  .site-menu a {
+    font-size: 1.0625rem;
+    padding: 1rem 0.75rem;
+    min-height: 44px;
+  }
+
+  .site-menu a:hover,
+  .site-menu a:focus-visible,
+  .site-menu [aria-current="page"] {
+    padding-left: 1rem;
+  }
+}
+
+/* ============================================
+   Desktop Navigation (768px+)
+   Horizontal navigation bar with hover effects
+   ============================================ */
+
+@media (min-width: 768px) {
   .site-header-inner {
     gap: var(--ts-space-5);
   }
@@ -602,26 +693,70 @@ html.light .site-header {
     margin-left: var(--ts-space-4);
   }
 
+  /* Hide mobile toggle on desktop */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Desktop navigation - static horizontal layout */
+  .site-nav {
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0;
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+
   .site-menu {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 3vw, 1.75rem);
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+
+  .site-menu li {
+    border-bottom: none;
   }
 
   .site-menu a {
-    padding: 0.4rem 0;
+    padding: 0.4rem 0.5rem;
+    min-height: auto;
     position: relative;
+    font-size: 0.9375rem;
+    border-radius: 0;
+    background: transparent;
   }
 
+  .site-menu a:hover,
+  .site-menu a:focus-visible {
+    background: transparent;
+    padding-left: 0.5rem;
+  }
+
+  .site-menu [aria-current="page"] {
+    background: transparent;
+    padding-left: 0.5rem;
+  }
+
+  .site-menu [aria-current="page"]::before {
+    display: none;
+  }
+
+  /* Animated underline for desktop */
   .site-menu a::after {
     content: "";
     position: absolute;
-    inset: auto 0 -0.65rem;
+    bottom: -0.5rem;
+    left: 0;
+    right: 0;
     height: 2px;
     border-radius: 999px;
     background: var(--ts-primary);
     opacity: 0;
-    transform: scaleX(0.75);
+    transform: scaleX(0.7);
     transition:
       opacity var(--ts-transition-fast),
       transform var(--ts-transition-fast);
@@ -635,8 +770,30 @@ html.light .site-header {
   }
 }
 
-body.nav-open {
-  overflow: hidden;
+/* ============================================
+   Large Desktop (960px+)
+   Additional refinements for wide screens
+   ============================================ */
+
+@media (min-width: 960px) {
+  .site-menu {
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .site-menu a {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.9375rem;
+  }
+
+  .site-menu a:hover,
+  .site-menu a:focus-visible,
+  .site-menu [aria-current="page"] {
+    padding-left: 0.65rem;
+  }
+
+  .site-menu a::after {
+    bottom: -0.65rem;
+  }
 }
 
 /* ============================================

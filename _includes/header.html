@@ -1,3 +1,40 @@
+<header class="site-header" role="banner">
+  <div class="site-header-inner container">
+    <!-- Brand -->
+    <a
+      class="site-logo"
+      href="{{ '/' | relative_url }}"
+      aria-label="{{ site.title | default: 'Tillerstead LLC' }} - Return to homepage"
+    >
+      <img
+        src="{{ '/assets/img/logo.png' | relative_url }}"
+        alt="{{ site.title | default: 'Tillerstead LLC' }}"
+        class="site-logo-img"
+        width="160"
+        height="auto"
+      />
+      <!-- Accessible text fallback (not visible) -->
+      <span class="site-logo-text sr-only">
+        {{ site.title | default: 'Tillerstead LLC' }}
+      </span>
+    </a>
+    
+    <!-- Primary navigation -->
+    <nav
+      id="site-nav"
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <ul class="site-menu">
+        {% assign nav_items = site.data.navigation.primary %}
+        {% for item in nav_items %}
+          {% assign is_current = false %}
+
+          {% if item.exact and page.url == item.exact %}
+            {% assign is_current = true %}
+          {% elsif item.match and page.url contains item.match %}
+            {% assign is_current = true %}
+          {% endif %}
 <header class="site-header ts-header ts-theme" role="banner">
   <div class="site-header-inner">
     <div class="ts-brand">
@@ -14,6 +51,30 @@
     </nav>
 
     <div class="site-header-actions">
+      <a
+        class="call-btn btn"
+        href="tel:{{ site.company.phone_link | default: '+16096659350' }}"
+        aria-label="Call Tillerstead at {{ site.company.phone_display | default: '(609) 665-9350' }}"
+      >
+        <span aria-hidden="true">{{ site.company.phone_display | default: '(609) 665-9350' }}</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-controls="site-nav"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span class="nav-toggle-label" aria-hidden="true">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <!-- Lightweight inline SVG hamburger icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </span>
       <a class="ts-call-btn" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
         {{ site.company.phone_display | default: '(609) 665-9350' }}
       </a>
